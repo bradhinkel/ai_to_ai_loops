@@ -10,7 +10,8 @@
 
 ## Environment (checked 2026-10-16)
 - WSL2 now sees 24 GB RAM (`.wslconfig` memory=24GB applied). 24 cores. RTX 5070 Laptop, 8151 MiB VRAM, driver 577.05.
-- Ollama 0.x installed and serving (`systemctl` active). `llava:13b` pull in progress (see `logs/ollama_pull.log`).
+- Ollama installed and serving (`systemctl` active). `llava:13b` pulled: digest 0d0eb4d7f485, 8.0 GB, Q4_0, context 4096 (verify tag/quantization against the OSF code; log in DEVIATIONS.md if different).
+- LLaVA smoke test (2026-10-16, synthetic 256x256 image, verbatim instruction, T=0.9, keep_alive 0): 21.8 s total, 5.7 s load, 92 tokens in 14.2 s (~6.5 tok/s); unloaded cleanly, VRAM back to ~1 GB. The caption was 68 words despite the 50-word instruction, so the truncation path matters from step 1.
 - Python 3.11.15 via `uv`; `.venv` with PyTorch cu128 + diffusers stack installing (see `logs/venv_setup.log`). Versions will be pinned into `requirements.txt` after reconciling with Hintze's `requirements` from OSF; any upgrade forced by Blackwell goes in `DEVIATIONS.md`.
 - Disk: 862 GB free.
 - Still to confirm by Brad: NVIDIA Control Panel "CUDA Sysmem Fallback Policy = Prefer No Sysmem Fallback" (cannot be checked from WSL).

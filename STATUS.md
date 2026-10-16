@@ -13,7 +13,13 @@
 - Ollama installed and serving (`systemctl` active). `llava:13b` pulled: digest 0d0eb4d7f485, 8.0 GB, Q4_0, context 4096 (verify tag/quantization against the OSF code; log in DEVIATIONS.md if different).
 - LLaVA smoke test (2026-10-16, synthetic 256x256 image, verbatim instruction, T=0.9, keep_alive 0): 21.8 s total, 5.7 s load, 92 tokens in 14.2 s (~6.5 tok/s); unloaded cleanly, VRAM back to ~1 GB. The caption was 68 words despite the 50-word instruction, so the truncation path matters from step 1.
 - Python 3.11.15 via `uv`; `.venv` with PyTorch cu128 + diffusers stack installing (see `logs/venv_setup.log`). Versions will be pinned into `requirements.txt` after reconciling with Hintze's `requirements` from OSF; any upgrade forced by Blackwell goes in `DEVIATIONS.md`.
-- Disk: 862 GB free.
+- SDXL base 1.0 fp16 downloaded to the HF cache (`~/.cache/huggingface`, ~7 GB). Default diffusers scheduler for it is EulerDiscreteScheduler (verify against OSF code).
+- SDXL VRAM test, 512x512, 50 steps, CFG 7.5 (2026-10-16, `logs/sdxl_vram_check.log`):
+  - everything on GPU: peak 8.24 GB allocated / 9.47 GB reserved, i.e. it spilled into system RAM (first image 16 s, second 45 s). This also shows the NVIDIA "Prefer No Sysmem Fallback" policy is NOT yet set, otherwise it would have OOM'd.
+  - `enable_model_cpu_offload()`: peak 5.35 GB, 14 / 12.6 / 10.1 s per image (warming up). Use this mode.
+  - text encoders on CPU, UNet+VAE on GPU: peak 6.60 GB / 7.71 GB reserved, 9.6 / 8.3 / 6.9 s. Too close to the limit once LLaVA's leftovers or a bigger batch appear; keep as an option.
+- Throughput implication: ~10 s per image (SDXL) + ~20 s per caption (LLaVA, ~90-word captions at 6.5 tok/s) is ~30 s per trajectory-step. A0-pilot (2,000 steps) ~17 h and A0-core (10,000 steps) ~80 h, about twice SPEC §4.2's estimate. Pilot measurements decide; Ollama `OLLAMA_NUM_PARALLEL` and SDXL batching are the levers.
+- Disk: 862 GB free (before the ~20 GB of models and data added today).
 - Still to confirm by Brad: NVIDIA Control Panel "CUDA Sysmem Fallback Policy = Prefer No Sysmem Fallback" (cannot be checked from WSL).
 
 ## Web UI control design (to build with the runner)
@@ -28,7 +34,7 @@ The runner works in lockstep steps, so controls act at step boundaries:
 
 ## Next steps (in order)
 1. Wait for OSF; clone code into `hintze_osf/`; diff Hintze's parameters (scheduler, llava tag, requirements) against SPEC §4.1; fill `DEVIATIONS.md`.
-2. Verify `.venv` CUDA works and SDXL base fits at 512x512 under ~7 GB (fp16, attention slicing / VAE tiling if needed).
+2. DONE: `.venv` CUDA works; SDXL fits with `enable_model_cpu_offload()` (5.35 GB peak).
 3. Check in the OSF code whether captions are truncated to 50 words (Hintze's logged captions average 89 words, so probably not) and whether llava:13b is the Q4_0 tag.
 4. Build `src/` runner (two-pass lockstep, atomic writes, resume, gpu.csv) + `configs/a0_pilot.yaml` + web UI.
 5. 1 trajectory x 5 steps throughput test; kill/resume test; then the 20-trajectory pilot.

@@ -5,7 +5,7 @@
 2. **Layout.** SPEC.md, CLAUDE.md, DEVIATIONS.md, predictions.md, PANEL.md now live at the project root. Papers and the experiment docx stay in `Resources/` (git-ignored).
 3. **Git.** Local repo on `main`, private remote: https://github.com/bradhinkel/ai_to_ai_loops. `runs/`, `logs/`, `data/`, `.env`, `.venv/` are ignored.
 4. **A0 prediction** recorded in `predictions.md` (Brad's wording plus a quantified version tied to the §4.3 gate).
-5. **Comparison baseline.** Hintze's T=0.9 images (figshare file 59352803, 775 MB) go in `data/hintze_figshare/`. Keep a small documentation subset (a few trajectories at steps 0, 1, 10, 50, 100) in `reports/hintze_reference/`; the full zip can be deleted afterwards.
+5. **Comparison baseline.** DONE. Hintze's T=0.9 data is downloaded and extracted in `data/hintze_figshare/`; the documentation subset and contact sheets are in `reports/hintze_reference/` (see `reports/hintze_reference.md` for the data structure and caveats). Delete the zip after A0.
 6. **Web UI.** Localhost FastAPI over `runs/` and `logs/`, with run controls: start, pause, resume, stop, restart. See design below.
 
 ## Environment (checked 2026-10-16)
@@ -29,6 +29,6 @@ The runner works in lockstep steps, so controls act at step boundaries:
 ## Next steps (in order)
 1. Wait for OSF; clone code into `hintze_osf/`; diff Hintze's parameters (scheduler, llava tag, requirements) against SPEC §4.1; fill `DEVIATIONS.md`.
 2. Verify `.venv` CUDA works and SDXL base fits at 512x512 under ~7 GB (fp16, attention slicing / VAE tiling if needed).
-3. Unzip `temps_0.9.zip`; extract the documentation subset; write `reports/hintze_reference.md`.
+3. Check in the OSF code whether captions are truncated to 50 words (Hintze's logged captions average 89 words, so probably not) and whether llava:13b is the Q4_0 tag.
 4. Build `src/` runner (two-pass lockstep, atomic writes, resume, gpu.csv) + `configs/a0_pilot.yaml` + web UI.
 5. 1 trajectory x 5 steps throughput test; kill/resume test; then the 20-trajectory pilot.

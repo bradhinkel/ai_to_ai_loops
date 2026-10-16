@@ -1,0 +1,18 @@
+# secrets
+.env
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+# experiment data (append-only, too big for git)
+runs/
+logs/
+data/
+archive/*.npz
+# downloaded reference material (PDFs, docx, OSF snapshot kept out of git)
+Resources/*.pdf
+Resources/*.docx
+# scratch
+*.tmp
+.ipynb_checkpoints/

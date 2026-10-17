@@ -1,4 +1,4 @@
-# Project status — 2026-10-17 (session 3)
+# Project status — 2026-10-17 (session 4: runner built, pilot launched)
 
 ## Decisions made by Brad (2026-10-16)
 1. **OSF.** Back up 2026-10-17. The whole project (14 files, 1.5 MB) is in `hintze_osf/` with `MANIFEST.tsv` (sha256 per file), fetched by `scripts/fetch_hintze_osf.py`. Parameters verified against `OSFcontinue.py`; corrections are in SPEC §4.1 and `DEVIATIONS.md`. Headline differences from the first draft: 1024px then resized to 512, 25 steps, CFG 5.0, PNG, captioner is `llava:latest` (7B) not 13B, and no caption truncation.
@@ -34,9 +34,20 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - **restart**: stop, then start the same config; the idempotent resume picks up from the last complete step. (Never clears `runs/`: data is append-only.)
 - Status page: per-trajectory latest step, s/step, GPU csv tail, last 20 log lines, latest image thumbnails.
 
+## Session 4 (2026-10-17 afternoon): runner built and tested
+- WSL restarted. SDXL retest at Hintze's settings: 5.49 GB peak allocated, 5.63 GB reserved with expandable segments, 15 to 18 s per image warm (`logs/sysmem_policy_retest.log`). Yesterday's 7 GB / spill numbers came from an already-spilled session. The sysmem policy was never exercised because nothing needed to spill.
+- Built `src/` (config, atomic store, SDXL generator, Ollama captioner, two-pass lockstep runner, GPU csv logger), `configs/a0_{smoke,pilot,core}.yaml`, `src/web/app.py` (FastAPI status/control page, http://127.0.0.1:8787, started with `nohup .venv/bin/uvicorn src.web.app:app --port 8787`), `analysis/a0_report.py` (drift curves vs Hintze's figshare captions, elbow, contact sheets, summary.json), `requirements.txt` (frozen).
+- Smoke run `a0_smoke` (2 traj x 3 steps): finished; records complete; VRAM back to ~530 MB after each SDXL release and after each LLaVA unload. Warm throughput: SDXL 15.7 s, LLaVA 5.9 s (3 to 8 s; ~60 tok/s now that the GPU is not contended), 20 to 22 s per trajectory-step. Captions 94 to 160 words, all over 50; 2 of 3 prompts CLIP-truncated, as in Hintze's data.
+- Kill/resume gate `a0_killtest` (2 traj x 4 steps): SIGKILL during the SDXL pass of step 1 and during the LLaVA pass of step 2, restarted with the same command each time. Both trajectories completed 0..3, prompt chain intact (prompt k == caption k-1), no orphans, no .tmp files (`logs/a0_killtest_driver.log`). PASS.
+- Ollama 0.40.5 loads llava:latest with n_ctx 4096; image + instruction = 620 prompt tokens (DEVIATIONS D9).
+- Pilot estimate from the smoke numbers: ~20 s x 20 traj = ~7 min per step, ~11 to 12 h for 100 steps. Core: ~55 to 60 h.
+- Doc fixes: CLAUDE.md captioner tag and runs/ layout; predictions.md got a dated note that A0 uses llava:latest (prediction unchanged); DEVIATIONS D8 to D10.
+
 ## Next steps (in order)
 1. DONE: OSF code fetched, parameters verified, DEVIATIONS.md written.
 2. DONE: `.venv` CUDA works; SDXL fits with `enable_model_cpu_offload()` (5.35 GB peak).
 3. DONE: no truncation in the code; captioner is `llava:latest` (7B Q4_0), not 13B.
-4. Build `src/` runner (two-pass lockstep, atomic writes, resume, gpu.csv) + `configs/a0_pilot.yaml` + web UI.
-5. 1 trajectory x 5 steps throughput test; kill/resume test; then the 20-trajectory pilot.
+4. DONE: `src/` runner, configs, web UI, analysis script.
+5. DONE: smoke test and kill/resume test. A0-pilot launched 2026-10-17 ~15:20 (`runs/a0_pilot`, log `logs/a0_pilot.log`, progress `runs/a0_pilot/progress.json`).
+6. When the pilot finishes: `.venv/bin/python analysis/a0_report.py a0_pilot`, write `reports/a0_pilot.md` (gate: ran end to end, resume verified, measured s/step, drift curve vs Hintze, endpoint sheet), report to Brad. Do not start A0-core until Brad says so.
+7. Delete `data/hintze_figshare/temps_0.9.zip` after A0 (the extraction and the subset stay).

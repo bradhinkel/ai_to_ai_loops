@@ -1,0 +1,7 @@
+# A0-core (SPEC §4.2): 100 trajectories x 100 steps at T=0.9, all 100 Hintze seeds. Gate: SPEC §4.3. Do not start before the pilot gate.
+run_name: a0_core
+arm: A0
+mode: two_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9

@@ -15,7 +15,7 @@ Phase 1 only: A0-pilot, then A0-core (SPEC §4). Then A0-S (SPEC §5) once A0-co
 
 ## Hardware: RTX 5070 laptop, 8 GB VRAM, Windows 11
 - Work inside WSL2 (Ubuntu). PyTorch ≥ 2.7 with CUDA 12.8 (Blackwell).
-- Two-pass lockstep mode is mandatory with llava:13b. Never load SDXL and LLaVA at the same time. Free VRAM between passes (`del pipe`, `torch.cuda.empty_cache()`, Ollama `keep_alive: 0`).
+- Two-pass lockstep mode is mandatory (SDXL and llava:latest 7B do not fit together). Never load SDXL and LLaVA at the same time. Free VRAM between passes (`del pipe`, `torch.cuda.empty_cache()`, Ollama `keep_alive: 0`).
 - Stay under ~7 GB of VRAM. Don't rely on Windows' fallback to system memory: keep the CUDA Sysmem Fallback Policy at "Prefer No Sysmem Fallback," so out-of-memory fails loudly instead of thrashing.
 - This machine has hard-rebooted under GPU load before. Every run must survive a power cut: atomic writes, idempotent resume, the GPU health log running (SPEC §8). Test resume by killing the process during the pilot.
 - Long runs go in the background (tmux or nohup inside WSL), with progress written to `logs/`. Check in on the run rather than watching it.
@@ -30,7 +30,7 @@ SPEC.md  CLAUDE.md  DEVIATIONS.md  predictions.md
 hintze_osf/          # untouched copy of the OSF code
 src/                 # pipeline (runner, generators, captioners, selectors, embeddings)
 configs/             # one YAML per arm/stage
-runs/<arm>/<traj>/   # step_NNN.jpg + step_NNN.json
+runs/<run>/traj_TTT/ # step_NNN.png + step_NNN.gen.json + step_NNN.json (see src/store.py)
 archive/             # attractor centroids
 analysis/            # scripts that rebuild every figure from runs/
 logs/                # run logs, gpu.csv

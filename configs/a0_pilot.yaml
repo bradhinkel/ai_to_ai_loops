@@ -1,0 +1,7 @@
+# A0-pilot (SPEC §4.2): 20 trajectories x 100 steps at T=0.9, Hintze seeds 0-19. Gate: runs end to end; resume after a kill works.
+run_name: a0_pilot
+arm: A0
+mode: two_pass
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9

@@ -1,0 +1,7 @@
+# Throughput / plumbing check: 2 trajectories x 3 steps, everything else as A0.
+run_name: a0_smoke
+arm: A0
+mode: two_pass
+steps: 3
+trajectories: {first: 0, count: 2}
+temperature: 0.9

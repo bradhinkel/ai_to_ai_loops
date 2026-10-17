@@ -3,6 +3,8 @@
 Write each prediction before its arm runs. Never edit an entry after results exist; add a dated note instead.
 
 ## A0 (replication, llava:13b) — recorded 2026-10-16 by Brad
+*Note added 2026-10-17, before any A0 results: the OSF code uses `llava:latest` (LLaVA 1.6 7B Q4_0), so A0 runs with that tag (DEVIATIONS D2). The prediction itself is unchanged.*
+
 We will get similar results to Hintze: there should be about 12 resulting image attractors, and these should match the descriptions from Hintze (the same general images, lighthouses, urban night scenes, gothic cathedrals, palatial interiors and so on), but not a pixel match.
 
 Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wording above as the source:
@@ -13,7 +15,7 @@ Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wordin
 
 ## A0-S (Sonnet captioner) — recorded 2026-10-16 by Brad
 - H1 (converges to a small attractor set): expected to hold.
-- H2 (same attractors as llava:13b): expected to FAIL; Sonnet's attractors will differ.
+- H2 (same attractors as A0's LLaVA): expected to FAIL; Sonnet's attractors will differ.
 
 ## Evaluation panels (SPEC §7b): PROPOSED by Claude, 2026-10-16. Brad to confirm or amend before the panel runs.
 - P1: artist-panel agreement is higher than lay-panel agreement (expertise is a shared standard, not just individual taste).

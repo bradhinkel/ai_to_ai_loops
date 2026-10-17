@@ -1,6 +1,6 @@
 # Escaping Visual Elevator Music — Experiment Spec
 
-Owner: Brad Hinkel · Version: 2026-10-16 · Source doc: "Escaping Visual Elevator Music: Experiment Spec" (Claude Docs). This file is the build version and supersedes the doc where they differ.
+Owner: Brad Hinkel · Version: 2026-10-17 · Source doc: "Escaping Visual Elevator Music: Experiment Spec" (Claude Docs). This file is the build version and supersedes the doc where they differ.
 
 ## 1. Objective
 
@@ -43,24 +43,25 @@ Record each prediction in `predictions.md` BEFORE running the arm it concerns.
 | E Judge + archive | llava:13b | Judge marks each candidate interesting/boring; most novel interesting one wins (OMNI structure) | Q3, Q4 |
 | R Release | — | Steps 101–150 of B to E revert to random | Q5 |
 
-Optional ablations: **B-img** (select on CLIP image embeddings by rendering all 4 candidates; 20 trajectories), **D-blind** (judge with no history; 20 trajectories), **A0-lit** (literal caption instruction instead of "vivid, artistic"; tests whether the instruction itself drives cliché).
+Optional ablations: **B-img** (select on CLIP image embeddings by rendering all 4 candidates; 20 trajectories), **D-blind** (judge with no history; 20 trajectories), **A0-lit** (literal caption instruction instead of "vivid, artistic"; tests whether the instruction itself drives cliché), **A0-trunc** (captions hard-cut to 50 words before reuse; Hintze did not truncate), **A0-long** (full caption reaches SDXL via chunked encoding instead of CLIP's 77-token cut; tests whether channel width governs convergence speed). See DEVIATIONS.md.
 
 **Execution order (gated):** A0-pilot → A0-core → A0-S → A → B → C → D/E → R → human panel. Do not start an arm until the previous gate passes.
 
 ## 4. Phase 1: A0 replication (local GPU, tinkerer configuration)
 
-### 4.1 Parameters (must match Hintze exactly)
+### 4.1 Parameters (must match Hintze exactly; verified against the OSF code 2026-10-17, see DEVIATIONS.md)
 
 | Parameter | Value |
 |---|---|
-| Image generator | stabilityai/stable-diffusion-xl-base-1.0, 512×512, 50 inference steps, CFG 7.5 (verify the scheduler against the OSF code) |
-| Captioner | llava:13b via Ollama (verify the exact tag and quantization against the OSF code) |
+| Image generator | stabilityai/stable-diffusion-xl-base-1.0 fp16, default 1024x1024 then LANCZOS-resized to 512x512, 25 inference steps, default guidance 5.0, default EulerDiscreteScheduler, no negative prompt |
+| Captioner | `llava:latest` via Ollama (LLaVA 1.6 7B, Q4_0); digest pinned and logged. (The first draft of this spec said llava:13b; the OSF temperature sweep used the 7B tag.) |
 | Caption instruction (verbatim) | "Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain." |
-| Seed prompts | Hintze's 100 novelty-search prompts from OSF (do not regenerate) |
-| Steps per trajectory | 100 |
-| Image format | JPEG, as in the paper |
+| Caption handling | Used verbatim, no truncation (Hintze did none). CLIP's 77-token limit inside SDXL is the only cut. |
+| Seed prompts | Hintze's 100 prompts from `hintze_osf/.../reservoir_100.pkl` (do not regenerate) |
+| Steps per trajectory | 100 (image k is generated from prompt k; caption of image k is prompt k+1) |
+| Image format | PNG (as in the code; the paper's figures are JPEG mosaics) |
 | Analysis embedding | sentence-transformers/all-MiniLM-L6-v2 on captions; exclude step 0 |
-| Clustering | k-means on final-step caption embeddings, elbow method |
+| Clustering | k-means (n_init=10, fixed random_state) on final-step caption embeddings, elbow on inertia, as in `figures.ipynb` |
 
 ### 4.2 Stages
 
@@ -87,7 +88,7 @@ Times are estimates for an RTX 5070 laptop (8 GB) in two-pass mode. Measure the 
 - Model: a pinned Claude Sonnet model ID, temperature 0.9, image sent as the same 512×512 JPEG. Log the exact model ID in every record.
 - Billing: Anthropic API key from the Console organization linked to the Max plan, which draws from its monthly API credits. Never route these calls through `claude -p` on plan login.
 - No VRAM is needed for captioning, so SDXL stays loaded: single-pass mode.
-- Log every refusal, empty response and over-50-word caption. Truncate to 50 words exactly as the A0 pipeline would, and flag the record.
+- Log every refusal, empty response and over-50-word caption. Do not truncate (A0 does not); flag over-50-word records.
 - Analysis:
   - H1: elbow k, Vendi score and the plateau step.
   - H2: share of A0-S endpoints falling inside A0's cluster radii (95th percentile), plus a joint clustering of A0 and A0-S endpoints showing which clusters are shared and which are unique to one captioner.

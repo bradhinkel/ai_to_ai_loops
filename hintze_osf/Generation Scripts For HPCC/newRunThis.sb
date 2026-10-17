@@ -1,0 +1,31 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=1:57:00            # Limit of wall clock time - how long the job will run
+#SBATCH --ntasks=1                 # Number of tasks (nodes) required
+#SBATCH --cpus-per-task=1          # Number of CPUs (or cores) per task
+#SBATCH --mem=50G                  # Memory required per node (64GB)
+#SBATCH --gpus=v100:1 
+
+########## Command Lines to Run ##########
+
+
+
+module purge
+
+module load Conda/3
+
+conda activate openai_env
+
+#CUDA_VISIBLE_DEVICES=0,1,2,3 bin/ollama serve &>/dev/null &
+CUDA_VISIBLE_DEVICES=0 ../bin/ollama serve &>/dev/null &
+#CUDA_VISIBLE_DEVICES=0,1 bin/ollama serve &>/dev/null &
+
+sleep 30
+
+
+echo $order
+python test.py "$SLURM_ARRAY_TASK_ID" "$temp" "$save" 
+
+#./NKearly K $K my $my result data_"$K"_"$my"_"$SLURM_ARRAY_TASK_ID".csv
+

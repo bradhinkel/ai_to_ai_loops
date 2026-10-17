@@ -1,0 +1,45 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=3:57:00            # Limit of wall clock time - how long the job will run
+#SBATCH --ntasks=1                 # Number of tasks (nodes) required
+#SBATCH --cpus-per-task=1          # Number of CPUs (or cores) per task
+#SBATCH --mem=32G                  # Memory required per node (64GB)
+#SBATCH --gpus=v100:1 
+
+########## Command Lines to Run ##########
+
+# Load modules
+module purge
+unset PYTHONPATH
+module load Miniforge3
+module load CUDA/12.4.0
+module load Ollama
+module load powertools
+conda activate image_loop_env
+ollama_link_models
+
+# Find an available port
+echo "Finding available port..."
+for PORT in $(seq 11434 11534); do
+    if ! nc -z localhost $PORT 2>/dev/null; then
+        echo "Found available port: $PORT"
+        break
+    fi
+done
+
+# Start ollama on the found port
+echo "Starting ollama on port $PORT"
+OLLAMA_HOST=127.0.0.1:$PORT CUDA_VISIBLE_DEVICES=0 ollama serve &
+OLLAMA_PID=$!
+
+# Wait for ollama to fully start
+echo "Waiting for ollama to start..."
+sleep 45
+
+#python OSFtest.py "$SLURM_ARRAY_TASK_ID" "$temp" "$save" "$PORT"
+#python OSFcontinue.py "$SLURM_ARRAY_TASK_ID" "$temp" "$save" "$PORT"
+python OSFmulti.py "$SLURM_ARRAY_TASK_ID" "$temp" "$save" "$PORT" "$generator" "$identifier"
+python make_grid.py "$SLURM_ARRAY_TASK_ID" "$temp" "$generator" "$identifier"
+#./NKearly K $K my $my result data_"$K"_"$my"_"$SLURM_ARRAY_TASK_ID".csv
+

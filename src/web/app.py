@@ -118,13 +118,13 @@ def control(run: str, action: str, config: str = ""):
 PAGE = """<!doctype html><html><head><meta charset=utf-8><title>ai_to_ai_loops</title>
 <style>body{font:14px system-ui;margin:16px;background:#111;color:#ddd}a{color:#8cf}table{border-collapse:collapse}td,th{padding:2px 8px;border-bottom:1px solid #333;text-align:left}
 pre{background:#000;padding:8px;overflow:auto;max-height:260px;font-size:12px}button{margin:2px 4px 2px 0}.thumbs img{width:128px;height:128px;margin:2px;object-fit:cover}.ok{color:#8f8}.bad{color:#f88}</style></head><body>
-<h2>ai_to_ai_loops <small id=clock></small></h2><div id=runs></div><div id=run></div>
+<h2>ai_to_ai_loops <small id=clock></small> <small>(refreshes every 15 s; thumbnails are each trajectory's latest completed step)</small></h2><div id=runs></div><div id=run></div>
 <script>
 let cur=new URLSearchParams(location.search).get('run');
 async function j(u,o){const r=await fetch(u,o);return r.json()}
 async function act(a){await j(`/api/run/${cur}/control/${a}`,{method:'POST'});setTimeout(load,800)}
 async function load(){
- const rs=await j('/api/runs'); if(!cur&&rs.length)cur=rs[rs.length-1].run;
+ const rs=await j('/api/runs'); if(!cur&&rs.length){const live=rs.filter(r=>r.alive); cur=(live.length?live:rs.slice().sort((a,b)=>(a.updated||'').localeCompare(b.updated||'')))[live.length?0:rs.length-1].run;}
  document.getElementById('runs').innerHTML='<b>runs:</b> '+rs.map(r=>`<a href="?run=${r.run}">${r.run}</a> <span class="${r.alive?'ok':'bad'}">${r.alive?'alive':'not running'}</span> ${r.state||''} ${r.completed_steps||0}/${r.total_steps||'?'}`).join(' &nbsp;|&nbsp; ');
  if(!cur)return; const s=await j(`/api/run/${cur}`); const p=s.progress||{}; const lat=p.latest_complete_step||{};
  const thumbs=Object.entries(lat).map(([t,st])=>st>=0?`<a href="/api/run/${cur}/record/${t}/${st}" title="traj ${t} step ${st}"><img src="/api/run/${cur}/image/${t}/${st}?v=${st}"></a>`:'').join('');

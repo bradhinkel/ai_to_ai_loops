@@ -1,0 +1,10 @@
+# A0-core on a RunPod RTX Pro 6000 96 GB: both models resident, 16 prompts per SDXL call, 8 concurrent captions
+# (start Ollama with OLLAMA_NUM_PARALLEL=8, i.e. OLLAMA_PAR=8 for the scripts). Same parameters as configs/a0_core.yaml otherwise.
+run_name: a0_core
+arm: A0
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}

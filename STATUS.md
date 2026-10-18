@@ -50,5 +50,7 @@ The runner works in lockstep steps, so controls act at step boundaries:
 4. DONE: `src/` runner, configs, web UI, analysis script.
 5. DONE: smoke test and kill/resume test.
 6. DONE: A0-pilot ran 2026-10-17 15:17 to 2026-10-18 01:29, 2,000/2,000 records, no errors. Gate PASS; see `reports/a0_pilot.md`. Measured 18.3 s per trajectory-step, so A0-core projects to ~51 h. 13/20 endpoints are Hintze motifs (palatial interiors 6, cathedrals 5, village at dusk 2, lighthouse 1); drift plateaus at step 26. Captions average 134 words vs Hintze's 89 (flagged).
-6b. NEXT: wait for Brad's go-ahead, then `nohup .venv/bin/python -m src.runner configs/a0_core.yaml > logs/a0_core.out 2>&1 &`.
+6b. Brad (2026-10-18): run A0-core on RunPod instead of the laptop (48 GB card, ~$1.29/h, ~6-7 h). Step 1 DONE: `generator.batch` (one torch.Generator per prompt, VAE slicing) and `captioner.parallel` (thread pool, pair with `OLLAMA_NUM_PARALLEL`) added; laptop test `a0_batchtest2` (4 traj x 2 steps, batch 2, parallel 2) finished, peak 5.83 GB, step-0 images match the pilot's same-seed images to within 0.7/255 mean abs diff (numerics only). Batch 2 gives no speed-up on the 5070 (already saturated); the gain is expected on the big card. `configs/a0_core_runpod.yaml` written (single_pass, batch 8, parallel 4). DEVIATIONS D11.
+6c. NEXT (step 2): `scripts/runpod_setup.sh` (Ollama install, pull + digest check 8dd30f6b0cb1, uv venv, SDXL download), network volume for `runs/`, rsync back; smoke run on the pod; then launch A0-core there.
+6d. Brad also asked that the GitHub repo be pushed at the end of each phase.
 7. Delete `data/hintze_figshare/temps_0.9.zip` after A0 (the extraction and the subset stay).

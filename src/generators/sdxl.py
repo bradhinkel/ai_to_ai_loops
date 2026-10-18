@@ -34,6 +34,8 @@ class SDXLGenerator:
             pipe.enable_model_cpu_offload()
         else:
             pipe.to("cuda")
+        if int(self.cfg.get("batch", 1)) > 1:
+            pipe.vae.enable_slicing()      # decode one latent at a time: same numbers as batch 1, bounded VRAM
         self.pipe = pipe
         self._info = {
             "model": self.cfg["model"], "revision": hf_snapshot_revision(self.cfg["model"]), "variant": self.cfg.get("variant"),
@@ -43,6 +45,7 @@ class SDXLGenerator:
             "height": self.cfg["height"] or pipe.default_sample_size * pipe.vae_scale_factor,
             "width": self.cfg["width"] or pipe.default_sample_size * pipe.vae_scale_factor,
             "resized_to": self.cfg["resize_to"], "negative_prompt": None, "cpu_offload": bool(self.cfg.get("cpu_offload")),
+            "batch": int(self.cfg.get("batch", 1)), "vae_slicing": int(self.cfg.get("batch", 1)) > 1,
             "alloc_conf": os.environ.get("PYTORCH_CUDA_ALLOC_CONF"),
             "diffusers": diffusers.__version__, "torch": torch.__version__,
         }
@@ -56,6 +59,11 @@ class SDXLGenerator:
         return len(ids), len(ids) > self.pipe.tokenizer.model_max_length
 
     def generate(self, prompt: str, seed: int):
+        return self.generate_batch([prompt], [seed])[0]
+
+    def generate_batch(self, prompts, seeds):
+        """One SDXL call for several prompts. Each prompt gets its own torch.Generator seeded with its own seed, so a
+        trajectory's draw does not depend on which other prompts share the batch (only the float numerics can)."""
         import torch
         self.load()
         kw = {"num_inference_steps": self.cfg["num_inference_steps"]}
@@ -64,15 +72,20 @@ class SDXLGenerator:
         if self.cfg["width"]: kw["width"] = self.cfg["width"]
         torch.cuda.reset_peak_memory_stats()
         t0 = time.time()
-        g = torch.Generator("cuda").manual_seed(int(seed))
-        image = self.pipe(prompt=prompt, generator=g, **kw).images[0]
+        gens = [torch.Generator("cuda").manual_seed(int(s)) for s in seeds]
+        images = self.pipe(prompt=list(prompts), generator=gens, **kw).images
+        dt = time.time() - t0
         r = self.cfg["resize_to"]
-        if r:
-            image = image.resize((r, r), Image.LANCZOS)
-        n_tok, truncated = self.prompt_tokens(prompt)
-        return image, {"gen_time_s": round(time.time() - t0, 2), "gen_peak_alloc_gb": round(torch.cuda.max_memory_allocated() / 1e9, 3),
-                       "gen_peak_reserved_gb": round(torch.cuda.max_memory_reserved() / 1e9, 3),
-                       "prompt_tokens_clip": n_tok, "prompt_truncated_by_clip": truncated}
+        out = []
+        for prompt, image in zip(prompts, images):
+            if r:
+                image = image.resize((r, r), Image.LANCZOS)
+            n_tok, truncated = self.prompt_tokens(prompt)
+            out.append((image, {"gen_time_s": round(dt / len(prompts), 2), "gen_batch_size": len(prompts), "gen_batch_time_s": round(dt, 2),
+                                "gen_peak_alloc_gb": round(torch.cuda.max_memory_allocated() / 1e9, 3),
+                                "gen_peak_reserved_gb": round(torch.cuda.max_memory_reserved() / 1e9, 3),
+                                "prompt_tokens_clip": n_tok, "prompt_truncated_by_clip": truncated}))
+        return out
 
     def release(self):
         """Give the GPU back between passes. offload: weights stay in CPU RAM; delete: drop the pipeline entirely."""

@@ -24,6 +24,7 @@ DEFAULTS = {
         "cpu_offload": True,        # D6
         "alloc_conf": "expandable_segments:True",   # D1
         "release_mode": "offload",  # offload: keep weights in CPU RAM between passes | delete: free the pipeline
+        "batch": 1,                 # prompts per SDXL call; one generator per prompt keeps the per-(traj, step) seeds (D11)
     },
     "captioner": {
         "backend": "ollama",
@@ -35,6 +36,7 @@ DEFAULTS = {
         "unload_after_pass": True,
         "timeout_s": 600,
         "retries": 5,
+        "parallel": 1,              # concurrent caption requests; pair with OLLAMA_NUM_PARALLEL on the server (D11)
     },
     "gpu_log": {"interval_s": 10, "path": "logs/gpu.csv"},
     "vram_free_threshold_mb": 1500,   # consider the GPU "free" for the next pass below this nvidia-smi usage

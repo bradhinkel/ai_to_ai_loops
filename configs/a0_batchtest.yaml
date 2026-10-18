@@ -1,0 +1,10 @@
+# Laptop test of batched SDXL and parallel captions: 4 trajectories x 2 steps, batch 2, 2 concurrent captions.
+# Seeds 0-3 at step 0 match a0_pilot's, so the images can be compared with the unbatched ones.
+run_name: a0_batchtest
+arm: A0
+mode: two_pass
+steps: 2
+trajectories: {first: 0, count: 4}
+temperature: 0.9
+generator: {batch: 2}
+captioner: {parallel: 2}

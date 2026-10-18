@@ -7,6 +7,7 @@ at any moment and restarted with the same command. Controls come from runs/<run>
     .venv/bin/python -m src.runner configs/a0_pilot.yaml [--steps N] [--count N]
 """
 import argparse, datetime, hashlib, json, logging, os, pathlib, pickle, signal, socket, subprocess, sys, time
+from concurrent.futures import ThreadPoolExecutor
 
 from .config import load_config
 from .store import TrajStore, atomic_write_json, append_jsonl, read_json
@@ -167,17 +168,22 @@ class Runner:
                     self.phase = f"sdxl step {step}"; self.progress(step)
                     if two_pass: self.wait_for_vram("before SDXL")
                     self.gen.load(); gen_info = gen_info or self.gen.info()
-                    for t in todo_gen:
-                        st = self.stores[t]
-                        prompt, source = st.prompt_for(step)
-                        seed = self.cfg["seeds"]["sdxl_base_seed"] + t * 10000 + step
-                        image, ginfo = self.gen.generate(prompt, seed)
-                        st.write_image(step, image, {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
-                                                     "prompt": prompt, "prompt_source": source, "prompt_words": len(prompt.split()),
-                                                     "sdxl_seed": seed, "generator": gen_info, "generated_at": now(), **ginfo})
-                        n_gen += 1
-                        self.log.info("step %3d traj %3d image %5.1fs peak %.2f GB tokens %d%s", step, t, ginfo["gen_time_s"], ginfo["gen_peak_alloc_gb"],
-                                      ginfo["prompt_tokens_clip"], " (clip-truncated)" if ginfo["prompt_truncated_by_clip"] else "")
+                    B = max(1, int(self.cfg["generator"].get("batch", 1)))
+                    for i0 in range(0, len(todo_gen), B):
+                        chunk = todo_gen[i0:i0 + B]
+                        prompts, sources, seeds = [], [], []
+                        for t in chunk:
+                            prompt, source = self.stores[t].prompt_for(step)
+                            prompts.append(prompt); sources.append(source)
+                            seeds.append(self.cfg["seeds"]["sdxl_base_seed"] + t * 10000 + step)
+                        results = self.gen.generate_batch(prompts, seeds)
+                        for t, prompt, source, seed, (image, ginfo) in zip(chunk, prompts, sources, seeds, results):
+                            self.stores[t].write_image(step, image, {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
+                                                                     "prompt": prompt, "prompt_source": source, "prompt_words": len(prompt.split()),
+                                                                     "sdxl_seed": seed, "generator": gen_info, "generated_at": now(), **ginfo})
+                            n_gen += 1
+                            self.log.info("step %3d traj %3d image %5.1fs (batch %d) peak %.2f GB tokens %d%s", step, t, ginfo["gen_time_s"], ginfo["gen_batch_size"],
+                                          ginfo["gen_peak_alloc_gb"], ginfo["prompt_tokens_clip"], " (clip-truncated)" if ginfo["prompt_truncated_by_clip"] else "")
                         if self.stop_requested: break
                     if two_pass:
                         left = self.gen.release(); self.log.info("SDXL released, torch alloc %.2f GB, nvidia-smi %.0f MB", left, vram_used_mb())
@@ -192,17 +198,28 @@ class Runner:
                 if two_pass: self.wait_for_vram("before LLaVA")
                 cap_info = self.cap.info()
                 todo_cap = [t for t in todo_cap if not self.stores[t].is_complete(step)]
-                for i, t in enumerate(todo_cap):
+
+                def caption_one(t):
                     st = self.stores[t]
                     text, cmeta = self.cap.caption(st.png(step), keep_alive=self.cfg["captioner"]["keep_alive_during_pass"])
                     rec = read_json(st.gen(step))
                     rec.update({"caption": text, "captioner": cap_info, "captioned_at": now(), **cmeta,
                                 "pipeline_git": git_commit(), "config_sha256": self.cfg["_config_sha256"]})
                     st.write_record(step, rec)
-                    n_cap += 1
                     fl = [k for k, v in cmeta["caption_flags"].items() if v]
                     self.log.info("step %3d traj %3d caption %5.1fs %3d words%s", step, t, cmeta["caption_time_s"], cmeta["caption_words"], (" flags=" + ",".join(fl)) if fl else "")
-                    if self.stop_requested: break
+                    return t
+
+                P = max(1, int(self.cfg["captioner"].get("parallel", 1)))
+                if P == 1:
+                    for t in todo_cap:
+                        caption_one(t); n_cap += 1
+                        if self.stop_requested: break
+                else:
+                    with ThreadPoolExecutor(max_workers=P) as ex:
+                        for i0 in range(0, len(todo_cap), P):          # submit one wave at a time so a stop request is honoured promptly
+                            for _ in ex.map(caption_one, todo_cap[i0:i0 + P]): n_cap += 1
+                            if self.stop_requested: break
                 if two_pass and self.cfg["captioner"]["unload_after_pass"]:
                     self.cap.unload()
                 cap_s = time.time() - t_cap

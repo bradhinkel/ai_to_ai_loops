@@ -9,7 +9,8 @@ from PIL import Image
 
 
 def hf_snapshot_revision(model_id):
-    p = pathlib.Path.home() / ".cache/huggingface/hub" / ("models--" + model_id.replace("/", "--")) / "refs/main"
+    cache = os.environ.get("HF_HUB_CACHE") or (pathlib.Path(os.environ["HF_HOME"]) / "hub" if os.environ.get("HF_HOME") else pathlib.Path.home() / ".cache/huggingface/hub")
+    p = pathlib.Path(cache) / ("models--" + model_id.replace("/", "--")) / "refs/main"
     return p.read_text().strip() if p.exists() else None
 
 

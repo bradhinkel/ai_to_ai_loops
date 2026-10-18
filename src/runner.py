@@ -21,10 +21,15 @@ def now():
 
 
 def git_commit():
+    """HEAD of the repo; on a pod without .git, the GIT_COMMIT file written by scripts/runpod_sync.sh push."""
     try:
-        return subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+        out = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+        if out:
+            return out
     except Exception:  # noqa: BLE001
-        return None
+        pass
+    f = ROOT / "GIT_COMMIT"
+    return f.read_text().strip() if f.exists() else None
 
 
 def package_versions():

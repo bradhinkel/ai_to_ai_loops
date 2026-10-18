@@ -12,7 +12,8 @@ set -a; source .env; set +a
 HOST=${RUNPOD_SSH%% *}; PORT=${RUNPOD_SSH##*-p }
 SSH="ssh -i $HOME/.ssh/claude_runpod -o StrictHostKeyChecking=accept-new -p $PORT"
 case "${1:-}" in
-  push) rsync -az -e "$SSH" --exclude .venv --exclude runs --exclude logs --exclude data --exclude Resources --exclude .git --exclude __pycache__ --exclude .env \
+  push) git rev-parse HEAD > GIT_COMMIT; git status --porcelain | grep -q . && echo "(working tree has uncommitted changes; GIT_COMMIT records HEAD)"
+        rsync -az -e "$SSH" --exclude .venv --exclude runs --exclude logs --exclude data --exclude Resources --exclude .git --exclude __pycache__ --exclude .env \
           ./ "$HOST:/workspace/ai_to_ai_loops/" && echo pushed ;;
   pull) mkdir -p runs logs
         rsync -az --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/runs/" runs/ && rsync -az --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/logs/" logs/runpod/ && echo pulled && du -sh runs/a0_core 2>/dev/null ;;

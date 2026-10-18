@@ -16,3 +16,4 @@ Resources/*.docx
 # scratch
 *.tmp
 .ipynb_checkpoints/
+GIT_COMMIT

@@ -1,0 +1,127 @@
+{
+ "run": "a0_pilot",
+ "n_traj": 20,
+ "steps_complete": {
+  "0": 100,
+  "1": 100,
+  "2": 100,
+  "3": 100,
+  "4": 100,
+  "5": 100,
+  "6": 100,
+  "7": 100,
+  "8": 100,
+  "9": 100,
+  "10": 100,
+  "11": 100,
+  "12": 100,
+  "13": 100,
+  "14": 100,
+  "15": 100,
+  "16": 100,
+  "17": 100,
+  "18": 100,
+  "19": 100
+ },
+ "mean_step_drift_first5": [
+  0.25699999928474426,
+  0.23999999463558197,
+  0.21199999749660492,
+  0.23600000143051147,
+  0.1850000023841858
+ ],
+ "mean_step_drift_last20": 0.1646348237991333,
+ "plateau_step": 26,
+ "elbow_k": 8,
+ "k_used_for_sheet": 10,
+ "inertia": {
+  "2": 7.356,
+  "3": 5.677,
+  "4": 4.923,
+  "5": 4.276,
+  "6": 3.622,
+  "7": 3.135,
+  "8": 2.593,
+  "9": 2.186,
+  "10": 1.779,
+  "11": 1.519,
+  "12": 1.287,
+  "13": 1.068,
+  "14": 0.856,
+  "15": 0.679,
+  "16": 0.512,
+  "17": 0.362,
+  "18": 0.223,
+  "19": 0.088
+ },
+ "clusters": {
+  "0": [
+   12
+  ],
+  "1": [
+   0,
+   2,
+   5,
+   6,
+   11,
+   13
+  ],
+  "2": [
+   3,
+   4,
+   9,
+   17,
+   19
+  ],
+  "3": [
+   1,
+   7
+  ],
+  "4": [
+   15
+  ],
+  "5": [
+   10
+  ],
+  "6": [
+   16
+  ],
+  "7": [
+   14
+  ],
+  "8": [
+   8
+  ],
+  "9": [
+   18
+  ]
+ },
+ "cluster_example_captions": {
+  "0": "This image showcases a vibrant mosaic tile wall. The tiles are of various colors, creating a patchwork effect. The patterns are reminiscent of a colorful kaleidoscope, with a multitude of hues and sha",
+  "1": "The image captures a grand, opulent room that exudes a sense of luxury and historical grandeur. Dominating the scene are three large chandeliers hanging from a high ceiling, casting a soft, warm glow ",
+  "2": "The image presents an interior view of a grand, ornate cathedral. The cathedral's ceiling, adorned with intricate blue-toned patterns and stucco art, arches over the space. The nave is spacious, with ",
+  "3": "This image captures the quintessential charm of a European village, bathed in the soft glow of dusk. Narrow cobblestone streets, lined with historic wooden houses, ascend gently, their timbered facade",
+  "4": "The image presents an aerial view of the Grand Canyon, a renowned landmark in Arizona. The canyon itself is a breathtaking display of geological formations, with layers of red, orange, and brown rock ",
+  "5": "A serene countryside scene unfolds under a clear blue sky. A quaint cottage, thatched in brown, sits nestled in a verdant landscape. The cottage, with its vibrant red chimney, exudes a warm, homely vi",
+  "6": "The image presents a surreal scene where a skull with a floral crown of roses and purple flowers is set against a vibrant purple background. The skull, with its hollow eye sockets, forms the central f",
+  "7": "The image presents a serene lakeside scene, divided into two halves. On the left, a tranquil river meanders through the landscape, where a solitary wooden boat rests on the water, gently reflecting th",
+  "8": "The image presents two contrasting views of a castle perched atop a cliff. The castle, with its towering structures and a surrounding wall, stands as a testament to medieval architecture. The top half",
+  "9": "The image presents a dramatic seascape featuring two different perspectives of the same red and white lighthouse. The lighthouse, a classic structure with a striking red top and a white body, stands p"
+ },
+ "throughput": {
+  "n_step_events": 100,
+  "median_s_per_traj_step": 18.3,
+  "median_sdxl_s_per_traj": 14.755,
+  "median_llava_s_per_traj": 3.5
+ },
+ "n_records": 2000,
+ "caption_words_mean": 133.619,
+ "caption_words_median": 124.0,
+ "share_prompts_clip_truncated": 0.984,
+ "flag_counts": {
+  "empty": 0,
+  "over_50_words": 1996,
+  "refusal": 0,
+  "length_cutoff": 0
+ }
+}

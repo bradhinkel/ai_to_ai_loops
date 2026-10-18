@@ -1,4 +1,4 @@
-# Project status — 2026-10-17 (session 4: runner built, pilot launched)
+# Project status — 2026-10-18 (session 5: A0-pilot finished, gate PASS)
 
 ## Decisions made by Brad (2026-10-16)
 1. **OSF.** Back up 2026-10-17. The whole project (14 files, 1.5 MB) is in `hintze_osf/` with `MANIFEST.tsv` (sha256 per file), fetched by `scripts/fetch_hintze_osf.py`. Parameters verified against `OSFcontinue.py`; corrections are in SPEC §4.1 and `DEVIATIONS.md`. Headline differences from the first draft: 1024px then resized to 512, 25 steps, CFG 5.0, PNG, captioner is `llava:latest` (7B) not 13B, and no caption truncation.
@@ -48,6 +48,7 @@ The runner works in lockstep steps, so controls act at step boundaries:
 2. DONE: `.venv` CUDA works; SDXL fits with `enable_model_cpu_offload()` (5.35 GB peak).
 3. DONE: no truncation in the code; captioner is `llava:latest` (7B Q4_0), not 13B.
 4. DONE: `src/` runner, configs, web UI, analysis script.
-5. DONE: smoke test and kill/resume test. A0-pilot launched 2026-10-17 ~15:20 (`runs/a0_pilot`, log `logs/a0_pilot.log`, progress `runs/a0_pilot/progress.json`).
-6. When the pilot finishes: `.venv/bin/python analysis/a0_report.py a0_pilot`, write `reports/a0_pilot.md` (gate: ran end to end, resume verified, measured s/step, drift curve vs Hintze, endpoint sheet), report to Brad. Do not start A0-core until Brad says so.
+5. DONE: smoke test and kill/resume test.
+6. DONE: A0-pilot ran 2026-10-17 15:17 to 2026-10-18 01:29, 2,000/2,000 records, no errors. Gate PASS; see `reports/a0_pilot.md`. Measured 18.3 s per trajectory-step, so A0-core projects to ~51 h. 13/20 endpoints are Hintze motifs (palatial interiors 6, cathedrals 5, village at dusk 2, lighthouse 1); drift plateaus at step 26. Captions average 134 words vs Hintze's 89 (flagged).
+6b. NEXT: wait for Brad's go-ahead, then `nohup .venv/bin/python -m src.runner configs/a0_core.yaml > logs/a0_core.out 2>&1 &`.
 7. Delete `data/hintze_figshare/temps_0.9.zip` after A0 (the extraction and the subset stay).

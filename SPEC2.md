@@ -59,6 +59,10 @@ Hintze's configuration as his OSF code actually runs it (`DEVIATIONS.md`, verifi
 
 **Pass criteria:** pooled elbow k within about 10 to 16; motifs match Hintze's categories; step-to-step distance plateaus within about 25 steps.
 
+**Reading of the elbow criterion (Brad, 2026-10-18, after the A0-core gate):** "matches Hintze's T = 0.9 data under the same rule" is sufficient. The 10–16 range was calibrated on Hintze's 12 pooled clusters from 700 trajectories across seven temperatures; a single temperature with 100 endpoints gives fewer clusters under any knee rule, and his own 100 T = 0.9 endpoints give k = 8 under our rule (ours: 7 on captions, 8 on images; `reports/a0_core.md`). From here on the elbow k of every run, with its sampling spread, is kept in `reports/elbow_table.md` (rebuilt by `analysis/elbow_table.py`) so that variation between runs, or patterns we have not yet identified, can be seen before later experiments are read against a single number.
+
+**A0-core result (2026-10-19 pod time):** motifs pass (67/100 endpoints in palatial interiors, cathedrals, village streets and houses), plateau at step 16 passes, elbow matches Hintze's T = 0.9 data under the same rule. Gate passed on that reading; archive built (`archive/a0_core_centroids.npz`, 8 DINOv2 clusters).
+
 **Output:** the attractor archive. Centroids of A0-core's final clusters in DINOv2, CLIP (text and image) and MiniLM space, plus labels and contact sheets.
 
 ## 4. Part 1 — Extensions of Hintze (what drives convergence?)

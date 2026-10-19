@@ -31,3 +31,5 @@ Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wordin
 - H3 (captioner dominates): E1-cap's overlap with A0 is lower than E1-gen's. Point estimate: E1-gen keeps most of A0's motifs (over half of its endpoints inside A0 radii), E1-cap keeps few (under a third).
 - Interaction: if E1-both's attractor set differs from both single swaps, that is reported as an interaction, not forced into H3.
 - Side prediction (Claude): Qwen obeys the 50-word instruction (median caption 40–55 words), so the CLIP-77 clip rarely fires in the Qwen cells and fires on nearly every LLaVA caption, as in A0.
+
+*Confirmed by Brad, 2026-10-18, before any E1 run, in his words: H1 each of the cells will converge; H2 each of the models will drive to a different set of attractors (may have some overlap); H3 the captioner will dominate the source of attractors for these models. The operational thresholds above are Claude's and stand as written.*

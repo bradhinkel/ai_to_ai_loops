@@ -1,0 +1,182 @@
+{
+ "built": "2026-10-18",
+ "rule": "knee of normalised inertia (max chord distance), KMeans n_init=10 random_state=0, k=2..min(25,n-1)",
+ "subsample": "200 random 80% subsamples without replacement, same rule",
+ "rows": {
+  "a0_pilot minilm captions": {
+   "n": 20,
+   "knee_rule": 8,
+   "knee_by_kmax": {
+    "15": 8
+   },
+   "silhouette_argmax": 6,
+   "silhouette_top3": [
+    6,
+    4,
+    8
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 16,
+    "median": 7.0,
+    "p5": 6.0,
+    "p95": 8.0,
+    "hist": {
+     "6": 30,
+     "7": 115,
+     "8": 55
+    }
+   },
+   "run": "a0_pilot",
+   "space": "minilm",
+   "step": [
+    99
+   ]
+  },
+  "a0_pilot dinov2 images": {
+   "n": 20,
+   "knee_rule": 8,
+   "knee_by_kmax": {
+    "15": 8
+   },
+   "silhouette_argmax": 6,
+   "silhouette_top3": [
+    6,
+    7,
+    5
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 16,
+    "median": 9.0,
+    "p5": 7.0,
+    "p95": 9.0,
+    "hist": {
+     "7": 11,
+     "8": 88,
+     "9": 94,
+     "10": 7
+    }
+   },
+   "run": "a0_pilot",
+   "space": "dinov2",
+   "step": [
+    99
+   ]
+  },
+  "a0_core minilm captions": {
+   "n": 100,
+   "knee_rule": 7,
+   "knee_by_kmax": {
+    "15": 7,
+    "20": 7,
+    "25": 7,
+    "30": 7,
+    "40": 14
+   },
+   "silhouette_argmax": 4,
+   "silhouette_top3": [
+    4,
+    5,
+    9
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 8.0,
+    "p5": 6.0,
+    "p95": 10.0,
+    "hist": {
+     "5": 3,
+     "6": 30,
+     "7": 47,
+     "8": 60,
+     "9": 44,
+     "10": 8,
+     "11": 7,
+     "12": 1
+    }
+   },
+   "run": "a0_core",
+   "space": "minilm",
+   "step": [
+    99
+   ]
+  },
+  "a0_core dinov2 images": {
+   "n": 100,
+   "knee_rule": 8,
+   "knee_by_kmax": {
+    "15": 5,
+    "20": 5,
+    "25": 8,
+    "30": 9,
+    "40": 10
+   },
+   "silhouette_argmax": 11,
+   "silhouette_top3": [
+    11,
+    13,
+    9
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 7.0,
+    "p5": 5.0,
+    "p95": 9.0,
+    "hist": {
+     "5": 18,
+     "6": 56,
+     "7": 56,
+     "8": 46,
+     "9": 23,
+     "10": 1
+    }
+   },
+   "run": "a0_core",
+   "space": "dinov2",
+   "step": [
+    99
+   ]
+  },
+  "Hintze T=0.9 minilm captions": {
+   "n": 99,
+   "knee_rule": 8,
+   "knee_by_kmax": {
+    "15": 7,
+    "20": 7,
+    "25": 8,
+    "30": 8,
+    "40": 9
+   },
+   "silhouette_argmax": 8,
+   "silhouette_top3": [
+    8,
+    10,
+    9
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 79,
+    "median": 8.0,
+    "p5": 6.0,
+    "p95": 10.0,
+    "hist": {
+     "5": 1,
+     "6": 11,
+     "7": 45,
+     "8": 67,
+     "9": 48,
+     "10": 19,
+     "11": 9
+    }
+   },
+   "run": "hintze_T0.9",
+   "space": "minilm",
+   "step": [
+    99
+   ]
+  }
+ }
+}

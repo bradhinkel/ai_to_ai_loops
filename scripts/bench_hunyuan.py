@@ -21,5 +21,14 @@ for steps in [int(s) for s in a.steps.split(",")]:
         except torch.cuda.OutOfMemoryError:
             r = {"steps": steps, "batch": b, "oom": True}; torch.cuda.empty_cache()
         print(json.dumps(r), flush=True); out.append(r)
+    if steps == 25:   # torch.compile on the DiT, fixed batch 16 (one recompile for the final partial batch in a real run)
+        try:
+            g.pipe.transformer = torch.compile(g.pipe.transformer, mode="max-autotune-no-cudagraphs")
+            g.generate_batch([prompt] * 16, list(range(16)))   # compile + warm-up
+            torch.cuda.synchronize(); t0 = time.time(); g.generate_batch([prompt] * 16, list(range(16))); dt = time.time() - t0
+            r = {"steps": steps, "batch": 16, "compiled": True, "s_per_image": round(dt / 16, 2), "batch_s": round(dt, 1)}
+        except Exception as e:  # noqa: BLE001
+            r = {"steps": steps, "batch": 16, "compiled": True, "error": repr(e)[:200]}
+        print(json.dumps(r), flush=True); out.append(r)
     g.release(); del g; torch.cuda.empty_cache()
 print("RESULT", json.dumps(out))

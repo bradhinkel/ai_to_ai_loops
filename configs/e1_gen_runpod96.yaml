@@ -8,6 +8,6 @@ trajectories: {first: 0, count: 100}
 temperature: 0.9
 prompt_clip: {enabled: true, max_tokens: 77}
 generator: {backend: hunyuan, model: Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers, revision: 5e96094e0ad19e7f475de8711f03634ca0ccc40c,
-            variant: null, dtype: float16, num_inference_steps: null, guidance_scale: null, height: null, width: null, resize_to: 512,
-            batch: 16, cpu_offload: false, release_mode: delete}
+            variant: null, dtype: float16, num_inference_steps: 25, guidance_scale: null, height: null, width: null, resize_to: 512,
+            batch: 16, cpu_offload: false, release_mode: delete, compile: true}
 captioner: {parallel: 8, unload_after_pass: false}

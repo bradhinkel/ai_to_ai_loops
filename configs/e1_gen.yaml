@@ -13,7 +13,7 @@ generator:
   revision: 5e96094e0ad19e7f475de8711f03634ca0ccc40c   # HF snapshot pinned 2026-10-18 (D12)
   variant: null
   dtype: float16
-  num_inference_steps: null    # null = pipeline default 50
+  num_inference_steps: 25    # null = pipeline default 50
   guidance_scale: null         # null = pipeline default 5.0
   height: null                 # null = 1024
   width: null

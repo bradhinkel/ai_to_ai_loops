@@ -1,7 +1,7 @@
 """Hunyuan-DiT v1.2 generator (Tencent; bilingual CLIP + mT5 text encoders, 1.5B DiT), the NEW generator of SPEC2 E1/E2.
 
-Same interface as SDXLGenerator. The model is run at its own defaults (diffusers HunyuanDiTPipeline: 1024x1024,
-50 steps, guidance 5.0, DDPM scheduler, no negative prompt) and the image is LANCZOS-resized to 512 like Hintze's.
+Same interface as SDXLGenerator. The model is run at the pipeline's defaults (1024x1024, guidance 5.0, DDPM scheduler,
+no negative prompt) except num_inference_steps, which E1 sets to 25 = A0's SDXL budget (D12 amendment 2026-10-19) and the image is LANCZOS-resized to 512 like Hintze's.
 Prompt clipping to CLIP-77 happens in the runner (src/prompt_clip.py), not here; this class only reports how many
 tokens each of its two encoders would have read (DEVIATIONS D12).
 """
@@ -40,6 +40,8 @@ class HunyuanGenerator:
             pipe.to("cuda")
         if int(self.cfg.get("batch", 1)) > 1:
             pipe.vae.enable_slicing()
+        if self.cfg.get("compile"):   # D12 amendment: torch.compile on the DiT only; numerics unchanged, one recompile for the final partial batch
+            pipe.transformer = torch.compile(pipe.transformer, mode=self.cfg.get("compile_mode") or "default")
         self.pipe = pipe
         steps = self.cfg["num_inference_steps"] if self.cfg.get("num_inference_steps") is not None else 50
         self._info = {
@@ -50,6 +52,7 @@ class HunyuanGenerator:
             "height": self.cfg.get("height") or 1024, "width": self.cfg.get("width") or 1024,
             "resized_to": self.cfg["resize_to"], "negative_prompt": None, "cpu_offload": bool(self.cfg.get("cpu_offload")),
             "batch": int(self.cfg.get("batch", 1)), "vae_slicing": int(self.cfg.get("batch", 1)) > 1,
+            "compile": bool(self.cfg.get("compile")), "compile_mode": (self.cfg.get("compile_mode") or "default") if self.cfg.get("compile") else None,
             "text_encoders": {"clip": pipe.tokenizer.model_max_length, "mt5": self.MT5_MAX},
             "alloc_conf": os.environ.get("PYTORCH_CUDA_ALLOC_CONF"),
             "diffusers": diffusers.__version__, "torch": torch.__version__,

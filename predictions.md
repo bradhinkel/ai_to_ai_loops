@@ -33,3 +33,5 @@ Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wordin
 - Side prediction (Claude): Qwen obeys the 50-word instruction (median caption 40–55 words), so the CLIP-77 clip rarely fires in the Qwen cells and fires on nearly every LLaVA caption, as in A0.
 
 *Confirmed by Brad, 2026-10-18, before any E1 run, in his words: H1 each of the cells will converge; H2 each of the models will drive to a different set of attractors (may have some overlap); H3 the captioner will dominate the source of attractors for these models. The operational thresholds above are Claude's and stand as written.*
+
+*Note added 2026-10-19, before any Hunyuan run: Hunyuan-DiT runs at 25 steps with torch.compile instead of its 50-step default (D12 amendment, for cost); the E1-cap pilot (SDXL + Qwen) was already running. No prediction above changes.*

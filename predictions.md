@@ -13,6 +13,8 @@ Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wordin
 - Step-to-step cosine distance plateaus by about step 20–25, as in the paper.
 - No cluster is a pixel-level or near-duplicate match to Hintze's images; the match is at the motif level only.
 
+*Note added 2026-10-18 after the A0-core results (prediction above unchanged): the knee rule gives k = 7 on our 100 MiniLM endpoints, outside 10–16, and gives k = 8 on Hintze's own 100 T = 0.9 endpoints under the same rule; the 10–16 range was calibrated on his 700 pooled trajectories across temperatures. See `reports/a0_core.md`.*
+
 ## A0-S (Sonnet captioner) — recorded 2026-10-16 by Brad
 - H1 (converges to a small attractor set): expected to hold.
 - H2 (same attractors as A0's LLaVA): expected to FAIL; Sonnet's attractors will differ.

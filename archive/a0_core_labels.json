@@ -1,0 +1,606 @@
+{
+ "meta": {
+  "run": "a0_core",
+  "built_at": "2026-10-18T19:27:11",
+  "n_traj": 100,
+  "k": 8,
+  "k_source": "elbow",
+  "elbow_k_dinov2": 8,
+  "inertia_dinov2": {
+   "2": 70.002,
+   "3": 62.1482,
+   "4": 57.9108,
+   "5": 55.4195,
+   "6": 53.5113,
+   "7": 51.5826,
+   "8": 49.8426,
+   "9": 48.154,
+   "10": 46.7264,
+   "11": 45.3999,
+   "12": 44.3263,
+   "13": 43.4448,
+   "14": 41.8265,
+   "15": 40.7448,
+   "16": 39.4645,
+   "17": 38.0421,
+   "18": 37.0429,
+   "19": 36.1619,
+   "20": 35.1288,
+   "21": 33.6289,
+   "22": 33.2492,
+   "23": 32.0656,
+   "24": 31.0529,
+   "25": 30.434
+  },
+  "final_step_requested": 99,
+  "final_steps_used": {
+   "0": 99,
+   "1": 99,
+   "2": 99,
+   "3": 99,
+   "4": 99,
+   "5": 99,
+   "6": 99,
+   "7": 99,
+   "8": 99,
+   "9": 99,
+   "10": 99,
+   "11": 99,
+   "12": 99,
+   "13": 99,
+   "14": 99,
+   "15": 99,
+   "16": 99,
+   "17": 99,
+   "18": 99,
+   "19": 99,
+   "20": 99,
+   "21": 99,
+   "22": 99,
+   "23": 99,
+   "24": 99,
+   "25": 99,
+   "26": 99,
+   "27": 99,
+   "28": 99,
+   "29": 99,
+   "30": 99,
+   "31": 99,
+   "32": 99,
+   "33": 99,
+   "34": 99,
+   "35": 99,
+   "36": 99,
+   "37": 99,
+   "38": 99,
+   "39": 99,
+   "40": 99,
+   "41": 99,
+   "42": 99,
+   "43": 99,
+   "44": 99,
+   "45": 99,
+   "46": 99,
+   "47": 99,
+   "48": 99,
+   "49": 99,
+   "50": 99,
+   "51": 99,
+   "52": 99,
+   "53": 99,
+   "54": 99,
+   "55": 99,
+   "56": 99,
+   "57": 99,
+   "58": 99,
+   "59": 99,
+   "60": 99,
+   "61": 99,
+   "62": 99,
+   "63": 99,
+   "64": 99,
+   "65": 99,
+   "66": 99,
+   "67": 99,
+   "68": 99,
+   "69": 99,
+   "70": 99,
+   "71": 99,
+   "72": 99,
+   "73": 99,
+   "74": 99,
+   "75": 99,
+   "76": 99,
+   "77": 99,
+   "78": 99,
+   "79": 99,
+   "80": 99,
+   "81": 99,
+   "82": 99,
+   "83": 99,
+   "84": 99,
+   "85": 99,
+   "86": 99,
+   "87": 99,
+   "88": 99,
+   "89": 99,
+   "90": 99,
+   "91": 99,
+   "92": 99,
+   "93": 99,
+   "94": 99,
+   "95": 99,
+   "96": 99,
+   "97": 99,
+   "98": 99,
+   "99": 99
+  },
+  "radius_pooled_p95_dinov2": 0.7466563376675448,
+  "kmeans": {
+   "n_init": 10,
+   "random_state": 0,
+   "space": "dinov2"
+  },
+  "models": {
+   "dinov2": {
+    "id": "facebook/dinov2-base",
+    "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+    "pooling": "CLS token, L2-normalised"
+   },
+   "minilm": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "pooling": "sentence-transformers default, L2-normalised"
+   },
+   "clip": {
+    "id": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "pooling": "projected image/text embeds, L2-normalised; text truncated at 77 tokens"
+   }
+  },
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  },
+  "note": "CLIP centroids are for steering only (SPEC2 §2: never grade with what steers)."
+ },
+ "clusters": {
+  "0": {
+   "size": 11,
+   "radius_p95_dinov2": 0.1110583536212767,
+   "mean_dist_dinov2": 0.08235920012355541,
+   "members": [
+    90,
+    17,
+    10,
+    88,
+    57,
+    59,
+    93,
+    9,
+    70,
+    4,
+    40
+   ],
+   "member_dist": [
+    0.0565,
+    0.057,
+    0.0583,
+    0.0603,
+    0.0813,
+    0.0825,
+    0.0885,
+    0.094,
+    0.1054,
+    0.1079,
+    0.1142
+   ],
+   "nearest_captions": [
+    {
+     "traj": 90,
+     "step": 99,
+     "dist": 0.0565,
+     "caption": "The image captures the grandeur of the Notre-Dame Cathedral, a renowned landmark in Paris. The interior is a stunning display of Gothic architecture, with high ceilings adorned with ornate stained glass windows that bathe the space in a soft, ethereal light. The long, narrow aisles, flanked by rows of wooden pews, lead towards the majestic altar at the far end. The perspective is from the nave, looking towards the altar, emphasizing the church's length and the sense of reverence and awe it inspires. The sunlight streaming in through the stained glass windows creates a serene atmosphere, while the stone columns and arches of the church's structure stand as silent sentinels, bearing witness to the passage of time. The image is a testament to the beauty of the cathedral, a place where art and spirituality come together in harmony."
+    },
+    {
+     "traj": 17,
+     "step": 99,
+     "dist": 0.057,
+     "caption": "The image captures the grandeur of a Gothic cathedral, a sanctuary of light and color. The cathedral's interior is a stunning display of architectural prowess, with its high ceiling adorned with intricate stained glass windows, their vibrant hues casting an ethereal glow throughout the space. The walls, constructed from rough stone, add a touch of ruggedness to the otherwise ethereal setting. The main altar, bathed in sunlight, serves as the focal point, its presence accentuated by the rows of pews, standing ready for worshippers. The overall composition exudes a sense of awe and reverence, a testament to the enduring power of faith."
+    },
+    {
+     "traj": 10,
+     "step": 99,
+     "dist": 0.0583,
+     "caption": "The image captures the grandeur of a cathedral, bathed in a rainbow of light that filters through its stained glass windows. The interior is a riot of color, with hues reflecting off the marble floor and the ornate ceiling. The cathedral is filled with pews, some of which are adorned with vibrant tapestries. The overall atmosphere is one of tranquility and reverence, a sanctuary of spiritual reflection."
+    }
+   ]
+  },
+  "1": {
+   "size": 34,
+   "radius_p95_dinov2": 0.32332275488271617,
+   "mean_dist_dinov2": 0.1692704121824257,
+   "members": [
+    5,
+    95,
+    92,
+    35,
+    82,
+    60,
+    58,
+    87,
+    43,
+    50,
+    27,
+    28,
+    83,
+    19,
+    84,
+    63,
+    85,
+    81,
+    66,
+    64,
+    37,
+    74,
+    53,
+    11,
+    0,
+    98,
+    30,
+    51,
+    80,
+    56,
+    68,
+    52,
+    41,
+    76
+   ],
+   "member_dist": [
+    0.078,
+    0.0863,
+    0.0924,
+    0.0956,
+    0.0981,
+    0.0982,
+    0.1038,
+    0.1058,
+    0.1061,
+    0.1093,
+    0.1124,
+    0.1145,
+    0.1273,
+    0.1294,
+    0.1298,
+    0.146,
+    0.1498,
+    0.1518,
+    0.1609,
+    0.1614,
+    0.17,
+    0.1785,
+    0.1793,
+    0.18,
+    0.1897,
+    0.1946,
+    0.224,
+    0.2242,
+    0.249,
+    0.2736,
+    0.2772,
+    0.295,
+    0.3759,
+    0.3873
+   ],
+   "nearest_captions": [
+    {
+     "traj": 5,
+     "step": 99,
+     "dist": 0.078,
+     "caption": "This image captures the opulence of a grand, ornate room. The ceiling, richly adorned with gold and marble detailing, stretches high, hinting at the architectural grandeur. The walls, painted in a soothing shade of gold, reflect the light from the chandelier, casting an ambient glow across the room.\n\nThe room is furnished with an eclectic mix of classical and contemporary pieces, all imbued with a sense of luxury. A large chandelier, hanging from the ceiling, casts a warm light that dances on the marble floor. The room is well-lit, with the soft glow of natural light filtering through the window curtains.\n\nThe furniture is arranged in a manner that invites conversation and social interaction. A large couch, adorned with a gold fabric, sits next to a table, ready for a gathering. A few other tables and chairs are strategically placed, offering ample seating.\n\nEach piece of furniture and decor, from the chandelier to the curtains, the couch to the chairs, are all meticulously placed, contributing to the room's elegant and refined aesthetic. The overall atmosphere is one of opulence and luxury, a testament to the room's status as a symbol of wealth and taste."
+    },
+    {
+     "traj": 95,
+     "step": 99,
+     "dist": 0.0863,
+     "caption": "This is a digital rendering or photograph of an opulent, grandiose room with classical architecture. The ceiling is high, ornate, and painted in a monochromatic color scheme with gold, blue, and white tones. Decorative plasterwork with intricate details adorns the ceiling, suggesting a baroque or rococo style. The walls are paneled with a deep blue fabric, adding to the room's elegance and formality. The windows are dressed with heavy blue curtains, allowing a soft light to filter into the room.\n\nCentered in the room is a large, regal chandelier, which hangs from the ceiling. The room is furnished with a sophisticated array of furniture, including multiple chairs and couches upholstered in fabrics coordinating with the room's color palette. The floors are covered with a large area rug, which mirrors the color and pattern of the room's walls.\n\nOn the walls, there are classical paintings or portraits, contributing to the room's grandeur and taste for fine art. The overall lighting in the room is subdued and ambient, casting gentle shadows and creating a serene and inviting atmosphere. The room appears to be designed for formal occasions or as a luxurious retreat within a larger stately home or institution."
+    },
+    {
+     "traj": 92,
+     "step": 99,
+     "dist": 0.0924,
+     "caption": "The image presents a grand, opulent room, brimming with a sense of regal splendor. The ceiling, painted in a rich shade of blue, is adorned with ornate gold details, adding a touch of majesty. The walls, also in gold, are tastefully decorated with delicate white curtains, partially drawn to allow natural light to filter in.\n\nThe room is furnished with a large sofa, accompanied by several armchairs and a plush carpet, all arranged around a central coffee table. The walls are adorned with chandeliers and sconces, their presence suggesting an air of sophistication and luxury.\n\nThe room is further embellished with a collection of decorative items, including vases and statues, each carefully placed to enhance the overall aesthetic. The overall color scheme is dominated by shades of blue and gold, with accents of white and beige adding to the room's opulent atmosphere. The image captures the essence of a luxurious and elegant living space, where every detail has been meticulously considered and executed."
+    }
+   ]
+  },
+  "2": {
+   "size": 9,
+   "radius_p95_dinov2": 0.3255302568508425,
+   "mean_dist_dinov2": 0.1817728320000415,
+   "members": [
+    2,
+    97,
+    44,
+    26,
+    31,
+    13,
+    47,
+    75,
+    77
+   ],
+   "member_dist": [
+    0.1142,
+    0.1147,
+    0.1338,
+    0.1377,
+    0.1595,
+    0.1627,
+    0.1913,
+    0.2387,
+    0.3834
+   ],
+   "nearest_captions": [
+    {
+     "traj": 2,
+     "step": 99,
+     "dist": 0.1142,
+     "caption": "The image presents a luxurious and elegant bedroom bathed in soft, natural light. Dominating the center of the room is a large, four-poster bed, its frame draped in flowing white fabric, creating a canopy effect. The bed is adorned with a single, neatly made blanket, suggesting a freshly made environment.\n\nTo the left of the bed, a tall window draped with white curtains allows a glimpse of lush greenery outside, connecting the indoor opulence with the natural world. Adjacent to the window, a plush white armchair invites relaxation.\n\nThe room is awash with light beige tones that evoke a sense of tranquility and luxury. The floor, carpeted in the same beige hue, adds to the serene ambiance. A single potted plant, placed on the floor next to the armchair, adds a touch of life and color to the otherwise neutral palette.\n\nThe room is devoid of any clutter or personal items, giving it a pristine and immaculate appearance, as if ready to welcome its first occupant. The overall impression is one of sophistication and quiet elegance, a perfect retreat from the outside world."
+    },
+    {
+     "traj": 97,
+     "step": 99,
+     "dist": 0.1147,
+     "caption": "The image presents a luxurious bedroom setting. Dominating the room is a large, four-poster bed adorned with white sheets and pillows. The bed frame is ornate, featuring a golden finish and intricate designs. The canopy, made of sheer fabric, drapes elegantly over the bed, creating a sense of opulence. \n\nTwo large chandeliers, boasting a similar gold finish, hang majestically from the ceiling, casting a soft, ambient light throughout the room. The walls are elegantly decorated with gold accents, adding to the room's opulent feel. \n\nIn the foreground, a vanity area is furnished with a large, luxurious rug that adds texture and warmth to the space. A nightstand stands nearby, topped with a lamp that contributes to the room's ambient lighting. \n\nThe room is completed with tasteful furnishings, including a chair and a side table, both matching the overall decor. The color palette is dominated by neutral tones, with the gold accents serving as a striking contrast. The overall atmosphere of the room is one of luxurious comfort and tranquility."
+    },
+    {
+     "traj": 44,
+     "step": 99,
+     "dist": 0.1338,
+     "caption": "The image captures two perspectives of a luxurious bedroom, bathed in soft light. The room is a symphony of opulence, with its high ceilings and chandeliers casting a warm glow. \n\nA large canopy bed, dressed in pristine white, dominates the space, its sheer drapes adding a touch of elegance. The bed, a sanctuary of rest, sits atop a carpeted floor, under the watchful gaze of a chandelier. \n\nThe walls, adorned with floor-to-ceiling windows, allow natural light to pour in, highlighting the white color scheme. The windows are dressed in light-filtering curtains, their fabric swaying gently in the breeze. \n\nScattered throughout the room are candles, their soft flames providing a sense of tranquility. The overall atmosphere of the room is one of serene luxury, a place where one can indulge in the comfort of the bed and the warmth of the candles."
+    }
+   ]
+  },
+  "3": {
+   "size": 8,
+   "radius_p95_dinov2": 0.7072886698510934,
+   "mean_dist_dinov2": 0.46954080311476204,
+   "members": [
+    6,
+    54,
+    65,
+    29,
+    55,
+    78,
+    46,
+    33
+   ],
+   "member_dist": [
+    0.2863,
+    0.2994,
+    0.3079,
+    0.3353,
+    0.534,
+    0.5943,
+    0.6741,
+    0.7252
+   ],
+   "nearest_captions": [
+    {
+     "traj": 6,
+     "step": 99,
+     "dist": 0.2863,
+     "caption": "This image captures a picturesque scene of a cobblestone street in an old town. The street is flanked by charming stone buildings, their walls adorned with vibrant flowers blooming from the windowsills. The buildings appear quaint and well-maintained, with green roofs that contrast beautifully with the blue sky.\n\nIn the foreground, a wooden balcony is filled with hanging baskets of flowers, adding a splash of color and life to the scene. The street itself is lined with potted plants, and a bicycle leans casually against a nearby building, hinting at the leisurely pace of life in this town.\n\nThe perspective of the image is from a higher vantage point, looking down the street, inviting the viewer to imagine walking down this charming alleyway. The overall color palette is warm and inviting, with the red flowers adding a pop of color against the more subdued tones of the buildings and cobblestones. This is a scene that seems to invite the viewer into its story, a snapshot of a day in the life of a serene old town."
+    },
+    {
+     "traj": 54,
+     "step": 99,
+     "dist": 0.2994,
+     "caption": "The image presents a serene scene of a quaint village at dusk. The sky is a canvas of twilight hues, with the warm glow of the sun partially visible on the left, casting long shadows on the cobblestone streets. The village itself is a picturesque hamlet, characterized by traditional stone houses with thatched roofs. A row of these houses lines the street on the right, their whitewashed walls contrasting beautifully with the dark green roofs.\n\nThe village is nestled amidst a landscape of rolling hills, their verdant slopes gently undulating under the fading light of the day. The streets are empty, adding to the tranquility of the scene. A few potted plants and hanging baskets add to the village's charm, creating a sense of homely comfort.\n\nThe village is devoid of modernity, contributing to its old-world allure. The image captures the essence of a bygone era, evoking a sense of timelessness and peace. The perspective of the image is such that the viewer is placed in the street, inviting them to imagine themselves walking through the village as the sun sets, bathed in the soft, warm light of the day's end."
+    },
+    {
+     "traj": 65,
+     "step": 99,
+     "dist": 0.3079,
+     "caption": "The image captures a serene village scene, where time seems to have stood still. A cobblestone street, its texture and color reminiscent of history, meanders through the village, inviting passersby to step onto its well-trodden path. On either side of the street, traditional houses with thatched roofs stand tall, their quaint charm accentuated by the green hills that serve as a tranquil backdrop. The colors in the image are rich and natural, creating a harmonious blend of earth tones and greens, punctuated by the warm hues of the houses. The overall composition exudes a sense of peace and timelessness, evoking feelings of wanderlust and a desire for simpler times."
+    }
+   ]
+  },
+  "4": {
+   "size": 24,
+   "radius_p95_dinov2": 0.7932127192456795,
+   "mean_dist_dinov2": 0.6866499578739224,
+   "members": [
+    24,
+    96,
+    36,
+    45,
+    15,
+    1,
+    69,
+    42,
+    62,
+    20,
+    14,
+    32,
+    23,
+    12,
+    71,
+    18,
+    61,
+    3,
+    22,
+    72,
+    73,
+    79,
+    99,
+    48
+   ],
+   "member_dist": [
+    0.5477,
+    0.559,
+    0.5709,
+    0.6122,
+    0.6351,
+    0.6365,
+    0.6476,
+    0.6495,
+    0.6548,
+    0.6587,
+    0.6671,
+    0.685,
+    0.69,
+    0.694,
+    0.6943,
+    0.7345,
+    0.7375,
+    0.7408,
+    0.7459,
+    0.7617,
+    0.7686,
+    0.7868,
+    0.7944,
+    0.8071
+   ],
+   "nearest_captions": [
+    {
+     "traj": 24,
+     "step": 99,
+     "dist": 0.5477,
+     "caption": "The image presents a captivating tropical sunset scene. The focal point is a picturesque road flanked by palm trees. The road, bathed in the soft glow of the sun, stretches into the distance, inviting viewers to imagine where it might lead. The sky above is a beautiful blend of warm hues, with the sun's last rays casting a golden light over the scene. This artwork beautifully encapsulates the serenity and allure of a tropical vacation."
+    },
+    {
+     "traj": 96,
+     "step": 99,
+     "dist": 0.559,
+     "caption": "The image captures the stunning grandeur of Antelope Canyon, a renowned landmark in Arizona. The canyon is a masterpiece of nature's artistry, with the sandstone walls winding through the frame. The walls themselves are a rich tapestry of hues, from deep reds to vibrant oranges, with streaks of pink and white adding to the visual spectacle. The perspective of the image, taken from within the canyon, invites the viewer to immerse themselves in the winding path that guides through the heart of this geological marvel. The overall composition of the image, with its sweeping shots of the canyon and close-up details of the sandstone walls, conveys a sense of awe-inspiring journey through a place where nature's hand has worked its magic."
+    },
+    {
+     "traj": 36,
+     "step": 99,
+     "dist": 0.5709,
+     "caption": "The image presents a tranquil scene of a dense jungle, teeming with lush vegetation and towering trees. A river, its waters a vibrant shade of blue, meanders through the center of the image, its surface shimmering under the sun. The jungle is alive with the sound of nature, with birds perched in the canopy and a variety of plants filling the scene. The sky is a clear blue, providing a serene backdrop to the verdant landscape below. The overall impression is one of harmony between nature and the environment."
+    }
+   ]
+  },
+  "5": {
+   "size": 4,
+   "radius_p95_dinov2": 0.4551507870047877,
+   "mean_dist_dinov2": 0.3692271824242186,
+   "members": [
+    49,
+    91,
+    94,
+    8
+   ],
+   "member_dist": [
+    0.2444,
+    0.3385,
+    0.4354,
+    0.4586
+   ],
+   "nearest_captions": [
+    {
+     "traj": 49,
+     "step": 99,
+     "dist": 0.2444,
+     "caption": "The image presents a digital painting of a fairy-tale castle nestled on a riverbank. The castle, with its towering presence and multiple turrets, exhibits an ancient charm. Its position on the riverbank offers a serene backdrop of water reflecting its grandeur. The lush greenery surrounding the castle adds a touch of nature's serenity to the scene. The sky above is painted in soft hues of blue, with a few wispy clouds scattered across. The castle's reflection on the water's surface creates a captivating mirror image. The image's overall composition and color palette evoke a sense of tranquility and timeless beauty."
+    },
+    {
+     "traj": 91,
+     "step": 99,
+     "dist": 0.3385,
+     "caption": "This image is a digital illustration depicting a grand, fantasy-themed castle situated within a lush, verdant landscape. The castle, with its multiple towers, is the focal point, featuring intricate architectural details in shades of pink and beige. It stands on a vast, well-maintained lawn, with a moat-like body of water encircling the base of the castle. The foreground showcases a manicured garden with neatly trimmed bushes and trees in full bloom, suggesting it might be spring. Surrounding the castle, there's a wall adorned with flags and crests, adding to the grandeur of the scene. In the distance, you can see pink cherry blossoms and a clear blue sky, indicating a peaceful, serene day. There are no visible texts or brands in the image. The style of the image is whimsical and vibrant, reminiscent of the aesthetic commonly found in animated movies. The color palette is dominated by pastel hues, creating a dreamy and idyllic atmosphere."
+    },
+    {
+     "traj": 94,
+     "step": 99,
+     "dist": 0.4354,
+     "caption": "The image captures a serene, winter-themed village nestled on a hillside. The village is quaintly constructed with traditional European-style buildings, their timber facades and thatched roofs hinting at a rich history. Snow has blanketed the roofs, the ground, and the surrounding landscape, lending an air of tranquility and beauty to the scene. The architecture is distinctly alpine, characterized by the use of wood and stone, creating a harmonious blend with the natural surroundings.\n\nThe village is perched on the hill, with the houses overlooking a valley. A river, partially frozen, winds its way through the village, serving as a picturesque focal point. Snow-covered mountains rise in the distance, their peaks dusted with the same snow that adorns the village. The sky above is overcast, with hints of a light snowfall adding to the wintry atmosphere. The overall mood of the image is peaceful, evoking a sense of quiet solitude in the midst of nature's beauty."
+    }
+   ]
+  },
+  "6": {
+   "size": 5,
+   "radius_p95_dinov2": 0.19253842408230243,
+   "mean_dist_dinov2": 0.13947837727387197,
+   "members": [
+    7,
+    34,
+    38,
+    21,
+    89
+   ],
+   "member_dist": [
+    0.0971,
+    0.1065,
+    0.1104,
+    0.1903,
+    0.1931
+   ],
+   "nearest_captions": [
+    {
+     "traj": 7,
+     "step": 99,
+     "dist": 0.0971,
+     "caption": "This image is a composite of two photographs, both showcasing a grand red brick Victorian mansion. The mansion is a classic example of the Queen Anne style, characterized by its wraparound porch, turrets, and intricate detailing. The upper photograph captures the front facade of the house, displaying its arched windows, peaked roof, and dormer windows. The lower photograph offers a side view of the mansion, highlighting its ornate eaves, elaborate gables, and the surrounding gardens with mature trees. The house exudes a sense of opulence and history, evoking a bygone era of grandeur and architectural innovation."
+    },
+    {
+     "traj": 34,
+     "step": 99,
+     "dist": 0.1065,
+     "caption": "This is a watercolor illustration of a large, two-story Victorian-style house with wrap-around porches. The house is a mix of warm and cool colors, suggesting a serene and inviting atmosphere. It features a prominent gable and dormers, with ornate detailing visible on the front facade. The porches are adorned with lush greenery, adding a touch of nature to the architectural features. The house is nestled in a garden with a variety of shrubs and trees, enhancing the sense of a secluded retreat. A winding path leads up to the house, inviting one to explore. The setting suggests a peaceful, suburban neighborhood, with well-maintained lawns and a sense of privacy. The overall style of the image evokes a sense of tranquility and elegance."
+    },
+    {
+     "traj": 38,
+     "step": 99,
+     "dist": 0.1104,
+     "caption": "The image showcases a picturesque scene of a Victorian-style house nestled amidst a garden teeming with blooming flowers. The house, painted in a soft pink hue, stands out against the verdant greenery. Its white picket fence adds a touch of whimsy to the structure. A tree in the foreground provides a canopy of shade over the lawn, under which two pink hydrants can be seen. The house is bordered by a fence, and a tree stands in the distance. The house is adorned with white trimmings that contrast beautifully with the pink walls. The garden is vibrant with a variety of pink flowers, adding a burst of color to the scene."
+    }
+   ]
+  },
+  "7": {
+   "size": 5,
+   "radius_p95_dinov2": 0.5886144366965287,
+   "mean_dist_dinov2": 0.4515743767521814,
+   "members": [
+    39,
+    86,
+    67,
+    16,
+    25
+   ],
+   "member_dist": [
+    0.2837,
+    0.3356,
+    0.4801,
+    0.5637,
+    0.5948
+   ],
+   "nearest_captions": [
+    {
+     "traj": 39,
+     "step": 99,
+     "dist": 0.2837,
+     "caption": "The image showcases a dynamic soccer player captured in mid-kick, his foot extended towards a vibrant orange soccer ball. He is dressed in an orange jersey, the team's color, indicating his role as a member of the team. His posture suggests a powerful kick, with his leg fully extended, adding to the sense of movement. The background is neutral, allowing the focus to remain on the player and his action. The player's concentration and the fluidity of his motion convey the intensity and physicality of the sport."
+    },
+    {
+     "traj": 86,
+     "step": 99,
+     "dist": 0.3356,
+     "caption": "In this vivid image, a soccer player, garbed in a green uniform, is captured in the midst of action. He's positioned in the center, his body poised on one foot, as he prepares to kick the soccer ball. The player's arms are outstretched, hands gripping the ball, ready to send it towards the goal. The ball is visible in the image, adding to the anticipation of the impending kick. The background is a blur of stadium lights, indicating a lively game in progress."
+    },
+    {
+     "traj": 67,
+     "step": 99,
+     "dist": 0.4801,
+     "caption": "The image presents a dynamic scene featuring a ballet dancer, frozen mid-pose in a ballet studio. The dancer, clad in a vibrant pink tutu, is caught in the midst of a powerful ballet move. The legs are extended high, the arms are raised in a graceful pose, and the head is held high, displaying a concentrated expression. The backdrop is a stark white, providing a contrast that accentuates the dancer's movements and the pink tutu. The image captures the essence of ballet, showcasing the precision, power, and elegance of the dancer's performance."
+    }
+   ]
+  }
+ }
+}

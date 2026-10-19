@@ -1,0 +1,127 @@
+{
+ "run": "e1_cap_pilot",
+ "n_traj": 20,
+ "steps_complete": {
+  "0": 100,
+  "1": 100,
+  "2": 100,
+  "3": 100,
+  "4": 100,
+  "5": 100,
+  "6": 100,
+  "7": 100,
+  "8": 100,
+  "9": 100,
+  "10": 100,
+  "11": 100,
+  "12": 100,
+  "13": 100,
+  "14": 100,
+  "15": 100,
+  "16": 100,
+  "17": 100,
+  "18": 100,
+  "19": 100
+ },
+ "mean_step_drift_first5": [
+  0.3199999928474426,
+  0.28200000524520874,
+  0.27900001406669617,
+  0.27000001072883606,
+  0.25
+ ],
+ "mean_step_drift_last20": 0.2029767483472824,
+ "plateau_step": 14,
+ "elbow_k": 9,
+ "k_used_for_sheet": 10,
+ "inertia": {
+  "2": 8.011,
+  "3": 6.955,
+  "4": 6.07,
+  "5": 5.369,
+  "6": 4.852,
+  "7": 4.296,
+  "8": 3.685,
+  "9": 3.103,
+  "10": 2.698,
+  "11": 2.204,
+  "12": 1.909,
+  "13": 1.503,
+  "14": 1.221,
+  "15": 0.964,
+  "16": 0.711,
+  "17": 0.486,
+  "18": 0.275,
+  "19": 0.114
+ },
+ "clusters": {
+  "0": [
+   1
+  ],
+  "1": [
+   9,
+   12,
+   14,
+   17,
+   18,
+   19
+  ],
+  "2": [
+   2,
+   15
+  ],
+  "3": [
+   0,
+   5,
+   8,
+   11
+  ],
+  "4": [
+   3,
+   10
+  ],
+  "5": [
+   6
+  ],
+  "6": [
+   16
+  ],
+  "7": [
+   4
+  ],
+  "8": [
+   13
+  ],
+  "9": [
+   7
+  ]
+ },
+ "cluster_example_captions": {
+  "0": "A hooded figure draped in a long, dark cloak stands solemnly in a mist-shrouded forest. Bare branches reach towards the ethereal fog, creating an eerie and mysterious ambiance. The figure's face is co",
+  "1": "Silhouetted trees stand tall on islands, their branches reaching skyward against a radiant lavender sunset. The water mirrors their graceful forms, creating a serene and ethereal symphony of purple hu",
+  "2": "A grand ballroom bathed in golden light, tables adorned with white flowers and candles, a soaring chandelier casting a luminous glow, marble columns rising to a ceiling of intricate gold detailing, cr",
+  "3": "A opulent emerald bathroom bursts with luxury, its walls and bathtub in deep emerald tones, adorned with gold ornate detailing. A grand crystal chandelier hangs above, casting a warm glow. Marble floo",
+  "4": "A serene scene where pink cherry blossoms drape a tranquil pond, with swans gracefully gliding beneath a stone bridge, casting delicate reflections on the water's surface, under a soft, dreamy sky.",
+  "5": "A whimsical, moss-covered stone cottage sits nestled among lush greenery, its pink door and windows framed by blooming pink roses and vibrant green ivy. A sunlit stone path leads to the door, inviting",
+  "6": "In a grand ballroom bathed in a dreamy pink hue, graceful ballerinas in soft pink tutus perform a synchronized pas de deux, their arms elegantly raised, surrounded by opulent chandeliers and gilded or",
+  "7": "In a verdant, misty forest, an ancient staircase winds upwards, its mossy steps and vibrant greenery enveloped by the ethereal veil of fog, inviting the viewer into a mysterious and enchanting realm.",
+  "8": "A bride in a flowing white gown stands gracefully in the heart of a grand cathedral, bathed in radiant sunlight streaming through vibrant stained glass windows. The floor beneath her sparkles with a k",
+  "9": "A serene landscape unfolds under a soft, pastel sky, where cherry blossoms frame a traditional pagoda reflecting perfectly in a glassy lake. Behind, Mount Fuji looms majestically in the distance, its "
+ },
+ "throughput": {
+  "n_step_events": 100,
+  "median_s_per_traj_step": 2.8,
+  "median_sdxl_s_per_traj": 1.89,
+  "median_llava_s_per_traj": 0.8949999999999999
+ },
+ "n_records": 2000,
+ "caption_words_mean": 37.4625,
+ "caption_words_median": 36.0,
+ "share_prompts_clip_truncated": 0.0,
+ "flag_counts": {
+  "empty": 0,
+  "over_50_words": 182,
+  "refusal": 0,
+  "length_cutoff": 0
+ }
+}

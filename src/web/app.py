@@ -132,7 +132,7 @@ async function load(){
  <div><button onclick="act('start')">start</button><button onclick="act('pause')">pause</button><button onclick="act('resume')">resume</button><button onclick="act('stop')">stop</button><button onclick="act('restart')">restart</button></div>
  <table><tr><th>step</th><td>${p.step} / ${p.steps_total}</td><th>phase</th><td>${p.phase||''}</td></tr>
  <tr><th>trajectory-steps</th><td>${p.completed_steps} / ${p.total_steps}</td><th>s / traj-step</th><td>${p.s_per_traj_step||'-'} (eta ${p.eta_hours||'-'} h)</td></tr>
- <tr><th>config</th><td>${s.config_path||''}</td><th>git / llava</th><td>${(s.git_commit||'').slice(0,8)} / ${(s.captioner||'').slice(0,12)}</td></tr>
+ <tr><th>config</th><td>${s.config_path||''}</td><th>git / captioner</th><td>${(s.git_commit||'').slice(0,8)} / ${(s.captioner||'').slice(0,12)}</td></tr>
  <tr><th>updated</th><td>${p.updated||''}</td><th>last step</th><td>${JSON.stringify(p.last_step||{})}</td></tr></table>
  <h4>latest image per trajectory</h4><div class=thumbs>${thumbs}</div>
  <h4>log</h4><pre>${s.log_tail.join('\\n')}</pre><h4>gpu.csv</h4><pre>${s.gpu_tail.join('\\n')}</pre><h4>events</h4><pre>${s.events_tail.join('\\n')}</pre>`;

@@ -18,6 +18,9 @@ class OllamaCaptioner:
             for m in self.client.list().models:
                 if m.model == self.cfg["model"]:
                     digest = m.digest
+            want = self.cfg.get("digest_prefix")
+            if want and not (digest or "").startswith(want):
+                raise RuntimeError(f"{self.cfg['model']} resolves to digest {digest!r}, not the pinned {want!r}; the tag moved. Do not run; report to Brad.")
             show = self.client.show(self.cfg["model"])
             try:
                 version = requests.get(self.cfg["host"].rstrip("/") + "/api/version", timeout=10).json().get("version")

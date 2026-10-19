@@ -1,0 +1,11 @@
+# E1-cap on the RunPod RTX Pro 6000 96 GB: same parameters as e1_cap.yaml, both models resident, 16 prompts per
+# generator call, 8 concurrent captions (OLLAMA_PAR=8). Launch: CFG=configs/e1_cap_runpod96.yaml bash scripts/runpod_launch.sh smoke|core
+run_name: e1_cap
+arm: E1-cap
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+prompt_clip: {enabled: true, max_tokens: 77}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {model: "qwen2.5vl:7b", digest_prefix: "5ced39dfa4ba", parallel: 8, unload_after_pass: false}

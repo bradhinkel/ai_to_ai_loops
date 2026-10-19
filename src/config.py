@@ -12,7 +12,9 @@ DEFAULTS = {
         "file": "hintze_osf/Generation Scripts For HPCC/reservoir_100.pkl",
         "sdxl_base_seed": 20261017,  # sdxl_seed = base + traj*10000 + step  (D3)
     },
+    "prompt_clip": {"enabled": False, "max_tokens": 77},   # E1: clip every prompt to CLIP-77 before any generator (SPEC2 §4, D13); A0 relies on SDXL's own cut
     "generator": {
+        "backend": "sdxl",          # sdxl | hunyuan (src/generators/hunyuan.py)
         "model": "stabilityai/stable-diffusion-xl-base-1.0",
         "variant": "fp16",
         "dtype": "float16",
@@ -29,6 +31,7 @@ DEFAULTS = {
     "captioner": {
         "backend": "ollama",
         "model": "llava:latest",
+        "digest_prefix": "8dd30f6b0cb1",   # the run refuses to start if the Ollama tag resolves to a different digest (D2)
         "host": "http://127.0.0.1:11434",
         "instruction": ("Describe this image in vivid, artistic terms. The description must be 50 words or fewer. "
                         "Do not exceed the limit. Return only the description. Do not explain."),

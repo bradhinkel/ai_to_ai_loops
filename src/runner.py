@@ -58,10 +58,15 @@ class Runner:
         self.traj_ids = list(range(tr["first"], tr["first"] + tr["count"]))
         self.stores = {t: TrajStore(self.run_dir, t, self.seed_prompts[t]) for t in self.traj_ids}
 
-        from .generators.sdxl import SDXLGenerator
+        from .generators.hunyuan import make_generator
         from .captioners.ollama_llava import OllamaCaptioner
-        self.gen = SDXLGenerator(cfg["generator"])
+        self.gen = make_generator(cfg["generator"])
         self.cap = OllamaCaptioner(cfg["captioner"], cfg["temperature"], self.log)
+        self.clipper = None
+        if cfg.get("prompt_clip", {}).get("enabled"):
+            from .prompt_clip import PromptClipper
+            self.clipper = PromptClipper(cfg["prompt_clip"]["max_tokens"])
+        self.gen_label = cfg["generator"].get("backend", "sdxl"); self.cap_label = cfg["captioner"]["model"].split(":")[0]
         self.gpu = GpuLogger(ROOT / cfg["gpu_log"]["path"], cfg["gpu_log"]["interval_s"], cfg["run_name"])
         self.step_times = []
         self.control_path = self.run_dir / "control.json"
@@ -170,28 +175,35 @@ class Runner:
                 # ---- pass 1: SDXL ----
                 t_gen = time.time(); n_gen = 0
                 if todo_gen:
-                    self.phase = f"sdxl step {step}"; self.progress(step)
-                    if two_pass: self.wait_for_vram("before SDXL")
+                    self.phase = f"{self.gen_label} step {step}"; self.progress(step)
+                    if two_pass: self.wait_for_vram("before generator")
                     self.gen.load(); gen_info = gen_info or self.gen.info()
+                    if self.clipper and "prompt_clip" not in gen_info:
+                        gen_info["prompt_clip"] = self.clipper.info()
                     B = max(1, int(self.cfg["generator"].get("batch", 1)))
                     for i0 in range(0, len(todo_gen), B):
                         chunk = todo_gen[i0:i0 + B]
-                        prompts, sources, seeds = [], [], []
+                        prompts, raws, sources, seeds, clips = [], [], [], [], []
                         for t in chunk:
-                            prompt, source = self.stores[t].prompt_for(step)
-                            prompts.append(prompt); sources.append(source)
+                            raw, source = self.stores[t].prompt_for(step)
+                            prompt, cinfo = self.clipper.clip(raw) if self.clipper else (raw, None)
+                            prompts.append(prompt); raws.append(raw); sources.append(source); clips.append(cinfo)
                             seeds.append(self.cfg["seeds"]["sdxl_base_seed"] + t * 10000 + step)
                         results = self.gen.generate_batch(prompts, seeds)
-                        for t, prompt, source, seed, (image, ginfo) in zip(chunk, prompts, sources, seeds, results):
-                            self.stores[t].write_image(step, image, {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
-                                                                     "prompt": prompt, "prompt_source": source, "prompt_words": len(prompt.split()),
-                                                                     "sdxl_seed": seed, "generator": gen_info, "generated_at": now(), **ginfo})
+                        for t, prompt, raw, source, seed, cinfo, (image, ginfo) in zip(chunk, prompts, raws, sources, seeds, clips, results):
+                            rec = {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
+                                   "prompt": prompt, "prompt_source": source, "prompt_words": len(prompt.split()),
+                                   "sdxl_seed": seed, "generator": gen_info, "generated_at": now(), **ginfo}
+                            if cinfo is not None:
+                                rec.update({"prompt_raw": raw, **cinfo})       # prompt = what the generator got; prompt_raw = the caption before the CLIP-77 clip
+                            self.stores[t].write_image(step, image, rec)
                             n_gen += 1
-                            self.log.info("step %3d traj %3d image %5.1fs (batch %d) peak %.2f GB tokens %d%s", step, t, ginfo["gen_time_s"], ginfo["gen_batch_size"],
-                                          ginfo["gen_peak_alloc_gb"], ginfo["prompt_tokens_clip"], " (clip-truncated)" if ginfo["prompt_truncated_by_clip"] else "")
+                            self.log.info("step %3d traj %3d image %5.1fs (batch %d) peak %.2f GB tokens %d%s%s", step, t, ginfo["gen_time_s"], ginfo["gen_batch_size"],
+                                          ginfo["gen_peak_alloc_gb"], ginfo["prompt_tokens_clip"], " (clip-truncated)" if ginfo["prompt_truncated_by_clip"] else "",
+                                          f" (clipped {cinfo['clip_tokens_before']}->{cinfo['clip_tokens_after']} tok)" if cinfo and cinfo["clipped"] else "")
                         if self.stop_requested: break
                     if two_pass:
-                        left = self.gen.release(); self.log.info("SDXL released, torch alloc %.2f GB, nvidia-smi %.0f MB", left, vram_used_mb())
+                        left = self.gen.release(); self.log.info("generator released, torch alloc %.2f GB, nvidia-smi %.0f MB", left, vram_used_mb())
                 gen_s = time.time() - t_gen
                 if self.stop_requested: break
                 self.wait_if_paused(step)
@@ -199,8 +211,8 @@ class Runner:
 
                 # ---- pass 2: LLaVA ----
                 t_cap = time.time(); n_cap = 0
-                self.phase = f"llava step {step}"; self.progress(step)
-                if two_pass: self.wait_for_vram("before LLaVA")
+                self.phase = f"{self.cap_label} step {step}"; self.progress(step)
+                if two_pass: self.wait_for_vram("before captioner")
                 cap_info = self.cap.info()
                 todo_cap = [t for t in todo_cap if not self.stores[t].is_complete(step)]
 
@@ -234,8 +246,8 @@ class Runner:
                 self.step_times.append(rec)
                 append_jsonl(self.events_path, {"event": "step_done", **rec})
                 self.progress(step)
-                self.log.info("step %3d done: %.0fs total, %.1fs per trajectory-step (sdxl %.1fs, llava %.1fs per traj); eta %.1f h",
-                              step, rec["step_s"], rec["s_per_traj_step"], gen_s / n, cap_s / n, read_json(self.progress_path).get("eta_hours", float("nan")))
+                self.log.info("step %3d done: %.0fs total, %.1fs per trajectory-step (%s %.1fs, %s %.1fs per traj); eta %.1f h",
+                              step, rec["step_s"], rec["s_per_traj_step"], self.gen_label, gen_s / n, self.cap_label, cap_s / n, read_json(self.progress_path).get("eta_hours", float("nan")))
                 if self.stop_requested: break
         finally:
             self.phase = "exit"

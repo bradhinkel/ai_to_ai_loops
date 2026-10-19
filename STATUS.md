@@ -54,3 +54,8 @@ The runner works in lockstep steps, so controls act at step boundaries:
 6c. NEXT (step 2): `scripts/runpod_setup.sh` (Ollama install, pull + digest check 8dd30f6b0cb1, uv venv, SDXL download), network volume for `runs/`, rsync back; smoke run on the pod; then launch A0-core there.
 6d. Brad also asked that the GitHub repo be pushed at the end of each phase.
 7. Delete `data/hintze_figshare/temps_0.9.zip` after A0 (the extraction and the subset stay).
+
+## Session 6 (2026-10-18 evening): A0-core on the pod; E1 prep
+- A0-core runs on the RunPod RTX Pro 6000 96 GB (`configs/a0_core_runpod96.yaml`, batch 16, 8 Ollama slots): 2.5 s per trajectory-step, ~7 h; data pulled back to the laptop every 20 min (`scripts/runpod_pull_loop.sh`). Report and archive follow when it finishes.
+- SPEC2.md reviewed and amended (Part 0 facts, 50-word limit is instruction-only, E1 decisions). Brad decided E1: Qwen2.5-VL 7B captioner (`qwen2.5vl:7b`, digest 5ced39dfa4ba), Hunyuan-DiT v1.2 generator at its defaults, CLIP-77 clip in every cell; caption length deferred to E4. Both NEW models are reused in E2 (E1-both = E2-QE).
+- Built: `src/prompt_clip.py` (D13), `src/generators/hunyuan.py` with `make_generator` factory (D12), `captioner.digest_prefix` pin, generic phase labels in the runner, `configs/e1_{cap,gen,both}.yaml` + `_runpod96` variants, `scripts/runpod_setup_e1.sh`, `scripts/runpod_launch.sh smoke|pilot|core` for any CFG. E1 predictions drafted in `predictions.md` for Brad to confirm. Analysis tooling (DINOv2 embeddings, A0 archive, E1 overlap report) in `analysis/`.

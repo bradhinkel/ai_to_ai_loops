@@ -1,0 +1,10 @@
+# E1-cap (SPEC2 §4): Hintze's generator (SDXL) with the NEW captioner Qwen2.5-VL 7B. Prompt clipped to CLIP-77 before the
+# generator so every E1 cell has A0's channel width (D13). Laptop two-pass settings; pilot = --count 20 --run-name e1_cap_pilot.
+run_name: e1_cap
+arm: E1-cap
+mode: two_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+prompt_clip: {enabled: true, max_tokens: 77}
+captioner: {model: "qwen2.5vl:7b", digest_prefix: "5ced39dfa4ba"}   # pinned 2026-10-18 (D14)

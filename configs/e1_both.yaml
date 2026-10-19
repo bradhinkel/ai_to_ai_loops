@@ -1,0 +1,20 @@
+# E1-both (SPEC2 §4): Hunyuan-DiT v1.2 + Qwen2.5-VL 7B (both NEW). Prompt clipped to CLIP-77 (D13). Laptop two-pass settings.
+run_name: e1_both
+arm: E1-both
+mode: two_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+prompt_clip: {enabled: true, max_tokens: 77}
+generator:
+  backend: hunyuan
+  model: Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers
+  revision: 5e96094e0ad19e7f475de8711f03634ca0ccc40c
+  variant: null
+  dtype: float16
+  num_inference_steps: null
+  guidance_scale: null
+  height: null
+  width: null
+  resize_to: 512
+captioner: {model: "qwen2.5vl:7b", digest_prefix: "5ced39dfa4ba"}

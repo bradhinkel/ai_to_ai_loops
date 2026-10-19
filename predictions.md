@@ -22,3 +22,10 @@ Quantified for the A0-core gate (SPEC §4.3), added by Claude with Brad's wordin
 - P2: the lay panel rates the A0 attractor images (lighthouses, cathedrals) as more interesting than the artist panel does.
 - P3: preference models (PickScore, ImageReward, HPSv2) correlate more with the lay panel than with the artists; VLM-rubric raters fall in between; no AI rater matches the artists as well as the artists match each other.
 - P4: the artist panel's interest peaks at higher novelty than the lay panel's.
+
+## E1 model factorial (SPEC2 §4: Qwen2.5-VL 7B captioner, Hunyuan-DiT v1.2 generator, CLIP-77 clip in every cell) — drafted 2026-10-18 by Claude from Brad's hypotheses H1–H3 in SPEC2 §4. Brad to confirm or amend before the first E1 run starts.
+- H1 (every cell converges): each of E1-cap, E1-gen, E1-both reaches a step-to-step DINOv2 drift plateau by about step 25 and a pooled elbow k below 20 on its final-step images.
+- H2 (attractors differ by model): fewer than half of E1-both's endpoints fall inside A0's cluster radii in DINOv2 space, and the joint clustering shows clusters unique to E1-both.
+- H3 (captioner dominates): E1-cap's overlap with A0 is lower than E1-gen's. Point estimate: E1-gen keeps most of A0's motifs (over half of its endpoints inside A0 radii), E1-cap keeps few (under a third).
+- Interaction: if E1-both's attractor set differs from both single swaps, that is reported as an interaction, not forced into H3.
+- Side prediction (Claude): Qwen obeys the 50-word instruction (median caption 40–55 words), so the CLIP-77 clip rarely fires in the Qwen cells and fires on nearly every LLaVA caption, as in A0.

@@ -17,3 +17,5 @@ Resources/*.docx
 *.tmp
 .ipynb_checkpoints/
 GIT_COMMIT
+# embedding caches (rebuilt by analysis/embed.py)
+analysis/cache/

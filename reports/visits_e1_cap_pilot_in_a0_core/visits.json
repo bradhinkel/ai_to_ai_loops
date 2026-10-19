@@ -1,0 +1,1018 @@
+{
+ "probes_run": "e1_cap_pilot",
+ "scan_run": "a0_core",
+ "probe_source": "k-means k=10 on e1_cap_pilot step-99 DINOv2",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    0,
+    5,
+    8,
+    11
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.131,
+   "n_visited": 3,
+   "n_stayed": 0,
+   "n_transient": 3,
+   "median_first_visit": 45.0,
+   "max_transient_dwell": 7,
+   "nearest": 0.08,
+   "examples": [
+    {
+     "traj": 19,
+     "step": 92,
+     "dist": 0.08,
+     "stayed": false,
+     "caption": "A luxurious and opulent living room, bathed in a soft, ethereal light. Ornate chandeliers cast a warm glow over the rich, gold-patterned marble flooring. Giant,"
+    },
+    {
+     "traj": 63,
+     "step": 49,
+     "dist": 0.085,
+     "stayed": false,
+     "caption": "The image presents an opulent room bathed in soft, natural light. Dominating the scene is a luxurious bathtub, its surface gleaming under the chandelier's glow."
+    },
+    {
+     "traj": 84,
+     "step": 9,
+     "dist": 0.106,
+     "stayed": false,
+     "caption": "The image showcases a luxurious bathroom, bathed in an opulent white color scheme. Dominating the scene is a large white chandelier hanging from the ceiling, ca"
+    },
+    {
+     "traj": 64,
+     "step": 77,
+     "dist": 0.205,
+     "stayed": false,
+     "caption": "The image presents a serene and spacious bathroom, illuminated by the soft glow of a warm sun filtering through three large stained-glass windows. The windows a"
+    },
+    {
+     "traj": 44,
+     "step": 57,
+     "dist": 0.223,
+     "stayed": false,
+     "caption": "The image captures a grand, opulent room bathed in the soft glow of natural light. The room is a symphony of luxury, with its high, ornate ceiling painted in a "
+    },
+    {
+     "traj": 30,
+     "step": 26,
+     "dist": 0.288,
+     "stayed": false,
+     "caption": "The image showcases an opulent room that exudes grandeur and elegance. The ceiling, painted in a striking shade of blue, is embellished with intricate designs a"
+    },
+    {
+     "traj": 85,
+     "step": 90,
+     "dist": 0.304,
+     "stayed": false,
+     "caption": "The image captures a grandeur, a palace's grandeur. The room is a symphony of opulence, with golden ceilings that stretch high above, adorned with intricate cha"
+    },
+    {
+     "traj": 92,
+     "step": 73,
+     "dist": 0.306,
+     "stayed": false,
+     "caption": "The image captures a grand room, bathed in soft, natural light that streams in through large windows on the left. The room is awash with a palette of light blue"
+    },
+    {
+     "traj": 52,
+     "step": 20,
+     "dist": 0.389,
+     "stayed": false,
+     "caption": "The image showcases a grand and opulent room, reminiscent of a royal palace. The room's ceiling is adorned with an intricate, gold-colored ceiling painting, add"
+    },
+    {
+     "traj": 83,
+     "step": 72,
+     "dist": 0.437,
+     "stayed": false,
+     "caption": "The image captures the opulence of a luxurious interior, featuring a grand dining room and a stately living room. The interplay of gilded ceilings, chandeliers,"
+    },
+    {
+     "traj": 11,
+     "step": 53,
+     "dist": 0.468,
+     "stayed": false,
+     "caption": "The image portrays a grand, ornate room that exudes opulence and classical elegance. Dominating the center is a large, ornate chandelier, casting a warm, inviti"
+    },
+    {
+     "traj": 75,
+     "step": 96,
+     "dist": 0.497,
+     "stayed": false,
+     "caption": "The image presents an opulent bedroom, bathed in a grandeur reminiscent of a royal palace. The room is dominated by a large bed, adorned with blue curtains that"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    9,
+    12,
+    17,
+    18,
+    19
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.113,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.279,
+   "examples": [
+    {
+     "traj": 77,
+     "step": 14,
+     "dist": 0.279,
+     "stayed": false,
+     "caption": "The image is a striking triptych capturing the majestic essence of an autumnal tree by a serene lake. In the first frame, the tree stands tall, its branches rea"
+    },
+    {
+     "traj": 69,
+     "step": 70,
+     "dist": 0.329,
+     "stayed": false,
+     "caption": "The image presents a poignant contrast between life and death, as seen through the lens of black and white photography. In the top photo, a bare tree stands sta"
+    },
+    {
+     "traj": 1,
+     "step": 82,
+     "dist": 0.33,
+     "stayed": false,
+     "caption": "The image presents a serene and ethereal scene. Dominating the center of the frame is a single, tall tree with a thin trunk and a canopy of branches. The tree s"
+    },
+    {
+     "traj": 62,
+     "step": 15,
+     "dist": 0.378,
+     "stayed": false,
+     "caption": "The image captures a solitary figure, clad in a coat, walking along a foggy path in a park. The trees, standing tall, are silhouetted against the grey, foggy ba"
+    },
+    {
+     "traj": 96,
+     "step": 46,
+     "dist": 0.433,
+     "stayed": false,
+     "caption": "The image is a stunning collage capturing the dramatic and desolate beauty of a barren landscape. Dominating the scene is a twisted, gnarled tree, its branches "
+    },
+    {
+     "traj": 38,
+     "step": 1,
+     "dist": 0.447,
+     "stayed": false,
+     "caption": "The image is a diptych, presenting a serene outdoor scene that captures two distinct moments of a couple's tranquil time by a lake.\n\nIn the first frame, the cou"
+    },
+    {
+     "traj": 74,
+     "step": 45,
+     "dist": 0.469,
+     "stayed": false,
+     "caption": "This image presents a striking, artistic interior space where the most dominant feature is a large, red-hued tree with a twisted trunk. The tree is a vibrant re"
+    },
+    {
+     "traj": 36,
+     "step": 93,
+     "dist": 0.577,
+     "stayed": false,
+     "caption": "This image presents a serene scene of a misty river flanked by towering mossy trees. The river, meandering subtly in the foreground, is surrounded by the riverb"
+    },
+    {
+     "traj": 89,
+     "step": 2,
+     "dist": 0.589,
+     "stayed": false,
+     "caption": "The image presents a serene landscape scene, captured in an oil-on-canvas style. It features a figure sitting by a tranquil river, surrounded by lush greenery. "
+    },
+    {
+     "traj": 78,
+     "step": 7,
+     "dist": 0.635,
+     "stayed": false,
+     "caption": "In the image, two figures are engaged in a peaceful activity on a riverbank. The figure on the left is comfortably seated on the bank, donning a hat, with a fis"
+    },
+    {
+     "traj": 40,
+     "step": 38,
+     "dist": 0.683,
+     "stayed": false,
+     "caption": "The image showcases a stained glass window, rich in detail and color. Dominating the scene is a majestic oak tree, its red leaves a vibrant contrast against the"
+    },
+    {
+     "traj": 16,
+     "step": 56,
+     "dist": 0.688,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene in a serene landscape. A couple stands together under a tree with pink blossoms. They are dressed in traditional garb, the m"
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    13,
+    16
+   ],
+   "radius_used": 0.201,
+   "radius_p95": 0.201,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.271,
+   "examples": [
+    {
+     "traj": 95,
+     "step": 52,
+     "dist": 0.271,
+     "stayed": false,
+     "caption": "The image captures a moment of elegance and precision. A group of ballet dancers, dressed in pointe shoes and tutus, are captured in a large room with high ceil"
+    },
+    {
+     "traj": 51,
+     "step": 17,
+     "dist": 0.365,
+     "stayed": false,
+     "caption": "In the grandeur of a spacious room adorned with chandeliers and arched windows, a bride stands poised in her white wedding gown. The room, bathed in soft, natur"
+    },
+    {
+     "traj": 67,
+     "step": 73,
+     "dist": 0.374,
+     "stayed": false,
+     "caption": "The image captures a tranquil ballet studio. Four dancers, dressed in delicate tutus, are positioned in a graceful line against a pristine white wall. They are "
+    },
+    {
+     "traj": 76,
+     "step": 1,
+     "dist": 0.385,
+     "stayed": false,
+     "caption": "This image is a stunning contrast of two wedding dresses. The left side showcases a bridal gown with a romantic, sheer, and flowing design, while the right side"
+    },
+    {
+     "traj": 58,
+     "step": 23,
+     "dist": 0.421,
+     "stayed": false,
+     "caption": "In the grandeur of a lavish room, a woman, clad in a long, flowing dress, is captured in a moment of quiet contemplation. The room itself is a testament to opul"
+    },
+    {
+     "traj": 64,
+     "step": 84,
+     "dist": 0.444,
+     "stayed": false,
+     "caption": "This image captures a scene of grandeur and architectural majesty. The room is dominated by a high ceiling, from which ornate chandeliers hang, casting a soft g"
+    },
+    {
+     "traj": 70,
+     "step": 34,
+     "dist": 0.497,
+     "stayed": false,
+     "caption": "The image captures the ethereal beauty of a Gothic cathedral, its grandeur accentuated by the vibrant stained-glass windows. The interior is a symphony of light"
+    },
+    {
+     "traj": 10,
+     "step": 16,
+     "dist": 0.503,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral-style room, bathed in soft light filtering through stained glass windows. The ceiling, vaulted and majestic, is t"
+    },
+    {
+     "traj": 74,
+     "step": 77,
+     "dist": 0.504,
+     "stayed": false,
+     "caption": "The image captures a grand, royal hall bathed in soft light. The high ceiling is a spectacle of intricate chandeliers, their ornate designs glowing subtly. Drap"
+    },
+    {
+     "traj": 37,
+     "step": 96,
+     "dist": 0.509,
+     "stayed": false,
+     "caption": "The image presents a grand ballroom bathed in a soft, warm light. The room is a symphony of opulence, with walls adorned in rich tapestry and gold accents that "
+    },
+    {
+     "traj": 28,
+     "step": 5,
+     "dist": 0.509,
+     "stayed": false,
+     "caption": "This image captures the grandeur of a baroque hall, steeped in history and opulence. The high ceiling, a testament to architectural prowess, is adorned with int"
+    },
+    {
+     "traj": 52,
+     "step": 97,
+     "dist": 0.51,
+     "stayed": false,
+     "caption": "The image captures a grand, spacious room, exuding an air of opulence and elegance. Dominating the scene is a large, ornate chandelier hanging from the high cei"
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    7,
+    10
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.12,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.275,
+   "examples": [
+    {
+     "traj": 55,
+     "step": 37,
+     "dist": 0.275,
+     "stayed": false,
+     "caption": "The image presents a serene landscape of a traditional Japanese garden, bathed in the soft glow of natural light. The garden is a symphony of nature and culture"
+    },
+    {
+     "traj": 16,
+     "step": 57,
+     "dist": 0.283,
+     "stayed": false,
+     "caption": "In the serene embrace of nature, a man and a woman stand beneath the boughs of a cherry blossom tree, its delicate pink petals contrasting against the verdant g"
+    },
+    {
+     "traj": 3,
+     "step": 86,
+     "dist": 0.286,
+     "stayed": false,
+     "caption": "The image portrays a serene and vibrant Japanese garden. At the heart of the scene is a tranquil pond, its surface mirroring the overhanging foliage and the maj"
+    },
+    {
+     "traj": 8,
+     "step": 33,
+     "dist": 0.315,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a traditional Japanese village nestled at the foot of a majestic mountain. The village is a vibrant display of cherry bloss"
+    },
+    {
+     "traj": 65,
+     "step": 45,
+     "dist": 0.331,
+     "stayed": false,
+     "caption": "The image captures a serene Japanese town under a soft, pink sky. The town is nestled amidst lush green mountains, creating a picturesque backdrop. The streets "
+    },
+    {
+     "traj": 78,
+     "step": 60,
+     "dist": 0.339,
+     "stayed": false,
+     "caption": "This image is a captivating diptych that captures the essence of traditional Japanese landscapes. The art style is evocative of Japanese woodblock prints, chara"
+    },
+    {
+     "traj": 89,
+     "step": 11,
+     "dist": 0.361,
+     "stayed": false,
+     "caption": "The image captures a serene Japanese village nestled in a valley, encircled by mountains. The village is a picturesque scene of tranquility, with its traditiona"
+    },
+    {
+     "traj": 69,
+     "step": 79,
+     "dist": 0.505,
+     "stayed": false,
+     "caption": "The image presents a beautifully crafted open book, standing upright on a desk. The book is a visual feast, with two pages open to reveal intricate paintings. T"
+    },
+    {
+     "traj": 12,
+     "step": 40,
+     "dist": 0.509,
+     "stayed": false,
+     "caption": "The image showcases a serene Japanese village nestled amidst a lush, verdant landscape. The village is a charming blend of traditional and modern, with houses a"
+    },
+    {
+     "traj": 77,
+     "step": 15,
+     "dist": 0.554,
+     "stayed": false,
+     "caption": "The image presents two distinct artworks. Each depicts a tree with a vibrant autumnal color palette. The tree, which is the central focus, is adorned with orang"
+    },
+    {
+     "traj": 38,
+     "step": 2,
+     "dist": 0.573,
+     "stayed": false,
+     "caption": "The image is a diptych, divided horizontally into two halves. Each half depicts the same tranquil scene. The scene is set in a natural landscape with a focus on"
+    },
+    {
+     "traj": 72,
+     "step": 20,
+     "dist": 0.576,
+     "stayed": false,
+     "caption": "The image captures a serene moment of solitude and reflection. A lone figure, cloaked in a brown robe, sits cross-legged on a rock amidst a tranquil lakeside. T"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    6
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.0,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.348,
+   "examples": [
+    {
+     "traj": 41,
+     "step": 15,
+     "dist": 0.348,
+     "stayed": false,
+     "caption": "A serene rural scene unfolds. A quaint pink cottage, topped with a thatched roof, sits invitingly amidst a lush garden teeming with vibrant flowers. The cottage"
+    },
+    {
+     "traj": 34,
+     "step": 56,
+     "dist": 0.363,
+     "stayed": false,
+     "caption": "The image presents a quaint, charming scene of a traditional British cottage nestled in a garden. The cottage, painted in white, stands out against the vibrant "
+    },
+    {
+     "traj": 7,
+     "step": 80,
+     "dist": 0.378,
+     "stayed": false,
+     "caption": "This image portrays a quaint, English-style cottage nestled in a lush, flower-filled garden. The cottage, constructed of brick and topped with a thatched roof, "
+    },
+    {
+     "traj": 65,
+     "step": 77,
+     "dist": 0.379,
+     "stayed": false,
+     "caption": "A quaint village nestles in a valley, where cobblestone paths meander between stone cottages. The cottages, with their thatched roofs, exude an old-world charm."
+    },
+    {
+     "traj": 29,
+     "step": 57,
+     "dist": 0.379,
+     "stayed": false,
+     "caption": "The image captures a quaint, cobblestone street nestled in a charming village. The street is flanked by stone houses, each topped with a thatched roof, adding t"
+    },
+    {
+     "traj": 72,
+     "step": 34,
+     "dist": 0.413,
+     "stayed": false,
+     "caption": "The image portrays a serene rural scene. A quaint cottage with a brown thatched roof stands in the center of the image. The cottage's entrance is accentuated by"
+    },
+    {
+     "traj": 91,
+     "step": 27,
+     "dist": 0.414,
+     "stayed": false,
+     "caption": "This image captures a quaint countryside scene, characterized by a traditional stone cottage nestled in a valley. The cottage, with its thatched roof, is adorne"
+    },
+    {
+     "traj": 6,
+     "step": 65,
+     "dist": 0.436,
+     "stayed": false,
+     "caption": "The image is a vibrant and colorful depiction of a quaint European village. Nestled in the heart of the scene is a charming cobblestone street, lined with tradi"
+    },
+    {
+     "traj": 54,
+     "step": 98,
+     "dist": 0.469,
+     "stayed": false,
+     "caption": "The image portrays a quaint, cobblestone street in a village. The street, lined with charming, traditional cottages, is illuminated by the warm glow of street l"
+    },
+    {
+     "traj": 12,
+     "step": 91,
+     "dist": 0.504,
+     "stayed": false,
+     "caption": "The image presents a serene, picturesque village nestled in a valley. The village is quaint, with its stone-built houses and rustic wooden fences, exuding an ai"
+    },
+    {
+     "traj": 89,
+     "step": 78,
+     "dist": 0.516,
+     "stayed": false,
+     "caption": "This image captures a serene rural landscape. Dominating the scene is a picturesque house, painted in a soothing shade of blue. It stands nestled amidst a verda"
+    },
+    {
+     "traj": 8,
+     "step": 69,
+     "dist": 0.54,
+     "stayed": false,
+     "caption": "The image portrays a serene scene of a rural village nestled amidst a mountainous landscape. The village is predominantly composed of thatched-roof houses, with"
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    2,
+    15
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.038,
+   "n_visited": 9,
+   "n_stayed": 0,
+   "n_transient": 9,
+   "median_first_visit": 52.0,
+   "max_transient_dwell": 3,
+   "nearest": 0.09,
+   "examples": [
+    {
+     "traj": 76,
+     "step": 98,
+     "dist": 0.09,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a formal event held in a luxurious banquet hall. Dominating the scene is a soaring chandelier, its light reflecting off the o"
+    },
+    {
+     "traj": 58,
+     "step": 54,
+     "dist": 0.143,
+     "stayed": false,
+     "caption": "The image showcases a grand ballroom, exuding an air of opulence and elegance. The room is awash with gold, reflecting its richness and luxury. Chandeliers hang"
+    },
+    {
+     "traj": 80,
+     "step": 12,
+     "dist": 0.16,
+     "stayed": false,
+     "caption": "The image captures a grand ballroom, bathed in the soft glow of chandeliers and chandelier-style lighting. The room's opulence is evident in the intricate moldi"
+    },
+    {
+     "traj": 85,
+     "step": 43,
+     "dist": 0.164,
+     "stayed": false,
+     "caption": "The image portrays an opulent ballroom, bathed in the soft glow of chandeliers. The high ceiling, adorned with ornate decorations, adds to the grandeur of the r"
+    },
+    {
+     "traj": 52,
+     "step": 86,
+     "dist": 0.177,
+     "stayed": false,
+     "caption": "The image captures a grand, luxurious ballroom bathed in soft, warm light. The room is architecturally impressive, featuring high ceilings and ornate chandelier"
+    },
+    {
+     "traj": 11,
+     "step": 95,
+     "dist": 0.177,
+     "stayed": false,
+     "caption": "The image captures a grand, opulent ballroom, resplendent with grandeur. The room is dominated by a massive, ornate chandelier, its multiple tiers casting a war"
+    },
+    {
+     "traj": 28,
+     "step": 22,
+     "dist": 0.179,
+     "stayed": false,
+     "caption": "The image portrays an opulent and grandiose banquet hall, reminiscent of a palace. The ceiling, adorned with ornate chandeliers, casts a warm, golden glow over "
+    },
+    {
+     "traj": 43,
+     "step": 69,
+     "dist": 0.185,
+     "stayed": false,
+     "caption": "The image captures a grand room bathed in an elegant palette of white and gold. The high ceiling is painted with a delicate design, while ornate chandeliers cas"
+    },
+    {
+     "traj": 27,
+     "step": 41,
+     "dist": 0.193,
+     "stayed": false,
+     "caption": "The image captures a grand, opulent ballroom bathed in soft, warm light. The room is a symphony of colors and textures, with light gold walls that shimmer subtl"
+    },
+    {
+     "traj": 44,
+     "step": 65,
+     "dist": 0.202,
+     "stayed": false,
+     "caption": "The image showcases a grand ballroom bathed in opulence. The room is adorned with chandeliers of intricate design, casting a warm, inviting glow. A large crysta"
+    },
+    {
+     "traj": 56,
+     "step": 98,
+     "dist": 0.204,
+     "stayed": false,
+     "caption": "The image captures a grand ballroom, exuding an air of opulence. Dominating the room is a high, ornate ceiling, its intricate patterns and gold accents hinting "
+    },
+    {
+     "traj": 68,
+     "step": 95,
+     "dist": 0.213,
+     "stayed": false,
+     "caption": "The image presents a grand, opulent room bathed in sunlight. The ceiling, a magnificent architectural marvel, is adorned with ornate chandeliers and intricate s"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    4
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.0,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.398,
+   "examples": [
+    {
+     "traj": 36,
+     "step": 95,
+     "dist": 0.398,
+     "stayed": false,
+     "caption": "The image captures the ethereal beauty of a dense, ancient rainforest. The fog, like a living thing, blankets the scene, obscuring the finer details and adding "
+    },
+    {
+     "traj": 62,
+     "step": 19,
+     "dist": 0.595,
+     "stayed": false,
+     "caption": "The image presents a dramatic scene set in the midst of a rainy day. A large, gnarled tree with thick, twisted roots stands majestically in the center of the fr"
+    },
+    {
+     "traj": 69,
+     "step": 72,
+     "dist": 0.622,
+     "stayed": false,
+     "caption": "In this captivating image, a majestic gnarled tree stands as the focal point in the center. Its branches, twisted and knotted, reach out in a way that speaks to"
+    },
+    {
+     "traj": 96,
+     "step": 48,
+     "dist": 0.624,
+     "stayed": false,
+     "caption": "This image presents a striking contrast between the barren landscape and the resilient life it sustains. Two photographs side by side capture the essence of a d"
+    },
+    {
+     "traj": 4,
+     "step": 16,
+     "dist": 0.648,
+     "stayed": false,
+     "caption": "A towering tree stands as the centerpiece of a grand interior. The tree, an ancient sequoia, boasts sprawling branches and dense foliage, its roots appearing to"
+    },
+    {
+     "traj": 77,
+     "step": 14,
+     "dist": 0.664,
+     "stayed": false,
+     "caption": "The image is a striking triptych capturing the majestic essence of an autumnal tree by a serene lake. In the first frame, the tree stands tall, its branches rea"
+    },
+    {
+     "traj": 3,
+     "step": 66,
+     "dist": 0.676,
+     "stayed": false,
+     "caption": "This image captures a tranquil scene in a Japanese-style garden. A red, traditional Japanese bridge with a single red lantern arches over a serene pond. The bri"
+    },
+    {
+     "traj": 40,
+     "step": 6,
+     "dist": 0.687,
+     "stayed": false,
+     "caption": "This is an enchanting artwork that beautifully captures the essence of a lone traveler. The scene unfolds in a serene mountain landscape, where the sky is a lig"
+    },
+    {
+     "traj": 78,
+     "step": 39,
+     "dist": 0.697,
+     "stayed": false,
+     "caption": "The image portrays a tranquil Japanese garden. Dominating the scene is a serene pond, its surface mirroring the vibrant life around it. Nestled in the center of"
+    },
+    {
+     "traj": 74,
+     "step": 47,
+     "dist": 0.73,
+     "stayed": false,
+     "caption": "This image presents a fantastical and surreal scene. The most striking feature is the large, red tree with roots that spread out on the floor, occupying a signi"
+    },
+    {
+     "traj": 89,
+     "step": 6,
+     "dist": 0.749,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene featuring a monk. The monk, clad in a white robe and sporting a shaved head, is seated in contemplation. He faces away from "
+    },
+    {
+     "traj": 55,
+     "step": 39,
+     "dist": 0.757,
+     "stayed": false,
+     "caption": "The image captures a serene, Japanese-style garden scene. Dominating the foreground is a tranquil pond, reflecting the pale pink blossom trees lining its edge. "
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    3
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.0,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.211,
+   "examples": [
+    {
+     "traj": 78,
+     "step": 73,
+     "dist": 0.211,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene of a stone bridge crossing a serene river, nestled amidst a lush landscape. The bridge, constructed of sturdy stone, arches "
+    },
+    {
+     "traj": 3,
+     "step": 52,
+     "dist": 0.213,
+     "stayed": false,
+     "caption": "In the tranquil setting of a forest, a stone bridge with a quaint archway stands as a silent testament to the passage of time. The bridge, constructed with meti"
+    },
+    {
+     "traj": 55,
+     "step": 42,
+     "dist": 0.484,
+     "stayed": false,
+     "caption": "The image captures a serene, traditional Japanese scene. Dominating the foreground is a graceful, white, wooden bridge that arches over a calm stream, its refle"
+    },
+    {
+     "traj": 12,
+     "step": 60,
+     "dist": 0.526,
+     "stayed": false,
+     "caption": "The image portrays a quaint European village, bathed in soft, pastel light that filters through the dense canopy of trees overhead. The village is nestled along"
+    },
+    {
+     "traj": 94,
+     "step": 97,
+     "dist": 0.642,
+     "stayed": false,
+     "caption": "This image captures the serene beauty of a winter village. The village is nestled in a valley, blanketed in a light snowfall. The streets, lined with charming c"
+    },
+    {
+     "traj": 42,
+     "step": 42,
+     "dist": 0.669,
+     "stayed": false,
+     "caption": "The image presents a futuristic nighttime cityscape. Dominating the scene is a bridge, its lights twinkling against the dark sky. The city is densely packed wit"
+    },
+    {
+     "traj": 49,
+     "step": 93,
+     "dist": 0.674,
+     "stayed": false,
+     "caption": "The image presents a picturesque scene of a medieval castle, situated on a bluff with a bridge arching over a river. The castle, constructed from red brick, fea"
+    },
+    {
+     "traj": 89,
+     "step": 13,
+     "dist": 0.674,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene of a Japanese village, nestled amidst the lush greenery of nature. The village is a charming array of traditional wooden hou"
+    },
+    {
+     "traj": 34,
+     "step": 27,
+     "dist": 0.681,
+     "stayed": false,
+     "caption": "This image presents a serene, picturesque village scene. The village is nestled amidst rolling hills, with a river flowing through the center. The houses, const"
+    },
+    {
+     "traj": 65,
+     "step": 67,
+     "dist": 0.685,
+     "stayed": false,
+     "caption": "The image presents a serene European village, nestled by a gentle river. The buildings, a charming mix of timber and stone, boast thatched roofs, adding to the "
+    },
+    {
+     "traj": 6,
+     "step": 81,
+     "dist": 0.689,
+     "stayed": false,
+     "caption": "The image captures a serene, idyllic village nestled by a river. The village is quaint and charming, with houses made of stone or brick, their timeless architec"
+    },
+    {
+     "traj": 8,
+     "step": 67,
+     "dist": 0.736,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a rural village nestled in the mountains. The village is a picturesque collection of stone houses, their thatched roofs add"
+    }
+   ]
+  },
+  {
+   "probe": 8,
+   "members": [
+    14
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.0,
+   "n_visited": 2,
+   "n_stayed": 0,
+   "n_transient": 2,
+   "median_first_visit": 54.0,
+   "max_transient_dwell": 1,
+   "nearest": 0.146,
+   "examples": [
+    {
+     "traj": 96,
+     "step": 66,
+     "dist": 0.146,
+     "stayed": false,
+     "caption": "The image captures the breathtaking view of the Grand Canyon at sunrise. The sky, awash in hues of orange and red, seems to be ablaze with the rising sun, casti"
+    },
+    {
+     "traj": 62,
+     "step": 42,
+     "dist": 0.176,
+     "stayed": false,
+     "caption": "The image presents a breathtaking aerial view of the Grand Canyon, a geological wonder in Arizona. The canyon's layers of rock, in hues of red, orange, and brow"
+    },
+    {
+     "traj": 36,
+     "step": 63,
+     "dist": 0.209,
+     "stayed": false,
+     "caption": "The image presents a breathtaking view of the Grand Canyon, a natural wonder of Arizona. The canyon, characterized by its distinct layers of rock, stretches out"
+    },
+    {
+     "traj": 40,
+     "step": 10,
+     "dist": 0.558,
+     "stayed": false,
+     "caption": "The image presents a serene landscape scene. A river meanders through the middle, serving as a boundary between two cliffs. On the left, a cliff steeply rises, "
+    },
+    {
+     "traj": 15,
+     "step": 68,
+     "dist": 0.565,
+     "stayed": false,
+     "caption": "The image is a stunning, digital artwork that depicts a Martian landscape. Dominating the scene are two astronauts, clad in full space suits, walking on the red"
+    },
+    {
+     "traj": 69,
+     "step": 74,
+     "dist": 0.674,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a tree standing sentinel on a small island in a body of water. The tree, with its gnarled trunk and branches that spread ou"
+    },
+    {
+     "traj": 16,
+     "step": 55,
+     "dist": 0.678,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a man and a woman in a natural setting. The man, clad in a vibrant red shirt, stands on the left, holding the woman who is "
+    },
+    {
+     "traj": 81,
+     "step": 47,
+     "dist": 0.681,
+     "stayed": false,
+     "caption": "This image portrays a poignant scene set in a desert landscape. In the foreground, a soldier, poised with a rifle, stands guard in front of a towering white mon"
+    },
+    {
+     "traj": 45,
+     "step": 17,
+     "dist": 0.702,
+     "stayed": false,
+     "caption": "In the vast expanse of the desert, a solitary soldier, clad in a soldier's uniform and helmet, strides purposefully towards a tree. The soldier, a symbol of dut"
+    },
+    {
+     "traj": 23,
+     "step": 2,
+     "dist": 0.706,
+     "stayed": false,
+     "caption": "This image presents a breathtaking view of a Martian landscape, captured from two distinct vantage points. The foreground offers a close-up perspective, with th"
+    },
+    {
+     "traj": 95,
+     "step": 1,
+     "dist": 0.707,
+     "stayed": false,
+     "caption": "The image presents a serene pastoral scene captured in a series of four panels. Dominating the canvas is a field of golden wheat, where the only inhabitant is a"
+    },
+    {
+     "traj": 72,
+     "step": 26,
+     "dist": 0.711,
+     "stayed": false,
+     "caption": "The image is a captivating panorama, displayed in a grid-like arrangement. Each panel tells a story, each frame is a window into a different moment of adventure"
+    }
+   ]
+  },
+  {
+   "probe": 9,
+   "members": [
+    1
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.0,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.54,
+   "examples": [
+    {
+     "traj": 90,
+     "step": 73,
+     "dist": 0.54,
+     "stayed": false,
+     "caption": "In the image, there are two versions of a religious icon, one in portrait and one in landscape orientation. The central figure is a woman dressed in a blue cloa"
+    },
+    {
+     "traj": 23,
+     "step": 89,
+     "dist": 0.613,
+     "stayed": false,
+     "caption": "The image presents a striking visual of a lone figure standing in the vast expanse of a desert under a full moon. The person, cloaked in black, stands on sand t"
+    },
+    {
+     "traj": 77,
+     "step": 4,
+     "dist": 0.629,
+     "stayed": false,
+     "caption": "In this tranquil scene, two figures stand on a grassy bank next to a serene pond. The pond, still and reflective, mirrors the warm, pastel colors of the sky abo"
+    },
+    {
+     "traj": 62,
+     "step": 6,
+     "dist": 0.638,
+     "stayed": false,
+     "caption": "This is a black and white triptych that captures a solitary figure, likely a man, walking down a rural road. The person is centrally positioned, appearing to wa"
+    },
+    {
+     "traj": 65,
+     "step": 14,
+     "dist": 0.646,
+     "stayed": false,
+     "caption": "The image is a captivating oil painting that brings to life a serene rural scene. A woman, clad in a blue dress, strides down a dirt road, her figure contrastin"
+    },
+    {
+     "traj": 89,
+     "step": 5,
+     "dist": 0.673,
+     "stayed": false,
+     "caption": "The image presents a serene landscape dominated by a tranquil body of water. On the left, a figure stands tall, embodying wisdom and patience. This person is dr"
+    },
+    {
+     "traj": 40,
+     "step": 8,
+     "dist": 0.677,
+     "stayed": false,
+     "caption": "This image is a beautiful representation of an individual in a state of contemplation. The person, clad in a long, flowing cloak, sits perched on a cliff edge, "
+    },
+    {
+     "traj": 95,
+     "step": 4,
+     "dist": 0.714,
+     "stayed": false,
+     "caption": "The image is a captivating oil painting that transports us back to the 19th century. It portrays a group of four women standing in a lush, golden wheat field. T"
+    },
+    {
+     "traj": 69,
+     "step": 67,
+     "dist": 0.723,
+     "stayed": false,
+     "caption": "The image captures a stark and haunting scene. Dominating the foreground is a barren tree, its branches reaching out like skeletal fingers. The tree's leafless "
+    },
+    {
+     "traj": 18,
+     "step": 67,
+     "dist": 0.726,
+     "stayed": false,
+     "caption": "The image portrays a medieval knight, resplendent in red and gold armor, astride a majestic black steed. The knight is holding a red cape behind him, adding a d"
+    },
+    {
+     "traj": 16,
+     "step": 59,
+     "dist": 0.746,
+     "stayed": false,
+     "caption": "In this captivating piece of art, two geisha women in traditional kimonos are walking through a cherry blossom orchard. The orchard is lush and vibrant, with ch"
+    },
+    {
+     "traj": 96,
+     "step": 45,
+     "dist": 0.757,
+     "stayed": false,
+     "caption": "The image presents a haunting diptych. On the left, a gnarled, leafless tree stands in a field, its branches reaching out like skeletal fingers. The tree's twis"
+    }
+   ]
+  }
+ ]
+}

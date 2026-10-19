@@ -1,0 +1,900 @@
+{
+ "probes_run": "a0_core",
+ "scan_run": "e1_cap_pilot",
+ "probe_source": "archive/a0_core_centroids.npz",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    90,
+    17,
+    10,
+    88,
+    57,
+    59,
+    93,
+    9,
+    70,
+    4,
+    40
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.111,
+   "n_visited": 2,
+   "n_stayed": 0,
+   "n_transient": 2,
+   "median_first_visit": 11.5,
+   "max_transient_dwell": 24,
+   "nearest": 0.052,
+   "examples": [
+    {
+     "traj": 8,
+     "step": 85,
+     "dist": 0.052,
+     "stayed": false,
+     "caption": "A sacred sanctuary bathed in golden light, its soaring arches reaching towards the heavens, where stained glass windows burst with vibrant hues of blue, purple,"
+    },
+    {
+     "traj": 2,
+     "step": 29,
+     "dist": 0.062,
+     "stayed": false,
+     "caption": "A cathedral's nave is bathed in vibrant, kaleidoscopic light through stained glass, creating an illusion of a stained-glass floor that bends and shifts underfoo"
+    },
+    {
+     "traj": 13,
+     "step": 96,
+     "dist": 0.349,
+     "stayed": false,
+     "caption": "A bride stands gracefully in a cathedral, her flowing gown catching the dappled light of sunbeams streaming through the stained-glass windows. Her veil dances w"
+    },
+    {
+     "traj": 5,
+     "step": 12,
+     "dist": 0.544,
+     "stayed": false,
+     "caption": "A grand, ornate library bathed in golden light. Arched ceilings, rich wood paneling, and stained glass windows frame this majestic space. Bookshelves stretch hi"
+    },
+    {
+     "traj": 15,
+     "step": 13,
+     "dist": 0.631,
+     "stayed": false,
+     "caption": "In a grand, opulent ballroom, gold and cream hues dominate, bathed in the golden glow of intricate chandeliers. Arched windows on the right allow sunlight to fi"
+    },
+    {
+     "traj": 19,
+     "step": 8,
+     "dist": 0.687,
+     "stayed": false,
+     "caption": "A figure draped in flowing, ethereal white stands at the center of a grand, sunlit chamber adorned with gold columns and a majestic chandelier. The soft light b"
+    },
+    {
+     "traj": 4,
+     "step": 86,
+     "dist": 0.745,
+     "stayed": false,
+     "caption": "A verdant, moss-covered archway frames a sunlit path leading deeper into a lush, enigmatic forest. Sunbeams pierce the dense greenery, casting ethereal light an"
+    },
+    {
+     "traj": 11,
+     "step": 47,
+     "dist": 0.758,
+     "stayed": false,
+     "caption": "A tranquil, verdant bathroom bathes in natural light through arched stained glass windows. A vintage clawfoot tub, painted in a lush green, invites relaxation. "
+    },
+    {
+     "traj": 17,
+     "step": 19,
+     "dist": 0.759,
+     "stayed": false,
+     "caption": "Two figures in flowing white garments stand beneath a grand, moss-covered colonnade bathed in ethereal sunlight, surrounded by lush, verdant foliage, evoking a "
+    },
+    {
+     "traj": 7,
+     "step": 11,
+     "dist": 0.833,
+     "stayed": false,
+     "caption": "A sun-kissed path winds through a lush, green garden, flanked by vibrant orange flowers and verdant vines, leading towards a rustic stone archway that beckons w"
+    },
+    {
+     "traj": 9,
+     "step": 40,
+     "dist": 0.845,
+     "stayed": false,
+     "caption": "A serene forest glows in muted greens and golds, sunlight filtering through towering trees that arch gracefully over a calm, moss-covered stream. The scene is t"
+    },
+    {
+     "traj": 18,
+     "step": 20,
+     "dist": 0.881,
+     "stayed": false,
+     "caption": "A serene sunset bathes the scene in ethereal pink hues, casting a tranquil glow over a calm lake. Bare trees stand guard on the shore, their silhouettes reflect"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    5,
+    95,
+    92,
+    35,
+    82,
+    60,
+    58,
+    87,
+    43,
+    50,
+    27,
+    28,
+    83,
+    19,
+    84,
+    63,
+    85,
+    81,
+    66,
+    64,
+    37,
+    74,
+    53,
+    11,
+    0,
+    98,
+    30,
+    51,
+    80,
+    56,
+    68,
+    52,
+    41,
+    76
+   ],
+   "radius_used": 0.323,
+   "radius_p95": 0.323,
+   "n_visited": 4,
+   "n_stayed": 0,
+   "n_transient": 4,
+   "median_first_visit": 19.5,
+   "max_transient_dwell": 16,
+   "nearest": 0.132,
+   "examples": [
+    {
+     "traj": 15,
+     "step": 63,
+     "dist": 0.132,
+     "stayed": false,
+     "caption": "Illuminated by golden sunlight, a regal living room dazzles in opulence. Rich, drapery-embellished curtains frame floor-to-ceiling windows. Ornate, cream-colore"
+    },
+    {
+     "traj": 5,
+     "step": 35,
+     "dist": 0.181,
+     "stayed": false,
+     "caption": "Golden sunlight streams through arched windows, bathing an opulent room in a warm glow. Ornate chandeliers hang from intricately carved ceilings, casting reflec"
+    },
+    {
+     "traj": 0,
+     "step": 10,
+     "dist": 0.199,
+     "stayed": false,
+     "caption": "A opulent living room bathed in soft light, featuring a grand chandelier that cascades with elegance, cream-colored sofas adorned with plush pillows, and a cent"
+    },
+    {
+     "traj": 2,
+     "step": 87,
+     "dist": 0.234,
+     "stayed": false,
+     "caption": "A grand, opulent ballroom bathed in golden hues, adorned with elaborate chandeliers casting a mesmerizing glow, marble floors reflecting the room's grandeur, an"
+    },
+    {
+     "traj": 13,
+     "step": 40,
+     "dist": 0.327,
+     "stayed": false,
+     "caption": "In a grand ballroom bathed in golden hues, a bride and groom share a tender moment under a vast, ornate chandelier. Columns of gleaming gold frame the scene, re"
+    },
+    {
+     "traj": 8,
+     "step": 89,
+     "dist": 0.36,
+     "stayed": false,
+     "caption": "Illuminated by golden light, the grand hall reveals its opulent beauty, with intricate blue and gold patterns adorning the ceiling. Marble floors gleam under th"
+    },
+    {
+     "traj": 19,
+     "step": 9,
+     "dist": 0.368,
+     "stayed": false,
+     "caption": "A solitary bride stands before a vast, opulent room bathed in golden light, her flowing dress catching the sun's rays. Columns adorned with gold embellishments "
+    },
+    {
+     "traj": 11,
+     "step": 70,
+     "dist": 0.432,
+     "stayed": false,
+     "caption": "Elegant opulence bathes the room in golden hues, from the ornate bathtub and marble floor to the lavish chandeliers and rich green walls, each detail exuding lu"
+    },
+    {
+     "traj": 16,
+     "step": 97,
+     "dist": 0.567,
+     "stayed": false,
+     "caption": "A grand ballroom bathed in pink light, its chandeliers and ornate gold accents casting a regal glow. Graceful ballerinas in soft pink tutus perform a ballet, th"
+    },
+    {
+     "traj": 6,
+     "step": 7,
+     "dist": 0.727,
+     "stayed": false,
+     "caption": "A magical, enchanting apothecary is bathed in a warm, golden glow, its shelves and counter brimming with potions, crystals, and mystical artifacts. The ceiling,"
+    },
+    {
+     "traj": 10,
+     "step": 8,
+     "dist": 0.784,
+     "stayed": false,
+     "caption": "A tapestry of delicate beige flowers and vines weave across a soft, textured backdrop, evoking an antique charm with its gentle, organic patterns."
+    },
+    {
+     "traj": 14,
+     "step": 25,
+     "dist": 0.827,
+     "stayed": false,
+     "caption": "A moss-covered ancient tree with sprawling roots and gnarled branches stands at the edge of a tranquil, teal pool, enveloped in ethereal mist, creating a mystic"
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    2,
+    97,
+    44,
+    26,
+    31,
+    13,
+    47,
+    75,
+    77
+   ],
+   "radius_used": 0.326,
+   "radius_p95": 0.326,
+   "n_visited": 2,
+   "n_stayed": 0,
+   "n_transient": 2,
+   "median_first_visit": 22.0,
+   "max_transient_dwell": 5,
+   "nearest": 0.098,
+   "examples": [
+    {
+     "traj": 0,
+     "step": 4,
+     "dist": 0.098,
+     "stayed": false,
+     "caption": "An opulent, sunlit bedroom exudes grandeur with its cream and gold palette. An ornate chandelier hangs over a four-poster bed draped in shimmering fabric, while"
+    },
+    {
+     "traj": 5,
+     "step": 45,
+     "dist": 0.16,
+     "stayed": false,
+     "caption": "A luxurious, vintage bedroom bathed in warm, golden light. The ornate bed is draped in opulent linens, surrounded by flowing drapes and a classic chandelier. So"
+    },
+    {
+     "traj": 15,
+     "step": 63,
+     "dist": 0.483,
+     "stayed": false,
+     "caption": "Illuminated by golden sunlight, a regal living room dazzles in opulence. Rich, drapery-embellished curtains frame floor-to-ceiling windows. Ornate, cream-colore"
+    },
+    {
+     "traj": 2,
+     "step": 94,
+     "dist": 0.597,
+     "stayed": false,
+     "caption": "A grand banquet hall bathed in golden hues, each table adorned with lavish floral arrangements and gleaming gold accents. Intricate crystal chandeliers cascade "
+    },
+    {
+     "traj": 11,
+     "step": 70,
+     "dist": 0.647,
+     "stayed": false,
+     "caption": "Elegant opulence bathes the room in golden hues, from the ornate bathtub and marble floor to the lavish chandeliers and rich green walls, each detail exuding lu"
+    },
+    {
+     "traj": 13,
+     "step": 41,
+     "dist": 0.655,
+     "stayed": false,
+     "caption": "In a grand, opulent hall with golden hues and ornate chandeliers, a bride in a flowing white gown and a groom in a sleek black suit stand at the center, bathed "
+    },
+    {
+     "traj": 19,
+     "step": 9,
+     "dist": 0.684,
+     "stayed": false,
+     "caption": "A solitary bride stands before a vast, opulent room bathed in golden light, her flowing dress catching the sun's rays. Columns adorned with gold embellishments "
+    },
+    {
+     "traj": 8,
+     "step": 89,
+     "dist": 0.686,
+     "stayed": false,
+     "caption": "Illuminated by golden light, the grand hall reveals its opulent beauty, with intricate blue and gold patterns adorning the ceiling. Marble floors gleam under th"
+    },
+    {
+     "traj": 16,
+     "step": 97,
+     "dist": 0.776,
+     "stayed": false,
+     "caption": "A grand ballroom bathed in pink light, its chandeliers and ornate gold accents casting a regal glow. Graceful ballerinas in soft pink tutus perform a ballet, th"
+    },
+    {
+     "traj": 17,
+     "step": 12,
+     "dist": 0.856,
+     "stayed": false,
+     "caption": "Four scientists in white lab coats and masks gather under a glass dome, bathed in the soft, golden light of a sunlit day. The greenhouse exudes an aura of vibra"
+    },
+    {
+     "traj": 9,
+     "step": 34,
+     "dist": 0.861,
+     "stayed": false,
+     "caption": "A misty forest reflects in a still pool, with moss-covered roots intertwining and tree branches reaching skyward. The ethereal light filtering through the fog c"
+    },
+    {
+     "traj": 10,
+     "step": 8,
+     "dist": 0.865,
+     "stayed": false,
+     "caption": "A tapestry of delicate beige flowers and vines weave across a soft, textured backdrop, evoking an antique charm with its gentle, organic patterns."
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    6,
+    54,
+    65,
+    29,
+    55,
+    78,
+    46,
+    33
+   ],
+   "radius_used": 0.707,
+   "radius_p95": 0.707,
+   "n_visited": 3,
+   "n_stayed": 1,
+   "n_transient": 2,
+   "median_first_visit": 10.0,
+   "max_transient_dwell": 8,
+   "nearest": 0.525,
+   "examples": [
+    {
+     "traj": 6,
+     "step": 99,
+     "dist": 0.525,
+     "stayed": true,
+     "caption": "A whimsical, moss-covered stone cottage sits nestled among lush greenery, its pink door and windows framed by blooming pink roses and vibrant green ivy. A sunli"
+    },
+    {
+     "traj": 7,
+     "step": 8,
+     "dist": 0.58,
+     "stayed": false,
+     "caption": "An enchanting stone archway adorned with verdant vines and blooming orange flowers guides the viewer through a serene garden, bathed in dappled sunlight, evokin"
+    },
+    {
+     "traj": 3,
+     "step": 16,
+     "dist": 0.623,
+     "stayed": false,
+     "caption": "A stone bridge arches gracefully over a calm river, reflecting the autumnal hues. Vibrant oranges and reds blanket the trees, while snow-capped mountains rise m"
+    },
+    {
+     "traj": 4,
+     "step": 52,
+     "dist": 0.719,
+     "stayed": false,
+     "caption": "A sunlit forest path winds through dense, mossy trees. A stone archway, blanketed in verdant moss, frames the path, inviting one to follow its mysterious trail "
+    },
+    {
+     "traj": 1,
+     "step": 3,
+     "dist": 0.773,
+     "stayed": false,
+     "caption": "A hauntingly beautiful scene unfolds. A red-robed figure sits quietly on a bench, gazing at a vibrant red Victorian house shrouded in mist. Bare trees stand gua"
+    },
+    {
+     "traj": 18,
+     "step": 13,
+     "dist": 0.798,
+     "stayed": false,
+     "caption": "A vibrant canvas of twilight hues, where purple and pink paint the mountainous landscape, reflecting in the serene river. The gentle stream, framed by mossy roc"
+    },
+    {
+     "traj": 10,
+     "step": 45,
+     "dist": 0.799,
+     "stayed": false,
+     "caption": "Two silhouetted figures stand on a stone bridge, embracing beneath a blossoming cherry tree at twilight, their reflection dancing in the serene river, as the sk"
+    },
+    {
+     "traj": 17,
+     "step": 26,
+     "dist": 0.808,
+     "stayed": false,
+     "caption": "A moss-covered stone archway beckons through a misty forest. Steps ascend into the unknown, enveloped in vibrant green hues, inviting adventure into the enigmat"
+    },
+    {
+     "traj": 8,
+     "step": 6,
+     "dist": 0.824,
+     "stayed": false,
+     "caption": "A sunlit courtyard, where ancient columns stand silent, surrounded by nature reclaiming its space. Moss blankets every surface, merging architecture with the fo"
+    },
+    {
+     "traj": 2,
+     "step": 7,
+     "dist": 0.84,
+     "stayed": false,
+     "caption": "Bathed in golden sunlight, a medieval hall of stone and shadow unfolds, its high arched ceiling reaching towards a stained-glass window. Figures clad in armor c"
+    },
+    {
+     "traj": 15,
+     "step": 97,
+     "dist": 0.85,
+     "stayed": false,
+     "caption": "A majestic ballroom bathes in golden hues, adorned with opulent chandeliers and floral arrangements, inviting elegance and grandeur."
+    },
+    {
+     "traj": 9,
+     "step": 49,
+     "dist": 0.85,
+     "stayed": false,
+     "caption": "A serene forest glows under a golden canopy, with mist curling through the branches. A misty stream flows over moss-covered stones, its path illuminated by ethe"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    24,
+    96,
+    36,
+    45,
+    15,
+    1,
+    69,
+    42,
+    62,
+    20,
+    14,
+    32,
+    23,
+    12,
+    71,
+    18,
+    61,
+    3,
+    22,
+    72,
+    73,
+    79,
+    99,
+    48
+   ],
+   "radius_used": 0.793,
+   "radius_p95": 0.793,
+   "n_visited": 20,
+   "n_stayed": 9,
+   "n_transient": 11,
+   "median_first_visit": 5.5,
+   "max_transient_dwell": 79,
+   "nearest": 0.533,
+   "examples": [
+    {
+     "traj": 9,
+     "step": 77,
+     "dist": 0.533,
+     "stayed": true,
+     "caption": "A misty forest bathes in a surreal, crimson glow, casting long, dark shadows that merge with the reflections in the still water below. Branches, barely visible,"
+    },
+    {
+     "traj": 18,
+     "step": 6,
+     "dist": 0.549,
+     "stayed": true,
+     "caption": "A surreal landscape bathed in fiery hues, where jagged peaks rise from molten red plains under a tumultuous sky painted with deep purples and vibrant pinks, cre"
+    },
+    {
+     "traj": 19,
+     "step": 92,
+     "dist": 0.551,
+     "stayed": true,
+     "caption": "A serene forest path winds through a tapestry of misty, surreal hues\u2014purple, pink, and orange, blending into a dreamlike sunset. The water mirrors the vibrant c"
+    },
+    {
+     "traj": 1,
+     "step": 60,
+     "dist": 0.556,
+     "stayed": false,
+     "caption": "A serene winter landscape, where snow blankets the ground, and bare trees stretch upwards, their silhouettes softened by a warm, hazy glow that filters through "
+    },
+    {
+     "traj": 14,
+     "step": 27,
+     "dist": 0.567,
+     "stayed": true,
+     "caption": "A majestic ancient tree rises from the water, its gnarled, swirling roots reaching deep beneath the surface. Its crown is broad and lush, casting a gentle shado"
+    },
+    {
+     "traj": 4,
+     "step": 41,
+     "dist": 0.577,
+     "stayed": true,
+     "caption": "In a serene, misty forest, an ancient tree draped in moss stands tall, its gnarled branches curving majestically over a tranquil pool, reflecting its ethereal b"
+    },
+    {
+     "traj": 12,
+     "step": 84,
+     "dist": 0.593,
+     "stayed": true,
+     "caption": "A solitary tree stands gracefully on a smooth, reflective surface under a dreamy sky painted in soft hues of lavender, pink, and purple, creating a serene and e"
+    },
+    {
+     "traj": 17,
+     "step": 59,
+     "dist": 0.595,
+     "stayed": true,
+     "caption": "An ancient, moss-covered tree stands majestically at the edge of a serene, mist-shrouded lake. Its gnarled trunk and sprawling branches mirror in the still wate"
+    },
+    {
+     "traj": 10,
+     "step": 67,
+     "dist": 0.601,
+     "stayed": true,
+     "caption": "A solitary, whimsical tree stands resolute on a small island, its twisted silhouette aglow against a gradient sky of soft purples and pinks, mirrored perfectly "
+    },
+    {
+     "traj": 7,
+     "step": 23,
+     "dist": 0.642,
+     "stayed": false,
+     "caption": "A serene Japanese garden bathes in the soft glow of a setting sun, framed by blossoming cherry trees. A graceful fountain sprays water into the air, reflecting "
+    },
+    {
+     "traj": 15,
+     "step": 2,
+     "dist": 0.655,
+     "stayed": false,
+     "caption": "A scholar in a white robe stands before a cosmic chalice, surrounded by vibrant celestial hues and swirling galaxies. Columns of light ascend, while planets hov"
+    },
+    {
+     "traj": 3,
+     "step": 62,
+     "dist": 0.66,
+     "stayed": false,
+     "caption": "A serene Japanese garden bathes in soft morning mist. A vibrant red bridge arches gracefully over a still stream, its reflection dancing on the water's surface."
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    49,
+    91,
+    94,
+    8
+   ],
+   "radius_used": 0.455,
+   "radius_p95": 0.455,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.679,
+   "examples": [
+    {
+     "traj": 1,
+     "step": 8,
+     "dist": 0.679,
+     "stayed": false,
+     "caption": "A solitary figure in a crimson cloak walks towards a Victorian mansion shrouded in a pinkish fog, casting long, ethereal shadows. The mansion's turret points sk"
+    },
+    {
+     "traj": 3,
+     "step": 16,
+     "dist": 0.788,
+     "stayed": false,
+     "caption": "A stone bridge arches gracefully over a calm river, reflecting the autumnal hues. Vibrant oranges and reds blanket the trees, while snow-capped mountains rise m"
+    },
+    {
+     "traj": 4,
+     "step": 65,
+     "dist": 0.789,
+     "stayed": false,
+     "caption": "A verdant, sunlit staircase ascends through a cloistered courtyard, enveloped in moss and shadow, inviting the eye towards a golden sun that pierces the heart o"
+    },
+    {
+     "traj": 6,
+     "step": 74,
+     "dist": 0.804,
+     "stayed": false,
+     "caption": "A delicate, pastel pink dollhouse nestled within a transparent glass dome, surrounded by lush, pink floral blooms and verdant moss, evokes a whimsical, fairy-ta"
+    },
+    {
+     "traj": 18,
+     "step": 20,
+     "dist": 0.838,
+     "stayed": false,
+     "caption": "A serene sunset bathes the scene in ethereal pink hues, casting a tranquil glow over a calm lake. Bare trees stand guard on the shore, their silhouettes reflect"
+    },
+    {
+     "traj": 8,
+     "step": 2,
+     "dist": 0.84,
+     "stayed": false,
+     "caption": "A regal, ivy-clad mansion exudes an aura of timeless elegance under a bright blue sky. The symmetrical facade, adorned with verdant moss and climbing vines, inv"
+    },
+    {
+     "traj": 7,
+     "step": 8,
+     "dist": 0.845,
+     "stayed": false,
+     "caption": "An enchanting stone archway adorned with verdant vines and blooming orange flowers guides the viewer through a serene garden, bathed in dappled sunlight, evokin"
+    },
+    {
+     "traj": 10,
+     "step": 45,
+     "dist": 0.861,
+     "stayed": false,
+     "caption": "Two silhouetted figures stand on a stone bridge, embracing beneath a blossoming cherry tree at twilight, their reflection dancing in the serene river, as the sk"
+    },
+    {
+     "traj": 17,
+     "step": 24,
+     "dist": 0.863,
+     "stayed": false,
+     "caption": "An ancient, moss-covered portal opens into a misty, ethereal realm, its steps adorned with statues, leading to a world of light and mystery."
+    },
+    {
+     "traj": 2,
+     "step": 65,
+     "dist": 0.869,
+     "stayed": false,
+     "caption": "A sun-drenched, marble-paved arcade frames a serene tropical vista. Columns, their white marble pristine, stand like sentinels. Palm fronds brush the marble flo"
+    },
+    {
+     "traj": 11,
+     "step": 8,
+     "dist": 0.876,
+     "stayed": false,
+     "caption": "An ethereal white room spirals into a radiant, circular portal, casting a ghostly glow and inviting the viewer into a serene, dreamlike landscape beyond."
+    },
+    {
+     "traj": 14,
+     "step": 4,
+     "dist": 0.882,
+     "stayed": false,
+     "caption": "A mist-shrouded forest mirrors in a serene lake, where a solitary pier extends, its reflection dancing like a specter on the calm surface, under an ethereal vei"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    7,
+    34,
+    38,
+    21,
+    89
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.193,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.222,
+   "examples": [
+    {
+     "traj": 1,
+     "step": 5,
+     "dist": 0.222,
+     "stayed": false,
+     "caption": "A figure draped in a flowing red cloak stands before an ornate, crimson mansion shrouded in mist, with bare trees framing the scene under a hazy, pink sky."
+    },
+    {
+     "traj": 6,
+     "step": 77,
+     "dist": 0.387,
+     "stayed": false,
+     "caption": "A delicate miniature pink Victorian mansion, nestled under a transparent glass dome, is surrounded by lush pink roses and vibrant greenery, creating an enchanti"
+    },
+    {
+     "traj": 8,
+     "step": 2,
+     "dist": 0.5,
+     "stayed": false,
+     "caption": "A regal, ivy-clad mansion exudes an aura of timeless elegance under a bright blue sky. The symmetrical facade, adorned with verdant moss and climbing vines, inv"
+    },
+    {
+     "traj": 15,
+     "step": 7,
+     "dist": 0.832,
+     "stayed": false,
+     "caption": "A grand, opulent hall with golden columns and intricate details bathed in ethereal light. A central dome opens to a starry night sky, creating a celestial juxta"
+    },
+    {
+     "traj": 17,
+     "step": 20,
+     "dist": 0.848,
+     "stayed": false,
+     "caption": "Two ethereal figures in white veils and flowing dresses stand amidst ancient columns draped in moss, bathed in golden sunlight that filters through an opening i"
+    },
+    {
+     "traj": 14,
+     "step": 42,
+     "dist": 0.854,
+     "stayed": false,
+     "caption": "A weathered, gnarled tree clings tenaciously to rocky cliffs as stormy waves crash beneath it. Dark, brooding clouds gather overhead, painting a dramatic, resil"
+    },
+    {
+     "traj": 4,
+     "step": 99,
+     "dist": 0.859,
+     "stayed": false,
+     "caption": "In a verdant, misty forest, an ancient staircase winds upwards, its mossy steps and vibrant greenery enveloped by the ethereal veil of fog, inviting the viewer "
+    },
+    {
+     "traj": 2,
+     "step": 81,
+     "dist": 0.861,
+     "stayed": false,
+     "caption": "This opulent hall is bathed in sunlight, reflecting off its glossy marble floor. Ornate gold columns and intricately detailed arches frame the grand, bright win"
+    },
+    {
+     "traj": 13,
+     "step": 40,
+     "dist": 0.867,
+     "stayed": false,
+     "caption": "In a grand ballroom bathed in golden hues, a bride and groom share a tender moment under a vast, ornate chandelier. Columns of gleaming gold frame the scene, re"
+    },
+    {
+     "traj": 9,
+     "step": 38,
+     "dist": 0.868,
+     "stayed": false,
+     "caption": "A verdant, moss-covered forest shrouded in a mystical, golden haze reflects in a still pool of water, creating a dreamlike, ethereal ambiance."
+    },
+    {
+     "traj": 19,
+     "step": 56,
+     "dist": 0.871,
+     "stayed": false,
+     "caption": "An ancient, gnarled tree stands amidst a misty veil, its twisted branches reaching skyward like ghostly fingers. The ethereal fog enshrouds the scene, casting a"
+    },
+    {
+     "traj": 10,
+     "step": 15,
+     "dist": 0.878,
+     "stayed": false,
+     "caption": "In a sunlit garden, two ethereal figures in flowing white dresses dance gracefully amidst blooming cherry blossoms, their intertwined arms capturing a moment of"
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    39,
+    86,
+    67,
+    16,
+    25
+   ],
+   "radius_used": 0.589,
+   "radius_p95": 0.589,
+   "n_visited": 1,
+   "n_stayed": 0,
+   "n_transient": 1,
+   "median_first_visit": 47.0,
+   "max_transient_dwell": 10,
+   "nearest": 0.526,
+   "examples": [
+    {
+     "traj": 16,
+     "step": 51,
+     "dist": 0.526,
+     "stayed": false,
+     "caption": "Four ballerinas in motion blur, their tutus swirling in shades of blue and red against a dreamy sky backdrop, captured in a fleeting, ethereal dance."
+    },
+    {
+     "traj": 10,
+     "step": 22,
+     "dist": 0.622,
+     "stayed": false,
+     "caption": "Two women in flowing white kimono dance gracefully amidst a sea of cherry blossoms, their long sleeves and skirts billowing with the gentle breeze. The vibrant "
+    },
+    {
+     "traj": 19,
+     "step": 42,
+     "dist": 0.722,
+     "stayed": false,
+     "caption": "A ethereal figure in flowing white robes stands in a mossy forest, bathed in golden sunlight filtering through the trees, creating a magical, serene atmosphere."
+    },
+    {
+     "traj": 7,
+     "step": 84,
+     "dist": 0.76,
+     "stayed": false,
+     "caption": "A serene scene at twilight, where cherry blossoms frame a glowing, red, multi-tiered pagoda reflecting on a tranquil lake. Mount Fuji looms in the distance, its"
+    },
+    {
+     "traj": 18,
+     "step": 1,
+     "dist": 0.796,
+     "stayed": false,
+     "caption": "A warrior clad in golden armor stands atop a rocky peak, his back to the viewer, gazing at a fiery mountain peak. His flowing red cloak billows in the wind, whi"
+    },
+    {
+     "traj": 15,
+     "step": 2,
+     "dist": 0.809,
+     "stayed": false,
+     "caption": "A scholar in a white robe stands before a cosmic chalice, surrounded by vibrant celestial hues and swirling galaxies. Columns of light ascend, while planets hov"
+    },
+    {
+     "traj": 12,
+     "step": 2,
+     "dist": 0.815,
+     "stayed": false,
+     "caption": "Five figures sit together in white on a vibrant picnic blanket, bathed in golden sunlight, against a backdrop of misty, tree-lined hills, evoking a serene, time"
+    },
+    {
+     "traj": 9,
+     "step": 3,
+     "dist": 0.833,
+     "stayed": false,
+     "caption": "A solitary figure draped in a vibrant orange cloak sits alone on a weathered bench, enveloped by a misty, wintry park. Bare trees frame the scene, their gnarled"
+    },
+    {
+     "traj": 13,
+     "step": 89,
+     "dist": 0.833,
+     "stayed": false,
+     "caption": "A radiant bride stands gracefully in a sun-drenched room with arched windows and intricate molding. Sunlight bathes her flowing wedding gown, creating a etherea"
+    },
+    {
+     "traj": 11,
+     "step": 9,
+     "dist": 0.834,
+     "stayed": false,
+     "caption": "A pristine, circular recess offers a view of nature through a translucent dome, casting ethereal light on a crumpled white fabric, nestled against a sea of deli"
+    },
+    {
+     "traj": 3,
+     "step": 62,
+     "dist": 0.835,
+     "stayed": false,
+     "caption": "A serene Japanese garden bathes in soft morning mist. A vibrant red bridge arches gracefully over a still stream, its reflection dancing on the water's surface."
+    },
+    {
+     "traj": 1,
+     "step": 93,
+     "dist": 0.838,
+     "stayed": false,
+     "caption": "A spectral figure draped in a dark, flowing cloak stands amidst a fog-laden, tree-laden landscape, its skull visage framed by a hood. Branches stretch out like "
+    }
+   ]
+  }
+ ]
+}

@@ -18,6 +18,6 @@ case "${1:-}" in
   pull) mkdir -p runs logs
         rsync -az --no-o --no-g --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/runs/" runs/ && rsync -az --no-o --no-g --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/logs/" logs/runpod/ && echo pulled && du -sh runs/a0_core 2>/dev/null ;;
   ssh)  $SSH -L 8788:127.0.0.1:8787 "$HOST" ;;
-  status) $SSH "$HOST" 'cd /workspace/ai_to_ai_loops && python3 -c "import json;p=json.load(open(\"runs/a0_core/progress.json\"));print(p[\"state\"],\"step\",p[\"step\"],p[\"completed_steps\"],\"/\",p[\"total_steps\"],\"s/traj-step\",p.get(\"s_per_traj_step\"),\"eta h\",p.get(\"eta_hours\"),p[\"updated\"])" 2>/dev/null || tail -2 logs/a0_core.log' ;;
+  status) $SSH "$HOST" 'cd /workspace/ai_to_ai_loops && python3 -c "import json,glob,os;f=max(glob.glob(\"runs/*/progress.json\"),key=os.path.getmtime);p=json.load(open(f));print(f,p[\"state\"],\"step\",p[\"step\"],p[\"completed_steps\"],\"/\",p[\"total_steps\"],\"s/traj-step\",p.get(\"s_per_traj_step\"),\"eta h\",p.get(\"eta_hours\"),p[\"updated\"])" 2>/dev/null || ls -t logs/*.log | head -1 | xargs tail -2' ;;
   *) echo "usage: $0 push|pull|ssh|status"; exit 1 ;;
 esac

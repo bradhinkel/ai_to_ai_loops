@@ -1,7 +1,8 @@
 """Throughput of Hunyuan-DiT on the current GPU: seconds per image by batch size and step count (no run data written).
     .venv/bin/python scripts/bench_hunyuan.py [--batches 4,8,16,32] [--steps 50,25]
 """
-import argparse, time, torch, json
+import argparse, time, torch, json, sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from src.generators.hunyuan import HunyuanGenerator
 
 ap = argparse.ArgumentParser(); ap.add_argument("--batches", default="4,8,16,32"); ap.add_argument("--steps", default="50,25"); a = ap.parse_args()

@@ -1,0 +1,900 @@
+{
+ "probes_run": "a0_core",
+ "scan_run": "e1_gen",
+ "probe_source": "archive/a0_core_centroids.npz",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    90,
+    17,
+    10,
+    88,
+    57,
+    59,
+    93,
+    9,
+    70,
+    4,
+    40
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.111,
+   "n_visited": 15,
+   "n_stayed": 2,
+   "n_transient": 13,
+   "median_first_visit": 64.0,
+   "max_transient_dwell": 2,
+   "nearest": 0.094,
+   "examples": [
+    {
+     "traj": 10,
+     "step": 24,
+     "dist": 0.094,
+     "stayed": false,
+     "caption": "The image captures the grandeur of an ornate Gothic cathedral. The interior is bathed in soft light, filtering in from the numerous stained-glass windows. The p"
+    },
+    {
+     "traj": 79,
+     "step": 98,
+     "dist": 0.125,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior. The space is dominated by soaring arches and sturdy stone pillars, their dark tones contrasting with "
+    },
+    {
+     "traj": 4,
+     "step": 21,
+     "dist": 0.131,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior. The perspective is from the altar, inviting the viewer into the space. The ceiling is a complex netwo"
+    },
+    {
+     "traj": 70,
+     "step": 64,
+     "dist": 0.136,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a Gothic cathedral, bathed in the ethereal glow of its many stained glass windows. The perspective is from the back of the ch"
+    },
+    {
+     "traj": 6,
+     "step": 56,
+     "dist": 0.139,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral, where time seems to have stood still. The interior is awash with the warm glow of sunlight streaming in from the"
+    },
+    {
+     "traj": 52,
+     "step": 99,
+     "dist": 0.149,
+     "stayed": true,
+     "caption": "The image captures the grandeur of an imposing cathedral, bathed in natural light. The perspective is from the center aisle, leading the viewer's gaze towards t"
+    },
+    {
+     "traj": 80,
+     "step": 81,
+     "dist": 0.154,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior. The focus is on the altar, bathed in the warm glow of sunlight filtering through stained glass window"
+    },
+    {
+     "traj": 94,
+     "step": 93,
+     "dist": 0.155,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior, bathed in the soft glow of natural light filtering through towering stained glass windows. The archit"
+    },
+    {
+     "traj": 30,
+     "step": 37,
+     "dist": 0.155,
+     "stayed": false,
+     "caption": "The image captures the breathtaking interior of a cathedral. The perspective is from a low angle, looking up towards the towering ceiling. The architecture is a"
+    },
+    {
+     "traj": 91,
+     "step": 77,
+     "dist": 0.158,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior, with its high ceiling and numerous arches. The most striking feature is a large stained glass window "
+    },
+    {
+     "traj": 67,
+     "step": 65,
+     "dist": 0.163,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral with its vibrant stained-glass windows. The church's interior is awash with a rainbow of colors, illuminated by t"
+    },
+    {
+     "traj": 58,
+     "step": 57,
+     "dist": 0.169,
+     "stayed": false,
+     "caption": "This image captures the majestic interior of a grand cathedral. The viewer's perspective is drawn upwards by a series of stained glass windows, their colors viv"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    5,
+    95,
+    92,
+    35,
+    82,
+    60,
+    58,
+    87,
+    43,
+    50,
+    27,
+    28,
+    83,
+    19,
+    84,
+    63,
+    85,
+    81,
+    66,
+    64,
+    37,
+    74,
+    53,
+    11,
+    0,
+    98,
+    30,
+    51,
+    80,
+    56,
+    68,
+    52,
+    41,
+    76
+   ],
+   "radius_used": 0.323,
+   "radius_p95": 0.323,
+   "n_visited": 5,
+   "n_stayed": 1,
+   "n_transient": 4,
+   "median_first_visit": 21.0,
+   "max_transient_dwell": 9,
+   "nearest": 0.132,
+   "examples": [
+    {
+     "traj": 52,
+     "step": 37,
+     "dist": 0.132,
+     "stayed": false,
+     "caption": "The image presents a grand and ornate room that exudes a sense of opulence and regality. Dominating the center is a large, ornately designed chandelier that cas"
+    },
+    {
+     "traj": 42,
+     "step": 67,
+     "dist": 0.169,
+     "stayed": false,
+     "caption": "The image captures a majestic, regal interior of a palace-like room. Sunlight filters in through grand, ornate windows with long drapes, casting a soft glow on "
+    },
+    {
+     "traj": 24,
+     "step": 92,
+     "dist": 0.175,
+     "stayed": true,
+     "caption": "This image presents a luxurious, purple-themed living room. The room is dominated by the color purple, which is accentuated by a purple chandelier hanging from "
+    },
+    {
+     "traj": 82,
+     "step": 21,
+     "dist": 0.208,
+     "stayed": false,
+     "caption": "The image portrays an opulent bedroom bathed in soft, diffused light. Dominating the scene is a large bed, dressed in richly-textured fabric and adorned with a "
+    },
+    {
+     "traj": 80,
+     "step": 29,
+     "dist": 0.233,
+     "stayed": false,
+     "caption": "The image captures a grand ballroom, bathed in soft, warm light. The ceiling, a symphony of gold chandeliers, casts a soft glow throughout the room. The walls, "
+    },
+    {
+     "traj": 69,
+     "step": 50,
+     "dist": 0.459,
+     "stayed": false,
+     "caption": "The image presents an interior room, grand in scale and rich in detail. Dominating the center of the room is a massive painting of a starry night, alive with pl"
+    },
+    {
+     "traj": 68,
+     "step": 34,
+     "dist": 0.473,
+     "stayed": false,
+     "caption": "The image portrays a grand, ornate theater stage. The backdrop is a rich blue, with gold and purple curtains adding a touch of opulence. The stage itself is a l"
+    },
+    {
+     "traj": 87,
+     "step": 22,
+     "dist": 0.517,
+     "stayed": false,
+     "caption": "The image presents a modern, minimalist living room. Dominating the scene is a striking piece of abstract art, its red hues lending a bold, vibrant energy to th"
+    },
+    {
+     "traj": 5,
+     "step": 61,
+     "dist": 0.533,
+     "stayed": false,
+     "caption": "The image captures an expansive, airy art gallery, bathed in natural light from large windows. The room's walls, painted a soothing blue, serve as a backdrop to"
+    },
+    {
+     "traj": 50,
+     "step": 3,
+     "dist": 0.569,
+     "stayed": false,
+     "caption": "The image presents a scene of quiet intensity set in a dimly lit, opulent study. Two men are seated in a large armchair and a matching ottoman, engrossed in a c"
+    },
+    {
+     "traj": 58,
+     "step": 18,
+     "dist": 0.578,
+     "stayed": false,
+     "caption": "The image captures a scene of tranquil solitude in a Victorian-style library. The room is dominated by the glow of a large, stained glass window, its rich color"
+    },
+    {
+     "traj": 86,
+     "step": 41,
+     "dist": 0.583,
+     "stayed": false,
+     "caption": "The image captures a grand concert hall, bathed in the warm glow of stage lights. The ceiling, ornate with a chandelier, adds an air of opulence to the space. T"
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    2,
+    97,
+    44,
+    26,
+    31,
+    13,
+    47,
+    75,
+    77
+   ],
+   "radius_used": 0.326,
+   "radius_p95": 0.326,
+   "n_visited": 1,
+   "n_stayed": 1,
+   "n_transient": 0,
+   "median_first_visit": 8.0,
+   "max_transient_dwell": 0,
+   "nearest": 0.097,
+   "examples": [
+    {
+     "traj": 82,
+     "step": 45,
+     "dist": 0.097,
+     "stayed": true,
+     "caption": "A grand, opulent bedroom dominates the scene. The room is awash with rich red, from the luxurious bed at the center to the elaborate chandelier overhead. The be"
+    },
+    {
+     "traj": 52,
+     "step": 37,
+     "dist": 0.539,
+     "stayed": false,
+     "caption": "The image presents a grand and ornate room that exudes a sense of opulence and regality. Dominating the center is a large, ornately designed chandelier that cas"
+    },
+    {
+     "traj": 98,
+     "step": 40,
+     "dist": 0.557,
+     "stayed": false,
+     "caption": "The image captures a serene night scene in a bedroom. The room is bathed in soft, ambient light that spills in from the open window. The window, framed by white"
+    },
+    {
+     "traj": 24,
+     "step": 92,
+     "dist": 0.56,
+     "stayed": false,
+     "caption": "This image presents a luxurious, purple-themed living room. The room is dominated by the color purple, which is accentuated by a purple chandelier hanging from "
+    },
+    {
+     "traj": 42,
+     "step": 52,
+     "dist": 0.562,
+     "stayed": false,
+     "caption": "The image captures a luxurious and elegant room, bathed in the soft glow of natural light streaming in from large windows. The room is dominated by a grand chan"
+    },
+    {
+     "traj": 80,
+     "step": 35,
+     "dist": 0.575,
+     "stayed": false,
+     "caption": "The image portrays a grand ballroom, resplendent with classical elegance. The room is dominated by large blue curtains that hang from the ceiling, their rich co"
+    },
+    {
+     "traj": 87,
+     "step": 1,
+     "dist": 0.683,
+     "stayed": false,
+     "caption": "A striking diptych of bedrooms, each uniquely bathed in a single, bold hue - one in a vibrant red and the other in a contrasting blue. The walls are bare, save "
+    },
+    {
+     "traj": 11,
+     "step": 40,
+     "dist": 0.7,
+     "stayed": false,
+     "caption": "This image captures a serene, coastal room. The walls are painted a pristine white, creating a bright and airy atmosphere. Dominating the scene is a large windo"
+    },
+    {
+     "traj": 68,
+     "step": 44,
+     "dist": 0.705,
+     "stayed": false,
+     "caption": "The image captures a grand theater, exuding an air of opulence and drama. Dominating the scene is a stage, bathed in a warm, golden light that contrasts with th"
+    },
+    {
+     "traj": 69,
+     "step": 28,
+     "dist": 0.706,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a baby's bedroom at night. The crib, the central focus of the image, is made of light wood, its sturdy structure contrastin"
+    },
+    {
+     "traj": 0,
+     "step": 6,
+     "dist": 0.713,
+     "stayed": false,
+     "caption": "In this image, we see a tranquil scene inside a hospital room. A woman, adorned in a white nightgown, lies peacefully on a hospital bed. Her gaze is closed, sug"
+    },
+    {
+     "traj": 86,
+     "step": 46,
+     "dist": 0.751,
+     "stayed": false,
+     "caption": "The image captures a moment of stage performance. A solo performer, dressed in a white and gold wedding dress, stands on a grand, ornate stage set with curtain "
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    6,
+    54,
+    65,
+    29,
+    55,
+    78,
+    46,
+    33
+   ],
+   "radius_used": 0.707,
+   "radius_p95": 0.707,
+   "n_visited": 9,
+   "n_stayed": 0,
+   "n_transient": 9,
+   "median_first_visit": 38.0,
+   "max_transient_dwell": 32,
+   "nearest": 0.324,
+   "examples": [
+    {
+     "traj": 34,
+     "step": 33,
+     "dist": 0.324,
+     "stayed": false,
+     "caption": "The image captures a quaint, European-style street nestled within a charming village. The cobblestone path is bordered by quaint houses, painted in a vibrant pa"
+    },
+    {
+     "traj": 91,
+     "step": 19,
+     "dist": 0.388,
+     "stayed": false,
+     "caption": "The image presents a picturesque village nestled in a valley. The village is quaint, with traditional stone houses scattered along a winding dirt road. The road"
+    },
+    {
+     "traj": 93,
+     "step": 68,
+     "dist": 0.396,
+     "stayed": false,
+     "caption": "The image presents a quaint European village scene. The village is nestled on a cobblestone street, evoking a sense of history and timelessness. A variety of pl"
+    },
+    {
+     "traj": 31,
+     "step": 74,
+     "dist": 0.413,
+     "stayed": false,
+     "caption": "The image presents a serene rural scene in a village nestled in the mountains. The village is characterized by traditional, thatched-roof houses and stone walls"
+    },
+    {
+     "traj": 33,
+     "step": 97,
+     "dist": 0.422,
+     "stayed": false,
+     "caption": "The image presents a quaint village nestled in the foothills of a majestic mountain. The village is a charming cluster of stone houses, their walls adorned with"
+    },
+    {
+     "traj": 9,
+     "step": 70,
+     "dist": 0.464,
+     "stayed": false,
+     "caption": "In this digitally altered image, we see a person clad in a long coat and a wide-brimmed hat, walking down a quaint, cobblestone street nestled within a charming"
+    },
+    {
+     "traj": 24,
+     "step": 44,
+     "dist": 0.484,
+     "stayed": false,
+     "caption": "The image is a captivating oil painting that brings to life a quaint, rainy night in a narrow, cobblestone street in an old town. The street is flanked by stone"
+    },
+    {
+     "traj": 77,
+     "step": 86,
+     "dist": 0.534,
+     "stayed": false,
+     "caption": "The image portrays a serene, rural landscape. A winding dirt road, bordered by lush greenery and dotted with wildflowers, stretches from the foreground to the c"
+    },
+    {
+     "traj": 66,
+     "step": 43,
+     "dist": 0.674,
+     "stayed": false,
+     "caption": "The image captures a vibrant and colorful scene from a market in India. The most striking feature is the large, colorful arched entrance that draws the eye. Thi"
+    },
+    {
+     "traj": 72,
+     "step": 10,
+     "dist": 0.736,
+     "stayed": false,
+     "caption": "The image presents a fantastical scene of a whimsical garden path. The path, a dirt road meandering through the center of the image, is flanked by a vibrant arr"
+    },
+    {
+     "traj": 29,
+     "step": 32,
+     "dist": 0.755,
+     "stayed": false,
+     "caption": "The image depicts a tranquil rural landscape. It's a digital art piece capturing a serene village scene. The village is nestled along the banks of a gentle rive"
+    },
+    {
+     "traj": 78,
+     "step": 21,
+     "dist": 0.783,
+     "stayed": false,
+     "caption": "The image presents a breathtaking view of a mountainous landscape, as seen from a wooden window frame. The window offers a panoramic view of a winding road snak"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    24,
+    96,
+    36,
+    45,
+    15,
+    1,
+    69,
+    42,
+    62,
+    20,
+    14,
+    32,
+    23,
+    12,
+    71,
+    18,
+    61,
+    3,
+    22,
+    72,
+    73,
+    79,
+    99,
+    48
+   ],
+   "radius_used": 0.793,
+   "radius_p95": 0.793,
+   "n_visited": 94,
+   "n_stayed": 31,
+   "n_transient": 63,
+   "median_first_visit": 4.0,
+   "max_transient_dwell": 51,
+   "nearest": 0.505,
+   "examples": [
+    {
+     "traj": 48,
+     "step": 84,
+     "dist": 0.505,
+     "stayed": true,
+     "caption": "The image portrays a serene autumn scene in a forest by a river. The sun is setting, casting a warm, golden glow across the landscape, highlighting the foliage "
+    },
+    {
+     "traj": 97,
+     "step": 19,
+     "dist": 0.538,
+     "stayed": true,
+     "caption": "This image captures the grandeur of Antelope Canyon, a natural wonder of Arizona. The canyon walls, sculpted by water and time, display a mesmerizing blend of p"
+    },
+    {
+     "traj": 60,
+     "step": 22,
+     "dist": 0.543,
+     "stayed": false,
+     "caption": "This is a digital art piece that presents a vibrant and futuristic scene. It depicts a highway that appears to stretch endlessly into the distance, bordered by "
+    },
+    {
+     "traj": 45,
+     "step": 95,
+     "dist": 0.554,
+     "stayed": true,
+     "caption": "The image captures a serene tropical landscape. The scene is dominated by a majestic waterfall, its waters cascading down a lush, green canyon. The waterfall is"
+    },
+    {
+     "traj": 53,
+     "step": 85,
+     "dist": 0.563,
+     "stayed": true,
+     "caption": "The image captures a Mars-like landscape, characterized by a red-toned ground and towering, rocky formations. The central focus is a large, white orb floating i"
+    },
+    {
+     "traj": 82,
+     "step": 1,
+     "dist": 0.564,
+     "stayed": false,
+     "caption": "The image portrays a striking visual of a group of individuals standing on a celestial bridge or walkway. The bridge is set against a backdrop of a cosmic lands"
+    },
+    {
+     "traj": 95,
+     "step": 97,
+     "dist": 0.567,
+     "stayed": true,
+     "caption": "The image presents a breathtaking view of an otherworldly cave, its walls painted in vibrant hues of red. The cave itself is a natural wonder, with a large, hea"
+    },
+    {
+     "traj": 72,
+     "step": 8,
+     "dist": 0.573,
+     "stayed": true,
+     "caption": "A fantasy landscape unfolds, an Alice-in-Wonderland scene of an ethereal garden. A single figure, seemingly human, walks alone on a winding stone path. The path"
+    },
+    {
+     "traj": 1,
+     "step": 93,
+     "dist": 0.576,
+     "stayed": true,
+     "caption": "This image captures the breathtaking beauty of Antelope Canyon in Arizona, a natural wonder known for its stunning geological formations. The photograph showcas"
+    },
+    {
+     "traj": 64,
+     "step": 1,
+     "dist": 0.576,
+     "stayed": false,
+     "caption": "The image showcases two contrasting views of a moonlit landscape, each captured from the same vantage point but at different times of the year. On the left, the"
+    },
+    {
+     "traj": 78,
+     "step": 99,
+     "dist": 0.58,
+     "stayed": true,
+     "caption": "This image captures a serene and expansive coastal scene. A solitary figure, appearing small due to perspective, walks along a rugged rocky path that overlooks "
+    },
+    {
+     "traj": 36,
+     "step": 34,
+     "dist": 0.581,
+     "stayed": true,
+     "caption": "The image portrays a living room scene, dominated by a triptych of paintings hanging on the wall. These paintings vividly capture the majestic beauty of a red r"
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    49,
+    91,
+    94,
+    8
+   ],
+   "radius_used": 0.455,
+   "radius_p95": 0.455,
+   "n_visited": 1,
+   "n_stayed": 1,
+   "n_transient": 0,
+   "median_first_visit": 84.0,
+   "max_transient_dwell": 0,
+   "nearest": 0.349,
+   "examples": [
+    {
+     "traj": 23,
+     "step": 87,
+     "dist": 0.349,
+     "stayed": true,
+     "caption": "The image portrays a grand castle perched atop a craggy cliff. The castle, with its multiple towers and flag flying high, exudes an aura of medieval splendor. T"
+    },
+    {
+     "traj": 77,
+     "step": 85,
+     "dist": 0.513,
+     "stayed": false,
+     "caption": "The image captures a picturesque village nestled within a verdant valley. The village is a charming architectural ensemble, with houses boasting traditional des"
+    },
+    {
+     "traj": 91,
+     "step": 25,
+     "dist": 0.549,
+     "stayed": false,
+     "caption": "The image presents a serene, European-style village nestled in a valley, surrounded by majestic mountains. The village boasts quaint thatched-roof cottages, the"
+    },
+    {
+     "traj": 31,
+     "step": 64,
+     "dist": 0.583,
+     "stayed": false,
+     "caption": "The image presents a picturesque village nestled in a mountainous landscape. The village is a charming cluster of houses, each boasting a unique architectural s"
+    },
+    {
+     "traj": 33,
+     "step": 87,
+     "dist": 0.609,
+     "stayed": false,
+     "caption": "The image captures a quaint, old-world village nestled in the foothills of a mountain range. The village is constructed with wooden buildings, featuring peaked "
+    },
+    {
+     "traj": 93,
+     "step": 69,
+     "dist": 0.63,
+     "stayed": false,
+     "caption": "The image presents a picturesque scene of a quaint European village. A winding cobblestone street, bathed in the soft glow of daylight, meanders its way between"
+    },
+    {
+     "traj": 34,
+     "step": 42,
+     "dist": 0.638,
+     "stayed": false,
+     "caption": "The image presents a serene, medieval-style village nestled amidst a backdrop of twilight. The village is constructed with old-world charm, featuring quaint, ti"
+    },
+    {
+     "traj": 58,
+     "step": 85,
+     "dist": 0.686,
+     "stayed": false,
+     "caption": "The image captures a stained glass window of a church, rendered in the Gothic architectural style. The window portrays a tranquil scene featuring a castle, poss"
+    },
+    {
+     "traj": 98,
+     "step": 9,
+     "dist": 0.687,
+     "stayed": false,
+     "caption": "This image showcases a captivating collection of three Gothic cathedral stained glass windows, each telling its own story. The left window portrays a mystical n"
+    },
+    {
+     "traj": 85,
+     "step": 13,
+     "dist": 0.704,
+     "stayed": false,
+     "caption": "The image portrays a fantastical landscape, teeming with life and otherworldly charm. The sky above is a serene blue, with the sun casting a warm, inviting glow"
+    },
+    {
+     "traj": 8,
+     "step": 37,
+     "dist": 0.704,
+     "stayed": false,
+     "caption": "This image presents a captivating night-time view of the Kremlin, the historic fortified complex at the heart of Moscow, Russia. The vibrant colors of the neo-R"
+    },
+    {
+     "traj": 9,
+     "step": 9,
+     "dist": 0.76,
+     "stayed": false,
+     "caption": "The image showcases a modern and stylish decorative wall art piece, specifically a panoramic wall-mounted photo of a famous city's skyline. The art piece is com"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    7,
+    34,
+    38,
+    21,
+    89
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.193,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.257,
+   "examples": [
+    {
+     "traj": 34,
+     "step": 5,
+     "dist": 0.257,
+     "stayed": false,
+     "caption": "The image is a vibrant depiction of a stately two-story house nestled amidst lush greenery. The house is painted in a soothing light blue color, with a contrast"
+    },
+    {
+     "traj": 91,
+     "step": 1,
+     "dist": 0.378,
+     "stayed": false,
+     "caption": "The image is a vibrant illustration of a suburban street scene. Dominating the view is a long, wide tree-lined street flanked by houses. The houses, painted in "
+    },
+    {
+     "traj": 49,
+     "step": 61,
+     "dist": 0.693,
+     "stayed": false,
+     "caption": "The image presents a serene scene of two modern houses side by side. The house on the left is distinguished by its gray exterior, accented with a striking red r"
+    },
+    {
+     "traj": 80,
+     "step": 62,
+     "dist": 0.694,
+     "stayed": false,
+     "caption": "This image captures a grand, two-tiered staircase that ascends within a classical building. The top staircase, adorned with ornate architectural details, is sit"
+    },
+    {
+     "traj": 77,
+     "step": 85,
+     "dist": 0.695,
+     "stayed": false,
+     "caption": "The image captures a picturesque village nestled within a verdant valley. The village is a charming architectural ensemble, with houses boasting traditional des"
+    },
+    {
+     "traj": 66,
+     "step": 87,
+     "dist": 0.701,
+     "stayed": false,
+     "caption": "The image presents a charming scene of holiday spirit captured in the form of a miniature gingerbread house. The house, made from Lego bricks, exudes a warm red"
+    },
+    {
+     "traj": 93,
+     "step": 62,
+     "dist": 0.742,
+     "stayed": false,
+     "caption": "The image captures a serene scene of an old, narrow alleyway in an East Asian setting. The architecture is traditional, with wooden houses featuring red walls a"
+    },
+    {
+     "traj": 85,
+     "step": 13,
+     "dist": 0.763,
+     "stayed": false,
+     "caption": "The image portrays a fantastical landscape, teeming with life and otherworldly charm. The sky above is a serene blue, with the sun casting a warm, inviting glow"
+    },
+    {
+     "traj": 33,
+     "step": 95,
+     "dist": 0.764,
+     "stayed": false,
+     "caption": "This image depicts a charming European-style village nestled in a mountainous region. The village is characterized by quaint houses with colorful exteriors and "
+    },
+    {
+     "traj": 8,
+     "step": 31,
+     "dist": 0.781,
+     "stayed": false,
+     "caption": "This image captures the breathtaking beauty of St. Sophia Cathedral in Moscow, Russia. The cathedral stands majestically against the backdrop of a clear sky, it"
+    },
+    {
+     "traj": 23,
+     "step": 78,
+     "dist": 0.783,
+     "stayed": false,
+     "caption": "This image presents a fantastical and whimsical scene of an open book unfurling into a world of imagination. The book is the central focus, floating above a tra"
+    },
+    {
+     "traj": 15,
+     "step": 84,
+     "dist": 0.79,
+     "stayed": false,
+     "caption": "The image presents a whimsical scene of a serene Japanese-style village. Dominating the landscape is a striking red temple, intricately detailed and topped with"
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    39,
+    86,
+    67,
+    16,
+    25
+   ],
+   "radius_used": 0.589,
+   "radius_p95": 0.589,
+   "n_visited": 10,
+   "n_stayed": 4,
+   "n_transient": 6,
+   "median_first_visit": 25.0,
+   "max_transient_dwell": 21,
+   "nearest": 0.319,
+   "examples": [
+    {
+     "traj": 39,
+     "step": 67,
+     "dist": 0.319,
+     "stayed": true,
+     "caption": "A dynamic digital artwork captures the essence of a soccer player in mid-air, frozen in a moment of intense action. The athlete, clad in a vibrant red jersey an"
+    },
+    {
+     "traj": 29,
+     "step": 97,
+     "dist": 0.339,
+     "stayed": true,
+     "caption": "The image is a dynamic sports-themed artwork featuring a male soccer player in action. The player is mid-air, poised with one leg extended, about to kick a socc"
+    },
+    {
+     "traj": 76,
+     "step": 89,
+     "dist": 0.493,
+     "stayed": true,
+     "caption": "In the center of the image, a ballerina leaps with an ethereal grace. Her body is a vibrant blend of pastel hues, her pink tutu contrasting beautifully against "
+    },
+    {
+     "traj": 55,
+     "step": 18,
+     "dist": 0.501,
+     "stayed": false,
+     "caption": "The image captures a moment of pure grace and strength. A ballerina, dressed in a black tutu with a silver bodice and silver tulle skirt, is mid-air in an expan"
+    },
+    {
+     "traj": 28,
+     "step": 27,
+     "dist": 0.503,
+     "stayed": false,
+     "caption": "A colorful spectacle unfolds in a studio adorned with rainbow hues. A ballerina, poised in the center, is captured mid-dance, arms extended, embodying the motio"
+    },
+    {
+     "traj": 2,
+     "step": 81,
+     "dist": 0.514,
+     "stayed": true,
+     "caption": "The image is a dynamic collage showcasing the grace and athleticism of a ballet dancer. Six distinct photographs capture the dancer in various poses, each one a"
+    },
+    {
+     "traj": 50,
+     "step": 52,
+     "dist": 0.515,
+     "stayed": false,
+     "caption": "The image captures a moment of grace and agility, featuring a ballerina in the midst of a performance. The dancer, dressed in a classic white tutu and ballet sh"
+    },
+    {
+     "traj": 36,
+     "step": 82,
+     "dist": 0.57,
+     "stayed": false,
+     "caption": "This image captures a romantic moment of a couple in a dance studio. They are mid-pose, their bodies elegantly poised, reflecting the grace of ballet. The woman"
+    },
+    {
+     "traj": 16,
+     "step": 89,
+     "dist": 0.572,
+     "stayed": false,
+     "caption": "This image captures a vibrant scene of six runners in motion, their bodies a dynamic blend of color and form against the backdrop of a rainbow-hued track. The r"
+    },
+    {
+     "traj": 67,
+     "step": 9,
+     "dist": 0.577,
+     "stayed": false,
+     "caption": "The image presents a dynamic scene of athletic prowess. Two male athletes are captured in mid-run on a vibrant track. They are depicted in a stylized manner wit"
+    },
+    {
+     "traj": 86,
+     "step": 97,
+     "dist": 0.599,
+     "stayed": false,
+     "caption": "This is a dynamic black and white photograph capturing a dancer in the midst of a performance. The dancer is positioned centrally, with one leg gracefully exten"
+    },
+    {
+     "traj": 77,
+     "step": 6,
+     "dist": 0.628,
+     "stayed": false,
+     "caption": "The image is a vibrant collage of three distinct photographs, all united by the central theme of fashion and movement. Each photograph captures the dynamic ener"
+    }
+   ]
+  }
+ ]
+}

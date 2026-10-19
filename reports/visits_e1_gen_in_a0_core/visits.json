@@ -1,0 +1,900 @@
+{
+ "probes_run": "e1_gen",
+ "scan_run": "a0_core",
+ "probe_source": "k-means k=8 on e1_gen step-99 DINOv2",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    5,
+    6,
+    10,
+    30,
+    38,
+    42,
+    52,
+    58,
+    67,
+    70,
+    79,
+    80,
+    91,
+    94
+   ],
+   "radius_used": 0.602,
+   "radius_p95": 0.602,
+   "n_visited": 17,
+   "n_stayed": 11,
+   "n_transient": 6,
+   "median_first_visit": 31.0,
+   "max_transient_dwell": 7,
+   "nearest": 0.11,
+   "examples": [
+    {
+     "traj": 10,
+     "step": 29,
+     "dist": 0.11,
+     "stayed": true,
+     "caption": "This image captures the grandeur of a cathedral. The high vaulted ceiling, supported by tall arches, is a testament to architectural prowess. The intricate patt"
+    },
+    {
+     "traj": 70,
+     "step": 51,
+     "dist": 0.119,
+     "stayed": true,
+     "caption": "This image captures the grandeur of a cathedral's interior, viewed from the back of the church. The perspective is slightly elevated, offering a panoramic view "
+    },
+    {
+     "traj": 17,
+     "step": 85,
+     "dist": 0.131,
+     "stayed": true,
+     "caption": "The image captures the grandeur of a cathedral's interior. The space is bathed in soft, warm light that filters through the stained glass windows and illuminate"
+    },
+    {
+     "traj": 40,
+     "step": 70,
+     "dist": 0.142,
+     "stayed": true,
+     "caption": "The image captures the grandeur and solemnity of a cathedral, bathed in the soft glow of natural light. The high, vaulted ceiling, adorned with intricate Gothic"
+    },
+    {
+     "traj": 59,
+     "step": 75,
+     "dist": 0.142,
+     "stayed": true,
+     "caption": "The image captures the grandeur of a Gothic cathedral's interior. The high ceiling, punctuated by flying buttresses, reaches toward a stained glass window that "
+    },
+    {
+     "traj": 4,
+     "step": 93,
+     "dist": 0.142,
+     "stayed": true,
+     "caption": "The image captures the grandeur of an ornate cathedral. The interior is a rainbow-colored spectacle, with every surface bathed in a spectrum of vibrant hues. Th"
+    },
+    {
+     "traj": 9,
+     "step": 94,
+     "dist": 0.145,
+     "stayed": true,
+     "caption": "The image captures the grandeur of a cathedral interior. Dominating the view is a soaring, Gothic-style nave with its high ceiling, sturdy stone pillars, and ri"
+    },
+    {
+     "traj": 57,
+     "step": 96,
+     "dist": 0.146,
+     "stayed": true,
+     "caption": "The image captures a majestic cathedral, its grandeur accentuated by the towering ceilings supported by robust pillars. The vast interior is awash with the warm"
+    },
+    {
+     "traj": 88,
+     "step": 81,
+     "dist": 0.147,
+     "stayed": true,
+     "caption": "This image captures the grandeur of a cathedral, bathed in a symphony of colors from the stained glass windows. The interior is awash with hues of orange, pink,"
+    },
+    {
+     "traj": 93,
+     "step": 45,
+     "dist": 0.153,
+     "stayed": true,
+     "caption": "The image captures the grandeur of an old cathedral, its architectural beauty on full display. The perspective is from the perspective of a person standing at t"
+    },
+    {
+     "traj": 90,
+     "step": 95,
+     "dist": 0.19,
+     "stayed": true,
+     "caption": "The image captures the grandeur of an ancient cathedral, its stone pillars reaching towards the high vaulted ceiling. The cathedral's interior is awe-inspiring "
+    },
+    {
+     "traj": 37,
+     "step": 16,
+     "dist": 0.391,
+     "stayed": false,
+     "caption": "The image captures the grandeur of the Beinecke Library at Yale University, a renowned landmark known for its architectural beauty and vast collections. The lib"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    4,
+    7,
+    9,
+    14,
+    15,
+    18,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    31,
+    33,
+    35,
+    37,
+    45,
+    48,
+    49,
+    51,
+    54,
+    56,
+    59,
+    61,
+    65,
+    66,
+    68,
+    69,
+    72,
+    75,
+    77,
+    78,
+    81,
+    82,
+    83,
+    84,
+    85,
+    89,
+    90,
+    93,
+    98,
+    99
+   ],
+   "radius_used": 0.813,
+   "radius_p95": 0.813,
+   "n_visited": 97,
+   "n_stayed": 52,
+   "n_transient": 45,
+   "median_first_visit": 7.0,
+   "max_transient_dwell": 89,
+   "nearest": 0.585,
+   "examples": [
+    {
+     "traj": 47,
+     "step": 52,
+     "dist": 0.585,
+     "stayed": true,
+     "caption": "The image portrays a futuristic bedroom that exudes a sense of sci-fi opulence. Dominating the center of the room is a large, round, LED-lit bed, with a circula"
+    },
+    {
+     "traj": 77,
+     "step": 54,
+     "dist": 0.594,
+     "stayed": true,
+     "caption": "The image presents an artistic collage dedicated to the beauty of sunsets. The collage is a vibrant display of over 20 distinct images, each capturing the essen"
+    },
+    {
+     "traj": 15,
+     "step": 69,
+     "dist": 0.607,
+     "stayed": true,
+     "caption": "The image presents a vibrant and expansive Mars landscape, painted in a realistic art style. Dominating the scene are towering red rock formations that stretch "
+    },
+    {
+     "traj": 27,
+     "step": 48,
+     "dist": 0.611,
+     "stayed": true,
+     "caption": "The image presents an opulent room steeped in grandeur. Dominating the room is a majestic chandelier hanging from the high ceiling, its light reflecting off the"
+    },
+    {
+     "traj": 95,
+     "step": 57,
+     "dist": 0.615,
+     "stayed": true,
+     "caption": "This is an interior view of a grand and ornate room, likely part of a historic mansion or government building. The room is characterized by an ornate ceiling ad"
+    },
+    {
+     "traj": 72,
+     "step": 26,
+     "dist": 0.615,
+     "stayed": false,
+     "caption": "The image is a captivating panorama, displayed in a grid-like arrangement. Each panel tells a story, each frame is a window into a different moment of adventure"
+    },
+    {
+     "traj": 41,
+     "step": 92,
+     "dist": 0.619,
+     "stayed": true,
+     "caption": "The image presents a grandiose room, exuding an opulent and luxurious atmosphere. The floor is a rich, dark wood, adding to the room's grandeur. The ceiling, a "
+    },
+    {
+     "traj": 74,
+     "step": 36,
+     "dist": 0.621,
+     "stayed": true,
+     "caption": "In this image, the eye is immediately drawn to a room that is a symphony of color and artistry. Dominating the center of the room is a large, abstract red sculp"
+    },
+    {
+     "traj": 38,
+     "step": 18,
+     "dist": 0.623,
+     "stayed": false,
+     "caption": "The image captures a serene scene of a harbor at night. Four large, framed paintings hang side by side, each showcasing a different view of the harbor. The pain"
+    },
+    {
+     "traj": 87,
+     "step": 63,
+     "dist": 0.628,
+     "stayed": true,
+     "caption": "The image captures the grandeur of a luxurious ballroom, bathed in the opulence of the French style. The ceiling, painted in a soothing shade of blue, is adorne"
+    },
+    {
+     "traj": 31,
+     "step": 44,
+     "dist": 0.628,
+     "stayed": false,
+     "caption": "The image showcases an opulent living room bathed in soft light. The room is grand and luxurious, dominated by a large chandelier hanging from a high ceiling. T"
+    },
+    {
+     "traj": 19,
+     "step": 96,
+     "dist": 0.63,
+     "stayed": true,
+     "caption": "The image presents a grand, opulent living room. Dominating the scene is a white ceiling, ornately adorned with a chandelier hanging from the center, casting a "
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    8,
+    21,
+    36,
+    40,
+    46,
+    60,
+    63,
+    64,
+    74,
+    87
+   ],
+   "radius_used": 0.647,
+   "radius_p95": 0.647,
+   "n_visited": 14,
+   "n_stayed": 1,
+   "n_transient": 13,
+   "median_first_visit": 27.0,
+   "max_transient_dwell": 20,
+   "nearest": 0.328,
+   "examples": [
+    {
+     "traj": 42,
+     "step": 27,
+     "dist": 0.328,
+     "stayed": false,
+     "caption": "The image presents a daring and fantastical scene of a renowned landmark, the Statue of Liberty, seemingly levitated and floating above a cityscape. This iconic"
+    },
+    {
+     "traj": 24,
+     "step": 31,
+     "dist": 0.338,
+     "stayed": false,
+     "caption": "The image portrays a futuristic cityscape in the throes of dusk, painted in hues of vibrant red and pink, which dominate the city's skyline and streets. The cit"
+    },
+    {
+     "traj": 82,
+     "step": 40,
+     "dist": 0.345,
+     "stayed": false,
+     "caption": "The image presents a vibrant futuristic cityscape, bathed in a striking blend of neon pink and purple lights. The city's architecture is sleek and modern, with "
+    },
+    {
+     "traj": 20,
+     "step": 89,
+     "dist": 0.379,
+     "stayed": true,
+     "caption": "The image is a digital artwork depicting a futuristic cityscape. It features tall, skyscrapers with sleek, modern designs. The architecture is intricate, with b"
+    },
+    {
+     "traj": 57,
+     "step": 48,
+     "dist": 0.412,
+     "stayed": false,
+     "caption": "The image is a captivating digital art piece that showcases a character from the anime, 'Cowboy Bebop'. The character, dressed in a green suit and holding a bla"
+    },
+    {
+     "traj": 45,
+     "step": 81,
+     "dist": 0.427,
+     "stayed": false,
+     "caption": "This is a digital illustration that portrays a futuristic cityscape. A lone astronaut, clad in a white suit, stands on a balcony overlooking the city. The city "
+    },
+    {
+     "traj": 81,
+     "step": 10,
+     "dist": 0.435,
+     "stayed": false,
+     "caption": "The image presents a dramatic and futuristic cityscape, reminiscent of a dystopian world. The city is dominated by towering skyscrapers, their architectural det"
+    },
+    {
+     "traj": 9,
+     "step": 6,
+     "dist": 0.447,
+     "stayed": false,
+     "caption": "In this dystopian image, two figures stand atop a dilapidated cityscape, bathed in the warm glow of red light. The city is a maze of towering structures, their "
+    },
+    {
+     "traj": 54,
+     "step": 64,
+     "dist": 0.46,
+     "stayed": false,
+     "caption": "The image presents a captivating cityscape at dusk. Dominating the scene is a black cat perched confidently on the edge of a building, gazing out over the city."
+    },
+    {
+     "traj": 47,
+     "step": 60,
+     "dist": 0.567,
+     "stayed": false,
+     "caption": "The image captures the opulent interior of a skyscraper penthouse. The room, characterized by its floor-to-ceiling windows and futuristic design, offers a comma"
+    },
+    {
+     "traj": 33,
+     "step": 56,
+     "dist": 0.625,
+     "stayed": false,
+     "caption": "The image is a vibrant depiction of a romantic scene set in a city street during a rainstorm. A couple, shielded by a striking red umbrella, share an intimate m"
+    },
+    {
+     "traj": 21,
+     "step": 41,
+     "dist": 0.639,
+     "stayed": false,
+     "caption": "The image captures a vibrant city scene during a rainy evening. The street is illuminated by the warm glow of shoplights and traffic lights, casting a mix of br"
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    0,
+    1,
+    12,
+    13,
+    16,
+    19,
+    71,
+    95,
+    97
+   ],
+   "radius_used": 0.517,
+   "radius_p95": 0.517,
+   "n_visited": 1,
+   "n_stayed": 1,
+   "n_transient": 0,
+   "median_first_visit": 69.0,
+   "max_transient_dwell": 0,
+   "nearest": 0.413,
+   "examples": [
+    {
+     "traj": 96,
+     "step": 77,
+     "dist": 0.413,
+     "stayed": true,
+     "caption": "The image presents a breathtaking view of Antelope Canyon, a renowned geological feature in Arizona. The canyon, with its towering red rock formations, dominate"
+    },
+    {
+     "traj": 45,
+     "step": 85,
+     "dist": 0.548,
+     "stayed": false,
+     "caption": "A spacecraft cabin, rendered in hyper-realism, exudes a futuristic ambiance. A large, arched window offers a breathtaking view of a distant planet. Through the "
+    },
+    {
+     "traj": 47,
+     "step": 25,
+     "dist": 0.553,
+     "stayed": false,
+     "caption": "The image presents a captivating futuristic scene, seemingly inside a control room or advanced command center. The room is illuminated by cool blue and purple h"
+    },
+    {
+     "traj": 32,
+     "step": 42,
+     "dist": 0.596,
+     "stayed": false,
+     "caption": "This image captures a futuristic control room that is a blend of technology and space. The room is dominated by a large circular display that occupies the cente"
+    },
+    {
+     "traj": 25,
+     "step": 85,
+     "dist": 0.6,
+     "stayed": false,
+     "caption": "The image is a captivating 360-degree panorama of a futuristic architectural marvel, dominated by a series of large, dome-like structures. The domes, with their"
+    },
+    {
+     "traj": 24,
+     "step": 25,
+     "dist": 0.65,
+     "stayed": false,
+     "caption": "This image presents a visually striking cyberpunk scene. Dominating the view is a futuristic cityscape, bathed in neon lights that cast a vibrant red hue over t"
+    },
+    {
+     "traj": 68,
+     "step": 35,
+     "dist": 0.672,
+     "stayed": false,
+     "caption": "This image captures a quiet hospital corridor, bathed in a soothing blue light. The perspective is as if you are standing at the end of the corridor, looking do"
+    },
+    {
+     "traj": 74,
+     "step": 18,
+     "dist": 0.694,
+     "stayed": false,
+     "caption": "The image captures a modern art gallery that exudes a sense of openness and contemporary design. The ceiling, a striking feature, is constructed from white curv"
+    },
+    {
+     "traj": 93,
+     "step": 34,
+     "dist": 0.712,
+     "stayed": false,
+     "caption": "A grand and colorful indoor atrium. Above, a whimsical display of vibrant umbrellas in various hues of red, orange, yellow, green, and blue, suspended from the "
+    },
+    {
+     "traj": 92,
+     "step": 6,
+     "dist": 0.721,
+     "stayed": false,
+     "caption": "The image captures the grandeur of an old, circular structure. The ceiling, painted in a soothing shade of white, is adorned with intricate designs and arched p"
+    },
+    {
+     "traj": 48,
+     "step": 21,
+     "dist": 0.724,
+     "stayed": false,
+     "caption": "In the heart of a bustling laundromat, a man stands, his eyes focused on the washers. The scene is a symphony of domesticity, with rows of gleaming machines sta"
+    },
+    {
+     "traj": 15,
+     "step": 94,
+     "dist": 0.726,
+     "stayed": false,
+     "caption": "The image presents an awe-inspiring astronomical scene, a celestial tableau set against a backdrop of deep space. Dominating the scene is a large, vibrant nebul"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    11,
+    41,
+    62,
+    92
+   ],
+   "radius_used": 0.523,
+   "radius_p95": 0.523,
+   "n_visited": 0,
+   "n_stayed": 0,
+   "n_transient": 0,
+   "median_first_visit": null,
+   "max_transient_dwell": 0,
+   "nearest": 0.541,
+   "examples": [
+    {
+     "traj": 67,
+     "step": 8,
+     "dist": 0.541,
+     "stayed": false,
+     "caption": "The image is a dynamic illustration capturing a split second of a male athlete in mid-action. The athlete, dressed in a vibrant red tracksuit and red sneakers, "
+    },
+    {
+     "traj": 92,
+     "step": 4,
+     "dist": 0.612,
+     "stayed": false,
+     "caption": "The image presents a captivating view of the United States Capitol, a renowned landmark in Washington, D.C. The perspective is divided into four segments, each "
+    },
+    {
+     "traj": 86,
+     "step": 46,
+     "dist": 0.614,
+     "stayed": false,
+     "caption": "The image is a vibrant, abstract poster. Dominating the center is a soccer player, frozen mid-action as if suspended in time. His form is distorted and fragment"
+    },
+    {
+     "traj": 39,
+     "step": 74,
+     "dist": 0.622,
+     "stayed": false,
+     "caption": "This image is a vibrant and energetic illustration that captures a moment of soccer passion. The central figure, a soccer player, is in full swing, mid-air, kic"
+    },
+    {
+     "traj": 14,
+     "step": 63,
+     "dist": 0.652,
+     "stayed": false,
+     "caption": "The image presents a striking contrast between the power of nature and the stillness of human life. Dominating the right side of the frame is a massive wave, it"
+    },
+    {
+     "traj": 73,
+     "step": 7,
+     "dist": 0.7,
+     "stayed": false,
+     "caption": "The image presents a vivid illustration of two professional wrestlers, captured in the midst of a dramatic confrontation. The wrestler on the left, donned in a "
+    },
+    {
+     "traj": 76,
+     "step": 64,
+     "dist": 0.721,
+     "stayed": false,
+     "caption": "The image is a vibrant, artistic illustration capturing a moment of joy and celebration. Two individuals are captured in a mid-dance pose, frozen in the midst o"
+    },
+    {
+     "traj": 16,
+     "step": 46,
+     "dist": 0.739,
+     "stayed": false,
+     "caption": "The image is a vibrant, square collage of various figures, each with their own distinct pose and color palette. The figures are interspersed with a collection o"
+    },
+    {
+     "traj": 42,
+     "step": 18,
+     "dist": 0.748,
+     "stayed": false,
+     "caption": "The image captures a poignant moment in time, where the iconic Statue of Liberty stands tall against a dark, cloudy sky. The statue, a beacon of freedom, gleams"
+    },
+    {
+     "traj": 15,
+     "step": 4,
+     "dist": 0.755,
+     "stayed": false,
+     "caption": "In the center of the image, an astronaut stands confidently on a mountain peak, his back to us, immersed in a book. He is clad in a vibrant astronaut suit, a st"
+    },
+    {
+     "traj": 20,
+     "step": 14,
+     "dist": 0.785,
+     "stayed": false,
+     "caption": "This is a vibrant digital art piece featuring a man in a stylish green suit. The background is a dynamic, colorful explosion, creating an abstract and energetic"
+    },
+    {
+     "traj": 8,
+     "step": 3,
+     "dist": 0.8,
+     "stayed": false,
+     "caption": "The image presents a harmonious collage of classical Greek architecture. Dominating the collage is the iconic Parthenon, standing tall with its Doric columns an"
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    3,
+    53,
+    57,
+    96
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.114,
+   "n_visited": 3,
+   "n_stayed": 0,
+   "n_transient": 3,
+   "median_first_visit": 62.0,
+   "max_transient_dwell": 13,
+   "nearest": 0.083,
+   "examples": [
+    {
+     "traj": 62,
+     "step": 52,
+     "dist": 0.083,
+     "stayed": false,
+     "caption": "This is a stunning and panoramic view of the Grand Canyon, captured in a way that showcases the depth and vastness of the canyon. The image is taken from a high"
+    },
+    {
+     "traj": 96,
+     "step": 65,
+     "dist": 0.084,
+     "stayed": false,
+     "caption": "The image captures the breathtaking beauty of the Grand Canyon. From the grandeur of the canyon itself to the vibrant colors of the rock formations, the scene i"
+    },
+    {
+     "traj": 36,
+     "step": 62,
+     "dist": 0.11,
+     "stayed": false,
+     "caption": "The image presents a breathtaking view of the Grand Canyon, one of nature's most renowned landmarks. From a high vantage point, the viewer gazes down into the a"
+    },
+    {
+     "traj": 15,
+     "step": 48,
+     "dist": 0.496,
+     "stayed": false,
+     "caption": "The image presents a captivating scene set on the surface of Mars. Three astronauts, clad in spacesuits, stand side by side against the backdrop of the Martian "
+    },
+    {
+     "traj": 40,
+     "step": 9,
+     "dist": 0.518,
+     "stayed": false,
+     "caption": "The image presents a serene and contemplative scene. A lone figure, donned in a robe, sits atop a cliff overlooking a winding river. The person appears to be en"
+    },
+    {
+     "traj": 23,
+     "step": 2,
+     "dist": 0.642,
+     "stayed": false,
+     "caption": "This image presents a breathtaking view of a Martian landscape, captured from two distinct vantage points. The foreground offers a close-up perspective, with th"
+    },
+    {
+     "traj": 72,
+     "step": 26,
+     "dist": 0.646,
+     "stayed": false,
+     "caption": "The image is a captivating panorama, displayed in a grid-like arrangement. Each panel tells a story, each frame is a window into a different moment of adventure"
+    },
+    {
+     "traj": 18,
+     "step": 11,
+     "dist": 0.681,
+     "stayed": false,
+     "caption": "This image presents a striking scene of a knight atop a horse, set against a majestic desert landscape. The knight, garbed in an armor as resplendent as the red"
+    },
+    {
+     "traj": 81,
+     "step": 47,
+     "dist": 0.69,
+     "stayed": false,
+     "caption": "This image portrays a poignant scene set in a desert landscape. In the foreground, a soldier, poised with a rifle, stands guard in front of a towering white mon"
+    },
+    {
+     "traj": 49,
+     "step": 41,
+     "dist": 0.718,
+     "stayed": false,
+     "caption": "In the image, there are two identical scenes of Thomas the Tank Engine on a railway track. Both scenes capture Thomas, the beloved character from the children's"
+    },
+    {
+     "traj": 45,
+     "step": 14,
+     "dist": 0.758,
+     "stayed": false,
+     "caption": "This image is a split-frame illustration of a soldier in a desert environment. The soldier, equipped with military gear and carrying a rifle, is shown walking t"
+    },
+    {
+     "traj": 64,
+     "step": 17,
+     "dist": 0.784,
+     "stayed": false,
+     "caption": "The image showcases a grand, medieval-style castle perched atop a rocky cliff. The castle is a complex structure with multiple towers and a main keep, all rende"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    20,
+    28,
+    32,
+    43,
+    44,
+    47,
+    88
+   ],
+   "radius_used": 0.416,
+   "radius_p95": 0.416,
+   "n_visited": 1,
+   "n_stayed": 0,
+   "n_transient": 1,
+   "median_first_visit": 61.0,
+   "max_transient_dwell": 3,
+   "nearest": 0.338,
+   "examples": [
+    {
+     "traj": 15,
+     "step": 61,
+     "dist": 0.338,
+     "stayed": false,
+     "caption": "The image captures a moment on the surface of Mars, with two astronauts in space suits standing amidst the Martian landscape. The astronaut on the left, with it"
+    },
+    {
+     "traj": 43,
+     "step": 8,
+     "dist": 0.526,
+     "stayed": false,
+     "caption": "This is a fantastical digital illustration. It depicts a knightly figure, possibly a king or warrior, standing amidst an underwater aquarium environment. The kn"
+    },
+    {
+     "traj": 32,
+     "step": 4,
+     "dist": 0.528,
+     "stayed": false,
+     "caption": "The image portrays a pair of astronauts, poised in space, their white suits with blue details standing out against the gray backdrop. The astronaut on the left "
+    },
+    {
+     "traj": 70,
+     "step": 4,
+     "dist": 0.57,
+     "stayed": false,
+     "caption": "A vibrant tableau of Lego characters in a lively soccer match. The figures, meticulously assembled, are a riot of colors, representing a diverse crowd. The socc"
+    },
+    {
+     "traj": 45,
+     "step": 79,
+     "dist": 0.656,
+     "stayed": false,
+     "caption": "The image is a futuristic cityscape viewed from an aerial perspective. Dominating the scene is a massive, sprawling metropolis, its high-rise buildings reaching"
+    },
+    {
+     "traj": 18,
+     "step": 1,
+     "dist": 0.69,
+     "stayed": false,
+     "caption": "This is an image of a highly detailed and intricate sculpture of a knight in armor. The knight, adorned with a helmet and wielding a sword, stands against a bac"
+    },
+    {
+     "traj": 73,
+     "step": 2,
+     "dist": 0.714,
+     "stayed": false,
+     "caption": "The image is a dynamic comic strip that captures the intensity of a wrestling match. Two wrestlers, one in a blue and white striped shirt and the other in a red"
+    },
+    {
+     "traj": 67,
+     "step": 79,
+     "dist": 0.716,
+     "stayed": false,
+     "caption": "This image captures a ballet studio, where five female dancers are in various stages of performance. They are all dressed in leotards and tights, the standard a"
+    },
+    {
+     "traj": 24,
+     "step": 44,
+     "dist": 0.722,
+     "stayed": false,
+     "caption": "The image captures a scene of an apocalyptic cityscape. At the center, a man and a woman stand amidst the ruins, their bodies adorned with gas masks. They are b"
+    },
+    {
+     "traj": 99,
+     "step": 19,
+     "dist": 0.745,
+     "stayed": false,
+     "caption": "In the image, a solitary soldier stands amidst the ruins of a war-torn city. Dressed in a military uniform and helmet, the soldier holds a rifle, a silent senti"
+    },
+    {
+     "traj": 81,
+     "step": 47,
+     "dist": 0.746,
+     "stayed": false,
+     "caption": "This image portrays a poignant scene set in a desert landscape. In the foreground, a soldier, poised with a rifle, stands guard in front of a towering white mon"
+    },
+    {
+     "traj": 9,
+     "step": 17,
+     "dist": 0.76,
+     "stayed": false,
+     "caption": "In this post-apocalyptic digital art piece, a group of three characters stand at the center of a desolate cityscape, their figures stark against the crumbling b"
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    2,
+    17,
+    29,
+    34,
+    39,
+    50,
+    55,
+    73,
+    76,
+    86
+   ],
+   "radius_used": 0.671,
+   "radius_p95": 0.671,
+   "n_visited": 12,
+   "n_stayed": 3,
+   "n_transient": 9,
+   "median_first_visit": 7.5,
+   "max_transient_dwell": 43,
+   "nearest": 0.283,
+   "examples": [
+    {
+     "traj": 95,
+     "step": 18,
+     "dist": 0.283,
+     "stayed": false,
+     "caption": "The image is a captivating collage of a female ballet dancer captured in four distinct poses, each showcasing her agility and grace. The background is a stark w"
+    },
+    {
+     "traj": 67,
+     "step": 44,
+     "dist": 0.304,
+     "stayed": true,
+     "caption": "The image presents a trio of ballerinas, their bodies captured in dynamic motion. Each dancer is adorned in a vibrant red tutu, the fabric billowing with the en"
+    },
+    {
+     "traj": 39,
+     "step": 59,
+     "dist": 0.451,
+     "stayed": true,
+     "caption": "A vibrant digital artwork captures a dynamic soccer player in mid-air, frozen in a moment of intense action. The player, dressed in a red kit, leaps forward wit"
+    },
+    {
+     "traj": 86,
+     "step": 41,
+     "dist": 0.462,
+     "stayed": true,
+     "caption": "The image presents a vibrant and dynamic scene of a soccer player mid-kick. The player, dressed in a blue and white jersey, stands out against the backdrop. The"
+    },
+    {
+     "traj": 77,
+     "step": 2,
+     "dist": 0.523,
+     "stayed": false,
+     "caption": "The painting captures a tender moment between two classical-style figures. The woman on the left, clad in a flowing dress, stands with her back to the viewer, h"
+    },
+    {
+     "traj": 76,
+     "step": 63,
+     "dist": 0.535,
+     "stayed": false,
+     "caption": "A lively art piece captures a couple in a dance, the woman in a long white dress and the man in a blue suit, mid-dance with an old-fashioned ambiance. The woman"
+    },
+    {
+     "traj": 51,
+     "step": 33,
+     "dist": 0.623,
+     "stayed": false,
+     "caption": "In the given image, we see a breathtaking display of two identical wedding dresses, each with its own captivating features. The dress on the left is positioned "
+    },
+    {
+     "traj": 16,
+     "step": 46,
+     "dist": 0.628,
+     "stayed": false,
+     "caption": "The image is a vibrant, square collage of various figures, each with their own distinct pose and color palette. The figures are interspersed with a collection o"
+    },
+    {
+     "traj": 73,
+     "step": 7,
+     "dist": 0.631,
+     "stayed": false,
+     "caption": "The image presents a vivid illustration of two professional wrestlers, captured in the midst of a dramatic confrontation. The wrestler on the left, donned in a "
+    },
+    {
+     "traj": 22,
+     "step": 9,
+     "dist": 0.634,
+     "stayed": false,
+     "caption": "The image portrays a vibrant, pixelated portrait of the iconic Marilyn Monroe. She is depicted with a bright smile, her face set against a colorful mosaic backd"
+    },
+    {
+     "traj": 55,
+     "step": 20,
+     "dist": 0.635,
+     "stayed": false,
+     "caption": "A striking portrait of a woman, exuding an air of quiet confidence. Her face, a canvas of contrasting shades, is the central focus against a stark white backgro"
+    },
+    {
+     "traj": 61,
+     "step": 19,
+     "dist": 0.658,
+     "stayed": false,
+     "caption": "The image portrays a young woman with vibrant red hair and striking blue eyes, who is captured in a moment of quiet contemplation. She is dressed in a blue dres"
+    }
+   ]
+  }
+ ]
+}

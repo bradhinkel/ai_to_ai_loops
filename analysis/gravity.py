@@ -17,6 +17,7 @@ CLIP is not used.
 
     .venv/bin/python analysis/gravity.py a0_core --archive archive/a0_core_centroids.npz
     .venv/bin/python analysis/gravity.py e1_cap_pilot
+    .venv/bin/python analysis/gravity.py a0_core --archive archive/a0_core_centroids.npz --space minilm --radius 0.15   # caption space; same captioner => comparable across generators
 Writes reports/gravity_<run>.md and .json.
 """
 import argparse, json, pathlib, sys
@@ -63,14 +64,15 @@ def main():
     ap.add_argument("run"); ap.add_argument("--archive", default=None); ap.add_argument("--k", type=int, default=0)
     ap.add_argument("--radius", type=float, default=0.20); ap.add_argument("--exit_factor", type=float, default=1.25)
     ap.add_argument("--labels", default=None, help="optional json list of attractor names, index = probe")
+    ap.add_argument("--space", default="dinov2", choices=["dinov2", "minilm"], help="embedding space for states and membership (archive must hold centroid_<space>)")
     a = ap.parse_args()
-    B = Cache(a.run).arrays("dinov2"); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]; i99 = steps.index(99)
+    B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]; i99 = steps.index(99)
     if a.archive:
-        z = np.load(a.archive, allow_pickle=True); C = z["centroid_dinov2"].astype(np.float64); source = a.archive
+        z = np.load(a.archive, allow_pickle=True); C = z[f"centroid_{a.space}"].astype(np.float64); source = f"{a.archive} ({a.space})"
         sizes = [len(m) for m in z["members"]]
     else:
         ok = mask[:, i99]; E = X[ok, i99]; k = a.k or elbow_k(E)[0] or min(10, len(E) // 2); km = kmeans(E, k)
-        C = np.stack([E[km.labels_ == c].mean(0) for c in range(k)]); source = f"k-means k={k} on {a.run} step-99 DINOv2"
+        C = np.stack([E[km.labels_ == c].mean(0) for c in range(k)]); source = f"k-means k={k} on {a.run} step-99 {a.space}"
         sizes = [int((km.labels_ == c).sum()) for c in range(k)]
     names = json.loads(pathlib.Path(a.labels).read_text()) if a.labels else [f"attractor {k}" for k in range(len(C))]
     C = C / np.linalg.norm(C, axis=1, keepdims=True); K = len(C); R = np.full(K, a.radius)
@@ -111,8 +113,8 @@ def main():
         ins = L[:, a0:a1] >= 0; n = int(ins.sum())
         by_step.append(dict(lo=a0, hi=a1, n=n, exit_rate=float((L[:, a0:a1][ins] != L[:, a0 + 1:a1 + 1][ins]).mean()) if n else None))
     f = lambda x, p=3: "-" if x is None else (f"{x:.{p}f}" if isinstance(x, float) else str(x))
-    lines = [f"# Attractor gravity: {a.run}", "",
-             f"States: {source}. Fixed radius {a.radius} (DINOv2 cosine), exit at {a.exit_factor}x radius (hysteresis). {T} trajectories x {S} steps; "
+    lines = [f"# Attractor gravity: {a.run} ({a.space})", "",
+             f"States: {source}. Fixed radius {a.radius} ({a.space} cosine), exit at {a.exit_factor}x radius (hysteresis). {T} trajectories x {S} steps; "
              f"free share of all steps {np.mean(L == -1):.2f}. hazard = exits / steps inside (per step); capture = entries / steps outside (per step); "
              f"KM median = Kaplan-Meier median residence (final step censored); stationary = long-run share of the coarse chain over attractors + free (0.5 pseudo-count on every attractor<->free transition, so a state with no observed exit is not treated as absorbing).", "",
              "| k | attractor | endpoints | steps inside | entries | exits | hazard /step | mean residence | KM median | capture /step | re-entries | longest completed visit | stationary share | endpoint share |",
@@ -125,9 +127,9 @@ def main():
     lines += [f"| [{b['lo']:.2f}, {b['hi']:.2f}) | {b['n']} | {f(b['exit_rate'])} |" for b in by_depth]
     lines += ["", "Exit rate by step window (pooled; a stationary loop is flat):", "", "| steps | n inside | exit rate |", "|---|---|---|"]
     lines += [f"| {b['lo']}-{b['hi']} | {b['n']} | {f(b['exit_rate'])} |" for b in by_step]
-    md = "\n".join(lines) + "\n"
-    (ROOT / "reports" / f"gravity_{a.run}.md").write_text(md)
-    (ROOT / "reports" / f"gravity_{a.run}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor,
+    md = "\n".join(lines) + "\n"; sfx = "" if a.space == "dinov2" else f"_{a.space}"
+    (ROOT / "reports" / f"gravity_{a.run}{sfx}.md").write_text(md)
+    (ROOT / "reports" / f"gravity_{a.run}{sfx}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor,
                                                                             attractors=rows, free_stationary=float(pi[K]), free_endpoint=float(end_share[K]),
                                                                             hazard_by_depth=by_depth, hazard_by_step=by_step, transition_counts=M.tolist()), indent=1))
     print(md)

@@ -10,4 +10,6 @@ Rule: knee of normalised inertia (max chord distance), KMeans n_init=10 random_s
 | a0_core dinov2 images | 100 | **8** | 5 / 5 / 9 / 10 | 11 (11, 13, 9) | 7 [5, 9] |
 | e1_cap_pilot minilm captions | 20 | **9** | 9 / – / – / – | 2 (2, 3, 4) | 8 [7, 9] |
 | e1_cap_pilot dinov2 images | 20 | **10** | 10 / – / – / – | 10 (10, 11, 9) | 9 [8, 10] |
+| e1_gen minilm captions | 100 | **11** | 8 / 11 / 11 / 11 | 36 (36, 28, 23) | 11 [8, 13] |
+| e1_gen dinov2 images | 100 | **8** | 8 / 8 / 8 / 18 | 40 (40, 37, 33) | 12 [9, 15] |
 | Hintze T=0.9 minilm captions | 99 | **8** | 7 / 7 / 8 / 9 | 8 (8, 10, 9) | 8 [6, 10] |

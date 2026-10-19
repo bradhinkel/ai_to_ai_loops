@@ -14,6 +14,8 @@ MODEL_ID = "Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers"
 
 
 class HunyuanGenerator:
+    MT5_MAX = 256       # HunyuanDiTPipeline.encode_prompt uses max_sequence_length=256 for the mT5 encoder (the tokenizer itself has no limit set)
+
     def __init__(self, cfg: dict):
         self.cfg = cfg
         if cfg.get("alloc_conf"):
@@ -48,7 +50,7 @@ class HunyuanGenerator:
             "height": self.cfg.get("height") or 1024, "width": self.cfg.get("width") or 1024,
             "resized_to": self.cfg["resize_to"], "negative_prompt": None, "cpu_offload": bool(self.cfg.get("cpu_offload")),
             "batch": int(self.cfg.get("batch", 1)), "vae_slicing": int(self.cfg.get("batch", 1)) > 1,
-            "text_encoders": {"clip": pipe.tokenizer.model_max_length, "mt5": pipe.tokenizer_2.model_max_length},
+            "text_encoders": {"clip": pipe.tokenizer.model_max_length, "mt5": self.MT5_MAX},
             "alloc_conf": os.environ.get("PYTORCH_CUDA_ALLOC_CONF"),
             "diffusers": diffusers.__version__, "torch": torch.__version__,
         }
@@ -61,7 +63,7 @@ class HunyuanGenerator:
         """Tokens the bilingual CLIP (77) and mT5 (256) encoders would see, and whether CLIP would have cut the prompt."""
         n1 = len(self.pipe.tokenizer(prompt, truncation=False)["input_ids"])
         n2 = len(self.pipe.tokenizer_2(prompt, truncation=False)["input_ids"])
-        return n1, n1 > self.pipe.tokenizer.model_max_length, n2, n2 > self.pipe.tokenizer_2.model_max_length
+        return n1, n1 > self.pipe.tokenizer.model_max_length, n2, n2 > self.MT5_MAX
 
     def generate(self, prompt: str, seed: int):
         return self.generate_batch([prompt], [seed])[0]

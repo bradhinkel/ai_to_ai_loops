@@ -49,9 +49,10 @@ opentelemetry-api==1.45.1
 packaging==26.3
 pandas==3.0.6
 pillow==12.3.0
+protobuf==7.36.2
 psutil==7.2.2
-pydantic==2.14.1
 pydantic-core==2.50.1
+pydantic==2.14.1
 pygments==2.21.0
 python-dateutil==2.9.0.post0
 pyyaml==6.0.3
@@ -62,12 +63,14 @@ safetensors==0.8.0
 scikit-learn==1.9.1
 scipy==1.17.1
 sentence-transformers==6.1.0
+sentencepiece==0.2.2
 setuptools==78.1.0
 shellingham==1.5.4
 six==1.17.0
 starlette==1.8.0
 sympy==1.14.0
 threadpoolctl==3.7.0
+tiktoken==0.14.0
 tokenizers==0.23.3
 torch==2.11.0+cu128
 torchvision==0.26.0+cu128

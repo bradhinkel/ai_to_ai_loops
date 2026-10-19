@@ -1,0 +1,340 @@
+{
+ "meta": {
+  "run": "a0_pilot",
+  "built_at": "2026-10-18T17:48:42",
+  "n_traj": 20,
+  "k": 10,
+  "k_source": "fallback min(12, n//2)",
+  "elbow_k_dinov2": 10,
+  "inertia_dinov2": {
+   "2": 13.2939,
+   "3": 10.4392,
+   "4": 9.2435,
+   "5": 8.1473,
+   "6": 7.0985,
+   "7": 6.1459,
+   "8": 5.1299,
+   "9": 4.1892,
+   "10": 3.3162,
+   "11": 2.5657,
+   "12": 1.9314,
+   "13": 1.3629,
+   "14": 1.0814,
+   "15": 0.8169,
+   "16": 0.5729,
+   "17": 0.3821,
+   "18": 0.2473,
+   "19": 0.1131
+  },
+  "final_step_requested": 99,
+  "final_steps_used": {
+   "0": 99,
+   "1": 99,
+   "2": 99,
+   "3": 99,
+   "4": 99,
+   "5": 99,
+   "6": 99,
+   "7": 99,
+   "8": 99,
+   "9": 99,
+   "10": 99,
+   "11": 99,
+   "12": 99,
+   "13": 99,
+   "14": 99,
+   "15": 99,
+   "16": 99,
+   "17": 99,
+   "18": 99,
+   "19": 99
+  },
+  "radius_pooled_p95_dinov2": 0.2115928971544493,
+  "kmeans": {
+   "n_init": 10,
+   "random_state": 0,
+   "space": "dinov2"
+  },
+  "models": {
+   "dinov2": {
+    "id": "facebook/dinov2-base",
+    "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+    "pooling": "CLS token, L2-normalised"
+   },
+   "minilm": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "pooling": "sentence-transformers default, L2-normalised"
+   },
+   "clip": {
+    "id": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "pooling": "projected image/text embeds, L2-normalised; text truncated at 77 tokens"
+   }
+  },
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  },
+  "note": "CLIP centroids are for steering only (SPEC2 §2: never grade with what steers)."
+ },
+ "clusters": {
+  "0": {
+   "size": 4,
+   "radius_p95_dinov2": 0.10135117286147868,
+   "mean_dist_dinov2": 0.07669711162925752,
+   "members": [
+    13,
+    6,
+    5,
+    0
+   ],
+   "member_dist": [
+    0.057,
+    0.0606,
+    0.085,
+    0.1042
+   ],
+   "nearest_captions": [
+    {
+     "traj": 13,
+     "step": 99,
+     "dist": 0.057,
+     "caption": "The image presents a luxurious living room that exudes opulence and elegance. The room is dominated by gold accents, which lend a regal aura to the space. Large chandeliers, suspended from the high ceiling, cast a warm glow that illuminates the room. The ceiling itself is intricately designed with decorative elements, adding to the room's grandeur.\n\nThe walls are adorned with ornate wallpaper, featuring a repeating pattern that complements the overall aesthetic of the room. Large windows let in ample natural light, enhancing the brightness of the room.\n\nFurniture upholstered in white leather contrasts beautifully with the rich colors of the room, drawing attention to its plush and comfortable appeal. A large, white sofa occupies the space, accompanied by armchairs and other seating options. The arrangement of the furniture suggests a welcoming and inviting atmosphere, perfect for entertaining guests.\n\nThe room is tastefully decorated with a variety of textures and materials, including plush carpets, velvet curtains, and various pieces of art and sculpture. The overall layout and design of the room reflect a sense of sophistication and refinement."
+    },
+    {
+     "traj": 6,
+     "step": 99,
+     "dist": 0.0606,
+     "caption": "The image captures a luxurious living room, bathed in soft light. The ceiling is adorned with ornate chandeliers, their intricate designs casting a warm glow. The walls, painted in a light hue, are punctuated with gold accents that add a touch of opulence. \n\nDominating the room is a large chandelier, hanging from the center of the ceiling, its light spilling down on the beige carpets beneath. The room is furnished with plush sofas, arranged around a large glass table. The table, set in the middle of the room, serves as a focal point, drawing the eye with its elegant design.\n\nIn the background, a grand piano adds a musical note to the room's opulence. The room is draped in curtains, their gold fringes adding a final touch to the overall extravaganza. Despite the room's grandeur, there's a sense of comfort and warmth, inviting one to sit down, relax, and perhaps play a tune on the piano. The room is a testament to elegance and luxury, captured in a single frame."
+    },
+    {
+     "traj": 5,
+     "step": 99,
+     "dist": 0.085,
+     "caption": "The image portrays a luxurious living room that exudes opulence and elegance. The ceiling is adorned with a grand chandelier that casts a warm glow over the room, highlighting the rich, ornate details. The walls, painted in a soothing shade of light blue, contrast beautifully with the large windows that let in ample natural light.\n\nTwo majestic curtains, each hung on either side of the room, add a touch of drama and sophistication. The floor, made of dark hardwood, provides a stark contrast to the otherwise light-colored room.\n\nOn the right side of the room, a large, plush couch invites relaxation, flanked by a chair that complements the room's style. A chandelier hangs above the couch, adding an extra layer of luxury.\n\nOn the left, a grand chandelier hangs over a table, creating a cozy and intimate atmosphere. The room is completed with a chandelier that hangs above the table, adding a final touch to this grand room."
+    }
+   ]
+  },
+  "1": {
+   "size": 2,
+   "radius_p95_dinov2": 0.17366036934945092,
+   "mean_dist_dinov2": 0.1736603447023003,
+   "members": [
+    8,
+    7
+   ],
+   "member_dist": [
+    0.1737,
+    0.1737
+   ],
+   "nearest_captions": [
+    {
+     "traj": 8,
+     "step": 99,
+     "dist": 0.1737,
+     "caption": "The image presents two contrasting views of a castle perched atop a cliff. The castle, with its towering structures and a surrounding wall, stands as a testament to medieval architecture. The top half of the image is rendered in a realistic style, depicting the castle as a real, tangible structure, possibly under the soft touch of an overcast sky. \n\nThe bottom half, on the other hand, is a digital painting, offering a more fantastical and whimsical take on the castle. The digital art retains the castle's structural integrity, but its vibrant colors and the dramatic play of light and shadow suggest a magical, almost surreal setting. \n\nThe castle, in both iterations, is surrounded by a rugged coastline, with the sea stretching out in the background, adding a sense of scale and grandeur to the scene. The image, as a whole, offers a unique juxtaposition of realistic and fantasy elements, inviting the viewer to imagine the castle's stories in both the real and the imaginative realms."
+    },
+    {
+     "traj": 7,
+     "step": 99,
+     "dist": 0.1737,
+     "caption": "The image presents a serene coastal village nestled on a cliff, overlooking a vast expanse of the ocean. The village, characterized by quaint stone houses with blue shutters, is painted in hues of warm brown and cream, with accents of blue and green that mirror the sky and water. The architecture of the houses is rustic yet charming, typical of a Mediterranean coastal town.\n\nThe village is accessed by a winding, cobblestone street that leads down to the shore. A boat rests on the sandy beach, suggesting a tranquil fishing community. The cliff on which the village is perched is lush with vegetation, providing a stark contrast to the rugged, bare cliff of the neighboring village.\n\nThe village's position on the cliff offers a panoramic view of the ocean, its horizon meeting the clear blue sky. The water is a vibrant blue, reflecting the light of day, while the sky above is a lighter shade, dotted with fluffy white clouds.\n\nOverall, the image captures the essence of a peaceful coastal village, inviting viewers into its picturesque setting and offering a glimpse into the daily life of its residents."
+    }
+   ]
+  },
+  "2": {
+   "size": 5,
+   "radius_p95_dinov2": 0.22005550505592344,
+   "mean_dist_dinov2": 0.11652002925231453,
+   "members": [
+    9,
+    4,
+    19,
+    17,
+    3
+   ],
+   "member_dist": [
+    0.0567,
+    0.0738,
+    0.1009,
+    0.1015,
+    0.2497
+   ],
+   "nearest_captions": [
+    {
+     "traj": 9,
+     "step": 99,
+     "dist": 0.0567,
+     "caption": "The image captures the grandeur and spiritual aura of a Gothic cathedral. The interior is a vibrant tapestry of color, with stained glass windows casting an ethereal glow that dances on the polished stone floor. The vaulted ceiling, supported by robust stone pillars, is a testament to the architectural prowess of the era. The cathedral's high arched ceiling and intricate ceiling tiles enhance its majestic stature. The perspective of the image is from the altar, inviting viewers into the heart of the sanctuary, where the altar stands in quiet reverence. The light filtering in from the stained glass windows suggests a serene and sacred atmosphere."
+    },
+    {
+     "traj": 4,
+     "step": 99,
+     "dist": 0.0738,
+     "caption": "The image captures the grandeur and serenity of a cathedral's interior. The high ceiling, characterized by vaulted arches and a series of skylights, allows natural light to flood in, illuminating the space and casting dramatic shadows. The walls are adorned with stained glass windows, their vibrant hues creating a multicolored spectacle that reflects off the polished stone floor. The cathedral's central aisle is flanked by rows of pews on either side, inviting worshippers into the heart of the church. The perspective of the image, taken from the back of the church, offers a sense of depth and scale, emphasizing the cathedral's impressive architecture and the reverence of the place."
+    },
+    {
+     "traj": 19,
+     "step": 99,
+     "dist": 0.1009,
+     "caption": "The image captures the grandeur and tranquility of a Gothic cathedral. The interior is a labyrinth of towering arches, soaring pillars, and intricate stained glass windows. The central aisle, framed by rows of pews, draws the eye towards the altar, which sits under a stained glass window of vibrant hues. The warm, diffused light from the arched windows casts shadows and illuminates the high vaulted ceilings, adding a sense of depth and mystery to the scene. The overall mood is one of quiet reverence and spiritual awe."
+    }
+   ]
+  },
+  "3": {
+   "size": 2,
+   "radius_p95_dinov2": 0.20958789581730214,
+   "mean_dist_dinov2": 0.20958788427615554,
+   "members": [
+    10,
+    1
+   ],
+   "member_dist": [
+    0.2096,
+    0.2096
+   ],
+   "nearest_captions": [
+    {
+     "traj": 10,
+     "step": 99,
+     "dist": 0.2096,
+     "caption": "A serene countryside scene unfolds under a clear blue sky. A quaint cottage, thatched in brown, sits nestled in a verdant landscape. The cottage, with its vibrant red chimney, exudes a warm, homely vibe. A garden blooms with a variety of flowers, their colors adding a touch of whimsy to the scene. The cottage is surrounded by a well-maintained lawn, and a pathway, bordered by flowers, leads to the front of the cottage, inviting exploration. The overall image paints a picture of tranquility and rustic charm."
+    },
+    {
+     "traj": 1,
+     "step": 99,
+     "dist": 0.2096,
+     "caption": "This image captures the quintessential charm of a European village, bathed in the soft glow of dusk. Narrow cobblestone streets, lined with historic wooden houses, ascend gently, their timbered facades illuminated by warm, inviting lights. The houses are huddled closely, their roofs a mix of pitched and steeply angled, creating a sense of harmony and community.\n\nThe architecture is a testament to history, with timber beams and traditional window frames that add character and rustic appeal. The streets themselves are a tapestry of brickwork, their narrowness adding to the village's antiquated charm. The cobblestones are strewn with fallen leaves, hinting at the change of season, possibly autumn.\n\nThe village is nestled within a valley, the hillside that surrounds it blanketed in lush green vegetation. The surrounding landscape is carpeted in verdant greenery, a stark contrast to the earthy tones of the village's architecture.\n\nAbove, the sky is painted with the fading light of the day, its colors shifting from warm oranges and yellows to deeper blues. The time of day suggests the village is preparing for its nightly slumber, the quiet descending as the sun sets.\n\nIn essence, this image is a snapshot of tranquil rural life, where history and nature coexist in harmony. It's a place where time seems to have slowed down, allowing one to appreciate the simple beauty of everyday life."
+    }
+   ]
+  },
+  "4": {
+   "size": 1,
+   "radius_p95_dinov2": 0.0,
+   "mean_dist_dinov2": 5.5593021741628945e-08,
+   "members": [
+    12
+   ],
+   "member_dist": [
+    0.0
+   ],
+   "nearest_captions": [
+    {
+     "traj": 12,
+     "step": 99,
+     "dist": 0.0,
+     "caption": "This image showcases a vibrant mosaic tile wall. The tiles are of various colors, creating a patchwork effect. The patterns are reminiscent of a colorful kaleidoscope, with a multitude of hues and shades that fill the space. The wall is densely packed, suggesting careful arrangement of the tiles. The image captures the beauty of diversity in color and pattern, creating an engaging visual experience."
+    }
+   ]
+  },
+  "5": {
+   "size": 1,
+   "radius_p95_dinov2": 0.0,
+   "mean_dist_dinov2": -1.1905463948025385e-08,
+   "members": [
+    15
+   ],
+   "member_dist": [
+    -0.0
+   ],
+   "nearest_captions": [
+    {
+     "traj": 15,
+     "step": 99,
+     "dist": -0.0,
+     "caption": "The image presents an aerial view of the Grand Canyon, a renowned landmark in Arizona. The canyon itself is a breathtaking display of geological formations, with layers of red, orange, and brown rock that hint at millions of years of history. A deep blue river, a vibrant contrast to the earthy tones of the canyon, snakes its way through the center, carving out a path through the rugged landscape. The sun casts long shadows, enhancing the perspective and depth of the scene. The vastness of the canyon is awe-inspiring testament to the power of nature."
+    }
+   ]
+  },
+  "6": {
+   "size": 1,
+   "radius_p95_dinov2": 0.0,
+   "mean_dist_dinov2": -4.9453366068874516e-08,
+   "members": [
+    16
+   ],
+   "member_dist": [
+    -0.0
+   ],
+   "nearest_captions": [
+    {
+     "traj": 16,
+     "step": 99,
+     "dist": -0.0,
+     "caption": "The image presents a surreal scene where a skull with a floral crown of roses and purple flowers is set against a vibrant purple background. The skull, with its hollow eye sockets, forms the central figure in the composition. It is adorned with a crown of lush roses, their purple and pink hues contrasting with the skull's pale color. The roses are in full bloom, adding a touch of life to the otherwise inanimate skull. The background is a rich purple, decorated with more roses, their stems intertwining in an organic pattern. The entire image is enclosed within a lavishly decorated purple frame, which contributes to the overall opulence of the scene. The relative position of the objects suggests a harmonious blend of the macabre and the beautiful, creating a striking visual narrative."
+    }
+   ]
+  },
+  "7": {
+   "size": 1,
+   "radius_p95_dinov2": 0.0,
+   "mean_dist_dinov2": 1.6708459504855e-08,
+   "members": [
+    18
+   ],
+   "member_dist": [
+    0.0
+   ],
+   "nearest_captions": [
+    {
+     "traj": 18,
+     "step": 99,
+     "dist": 0.0,
+     "caption": "The image presents a dramatic seascape featuring two different perspectives of the same red and white lighthouse. The lighthouse, a classic structure with a striking red top and a white body, stands prominently against the sky. In the left frame, the lighthouse is seen from a distance, towering above the churning ocean that's dotted with white foam. The right frame provides a closer view of the lighthouse, its details sharper, as if the viewer is much nearer to the structure.\n\nThe color palette is dominated by shades of gray and white, evoking a sense of ruggedness and the raw power of nature. The red and white of the lighthouse stand out against this, acting as a beacon of hope amidst the tumultuous seas.\n\nThe background is filled with swirling waves and a dark, cloudy sky, adding to the dramatic effect. The two frames, though similar, offer different perspectives, creating a sense of depth and distance. The image is a study in contrasts - the static lighthouse against the dynamic ocean, the solid red and white against the fluid gray and white, and the calm foreground against the wild background."
+    }
+   ]
+  },
+  "8": {
+   "size": 1,
+   "radius_p95_dinov2": 0.0,
+   "mean_dist_dinov2": -3.3056935189179626e-08,
+   "members": [
+    14
+   ],
+   "member_dist": [
+    -0.0
+   ],
+   "nearest_captions": [
+    {
+     "traj": 14,
+     "step": 99,
+     "dist": -0.0,
+     "caption": "The image presents a serene lakeside scene, divided into two halves. On the left, a tranquil river meanders through the landscape, where a solitary wooden boat rests on the water, gently reflecting the sky. The water is dotted with ripples, disturbed by the boat's stillness. On the right, the same body of water mirrors a tree standing on the opposite shore, its reflection creating a beautiful symmetry. The sky, painted in hues of dusk, casts a warm, golden glow over the scene, enhancing the tranquility and beauty of the landscape."
+    }
+   ]
+  },
+  "9": {
+   "size": 2,
+   "radius_p95_dinov2": 0.0629919349587319,
+   "mean_dist_dinov2": 0.06299193076551118,
+   "members": [
+    2,
+    11
+   ],
+   "member_dist": [
+    0.063,
+    0.063
+   ],
+   "nearest_captions": [
+    {
+     "traj": 2,
+     "step": 99,
+     "dist": 0.063,
+     "caption": "This image captures an opulent bedroom, bathed in a warm, inviting glow. The walls, adorned with gold accents, stand in stark contrast to the cool blue curtains. A chandelier, resplendent with intricate designs, hangs from the ceiling, casting an array of soft light around the room.\n\nTwo beds command attention. One, with its rich blue comforter, is positioned in the foreground, while the other, dressed in blue and gold, lies in the background. Both beds are accompanied by regal furniture, including a desk and two armchairs, upholstered in a deep blue.\n\nThe floor beneath is carpeted in a blue that matches the curtains, tying the room's decor together. The overall ambiance is one of grandeur and luxurious comfort, a testament to meticulous design and attention to detail."
+    },
+    {
+     "traj": 11,
+     "step": 99,
+     "dist": 0.063,
+     "caption": "The image presents a luxurious bedroom scene, rich in detail and color. Dominating the room is an ornate bed, dressed in plush blue and gold fabrics that shimmer with an almost royal opulence. The bed is grandly draped with a canopy, its intricate patterns and fringes adding to the overall regality of the space.\n\nOn either side of the bed, nightstands stand tall, adorned with ornate lamps that cast a warm, inviting glow. The walls, painted in a soft hue, are elegantly embellished with gold trim and paintings, further enhancing the room's opulent atmosphere.\n\nThe floor is covered with a large, plush blue rug, its vibrant color contrasting with the more subdued tones of the room. Adding to the room's grandeur are chandeliers that hang from the ceiling, their numerous lights twinkling like stars.\n\nEvery element in the room has been meticulously placed, creating a harmonious balance between luxury and comfort. The overall color scheme is dominated by shades of blue, gold, and white, contributing to a sense of opulence and refinement. The room exudes a sense of timeless elegance, reminiscent of grand historic mansions."
+    }
+   ]
+  }
+ }
+}

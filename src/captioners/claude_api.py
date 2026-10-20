@@ -31,6 +31,9 @@ class ClaudeCaptioner:
         self.client = anthropic.Anthropic(max_retries=0, timeout=cfg.get("timeout_s", 120))
         self.model = cfg["model"]                     # pinned model id, e.g. claude-sonnet-5-5 (SPEC: pinned model ID)
         self.max_tokens = int(cfg.get("max_tokens", 400))
+        # anthropic SDK >= 1.x has no `temperature` argument on messages.create; the loop's T is sent as a raw body field and,
+        # if the API rejects it, dropped once with temperature_applied=False recorded in info() and every record (deviation to log).
+        self.temperature_applied = True
         self._info = None
 
     def info(self):
@@ -38,8 +41,23 @@ class ClaudeCaptioner:
             import anthropic
             self._info = {"backend": "anthropic", "model": self.model, "sdk_version": anthropic.__version__, "temperature": self.temperature,
                           "instruction": self.cfg["instruction"], "max_tokens": self.max_tokens, "system_prompt": None,
-                          "request": "messages.create(model, max_tokens, temperature, messages=[{user: [image/png base64, text instruction]}])"}
-        return dict(self._info)
+                          "request": "messages.create(model, max_tokens, messages=[{user: [image/png base64, text instruction]}], extra_body={temperature})"}
+        return dict(self._info, temperature_applied=self.temperature_applied)
+
+    def _create(self, img_b64):
+        import anthropic
+        kw = dict(model=self.model, max_tokens=self.max_tokens,
+                  messages=[{"role": "user", "content": [
+                      {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": img_b64}},
+                      {"type": "text", "text": self.cfg["instruction"]}]}])
+        if self.temperature_applied:
+            try:
+                return self.client.messages.create(**kw, extra_body={"temperature": self.temperature})
+            except anthropic.BadRequestError as e:
+                if "temperature" not in str(e).lower(): raise
+                self.temperature_applied = False
+                if self.log: self.log.warning("API rejected temperature=%s for %s (%s); continuing WITHOUT temperature control. Record this in DEVIATIONS.md.", self.temperature, self.model, str(e)[:160])
+        return self.client.messages.create(**kw)
 
     def caption(self, image_path, keep_alive=None):
         import anthropic
@@ -49,11 +67,7 @@ class ClaudeCaptioner:
         for attempt in range(self.cfg.get("retries", 8)):
             t0 = time.time()
             try:
-                resp = self.client.messages.create(
-                    model=self.model, max_tokens=self.max_tokens, temperature=self.temperature,
-                    messages=[{"role": "user", "content": [
-                        {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": img_b64}},
-                        {"type": "text", "text": self.cfg["instruction"]}]}])
+                resp = self._create(img_b64)
                 text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
                 words = len(text.split()); chars = len("".join(text.split())); cjk = len(CJK_RE.findall(text))
                 meta = {"caption_time_s": round(time.time() - t0, 2),
@@ -62,7 +76,7 @@ class ClaudeCaptioner:
                         "caption_words": words, "caption_chars": chars, "caption_cjk_share": round((cjk / chars) if chars else 0.0, 3),
                         "caption_flags": {"empty": chars == 0, "over_50_words": words > 50, "refusal": bool(REFUSAL_RE.search(text)),
                                           "length_cutoff": resp.stop_reason == "max_tokens"},
-                        "caption_attempts": attempt + 1}
+                        "caption_attempts": attempt + 1, "temperature_applied": self.temperature_applied}
                 if (chars == 0 or meta["caption_flags"]["refusal"]) and self.log:
                     self.log.warning("%s caption for %s (attempt %d): %r", "empty" if chars == 0 else "refusal", image_path, attempt + 1, text[:120])
                 return text, meta

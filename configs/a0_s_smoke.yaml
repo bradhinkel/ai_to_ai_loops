@@ -1,0 +1,8 @@
+# A0-S plumbing check on the laptop: 2 trajectories x 3 steps, two-pass SDXL, Claude Sonnet captioner over the API (key from .env).
+run_name: a0_s_smoke
+arm: A0-S
+mode: two_pass
+steps: 3
+trajectories: {first: 0, count: 2}
+temperature: 0.9
+captioner: {backend: anthropic, model: claude-sonnet-5-5, parallel: 2, max_tokens: 400, timeout_s: 120, retries: 8}

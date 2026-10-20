@@ -1,0 +1,11 @@
+# A0-core-2 (replication variance, SPEC2 §3, Brad 2026-10-20): A0-core with a different generator seed base. Pod settings as A0-core. RTX Pro 6000 96 GB: both models resident, 16 prompts per SDXL call, 8 concurrent captions
+# (start Ollama with OLLAMA_NUM_PARALLEL=8, i.e. OLLAMA_PAR=8 for the scripts). Same parameters as configs/a0_core.yaml otherwise.
+run_name: a0_core2
+arm: A0
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}
+seeds: {sdxl_base_seed: 20261020}

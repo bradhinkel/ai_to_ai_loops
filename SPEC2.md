@@ -9,6 +9,7 @@ Owner: Brad Hinkel · Version 2 · 2026-10-18 · Supersedes `SPEC.md` (v1, 2026-
   - Part 2: anti-convergence arms.
   - Part 3: human and AI evaluation.
 - Added the experiments: model-mixing factorial, Chinese loop, text-only loop, caption length, a judge that edits captions (OMNI-EPIC style), image-archive rejection, and a rejection-threshold mode.
+- 2026-10-20 (Brad): E6 pilot shortened to 20 steps with 8 trajectories per seed and a portrait control set; A0-core-2 replication run; A0-S confirmed; B-img pilot design (image-archive rejection on the A0 pair) added under Part 2; long-run (1,000–10,000-step) test deferred to a local machine. Paper plan: A0 (+A0-core-2, A0-photo), E1 2×2 (+A0-S), E2-QZ, E6, one Part 2 pilot.
 - Evaluation now uses multiple human cohorts and validates the AI evaluators against people.
 - Throughput updated from the A0 pilot: ~20 s/step on the RTX 5070 laptop.
 
@@ -82,6 +83,12 @@ Prediction to record: it converges at least as hard as A0, toward stock-photogra
 **A0-lit (Brad, 2026-10-20; optional).** The literal version: the style clause removed and nothing put in its place, "Describe this image. The description must be 50 words or fewer. …" A0-core, A0-photo and A0-lit are the three levels of one variable, the requested register (artistic / photographic / none). Not scheduled; config `configs/a0_lit_runpod96.yaml` and a prediction exist so it can run back to back with A0-photo if wanted.
 
 Motivation (2026-10-20, from the captions on disk): under Hintze's instruction, style words ("vibrant", "painted", "ethereal") appear in 43% of step-0 captions and 53–60% thereafter in A0-core, and 55% rising to 72–80% in E1-gen; photographic words fall from about 25% to 13% by step 10. The instruction gives the loop a target that the generator renders back.
+
+### A0-core-2 — replication variance (added 2026-10-20, Brad: "good with the second A0 run with a different random seed")
+
+Same 100 Hintze seeds, same models, instruction and parameters as A0-core; only `seeds.sdxl_base_seed` changes (20261017 → 20261020), so every generator draw and every LLaVA sample differs. Purpose: the run-to-run noise of a single pair, without which no "attractors differ by model" claim has an error bar. Readouts: the persistent atlas with A0-core and A0-core-2 as two cells of the same pair (clusters present in one and not the other = noise floor), endpoint census, knee, Vendi, gravity per shared attractor, memory curve. It also gives a second replication against Hintze's T = 0.9 data. Config `configs/a0_core2_runpod96.yaml`, ~7 h / $18, queued after A0-photo.
+
+**Deferred (Brad, 2026-10-20):** a long-run test, 1,000–10,000 steps on a few trajectories, to see how the stationary statistics settle (dwell distribution, visit frequencies, whether rare attractors appear). Waits for a local machine that can be spared for a week; not on the pod budget.
 
 ## 4. Part 1 — Extensions of Hintze (what drives convergence?)
 
@@ -267,7 +274,7 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 - social worker — expected prior: darker-skinned woman (Stable Bias audit; to be confirmed on SDXL by the one-shot baseline before the loop runs).
 Prestige is recorded as a covariate: does the direction of loss track prestige (toward lighter / male as prestige rises)?
 
-**Seeds.** Template prompts, not Hintze's: "a photograph of a {young|older} {light-skinned|medium-skinned|dark-skinned} {man|woman} working as a(n) {occupation}, {typical workplace}, well lit, face visible." 2 genders × 3 skin tones × 2 ages = 12 seeds per occupation, 36 in all, 4 trajectories each (different generator seeds), 50 steps. Backgrounds are typical workplaces (cockpit, hospital ward, office or home visit), not the paper's neutral background: more realistic, and the setting carries the occupation forward while pulling toward its stereotype. Step-0 images are checked by eye for visible attributes before launch.
+**Seeds.** Template prompts, not Hintze's: "a photograph of a {young|older} {light-skinned|medium-skinned|dark-skinned} {man|woman} working as a(n) {occupation}, {typical workplace}, well lit, face visible." 2 genders × 3 skin tones × 2 ages = 12 seeds per occupation, 36 in all, **8 trajectories each (different generator seeds), 20 steps** (amended 2026-10-20, Brad: the seed-memory curve, `reports/memory_curve.md`, shows seed identification at 50% by step 3–5 and ~20% by step 10 in every pair, so 20 steps gives ten steps of burn-in and ten of stationary tail; the saved budget goes into trajectories per seed, which is what the per-step hazard comparisons need). **Portrait control set** (added 2026-10-20, Brad: "I'd also like to see how the human portraits are themselves lost"): 12 seeds "a photograph of a {young|older} {light-skinned|medium-skinned|dark-skinned} {man|woman}, head-and-shoulders portrait, plain background, well lit, face visible", same 8 × 20 × 2 instructions, to measure attribute loss without an occupation pulling on it. Backgrounds are typical workplaces (cockpit, hospital ward, office or home visit), not the paper's neutral background: more realistic, and the setting carries the occupation forward while pulling toward its stereotype. Step-0 images are checked by eye for visible attributes before launch.
 
 **Two captioner instructions (two arms, same seeds).**
 1. *Photo*: the A0-photo instruction verbatim ("Describe this image as a realistic photograph, in plain, precise terms. …"), so A0-photo is the control for the attractor landscape.
@@ -277,11 +284,11 @@ Prestige is recorded as a covariate: does the direction of loss track prestige (
 
 **Measurement per step.** Image: person present?; perceived gender presentation and age band by an independent judge (Claude or FairFace, never the loop's captioner), validated on a hand-labelled set stratified by group; skin tone by the Thong/Wilson method (facial-skin mask, CIELAB L* and h*, three-cluster weighted mean), scored against the trajectory's own seed (within-trajectory ΔE) as well as on the absolute dark/light (L* 60) and red/yellow (h* 55°) thresholds. Caption: is each seeded attribute still named (keyword list + LLM check)?
 
-**Readouts.** Survival curves per attribute per seed group (Kaplan-Meier; person dropout as a competing risk); per-step loss hazard; direction of change relative to the one-shot prior; omission vs override split by instruction; prestige covariate.
+**Readouts.** Survival curves per attribute per seed group (Kaplan-Meier; person dropout as a competing risk); per-step loss hazard; direction of change relative to the one-shot prior; omission vs override split by instruction; prestige covariate. Portrait loss per step (face present, face area share, number of faces, head-and-shoulders framing kept), with a strip of the first ten images per seed. The seed-memory curve (`analysis/memory_curve.py`) per seed group, and on the one-shot baseline images as the null: an attribute still present after step 10 is held by the attractor, not by the seed.
 
-**Size and cost.** 36 seeds × 4 trajectories × 50 steps × 2 instructions ≈ 14,400 steps, about 10 h / $25 on the pod at A0 speed, plus under an hour for the one-shot sets.
+**Size and cost.** (36 + 12) seeds × 8 trajectories × 20 steps × 2 instructions ≈ 15,360 steps, about 11 h / $28 on the pod at A0 speed, plus under an hour for the one-shot sets. **Free first look before any E6 run:** the 16 Hintze seeds that mention people already exist in A0, A0-photo and the four E1 cells; a face detector over those trajectories gives the portrait-loss curve for six pairs.
 
-**Build list before launch.** Template-seed support in the runner; 50-step configs for the two instructions; the skin-tone pipeline and its validation; the independent gender/age judge and its check set; hypotheses in `predictions.md` (recorded 2026-10-20).
+**Build list before launch.** Template-seed support in the runner; 20-step configs for the two instructions (occupation and portrait seed sets); the skin-tone pipeline and its validation; the independent gender/age judge and its check set; hypotheses in `predictions.md` (recorded 2026-10-20).
 
 ## 5. Part 2 — Anti-convergence arms (Hintze's models: SDXL + llava:latest 7B)
 
@@ -305,6 +312,20 @@ Prestige is recorded as a covariate: does the direction of loss track prestige (
 | **E OMNI filter + novelty** | Judge labels each candidate interesting or boring; the most novel interesting one advances (OMNI's actual structure) | Dynamic | Does the judge add value at equal novelty (E vs. B2)? |
 | **F OMNI-EPIC edit** | Judge rewrites the chosen caption toward something "interestingly new" relative to the archive | Dynamic | Strongest form of the hypothesis. **Changes the system:** the judge, not the captioner, now writes the prompt |
 | **R Release** | Steps 101–150 of B1–F revert to random selection | — | Do trajectories relapse? |
+
+#### B-img pilot design (Brad with Claude, 2026-10-20): image-archive rejection on the A0 pair
+
+Brad: "the most aggressive option is the image-archive rejection - archive images that stay in an attractor for n steps (5?) past the initial 5 step burn-in. This can be run on the A0 model - but then push images away from the attractors." One Part 2 pilot is run before the paper because it points directly at the next step; the rest of Part 2 waits.
+
+- **Pair and protocol:** SDXL + llava:latest 7B, Hintze instruction, T = 0.9, 20 trajectories × 100 steps (pilot scale), lockstep.
+- **Candidates:** each step the captioner writes K = 4 captions of the current image (independent samples at T = 0.9) and all four are rendered (4× image cost). Selection is in image space.
+- **Archive (dynamic, image space):** a trajectory is "in an attractor" at step t when its images at steps t−4 … t all lie within radius R of their own mean (R = 0.20 DINOv2 cosine, the gravity radius); the first 5 steps of every trajectory are burn-in and never archived. When the condition holds, image t (its embedding) enters the shared archive. So the archive is exactly the set of states that have shown persistence, not the A0 centroids.
+- **Rule (reject mode):** discard any candidate within radius r of an archive entry (r = R); pick at random among the survivors. If none survive, resample the K captions up to N = 2 more times, then advance the most distant candidate and log the step as **trapped**.
+- **Embedding for steering:** DINOv2 is the evaluation space (rule 4 reserves it from steering), so the archive and the rejection distance use a different image embedding, SigLIP (`google/siglip-base-patch16-224`, pinned), and evaluation stays in DINOv2. CLIP is not used for either.
+- **Control:** arm A, the same K = 4 candidates with one picked at random, same seeds and trajectories, so the cost of sampling alone is separated from the rejection.
+- **Readouts (DINOv2):** share of trajectory-steps in persistent attractors vs A0's 39% (`analysis/persistent_atlas.py` with A0-core as a cell); persistent visits per trajectory; step-to-step drift; Vendi at step 99; trapped rate by step; archive growth; whether new persistent states form at the archive's frontier (clusters absent from A0 with ≥ 3 persistent visits), which is Brad's B1 alternative hypothesis; the memory curve.
+- **Size:** 20 × 100 × 4 captions and 4 images ≈ 20 × 100 × (4 × 1.9 + 4 × 0.8) s ≈ 6 h for the pilot plus ~3 h for arm A on the pod; ~$25 together.
+- **Build list:** K-candidate captioning and batched rendering in the runner; SigLIP embedder; online persistence detector and archive store (append-only, per step); reject/resample/trapped logic with every candidate's caption, image and distances recorded; configs for B-img and A; predictions before launch.
 
 **Judge details (D, E, F):**
 - OMNI prompt structure: directive ("as many interestingly different images as possible"), environment, history (A0 motif labels plus 20 archive captions), then the candidates in shuffled order.
@@ -390,6 +411,9 @@ Validate genericness on A0 first: attractor endpoints must score as more generic
 | 5 | E2 Chinese 2×2 | Strong cultural test; needs a translated instruction | ~$30–60 GPU + API |
 | 5b | E5 D&D bias injection | The only causal test of where the attractors come from; depends on the captioner fine-tune | ~$30–80 GPU incl. LoRA training |
 | 5c | A0-photo, then E6 demographic attribute survival | Measurable and directly relevant to the bias question; needs the validated scoring first | ~$20–50 GPU + human labels |
+| 5d | A0-core-2 (replication variance) | Error bar for every between-pair claim; second replication vs Hintze | ~$18 GPU |
+| 5e | A0-S (Claude Sonnet + SDXL) | Third captioner: makes the attribution about captioners, not Qwen vs LLaVA | ~$50 API + ~$10 GPU |
+| 5f | B-img pilot + arm A (Part 2 pilot) | One intervention arm before the paper; points at the next step | ~$25 GPU |
 | 6 | E4 caption length | Lowest expected information gain | ~$20–40 GPU |
 | Opt. | B-img, F, reject-mode variants | Ablations | as budget allows |
 | Last | Part 3 evaluation | Needs final arms | ~$1–2k incl. panels |

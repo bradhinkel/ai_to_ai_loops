@@ -59,9 +59,13 @@ class Runner:
         self.stores = {t: TrajStore(self.run_dir, t, self.seed_prompts[t]) for t in self.traj_ids}
 
         from .generators.hunyuan import make_generator
-        from .captioners.ollama_llava import OllamaCaptioner
         self.gen = make_generator(cfg["generator"])
-        self.cap = OllamaCaptioner(cfg["captioner"], cfg["temperature"], self.log)
+        if cfg["captioner"].get("backend", "ollama") == "anthropic":      # A0-S: Claude via the Messages API
+            from .captioners.claude_api import ClaudeCaptioner
+            self.cap = ClaudeCaptioner(cfg["captioner"], cfg["temperature"], self.log)
+        else:
+            from .captioners.ollama_llava import OllamaCaptioner
+            self.cap = OllamaCaptioner(cfg["captioner"], cfg["temperature"], self.log)
         self.clipper = None
         if cfg.get("prompt_clip", {}).get("enabled"):
             from .prompt_clip import PromptClipper

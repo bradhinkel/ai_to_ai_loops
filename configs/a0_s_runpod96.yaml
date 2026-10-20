@@ -1,0 +1,10 @@
+# A0-S (SPEC §5; SPEC2 §4 E1 second NEW captioner): A0 with Claude Sonnet as captioner, SDXL unchanged, Hintze instruction verbatim.
+# Captioner runs over the API (ANTHROPIC_API_KEY from the environment or .env; never in this file). Pod settings as A0-core for SDXL.
+run_name: a0_s
+arm: A0-S
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {backend: anthropic, model: claude-sonnet-5-5, parallel: 8, unload_after_pass: false, max_tokens: 400, timeout_s: 120, retries: 8}

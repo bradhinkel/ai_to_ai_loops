@@ -35,6 +35,20 @@ class ClaudeCaptioner:
         # if the API rejects it, dropped once with temperature_applied=False recorded in info() and every record (deviation to log).
         self.temperature_applied = True
         self._info = None
+        self._probe_temperature()
+
+    def _probe_temperature(self):
+        """One 1-token text call at start-up, so the manifest's captioner info records whether the API accepts the loop's T
+        (claude-sonnet-5-5 rejects it, D16) before any caption is written."""
+        import anthropic
+        try:
+            self.client.messages.create(model=self.model, max_tokens=1, messages=[{"role": "user", "content": "ok"}], extra_body={"temperature": self.temperature})
+        except anthropic.BadRequestError as e:
+            if "temperature" in str(e).lower():
+                self.temperature_applied = False
+                if self.log: self.log.warning("API rejects temperature=%s for %s: %s. Captions run at the model default (D16).", self.temperature, self.model, str(e)[:120])
+            else:
+                raise
 
     def info(self):
         if self._info is None:

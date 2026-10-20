@@ -135,20 +135,36 @@ Two English instructions go to the translators. Both are the exact strings the r
 
    > Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain.
 
+   Simplified Chinese (Brad, 2026-10-20; translated by DeepSeek, reviewed by Claude Opus 5.5, revised by DeepSeek; **human review by a native reader requested, pending**):
+
+   > 用生动、富有艺术感的语言描述这张图片。描述必须在80字以内。请勿超出此限制。仅返回描述内容。请勿解释。
+
+   Literal back-translation (Claude, 2026-10-20): "Use vivid, artistically-rich language to describe this image. The description must be within 80 characters. Please do not exceed this limit. Return only the description content. Please do not explain."
+
 2. **Photo instruction (A0-photo / E6 baseline; for a later Chinese photo cell):**
 
    > Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain.
 
-Notes for the translators and reviewers:
-- Keep the five-sentence structure and the imperative register; the last three sentences are a length limit, a "return only the description" rule and a "do not explain" rule, and each should stay a separate sentence.
-- "Vivid, artistic terms" means rich, expressive, painterly language (the register of an art description), not "describe the artwork". "Plain, precise terms" means factual, unembellished description as of a photograph.
-- The length clause: translate "50 words or fewer" as a character count, not a word count. Please suggest the natural Chinese budget equivalent to 50 English words (provisional working value: 80 characters, final value set after the Hunyuan token-limit check below). The number is a placeholder the runner fills in, so the sentence should read naturally with any two-digit number.
-- Please also provide a short optional clause meaning "write the description in Chinese", kept as a separate sentence, in case the pilot shows the captioner drifting back into English (whether it is used is a pilot decision, recorded in DEVIATIONS.md if adopted).
-- Two independent speakers: one translates, the other back-translates without seeing the English. Both versions and the back-translation are recorded here before any E2 run.
+   Simplified Chinese (same provenance):
 
-Before fixing the character budget: measure Hunyuan-DiT's bilingual CLIP tokens per Chinese character on sample captions (its CLIP limit is 77 tokens, its mT5 limit 256), since a Chinese BERT-style tokenizer is close to one token per character and 80 characters may sit at the clip point. The runner's length check counts whitespace-separated words, which is meaningless for Chinese; E2 needs a character-count check and a per-caption language flag (fraction of CJK characters).
+   > 像描述真实照片一样，用平实、准确的语言描述这张图片。描述必须在80字以内。请勿超出此限制。仅返回描述内容。请勿解释。
 
-Early observation (Brad, 2026-10-20, E1-both at step 61, English captions): some multi-tier temple buildings, people in a cross-legged seated pose, lone trees and palm trees, but still a good deal of Western-looking architecture. So the Chinese-trained pair writing English has not shifted dramatically toward Chinese imagery; E2-QZ tests whether the language does.
+   Literal back-translation: "As when describing a real photograph, use plain, accurate language to describe this image. The description must be within 80 characters. Please do not exceed this limit. Return only the description content. Please do not explain."
+
+Optional language clause (same provenance): 描述必须使用中文。 ("The description must use Chinese.") The probe below found 30/30 captions in Chinese without it, so it is not planned for use.
+
+Claude's review (2026-10-20): both keep the five-sentence structure, one rule per sentence, and 字 (characters) is the right unit for the length clause. Points for the native reader, none blocking: (i) sentences 3 and 5 carry 请 ("please"), which the English imperatives do not; it is the natural written register and consistent across both prompts, so keep unless the reader prefers the terser 勿超出此限制 / 勿解释; (ii) 准确 is "accurate", 精确 would be "precise"; either serves "precise terms"; (iii) 像描述真实照片一样 reads "as when describing a real photograph", which matches the intended sense of the English (treat the image as a photograph). The number is a placeholder the runner fills in; see the budget decision below.
+
+**Probe of the translated instructions (Claude, 2026-10-20; `logs/e2prep/zh_probe_2026-10-20.json`, not tracked):** qwen2.5vl:7b on the pod, T = 0.9, 20 E1-both step-99 images under the Hintze translation and 10 under the Photo translation.
+- Language: 30/30 in Chinese (CJK share of characters 0.87–0.94, the rest punctuation). No English drift.
+- Length: Hintze median 48.5 characters (max 93; 2/20 over 80); Photo median 67 (max 88; 2/10 over 80). Compare 34–40 words under the English 50-word limit, so 80字 is a slightly looser budget than 50 words.
+- Register: the Hintze version produced the expected vivid register (仿佛 "as if" in most captions, 梦幻 "dreamlike", 静谧 "tranquil"); the Photo version opened 5/10 captions with a preamble 这张图片展示了 / 这张照片展示了 ("this image/photo shows"), the Chinese counterpart of LLaVA's "The image presents".
+- Hunyuan-DiT tokenizers: its bilingual CLIP counts 1.03 tokens per character (limit 77, so about 75 characters), mT5 0.88 (limit 256, never binding). 5/30 probe captions exceeded 77 CLIP tokens. The SDXL/OpenAI CLIP tokenizer, which `src/prompt_clip.py` uses as the reference clip in every E1 cell, counts 2.6 tokens per character on Chinese, so it would cut a Chinese caption to about 30 characters.
+
+Decisions needed before E2-QZ (recorded here; Brad to confirm):
+1. **Character budget:** 70字 recommended (≈ 72 Hunyuan CLIP tokens with punctuation, so a caption that obeys the instruction fits under the 77-token limit, as 50 English words do under SDXL's). 80字 keeps the current wording but lets about one caption in six be clipped.
+2. **The explicit clip in E2 must use Hunyuan's own CLIP tokenizer, not SDXL's** (otherwise the channel is a third of the English cells'). This is a deviation from the "same reference tokenizer in every cell" rule of §4 E1, to be recorded in DEVIATIONS.md.
+3. **Runner changes (build items):** `PromptClipper` cuts at whitespace-separated words and would reduce an over-length Chinese caption (no spaces) to an empty prompt; it needs a character-level rule for CJK text (cut at the last clause punctuation that fits), a configurable tokenizer, a character-count length flag in place of `over_50_words`, and a per-caption CJK-share flag. None of this touches the English cells.
 
 ### E3 — Text-only loop
 

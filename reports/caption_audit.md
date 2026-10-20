@@ -14,6 +14,18 @@ Counted from the step records only. Word lists are fixed in `analysis/caption_au
 | 51-75 | 2500 | 130 | 99.5% |  | 85% | 2.20 | 46% | 25% | 556 : 254 | 0.0% |
 | 76-99 | 2400 | 131 | 99.6% |  | 87% | 2.39 | 46% | 22% | 298 : 183 | 0.0% |
 
+## e1_cap  (10000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 1072)
+
+| steps | n | caption words (median) | clip fired | clip words before -> after | style share | style words / caption | photo share | people share | male : female words | mT5 truncated |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 100 | 41 | 0.0% |  | 49% | 0.85 | 12% | 67% | 32 : 32 | 0.0% |
+| 1-5 | 500 | 37 | 4.2% | 64 -> 59 | 74% | 1.52 | 7% | 52% | 61 : 97 | 0.0% |
+| 6-10 | 500 | 37 | 3.0% | 59 -> 55 | 84% | 1.93 | 6% | 46% | 30 : 90 | 0.0% |
+| 11-25 | 1500 | 37 | 3.0% | 63 -> 56 | 86% | 2.10 | 7% | 34% | 54 : 298 | 0.0% |
+| 26-50 | 2500 | 37 | 4.0% | 62 -> 57 | 85% | 2.08 | 5% | 27% | 15 : 257 | 0.0% |
+| 51-75 | 2500 | 37 | 3.7% | 61 -> 56 | 89% | 2.23 | 4% | 20% | 6 : 61 | 0.0% |
+| 76-99 | 2400 | 36 | 4.1% | 61 -> 57 | 87% | 2.21 | 3% | 14% | 0 : 39 | 0.0% |
+
 ## e1_gen  (10000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 9902)
 
 | steps | n | caption words (median) | clip fired | clip words before -> after | style share | style words / caption | photo share | people share | male : female words | mT5 truncated |
@@ -25,18 +37,6 @@ Counted from the step records only. Word lists are fixed in `analysis/caption_au
 | 26-50 | 2500 | 112 | 98.1% | 113 -> 62 | 86% | 2.25 | 30% | 45% | 493 : 644 | 0.0% |
 | 51-75 | 2500 | 112 | 98.3% | 112 -> 62 | 86% | 2.16 | 26% | 41% | 340 : 539 | 0.0% |
 | 76-99 | 2400 | 112 | 97.9% | 112 -> 62 | 87% | 2.11 | 24% | 42% | 440 : 541 | 0.0% |
-
-## e1_cap_pilot  (2000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 182)
-
-| steps | n | caption words (median) | clip fired | clip words before -> after | style share | style words / caption | photo share | people share | male : female words | mT5 truncated |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 0 | 20 | 40 | 0.0% |  | 55% | 1.25 | 5% | 30% | 6 : 2 | 0.0% |
-| 1-5 | 100 | 34 | 3.0% | 66 -> 57 | 80% | 1.91 | 3% | 40% | 12 : 1 | 0.0% |
-| 6-10 | 100 | 35 | 1.0% | 66 -> 59 | 90% | 2.20 | 3% | 31% | 0 : 2 | 0.0% |
-| 11-25 | 300 | 36 | 4.7% | 64 -> 60 | 87% | 1.95 | 6% | 27% | 0 : 45 | 0.0% |
-| 26-50 | 500 | 36 | 3.0% | 55 -> 53 | 88% | 2.16 | 3% | 26% | 2 : 45 | 0.0% |
-| 51-75 | 500 | 37 | 5.2% | 59 -> 56 | 86% | 1.97 | 4% | 22% | 2 : 13 | 0.0% |
-| 76-99 | 480 | 37 | 3.3% | 63 -> 57 | 91% | 2.22 | 6% | 25% | 0 : 25 | 0.0% |
 
 ## e1_both  (10000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 439)
 

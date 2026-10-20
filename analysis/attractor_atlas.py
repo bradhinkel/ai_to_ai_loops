@@ -26,6 +26,30 @@ def unit(X):
     return X / np.linalg.norm(X, axis=1, keepdims=True)
 
 
+def carry_names(C, names_path, cent_path, max_dist=0.10):
+    """Names are hand-written against one clustering; when the cells change, clusters re-index. Carry each saved name to the
+    nearest new centroid (cosine distance <= max_dist) from the centroids saved with the previous run; others start blank."""
+    names = json.loads((ROOT / names_path).read_text()) if (ROOT / names_path).exists() else {}
+    cp = ROOT / cent_path
+    if cp.exists():
+        z = np.load(cp, allow_pickle=True); Cp = z["C"]; np_names = list(z["names"])
+        Cp = Cp / np.linalg.norm(Cp, axis=1, keepdims=True)
+        if Cp.shape[1] == C.shape[1] and len(np_names) == len(Cp):
+            D = 1.0 - C @ Cp.T; carried = {}
+            for k in range(len(C)):
+                j = int(D[k].argmin())
+                if D[k, j] <= max_dist and np_names[j]: carried[str(k)] = np_names[j]
+            # hand edits in the names file (keyed by the CURRENT indices) win only if the file is newer than the centroid file
+            if (ROOT / names_path).exists() and (ROOT / names_path).stat().st_mtime > cp.stat().st_mtime:
+                carried.update({k: v for k, v in names.items() if v})
+            names = carried
+    return names
+
+
+def save_centroids(C, names, cent_path, k):
+    np.savez(ROOT / cent_path, C=C, names=np.array([names.get(str(i), "") for i in range(k)], dtype=object))
+
+
 def main():
     cpu_only()
     ap = argparse.ArgumentParser()
@@ -36,7 +60,6 @@ def main():
     a = ap.parse_args()
     cells = [dict(zip(("run", "cap", "gen"), c.split(":"))) for c in a.cells]
     caps = sorted({c["cap"] for c in cells}); gens = sorted({c["gen"] for c in cells})
-    names = json.loads((ROOT / a.names).read_text()) if (ROOT / a.names).exists() else {}
 
     # final-step embeddings per cell
     ids, X, grp = {}, [], []
@@ -45,6 +68,8 @@ def main():
     X = unit(np.concatenate(X)); grp = np.array(grp)
     km = kmeans(X, a.k); lab = km.labels_; C = unit(km.cluster_centers_.astype(np.float64))
     n_cell = {c["run"]: int((grp == c["run"]).sum()) for c in cells}
+    cent_path = a.names.replace(".json", "_centroids.npz"); names = carry_names(C, a.names, cent_path); save_centroids(C, names, cent_path, a.k)
+    (ROOT / a.names).write_text(json.dumps({str(i): names.get(str(i), "") for i in range(a.k)}, indent=1, ensure_ascii=False))
 
     # transit numbers per cell at the fixed radius
     transit = {}

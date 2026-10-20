@@ -1,0 +1,900 @@
+{
+ "probes_run": "a0_core",
+ "scan_run": "e1_cap",
+ "probe_source": "archive/a0_core_centroids.npz",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    90,
+    17,
+    10,
+    88,
+    57,
+    59,
+    93,
+    9,
+    70,
+    4,
+    40
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.111,
+   "n_visited": 8,
+   "n_stayed": 2,
+   "n_transient": 6,
+   "median_first_visit": 41.0,
+   "max_transient_dwell": 20,
+   "nearest": 0.045,
+   "examples": [
+    {
+     "traj": 51,
+     "step": 83,
+     "dist": 0.045,
+     "stayed": true,
+     "caption": "A breathtaking interior of a grand cathedral, bathed in the warm glow of stained glass windows, the vibrant mosaic floor weaving a colorful tapestry, and the hi"
+    },
+    {
+     "traj": 16,
+     "step": 39,
+     "dist": 0.05,
+     "stayed": false,
+     "caption": "Intricate Gothic architecture unfolds, sunbeams filtering through vibrant stained glass, casting ethereal light that dances across the high, vaulted ceiling. A "
+    },
+    {
+     "traj": 83,
+     "step": 55,
+     "dist": 0.052,
+     "stayed": false,
+     "caption": "A soaring cathedral, bathed in a kaleidoscope of stained light, stretches into infinity. Vaulted ceilings, supported by stone pillars, frame a vibrant mosaic fl"
+    },
+    {
+     "traj": 43,
+     "step": 81,
+     "dist": 0.054,
+     "stayed": false,
+     "caption": "In the heart of a cathedral, stained glass windows burst with vibrant hues\u2014amidst warm golden light and cool blue reflections. Arched ribbed vaults soar towards"
+    },
+    {
+     "traj": 98,
+     "step": 21,
+     "dist": 0.055,
+     "stayed": false,
+     "caption": "A solitary figure stands before the grandeur of a cathedral, its high, arched ceiling illuminated by beams of golden light streaming through vibrant stained gla"
+    },
+    {
+     "traj": 33,
+     "step": 78,
+     "dist": 0.057,
+     "stayed": true,
+     "caption": "A cathedral's interior bathed in golden sunlight, soaring ribbed vaults framing stained-glass windows that whisper with vibrant hues. Rows of wooden pews stretc"
+    },
+    {
+     "traj": 31,
+     "step": 60,
+     "dist": 0.057,
+     "stayed": false,
+     "caption": "Bathed in a spectrum of vibrant hues, the cathedral's interior is a masterpiece of light and color. Stained glass windows cast a kaleidoscope of light, dancing "
+    },
+    {
+     "traj": 37,
+     "step": 14,
+     "dist": 0.087,
+     "stayed": false,
+     "caption": "In a grand cathedral, golden light filters through towering stained glass, illuminating the ornate vaulted ceiling and pristine marble floor. Columns stand tall"
+    },
+    {
+     "traj": 5,
+     "step": 4,
+     "dist": 0.348,
+     "stayed": false,
+     "caption": "A grand library stretches into the light, its towering arches and stained-glass windows bathed in golden sunlight. Rows of wooden desks and bookshelves fill the"
+    },
+    {
+     "traj": 30,
+     "step": 7,
+     "dist": 0.4,
+     "stayed": false,
+     "caption": "Bathed in golden light, an ancient library reveals grand, arched windows and towering vaulted ceilings. Bookshelves line the walls, and a serene, sunlit ambianc"
+    },
+    {
+     "traj": 85,
+     "step": 7,
+     "dist": 0.429,
+     "stayed": false,
+     "caption": "Golden sunlight streams through ornate stained glass windows, illuminating the grand, vaulted ceiling of an ancient library. Rich wooden desks and bookshelves l"
+    },
+    {
+     "traj": 20,
+     "step": 29,
+     "dist": 0.485,
+     "stayed": false,
+     "caption": "A sunlit, Gothic greenhouse bathed in golden light, ivy draped elegantly from towering arches, a red chaise lounge cradling pillows invites tranquility amidst a"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    5,
+    95,
+    92,
+    35,
+    82,
+    60,
+    58,
+    87,
+    43,
+    50,
+    27,
+    28,
+    83,
+    19,
+    84,
+    63,
+    85,
+    81,
+    66,
+    64,
+    37,
+    74,
+    53,
+    11,
+    0,
+    98,
+    30,
+    51,
+    80,
+    56,
+    68,
+    52,
+    41,
+    76
+   ],
+   "radius_used": 0.323,
+   "radius_p95": 0.323,
+   "n_visited": 34,
+   "n_stayed": 9,
+   "n_transient": 25,
+   "median_first_visit": 18.0,
+   "max_transient_dwell": 52,
+   "nearest": 0.08,
+   "examples": [
+    {
+     "traj": 87,
+     "step": 24,
+     "dist": 0.08,
+     "stayed": false,
+     "caption": "A royal purple living room glows with opulence under a dramatic chandelier. Lavish drapes cascade from gold-trimmed windows, enveloping the room in regal hues. "
+    },
+    {
+     "traj": 50,
+     "step": 88,
+     "dist": 0.088,
+     "stayed": true,
+     "caption": "A regal chamber bathed in golden hues, with opulent red carpets and curtains, exuding luxury. Intricate gilded moldings adorn the ceiling, while a majestic chan"
+    },
+    {
+     "traj": 74,
+     "step": 94,
+     "dist": 0.088,
+     "stayed": true,
+     "caption": "A royal, opulent room bathed in violet hues, adorned with gold detailing and a grand chandelier. Luxurious velvet furnishings, richly upholstered in deep purple"
+    },
+    {
+     "traj": 20,
+     "step": 92,
+     "dist": 0.09,
+     "stayed": true,
+     "caption": "A grand salon bathed in opulent golden hues, its ceiling adorned with intricate filigree. Turquoise sofas, each cushion a work of art, invite relaxation. A maje"
+    },
+    {
+     "traj": 81,
+     "step": 68,
+     "dist": 0.093,
+     "stayed": false,
+     "caption": "In a room of golden opulence, a grand chandelier bathes the space in ethereal light, casting a regal glow upon plush, ornately carved furniture and intricate wa"
+    },
+    {
+     "traj": 2,
+     "step": 9,
+     "dist": 0.093,
+     "stayed": false,
+     "caption": "A golden-toned opulence unfolds, where sunlight streams through draped curtains, casting a serene glow. Intricate chandeliers hang from an ornate ceiling, while"
+    },
+    {
+     "traj": 71,
+     "step": 55,
+     "dist": 0.094,
+     "stayed": false,
+     "caption": "Luxuriate in opulence, where golden hues and intricate details weave a tapestry of elegance. Rich drapery frames sun-drenched windows, while ornate furniture an"
+    },
+    {
+     "traj": 13,
+     "step": 70,
+     "dist": 0.099,
+     "stayed": true,
+     "caption": "A luxurious room bathed in golden light, featuring a grand emerald green velvet sofa, richly ornamented drapes, an opulent crystal chandelier, and a marble floo"
+    },
+    {
+     "traj": 86,
+     "step": 95,
+     "dist": 0.103,
+     "stayed": true,
+     "caption": "A luxurious, opulent room bathed in golden light, featuring emerald walls, ornate gold chandeliers, and vibrant red furnishings. The richly patterned carpet add"
+    },
+    {
+     "traj": 56,
+     "step": 50,
+     "dist": 0.105,
+     "stayed": false,
+     "caption": "A sunlit opulence beckons in this grand, golden room, where intricate, ornate chandeliers cast a warm, celestial glow upon a pristine sofa and delicate, draped "
+    },
+    {
+     "traj": 5,
+     "step": 83,
+     "dist": 0.105,
+     "stayed": false,
+     "caption": "An opulent room bathed in golden hues, adorned with lavish cream and gold furnishings, a grand chandelier draped with cascading crystals, and sheer curtains fil"
+    },
+    {
+     "traj": 30,
+     "step": 22,
+     "dist": 0.107,
+     "stayed": false,
+     "caption": "This opulent living room exudes elegance and luxury, featuring plush golden sofas, a shimmering chandelier, grand arched windows draped with luxurious curtains,"
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    2,
+    97,
+    44,
+    26,
+    31,
+    13,
+    47,
+    75,
+    77
+   ],
+   "radius_used": 0.326,
+   "radius_p95": 0.326,
+   "n_visited": 8,
+   "n_stayed": 0,
+   "n_transient": 8,
+   "median_first_visit": 43.5,
+   "max_transient_dwell": 13,
+   "nearest": 0.105,
+   "examples": [
+    {
+     "traj": 86,
+     "step": 8,
+     "dist": 0.105,
+     "stayed": false,
+     "caption": "A luxurious bedroom in rich hues of red and gold, adorned with opulent gilded accents and draped in velvety red curtains. A crystal chandelier casts a warm glow"
+    },
+    {
+     "traj": 85,
+     "step": 43,
+     "dist": 0.11,
+     "stayed": false,
+     "caption": "A luxurious, sunlit bedroom bathed in warm cream hues, featuring a grand canopy bed draped with rich, flowing curtains, an ornate bed frame, plush white bedding"
+    },
+    {
+     "traj": 74,
+     "step": 49,
+     "dist": 0.142,
+     "stayed": false,
+     "caption": "In a room of opulence, gold and purple intertwine under a gilded ceiling. Silk drapes whisper in the soft breeze, while plush purple velvet upholsters every cha"
+    },
+    {
+     "traj": 0,
+     "step": 6,
+     "dist": 0.15,
+     "stayed": false,
+     "caption": "A sunlit, opulent bedroom bathed in golden hues, featuring a sumptuous bed draped with luxurious fabrics, a curving chaise lounge, and elegant furnishings again"
+    },
+    {
+     "traj": 52,
+     "step": 61,
+     "dist": 0.155,
+     "stayed": false,
+     "caption": "A dreamscape in blush pink, where opulent details converge: a chandelier of cascading glass, luxurious four-poster bed draped in velvet, plush armchairs, and a "
+    },
+    {
+     "traj": 50,
+     "step": 46,
+     "dist": 0.191,
+     "stayed": false,
+     "caption": "An opulent, richly adorned chamber bathed in golden light, with crimson drapes, ornate four-poster bed draped in velvet, intricate ceiling details, and opulent "
+    },
+    {
+     "traj": 28,
+     "step": 54,
+     "dist": 0.2,
+     "stayed": false,
+     "caption": "A serene, opulent bedroom bathed in soft light. Luxurious cream drapery frames a large window, and a majestic four-poster bed, draped in ethereal white fabrics,"
+    },
+    {
+     "traj": 87,
+     "step": 85,
+     "dist": 0.228,
+     "stayed": false,
+     "caption": "An opulent bedroom bathes in royal purple, its domed ceiling adorned with intricate gold detailing and a radiant chandelier. Lavishly cushioned furniture, inclu"
+    },
+    {
+     "traj": 80,
+     "step": 90,
+     "dist": 0.368,
+     "stayed": false,
+     "caption": "A lavishly pink room, bathed in sunlight, exudes opulence with its ornate chandelier, luxurious pink furnishings, and intricate ceiling details."
+    },
+    {
+     "traj": 13,
+     "step": 79,
+     "dist": 0.386,
+     "stayed": false,
+     "caption": "A opulent room bathed in soft light, featuring emerald green drapes, a grand chandelier, and an array of elegant armchairs and a plush bed, all under the gaze o"
+    },
+    {
+     "traj": 44,
+     "step": 68,
+     "dist": 0.393,
+     "stayed": false,
+     "caption": "A opulent emerald room is adorned with rich crimson velvet sofas and a gilded coffee table, set against a backdrop of emerald walls, ornate red curtains, and a "
+    },
+    {
+     "traj": 16,
+     "step": 84,
+     "dist": 0.438,
+     "stayed": false,
+     "caption": "A regal living room unfolds in luxurious shades of purple and gold, adorned with opulent drapes, a majestic chandelier, and ornate furnishings. The room whisper"
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    6,
+    54,
+    65,
+    29,
+    55,
+    78,
+    46,
+    33
+   ],
+   "radius_used": 0.707,
+   "radius_p95": 0.707,
+   "n_visited": 17,
+   "n_stayed": 2,
+   "n_transient": 15,
+   "median_first_visit": 36.0,
+   "max_transient_dwell": 19,
+   "nearest": 0.222,
+   "examples": [
+    {
+     "traj": 90,
+     "step": 54,
+     "dist": 0.222,
+     "stayed": false,
+     "caption": "A sunlit cobblestone alley lined with stone houses adorned with vibrant flowers, greenery, and hanging baskets. The warm glow of sunlight bathes the quaint vill"
+    },
+    {
+     "traj": 27,
+     "step": 11,
+     "dist": 0.287,
+     "stayed": false,
+     "caption": "A sunlit, picturesque village street, lined with terracotta pots brimming with vibrant flowers, their blooms in shades of pink, red, and purple casting a romant"
+    },
+    {
+     "traj": 34,
+     "step": 14,
+     "dist": 0.36,
+     "stayed": false,
+     "caption": "A quaint cobblestone alleyway leads to a church spire, flanked by stone houses adorned with vibrant pink and purple flowers. The scene is bathed in sunlight, wi"
+    },
+    {
+     "traj": 7,
+     "step": 55,
+     "dist": 0.422,
+     "stayed": false,
+     "caption": "A whimsical cottage painted in soft, pastel hues\u2014pink walls, sky-blue shutters and doors, and a mossy stone facade\u2014nests amidst lush greenery and vibrant pink f"
+    },
+    {
+     "traj": 69,
+     "step": 12,
+     "dist": 0.442,
+     "stayed": false,
+     "caption": "Illuminated by the soft glow of streetlamps, a quaint village nestled in a snowy valley is depicted. Snow blankets the rooftops and cobblestone streets, while t"
+    },
+    {
+     "traj": 40,
+     "step": 45,
+     "dist": 0.465,
+     "stayed": false,
+     "caption": "A sunlit Mediterranean scene unfolds, with peachy stone steps flanked by lush greenery and vibrant flowerpots. Blue shutters and doors add a pop of color, while"
+    },
+    {
+     "traj": 41,
+     "step": 95,
+     "dist": 0.522,
+     "stayed": true,
+     "caption": "A quaint, fairy-tale cottage bathed in pink hues, adorned with cascading pink roses, under a thatched roof, with blue shutters and door, set in a garden of vibr"
+    },
+    {
+     "traj": 75,
+     "step": 53,
+     "dist": 0.55,
+     "stayed": false,
+     "caption": "A sun-drenched alleyway bathed in golden light, adorned with cascading bougainvillea in vibrant pink, leading up to a rustic stone doorway. The soft stone textu"
+    },
+    {
+     "traj": 21,
+     "step": 21,
+     "dist": 0.552,
+     "stayed": false,
+     "caption": "A quaint stone cottage nestled beneath a canopy of blooming pink cherry blossoms, with a vibrant blue door and a pink-painted side door leading to a stone-paved"
+    },
+    {
+     "traj": 65,
+     "step": 37,
+     "dist": 0.613,
+     "stayed": false,
+     "caption": "A quaint, sunlit stone alleyway lined with vibrant purple wisteria and lush greenery, inviting the viewer into a picturesque, idyllic landscape."
+    },
+    {
+     "traj": 97,
+     "step": 84,
+     "dist": 0.635,
+     "stayed": false,
+     "caption": "A serene stone archway, adorned with lush green vines and wildflowers, invites the viewer into a sun-drenched garden. The path, paved with cobblestones, leads t"
+    },
+    {
+     "traj": 72,
+     "step": 11,
+     "dist": 0.656,
+     "stayed": false,
+     "caption": "A quaint stone cottage nestled among blossoming cherry trees, with a vibrant pink door inviting entry. Two sheep graze peacefully on the lush, green lawn, while"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    24,
+    96,
+    36,
+    45,
+    15,
+    1,
+    69,
+    42,
+    62,
+    20,
+    14,
+    32,
+    23,
+    12,
+    71,
+    18,
+    61,
+    3,
+    22,
+    72,
+    73,
+    79,
+    99,
+    48
+   ],
+   "radius_used": 0.793,
+   "radius_p95": 0.793,
+   "n_visited": 94,
+   "n_stayed": 41,
+   "n_transient": 53,
+   "median_first_visit": 4.0,
+   "max_transient_dwell": 54,
+   "nearest": 0.56,
+   "examples": [
+    {
+     "traj": 15,
+     "step": 58,
+     "dist": 0.56,
+     "stayed": true,
+     "caption": "A solitary figure stands on a rock, gazing at a single, bare tree reflected in the calm water below. The sky is a vibrant tapestry of pink and purple hues, pain"
+    },
+    {
+     "traj": 96,
+     "step": 22,
+     "dist": 0.562,
+     "stayed": true,
+     "caption": "A solitary figure walks under a crimson sky, flanked by bare, towering trees. The ethereal pink light filters through the fog, casting a haunting glow over the "
+    },
+    {
+     "traj": 99,
+     "step": 54,
+     "dist": 0.565,
+     "stayed": true,
+     "caption": "A moonlit scene painted in purples and grays, featuring two stark, barren trees standing sentinel by a reflective body of water. The full moon casts a ghostly g"
+    },
+    {
+     "traj": 34,
+     "step": 69,
+     "dist": 0.565,
+     "stayed": true,
+     "caption": "A tranquil forest path winds through a verdant landscape, bathed in dappled sunlight filtering through misty green canopies. Moss-covered rocks and trees create"
+    },
+    {
+     "traj": 18,
+     "step": 67,
+     "dist": 0.566,
+     "stayed": true,
+     "caption": "A solitary tree stands atop a lavender mound, its branches intertwining with the sky's soft hues. The scene reflects in a still pool, mirroring the tree and the"
+    },
+    {
+     "traj": 12,
+     "step": 41,
+     "dist": 0.568,
+     "stayed": true,
+     "caption": "A misty moonlit forest, the silhouetted trees stretching towards the ethereal glow of a full moon. The fog blankets the ground, hinting at secrets hidden beneat"
+    },
+    {
+     "traj": 39,
+     "step": 23,
+     "dist": 0.569,
+     "stayed": true,
+     "caption": "Three ethereal figures in flowing pink dresses wend through a fog-laden forest, their silhouettes softened by the mist, creating a dreamlike passage into an oth"
+    },
+    {
+     "traj": 49,
+     "step": 25,
+     "dist": 0.574,
+     "stayed": true,
+     "caption": "Two cloaked figures stand beneath a gnarled, ancient tree, silhouetted against a dramatic sky with stormy clouds and distant mountain peaks, evoking a sense of "
+    },
+    {
+     "traj": 82,
+     "step": 52,
+     "dist": 0.574,
+     "stayed": true,
+     "caption": "A lone tree with vibrant, magenta hues stands tall on a rugged, pink-hued rock, reflected perfectly in the calm, mirrored waters below. The sky is a dreamy grad"
+    },
+    {
+     "traj": 36,
+     "step": 96,
+     "dist": 0.58,
+     "stayed": true,
+     "caption": "A lone figure in a teal cloak stands in a barren desert under a colossal, radiant yellow moon, surrounded by towering rock formations and a sky filled with star"
+    },
+    {
+     "traj": 26,
+     "step": 19,
+     "dist": 0.58,
+     "stayed": true,
+     "caption": "An open book rests on moss-covered ground amidst a serene forest, bathed in golden sunlight streaming through the trees. The ethereal light filters through, cas"
+    },
+    {
+     "traj": 69,
+     "step": 99,
+     "dist": 0.584,
+     "stayed": true,
+     "caption": "A serene landscape bathed in soft pink hues, reflecting the tranquil waters below. Majestic mountains rise in the background, their peaks dusted with mist. A lo"
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    49,
+    91,
+    94,
+    8
+   ],
+   "radius_used": 0.455,
+   "radius_p95": 0.455,
+   "n_visited": 2,
+   "n_stayed": 0,
+   "n_transient": 2,
+   "median_first_visit": 39.5,
+   "max_transient_dwell": 11,
+   "nearest": 0.306,
+   "examples": [
+    {
+     "traj": 27,
+     "step": 81,
+     "dist": 0.306,
+     "stayed": false,
+     "caption": "A serene fairytale castle with vibrant blue spires stands majestically atop a hill, reflected in a tranquil teal pond surrounded by blossoming cherry blossoms a"
+    },
+    {
+     "traj": 1,
+     "step": 5,
+     "dist": 0.404,
+     "stayed": false,
+     "caption": "Two figures sit closely on a bench, bathed in the warm glow of golden autumn hues. They gaze at a majestic castle perched on a distant hill, its spires reaching"
+    },
+    {
+     "traj": 64,
+     "step": 19,
+     "dist": 0.482,
+     "stayed": false,
+     "caption": "A majestic stone castle perches precariously on a jagged cliff, its spires reaching towards stormy, cloud-covered skies. Crashing waves below highlight the raw "
+    },
+    {
+     "traj": 45,
+     "step": 18,
+     "dist": 0.579,
+     "stayed": false,
+     "caption": "A serene sunset paints the sky in hues of orange and pink, casting a gentle glow over a tranquil river. A majestic castle with steep spires stands on the far ba"
+    },
+    {
+     "traj": 69,
+     "step": 12,
+     "dist": 0.587,
+     "stayed": false,
+     "caption": "Illuminated by the soft glow of streetlamps, a quaint village nestled in a snowy valley is depicted. Snow blankets the rooftops and cobblestone streets, while t"
+    },
+    {
+     "traj": 94,
+     "step": 53,
+     "dist": 0.698,
+     "stayed": false,
+     "caption": "In a fog-laden medieval town, the spires of grand cathedrals pierce the mist, while lamplight casts an ethereal glow on wet cobblestones, where a lone couple an"
+    },
+    {
+     "traj": 40,
+     "step": 40,
+     "dist": 0.698,
+     "stayed": false,
+     "caption": "A charming, quaint village perches on a verdant hillside, its earth-toned houses with blue shutters and terracotta roofs nestled amidst lush greenery, bathed in"
+    },
+    {
+     "traj": 34,
+     "step": 2,
+     "dist": 0.713,
+     "stayed": false,
+     "caption": "A sun-drenched village street, lined with quaint houses, a church steeple piercing the sky, and vibrant, lush trees casting dappled light. Figures in period att"
+    },
+    {
+     "traj": 90,
+     "step": 54,
+     "dist": 0.74,
+     "stayed": false,
+     "caption": "A sunlit cobblestone alley lined with stone houses adorned with vibrant flowers, greenery, and hanging baskets. The warm glow of sunlight bathes the quaint vill"
+    },
+    {
+     "traj": 7,
+     "step": 15,
+     "dist": 0.758,
+     "stayed": false,
+     "caption": "An idyllic Tuscan village nestles into a rolling hillside, bathed in the warm glow of a setting sun. Sun-drenched stone houses, their terracotta roofs whisperin"
+    },
+    {
+     "traj": 75,
+     "step": 79,
+     "dist": 0.763,
+     "stayed": false,
+     "caption": "A dreamy, pastel-toned mansion sits nestled among lush greenery and blooming cherry blossoms. The architecture is ornate, with soft pink hues and arched windows"
+    },
+    {
+     "traj": 21,
+     "step": 17,
+     "dist": 0.765,
+     "stayed": false,
+     "caption": "A quaint stone cottage nestled under a canopy of blooming pink cherry blossoms, its moss-covered roof and ivy-draped walls evoking a fairy tale world. A stone p"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    7,
+    34,
+    38,
+    21,
+    89
+   ],
+   "radius_used": 0.2,
+   "radius_p95": 0.193,
+   "n_visited": 2,
+   "n_stayed": 0,
+   "n_transient": 2,
+   "median_first_visit": 66.5,
+   "max_transient_dwell": 8,
+   "nearest": 0.106,
+   "examples": [
+    {
+     "traj": 27,
+     "step": 68,
+     "dist": 0.106,
+     "stayed": false,
+     "caption": "A dreamy, pastel pink Victorian house stands amidst blooming cherry blossoms, its grand turret topped with a black roof, surrounded by lush greenery and a windi"
+    },
+    {
+     "traj": 75,
+     "step": 78,
+     "dist": 0.176,
+     "stayed": false,
+     "caption": "A vibrant, fairy-tale-like mansion bathed in soft light, its architecture adorned with pastel pinks and greens. Blossoming trees create a canopy of delicate pin"
+    },
+    {
+     "traj": 90,
+     "step": 83,
+     "dist": 0.39,
+     "stayed": false,
+     "caption": "A serene pink cottage nestled amidst a lush garden of vibrant pink roses, bathed in the soft glow of sunlight filtering through the surrounding trees."
+    },
+    {
+     "traj": 8,
+     "step": 4,
+     "dist": 0.426,
+     "stayed": false,
+     "caption": "A sun-drenched, grand southern mansion with mossy tree branches weaving elegantly over its roofline, casting dappled shadows on a sprawling green lawn, framed b"
+    },
+    {
+     "traj": 91,
+     "step": 12,
+     "dist": 0.509,
+     "stayed": false,
+     "caption": "An aerial view captures a serene, affluent neighborhood, where grand homes with gabled roofs nestle amidst a vibrant tapestry of autumn foliage, each hue\u2014golden"
+    },
+    {
+     "traj": 69,
+     "step": 24,
+     "dist": 0.541,
+     "stayed": false,
+     "caption": "A serene winter twilight bathes a snowy street in golden light, where bare trees and snow-covered houses stand in quiet contemplation. The vibrant orange sky wh"
+    },
+    {
+     "traj": 95,
+     "step": 6,
+     "dist": 0.612,
+     "stayed": false,
+     "caption": "Two silhouettes stand on a lavender field, gazing towards the majestic, pastel-painted White House. The setting sun bathes the scene in warm hues of orange and "
+    },
+    {
+     "traj": 66,
+     "step": 54,
+     "dist": 0.632,
+     "stayed": false,
+     "caption": "A serene, sun-dappled garden path leads through a white, classical arbor, its columns softened by creeping vines and lush greenery. Shadows dance on the stone w"
+    },
+    {
+     "traj": 92,
+     "step": 10,
+     "dist": 0.681,
+     "stayed": false,
+     "caption": "A golden pagoda-like temple, adorned with intricate details, stands majestically over serene waters, its reflection dancing with the light of a setting sun, cas"
+    },
+    {
+     "traj": 7,
+     "step": 20,
+     "dist": 0.684,
+     "stayed": false,
+     "caption": "A serene Mediterranean villa nestles atop a sun-kissed hill, its terracotta hues bathed in golden light. Curving stone steps lead up to a lush garden adorned wi"
+    },
+    {
+     "traj": 57,
+     "step": 95,
+     "dist": 0.69,
+     "stayed": false,
+     "caption": "A serene white gazebo with a domed roof sits perfectly reflected in a tranquil, misty lake. Lush greenery envelops the scene, with a whispering forest in the ba"
+    },
+    {
+     "traj": 73,
+     "step": 62,
+     "dist": 0.696,
+     "stayed": false,
+     "caption": "In a misty, lantern-lit street, a couple shares a quiet moment under a red umbrella, surrounded by lush greenery and the warm glow of vintage street lamps, refl"
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    39,
+    86,
+    67,
+    16,
+    25
+   ],
+   "radius_used": 0.589,
+   "radius_p95": 0.589,
+   "n_visited": 4,
+   "n_stayed": 0,
+   "n_transient": 4,
+   "median_first_visit": 11.0,
+   "max_transient_dwell": 5,
+   "nearest": 0.458,
+   "examples": [
+    {
+     "traj": 39,
+     "step": 4,
+     "dist": 0.458,
+     "stayed": false,
+     "caption": "In a dynamic, vibrant scene, a football player in red, marked with the number 10, leaps with passion, her teammates in red cheering, against a backdrop of flyin"
+    },
+    {
+     "traj": 90,
+     "step": 20,
+     "dist": 0.501,
+     "stayed": false,
+     "caption": "A woman dances under a sky of lavender and white, her vibrant orange dress billowing around her like a flame. Her hair, a cascade of dark hues, flutters wildly "
+    },
+    {
+     "traj": 67,
+     "step": 12,
+     "dist": 0.51,
+     "stayed": false,
+     "caption": "A dancer in a flowing blue-orange dress spins gracefully, her hair a cascade of vibrant movement against a soft, neutral backdrop. Her arms extend elegantly, ca"
+    },
+    {
+     "traj": 15,
+     "step": 13,
+     "dist": 0.542,
+     "stayed": false,
+     "caption": "A woman in an orange and blue flowing dress dances on the wind, her hair and gown captured mid-twirl, against a backdrop of misty, cloudy skies."
+    },
+    {
+     "traj": 43,
+     "step": 13,
+     "dist": 0.652,
+     "stayed": false,
+     "caption": "A radiant angelic figure descends amidst ethereal clouds, golden wings shimmering with divine light. Robed in flowing, luminous golden fabric, her form glows ag"
+    },
+    {
+     "traj": 22,
+     "step": 15,
+     "dist": 0.659,
+     "stayed": false,
+     "caption": "A lady in a flowing, ethereal pink gown stands beside a bridge, her gaze lost in the dreamy twilight. Cherry blossoms and softly glowing lanterns surround her, "
+    },
+    {
+     "traj": 25,
+     "step": 14,
+     "dist": 0.671,
+     "stayed": false,
+     "caption": "A serene pink kimono-clad figure sits gracefully on a rock, surrounded by a misty river and blooming cherry blossoms, their delicate petals gently floating on t"
+    },
+    {
+     "traj": 77,
+     "step": 83,
+     "dist": 0.676,
+     "stayed": false,
+     "caption": "A woman in a flowing white dress dances gracefully across a field of lavender, her gown billowing in the wind, creating a mesmerizing blend of light and color a"
+    },
+    {
+     "traj": 73,
+     "step": 57,
+     "dist": 0.677,
+     "stayed": false,
+     "caption": "In a rain-soaked canvas, two dancers, one draped in vivid red, the other in emerald green, capture a moment of intimate yet fierce connection. The backdrop is a"
+    },
+    {
+     "traj": 61,
+     "step": 51,
+     "dist": 0.68,
+     "stayed": false,
+     "caption": "A woman in traditional attire, adorned with cherry blossoms, sits beneath a cherry blossom tree, gazing at a misty Mount Fuji and a tranquil village nestled amo"
+    },
+    {
+     "traj": 98,
+     "step": 11,
+     "dist": 0.707,
+     "stayed": false,
+     "caption": "A silhouette draped in flowing black fabric stands in a sunlit, minimalist room, creating a stark contrast between shadow and light, evoking a sense of mystery "
+    },
+    {
+     "traj": 55,
+     "step": 8,
+     "dist": 0.713,
+     "stayed": false,
+     "caption": "A serene figure clad in a flowing white robe stands atop a sea of cumulus clouds, arms outstretched, bathed in a radiant golden glow, evoking a sense of transce"
+    }
+   ]
+  }
+ ]
+}

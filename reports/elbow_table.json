@@ -79,64 +79,76 @@
     99
    ]
   },
-  "e1_cap_pilot minilm captions": {
-   "n": 20,
-   "knee_rule": 9,
+  "e1_cap minilm captions": {
+   "n": 100,
+   "knee_rule": 6,
    "knee_by_kmax": {
-    "15": 9
+    "15": 6,
+    "20": 6,
+    "25": 6,
+    "30": 9,
+    "40": 16
    },
    "silhouette_argmax": 2,
    "silhouette_top3": [
     2,
-    3,
-    4
+    4,
+    3
    ],
    "subsample": {
     "B": 200,
-    "m": 16,
-    "median": 8.0,
-    "p5": 7.0,
-    "p95": 9.0,
+    "m": 80,
+    "median": 8.5,
+    "p5": 6.0,
+    "p95": 11.0,
     "hist": {
-     "6": 5,
-     "7": 38,
-     "8": 117,
-     "9": 38,
-     "10": 2
+     "6": 18,
+     "7": 31,
+     "8": 51,
+     "9": 55,
+     "10": 27,
+     "11": 15,
+     "12": 3
     }
    },
-   "run": "e1_cap_pilot",
+   "run": "e1_cap",
    "space": "minilm",
    "step": [
     99
    ]
   },
-  "e1_cap_pilot dinov2 images": {
-   "n": 20,
-   "knee_rule": 10,
+  "e1_cap dinov2 images": {
+   "n": 100,
+   "knee_rule": 8,
    "knee_by_kmax": {
-    "15": 10
+    "15": 6,
+    "20": 6,
+    "25": 8,
+    "30": 9,
+    "40": 11
    },
-   "silhouette_argmax": 10,
+   "silhouette_argmax": 26,
    "silhouette_top3": [
-    10,
-    11,
-    9
+    26,
+    20,
+    31
    ],
    "subsample": {
     "B": 200,
-    "m": 16,
-    "median": 9.0,
-    "p5": 8.0,
-    "p95": 10.0,
+    "m": 80,
+    "median": 8.0,
+    "p5": 6.0,
+    "p95": 9.0,
     "hist": {
-     "7": 2,
-     "8": 59,
-     "9": 110,
-     "10": 29
+     "6": 22,
+     "7": 56,
+     "8": 77,
+     "9": 37,
+     "10": 7,
+     "13": 1
     }
    },
-   "run": "e1_cap_pilot",
+   "run": "e1_cap",
    "space": "dinov2",
    "step": [
     99

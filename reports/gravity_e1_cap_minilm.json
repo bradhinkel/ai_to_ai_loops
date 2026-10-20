@@ -1,0 +1,253 @@
+{
+ "run": "e1_cap",
+ "source": "k-means k=6 on e1_cap step-99 minilm",
+ "radius": 0.15,
+ "exit_factor": 1.25,
+ "attractors": [
+  {
+   "k": 0,
+   "name": "attractor 0",
+   "size_at_definition": 25,
+   "endpoints": 17,
+   "steps_inside": 871,
+   "entries": 212,
+   "exits": 195,
+   "hazard": 0.22388059701492538,
+   "mean_residence": 4.466666666666667,
+   "km_median_residence": 2,
+   "capture": 0.02347989810610256,
+   "reentries": 177,
+   "n_visits_completed": 195,
+   "n_visits_censored": 17,
+   "max_completed_dwell": 23,
+   "stationary_share": 0.0932524146208692,
+   "endpoint_share": 0.17
+  },
+  {
+   "k": 1,
+   "name": "attractor 1",
+   "size_at_definition": 15,
+   "endpoints": 3,
+   "steps_inside": 116,
+   "entries": 56,
+   "exits": 53,
+   "hazard": 0.45689655172413796,
+   "mean_residence": 2.188679245283019,
+   "km_median_residence": 2,
+   "capture": 0.005723630417007359,
+   "reentries": 44,
+   "n_visits_completed": 53,
+   "n_visits_censored": 3,
+   "max_completed_dwell": 7,
+   "stationary_share": 0.012110909018091882,
+   "endpoint_share": 0.03
+  },
+  {
+   "k": 2,
+   "name": "attractor 2",
+   "size_at_definition": 27,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 4.921682221896226e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 3,
+   "name": "attractor 3",
+   "size_at_definition": 9,
+   "endpoints": 8,
+   "steps_inside": 353,
+   "entries": 40,
+   "exits": 32,
+   "hazard": 0.0906515580736544,
+   "mean_residence": 11.03125,
+   "km_median_residence": 9,
+   "capture": 0.004189797842254111,
+   "reentries": 31,
+   "n_visits_completed": 32,
+   "n_visits_censored": 8,
+   "max_completed_dwell": 46,
+   "stationary_share": 0.043372076814855526,
+   "endpoint_share": 0.08
+  },
+  {
+   "k": 4,
+   "name": "attractor 4",
+   "size_at_definition": 15,
+   "endpoints": 9,
+   "steps_inside": 231,
+   "entries": 73,
+   "exits": 64,
+   "hazard": 0.27705627705627706,
+   "mean_residence": 3.609375,
+   "km_median_residence": 2,
+   "capture": 0.007549901747853967,
+   "reentries": 59,
+   "n_visits_completed": 64,
+   "n_visits_censored": 9,
+   "max_completed_dwell": 25,
+   "stationary_share": 0.02596867894810116,
+   "endpoint_share": 0.09
+  },
+  {
+   "k": 5,
+   "name": "attractor 5",
+   "size_at_definition": 9,
+   "endpoints": 9,
+   "steps_inside": 325,
+   "entries": 66,
+   "exits": 57,
+   "hazard": 0.1753846153846154,
+   "mean_residence": 5.701754385964912,
+   "km_median_residence": 4,
+   "capture": 0.0068929503916449085,
+   "reentries": 56,
+   "n_visits_completed": 57,
+   "n_visits_censored": 9,
+   "max_completed_dwell": 18,
+   "stationary_share": 0.03710790808219896,
+   "endpoint_share": 0.09
+  }
+ ],
+ "free_stationary": 0.7881387956936643,
+ "free_endpoint": 0.54,
+ "hazard_by_depth": [
+  {
+   "lo": 0,
+   "hi": 0.4,
+   "n": 3,
+   "exit_rate": 0.0
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 155,
+   "exit_rate": 0.09032258064516129
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 510,
+   "exit_rate": 0.11764705882352941
+  },
+  {
+   "lo": 0.8,
+   "hi": 1.0,
+   "n": 785,
+   "exit_rate": 0.25095541401273885
+  },
+  {
+   "lo": 1.0,
+   "hi": 1.25,
+   "n": 443,
+   "exit_rate": 0.29345372460496616
+  }
+ ],
+ "hazard_by_step": [
+  {
+   "lo": 0,
+   "hi": 20,
+   "n": 96,
+   "exit_rate": 0.2708333333333333
+  },
+  {
+   "lo": 20,
+   "hi": 40,
+   "n": 243,
+   "exit_rate": 0.3004115226337449
+  },
+  {
+   "lo": 40,
+   "hi": 60,
+   "n": 371,
+   "exit_rate": 0.2695417789757412
+  },
+  {
+   "lo": 60,
+   "hi": 80,
+   "n": 561,
+   "exit_rate": 0.18181818181818182
+  },
+  {
+   "lo": 80,
+   "hi": 99,
+   "n": 625,
+   "exit_rate": 0.16
+  }
+ ],
+ "transition_counts": [
+  [
+   676.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   194.0
+  ],
+  [
+   0.0,
+   63.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   53.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   321.0,
+   0.0,
+   0.0,
+   32.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   167.0,
+   0.0,
+   64.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   268.0,
+   57.0
+  ],
+  [
+   212.0,
+   56.0,
+   0.0,
+   40.0,
+   73.0,
+   65.0,
+   7558.0
+  ]
+ ]
+}

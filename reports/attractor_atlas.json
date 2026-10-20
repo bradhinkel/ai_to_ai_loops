@@ -6,7 +6,7 @@
    "gen": "sdxl"
   },
   {
-   "run": "e1_cap_pilot",
+   "run": "e1_cap",
    "cap": "qwen",
    "gen": "sdxl"
   },
@@ -27,808 +27,110 @@
  "clusters": [
   {
    "cluster": 7,
-   "name": "gold-and-blue palatial salon",
-   "size": 38,
+   "name": "catch-all: streets, objects, scenes (loose)",
+   "size": 71,
    "composition": {
-    "a0_core": 31,
-    "e1_cap_pilot": 3,
-    "e1_gen": 2,
-    "e1_both": 2
-   },
-   "share": {
-    "a0_core": 0.31,
-    "e1_cap_pilot": 0.15,
-    "e1_gen": 0.02,
-    "e1_both": 0.02
-   },
-   "present": {
-    "a0_core": true,
-    "e1_cap_pilot": true,
-    "e1_gen": false,
-    "e1_both": false
-   },
-   "attribution": "generator: sdxl",
-   "captioner_fraction": 0.28,
-   "r95": 0.537,
-   "loose": false,
-   "members": {
-    "a0_core": [
-     0,
-     5,
-     11,
-     19,
-     27,
-     28,
-     30,
-     35,
-     37,
-     41,
-     43,
-     50,
-     51,
-     53,
-     58,
-     60,
-     63,
-     64,
-     66,
-     68,
-     74,
-     80,
-     81,
-     82,
-     83,
-     84,
-     85,
-     87,
-     92,
-     95,
-     98
-    ],
-    "e1_cap_pilot": [
-     0,
-     8,
-     11
-    ],
-    "e1_gen": [
-     24,
-     90
-    ],
-    "e1_both": [
-     52,
-     56
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 41,
-     "stayed": 27,
-     "steps_inside": 1737,
-     "exits": 207,
-     "hazard": 0.11917098445595854
-    },
-    "e1_cap_pilot": {
-     "visited": 3,
-     "stayed": 0,
-     "steps_inside": 38,
-     "exits": 9,
-     "hazard": 0.23684210526315788
-    },
-    "e1_gen": {
-     "visited": 3,
-     "stayed": 0,
-     "steps_inside": 8,
-     "exits": 6,
-     "hazard": 0.75
-    },
-    "e1_both": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    }
-   }
-  },
-  {
-   "cluster": 8,
-   "name": "catch-all: objects, robots, lit corridors (loose)",
-   "size": 32,
-   "composition": {
-    "a0_core": 5,
-    "e1_cap_pilot": 1,
-    "e1_gen": 21,
+    "a0_core": 21,
+    "e1_cap": 20,
+    "e1_gen": 25,
     "e1_both": 5
    },
    "share": {
-    "a0_core": 0.05,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.21,
+    "a0_core": 0.21,
+    "e1_cap": 0.2,
+    "e1_gen": 0.25,
     "e1_both": 0.05
    },
    "present": {
     "a0_core": true,
-    "e1_cap_pilot": false,
+    "e1_cap": true,
     "e1_gen": true,
     "e1_both": true
    },
-   "attribution": "all but e1_cap_pilot",
-   "captioner_fraction": 0.5,
-   "r95": 0.865,
+   "attribution": "universal",
+   "captioner_fraction": 0.66,
+   "r95": 0.857,
    "loose": true,
    "members": {
     "a0_core": [
-     23,
-     71,
+     6,
+     8,
+     12,
+     18,
+     22,
+     29,
+     33,
+     39,
+     42,
+     46,
+     49,
+     54,
+     55,
+     65,
      72,
-     73,
+     78,
+     79,
+     86,
+     91,
+     94,
      99
     ],
-    "e1_cap_pilot": [
-     5
+    "e1_cap": [
+     0,
+     3,
+     5,
+     7,
+     8,
+     17,
+     24,
+     27,
+     31,
+     40,
+     41,
+     54,
+     59,
+     60,
+     65,
+     70,
+     90,
+     91,
+     93,
+     97
     ],
     "e1_gen": [
-     7,
+     4,
+     8,
      9,
-     14,
-     20,
+     17,
+     23,
      25,
-     26,
-     28,
-     32,
+     29,
+     30,
+     33,
+     39,
      40,
-     43,
-     44,
-     50,
+     41,
+     46,
      51,
      58,
      61,
-     67,
-     69,
-     75,
-     77,
-     83,
-     88
-    ],
-    "e1_both": [
-     6,
-     10,
-     30,
-     34,
-     71
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_gen": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_both": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    }
-   }
-  },
-  {
-   "cluster": 11,
-   "name": "catch-all: people, sport, stained glass, art (loose)",
-   "size": 32,
-   "composition": {
-    "a0_core": 7,
-    "e1_cap_pilot": 1,
-    "e1_gen": 18,
-    "e1_both": 6
-   },
-   "share": {
-    "a0_core": 0.07,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.18,
-    "e1_both": 0.06
-   },
-   "present": {
-    "a0_core": true,
-    "e1_cap_pilot": false,
-    "e1_gen": true,
-    "e1_both": true
-   },
-   "attribution": "all but e1_cap_pilot",
-   "captioner_fraction": 0.54,
-   "r95": 0.8,
-   "loose": true,
-   "members": {
-    "a0_core": [
-     18,
-     39,
-     42,
-     48,
-     61,
-     79,
-     86
-    ],
-    "e1_cap_pilot": [
-     1
-    ],
-    "e1_gen": [
-     4,
-     17,
-     29,
-     31,
-     34,
-     39,
-     41,
-     49,
-     54,
-     56,
-     59,
      62,
-     65,
-     72,
-     81,
-     84,
-     85,
-     89
-    ],
-    "e1_both": [
-     1,
-     29,
-     36,
-     48,
-     61,
-     74
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_gen": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_both": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    }
-   }
-  },
-  {
-   "cluster": 2,
-   "name": "gothic cathedral nave",
-   "size": 25,
-   "composition": {
-    "a0_core": 11,
-    "e1_cap_pilot": 1,
-    "e1_gen": 12,
-    "e1_both": 1
-   },
-   "share": {
-    "a0_core": 0.11,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.12,
-    "e1_both": 0.01
-   },
-   "present": {
-    "a0_core": true,
-    "e1_cap_pilot": false,
-    "e1_gen": true,
-    "e1_both": false
-   },
-   "attribution": "captioner: llava",
-   "captioner_fraction": 0.85,
-   "r95": 0.373,
-   "loose": false,
-   "members": {
-    "a0_core": [
-     4,
-     9,
-     10,
-     17,
-     40,
-     57,
-     59,
-     70,
-     88,
-     90,
-     93
-    ],
-    "e1_cap_pilot": [
-     13
-    ],
-    "e1_gen": [
-     5,
-     6,
-     10,
-     30,
-     38,
-     42,
-     52,
-     70,
-     79,
-     80,
-     91,
-     94
-    ],
-    "e1_both": [
-     18
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 11,
-     "stayed": 11,
-     "steps_inside": 579,
-     "exits": 16,
-     "hazard": 0.027633851468048358
-    },
-    "e1_cap_pilot": {
-     "visited": 2,
-     "stayed": 0,
-     "steps_inside": 100,
-     "exits": 4,
-     "hazard": 0.04
-    },
-    "e1_gen": {
-     "visited": 16,
-     "stayed": 8,
-     "steps_inside": 411,
-     "exits": 74,
-     "hazard": 0.18004866180048662
-    },
-    "e1_both": {
-     "visited": 1,
-     "stayed": 1,
-     "steps_inside": 12,
-     "exits": 2,
-     "hazard": 0.16666666666666666
-    }
-   }
-  },
-  {
-   "cluster": 4,
-   "name": "lone tree in a mirror lake (lavender / cherry)",
-   "size": 25,
-   "composition": {
-    "a0_core": 0,
-    "e1_cap_pilot": 6,
-    "e1_gen": 0,
-    "e1_both": 19
-   },
-   "share": {
-    "a0_core": 0.0,
-    "e1_cap_pilot": 0.3,
-    "e1_gen": 0.0,
-    "e1_both": 0.19
-   },
-   "present": {
-    "a0_core": false,
-    "e1_cap_pilot": true,
-    "e1_gen": false,
-    "e1_both": true
-   },
-   "attribution": "captioner: qwen",
-   "captioner_fraction": 0.82,
-   "r95": 0.476,
-   "loose": false,
-   "members": {
-    "a0_core": [],
-    "e1_cap_pilot": [
-     9,
-     10,
-     12,
-     17,
-     18,
-     19
-    ],
-    "e1_gen": [],
-    "e1_both": [
-     2,
-     9,
-     13,
-     19,
-     24,
-     25,
-     27,
-     40,
-     41,
-     45,
-     49,
-     59,
-     60,
-     62,
-     65,
-     70,
-     86,
-     89,
-     91
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 4,
-     "stayed": 1,
-     "steps_inside": 59,
-     "exits": 17,
-     "hazard": 0.288135593220339
-    },
-    "e1_gen": {
-     "visited": 1,
-     "stayed": 0,
-     "steps_inside": 1,
-     "exits": 1,
-     "hazard": 1.0
-    },
-    "e1_both": {
-     "visited": 18,
-     "stayed": 6,
-     "steps_inside": 193,
-     "exits": 50,
-     "hazard": 0.25906735751295334
-    }
-   }
-  },
-  {
-   "cluster": 5,
-   "name": "sunset lake with silhouettes and meditators (loose)",
-   "size": 23,
-   "composition": {
-    "a0_core": 0,
-    "e1_cap_pilot": 0,
-    "e1_gen": 5,
-    "e1_both": 18
-   },
-   "share": {
-    "a0_core": 0.0,
-    "e1_cap_pilot": 0.0,
-    "e1_gen": 0.05,
-    "e1_both": 0.18
-   },
-   "present": {
-    "a0_core": false,
-    "e1_cap_pilot": false,
-    "e1_gen": true,
-    "e1_both": true
-   },
-   "attribution": "generator: hunyuan",
-   "captioner_fraction": 0.36,
-   "r95": 0.667,
-   "loose": true,
-   "members": {
-    "a0_core": [],
-    "e1_cap_pilot": [],
-    "e1_gen": [
-     35,
-     47,
-     78,
-     98,
-     99
-    ],
-    "e1_both": [
-     5,
-     8,
-     14,
-     17,
-     31,
-     32,
-     33,
-     35,
-     38,
-     39,
      67,
+     68,
      69,
-     73,
-     75,
-     78,
-     84,
-     95,
-     96
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_gen": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_both": {
-     "visited": 5,
-     "stayed": 1,
-     "steps_inside": 34,
-     "exits": 10,
-     "hazard": 0.29411764705882354
-    }
-   }
-  },
-  {
-   "cluster": 12,
-   "name": "dancers and ballerinas in light",
-   "size": 22,
-   "composition": {
-    "a0_core": 1,
-    "e1_cap_pilot": 1,
-    "e1_gen": 5,
-    "e1_both": 15
-   },
-   "share": {
-    "a0_core": 0.01,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.05,
-    "e1_both": 0.15
-   },
-   "present": {
-    "a0_core": false,
-    "e1_cap_pilot": false,
-    "e1_gen": true,
-    "e1_both": true
-   },
-   "attribution": "generator: hunyuan",
-   "captioner_fraction": 0.5,
-   "r95": 0.425,
-   "loose": false,
-   "members": {
-    "a0_core": [
-     67
-    ],
-    "e1_cap_pilot": [
-     16
-    ],
-    "e1_gen": [
-     2,
-     55,
-     73,
-     76,
-     86
-    ],
-    "e1_both": [
-     12,
-     20,
-     37,
-     44,
-     47,
-     50,
-     55,
      72,
      77,
-     79,
-     81,
-     82,
-     85,
-     88,
-     99
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 2,
-     "stayed": 1,
-     "steps_inside": 66,
-     "exits": 7,
-     "hazard": 0.10606060606060606
-    },
-    "e1_cap_pilot": {
-     "visited": 1,
-     "stayed": 0,
-     "steps_inside": 24,
-     "exits": 4,
-     "hazard": 0.16666666666666666
-    },
-    "e1_gen": {
-     "visited": 5,
-     "stayed": 1,
-     "steps_inside": 189,
-     "exits": 24,
-     "hazard": 0.12698412698412698
-    },
-    "e1_both": {
-     "visited": 20,
-     "stayed": 8,
-     "steps_inside": 646,
-     "exits": 61,
-     "hazard": 0.09442724458204334
-    }
-   }
-  },
-  {
-   "cluster": 13,
-   "name": "catch-all: tropical, forest, moonlit landscapes (loose)",
-   "size": 22,
-   "composition": {
-    "a0_core": 6,
-    "e1_cap_pilot": 1,
-    "e1_gen": 1,
-    "e1_both": 14
-   },
-   "share": {
-    "a0_core": 0.06,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.01,
-    "e1_both": 0.14
-   },
-   "present": {
-    "a0_core": true,
-    "e1_cap_pilot": false,
-    "e1_gen": false,
-    "e1_both": true
-   },
-   "attribution": "mixed",
-   "captioner_fraction": 0.75,
-   "r95": 0.746,
-   "loose": true,
-   "members": {
-    "a0_core": [
-     1,
-     22,
-     24,
-     36,
-     46,
-     69
-    ],
-    "e1_cap_pilot": [
-     4
-    ],
-    "e1_gen": [
-     45
-    ],
-    "e1_both": [
-     3,
-     16,
-     22,
-     46,
-     54,
-     57,
-     58,
-     63,
-     64,
-     80,
-     83,
+     84,
      87,
-     90,
-     97
-    ]
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_gen": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_both": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    }
-   }
-  },
-  {
-   "cluster": 14,
-   "name": "old-town street / Victorian house / castle village",
-   "size": 19,
-   "composition": {
-    "a0_core": 14,
-    "e1_cap_pilot": 1,
-    "e1_gen": 4,
-    "e1_both": 0
-   },
-   "share": {
-    "a0_core": 0.14,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.04,
-    "e1_both": 0.0
-   },
-   "present": {
-    "a0_core": true,
-    "e1_cap_pilot": false,
-    "e1_gen": false,
-    "e1_both": false
-   },
-   "attribution": "pair: llava + sdxl",
-   "captioner_fraction": 0.46,
-   "r95": 0.739,
-   "loose": true,
-   "members": {
-    "a0_core": [
+     92
+    ],
+    "e1_both": [
      6,
-     7,
-     8,
      21,
      29,
-     34,
-     38,
-     49,
-     54,
-     55,
-     65,
-     89,
-     91,
-     94
-    ],
-    "e1_cap_pilot": [
-     6
-    ],
-    "e1_gen": [
-     8,
-     23,
-     33,
-     66
-    ],
-    "e1_both": []
+     30,
+     34
+    ]
    },
    "transit": {
     "a0_core": {
@@ -838,7 +140,7 @@
      "exits": 0,
      "hazard": null
     },
-    "e1_cap_pilot": {
+    "e1_cap": {
      "visited": 0,
      "stayed": 0,
      "steps_inside": 0,
@@ -863,44 +165,655 @@
   },
   {
    "cluster": 3,
-   "name": "cosmic light bursts, vortices, eyes",
-   "size": 18,
+   "name": "sunset / mirror lakes and trees (loose)",
+   "size": 47,
    "composition": {
-    "a0_core": 2,
-    "e1_cap_pilot": 0,
-    "e1_gen": 4,
+    "a0_core": 3,
+    "e1_cap": 10,
+    "e1_gen": 1,
+    "e1_both": 33
+   },
+   "share": {
+    "a0_core": 0.03,
+    "e1_cap": 0.1,
+    "e1_gen": 0.01,
+    "e1_both": 0.33
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "attribution": "captioner: qwen",
+   "captioner_fraction": 0.65,
+   "r95": 0.629,
+   "loose": true,
+   "members": {
+    "a0_core": [
+     1,
+     24,
+     36
+    ],
+    "e1_cap": [
+     1,
+     14,
+     37,
+     38,
+     55,
+     62,
+     69,
+     73,
+     89,
+     96
+    ],
+    "e1_gen": [
+     48
+    ],
+    "e1_both": [
+     2,
+     3,
+     7,
+     9,
+     13,
+     16,
+     19,
+     22,
+     24,
+     25,
+     27,
+     31,
+     33,
+     40,
+     41,
+     45,
+     46,
+     49,
+     57,
+     58,
+     59,
+     60,
+     62,
+     64,
+     65,
+     70,
+     83,
+     86,
+     87,
+     89,
+     90,
+     91,
+     97
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_cap": {
+     "visited": 2,
+     "stayed": 0,
+     "steps_inside": 2,
+     "exits": 2,
+     "hazard": 1.0
+    },
+    "e1_gen": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_both": {
+     "visited": 15,
+     "stayed": 2,
+     "steps_inside": 86,
+     "exits": 28,
+     "hazard": 0.32558139534883723
+    }
+   }
+  },
+  {
+   "cluster": 1,
+   "name": "gold-and-blue palatial salon",
+   "size": 45,
+   "composition": {
+    "a0_core": 32,
+    "e1_cap": 11,
+    "e1_gen": 1,
+    "e1_both": 1
+   },
+   "share": {
+    "a0_core": 0.32,
+    "e1_cap": 0.11,
+    "e1_gen": 0.01,
+    "e1_both": 0.01
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "attribution": "generator: sdxl",
+   "captioner_fraction": 0.34,
+   "r95": 0.425,
+   "loose": false,
+   "members": {
+    "a0_core": [
+     0,
+     5,
+     11,
+     19,
+     27,
+     28,
+     30,
+     35,
+     37,
+     41,
+     43,
+     50,
+     51,
+     53,
+     56,
+     58,
+     60,
+     63,
+     64,
+     66,
+     68,
+     74,
+     80,
+     81,
+     82,
+     83,
+     84,
+     85,
+     87,
+     92,
+     95,
+     98
+    ],
+    "e1_cap": [
+     13,
+     16,
+     20,
+     43,
+     50,
+     56,
+     74,
+     75,
+     81,
+     84,
+     86
+    ],
+    "e1_gen": [
+     24
+    ],
+    "e1_both": [
+     52
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 41,
+     "stayed": 27,
+     "steps_inside": 1773,
+     "exits": 204,
+     "hazard": 0.11505922165820642
+    },
+    "e1_cap": {
+     "visited": 29,
+     "stayed": 8,
+     "steps_inside": 646,
+     "exits": 93,
+     "hazard": 0.14396284829721362
+    },
+    "e1_gen": {
+     "visited": 3,
+     "stayed": 0,
+     "steps_inside": 9,
+     "exits": 7,
+     "hazard": 0.7777777777777778
+    },
+    "e1_both": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    }
+   }
+  },
+  {
+   "cluster": 10,
+   "name": "catch-all: lighthouses, canyons, silhouettes (loose)",
+   "size": 33,
+   "composition": {
+    "a0_core": 4,
+    "e1_cap": 3,
+    "e1_gen": 11,
+    "e1_both": 15
+   },
+   "share": {
+    "a0_core": 0.04,
+    "e1_cap": 0.03,
+    "e1_gen": 0.11,
+    "e1_both": 0.15
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": true
+   },
+   "attribution": "generator: hunyuan",
+   "captioner_fraction": 0.14,
+   "r95": 0.693,
+   "loose": true,
+   "members": {
+    "a0_core": [
+     14,
+     23,
+     45,
+     62
+    ],
+    "e1_cap": [
+     36,
+     64,
+     67
+    ],
+    "e1_gen": [
+     3,
+     35,
+     45,
+     47,
+     53,
+     57,
+     78,
+     96,
+     97,
+     98,
+     99
+    ],
+    "e1_both": [
+     5,
+     8,
+     14,
+     17,
+     32,
+     38,
+     39,
+     67,
+     68,
+     69,
+     73,
+     75,
+     78,
+     80,
+     95
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_cap": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_gen": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_both": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    }
+   }
+  },
+  {
+   "cluster": 13,
+   "name": "catch-all: animals, objects, mixed (loose)",
+   "size": 32,
+   "composition": {
+    "a0_core": 3,
+    "e1_cap": 2,
+    "e1_gen": 15,
     "e1_both": 12
    },
    "share": {
-    "a0_core": 0.02,
-    "e1_cap_pilot": 0.0,
-    "e1_gen": 0.04,
+    "a0_core": 0.03,
+    "e1_cap": 0.02,
+    "e1_gen": 0.15,
     "e1_both": 0.12
    },
    "present": {
     "a0_core": false,
-    "e1_cap_pilot": false,
-    "e1_gen": false,
+    "e1_cap": false,
+    "e1_gen": true,
     "e1_both": true
    },
-   "attribution": "pair: qwen + hunyuan",
-   "captioner_fraction": 0.3,
-   "r95": 0.586,
-   "loose": false,
+   "attribution": "generator: hunyuan",
+   "captioner_fraction": 0.15,
+   "r95": 0.792,
+   "loose": true,
    "members": {
     "a0_core": [
-     14,
-     15
+     61,
+     69,
+     71
     ],
-    "e1_cap_pilot": [],
+    "e1_cap": [
+     45,
+     46
+    ],
     "e1_gen": [
-     1,
-     11,
-     27,
-     93
+     7,
+     14,
+     31,
+     34,
+     49,
+     54,
+     56,
+     59,
+     65,
+     66,
+     75,
+     81,
+     83,
+     85,
+     89
     ],
     "e1_both": [
      0,
+     1,
+     35,
+     36,
+     48,
+     54,
+     61,
+     63,
+     66,
+     71,
+     74,
+     96
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_cap": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_gen": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_both": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    }
+   }
+  },
+  {
+   "cluster": 12,
+   "name": "gothic cathedral nave",
+   "size": 25,
+   "composition": {
+    "a0_core": 11,
+    "e1_cap": 2,
+    "e1_gen": 11,
+    "e1_both": 1
+   },
+   "share": {
+    "a0_core": 0.11,
+    "e1_cap": 0.02,
+    "e1_gen": 0.11,
+    "e1_both": 0.01
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.95,
+   "r95": 0.275,
+   "loose": false,
+   "members": {
+    "a0_core": [
+     4,
+     9,
+     10,
+     17,
+     40,
+     57,
+     59,
+     70,
+     88,
+     90,
+     93
+    ],
+    "e1_cap": [
+     33,
+     51
+    ],
+    "e1_gen": [
+     5,
+     6,
+     10,
+     38,
+     42,
+     52,
+     70,
+     79,
+     80,
+     91,
+     94
+    ],
+    "e1_both": [
+     18
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 11,
+     "stayed": 11,
+     "steps_inside": 580,
+     "exits": 16,
+     "hazard": 0.027586206896551724
+    },
+    "e1_cap": {
+     "visited": 8,
+     "stayed": 2,
+     "steps_inside": 283,
+     "exits": 23,
+     "hazard": 0.0812720848056537
+    },
+    "e1_gen": {
+     "visited": 16,
+     "stayed": 8,
+     "steps_inside": 369,
+     "exits": 83,
+     "hazard": 0.22493224932249323
+    },
+    "e1_both": {
+     "visited": 1,
+     "stayed": 0,
+     "steps_inside": 11,
+     "exits": 2,
+     "hazard": 0.18181818181818182
+    }
+   }
+  },
+  {
+   "cluster": 8,
+   "name": "dancers and ballerinas",
+   "size": 22,
+   "composition": {
+    "a0_core": 1,
+    "e1_cap": 1,
+    "e1_gen": 5,
+    "e1_both": 15
+   },
+   "share": {
+    "a0_core": 0.01,
+    "e1_cap": 0.01,
+    "e1_gen": 0.05,
+    "e1_both": 0.15
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": true
+   },
+   "attribution": "generator: hunyuan",
+   "captioner_fraction": 0.36,
+   "r95": 0.57,
+   "loose": false,
+   "members": {
+    "a0_core": [
+     67
+    ],
+    "e1_cap": [
+     77
+    ],
+    "e1_gen": [
+     2,
+     55,
+     73,
+     76,
+     86
+    ],
+    "e1_both": [
+     12,
+     20,
+     37,
+     44,
+     47,
+     50,
+     55,
+     72,
+     77,
+     79,
+     81,
+     82,
+     85,
+     88,
+     99
+    ]
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 2,
+     "stayed": 1,
+     "steps_inside": 59,
+     "exits": 7,
+     "hazard": 0.11864406779661017
+    },
+    "e1_cap": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_gen": {
+     "visited": 5,
+     "stayed": 1,
+     "steps_inside": 174,
+     "exits": 25,
+     "hazard": 0.14367816091954022
+    },
+    "e1_both": {
+     "visited": 20,
+     "stayed": 8,
+     "steps_inside": 649,
+     "exits": 61,
+     "hazard": 0.09399075500770417
+    }
+   }
+  },
+  {
+   "cluster": 14,
+   "name": "cosmic vortices and rainbow tunnels",
+   "size": 21,
+   "composition": {
+    "a0_core": 2,
+    "e1_cap": 1,
+    "e1_gen": 8,
+    "e1_both": 10
+   },
+   "share": {
+    "a0_core": 0.02,
+    "e1_cap": 0.01,
+    "e1_gen": 0.08,
+    "e1_both": 0.1
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": true
+   },
+   "attribution": "generator: hunyuan",
+   "captioner_fraction": 0.06,
+   "r95": 0.562,
+   "loose": false,
+   "members": {
+    "a0_core": [
+     15,
+     96
+    ],
+    "e1_cap": [
+     35
+    ],
+    "e1_gen": [
+     1,
+     11,
+     12,
+     13,
+     16,
+     27,
+     93,
+     95
+    ],
+    "e1_both": [
      4,
      11,
      15,
@@ -908,7 +821,6 @@
      28,
      43,
      51,
-     66,
      76,
      94,
      98
@@ -922,7 +834,7 @@
      "exits": 0,
      "hazard": null
     },
-    "e1_cap_pilot": {
+    "e1_cap": {
      "visited": 0,
      "stayed": 0,
      "steps_inside": 0,
@@ -937,62 +849,66 @@
      "hazard": null
     },
     "e1_both": {
-     "visited": 9,
-     "stayed": 2,
-     "steps_inside": 82,
-     "exits": 18,
-     "hazard": 0.21951219512195122
+     "visited": 11,
+     "stayed": 3,
+     "steps_inside": 133,
+     "exits": 26,
+     "hazard": 0.19548872180451127
     }
    }
   },
   {
-   "cluster": 9,
-   "name": "neon tunnels, rainbow corridors, galleries",
-   "size": 15,
+   "cluster": 15,
+   "name": "futuristic / neon galleries and skylines",
+   "size": 19,
    "composition": {
-    "a0_core": 3,
-    "e1_cap_pilot": 0,
-    "e1_gen": 11,
+    "a0_core": 4,
+    "e1_cap": 0,
+    "e1_gen": 14,
     "e1_both": 1
    },
    "share": {
-    "a0_core": 0.03,
-    "e1_cap_pilot": 0.0,
-    "e1_gen": 0.11,
+    "a0_core": 0.04,
+    "e1_cap": 0.0,
+    "e1_gen": 0.14,
     "e1_both": 0.01
    },
    "present": {
     "a0_core": false,
-    "e1_cap_pilot": false,
+    "e1_cap": false,
     "e1_gen": true,
     "e1_both": false
    },
    "attribution": "pair: llava + hunyuan",
-   "captioner_fraction": 0.59,
-   "r95": 0.651,
+   "captioner_fraction": 0.61,
+   "r95": 0.663,
    "loose": true,
    "members": {
     "a0_core": [
+     20,
      25,
-     45,
-     96
+     32,
+     48
     ],
-    "e1_cap_pilot": [],
+    "e1_cap": [],
     "e1_gen": [
      0,
-     12,
-     13,
-     16,
      18,
      19,
+     21,
      22,
+     26,
+     36,
      37,
+     60,
+     63,
+     64,
      71,
-     95,
-     97
+     74,
+     90
     ],
     "e1_both": [
-     68
+     10
     ]
    },
    "transit": {
@@ -1003,7 +919,7 @@
      "exits": 0,
      "hazard": null
     },
-    "e1_cap_pilot": {
+    "e1_cap": {
      "visited": 0,
      "stayed": 0,
      "steps_inside": 0,
@@ -1027,49 +943,52 @@
    }
   },
   {
-   "cluster": 15,
-   "name": "East Asian garden, pagoda, Fuji, bridge",
-   "size": 14,
+   "cluster": 2,
+   "name": "East Asian garden, pagoda, Fuji",
+   "size": 17,
    "composition": {
-    "a0_core": 4,
-    "e1_cap_pilot": 2,
-    "e1_gen": 3,
-    "e1_both": 5
+    "a0_core": 2,
+    "e1_cap": 10,
+    "e1_gen": 1,
+    "e1_both": 4
    },
    "share": {
-    "a0_core": 0.04,
-    "e1_cap_pilot": 0.1,
-    "e1_gen": 0.03,
-    "e1_both": 0.05
+    "a0_core": 0.02,
+    "e1_cap": 0.1,
+    "e1_gen": 0.01,
+    "e1_both": 0.04
    },
    "present": {
     "a0_core": false,
-    "e1_cap_pilot": true,
+    "e1_cap": true,
     "e1_gen": false,
-    "e1_both": true
+    "e1_both": false
    },
-   "attribution": "captioner: qwen",
-   "captioner_fraction": 0.57,
-   "r95": 0.718,
-   "loose": true,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.61,
+   "r95": 0.489,
+   "loose": false,
    "members": {
     "a0_core": [
      3,
-     12,
-     16,
-     78
+     16
     ],
-    "e1_cap_pilot": [
-     3,
-     7
+    "e1_cap": [
+     15,
+     21,
+     22,
+     25,
+     48,
+     61,
+     66,
+     72,
+     92,
+     95
     ],
     "e1_gen": [
-     15,
-     48,
-     92
+     15
     ],
     "e1_both": [
-     7,
      42,
      53,
      92,
@@ -1078,18 +997,178 @@
    },
    "transit": {
     "a0_core": {
-     "visited": 1,
+     "visited": 5,
      "stayed": 0,
-     "steps_inside": 4,
-     "exits": 2,
-     "hazard": 0.5
+     "steps_inside": 21,
+     "exits": 9,
+     "hazard": 0.42857142857142855
     },
-    "e1_cap_pilot": {
+    "e1_cap": {
+     "visited": 9,
+     "stayed": 8,
+     "steps_inside": 398,
+     "exits": 17,
+     "hazard": 0.04271356783919598
+    },
+    "e1_gen": {
      "visited": 1,
      "stayed": 0,
-     "steps_inside": 6,
+     "steps_inside": 1,
+     "exits": 1,
+     "hazard": 1.0
+    },
+    "e1_both": {
+     "visited": 2,
+     "stayed": 1,
+     "steps_inside": 20,
      "exits": 3,
-     "hazard": 0.5
+     "hazard": 0.15
+    }
+   }
+  },
+  {
+   "cluster": 9,
+   "name": "gnarled old tree in mist",
+   "size": 16,
+   "composition": {
+    "a0_core": 0,
+    "e1_cap": 16,
+    "e1_gen": 0,
+    "e1_both": 0
+   },
+   "share": {
+    "a0_core": 0.0,
+    "e1_cap": 0.16,
+    "e1_gen": 0.0,
+    "e1_both": 0.0
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.5,
+   "r95": 0.294,
+   "loose": false,
+   "members": {
+    "a0_core": [],
+    "e1_cap": [
+     4,
+     9,
+     10,
+     12,
+     18,
+     23,
+     26,
+     29,
+     34,
+     39,
+     49,
+     78,
+     79,
+     82,
+     94,
+     99
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 3,
+     "stayed": 0,
+     "steps_inside": 12,
+     "exits": 4,
+     "hazard": 0.3333333333333333
+    },
+    "e1_cap": {
+     "visited": 24,
+     "stayed": 11,
+     "steps_inside": 405,
+     "exits": 97,
+     "hazard": 0.23950617283950618
+    },
+    "e1_gen": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_both": {
+     "visited": 4,
+     "stayed": 0,
+     "steps_inside": 9,
+     "exits": 4,
+     "hazard": 0.4444444444444444
+    }
+   }
+  },
+  {
+   "cluster": 4,
+   "name": "pink-and-gold banquet hall",
+   "size": 15,
+   "composition": {
+    "a0_core": 2,
+    "e1_cap": 13,
+    "e1_gen": 0,
+    "e1_both": 0
+   },
+   "share": {
+    "a0_core": 0.02,
+    "e1_cap": 0.13,
+    "e1_gen": 0.0,
+    "e1_both": 0.0
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.42,
+   "r95": 0.231,
+   "loose": false,
+   "members": {
+    "a0_core": [
+     52,
+     76
+    ],
+    "e1_cap": [
+     6,
+     28,
+     30,
+     42,
+     47,
+     52,
+     53,
+     58,
+     68,
+     76,
+     80,
+     83,
+     85
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 17,
+     "stayed": 1,
+     "steps_inside": 40,
+     "exits": 23,
+     "hazard": 0.575
+    },
+    "e1_cap": {
+     "visited": 18,
+     "stayed": 12,
+     "steps_inside": 503,
+     "exits": 35,
+     "hazard": 0.06958250497017893
     },
     "e1_gen": {
      "visited": 0,
@@ -1108,24 +1187,24 @@
    }
   },
   {
-   "cluster": 6,
+   "cluster": 0,
    "name": "luxury canopy bedroom",
    "size": 11,
    "composition": {
     "a0_core": 9,
-    "e1_cap_pilot": 0,
+    "e1_cap": 0,
     "e1_gen": 1,
     "e1_both": 1
    },
    "share": {
     "a0_core": 0.09,
-    "e1_cap_pilot": 0.0,
+    "e1_cap": 0.0,
     "e1_gen": 0.01,
     "e1_both": 0.01
    },
    "present": {
     "a0_core": true,
-    "e1_cap_pilot": false,
+    "e1_cap": false,
     "e1_gen": false,
     "e1_both": false
    },
@@ -1145,7 +1224,7 @@
      77,
      97
     ],
-    "e1_cap_pilot": [],
+    "e1_cap": [],
     "e1_gen": [
      82
     ],
@@ -1161,12 +1240,12 @@
      "exits": 49,
      "hazard": 0.12468193384223919
     },
-    "e1_cap_pilot": {
-     "visited": 2,
+    "e1_cap": {
+     "visited": 6,
      "stayed": 0,
-     "steps_inside": 3,
-     "exits": 3,
-     "hazard": 1.0
+     "steps_inside": 50,
+     "exits": 14,
+     "hazard": 0.28
     },
     "e1_gen": {
      "visited": 1,
@@ -1185,138 +1264,64 @@
    }
   },
   {
-   "cluster": 0,
-   "name": "futuristic skyline and landmarks",
-   "size": 10,
+   "cluster": 11,
+   "name": "luxury bathroom",
+   "size": 11,
    "composition": {
-    "a0_core": 2,
-    "e1_cap_pilot": 0,
-    "e1_gen": 8,
-    "e1_both": 0
+    "a0_core": 0,
+    "e1_cap": 9,
+    "e1_gen": 0,
+    "e1_both": 2
    },
    "share": {
-    "a0_core": 0.02,
-    "e1_cap_pilot": 0.0,
-    "e1_gen": 0.08,
-    "e1_both": 0.0
+    "a0_core": 0.0,
+    "e1_cap": 0.09,
+    "e1_gen": 0.0,
+    "e1_both": 0.02
    },
    "present": {
     "a0_core": false,
-    "e1_cap_pilot": false,
-    "e1_gen": true,
-    "e1_both": false
-   },
-   "attribution": "pair: llava + hunyuan",
-   "captioner_fraction": 0.62,
-   "r95": 0.655,
-   "loose": true,
-   "members": {
-    "a0_core": [
-     20,
-     33
-    ],
-    "e1_cap_pilot": [],
-    "e1_gen": [
-     21,
-     36,
-     46,
-     60,
-     63,
-     64,
-     74,
-     87
-    ],
-    "e1_both": []
-   },
-   "transit": {
-    "a0_core": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_cap_pilot": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_gen": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    },
-    "e1_both": {
-     "visited": 0,
-     "stayed": 0,
-     "steps_inside": 0,
-     "exits": 0,
-     "hazard": null
-    }
-   }
-  },
-  {
-   "cluster": 1,
-   "name": "gold ballroom / opulent hall (loose)",
-   "size": 8,
-   "composition": {
-    "a0_core": 4,
-    "e1_cap_pilot": 2,
-    "e1_gen": 1,
-    "e1_both": 1
-   },
-   "share": {
-    "a0_core": 0.04,
-    "e1_cap_pilot": 0.1,
-    "e1_gen": 0.01,
-    "e1_both": 0.01
-   },
-   "present": {
-    "a0_core": false,
-    "e1_cap_pilot": true,
+    "e1_cap": true,
     "e1_gen": false,
     "e1_both": false
    },
    "attribution": "pair: qwen + sdxl",
-   "captioner_fraction": 0.33,
-   "r95": 0.668,
-   "loose": true,
+   "captioner_fraction": 0.61,
+   "r95": 0.267,
+   "loose": false,
    "members": {
-    "a0_core": [
-     32,
-     52,
-     56,
-     76
-    ],
-    "e1_cap_pilot": [
+    "a0_core": [],
+    "e1_cap": [
      2,
-     15
+     11,
+     19,
+     44,
+     63,
+     71,
+     87,
+     88,
+     98
     ],
-    "e1_gen": [
-     68
-    ],
+    "e1_gen": [],
     "e1_both": [
-     21
+     56,
+     84
     ]
    },
    "transit": {
     "a0_core": {
-     "visited": 12,
-     "stayed": 2,
-     "steps_inside": 25,
-     "exits": 13,
-     "hazard": 0.52
+     "visited": 4,
+     "stayed": 0,
+     "steps_inside": 34,
+     "exits": 8,
+     "hazard": 0.23529411764705882
     },
-    "e1_cap_pilot": {
-     "visited": 2,
-     "stayed": 2,
-     "steps_inside": 9,
-     "exits": 1,
-     "hazard": 0.1111111111111111
+    "e1_cap": {
+     "visited": 9,
+     "stayed": 8,
+     "steps_inside": 420,
+     "exits": 22,
+     "hazard": 0.05238095238095238
     },
     "e1_gen": {
      "visited": 0,
@@ -1324,6 +1329,81 @@
      "steps_inside": 0,
      "exits": 0,
      "hazard": null
+    },
+    "e1_both": {
+     "visited": 2,
+     "stayed": 2,
+     "steps_inside": 57,
+     "exits": 8,
+     "hazard": 0.14035087719298245
+    }
+   }
+  },
+  {
+   "cluster": 6,
+   "name": "robots and figures",
+   "size": 9,
+   "composition": {
+    "a0_core": 1,
+    "e1_cap": 1,
+    "e1_gen": 7,
+    "e1_both": 0
+   },
+   "share": {
+    "a0_core": 0.01,
+    "e1_cap": 0.01,
+    "e1_gen": 0.07,
+    "e1_both": 0.0
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.58,
+   "r95": 0.618,
+   "loose": true,
+   "members": {
+    "a0_core": [
+     73
+    ],
+    "e1_cap": [
+     32
+    ],
+    "e1_gen": [
+     20,
+     28,
+     32,
+     43,
+     44,
+     50,
+     88
+    ],
+    "e1_both": []
+   },
+   "transit": {
+    "a0_core": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_cap": {
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
+    },
+    "e1_gen": {
+     "visited": 6,
+     "stayed": 4,
+     "steps_inside": 133,
+     "exits": 49,
+     "hazard": 0.3684210526315789
     },
     "e1_both": {
      "visited": 0,
@@ -1335,67 +1415,66 @@
    }
   },
   {
-   "cluster": 10,
-   "name": "red-rock canyon",
+   "cluster": 5,
+   "name": "Victorian house with garden",
    "size": 6,
    "composition": {
-    "a0_core": 1,
-    "e1_cap_pilot": 1,
-    "e1_gen": 4,
+    "a0_core": 5,
+    "e1_cap": 1,
+    "e1_gen": 0,
     "e1_both": 0
    },
    "share": {
-    "a0_core": 0.01,
-    "e1_cap_pilot": 0.05,
-    "e1_gen": 0.04,
+    "a0_core": 0.05,
+    "e1_cap": 0.01,
+    "e1_gen": 0.0,
     "e1_both": 0.0
    },
    "present": {
-    "a0_core": false,
-    "e1_cap_pilot": false,
+    "a0_core": true,
+    "e1_cap": false,
     "e1_gen": false,
     "e1_both": false
    },
-   "attribution": "none (below threshold everywhere)",
-   "captioner_fraction": 0.0,
-   "r95": 0.214,
+   "attribution": "pair: llava + sdxl",
+   "captioner_fraction": 0.4,
+   "r95": 0.458,
    "loose": false,
    "members": {
     "a0_core": [
-     62
+     7,
+     21,
+     34,
+     38,
+     89
     ],
-    "e1_cap_pilot": [
-     14
+    "e1_cap": [
+     57
     ],
-    "e1_gen": [
-     3,
-     53,
-     57,
-     96
-    ],
+    "e1_gen": [],
     "e1_both": []
    },
    "transit": {
     "a0_core": {
-     "visited": 3,
-     "stayed": 1,
-     "steps_inside": 72,
-     "exits": 2,
-     "hazard": 0.027777777777777776
+     "visited": 9,
+     "stayed": 5,
+     "steps_inside": 166,
+     "exits": 31,
+     "hazard": 0.18674698795180722
     },
-    "e1_cap_pilot": {
-     "visited": 1,
-     "stayed": 1,
-     "steps_inside": 8,
+    "e1_cap": {
+     "visited": 2,
+     "stayed": 0,
+     "steps_inside": 19,
      "exits": 3,
-     "hazard": 0.375
+     "hazard": 0.15789473684210525
     },
     "e1_gen": {
-     "visited": 8,
-     "stayed": 4,
-     "steps_inside": 202,
-     "exits": 16,
-     "hazard": 0.07920792079207921
+     "visited": 0,
+     "stayed": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null
     },
     "e1_both": {
      "visited": 0,

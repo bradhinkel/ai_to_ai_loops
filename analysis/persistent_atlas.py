@@ -22,6 +22,30 @@ def unit(X):
     return X / np.linalg.norm(X, axis=-1, keepdims=True)
 
 
+def carry_names(C, names_path, cent_path, max_dist=0.10):
+    """Names are hand-written against one clustering; when the cells change, clusters re-index. Carry each saved name to the
+    nearest new centroid (cosine distance <= max_dist) from the centroids saved with the previous run; others start blank."""
+    names = json.loads((ROOT / names_path).read_text()) if (ROOT / names_path).exists() else {}
+    cp = ROOT / cent_path
+    if cp.exists():
+        z = np.load(cp, allow_pickle=True); Cp = z["C"]; np_names = list(z["names"])
+        Cp = Cp / np.linalg.norm(Cp, axis=1, keepdims=True)
+        if Cp.shape[1] == C.shape[1] and len(np_names) == len(Cp):
+            D = 1.0 - C @ Cp.T; carried = {}
+            for k in range(len(C)):
+                j = int(D[k].argmin())
+                if D[k, j] <= max_dist and np_names[j]: carried[str(k)] = np_names[j]
+            # hand edits in the names file (keyed by the CURRENT indices) win only if the file is newer than the centroid file
+            if (ROOT / names_path).exists() and (ROOT / names_path).stat().st_mtime > cp.stat().st_mtime:
+                carried.update({k: v for k, v in names.items() if v})
+            names = carried
+    return names
+
+
+def save_centroids(C, names, cent_path, k):
+    np.savez(ROOT / cent_path, C=C, names=np.array([names.get(str(i), "") for i in range(k)], dtype=object))
+
+
 def main():
     cpu_only()
     ap = argparse.ArgumentParser()
@@ -30,20 +54,22 @@ def main():
     ap.add_argument("--min_dwell", type=int, default=5); ap.add_argument("--min_visits", type=int, default=3)
     ap.add_argument("--names", default="archive/persistent_atlas_names.json"); ap.add_argument("--out", default="reports/persistent_atlas")
     ap.add_argument("--thumb", type=int, default=112); ap.add_argument("--per_row", type=int, default=10); ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--space", default="dinov2", choices=["dinov2", "minilm"], help="minilm = caption space (English cells only; use --radius 0.15 and its own --names/--out)")
     a = ap.parse_args()
     cells = [dict(zip(("run", "cap", "gen"), c.split(":"))) for c in a.cells]
     caps = sorted({c["cap"] for c in cells}); gens = sorted({c["gen"] for c in cells})
-    names = json.loads((ROOT / a.names).read_text()) if (ROOT / a.names).exists() else {}
 
     # all steps per cell: E[run] = [T, S, d] unit vectors (steps 1..S)
     E, trajs = {}, {}
     for c in cells:
-        ser = series_matrix(Cache(c["run"]), "dinov2"); ts = sorted(ser); S = min(len(ser[t]) for t in ts)
+        ser = series_matrix(Cache(c["run"]), a.space); ts = sorted(ser); S = min(len(ser[t]) for t in ts)
         E[c["run"]] = unit(np.stack([ser[t][:S] for t in ts]).astype(np.float32)); trajs[c["run"]] = ts
     pooled = np.concatenate([E[c["run"]].reshape(-1, E[c["run"]].shape[-1]) for c in cells])
     from sklearn.cluster import KMeans
     km = KMeans(n_clusters=a.k, n_init=3, random_state=a.seed).fit(pooled); C = unit(km.cluster_centers_.astype(np.float32))
     print(f"k-means k={a.k} on {len(pooled)} steps done", flush=True)
+    cent_path = a.names.replace(".json", "_centroids.npz"); names = carry_names(C, a.names, cent_path); save_centroids(C, names, cent_path, a.k)
+    (ROOT / a.names).write_text(json.dumps({str(i): names.get(str(i), "") for i in range(a.k)}, indent=1, ensure_ascii=False))
 
     stats = {}   # (run, k) -> dict
     examples = {}
@@ -103,9 +129,9 @@ def main():
                     sheet.paste(thumb(p, T_), (130 + j * T_, ri * T_)); d.text((132 + j * T_, ri * T_ + 2), f"{t}:{s} ({length})", fill="yellow")
         sheet.save(out / f"cluster_{cl['cluster']:02d}.jpg", quality=80)
 
-    md = [f"# Persistent-attractor atlas: joint k = {a.k} over all {len(pooled)} intermediate steps of {', '.join(c['run'] for c in cells)}", "",
+    md = [f"# Persistent-attractor atlas ({a.space}): joint k = {a.k} over all {len(pooled)} intermediate steps of {', '.join(c['run'] for c in cells)}", "",
           "Cells (captioner x generator): " + "; ".join(f"{c['run']} = {c['cap']} + {c['gen']} (n {n_traj[c['run']]} trajectories)" for c in cells) + ".",
-          f"Membership: nearest centroid within radius {a.radius} (DINOv2 cosine), hysteresis {a.exit_factor}x. Persistent visit = >= {a.min_dwell} consecutive steps inside. "
+          f"Membership: nearest centroid within radius {a.radius} ({a.space} cosine), hysteresis {a.exit_factor}x. Persistent visit = >= {a.min_dwell} consecutive steps inside. "
           f"'present' in a cell = >= {a.min_visits} persistent visits. Columns per cell: persistent visits / trajectories with one / endpoints (step 99) / "
           "mean dwell / escape hazard per step. 'captioner fraction' = share of the between-cell variation in visits-per-trajectory that lies on the captioner axis. "
           f"Clusters with no persistent visit anywhere ({a.k - len(clusters)} of {a.k}) are transit states and omitted. Names from `{a.names}` (blank = unnamed). "

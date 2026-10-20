@@ -1,0 +1,4801 @@
+{
+ "cells": [
+  {
+   "run": "a0_core",
+   "cap": "llava",
+   "gen": "sdxl"
+  },
+  {
+   "run": "e1_cap",
+   "cap": "qwen",
+   "gen": "sdxl"
+  },
+  {
+   "run": "e1_gen",
+   "cap": "llava",
+   "gen": "hunyuan"
+  },
+  {
+   "run": "e1_both",
+   "cap": "qwen",
+   "gen": "hunyuan"
+  }
+ ],
+ "k": 40,
+ "radius": 0.15,
+ "min_dwell": 5,
+ "min_visits": 3,
+ "clusters": [
+  {
+   "cluster": 5,
+   "name": "",
+   "total_persistent_visits": 77,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.57,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 67,
+     "trajectories": 41,
+     "steps_inside": 2743,
+     "exits": 45,
+     "hazard": 0.016405395552314985,
+     "mean_dwell": 40.35820895522388,
+     "longest_dwell": 95,
+     "endpoints": 40,
+     "share_of_steps": 0.2770707070707071,
+     "still_there": 37
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 10,
+     "trajectories": 5,
+     "steps_inside": 214,
+     "exits": 17,
+     "hazard": 0.0794392523364486,
+     "mean_dwell": 19.6,
+     "longest_dwell": 55,
+     "endpoints": 2,
+     "share_of_steps": 0.021616161616161617,
+     "still_there": 2
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      98,
+      52,
+      95,
+      true
+     ],
+     [
+      52,
+      54,
+      91,
+      true
+     ],
+     [
+      30,
+      57,
+      86,
+      true
+     ],
+     [
+      84,
+      55,
+      85,
+      false
+     ],
+     [
+      43,
+      58,
+      83,
+      true
+     ],
+     [
+      2,
+      56,
+      79,
+      false
+     ],
+     [
+      56,
+      60,
+      79,
+      true
+     ],
+     [
+      87,
+      61,
+      77,
+      true
+     ],
+     [
+      80,
+      40,
+      75,
+      false
+     ],
+     [
+      58,
+      63,
+      74,
+      true
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      82,
+      72,
+      55,
+      true
+     ],
+     [
+      80,
+      32,
+      24,
+      false
+     ],
+     [
+      52,
+      32,
+      23,
+      false
+     ],
+     [
+      42,
+      66,
+      20,
+      false
+     ],
+     [
+      42,
+      46,
+      17,
+      false
+     ],
+     [
+      52,
+      11,
+      17,
+      false
+     ],
+     [
+      82,
+      15,
+      15,
+      false
+     ],
+     [
+      82,
+      31,
+      12,
+      false
+     ],
+     [
+      24,
+      96,
+      7,
+      true
+     ],
+     [
+      80,
+      14,
+      6,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 1,
+   "name": "",
+   "total_persistent_visits": 67,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 67,
+     "trajectories": 27,
+     "steps_inside": 895,
+     "exits": 156,
+     "hazard": 0.17430167597765364,
+     "mean_dwell": 9.970149253731343,
+     "longest_dwell": 27,
+     "endpoints": 9,
+     "share_of_steps": 0.0904040404040404,
+     "still_there": 7
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 18,
+     "exits": 11,
+     "hazard": 0.6111111111111112,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0018181818181818182,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      53,
+      51,
+      27,
+      false
+     ],
+     [
+      81,
+      67,
+      23,
+      false
+     ],
+     [
+      84,
+      53,
+      23,
+      false
+     ],
+     [
+      56,
+      43,
+      20,
+      false
+     ],
+     [
+      86,
+      16,
+      20,
+      false
+     ],
+     [
+      80,
+      54,
+      18,
+      false
+     ],
+     [
+      86,
+      91,
+      18,
+      true
+     ],
+     [
+      87,
+      43,
+      17,
+      false
+     ],
+     [
+      52,
+      13,
+      16,
+      false
+     ],
+     [
+      74,
+      27,
+      16,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 6,
+   "name": "",
+   "total_persistent_visits": 58,
+   "attribution": "all but e1_both",
+   "captioner_fraction": 0.96,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 23,
+     "trajectories": 11,
+     "steps_inside": 599,
+     "exits": 15,
+     "hazard": 0.025041736227045076,
+     "mean_dwell": 25.782608695652176,
+     "longest_dwell": 84,
+     "endpoints": 11,
+     "share_of_steps": 0.060505050505050506,
+     "still_there": 10
+    },
+    "e1_cap": {
+     "persistent_visits": 7,
+     "trajectories": 6,
+     "steps_inside": 121,
+     "exits": 37,
+     "hazard": 0.30578512396694213,
+     "mean_dwell": 7.142857142857143,
+     "longest_dwell": 9,
+     "endpoints": 1,
+     "share_of_steps": 0.012222222222222223,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 28,
+     "trajectories": 15,
+     "steps_inside": 664,
+     "exits": 37,
+     "hazard": 0.05572289156626506,
+     "mean_dwell": 22.214285714285715,
+     "longest_dwell": 63,
+     "endpoints": 13,
+     "share_of_steps": 0.06707070707070707,
+     "still_there": 8
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 1,
+     "exits": 1,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00010101010101010101,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": true,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      10,
+      58,
+      84,
+      true
+     ],
+     [
+      4,
+      77,
+      46,
+      true
+     ],
+     [
+      17,
+      59,
+      44,
+      false
+     ],
+     [
+      9,
+      79,
+      42,
+      true
+     ],
+     [
+      70,
+      80,
+      40,
+      true
+     ],
+     [
+      4,
+      36,
+      34,
+      false
+     ],
+     [
+      93,
+      85,
+      30,
+      true
+     ],
+     [
+      70,
+      45,
+      27,
+      false
+     ],
+     [
+      88,
+      77,
+      27,
+      false
+     ],
+     [
+      59,
+      47,
+      25,
+      false
+     ]
+    ],
+    "e1_cap": [
+     [
+      16,
+      44,
+      9,
+      false
+     ],
+     [
+      51,
+      81,
+      9,
+      false
+     ],
+     [
+      83,
+      47,
+      8,
+      false
+     ],
+     [
+      98,
+      53,
+      7,
+      false
+     ],
+     [
+      31,
+      66,
+      6,
+      false
+     ],
+     [
+      33,
+      88,
+      6,
+      false
+     ],
+     [
+      51,
+      90,
+      5,
+      false
+     ]
+    ],
+    "e1_gen": [
+     [
+      58,
+      60,
+      63,
+      false
+     ],
+     [
+      10,
+      42,
+      54,
+      false
+     ],
+     [
+      52,
+      62,
+      35,
+      false
+     ],
+     [
+      6,
+      68,
+      32,
+      false
+     ],
+     [
+      67,
+      79,
+      31,
+      false
+     ],
+     [
+      10,
+      85,
+      30,
+      true
+     ],
+     [
+      4,
+      47,
+      29,
+      false
+     ],
+     [
+      70,
+      37,
+      28,
+      false
+     ],
+     [
+      70,
+      87,
+      26,
+      true
+     ],
+     [
+      56,
+      34,
+      25,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 4,
+   "name": "",
+   "total_persistent_visits": 41,
+   "attribution": "captioner: qwen",
+   "captioner_fraction": 0.89,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 23,
+     "trajectories": 10,
+     "steps_inside": 335,
+     "exits": 63,
+     "hazard": 0.1880597014925373,
+     "mean_dwell": 10.608695652173912,
+     "longest_dwell": 25,
+     "endpoints": 5,
+     "share_of_steps": 0.03383838383838384,
+     "still_there": 2
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 18,
+     "trajectories": 13,
+     "steps_inside": 266,
+     "exits": 46,
+     "hazard": 0.17293233082706766,
+     "mean_dwell": 11.666666666666666,
+     "longest_dwell": 35,
+     "endpoints": 3,
+     "share_of_steps": 0.026868686868686868,
+     "still_there": 1
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      96,
+      87,
+      25,
+      true
+     ],
+     [
+      18,
+      78,
+      22,
+      false
+     ],
+     [
+      96,
+      48,
+      21,
+      false
+     ],
+     [
+      82,
+      68,
+      18,
+      false
+     ],
+     [
+      10,
+      70,
+      14,
+      false
+     ],
+     [
+      18,
+      59,
+      13,
+      false
+     ],
+     [
+      55,
+      60,
+      12,
+      false
+     ],
+     [
+      99,
+      34,
+      12,
+      false
+     ],
+     [
+      29,
+      48,
+      9,
+      false
+     ],
+     [
+      29,
+      63,
+      9,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      45,
+      73,
+      35,
+      false
+     ],
+     [
+      70,
+      85,
+      25,
+      false
+     ],
+     [
+      13,
+      73,
+      17,
+      false
+     ],
+     [
+      96,
+      27,
+      17,
+      false
+     ],
+     [
+      24,
+      54,
+      16,
+      false
+     ],
+     [
+      25,
+      29,
+      16,
+      false
+     ],
+     [
+      89,
+      29,
+      12,
+      false
+     ],
+     [
+      65,
+      95,
+      10,
+      true
+     ],
+     [
+      49,
+      54,
+      9,
+      false
+     ],
+     [
+      19,
+      82,
+      8,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 2,
+   "name": "",
+   "total_persistent_visits": 39,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.7,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 28,
+     "trajectories": 11,
+     "steps_inside": 388,
+     "exits": 85,
+     "hazard": 0.2190721649484536,
+     "mean_dwell": 9.892857142857142,
+     "longest_dwell": 28,
+     "endpoints": 5,
+     "share_of_steps": 0.039191919191919194,
+     "still_there": 2
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 11,
+     "trajectories": 5,
+     "steps_inside": 120,
+     "exits": 21,
+     "hazard": 0.175,
+     "mean_dwell": 8.636363636363637,
+     "longest_dwell": 18,
+     "endpoints": 0,
+     "share_of_steps": 0.012121212121212121,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      8,
+      79,
+      28,
+      false
+     ],
+     [
+      34,
+      12,
+      23,
+      false
+     ],
+     [
+      29,
+      43,
+      17,
+      false
+     ],
+     [
+      29,
+      63,
+      17,
+      false
+     ],
+     [
+      6,
+      91,
+      13,
+      false
+     ],
+     [
+      89,
+      67,
+      12,
+      false
+     ],
+     [
+      72,
+      38,
+      11,
+      false
+     ],
+     [
+      34,
+      39,
+      10,
+      false
+     ],
+     [
+      41,
+      22,
+      10,
+      false
+     ],
+     [
+      12,
+      48,
+      9,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      34,
+      54,
+      18,
+      false
+     ],
+     [
+      91,
+      16,
+      13,
+      false
+     ],
+     [
+      93,
+      75,
+      13,
+      false
+     ],
+     [
+      91,
+      34,
+      9,
+      false
+     ],
+     [
+      91,
+      5,
+      8,
+      false
+     ],
+     [
+      34,
+      32,
+      7,
+      false
+     ],
+     [
+      31,
+      77,
+      6,
+      false
+     ],
+     [
+      33,
+      92,
+      6,
+      false
+     ],
+     [
+      31,
+      64,
+      5,
+      false
+     ],
+     [
+      31,
+      70,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 15,
+   "name": "",
+   "total_persistent_visits": 37,
+   "attribution": "all but e1_gen",
+   "captioner_fraction": 0.52,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 3,
+     "trajectories": 3,
+     "steps_inside": 24,
+     "exits": 6,
+     "hazard": 0.25,
+     "mean_dwell": 5.666666666666667,
+     "longest_dwell": 6,
+     "endpoints": 0,
+     "share_of_steps": 0.0024242424242424242,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 30,
+     "trajectories": 9,
+     "steps_inside": 377,
+     "exits": 48,
+     "hazard": 0.1273209549071618,
+     "mean_dwell": 10.8,
+     "longest_dwell": 26,
+     "endpoints": 7,
+     "share_of_steps": 0.03808080808080808,
+     "still_there": 5
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 4,
+     "trajectories": 2,
+     "steps_inside": 43,
+     "exits": 13,
+     "hazard": 0.3023255813953488,
+     "mean_dwell": 6.75,
+     "longest_dwell": 9,
+     "endpoints": 0,
+     "share_of_steps": 0.004343434343434344,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [
+     [
+      63,
+      55,
+      6,
+      false
+     ],
+     [
+      84,
+      9,
+      6,
+      false
+     ],
+     [
+      19,
+      86,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [
+     [
+      88,
+      87,
+      26,
+      true
+     ],
+     [
+      71,
+      77,
+      22,
+      false
+     ],
+     [
+      63,
+      59,
+      21,
+      false
+     ],
+     [
+      11,
+      67,
+      19,
+      false
+     ],
+     [
+      19,
+      74,
+      18,
+      false
+     ],
+     [
+      2,
+      62,
+      17,
+      false
+     ],
+     [
+      98,
+      78,
+      17,
+      false
+     ],
+     [
+      63,
+      77,
+      12,
+      false
+     ],
+     [
+      2,
+      83,
+      11,
+      false
+     ],
+     [
+      71,
+      94,
+      11,
+      true
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      56,
+      55,
+      9,
+      false
+     ],
+     [
+      84,
+      68,
+      7,
+      false
+     ],
+     [
+      84,
+      61,
+      6,
+      false
+     ],
+     [
+      56,
+      40,
+      5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 10,
+   "name": "",
+   "total_persistent_visits": 24,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 24,
+     "trajectories": 11,
+     "steps_inside": 307,
+     "exits": 39,
+     "hazard": 0.1270358306188925,
+     "mean_dwell": 10.791666666666666,
+     "longest_dwell": 35,
+     "endpoints": 9,
+     "share_of_steps": 0.03101010101010101,
+     "still_there": 5
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      9,
+      42,
+      35,
+      false
+     ],
+     [
+      4,
+      54,
+      26,
+      false
+     ],
+     [
+      78,
+      78,
+      16,
+      false
+     ],
+     [
+      12,
+      84,
+      15,
+      false
+     ],
+     [
+      79,
+      67,
+      15,
+      false
+     ],
+     [
+      4,
+      12,
+      14,
+      false
+     ],
+     [
+      9,
+      68,
+      14,
+      false
+     ],
+     [
+      9,
+      89,
+      11,
+      false
+     ],
+     [
+      94,
+      88,
+      11,
+      false
+     ],
+     [
+      4,
+      34,
+      10,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 23,
+   "name": "",
+   "total_persistent_visits": 24,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 3,
+     "exits": 0,
+     "hazard": 0.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 1,
+     "share_of_steps": 0.00030303030303030303,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 24,
+     "trajectories": 12,
+     "steps_inside": 452,
+     "exits": 40,
+     "hazard": 0.08849557522123894,
+     "mean_dwell": 16.583333333333332,
+     "longest_dwell": 47,
+     "endpoints": 11,
+     "share_of_steps": 0.04565656565656566,
+     "still_there": 6
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      68,
+      71,
+      47,
+      false
+     ],
+     [
+      58,
+      81,
+      38,
+      true
+     ],
+     [
+      85,
+      82,
+      36,
+      true
+     ],
+     [
+      6,
+      78,
+      33,
+      false
+     ],
+     [
+      47,
+      81,
+      27,
+      false
+     ],
+     [
+      76,
+      43,
+      23,
+      false
+     ],
+     [
+      30,
+      58,
+      22,
+      false
+     ],
+     [
+      30,
+      89,
+      21,
+      true
+     ],
+     [
+      76,
+      66,
+      21,
+      false
+     ],
+     [
+      42,
+      84,
+      16,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 9,
+   "name": "",
+   "total_persistent_visits": 23,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 23,
+     "trajectories": 10,
+     "steps_inside": 379,
+     "exits": 39,
+     "hazard": 0.10290237467018469,
+     "mean_dwell": 14.869565217391305,
+     "longest_dwell": 43,
+     "endpoints": 2,
+     "share_of_steps": 0.03828282828282828,
+     "still_there": 2
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 1,
+     "exits": 1,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00010101010101010101,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      15,
+      42,
+      43,
+      false
+     ],
+     [
+      19,
+      58,
+      37,
+      false
+     ],
+     [
+      13,
+      52,
+      28,
+      false
+     ],
+     [
+      12,
+      80,
+      22,
+      false
+     ],
+     [
+      19,
+      89,
+      22,
+      true
+     ],
+     [
+      67,
+      51,
+      21,
+      false
+     ],
+     [
+      0,
+      51,
+      20,
+      false
+     ],
+     [
+      77,
+      62,
+      17,
+      false
+     ],
+     [
+      0,
+      32,
+      16,
+      false
+     ],
+     [
+      15,
+      13,
+      14,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 37,
+   "name": "",
+   "total_persistent_visits": 23,
+   "attribution": "captioner: qwen",
+   "captioner_fraction": 0.58,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 7,
+     "exits": 5,
+     "hazard": 0.7142857142857143,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0007070707070707071,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 4,
+     "trajectories": 3,
+     "steps_inside": 119,
+     "exits": 61,
+     "hazard": 0.5126050420168067,
+     "mean_dwell": 6.5,
+     "longest_dwell": 8,
+     "endpoints": 4,
+     "share_of_steps": 0.01202020202020202,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 28,
+     "exits": 12,
+     "hazard": 0.42857142857142855,
+     "mean_dwell": 6.0,
+     "longest_dwell": 6,
+     "endpoints": 0,
+     "share_of_steps": 0.0028282828282828283,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 18,
+     "trajectories": 11,
+     "steps_inside": 381,
+     "exits": 118,
+     "hazard": 0.30971128608923887,
+     "mean_dwell": 13.0,
+     "longest_dwell": 36,
+     "endpoints": 5,
+     "share_of_steps": 0.03848484848484848,
+     "still_there": 4
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      55,
+      34,
+      8,
+      false
+     ],
+     [
+      38,
+      84,
+      7,
+      false
+     ],
+     [
+      72,
+      86,
+      6,
+      false
+     ],
+     [
+      55,
+      43,
+      5,
+      false
+     ]
+    ],
+    "e1_gen": [
+     [
+      46,
+      34,
+      6,
+      false
+     ]
+    ],
+    "e1_both": [
+     [
+      83,
+      42,
+      36,
+      false
+     ],
+     [
+      83,
+      82,
+      35,
+      true
+     ],
+     [
+      80,
+      87,
+      26,
+      true
+     ],
+     [
+      93,
+      60,
+      17,
+      false
+     ],
+     [
+      97,
+      58,
+      17,
+      false
+     ],
+     [
+      60,
+      57,
+      14,
+      false
+     ],
+     [
+      80,
+      65,
+      13,
+      false
+     ],
+     [
+      97,
+      93,
+      13,
+      true
+     ],
+     [
+      60,
+      34,
+      8,
+      false
+     ],
+     [
+      96,
+      61,
+      8,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 22,
+   "name": "",
+   "total_persistent_visits": 21,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.55,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 19,
+     "trajectories": 9,
+     "steps_inside": 377,
+     "exits": 31,
+     "hazard": 0.08222811671087533,
+     "mean_dwell": 17.36842105263158,
+     "longest_dwell": 40,
+     "endpoints": 7,
+     "share_of_steps": 0.03808080808080808,
+     "still_there": 5
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 2,
+     "trajectories": 1,
+     "steps_inside": 32,
+     "exits": 10,
+     "hazard": 0.3125,
+     "mean_dwell": 7.0,
+     "longest_dwell": 8,
+     "endpoints": 2,
+     "share_of_steps": 0.0032323232323232323,
+     "still_there": 1
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      25,
+      73,
+      40,
+      false
+     ],
+     [
+      61,
+      77,
+      38,
+      false
+     ],
+     [
+      22,
+      71,
+      31,
+      false
+     ],
+     [
+      15,
+      84,
+      30,
+      false
+     ],
+     [
+      21,
+      87,
+      25,
+      true
+     ],
+     [
+      92,
+      58,
+      22,
+      false
+     ],
+     [
+      22,
+      44,
+      19,
+      false
+     ],
+     [
+      92,
+      79,
+      18,
+      false
+     ],
+     [
+      95,
+      91,
+      17,
+      true
+     ],
+     [
+      21,
+      45,
+      14,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      53,
+      83,
+      8,
+      false
+     ],
+     [
+      53,
+      97,
+      6,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 34,
+   "name": "",
+   "total_persistent_visits": 20,
+   "attribution": "pair: llava + sdxl",
+   "captioner_fraction": 0.53,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 19,
+     "trajectories": 5,
+     "steps_inside": 199,
+     "exits": 30,
+     "hazard": 0.1507537688442211,
+     "mean_dwell": 9.052631578947368,
+     "longest_dwell": 29,
+     "endpoints": 2,
+     "share_of_steps": 0.020101010101010102,
+     "still_there": 1
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 46,
+     "exits": 15,
+     "hazard": 0.32608695652173914,
+     "mean_dwell": 12.0,
+     "longest_dwell": 12,
+     "endpoints": 1,
+     "share_of_steps": 0.004646464646464647,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      46,
+      68,
+      29,
+      false
+     ],
+     [
+      46,
+      11,
+      16,
+      false
+     ],
+     [
+      46,
+      92,
+      15,
+      true
+     ],
+     [
+      46,
+      36,
+      12,
+      false
+     ],
+     [
+      77,
+      79,
+      10,
+      false
+     ],
+     [
+      14,
+      53,
+      8,
+      false
+     ],
+     [
+      46,
+      25,
+      8,
+      false
+     ],
+     [
+      64,
+      48,
+      8,
+      false
+     ],
+     [
+      64,
+      58,
+      8,
+      false
+     ],
+     [
+      64,
+      67,
+      8,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      14,
+      12,
+      12,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 36,
+   "name": "",
+   "total_persistent_visits": 20,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 20,
+     "trajectories": 9,
+     "steps_inside": 378,
+     "exits": 58,
+     "hazard": 0.15343915343915343,
+     "mean_dwell": 14.95,
+     "longest_dwell": 38,
+     "endpoints": 4,
+     "share_of_steps": 0.038181818181818185,
+     "still_there": 1
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      53,
+      31,
+      38,
+      false
+     ],
+     [
+      57,
+      62,
+      38,
+      false
+     ],
+     [
+      57,
+      28,
+      28,
+      false
+     ],
+     [
+      69,
+      48,
+      27,
+      false
+     ],
+     [
+      14,
+      88,
+      23,
+      true
+     ],
+     [
+      86,
+      32,
+      16,
+      false
+     ],
+     [
+      86,
+      16,
+      14,
+      false
+     ],
+     [
+      38,
+      24,
+      11,
+      false
+     ],
+     [
+      49,
+      39,
+      11,
+      false
+     ],
+     [
+      86,
+      46,
+      11,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 19,
+   "name": "",
+   "total_persistent_visits": 17,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.94,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 9,
+     "trajectories": 2,
+     "steps_inside": 151,
+     "exits": 13,
+     "hazard": 0.08609271523178808,
+     "mean_dwell": 15.333333333333334,
+     "longest_dwell": 46,
+     "endpoints": 2,
+     "share_of_steps": 0.015252525252525252,
+     "still_there": 2
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 8,
+     "trajectories": 3,
+     "steps_inside": 119,
+     "exits": 19,
+     "hazard": 0.15966386554621848,
+     "mean_dwell": 11.375,
+     "longest_dwell": 21,
+     "endpoints": 2,
+     "share_of_steps": 0.01202020202020202,
+     "still_there": 2
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      39,
+      24,
+      46,
+      false
+     ],
+     [
+      39,
+      87,
+      25,
+      true
+     ],
+     [
+      86,
+      43,
+      24,
+      false
+     ],
+     [
+      39,
+      68,
+      11,
+      false
+     ],
+     [
+      39,
+      54,
+      9,
+      false
+     ],
+     [
+      86,
+      96,
+      7,
+      true
+     ],
+     [
+      86,
+      59,
+      6,
+      false
+     ],
+     [
+      86,
+      6,
+      5,
+      false
+     ],
+     [
+      86,
+      12,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      39,
+      89,
+      21,
+      true
+     ],
+     [
+      29,
+      90,
+      19,
+      true
+     ],
+     [
+      39,
+      52,
+      17,
+      false
+     ],
+     [
+      39,
+      14,
+      9,
+      false
+     ],
+     [
+      39,
+      4,
+      7,
+      false
+     ],
+     [
+      39,
+      32,
+      7,
+      false
+     ],
+     [
+      62,
+      55,
+      6,
+      false
+     ],
+     [
+      39,
+      40,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 17,
+   "name": "",
+   "total_persistent_visits": 15,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.46,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 10,
+     "exits": 5,
+     "hazard": 0.5,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00101010101010101,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 22,
+     "exits": 11,
+     "hazard": 0.5,
+     "mean_dwell": 5.0,
+     "longest_dwell": 5,
+     "endpoints": 1,
+     "share_of_steps": 0.0022222222222222222,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 14,
+     "trajectories": 7,
+     "steps_inside": 181,
+     "exits": 52,
+     "hazard": 0.287292817679558,
+     "mean_dwell": 7.214285714285714,
+     "longest_dwell": 11,
+     "endpoints": 3,
+     "share_of_steps": 0.018282828282828283,
+     "still_there": 1
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      55,
+      76,
+      5,
+      false
+     ]
+    ],
+    "e1_both": [
+     [
+      37,
+      67,
+      11,
+      false
+     ],
+     [
+      37,
+      35,
+      10,
+      false
+     ],
+     [
+      47,
+      56,
+      10,
+      false
+     ],
+     [
+      47,
+      88,
+      9,
+      false
+     ],
+     [
+      55,
+      73,
+      8,
+      false
+     ],
+     [
+      76,
+      5,
+      8,
+      false
+     ],
+     [
+      20,
+      79,
+      7,
+      false
+     ],
+     [
+      47,
+      31,
+      6,
+      false
+     ],
+     [
+      55,
+      86,
+      6,
+      false
+     ],
+     [
+      88,
+      29,
+      6,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 28,
+   "name": "",
+   "total_persistent_visits": 15,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.75,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 5,
+     "trajectories": 3,
+     "steps_inside": 103,
+     "exits": 4,
+     "hazard": 0.038834951456310676,
+     "mean_dwell": 20.4,
+     "longest_dwell": 62,
+     "endpoints": 2,
+     "share_of_steps": 0.010404040404040403,
+     "still_there": 2
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 10,
+     "trajectories": 5,
+     "steps_inside": 230,
+     "exits": 17,
+     "hazard": 0.07391304347826087,
+     "mean_dwell": 21.1,
+     "longest_dwell": 76,
+     "endpoints": 4,
+     "share_of_steps": 0.023232323232323233,
+     "still_there": 2
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      62,
+      69,
+      62,
+      true
+     ],
+     [
+      96,
+      70,
+      11,
+      false
+     ],
+     [
+      96,
+      94,
+      11,
+      true
+     ],
+     [
+      36,
+      65,
+      9,
+      false
+     ],
+     [
+      96,
+      81,
+      9,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      95,
+      59,
+      76,
+      false
+     ],
+     [
+      96,
+      74,
+      30,
+      false
+     ],
+     [
+      96,
+      43,
+      28,
+      false
+     ],
+     [
+      3,
+      86,
+      27,
+      true
+     ],
+     [
+      1,
+      82,
+      17,
+      false
+     ],
+     [
+      1,
+      67,
+      9,
+      false
+     ],
+     [
+      96,
+      96,
+      8,
+      true
+     ],
+     [
+      96,
+      25,
+      6,
+      false
+     ],
+     [
+      1,
+      94,
+      5,
+      false
+     ],
+     [
+      97,
+      20,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 29,
+   "name": "",
+   "total_persistent_visits": 15,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.83,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 6,
+     "trajectories": 4,
+     "steps_inside": 86,
+     "exits": 17,
+     "hazard": 0.19767441860465115,
+     "mean_dwell": 11.666666666666666,
+     "longest_dwell": 17,
+     "endpoints": 1,
+     "share_of_steps": 0.008686868686868687,
+     "still_there": 1
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 9,
+     "trajectories": 6,
+     "steps_inside": 160,
+     "exits": 36,
+     "hazard": 0.225,
+     "mean_dwell": 11.777777777777779,
+     "longest_dwell": 23,
+     "endpoints": 1,
+     "share_of_steps": 0.01616161616161616,
+     "still_there": 1
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      42,
+      49,
+      17,
+      false
+     ],
+     [
+      20,
+      83,
+      15,
+      false
+     ],
+     [
+      24,
+      36,
+      12,
+      false
+     ],
+     [
+      82,
+      36,
+      11,
+      false
+     ],
+     [
+      20,
+      96,
+      8,
+      true
+     ],
+     [
+      24,
+      21,
+      7,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      21,
+      71,
+      23,
+      false
+     ],
+     [
+      27,
+      57,
+      19,
+      false
+     ],
+     [
+      63,
+      87,
+      15,
+      false
+     ],
+     [
+      64,
+      37,
+      14,
+      false
+     ],
+     [
+      21,
+      95,
+      9,
+      true
+     ],
+     [
+      63,
+      74,
+      9,
+      false
+     ],
+     [
+      21,
+      12,
+      7,
+      false
+     ],
+     [
+      40,
+      18,
+      5,
+      false
+     ],
+     [
+      99,
+      6,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 7,
+   "name": "",
+   "total_persistent_visits": 13,
+   "attribution": "pair: llava + sdxl",
+   "captioner_fraction": 0.59,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 11,
+     "trajectories": 7,
+     "steps_inside": 205,
+     "exits": 26,
+     "hazard": 0.12682926829268293,
+     "mean_dwell": 15.181818181818182,
+     "longest_dwell": 33,
+     "endpoints": 0,
+     "share_of_steps": 0.02070707070707071,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 4,
+     "exits": 4,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00040404040404040404,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 2,
+     "trajectories": 2,
+     "steps_inside": 19,
+     "exits": 3,
+     "hazard": 0.15789473684210525,
+     "mean_dwell": 7.5,
+     "longest_dwell": 9,
+     "endpoints": 1,
+     "share_of_steps": 0.0019191919191919192,
+     "still_there": 1
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      55,
+      56,
+      33,
+      false
+     ],
+     [
+      65,
+      47,
+      26,
+      false
+     ],
+     [
+      89,
+      19,
+      23,
+      false
+     ],
+     [
+      8,
+      54,
+      22,
+      false
+     ],
+     [
+      78,
+      31,
+      14,
+      false
+     ],
+     [
+      8,
+      34,
+      13,
+      false
+     ],
+     [
+      3,
+      83,
+      9,
+      false
+     ],
+     [
+      3,
+      29,
+      8,
+      false
+     ],
+     [
+      78,
+      42,
+      7,
+      false
+     ],
+     [
+      3,
+      67,
+      6,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      15,
+      95,
+      9,
+      true
+     ],
+     [
+      29,
+      32,
+      6,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 21,
+   "name": "",
+   "total_persistent_visits": 13,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 13,
+     "trajectories": 6,
+     "steps_inside": 177,
+     "exits": 48,
+     "hazard": 0.2711864406779661,
+     "mean_dwell": 7.461538461538462,
+     "longest_dwell": 14,
+     "endpoints": 0,
+     "share_of_steps": 0.01787878787878788,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      20,
+      72,
+      14,
+      false
+     ],
+     [
+      43,
+      93,
+      11,
+      false
+     ],
+     [
+      44,
+      46,
+      10,
+      false
+     ],
+     [
+      28,
+      95,
+      7,
+      false
+     ],
+     [
+      43,
+      29,
+      7,
+      false
+     ],
+     [
+      44,
+      84,
+      7,
+      false
+     ],
+     [
+      88,
+      41,
+      7,
+      false
+     ],
+     [
+      88,
+      71,
+      7,
+      false
+     ],
+     [
+      37,
+      49,
+      6,
+      false
+     ],
+     [
+      88,
+      21,
+      6,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 20,
+   "name": "",
+   "total_persistent_visits": 12,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.67,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 3,
+     "trajectories": 1,
+     "steps_inside": 22,
+     "exits": 5,
+     "hazard": 0.22727272727272727,
+     "mean_dwell": 6.333333333333333,
+     "longest_dwell": 8,
+     "endpoints": 0,
+     "share_of_steps": 0.0022222222222222222,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 9,
+     "trajectories": 5,
+     "steps_inside": 160,
+     "exits": 16,
+     "hazard": 0.1,
+     "mean_dwell": 15.333333333333334,
+     "longest_dwell": 37,
+     "endpoints": 2,
+     "share_of_steps": 0.01616161616161616,
+     "still_there": 1
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      42,
+      22,
+      8,
+      false
+     ],
+     [
+      42,
+      37,
+      6,
+      false
+     ],
+     [
+      42,
+      12,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      46,
+      71,
+      37,
+      false
+     ],
+     [
+      21,
+      40,
+      32,
+      false
+     ],
+     [
+      87,
+      57,
+      23,
+      false
+     ],
+     [
+      40,
+      93,
+      12,
+      false
+     ],
+     [
+      46,
+      96,
+      8,
+      true
+     ],
+     [
+      92,
+      62,
+      8,
+      false
+     ],
+     [
+      40,
+      79,
+      7,
+      false
+     ],
+     [
+      92,
+      19,
+      6,
+      false
+     ],
+     [
+      92,
+      39,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 30,
+   "name": "",
+   "total_persistent_visits": 11,
+   "attribution": "pair: llava + sdxl",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 11,
+     "trajectories": 6,
+     "steps_inside": 145,
+     "exits": 45,
+     "hazard": 0.3103448275862069,
+     "mean_dwell": 7.090909090909091,
+     "longest_dwell": 12,
+     "endpoints": 0,
+     "share_of_steps": 0.014646464646464647,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 3,
+     "exits": 3,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00030303030303030303,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 15,
+     "exits": 6,
+     "hazard": 0.4,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0015151515151515152,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      21,
+      43,
+      12,
+      false
+     ],
+     [
+      42,
+      92,
+      11,
+      false
+     ],
+     [
+      1,
+      64,
+      8,
+      false
+     ],
+     [
+      6,
+      42,
+      8,
+      false
+     ],
+     [
+      21,
+      28,
+      7,
+      false
+     ],
+     [
+      33,
+      15,
+      6,
+      false
+     ],
+     [
+      42,
+      81,
+      6,
+      false
+     ],
+     [
+      1,
+      48,
+      5,
+      false
+     ],
+     [
+      33,
+      21,
+      5,
+      false
+     ],
+     [
+      66,
+      33,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 32,
+   "name": "",
+   "total_persistent_visits": 11,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.55,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 47,
+     "exits": 28,
+     "hazard": 0.5957446808510638,
+     "mean_dwell": 7.0,
+     "longest_dwell": 7,
+     "endpoints": 0,
+     "share_of_steps": 0.004747474747474748,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 10,
+     "trajectories": 7,
+     "steps_inside": 141,
+     "exits": 48,
+     "hazard": 0.3404255319148936,
+     "mean_dwell": 7.2,
+     "longest_dwell": 14,
+     "endpoints": 1,
+     "share_of_steps": 0.014242424242424242,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      36,
+      83,
+      7,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      57,
+      59,
+      14,
+      false
+     ],
+     [
+      60,
+      81,
+      11,
+      false
+     ],
+     [
+      78,
+      59,
+      9,
+      false
+     ],
+     [
+      33,
+      57,
+      6,
+      false
+     ],
+     [
+      78,
+      19,
+      6,
+      false
+     ],
+     [
+      99,
+      92,
+      6,
+      false
+     ],
+     [
+      3,
+      24,
+      5,
+      false
+     ],
+     [
+      33,
+      40,
+      5,
+      false
+     ],
+     [
+      57,
+      73,
+      5,
+      false
+     ],
+     [
+      97,
+      30,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 14,
+   "name": "",
+   "total_persistent_visits": 10,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.62,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 2,
+     "trajectories": 2,
+     "steps_inside": 21,
+     "exits": 10,
+     "hazard": 0.47619047619047616,
+     "mean_dwell": 5.0,
+     "longest_dwell": 5,
+     "endpoints": 0,
+     "share_of_steps": 0.0021212121212121214,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 8,
+     "trajectories": 4,
+     "steps_inside": 105,
+     "exits": 37,
+     "hazard": 0.3523809523809524,
+     "mean_dwell": 6.875,
+     "longest_dwell": 10,
+     "endpoints": 0,
+     "share_of_steps": 0.010606060606060607,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      12,
+      36,
+      5,
+      false
+     ],
+     [
+      39,
+      30,
+      5,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      1,
+      33,
+      10,
+      false
+     ],
+     [
+      33,
+      16,
+      10,
+      false
+     ],
+     [
+      68,
+      95,
+      7,
+      false
+     ],
+     [
+      1,
+      79,
+      6,
+      false
+     ],
+     [
+      1,
+      93,
+      6,
+      false
+     ],
+     [
+      9,
+      50,
+      6,
+      false
+     ],
+     [
+      33,
+      59,
+      5,
+      false
+     ],
+     [
+      33,
+      75,
+      5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 3,
+   "name": "",
+   "total_persistent_visits": 8,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 3,
+     "exits": 3,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00030303030303030303,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 8,
+     "trajectories": 7,
+     "steps_inside": 166,
+     "exits": 83,
+     "hazard": 0.5,
+     "mean_dwell": 6.25,
+     "longest_dwell": 10,
+     "endpoints": 1,
+     "share_of_steps": 0.016767676767676768,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      19,
+      36,
+      10,
+      false
+     ],
+     [
+      97,
+      6,
+      8,
+      false
+     ],
+     [
+      50,
+      65,
+      6,
+      false
+     ],
+     [
+      65,
+      22,
+      6,
+      false
+     ],
+     [
+      13,
+      22,
+      5,
+      false
+     ],
+     [
+      65,
+      28,
+      5,
+      false
+     ],
+     [
+      67,
+      16,
+      5,
+      false
+     ],
+     [
+      82,
+      69,
+      5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 18,
+   "name": "",
+   "total_persistent_visits": 8,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 8,
+     "trajectories": 2,
+     "steps_inside": 101,
+     "exits": 17,
+     "hazard": 0.16831683168316833,
+     "mean_dwell": 8.875,
+     "longest_dwell": 17,
+     "endpoints": 1,
+     "share_of_steps": 0.010202020202020202,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      59,
+      80,
+      17,
+      false
+     ],
+     [
+      89,
+      79,
+      12,
+      false
+     ],
+     [
+      89,
+      20,
+      10,
+      false
+     ],
+     [
+      89,
+      95,
+      8,
+      false
+     ],
+     [
+      59,
+      50,
+      7,
+      false
+     ],
+     [
+      59,
+      43,
+      6,
+      false
+     ],
+     [
+      89,
+      63,
+      6,
+      false
+     ],
+     [
+      89,
+      69,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 38,
+   "name": "",
+   "total_persistent_visits": 8,
+   "attribution": "captioner: llava",
+   "captioner_fraction": 0.8,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 5,
+     "trajectories": 4,
+     "steps_inside": 87,
+     "exits": 30,
+     "hazard": 0.3448275862068966,
+     "mean_dwell": 7.4,
+     "longest_dwell": 12,
+     "endpoints": 0,
+     "share_of_steps": 0.008787878787878787,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 16,
+     "exits": 8,
+     "hazard": 0.5,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0016161616161616162,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 3,
+     "trajectories": 3,
+     "steps_inside": 26,
+     "exits": 5,
+     "hazard": 0.19230769230769232,
+     "mean_dwell": 6.666666666666667,
+     "longest_dwell": 9,
+     "endpoints": 0,
+     "share_of_steps": 0.0026262626262626263,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 8,
+     "exits": 6,
+     "hazard": 0.75,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0008080808080808081,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": true,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      50,
+      34,
+      12,
+      false
+     ],
+     [
+      75,
+      56,
+      7,
+      false
+     ],
+     [
+      97,
+      14,
+      7,
+      false
+     ],
+     [
+      83,
+      23,
+      6,
+      false
+     ],
+     [
+      75,
+      63,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      58,
+      13,
+      9,
+      false
+     ],
+     [
+      6,
+      23,
+      6,
+      false
+     ],
+     [
+      10,
+      12,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 0,
+   "name": "",
+   "total_persistent_visits": 7,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.3,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 2,
+     "trajectories": 1,
+     "steps_inside": 45,
+     "exits": 7,
+     "hazard": 0.15555555555555556,
+     "mean_dwell": 15.0,
+     "longest_dwell": 23,
+     "endpoints": 0,
+     "share_of_steps": 0.004545454545454545,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 5,
+     "trajectories": 1,
+     "steps_inside": 88,
+     "exits": 7,
+     "hazard": 0.07954545454545454,
+     "mean_dwell": 16.2,
+     "longest_dwell": 40,
+     "endpoints": 1,
+     "share_of_steps": 0.008888888888888889,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      49,
+      17,
+      23,
+      false
+     ],
+     [
+      49,
+      65,
+      7,
+      false
+     ]
+    ],
+    "e1_cap": [
+     [
+      3,
+      58,
+      40,
+      false
+     ],
+     [
+      3,
+      21,
+      14,
+      false
+     ],
+     [
+      3,
+      85,
+      13,
+      false
+     ],
+     [
+      3,
+      33,
+      8,
+      false
+     ],
+     [
+      3,
+      10,
+      6,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 27,
+   "name": "",
+   "total_persistent_visits": 7,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 17,
+     "exits": 11,
+     "hazard": 0.6470588235294118,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0017171717171717172,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 7,
+     "trajectories": 6,
+     "steps_inside": 125,
+     "exits": 38,
+     "hazard": 0.304,
+     "mean_dwell": 8.0,
+     "longest_dwell": 12,
+     "endpoints": 1,
+     "share_of_steps": 0.012626262626262626,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      5,
+      60,
+      12,
+      false
+     ],
+     [
+      18,
+      71,
+      9,
+      false
+     ],
+     [
+      36,
+      51,
+      9,
+      false
+     ],
+     [
+      80,
+      7,
+      8,
+      false
+     ],
+     [
+      5,
+      71,
+      6,
+      false
+     ],
+     [
+      42,
+      35,
+      6,
+      false
+     ],
+     [
+      69,
+      54,
+      6,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 8,
+   "name": "",
+   "total_persistent_visits": 6,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 15,
+     "exits": 8,
+     "hazard": 0.5333333333333333,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0015151515151515152,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 6,
+     "trajectories": 3,
+     "steps_inside": 117,
+     "exits": 30,
+     "hazard": 0.2564102564102564,
+     "mean_dwell": 9.333333333333334,
+     "longest_dwell": 12,
+     "endpoints": 2,
+     "share_of_steps": 0.011818181818181818,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      94,
+      54,
+      12,
+      false
+     ],
+     [
+      51,
+      69,
+      11,
+      false
+     ],
+     [
+      28,
+      58,
+      10,
+      false
+     ],
+     [
+      94,
+      73,
+      9,
+      false
+     ],
+     [
+      28,
+      82,
+      8,
+      false
+     ],
+     [
+      51,
+      26,
+      6,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 24,
+   "name": "",
+   "total_persistent_visits": 6,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 6,
+     "trajectories": 2,
+     "steps_inside": 69,
+     "exits": 16,
+     "hazard": 0.2318840579710145,
+     "mean_dwell": 8.0,
+     "longest_dwell": 13,
+     "endpoints": 0,
+     "share_of_steps": 0.0069696969696969695,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      91,
+      68,
+      13,
+      false
+     ],
+     [
+      91,
+      92,
+      12,
+      false
+     ],
+     [
+      91,
+      43,
+      8,
+      false
+     ],
+     [
+      24,
+      78,
+      5,
+      false
+     ],
+     [
+      91,
+      35,
+      5,
+      false
+     ],
+     [
+      91,
+      55,
+      5,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 11,
+   "name": "",
+   "total_persistent_visits": 5,
+   "attribution": "pair: llava + hunyuan",
+   "captioner_fraction": 0.62,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 19,
+     "exits": 8,
+     "hazard": 0.42105263157894735,
+     "mean_dwell": 5.0,
+     "longest_dwell": 5,
+     "endpoints": 0,
+     "share_of_steps": 0.0019191919191919192,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 4,
+     "trajectories": 4,
+     "steps_inside": 70,
+     "exits": 23,
+     "hazard": 0.32857142857142857,
+     "mean_dwell": 8.5,
+     "longest_dwell": 11,
+     "endpoints": 0,
+     "share_of_steps": 0.007070707070707071,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": true,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [
+     [
+      15,
+      70,
+      5,
+      false
+     ]
+    ],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      32,
+      35,
+      11,
+      false
+     ],
+     [
+      48,
+      13,
+      9,
+      false
+     ],
+     [
+      81,
+      27,
+      9,
+      false
+     ],
+     [
+      53,
+      30,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 12,
+   "name": "",
+   "total_persistent_visits": 5,
+   "attribution": "pair: qwen + hunyuan",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 5,
+     "trajectories": 3,
+     "steps_inside": 122,
+     "exits": 10,
+     "hazard": 0.08196721311475409,
+     "mean_dwell": 22.2,
+     "longest_dwell": 47,
+     "endpoints": 1,
+     "share_of_steps": 0.012323232323232323,
+     "still_there": 1
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": true
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      59,
+      76,
+      47,
+      true
+     ],
+     [
+      74,
+      53,
+      47,
+      false
+     ],
+     [
+      74,
+      81,
+      7,
+      false
+     ],
+     [
+      40,
+      93,
+      5,
+      false
+     ],
+     [
+      74,
+      21,
+      5,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 13,
+   "name": "",
+   "total_persistent_visits": 5,
+   "attribution": "pair: qwen + sdxl",
+   "captioner_fraction": 0.83,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 2,
+     "exits": 1,
+     "hazard": 0.5,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 1,
+     "share_of_steps": 0.00020202020202020202,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 3,
+     "trajectories": 2,
+     "steps_inside": 34,
+     "exits": 13,
+     "hazard": 0.38235294117647056,
+     "mean_dwell": 7.0,
+     "longest_dwell": 9,
+     "endpoints": 0,
+     "share_of_steps": 0.0034343434343434343,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 2,
+     "trajectories": 2,
+     "steps_inside": 35,
+     "exits": 12,
+     "hazard": 0.34285714285714286,
+     "mean_dwell": 8.0,
+     "longest_dwell": 8,
+     "endpoints": 0,
+     "share_of_steps": 0.0035353535353535356,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": true,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [
+     [
+      13,
+      56,
+      9,
+      false
+     ],
+     [
+      0,
+      28,
+      7,
+      false
+     ],
+     [
+      0,
+      47,
+      5,
+      false
+     ]
+    ],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      17,
+      49,
+      8,
+      false
+     ],
+     [
+      58,
+      48,
+      8,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "cluster": 26,
+   "name": "",
+   "total_persistent_visits": 2,
+   "attribution": "none (below threshold everywhere)",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 2,
+     "trajectories": 2,
+     "steps_inside": 16,
+     "exits": 6,
+     "hazard": 0.375,
+     "mean_dwell": 5.0,
+     "longest_dwell": 5,
+     "endpoints": 0,
+     "share_of_steps": 0.0016161616161616162,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [
+     [
+      79,
+      82,
+      5,
+      false
+     ],
+     [
+      94,
+      16,
+      5,
+      false
+     ]
+    ],
+    "e1_both": []
+   }
+  },
+  {
+   "cluster": 31,
+   "name": "",
+   "total_persistent_visits": 1,
+   "attribution": "none (below threshold everywhere)",
+   "captioner_fraction": 0.5,
+   "per_cell": {
+    "a0_core": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_cap": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 4,
+     "exits": 4,
+     "hazard": 1.0,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.00040404040404040404,
+     "still_there": 0
+    },
+    "e1_gen": {
+     "persistent_visits": 0,
+     "trajectories": 0,
+     "steps_inside": 0,
+     "exits": 0,
+     "hazard": null,
+     "mean_dwell": null,
+     "longest_dwell": 0,
+     "endpoints": 0,
+     "share_of_steps": 0.0,
+     "still_there": 0
+    },
+    "e1_both": {
+     "persistent_visits": 1,
+     "trajectories": 1,
+     "steps_inside": 73,
+     "exits": 37,
+     "hazard": 0.5068493150684932,
+     "mean_dwell": 5.0,
+     "longest_dwell": 5,
+     "endpoints": 2,
+     "share_of_steps": 0.0073737373737373735,
+     "still_there": 0
+    }
+   },
+   "present": {
+    "a0_core": false,
+    "e1_cap": false,
+    "e1_gen": false,
+    "e1_both": false
+   },
+   "examples": {
+    "a0_core": [],
+    "e1_cap": [],
+    "e1_gen": [],
+    "e1_both": [
+     [
+      76,
+      20,
+      5,
+      false
+     ]
+    ]
+   }
+  }
+ ]
+}

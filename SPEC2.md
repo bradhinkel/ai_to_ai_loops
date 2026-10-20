@@ -22,7 +22,7 @@ Owner: Brad Hinkel · Version 2 · 2026-10-18 · Supersedes `SPEC.md` (v1, 2026-
 - E5 bias-injection 2×2 (D&D captioner × D&D generator), added by Brad 2026-10-18 (§4 E5).
 - E6 demographic attribute survival, with A0-photo as its baseline, added by Brad 2026-10-19 (§3, §4 E6); A0-lit defined alongside (§3). Ported from SPEC3.md on 2026-10-20; SPEC2 is the authoritative spec.
 - E1 Hunyuan cells run at 25 steps with torch.compile (D12 amendment, Brad 2026-10-19). E1-gen core reported 2026-10-19 (`reports/e1_gen.md`).
-- Every mention of `llava:latest 7B` corrected to `llava:latest` (LLaVA 1.6 7B, digest 8dd30f6b0cb1), which is what Hintze's OSF code pulls and what every run uses (D2).
+- Every mention of `llava:13b` corrected to `llava:latest 7B` (LLaVA 1.6 7B, digest 8dd30f6b0cb1), which is what Hintze's OSF code pulls and what every run uses (D2).
 
 ## 1. Objective
 

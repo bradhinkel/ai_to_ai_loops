@@ -1,0 +1,14 @@
+# A0-lit (Brad 2026-10-20, not yet in the spec): A0-core with the style clause removed from the caption instruction, no style requested at all.
+# Hintze: "Describe this image in vivid, artistic terms." -> "Describe this image."
+# Rest verbatim. Pod settings as configs/a0_core_runpod96.yaml. Not scheduled; prepared so the ablation can run back to back with A0-photo if Brad wants it.
+run_name: a0_lit
+arm: A0-lit
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

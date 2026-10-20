@@ -1,0 +1,14 @@
+# A0-photo (SPEC3 §3, Brad 2026-10-19/20): identical to A0-core except the first sentence of the caption instruction.
+# Hintze: "Describe this image in vivid, artistic terms." -> "Describe this image as a realistic photograph, in plain, precise terms."
+# Rest of the instruction verbatim. Pod settings as configs/a0_core_runpod96.yaml (OLLAMA_PAR=8). Baseline for E6.
+run_name: a0_photo
+arm: A0-photo
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

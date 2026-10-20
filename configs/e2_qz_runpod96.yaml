@@ -1,0 +1,15 @@
+# E2-QZ (SPEC2 §4 E2): E1-both (Hunyuan-DiT + Qwen2.5-VL) with the caption instruction in Simplified Chinese, 70-character budget
+# (Brad confirmed 2026-10-20; D15). Same English seeds, so step 0 = E1-both's. Clip uses Hunyuan's own bilingual CLIP tokenizer (77 tokens),
+# character rule for CJK text. Launch: CFG=configs/e2_qz_runpod96.yaml bash scripts/runpod_launch.sh smoke|core
+run_name: e2_qz
+arm: E2-QZ
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+prompt_clip: {enabled: true, max_tokens: 77, tokenizer: generator}
+generator: {backend: hunyuan, model: Tencent-Hunyuan/HunyuanDiT-v1.2-Diffusers, revision: 5e96094e0ad19e7f475de8711f03634ca0ccc40c,
+            variant: null, dtype: float16, num_inference_steps: 25, guidance_scale: null, height: null, width: null, resize_to: 512,
+            batch: 16, cpu_offload: false, release_mode: delete, compile: true}
+captioner: {model: "qwen2.5vl:7b", digest_prefix: "5ced39dfa4ba", parallel: 8, unload_after_pass: false, limit_chars: 70,
+            instruction: "用生动、富有艺术感的语言描述这张图片。描述必须在70字以内。请勿超出此限制。仅返回描述内容。请勿解释。"}

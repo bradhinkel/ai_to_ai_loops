@@ -1,6 +1,7 @@
 """LLaVA via Ollama, matching OSFcontinue.describe_image(): the verbatim instruction, the saved PNG base64-encoded,
 options={"temperature": T} and nothing else, response.strip() used as the next prompt without truncation."""
 import base64, re, time
+from ..prompt_clip import CJK_RE
 import ollama, requests
 
 REFUSAL_RE = re.compile(r"\b(I'm sorry|I cannot|I can't|as an AI|unable to (?:describe|assist))\b", re.I)
@@ -42,12 +43,15 @@ class OllamaCaptioner:
                                             options={"temperature": self.temperature}, keep_alive=keep_alive)
                 text = (resp.response or "").strip()
                 words = len(text.split())
+                chars = len("".join(text.split())); cjk = len(CJK_RE.findall(text)); cjk_share = (cjk / chars) if chars else 0.0
+                limit_chars = self.cfg.get("limit_chars")          # E2: the instruction's character budget (D15); None for English cells
                 meta = {"caption_time_s": round(time.time() - t0, 2),
                         "caption_ollama": {k: getattr(resp, k, None) for k in
                                            ("done_reason", "total_duration", "load_duration", "prompt_eval_count", "prompt_eval_duration", "eval_count", "eval_duration")},
-                        "caption_words": words,
-                        "caption_flags": {"empty": words == 0, "over_50_words": words > 50, "refusal": bool(REFUSAL_RE.search(text)),
-                                          "length_cutoff": getattr(resp, "done_reason", None) == "length"},
+                        "caption_words": words, "caption_chars": chars, "caption_cjk_share": round(cjk_share, 3),
+                        "caption_flags": {"empty": chars == 0, "over_50_words": words > 50, "refusal": bool(REFUSAL_RE.search(text)),
+                                          "length_cutoff": getattr(resp, "done_reason", None) == "length",
+                                          **({"over_limit_chars": cjk > limit_chars, "not_cjk": cjk_share < 0.5} if limit_chars else {})},
                         "caption_attempts": attempt + 1}
                 if words == 0 and self.log:
                     self.log.warning("empty caption for %s (attempt %d)", image_path, attempt + 1)

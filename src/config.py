@@ -12,7 +12,7 @@ DEFAULTS = {
         "file": "hintze_osf/Generation Scripts For HPCC/reservoir_100.pkl",
         "sdxl_base_seed": 20261017,  # sdxl_seed = base + traj*10000 + step  (D3)
     },
-    "prompt_clip": {"enabled": False, "max_tokens": 77},   # E1: clip every prompt to CLIP-77 before any generator (SPEC2 §4, D13); A0 relies on SDXL's own cut
+    "prompt_clip": {"enabled": False, "max_tokens": 77, "tokenizer": "sdxl"},   # tokenizer: sdxl (reference, D13) | generator (E2, D15)   # E1: clip every prompt to CLIP-77 before any generator (SPEC2 §4, D13); A0 relies on SDXL's own cut
     "generator": {
         "backend": "sdxl",          # sdxl | hunyuan (src/generators/hunyuan.py)
         "model": "stabilityai/stable-diffusion-xl-base-1.0",

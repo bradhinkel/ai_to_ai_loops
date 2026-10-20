@@ -65,7 +65,11 @@ class Runner:
         self.clipper = None
         if cfg.get("prompt_clip", {}).get("enabled"):
             from .prompt_clip import PromptClipper
-            self.clipper = PromptClipper(cfg["prompt_clip"]["max_tokens"])
+            pc = cfg["prompt_clip"]
+            if pc.get("tokenizer", "sdxl") == "generator":     # E2 (D15): clip with the generator's own text tokenizer
+                self.clipper = PromptClipper(pc["max_tokens"], tokenizer_id=cfg["generator"]["model"], revision=cfg["generator"].get("revision"))
+            else:
+                self.clipper = PromptClipper(pc["max_tokens"])
         self.gen_label = cfg["generator"].get("backend", "sdxl"); self.cap_label = cfg["captioner"]["model"].split(":")[0]
         self.gpu = GpuLogger(ROOT / cfg["gpu_log"]["path"], cfg["gpu_log"]["interval_s"], cfg["run_name"])
         self.step_times = []

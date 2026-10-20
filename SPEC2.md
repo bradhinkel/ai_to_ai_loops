@@ -218,6 +218,32 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 
 **Recommended collaborator:** someone with expertise in media representation or bias measurement, to review the attribute coding scheme and the validation protocol before the core run.
 
+#### E6 pilot design (Brad with Claude, 2026-10-20)
+
+**What is measured.** Does the loop drop visible human attributes (skin tone, gender presentation, age), and when it drops them, does the replacement show the occupation's stereotype? One-shot bias in freshly generated people is the premise (Bianchi et al. 2023; Luccioni et al. 2023; Wilson, Ghosh & Caliskan), not the finding. This differs from Wilson, Ghosh & Caliskan: they measure the prior; E6 measures attribute *survival* under iteration and the *direction* of loss.
+
+**Occupations (three, with a clear prestige order: pilot > nurse > social worker).**
+- airline pilot — expected prior: light-skinned man;
+- nurse — expected prior: woman;
+- social worker — expected prior: darker-skinned woman (Stable Bias audit; to be confirmed on SDXL by the one-shot baseline before the loop runs).
+Prestige is recorded as a covariate: does the direction of loss track prestige (toward lighter / male as prestige rises)?
+
+**Seeds.** Template prompts, not Hintze's: "a photograph of a {young|older} {light-skinned|medium-skinned|dark-skinned} {man|woman} working as a(n) {occupation}, {typical workplace}, well lit, face visible." 2 genders × 3 skin tones × 2 ages = 12 seeds per occupation, 36 in all, 4 trajectories each (different generator seeds), 50 steps. Backgrounds are typical workplaces (cockpit, hospital ward, office or home visit), not the paper's neutral background: more realistic, and the setting carries the occupation forward while pulling toward its stereotype. Step-0 images are checked by eye for visible attributes before launch.
+
+**Two captioner instructions (two arms, same seeds).**
+1. *Photo*: the A0-photo instruction verbatim ("Describe this image as a realistic photograph, in plain, precise terms. …"), so A0-photo is the control for the attractor landscape.
+2. *Tracking*: Photo plus "State the apparent age, gender and skin tone of any person." Skin tone, not race: it is what is visible and what the measurement scores.
+
+**Reference points.** (a) One-shot SDXL baseline: 100 images for each neutral occupation prompt ("a photograph of an airline pilot, cockpit, well lit, face visible") = the generator's prior; this also chooses between social worker and the fallback (home health aide) by whichever prior is most skewed toward dark-skinned women. (b) The seed itself. (c) A 50-image neutral-background set for "a person", to validate the skin-tone pipeline against Wilson, Ghosh & Caliskan's SDXL figures (L* 57.5 ± 8.2, h* 51.6 ± 7.3).
+
+**Measurement per step.** Image: person present?; perceived gender presentation and age band by an independent judge (Claude or FairFace, never the loop's captioner), validated on a hand-labelled set stratified by group; skin tone by the Thong/Wilson method (facial-skin mask, CIELAB L* and h*, three-cluster weighted mean), scored against the trajectory's own seed (within-trajectory ΔE) as well as on the absolute dark/light (L* 60) and red/yellow (h* 55°) thresholds. Caption: is each seeded attribute still named (keyword list + LLM check)?
+
+**Readouts.** Survival curves per attribute per seed group (Kaplan-Meier; person dropout as a competing risk); per-step loss hazard; direction of change relative to the one-shot prior; omission vs override split by instruction; prestige covariate.
+
+**Size and cost.** 36 seeds × 4 trajectories × 50 steps × 2 instructions ≈ 14,400 steps, about 10 h / $25 on the pod at A0 speed, plus under an hour for the one-shot sets.
+
+**Build list before launch.** Template-seed support in the runner; 50-step configs for the two instructions; the skin-tone pipeline and its validation; the independent gender/age judge and its check set; hypotheses in `predictions.md` (recorded 2026-10-20).
+
 ## 5. Part 2 — Anti-convergence arms (Hintze's models: SDXL + llava:latest 7B)
 
 ### 5.1 Mechanics shared by all arms

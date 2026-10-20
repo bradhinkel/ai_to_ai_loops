@@ -18,6 +18,12 @@ Owner: Brad Hinkel · Version 2 · 2026-10-18 · Supersedes `SPEC.md` (v1, 2026-
 - E1 decisions (Brad): NEW captioner = Qwen2.5-VL 7B (Ollama `qwen2.5vl:7b`), NEW generator = Hunyuan-DiT v1.2; every E1 cell clips the prompt to 77 CLIP tokens before the generator; caption-length effects are deferred to E4 (one change at a time). SD3.5 Medium stays E4's generator only.
 - Engineering: the batched runner (not parallel copies of the OSF script) on a 96 GB card; the current pod has no network volume.
 
+**Amendments 2026-10-19/20**
+- E5 bias-injection 2×2 (D&D captioner × D&D generator), added by Brad 2026-10-18 (§4 E5).
+- E6 demographic attribute survival, with A0-photo as its baseline, added by Brad 2026-10-19 (§3, §4 E6); A0-lit defined alongside (§3). Ported from SPEC3.md on 2026-10-20; SPEC2 is the authoritative spec.
+- E1 Hunyuan cells run at 25 steps with torch.compile (D12 amendment, Brad 2026-10-19). E1-gen core reported 2026-10-19 (`reports/e1_gen.md`).
+- Every mention of `llava:latest 7B` corrected to `llava:latest` (LLaVA 1.6 7B, digest 8dd30f6b0cb1), which is what Hintze's OSF code pulls and what every run uses (D2).
+
 ## 1. Objective
 
 Two linked questions:
@@ -40,7 +46,7 @@ Two linked questions:
 ## 2. Common protocol (applies to every run)
 
 - **Seeds:** Hintze's 100 novelty-search seed prompts from OSF (English, ≤30 words), the same seeds for every experiment. Step 0 is excluded from analysis, as in Hintze.
-- **Default loop:** 100 steps, captioner temperature 0.9, Hintze's caption instruction verbatim unless the experiment varies it. The instruction asks for 50 words; nothing enforces it (A0 decision 2026-10-17: LLaVA ignores it and writes ~134 words; captioners that obey write ~50). The only cut in Hintze's loop is SDXL's 77-token CLIP limit, and Part 1 cells with a wider text encoder apply that same cut explicitly (E1): "Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."
+- **Default loop:** 100 steps, captioner temperature 0.9, Hintze's caption instruction verbatim unless the experiment varies it: "Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain." The instruction asks for 50 words; nothing enforces it (A0 decision 2026-10-17: LLaVA ignores it and writes ~134 words; captioners that obey write ~50). The only cut in Hintze's loop is SDXL's 77-token CLIP limit, and Part 1 cells with a wider text encoder apply that same cut explicitly (E1): "Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."
 - **Recording:** every step writes the image, prompt, caption(s), selection decision, seed, model IDs and versions, timings and flags (truncated, refused, trapped, veto).
 - **Primary measurement space: images (DINOv2).** It is independent of language and caption length, which makes every experiment comparable with every other, including the Chinese and long-caption runs. Secondary: MiniLM on captions (Hintze-comparable, English only) and a multilingual text embedder (e.g. LaBSE) for the Chinese runs.
 - **Never grade with what steers.** CLIP is used only for steering in Part 2. Any model that selects or edits in an arm is never used to evaluate that arm's outputs.
@@ -64,6 +70,18 @@ Hintze's configuration as his OSF code actually runs it (`DEVIATIONS.md`, verifi
 **A0-core result (2026-10-19 pod time):** motifs pass (67/100 endpoints in palatial interiors, cathedrals, village streets and houses), plateau at step 16 passes, elbow matches Hintze's T = 0.9 data under the same rule. Gate passed on that reading; archive built (`archive/a0_core_centroids.npz`, 8 DINOv2 clusters).
 
 **Output:** the attractor archive. Centroids of A0-core's final clusters in DINOv2, CLIP (text and image) and MiniLM space, plus labels and contact sheets.
+
+**A0-photo (Brad, added 2026-10-19).** Identical to A0-core except for the first sentence of the caption instruction. "Describe this image in vivid, artistic terms." becomes "Describe this image as a realistic photograph, in plain, precise terms." The rest of the instruction stays verbatim.
+
+It does two jobs:
+1. **An instruction ablation:** does the attractor set change with the requested style? This subsumes A0-lit.
+2. **The baseline for E6:** E6 runs under the same instruction, so its attractor set is known.
+
+Prediction to record: it converges at least as hard as A0, toward stock-photography attractors, since "photograph" points straight at the stock-heavy part of the training data. (Recorded in `predictions.md` on 2026-10-20 with Claude's alongside; config `configs/a0_photo_runpod96.yaml`.)
+
+**A0-lit (Brad, 2026-10-20; optional).** The literal version: the style clause removed and nothing put in its place, "Describe this image. The description must be 50 words or fewer. …" A0-core, A0-photo and A0-lit are the three levels of one variable, the requested register (artistic / photographic / none). Not scheduled; config `configs/a0_lit_runpod96.yaml` and a prediction exist so it can run back to back with A0-photo if wanted.
+
+Motivation (2026-10-20, from the captions on disk): under Hintze's instruction, style words ("vibrant", "painted", "ethereal") appear in 43% of step-0 captions and 53–60% thereafter in A0-core, and 55% rising to 72–80% in E1-gen; photographic words fall from about 25% to 13% by step 10. The instruction gives the loop a target that the generator renders back.
 
 ## 4. Part 1 — Extensions of Hintze (what drives convergence?)
 
@@ -135,7 +153,7 @@ This replaces the separate "different models" and "mix models" experiments: they
 
 The only *interventional* Part 1 experiment: shift a model's prior on purpose and check whether the attractors move to match.
 
-| | Captioner: llava:13b | Captioner: D&D-tuned VLM |
+| | Captioner: llava:latest 7B | Captioner: D&D-tuned VLM |
 |---|---|---|
 | **Generator: SDXL** | A0 | E5-cap |
 | **Generator: SDXL + D&D art LoRA** | E5-gen | E5-both |
@@ -143,7 +161,7 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 **D&D captioner:**
 - A LoRA fine-tune of a vision-language model (e.g. Qwen2.5-VL-7B, or Pixtral if staying in the Mistral family). A text-only Mistral cannot caption images.
 - Training data must be *image–caption pairs*: general images (e.g. COCO) paired with D&D-voiced descriptions of what is actually in them (e.g. existing captions rewritten in D&D voice). D&D voice text alone teaches style without grounding, and risks a captioner that hallucinates D&D content regardless of the image.
-- Target behaviour is a D&D *lens* (describes what is there, in D&D terms), not D&D *hallucination*. Measure the difference with caption fidelity: CLIPScore of each caption against the image it describes, compared with llava:13b.
+- Target behaviour is a D&D *lens* (describes what is there, in D&D terms), not D&D *hallucination*. Measure the difference with caption fidelity: an image–caption similarity score of each caption against the image it describes, compared with llava:latest. (Claude, 2026-10-20: not CLIPScore, because CLIP is SDXL's text encoder and so steers the loop, CLAUDE.md rule 4; use SigLIP or a VLM judge.)
 
 **D&D generator:** an existing fantasy/D&D art LoRA for SDXL (record its source and license).
 
@@ -173,7 +191,7 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 - **The seed is the reference.** No population baseline is needed: the question is how long each stated attribute survives, and whether survival is *asymmetric*.
 
 **Caption instruction variants** (one variable at a time):
-- **Photo** (default): the A0-photo instruction. "Vivid, artistic" rendering makes people stylized and harder to code reliably, so E6 uses realistic photography by default.
+- **Photo** (default): the A0-photo instruction, exactly "Describe this image as a realistic photograph, in plain, precise terms." followed by the verbatim remainder. "Vivid, artistic" rendering makes people stylized and harder to code reliably, so E6 uses realistic photography by default.
 - **Photo + attribute-tracking:** the photo instruction plus "Describe any people's apparent age, gender and skin tone." This tests whether forcing the captioner to carry the attributes stops the loss, and whether the remaining loss is still asymmetric. If attributes still decay while the caption names them, the generator is the source.
 - **Vivid** (same number of trajectories as Photo, so the two are directly comparable): Hintze verbatim. Does artistic stylization speed up attribute loss, and is representation lower than under Photo?
 
@@ -182,11 +200,11 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 2. **Seed retention:** survival of the stated attributes (above).
 3. **External reference (optional):** published demographic statistics for stock-photo collections or occupational labour statistics. Cite the source, collection and year. Training data reflects the historical web archive (including older stock imagery), not current curated stock collections, so treat this as context, not ground truth.
 
-**Captioners:** llava:13b (the A0 configuration) first, then Claude Sonnet. Does a captioner that names attributes more consistently preserve them?
+**Captioners:** llava:latest 7B (the A0 configuration) first, then Claude Sonnet. Does a captioner that names attributes more consistently preserve them?
 
 **Measured at every step, separately for caption and image:**
 - **Caption:** is each seeded attribute still named? Score with a keyword list plus an LLM check.
-- **Image:** is a person still present? Perceived gender presentation, Monk Skin Tone (1–10), age band.
+- **Image:** is a person still present? Perceived gender presentation, age band, and skin tone measured as in Wilson, Ghosh & Caliskan (Resources/Bias Amplification.pdf, §2.3 and §4, after Thong, Joniak & Xiang 2023): facial-skin segmentation, CIELAB perceptual lightness L* and hue angle h* (weighted mean of the three largest pixel clusters), thresholds dark L* ≤ 60 and red h* ≤ 55°, CIEDE2000 between prompt centroids, within-prompt standard deviation as homogeneity. Their SDXL one-shot figures for the neutral prompt (L* 57.5 ± 8.2, h* 51.6 ± 7.3, 50 images) are the pipeline's validation target if E6's one-shot baseline uses their prompt template. Monk-scale coding, if kept, is secondary.
 - **Report perceived presentation, never identity.** Automated image scoring (a VLM rubric and/or an attribute classifier such as FairFace) must first be validated against human labels on ~300 images. Report its error rate *per group*, since these classifiers err unequally.
 
 **Readouts:**
@@ -200,7 +218,7 @@ The only *interventional* Part 1 experiment: shift a model's prior on purpose an
 
 **Recommended collaborator:** someone with expertise in media representation or bias measurement, to review the attribute coding scheme and the validation protocol before the core run.
 
-## 5. Part 2 — Anti-convergence arms (Hintze's models: SDXL + llava:13b)
+## 5. Part 2 — Anti-convergence arms (Hintze's models: SDXL + llava:latest 7B)
 
 ### 5.1 Mechanics shared by all arms
 - Each step, the captioner produces K candidate captions (K = 4 by default; use the same K in every arm).
@@ -275,7 +293,7 @@ Record each person's discipline and how commercial their practice is: graphic de
 | New-attractor count (settled clusters outside known basins, shared by ≥5 trajectories) | DINOv2 | Part 2 |
 | Genericness | DINOv2 vs. 50k reference sample | Part 2, Part 3 |
 | Judge selection bias | Genericness | D, E |
-| Loop fidelity | CLIPScore, image vs. its caption | All image runs |
+| Loop fidelity | image–caption similarity (SigLIP or a VLM judge; not CLIPScore, which steers inside SDXL: rule 4) | All image runs |
 | Trapped rate / judge veto rate | Logs | B1, B2, E |
 | Relapse rate | DINOv2 | R |
 | Collective vs. individual diversity | DINOv2 | Part 2 |
@@ -305,6 +323,8 @@ Validate genericness on A0 first: attractor endpoints must score as more generic
 | 3 | Part 2 core: A, B1, B2, D, E, R | The central question | ~$150–200 GPU + ~$50 API |
 | 4 | E3 text loop | Cheap; can run any time in parallel; judge-prompt test bed | ~$5–20 API |
 | 5 | E2 Chinese 2×2 | Strong cultural test; needs a translated instruction | ~$30–60 GPU + API |
+| 5b | E5 D&D bias injection | The only causal test of where the attractors come from; depends on the captioner fine-tune | ~$30–80 GPU incl. LoRA training |
+| 5c | A0-photo, then E6 demographic attribute survival | Measurable and directly relevant to the bias question; needs the validated scoring first | ~$20–50 GPU + human labels |
 | 6 | E4 caption length | Lowest expected information gain | ~$20–40 GPU |
 | Opt. | B-img, F, reject-mode variants | Ablations | as budget allows |
 | Last | Part 3 evaluation | Needs final arms | ~$1–2k incl. panels |

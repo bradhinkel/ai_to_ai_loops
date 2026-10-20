@@ -127,6 +127,29 @@ This replaces the separate "different models" and "mix models" experiments: they
 - **Stated more precisely:** if E2-QZ and E2-SZ share attractors that differ from E2-QE and E2-SE, *language* drives the cultural content. If the split instead runs along captioner origin, *training provenance* drives it.
 - **Measurement:** DINOv2 (primary) and LaBSE (secondary). MiniLM cannot compare across languages.
 
+#### Caption instructions for translation (Brad, 2026-10-20)
+
+Two English instructions go to the translators. Both are the exact strings the runner sends (`src/config.py` default and `configs/a0_photo_runpod96.yaml`); only the first sentence differs. The Chinese versions become the E2 instructions once reviewed.
+
+1. **Hintze instruction (used by A0 and every E1 cell; E2-QZ uses its translation so the only change from E1-both is the language):**
+
+   > Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain.
+
+2. **Photo instruction (A0-photo / E6 baseline; for a later Chinese photo cell):**
+
+   > Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain.
+
+Notes for the translators and reviewers:
+- Keep the five-sentence structure and the imperative register; the last three sentences are a length limit, a "return only the description" rule and a "do not explain" rule, and each should stay a separate sentence.
+- "Vivid, artistic terms" means rich, expressive, painterly language (the register of an art description), not "describe the artwork". "Plain, precise terms" means factual, unembellished description as of a photograph.
+- The length clause: translate "50 words or fewer" as a character count, not a word count. Please suggest the natural Chinese budget equivalent to 50 English words (provisional working value: 80 characters, final value set after the Hunyuan token-limit check below). The number is a placeholder the runner fills in, so the sentence should read naturally with any two-digit number.
+- Please also provide a short optional clause meaning "write the description in Chinese", kept as a separate sentence, in case the pilot shows the captioner drifting back into English (whether it is used is a pilot decision, recorded in DEVIATIONS.md if adopted).
+- Two independent speakers: one translates, the other back-translates without seeing the English. Both versions and the back-translation are recorded here before any E2 run.
+
+Before fixing the character budget: measure Hunyuan-DiT's bilingual CLIP tokens per Chinese character on sample captions (its CLIP limit is 77 tokens, its mT5 limit 256), since a Chinese BERT-style tokenizer is close to one token per character and 80 characters may sit at the clip point. The runner's length check counts whitespace-separated words, which is meaningless for Chinese; E2 needs a character-count check and a per-caption language flag (fraction of CJK characters).
+
+Early observation (Brad, 2026-10-20, E1-both at step 61, English captions): some multi-tier temple buildings, people in a cross-legged seated pose, lone trees and palm trees, but still a good deal of Western-looking architecture. So the Chinese-trained pair writing English has not shifted dramatically toward Chinese imagery; E2-QZ tests whether the language does.
+
 ### E3 — Text-only loop
 
 - **Loop:** 50-word summary → 500-word essay → 50-word summary → …, 100 steps.

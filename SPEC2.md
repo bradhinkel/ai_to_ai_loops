@@ -131,6 +131,75 @@ This replaces the separate "different models" and "mix models" experiments: they
 - **Brad's hypotheses:** longer captions slow convergence but do not stop it, and the attractors do not change.
 - **Measurement:** DINOv2 only. This sidesteps Hintze's problem that embeddings of different lengths can't be compared.
 
+### E5 — Bias injection: D&D captioner × D&D generator (PROVISIONAL, added 2026-10-18)
+
+The only *interventional* Part 1 experiment: shift a model's prior on purpose and check whether the attractors move to match.
+
+| | Captioner: llava:13b | Captioner: D&D-tuned VLM |
+|---|---|---|
+| **Generator: SDXL** | A0 | E5-cap |
+| **Generator: SDXL + D&D art LoRA** | E5-gen | E5-both |
+
+**D&D captioner:**
+- A LoRA fine-tune of a vision-language model (e.g. Qwen2.5-VL-7B, or Pixtral if staying in the Mistral family). A text-only Mistral cannot caption images.
+- Training data must be *image–caption pairs*: general images (e.g. COCO) paired with D&D-voiced descriptions of what is actually in them (e.g. existing captions rewritten in D&D voice). D&D voice text alone teaches style without grounding, and risks a captioner that hallucinates D&D content regardless of the image.
+- Target behaviour is a D&D *lens* (describes what is there, in D&D terms), not D&D *hallucination*. Measure the difference with caption fidelity: CLIPScore of each caption against the image it describes, compared with llava:13b.
+
+**D&D generator:** an existing fantasy/D&D art LoRA for SDXL (record its source and license).
+
+**Dose-response (pilot first):** run E5-gen at LoRA scales 0, 0.25, 0.5 and 1.0 to find the scale where attractors flip. Repeat on the captioner side if the captioner LoRA can be merged at partial strength.
+
+**Keep the caption instruction verbatim** ("vivid, artistic"). The instruction is a separate variable, tested by A0-lit.
+
+**Readout:**
+- Which off-diagonal cell's endpoints look like E5-both, i.e. which model's bias controls the attractors.
+- Whether the D&D cells converge to a small set of fantasy clichés: the genericness reappears inside the new domain.
+
+**Hypotheses** (see `predictions.md`):
+- The biased side's prior shifts the attractors, more so for the captioner.
+- The D&D captioner reads "vivid, artistic" in genre terms.
+
+### E6 — Demographic attribute survival (PROVISIONAL, added 2026-10-19)
+
+**Question.** Does the loop *amplify* demographic stereotypes beyond the single-image bias already documented for SDXL? This is the iterated version of the one-shot audits in Bianchi et al. (2023) and Luccioni et al. (2023): https://arxiv.org/abs/2211.03759, https://arxiv.org/abs/2303.11408
+
+**Design: attribute survival.**
+- **Seeds:** prompts that state the person's attributes, crossed with occupations whose stereotypes run in *both* directions:
+  - male-stereotyped: astronaut, firefighter, CEO, engineer, pilot;
+  - female-stereotyped: nurse, kindergarten teacher, secretary, dancer, flight attendant.
+- **Seed attributes:** each occupation × 2 genders × 3 skin tones (light, medium, dark on the Monk Skin Tone scale), plus one age contrast. Example: "a portrait of an older Black woman astronaut in her spacesuit."
+- **Controls:** the stereotype-matching combination (e.g. a white male astronaut, a white female nurse), and a neutral version with no attributes ("an astronaut").
+- **Run length:** 50 steps, with 3–5 trajectories per seed. People tend to drop out of the image quickly.
+- **The seed is the reference.** No population baseline is needed: the question is how long each stated attribute survives, and whether survival is *asymmetric*.
+
+**Caption instruction variants** (one variable at a time):
+- **Photo** (default): the A0-photo instruction. "Vivid, artistic" rendering makes people stylized and harder to code reliably, so E6 uses realistic photography by default.
+- **Photo + attribute-tracking:** the photo instruction plus "Describe any people's apparent age, gender and skin tone." This tests whether forcing the captioner to carry the attributes stops the loss, and whether the remaining loss is still asymmetric. If attributes still decay while the caption names them, the generator is the source.
+- **Vivid** (same number of trajectories as Photo, so the two are directly comparable): Hintze verbatim. Does artistic stylization speed up attribute loss, and is representation lower than under Photo?
+
+**Three reference points for "amplification":**
+1. **One-shot baseline:** SDXL's output for each *neutral* occupation prompt ("a photograph of an astronaut"), 100 images per occupation, no loop. This is the model's own prior. Loop amplification = loop endpoint distribution minus this baseline.
+2. **Seed retention:** survival of the stated attributes (above).
+3. **External reference (optional):** published demographic statistics for stock-photo collections or occupational labour statistics. Cite the source, collection and year. Training data reflects the historical web archive (including older stock imagery), not current curated stock collections, so treat this as context, not ground truth.
+
+**Captioners:** llava:13b (the A0 configuration) first, then Claude Sonnet. Does a captioner that names attributes more consistently preserve them?
+
+**Measured at every step, separately for caption and image:**
+- **Caption:** is each seeded attribute still named? Score with a keyword list plus an LLM check.
+- **Image:** is a person still present? Perceived gender presentation, Monk Skin Tone (1–10), age band.
+- **Report perceived presentation, never identity.** Automated image scoring (a VLM rubric and/or an attribute classifier such as FairFace) must first be validated against human labels on ~300 images. Report its error rate *per group*, since these classifiers err unequally.
+
+**Readouts:**
+- Survival curves (fraction of trajectories retaining each attribute vs. step), by seed group.
+- Asymmetry: does a counter-stereotypical attribute decay faster than its stereotypical counterpart (e.g. a woman astronaut vs. a man astronaut, a man nurse vs. a woman nurse)?
+- Direction of drift: when an attribute changes, what does it become?
+- Where the loss happens: the caption drops the attribute (*captioner omission*) vs. the caption keeps it but the image changes (*generator override*).
+- Person dropout: steps until no person is present.
+
+**A cheap first pass:** audit the people already present in the A0 pilot and A0-core images before building E6.
+
+**Recommended collaborator:** someone with expertise in media representation or bias measurement, to review the attribute coding scheme and the validation protocol before the core run.
+
 ## 5. Part 2 — Anti-convergence arms (Hintze's models: SDXL + llava:13b)
 
 ### 5.1 Mechanics shared by all arms

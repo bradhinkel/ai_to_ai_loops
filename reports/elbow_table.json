@@ -1,69 +1,8 @@
 {
- "built": "2026-10-19",
+ "built": "2026-10-20",
  "rule": "knee of normalised inertia (max chord distance), KMeans n_init=10 random_state=0, k=2..min(25,n-1)",
  "subsample": "200 random 80% subsamples without replacement, same rule",
  "rows": {
-  "a0_pilot minilm captions": {
-   "n": 20,
-   "knee_rule": 8,
-   "knee_by_kmax": {
-    "15": 8
-   },
-   "silhouette_argmax": 6,
-   "silhouette_top3": [
-    6,
-    4,
-    8
-   ],
-   "subsample": {
-    "B": 200,
-    "m": 16,
-    "median": 7.0,
-    "p5": 6.0,
-    "p95": 8.0,
-    "hist": {
-     "6": 30,
-     "7": 115,
-     "8": 55
-    }
-   },
-   "run": "a0_pilot",
-   "space": "minilm",
-   "step": [
-    99
-   ]
-  },
-  "a0_pilot dinov2 images": {
-   "n": 20,
-   "knee_rule": 8,
-   "knee_by_kmax": {
-    "15": 8
-   },
-   "silhouette_argmax": 6,
-   "silhouette_top3": [
-    6,
-    7,
-    5
-   ],
-   "subsample": {
-    "B": 200,
-    "m": 16,
-    "median": 9.0,
-    "p5": 7.0,
-    "p95": 9.0,
-    "hist": {
-     "7": 11,
-     "8": 88,
-     "9": 94,
-     "10": 7
-    }
-   },
-   "run": "a0_pilot",
-   "space": "dinov2",
-   "step": [
-    99
-   ]
-  },
   "a0_core minilm captions": {
    "n": 100,
    "knee_rule": 7,
@@ -279,6 +218,85 @@
     }
    },
    "run": "e1_gen",
+   "space": "dinov2",
+   "step": [
+    99
+   ]
+  },
+  "e1_both minilm captions": {
+   "n": 100,
+   "knee_rule": 7,
+   "knee_by_kmax": {
+    "15": 7,
+    "20": 7,
+    "25": 7,
+    "30": 11,
+    "40": 11
+   },
+   "silhouette_argmax": 3,
+   "silhouette_top3": [
+    3,
+    5,
+    25
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 8.0,
+    "p5": 6.0,
+    "p95": 11.0,
+    "hist": {
+     "5": 1,
+     "6": 32,
+     "7": 40,
+     "8": 43,
+     "9": 44,
+     "10": 23,
+     "11": 10,
+     "12": 7
+    }
+   },
+   "run": "e1_both",
+   "space": "minilm",
+   "step": [
+    99
+   ]
+  },
+  "e1_both dinov2 images": {
+   "n": 100,
+   "knee_rule": 8,
+   "knee_by_kmax": {
+    "15": 8,
+    "20": 8,
+    "25": 8,
+    "30": 14,
+    "40": 14
+   },
+   "silhouette_argmax": 33,
+   "silhouette_top3": [
+    33,
+    28,
+    36
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 10.0,
+    "p5": 8.0,
+    "p95": 13.0,
+    "hist": {
+     "7": 5,
+     "8": 30,
+     "9": 36,
+     "10": 50,
+     "11": 34,
+     "12": 28,
+     "13": 10,
+     "14": 4,
+     "15": 3
+    }
+   },
+   "run": "e1_both",
    "space": "dinov2",
    "step": [
     99

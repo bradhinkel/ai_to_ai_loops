@@ -64,6 +64,7 @@ def main():
     ap.add_argument("run"); ap.add_argument("--archive", default=None); ap.add_argument("--k", type=int, default=0)
     ap.add_argument("--radius", type=float, default=0.20); ap.add_argument("--exit_factor", type=float, default=1.25)
     ap.add_argument("--labels", default=None, help="optional json list of attractor names, index = probe")
+    ap.add_argument("--tag", default="", help="optional suffix for the report file name (e.g. 'own' for own-cluster probes)")
     ap.add_argument("--space", default="dinov2", choices=["dinov2", "minilm"], help="embedding space for states and membership (archive must hold centroid_<space>)")
     a = ap.parse_args()
     B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]; i99 = steps.index(99)
@@ -127,7 +128,7 @@ def main():
     lines += [f"| [{b['lo']:.2f}, {b['hi']:.2f}) | {b['n']} | {f(b['exit_rate'])} |" for b in by_depth]
     lines += ["", "Exit rate by step window (pooled; a stationary loop is flat):", "", "| steps | n inside | exit rate |", "|---|---|---|"]
     lines += [f"| {b['lo']}-{b['hi']} | {b['n']} | {f(b['exit_rate'])} |" for b in by_step]
-    md = "\n".join(lines) + "\n"; sfx = "" if a.space == "dinov2" else f"_{a.space}"
+    md = "\n".join(lines) + "\n"; sfx = ("" if a.space == "dinov2" else f"_{a.space}") + (f"_{a.tag}" if a.tag else "")
     (ROOT / "reports" / f"gravity_{a.run}{sfx}.md").write_text(md)
     (ROOT / "reports" / f"gravity_{a.run}{sfx}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor,
                                                                             attractors=rows, free_stationary=float(pi[K]), free_endpoint=float(end_share[K]),

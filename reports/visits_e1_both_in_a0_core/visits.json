@@ -1,0 +1,900 @@
+{
+ "probes_run": "e1_both",
+ "scan_run": "a0_core",
+ "probe_source": "k-means k=8 on e1_both step-99 DINOv2",
+ "floor": 0.2,
+ "probes": [
+  {
+   "probe": 0,
+   "members": [
+    46,
+    52,
+    57,
+    58,
+    64,
+    87
+   ],
+   "radius_used": 0.529,
+   "radius_p95": 0.529,
+   "n_visited": 2,
+   "n_stayed": 1,
+   "n_transient": 1,
+   "median_first_visit": 71.0,
+   "max_transient_dwell": 1,
+   "nearest": 0.394,
+   "examples": [
+    {
+     "traj": 24,
+     "step": 98,
+     "dist": 0.394,
+     "stayed": true,
+     "caption": "The image portrays a breathtaking tropical landscape. The scene is dominated by a long, empty road that cuts through a dense grove of palm trees. The road is fl"
+    },
+    {
+     "traj": 77,
+     "step": 54,
+     "dist": 0.468,
+     "stayed": false,
+     "caption": "The image presents an artistic collage dedicated to the beauty of sunsets. The collage is a vibrant display of over 20 distinct images, each capturing the essen"
+    },
+    {
+     "traj": 12,
+     "step": 99,
+     "dist": 0.58,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene of a tropical island. Dominating the center of the frame is a thatched-roof hut, constructed from bamboo, nestled on the sho"
+    },
+    {
+     "traj": 38,
+     "step": 18,
+     "dist": 0.65,
+     "stayed": false,
+     "caption": "The image captures a serene scene of a harbor at night. Four large, framed paintings hang side by side, each showcasing a different view of the harbor. The pain"
+    },
+    {
+     "traj": 41,
+     "step": 99,
+     "dist": 0.66,
+     "stayed": false,
+     "caption": "The image presents a luxurious living room bathed in natural light from a large window. The room exudes opulence, with marble floors gleaming under the chandeli"
+    },
+    {
+     "traj": 14,
+     "step": 53,
+     "dist": 0.664,
+     "stayed": false,
+     "caption": "The image presents a dramatic seascape. A lighthouse, a beacon of safety, stands majestically atop a craggy cliff on the left. It's a silent sentinel, its light"
+    },
+    {
+     "traj": 64,
+     "step": 71,
+     "dist": 0.673,
+     "stayed": false,
+     "caption": "The image presents a harmonious triptych of a lighthouse, set against the backdrop of a serene seascape. Each panel offers a different perspective, yet they all"
+    },
+    {
+     "traj": 47,
+     "step": 52,
+     "dist": 0.673,
+     "stayed": false,
+     "caption": "The image portrays a futuristic bedroom that exudes a sense of sci-fi opulence. Dominating the center of the room is a large, round, LED-lit bed, with a circula"
+    },
+    {
+     "traj": 19,
+     "step": 96,
+     "dist": 0.679,
+     "stayed": false,
+     "caption": "The image presents a grand, opulent living room. Dominating the scene is a white ceiling, ornately adorned with a chandelier hanging from the center, casting a "
+    },
+    {
+     "traj": 46,
+     "step": 73,
+     "dist": 0.681,
+     "stayed": false,
+     "caption": "The image captures a serene harbor at sunset. The sky is a canvas of orange and pink hues, painting the canvas of the sea with long brushstrokes. The skyline is"
+    },
+    {
+     "traj": 72,
+     "step": 19,
+     "dist": 0.682,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene of a person perched on a rock, overlooking a serene lake. The individual, garbed in a bathrobe, seems to be in deep thought,"
+    },
+    {
+     "traj": 29,
+     "step": 24,
+     "dist": 0.689,
+     "stayed": false,
+     "caption": "The image captures a whimsical scene inside a room where the ceiling is filled with colorful umbrellas, creating an enchanting canopy. The umbrellas are in hues"
+    }
+   ]
+  },
+  {
+   "probe": 1,
+   "members": [
+    2,
+    4,
+    11,
+    15,
+    23,
+    28,
+    43,
+    51,
+    76,
+    94,
+    98
+   ],
+   "radius_used": 0.525,
+   "radius_p95": 0.525,
+   "n_visited": 2,
+   "n_stayed": 1,
+   "n_transient": 1,
+   "median_first_visit": 82.5,
+   "max_transient_dwell": 1,
+   "nearest": 0.401,
+   "examples": [
+    {
+     "traj": 15,
+     "step": 95,
+     "dist": 0.401,
+     "stayed": true,
+     "caption": "The image showcases a breathtaking view of the universe, specifically a nebula. This cosmic spectacle is a blend of red, pink, and orange hues that give it a vi"
+    },
+    {
+     "traj": 96,
+     "step": 78,
+     "dist": 0.424,
+     "stayed": false,
+     "caption": "The image presents a breathtaking view of Antelope Canyon, a renowned slot canyon located on Navajo land in Arizona. The canyon is a spectacle of nature, with t"
+    },
+    {
+     "traj": 60,
+     "step": 20,
+     "dist": 0.584,
+     "stayed": false,
+     "caption": "The image presents a captivating view of the cosmos, specifically a collection of planets. Dominating the scene is a large, intricate planet that takes center s"
+    },
+    {
+     "traj": 47,
+     "step": 25,
+     "dist": 0.603,
+     "stayed": false,
+     "caption": "The image presents a captivating futuristic scene, seemingly inside a control room or advanced command center. The room is illuminated by cool blue and purple h"
+    },
+    {
+     "traj": 67,
+     "step": 21,
+     "dist": 0.606,
+     "stayed": false,
+     "caption": "The image captures a dynamic scene of a man in a red suit mid-pose. The suit is vibrant, contrasting sharply with the cool tones of the background. The man is p"
+    },
+    {
+     "traj": 23,
+     "step": 93,
+     "dist": 0.61,
+     "stayed": false,
+     "caption": "The image portrays a futuristic scene. In the foreground, a solitary figure stands on a sandy terrain, gazing upwards towards the sky. The person, distinguished"
+    },
+    {
+     "traj": 39,
+     "step": 74,
+     "dist": 0.614,
+     "stayed": false,
+     "caption": "This image is a vibrant and energetic illustration that captures a moment of soccer passion. The central figure, a soccer player, is in full swing, mid-air, kic"
+    },
+    {
+     "traj": 36,
+     "step": 78,
+     "dist": 0.624,
+     "stayed": false,
+     "caption": "The image presents a tranquil aerial view of a mountainous landscape. Dominating the scene is a vast river, its waters a deep blue, meandering through the lands"
+    },
+    {
+     "traj": 86,
+     "step": 48,
+     "dist": 0.636,
+     "stayed": false,
+     "caption": "The image is a vibrant and dynamic digital artwork. A young soccer player, poised in mid-action, dominates the center of the composition. He's caught in a momen"
+    },
+    {
+     "traj": 77,
+     "step": 58,
+     "dist": 0.655,
+     "stayed": false,
+     "caption": "The image is a vibrant collage of beach sunsets, each with its unique hue, captured in a different angle or perspective. The dominant colors are a rich pink and"
+    },
+    {
+     "traj": 14,
+     "step": 58,
+     "dist": 0.659,
+     "stayed": false,
+     "caption": "The image captures a dramatic scene of a stormy sea, as depicted in a captivating series of paintings. The art style leans towards realism, with the use of dark"
+    },
+    {
+     "traj": 74,
+     "step": 21,
+     "dist": 0.67,
+     "stayed": false,
+     "caption": "The image presents a vibrant display of modern art, set in a spacious gallery. Dominating the center of the room is a large, eye-catching sculpture that resembl"
+    }
+   ]
+  },
+  {
+   "probe": 2,
+   "members": [
+    7,
+    9,
+    13,
+    19,
+    24,
+    25,
+    40,
+    41,
+    42,
+    45,
+    49,
+    53,
+    60,
+    62,
+    65,
+    70,
+    74,
+    86,
+    89,
+    90,
+    91
+   ],
+   "radius_used": 0.672,
+   "radius_p95": 0.672,
+   "n_visited": 27,
+   "n_stayed": 2,
+   "n_transient": 25,
+   "median_first_visit": 29.0,
+   "max_transient_dwell": 26,
+   "nearest": 0.28,
+   "examples": [
+    {
+     "traj": 77,
+     "step": 38,
+     "dist": 0.28,
+     "stayed": false,
+     "caption": "The image showcases a serene scene at sunset. Two panels capture the same moment from different perspectives. In the foreground, a solitary individual is seated"
+    },
+    {
+     "traj": 16,
+     "step": 56,
+     "dist": 0.354,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene in a serene landscape. A couple stands together under a tree with pink blossoms. They are dressed in traditional garb, the m"
+    },
+    {
+     "traj": 69,
+     "step": 77,
+     "dist": 0.359,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene of a mountain lake. Two tall, leafless trees stand on the left, their gnarled branches reaching out as if in silent conversa"
+    },
+    {
+     "traj": 1,
+     "step": 82,
+     "dist": 0.359,
+     "stayed": true,
+     "caption": "The image presents a serene and ethereal scene. Dominating the center of the frame is a single, tall tree with a thin trunk and a canopy of branches. The tree s"
+    },
+    {
+     "traj": 74,
+     "step": 45,
+     "dist": 0.428,
+     "stayed": false,
+     "caption": "This image presents a striking, artistic interior space where the most dominant feature is a large, red-hued tree with a twisted trunk. The tree is a vibrant re"
+    },
+    {
+     "traj": 55,
+     "step": 39,
+     "dist": 0.433,
+     "stayed": false,
+     "caption": "The image captures a serene, Japanese-style garden scene. Dominating the foreground is a tranquil pond, reflecting the pale pink blossom trees lining its edge. "
+    },
+    {
+     "traj": 78,
+     "step": 60,
+     "dist": 0.452,
+     "stayed": false,
+     "caption": "This image is a captivating diptych that captures the essence of traditional Japanese landscapes. The art style is evocative of Japanese woodblock prints, chara"
+    },
+    {
+     "traj": 3,
+     "step": 36,
+     "dist": 0.484,
+     "stayed": false,
+     "caption": "This image captures a serene and tranquil scene in a Japanese-style garden. The garden is a harmonious blend of natural and man-made elements. A traditional Jap"
+    },
+    {
+     "traj": 89,
+     "step": 6,
+     "dist": 0.49,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene featuring a monk. The monk, clad in a white robe and sporting a shaved head, is seated in contemplation. He faces away from "
+    },
+    {
+     "traj": 38,
+     "step": 1,
+     "dist": 0.499,
+     "stayed": false,
+     "caption": "The image is a diptych, presenting a serene outdoor scene that captures two distinct moments of a couple's tranquil time by a lake.\n\nIn the first frame, the cou"
+    },
+    {
+     "traj": 62,
+     "step": 17,
+     "dist": 0.508,
+     "stayed": false,
+     "caption": "The image captures a poignant scene of a solitary figure under a large, bare tree, standing in a rain-soaked road. The tree, standing tall against the backdrop "
+    },
+    {
+     "traj": 96,
+     "step": 48,
+     "dist": 0.542,
+     "stayed": false,
+     "caption": "This image presents a striking contrast between the barren landscape and the resilient life it sustains. Two photographs side by side capture the essence of a d"
+    }
+   ]
+  },
+  {
+   "probe": 3,
+   "members": [
+    8,
+    10,
+    14,
+    17,
+    38,
+    39,
+    56,
+    67,
+    78,
+    84,
+    92,
+    93
+   ],
+   "radius_used": 0.628,
+   "radius_p95": 0.628,
+   "n_visited": 12,
+   "n_stayed": 0,
+   "n_transient": 12,
+   "median_first_visit": 24.0,
+   "max_transient_dwell": 11,
+   "nearest": 0.454,
+   "examples": [
+    {
+     "traj": 72,
+     "step": 20,
+     "dist": 0.454,
+     "stayed": false,
+     "caption": "The image captures a serene moment of solitude and reflection. A lone figure, cloaked in a brown robe, sits cross-legged on a rock amidst a tranquil lakeside. T"
+    },
+    {
+     "traj": 78,
+     "step": 14,
+     "dist": 0.467,
+     "stayed": false,
+     "caption": "This image presents two views of an anime-style scene, with a traditional Japanese aesthetic. The art style is rich with attention to detail and the use of vibr"
+    },
+    {
+     "traj": 55,
+     "step": 65,
+     "dist": 0.478,
+     "stayed": false,
+     "caption": "The image presents a picturesque scene of a traditional Japanese village, nestled amidst nature. Dominating the center is a serene pond, its surface rippling wi"
+    },
+    {
+     "traj": 77,
+     "step": 30,
+     "dist": 0.478,
+     "stayed": false,
+     "caption": "The image captures a serene moment at sunset. The sky, a canvas of deep oranges, serves as a majestic backdrop to a tranquil river scene. A couple in a boat, ba"
+    },
+    {
+     "traj": 38,
+     "step": 14,
+     "dist": 0.48,
+     "stayed": false,
+     "caption": "This is a captivating diptych capturing a serene moment of two figures in a boat on a river, under the full moon. The left image shows the couple facing the vie"
+    },
+    {
+     "traj": 89,
+     "step": 6,
+     "dist": 0.524,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene featuring a monk. The monk, clad in a white robe and sporting a shaved head, is seated in contemplation. He faces away from "
+    },
+    {
+     "traj": 36,
+     "step": 84,
+     "dist": 0.548,
+     "stayed": false,
+     "caption": "The image presents a serene landscape divided into two distinct sections. On the left, the scene is dominated by a majestic mountain range, its peaks touching t"
+    },
+    {
+     "traj": 3,
+     "step": 83,
+     "dist": 0.555,
+     "stayed": false,
+     "caption": "The image presents a serene landscape that is rich in detail and color. Dominating the scene is a traditional Japanese temple, painted in a vibrant shade of red"
+    },
+    {
+     "traj": 16,
+     "step": 57,
+     "dist": 0.557,
+     "stayed": false,
+     "caption": "In the serene embrace of nature, a man and a woman stand beneath the boughs of a cherry blossom tree, its delicate pink petals contrasting against the verdant g"
+    },
+    {
+     "traj": 8,
+     "step": 33,
+     "dist": 0.572,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a traditional Japanese village nestled at the foot of a majestic mountain. The village is a vibrant display of cherry bloss"
+    },
+    {
+     "traj": 65,
+     "step": 25,
+     "dist": 0.604,
+     "stayed": false,
+     "caption": "The image is a vibrant depiction of a tranquil scene. In the foreground, a person, presumably a Buddhist monk, is walking on a dirt road that meanders through a"
+    },
+    {
+     "traj": 69,
+     "step": 79,
+     "dist": 0.627,
+     "stayed": false,
+     "caption": "The image presents a beautifully crafted open book, standing upright on a desk. The book is a visual feast, with two pages open to reveal intricate paintings. T"
+    }
+   ]
+  },
+  {
+   "probe": 4,
+   "members": [
+    12,
+    20,
+    31,
+    37,
+    44,
+    47,
+    50,
+    55,
+    72,
+    77,
+    79,
+    81,
+    82,
+    85,
+    88,
+    99
+   ],
+   "radius_used": 0.376,
+   "radius_p95": 0.376,
+   "n_visited": 2,
+   "n_stayed": 1,
+   "n_transient": 1,
+   "median_first_visit": 21.5,
+   "max_transient_dwell": 21,
+   "nearest": 0.228,
+   "examples": [
+    {
+     "traj": 67,
+     "step": 40,
+     "dist": 0.228,
+     "stayed": true,
+     "caption": "The image is a captivating diptych, showcasing two views of a female ballet dancer in a dramatic pose. The dancer, dressed in a classic red tutu and white balle"
+    },
+    {
+     "traj": 95,
+     "step": 37,
+     "dist": 0.234,
+     "stayed": false,
+     "caption": "The image is a stunning split-frame photograph capturing the grace and precision of ballet dancers. On the left, a single dancer, poised in a ballet pose, is th"
+    },
+    {
+     "traj": 76,
+     "step": 64,
+     "dist": 0.446,
+     "stayed": false,
+     "caption": "The image is a vibrant, artistic illustration capturing a moment of joy and celebration. Two individuals are captured in a mid-dance pose, frozen in the midst o"
+    },
+    {
+     "traj": 77,
+     "step": 2,
+     "dist": 0.45,
+     "stayed": false,
+     "caption": "The painting captures a tender moment between two classical-style figures. The woman on the left, clad in a flowing dress, stands with her back to the viewer, h"
+    },
+    {
+     "traj": 72,
+     "step": 17,
+     "dist": 0.524,
+     "stayed": false,
+     "caption": "A painting that captures a moment of serene reflection. A woman, dressed in a flowing, white dress, is seated on a rock by a tranquil lake. Her gaze is directed"
+    },
+    {
+     "traj": 61,
+     "step": 19,
+     "dist": 0.547,
+     "stayed": false,
+     "caption": "The image portrays a young woman with vibrant red hair and striking blue eyes, who is captured in a moment of quiet contemplation. She is dressed in a blue dres"
+    },
+    {
+     "traj": 51,
+     "step": 14,
+     "dist": 0.56,
+     "stayed": false,
+     "caption": "The image portrays a woman in a grand, light-colored room. She is adorned in a magnificent wedding dress, featuring a long train that trails behind her, reflect"
+    },
+    {
+     "traj": 58,
+     "step": 23,
+     "dist": 0.644,
+     "stayed": false,
+     "caption": "In the grandeur of a lavish room, a woman, clad in a long, flowing dress, is captured in a moment of quiet contemplation. The room itself is a testament to opul"
+    },
+    {
+     "traj": 39,
+     "step": 74,
+     "dist": 0.654,
+     "stayed": false,
+     "caption": "This image is a vibrant and energetic illustration that captures a moment of soccer passion. The central figure, a soccer player, is in full swing, mid-air, kic"
+    },
+    {
+     "traj": 55,
+     "step": 20,
+     "dist": 0.655,
+     "stayed": false,
+     "caption": "A striking portrait of a woman, exuding an air of quiet confidence. Her face, a canvas of contrasting shades, is the central focus against a stark white backgro"
+    },
+    {
+     "traj": 16,
+     "step": 46,
+     "dist": 0.656,
+     "stayed": false,
+     "caption": "The image is a vibrant, square collage of various figures, each with their own distinct pose and color palette. The figures are interspersed with a collection o"
+    },
+    {
+     "traj": 42,
+     "step": 35,
+     "dist": 0.679,
+     "stayed": false,
+     "caption": "In the image, two iconic statues of the Statue of Liberty stand side by side against a vibrant, city skyline. The statue on the left is a traditional green, whi"
+    }
+   ]
+  },
+  {
+   "probe": 5,
+   "members": [
+    3,
+    5,
+    16,
+    22,
+    27,
+    54,
+    59,
+    63,
+    80,
+    83,
+    97
+   ],
+   "radius_used": 0.5,
+   "radius_p95": 0.5,
+   "n_visited": 4,
+   "n_stayed": 0,
+   "n_transient": 4,
+   "median_first_visit": 7.0,
+   "max_transient_dwell": 1,
+   "nearest": 0.427,
+   "examples": [
+    {
+     "traj": 77,
+     "step": 18,
+     "dist": 0.427,
+     "stayed": false,
+     "caption": "The image is a serene autumn landscape. A person stands solitary on a wooden dock that extends into a calm lake, their figure silhouetted against the backdrop o"
+    },
+    {
+     "traj": 72,
+     "step": 21,
+     "dist": 0.437,
+     "stayed": false,
+     "caption": "The image portrays a serene scene set in a mountainous landscape. The foreground is dominated by a large body of water, its surface calm and reflecting the over"
+    },
+    {
+     "traj": 38,
+     "step": 2,
+     "dist": 0.466,
+     "stayed": false,
+     "caption": "The image is a diptych, divided horizontally into two halves. Each half depicts the same tranquil scene. The scene is set in a natural landscape with a focus on"
+    },
+    {
+     "traj": 78,
+     "step": 3,
+     "dist": 0.497,
+     "stayed": false,
+     "caption": "The image presents a serene scene of a man in a vibrant green jacket and a brown fishing cap, immersed in the tranquility of nature. He is seated on a grassy ba"
+    },
+    {
+     "traj": 69,
+     "step": 79,
+     "dist": 0.516,
+     "stayed": false,
+     "caption": "The image presents a beautifully crafted open book, standing upright on a desk. The book is a visual feast, with two pages open to reveal intricate paintings. T"
+    },
+    {
+     "traj": 36,
+     "step": 82,
+     "dist": 0.527,
+     "stayed": false,
+     "caption": "The image captures a serene landscape, dominated by towering mountains with their peaks gently brushed by the sky. A serpentine river, a ribbon of blue, weaves "
+    },
+    {
+     "traj": 1,
+     "step": 82,
+     "dist": 0.598,
+     "stayed": false,
+     "caption": "The image presents a serene and ethereal scene. Dominating the center of the frame is a single, tall tree with a thin trunk and a canopy of branches. The tree s"
+    },
+    {
+     "traj": 62,
+     "step": 3,
+     "dist": 0.621,
+     "stayed": false,
+     "caption": "The image presents a black and white illustration that captures a solitary figure standing amidst a tranquil park. The individual, the sole focus of the image, "
+    },
+    {
+     "traj": 89,
+     "step": 6,
+     "dist": 0.653,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene featuring a monk. The monk, clad in a white robe and sporting a shaved head, is seated in contemplation. He faces away from "
+    },
+    {
+     "traj": 55,
+     "step": 65,
+     "dist": 0.668,
+     "stayed": false,
+     "caption": "The image presents a picturesque scene of a traditional Japanese village, nestled amidst nature. Dominating the center is a serene pond, its surface rippling wi"
+    },
+    {
+     "traj": 24,
+     "step": 99,
+     "dist": 0.675,
+     "stayed": false,
+     "caption": "The image presents a captivating tropical sunset scene. The focal point is a picturesque road flanked by palm trees. The road, bathed in the soft glow of the su"
+    },
+    {
+     "traj": 23,
+     "step": 93,
+     "dist": 0.679,
+     "stayed": false,
+     "caption": "The image portrays a futuristic scene. In the foreground, a solitary figure stands on a sandy terrain, gazing upwards towards the sky. The person, distinguished"
+    }
+   ]
+  },
+  {
+   "probe": 6,
+   "members": [
+    6,
+    18,
+    21,
+    30,
+    34
+   ],
+   "radius_used": 0.498,
+   "radius_p95": 0.498,
+   "n_visited": 6,
+   "n_stayed": 0,
+   "n_transient": 6,
+   "median_first_visit": 17.0,
+   "max_transient_dwell": 2,
+   "nearest": 0.427,
+   "examples": [
+    {
+     "traj": 93,
+     "step": 36,
+     "dist": 0.427,
+     "stayed": false,
+     "caption": "The image captures a grand interior space, bathed in a spectrum of light that spills in from a large dome above. The ceiling is a riot of colors, with a central"
+    },
+    {
+     "traj": 17,
+     "step": 18,
+     "dist": 0.451,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral's interior. The ceiling, a canvas of light and shadow, arches high and dramatic. It's a symphony of architectural"
+    },
+    {
+     "traj": 88,
+     "step": 55,
+     "dist": 0.471,
+     "stayed": false,
+     "caption": "The image captures a hauntingly beautiful, abandoned church. The interior is a spectacle of Gothic architecture, with towering columns and arches that lead the "
+    },
+    {
+     "traj": 19,
+     "step": 6,
+     "dist": 0.473,
+     "stayed": false,
+     "caption": "The image captures a grand room, a fusion of architectural and artistic elements. Dominating the center is a large crystal chandelier, a beacon of opulence. Fro"
+    },
+    {
+     "traj": 10,
+     "step": 17,
+     "dist": 0.475,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a Gothic cathedral, bathed in the soft glow of sunlight filtering through its stained glass windows. The interior of the cath"
+    },
+    {
+     "traj": 80,
+     "step": 4,
+     "dist": 0.482,
+     "stayed": false,
+     "caption": "The image presents a grand, ornate interior, bathed in soft light. Dominating the scene is a large chandelier, its multiple arms reaching out from the center li"
+    },
+    {
+     "traj": 70,
+     "step": 92,
+     "dist": 0.5,
+     "stayed": false,
+     "caption": "The image presents a breathtaking interior of a cathedral, resplendent in the soft glow of stained glass windows. The perspective is from the end of the aisle, "
+    },
+    {
+     "traj": 74,
+     "step": 70,
+     "dist": 0.503,
+     "stayed": false,
+     "caption": "This image captures a grand room, likely a lobby, adorned for the Christmas holiday. The room's ceiling soars, featuring an impressive chandelier that hangs fro"
+    },
+    {
+     "traj": 68,
+     "step": 80,
+     "dist": 0.514,
+     "stayed": false,
+     "caption": "The image presents a grand and ornate interior of a building, specifically a hall or temple. The ceiling is high and features a large golden chandelier that is "
+    },
+    {
+     "traj": 40,
+     "step": 63,
+     "dist": 0.517,
+     "stayed": false,
+     "caption": "The image captures the grandeur and solemnity of a cathedral. The interior is a vibrant display of Gothic architecture. The high vaulted ceiling, adorned with l"
+    },
+    {
+     "traj": 24,
+     "step": 65,
+     "dist": 0.517,
+     "stayed": false,
+     "caption": "The image presents a mesmerizing scene of an ancient Greek temple. The temple's grandeur is accentuated by a large, arched walkway, a testament to the architect"
+    },
+    {
+     "traj": 59,
+     "step": 38,
+     "dist": 0.521,
+     "stayed": false,
+     "caption": "The image captures the grandeur of a cathedral interior. The perspective is from the front, offering a view of the altar. The architecture is intricate and elab"
+    }
+   ]
+  },
+  {
+   "probe": 7,
+   "members": [
+    0,
+    1,
+    26,
+    29,
+    32,
+    33,
+    35,
+    36,
+    48,
+    61,
+    66,
+    68,
+    69,
+    71,
+    73,
+    75,
+    95,
+    96
+   ],
+   "radius_used": 0.714,
+   "radius_p95": 0.714,
+   "n_visited": 34,
+   "n_stayed": 1,
+   "n_transient": 33,
+   "median_first_visit": 17.5,
+   "max_transient_dwell": 17,
+   "nearest": 0.499,
+   "examples": [
+    {
+     "traj": 72,
+     "step": 17,
+     "dist": 0.499,
+     "stayed": false,
+     "caption": "A painting that captures a moment of serene reflection. A woman, dressed in a flowing, white dress, is seated on a rock by a tranquil lake. Her gaze is directed"
+    },
+    {
+     "traj": 23,
+     "step": 89,
+     "dist": 0.539,
+     "stayed": false,
+     "caption": "The image presents a striking visual of a lone figure standing in the vast expanse of a desert under a full moon. The person, cloaked in black, stands on sand t"
+    },
+    {
+     "traj": 15,
+     "step": 69,
+     "dist": 0.553,
+     "stayed": false,
+     "caption": "The image presents a vibrant and expansive Mars landscape, painted in a realistic art style. Dominating the scene are towering red rock formations that stretch "
+    },
+    {
+     "traj": 77,
+     "step": 4,
+     "dist": 0.569,
+     "stayed": false,
+     "caption": "In this tranquil scene, two figures stand on a grassy bank next to a serene pond. The pond, still and reflective, mirrors the warm, pastel colors of the sky abo"
+    },
+    {
+     "traj": 89,
+     "step": 6,
+     "dist": 0.583,
+     "stayed": false,
+     "caption": "The image presents a tranquil scene featuring a monk. The monk, clad in a white robe and sporting a shaved head, is seated in contemplation. He faces away from "
+    },
+    {
+     "traj": 40,
+     "step": 8,
+     "dist": 0.587,
+     "stayed": false,
+     "caption": "This image is a beautiful representation of an individual in a state of contemplation. The person, clad in a long, flowing cloak, sits perched on a cliff edge, "
+    },
+    {
+     "traj": 78,
+     "step": 18,
+     "dist": 0.6,
+     "stayed": false,
+     "caption": "The image presents a serene scene on a river at sunset. Two individuals in traditional Japanese clothing are in a small red boat, paddling down the river, which"
+    },
+    {
+     "traj": 96,
+     "step": 78,
+     "dist": 0.611,
+     "stayed": false,
+     "caption": "The image presents a breathtaking view of Antelope Canyon, a renowned slot canyon located on Navajo land in Arizona. The canyon is a spectacle of nature, with t"
+    },
+    {
+     "traj": 62,
+     "step": 4,
+     "dist": 0.615,
+     "stayed": false,
+     "caption": "This is a black and white illustration capturing a solitary moment in a winter landscape. The scene is dominated by a person clad in a long coat, their figure t"
+    },
+    {
+     "traj": 90,
+     "step": 73,
+     "dist": 0.617,
+     "stayed": false,
+     "caption": "In the image, there are two versions of a religious icon, one in portrait and one in landscape orientation. The central figure is a woman dressed in a blue cloa"
+    },
+    {
+     "traj": 22,
+     "step": 9,
+     "dist": 0.626,
+     "stayed": false,
+     "caption": "The image portrays a vibrant, pixelated portrait of the iconic Marilyn Monroe. She is depicted with a bright smile, her face set against a colorful mosaic backd"
+    },
+    {
+     "traj": 38,
+     "step": 2,
+     "dist": 0.627,
+     "stayed": false,
+     "caption": "The image is a diptych, divided horizontally into two halves. Each half depicts the same tranquil scene. The scene is set in a natural landscape with a focus on"
+    }
+   ]
+  }
+ ]
+}

@@ -15,6 +15,19 @@ P(palette kept | subject jump) = **0.52**, P(kept | no jump) = 0.60, chance = 0.
 | high-contrast | 0% | 0 | - | 0 | 0 | 0 |
 | neutral | 23% | 485 | 0.33 | 44 | 26 | 13 |
 
+## a0_core2
+
+P(palette kept | subject jump) = **0.55**, P(kept | no jump) = 0.60, chance = 0.30. Share of steps inside a palette dwell of >= 5: 42%.
+
+| class | share of steps | subject jumps from it | palette kept across the jump | dwells >= 5 | dwells containing a jump | longest dwell |
+|---|---|---|---|---|---|---|
+| grayscale | 9% | 286 | 0.56 | 39 | 33 | 24 |
+| tinted-mono | 27% | 666 | 0.52 | 109 | 69 | 25 |
+| rainbow | 1% | 13 | 0.15 | 0 | 0 | 0 |
+| vivid | 42% | 719 | 0.71 | 282 | 151 | 39 |
+| high-contrast | 0% | 1 | 0.00 | 0 | 0 | 0 |
+| neutral | 21% | 429 | 0.33 | 39 | 19 | 12 |
+
 ## a0_photo
 
 P(palette kept | subject jump) = **0.61**, P(kept | no jump) = 0.64, chance = 0.29. Share of steps inside a palette dwell of >= 5: 48%.

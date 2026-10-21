@@ -69,6 +69,76 @@
   },
   "steps_in_dwells": 0.3975
  },
+ "a0_core2": {
+  "freq": {
+   "grayscale": 0.0872,
+   "tinted-mono": 0.2665,
+   "rainbow": 0.008,
+   "vivid": 0.4246,
+   "high-contrast": 0.0005,
+   "neutral": 0.2132
+  },
+  "chance": 0.30442973999999995,
+  "p_kept_jump": 0.5510879848628193,
+  "p_kept_nojump": 0.6040328795273568,
+  "per_class": {
+   "grayscale": {
+    "freq": 0.0872,
+    "n_jumps": 286,
+    "kept_across_jump": 0.5594405594405595
+   },
+   "tinted-mono": {
+    "freq": 0.2665,
+    "n_jumps": 666,
+    "kept_across_jump": 0.524024024024024
+   },
+   "rainbow": {
+    "freq": 0.008,
+    "n_jumps": 13,
+    "kept_across_jump": 0.15384615384615385
+   },
+   "vivid": {
+    "freq": 0.4246,
+    "n_jumps": 719,
+    "kept_across_jump": 0.7121001390820584
+   },
+   "high-contrast": {
+    "freq": 0.0005,
+    "n_jumps": 1,
+    "kept_across_jump": 0.0
+   },
+   "neutral": {
+    "freq": 0.2132,
+    "n_jumps": 429,
+    "kept_across_jump": 0.331002331002331
+   }
+  },
+  "dwells": {
+   "grayscale": 39,
+   "tinted-mono": 109,
+   "rainbow": 0,
+   "vivid": 282,
+   "high-contrast": 0,
+   "neutral": 39
+  },
+  "dwells_with_jump": {
+   "grayscale": 33,
+   "tinted-mono": 69,
+   "rainbow": 0,
+   "vivid": 151,
+   "high-contrast": 0,
+   "neutral": 19
+  },
+  "longest_dwell": {
+   "grayscale": 24,
+   "tinted-mono": 25,
+   "rainbow": 0,
+   "vivid": 39,
+   "high-contrast": 0,
+   "neutral": 12
+  },
+  "steps_in_dwells": 0.4151
+ },
  "a0_photo": {
   "freq": {
    "grayscale": 0.1049,

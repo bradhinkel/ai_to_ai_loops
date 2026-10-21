@@ -1,0 +1,15 @@
+# E6 pilot, Photo arm (SPEC2 §4 E6 pilot design, Brad 2026-10-20; D18): template seeds, 4 trajectories per seed, 20 steps,
+# the A0-photo instruction verbatim. SDXL + llava:latest as A0; pod settings as configs/a0_core_runpod96.yaml (OLLAMA_PAR=8).
+# Trajectories 0-143 = 36 occupation seeds x 4, 144-191 = 12 portrait seeds x 4 (seeds/e6_loop.json; map in the manifest).
+run_name: e6_photo
+arm: E6-photo
+mode: single_pass
+steps: 20
+trajectories: {first: 0, count: null}
+temperature: 0.9
+seeds: {file: seeds/e6_loop.json}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

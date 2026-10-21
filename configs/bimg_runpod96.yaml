@@ -1,0 +1,16 @@
+# B-img pilot (SPEC2 §5 B-img pilot design, Brad 2026-10-20; D17): image-archive rejection on the A0 pair.
+# SDXL + llava:latest, Hintze instruction, T = 0.9, 20 trajectories x 100 steps, K = 4 captions per step all rendered,
+# selection in SigLIP space: candidates within radius_reject of any archive entry are rejected; the archive takes every image whose
+# last 5 steps stayed within radius_archive of their mean (after a 5-step burn-in). Radii are the SigLIP equivalents of the DINOv2
+# gravity radius 0.20, set by analysis/siglip_calibrate.py on A0-core (see DEVIATIONS D17 for the value and how it was chosen).
+# Pod settings as configs/a0_core_runpod96.yaml: batch 16 = 4 trajectories x 4 candidates per SDXL call.
+run_name: bimg
+arm: B-img
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+candidates: {k: 4}
+selection: {mode: reject, radius_archive: 0.078, window: 5, burn_in: 5, radius_reject: 0.078, resample: 2, seed: 0}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}

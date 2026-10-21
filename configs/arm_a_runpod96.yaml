@@ -1,0 +1,12 @@
+# Arm A, the B-img control (SPEC2 §5.2 arm A, pilot scale): the same K = 4 candidates per step, one picked at random (RNG seeded per
+# trajectory and step), no archive. Same seeds, trajectories and pod settings as configs/bimg_runpod96.yaml.
+run_name: arm_a
+arm: A
+mode: single_pass
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+candidates: {k: 4}
+selection: {mode: random, seed: 0}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}

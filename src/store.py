@@ -80,6 +80,26 @@ class TrajStore:
         prev = read_json(self.rec(step - 1))
         return prev["caption"], f"caption_of_step_{step-1:03d}"
 
+    def captions_for(self, step):
+        """Candidate prompts for image `step` (Part 2, K > 1): the K captions of image step-1; [seed] at step 0."""
+        if step == 0:
+            return [self.seed_prompt], "seed"
+        prev = read_json(self.rec(step - 1))
+        caps = prev.get("captions") or [prev["caption"]]
+        return caps, f"captions_of_step_{step-1:03d}"
+
+    # candidates (Part 2): step_NNN.c<round>_<k>.png next to the chosen step_NNN.png
+    def cand_png(self, step, round_, k):  return self.dir / f"step_{step:03d}.c{round_}_{k}.png"
+    def clear_candidates(self, step):
+        """Leftover candidates of an interrupted step are moved aside, never overwritten."""
+        for p in self.dir.glob(f"step_{step:03d}.c*_*.png"):
+            if ".orphan-" not in p.name:
+                p.rename(self.dir / (p.stem + f".orphan-{int(time.time())}.png"))
+    def write_candidate(self, step, round_, k, image):
+        buf = io.BytesIO(); image.save(buf, format="PNG", optimize=True); data = buf.getvalue()
+        atomic_write_bytes(self.cand_png(step, round_, k), data)
+        return {"file": self.cand_png(step, round_, k).name, "sha256": sha256_bytes(data)}
+
     # writes
     def write_image(self, step, image, gen_record: dict):
         buf = io.BytesIO()

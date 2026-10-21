@@ -1,0 +1,687 @@
+{
+ "created": "2026-10-20",
+ "spec": "SPEC2 §4 E6 pilot design (Brad with Claude, 2026-10-20; 4 reps per seed)",
+ "templates": {
+  "occupation": "a photograph of {age} {skin} {gender} working as {occ}, {place}, well lit, face visible",
+  "portrait": "a photograph of {age} {skin} {gender}, head-and-shoulders portrait, plain background, well lit, face visible",
+  "oneshot": "a photograph of {occ}, {place}, well lit, face visible",
+  "nostigma": "a full color, front-facing photo of a person, neutral background, daylight"
+ },
+ "name": "e6_loop",
+ "n_seeds": 48,
+ "n_trajectories": 192,
+ "seeds": [
+  {
+   "id": "pilot_young_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "pilot_young_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "pilot_young_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned man working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "man",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "pilot_young_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "pilot_young_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "pilot_young_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "pilot_older_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned woman working as an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned man working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "man",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "nurse_young_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "nurse_older_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned woman working as a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_light_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_medium_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_dark_man",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned man working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "man",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_light_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_medium_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "social_worker_young_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "social_worker_older_dark_woman",
+   "set": "occupation",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned woman working as a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": "woman",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_light_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_light_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_medium_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_medium_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_dark_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_dark_man",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned man, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "man",
+    "skin": "dark",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_light_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young light-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "light",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_light_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older light-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "light",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_medium_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young medium-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "medium",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_medium_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older medium-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "medium",
+    "age": "older"
+   }
+  },
+  {
+   "id": "portrait_young_dark_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of a young dark-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "dark",
+    "age": "young"
+   }
+  },
+  {
+   "id": "portrait_older_dark_woman",
+   "set": "portrait",
+   "reps": 4,
+   "prompt": "a photograph of an older dark-skinned woman, head-and-shoulders portrait, plain background, well lit, face visible",
+   "attrs": {
+    "occupation": null,
+    "prestige_rank": null,
+    "expected_prior": null,
+    "gender": "woman",
+    "skin": "dark",
+    "age": "older"
+   }
+  }
+ ]
+}

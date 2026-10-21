@@ -1,0 +1,10 @@
+# Laptop smoke for the E6 pipeline (two_pass, 8 GB): first 2 seeds x 4 reps = 8 trajectories, 2 steps, Tracking instruction.
+run_name: e6_smoke
+arm: E6-track
+mode: two_pass
+steps: 2
+trajectories: {first: 0, count: 8}
+temperature: 0.9
+seeds: {file: seeds/e6_loop.json}
+captioner:
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. State the apparent age, gender and skin tone of any person. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

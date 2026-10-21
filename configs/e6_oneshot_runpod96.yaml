@@ -1,0 +1,16 @@
+# E6 one-shot reference sets (SPEC2 §4 E6 pilot design, "Reference points"; D18): the generator's prior. One step only:
+# 100 images per neutral occupation prompt (pilot, nurse, social worker, home health aide) + 50 for Wilson, Ghosh & Caliskan's
+# No-Stigma prompt, which validates the skin-tone pipeline (seeds/e6_oneshot.json). Captioned once with the Photo instruction
+# so the step-0 captions give the caption-side prior for free.
+run_name: e6_oneshot
+arm: E6-oneshot
+mode: single_pass
+steps: 1
+trajectories: {first: 0, count: null}
+temperature: 0.9
+seeds: {file: seeds/e6_oneshot.json}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

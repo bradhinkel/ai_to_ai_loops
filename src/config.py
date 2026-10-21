@@ -6,10 +6,10 @@ DEFAULTS = {
     "arm": "A0",
     "mode": "two_pass",             # two_pass (8 GB: alternate SDXL and LLaVA) | single_pass (both resident)
     "steps": 100,                   # images per trajectory; image k is made from prompt k, caption of image k is prompt k+1
-    "trajectories": {"first": 0, "count": 20},   # reservoir indices first .. first+count-1
+    "trajectories": {"first": 0, "count": 20},   # reservoir indices first .. first+count-1; count null = every seed in the file
     "temperature": 0.9,             # Ollama sampling temperature (SDXL has none)
     "seeds": {
-        "file": "hintze_osf/Generation Scripts For HPCC/reservoir_100.pkl",
+        "file": "hintze_osf/Generation Scripts For HPCC/reservoir_100.pkl",   # .pkl = Hintze's reservoir; .json = template seed table with reps (E6, D18)
         "sdxl_base_seed": 20261017,  # sdxl_seed = base + traj*10000 + step  (D3)
     },
     "prompt_clip": {"enabled": False, "max_tokens": 77, "tokenizer": "sdxl"},   # tokenizer: sdxl (reference, D13) | generator (E2, D15)   # E1: clip every prompt to CLIP-77 before any generator (SPEC2 §4, D13); A0 relies on SDXL's own cut
@@ -41,6 +41,9 @@ DEFAULTS = {
         "retries": 5,
         "parallel": 1,              # concurrent caption requests; pair with OLLAMA_NUM_PARALLEL on the server (D11)
     },
+    # Part 2 (SPEC2 §5, D17): K captions per step, all rendered, one chosen. mode none (K = 1, Part 1) | random (arm A) | reject (B-img)
+    "candidates": {"k": 1},
+    "selection": {"mode": "none", "device": "cuda", "radius_archive": 0.20, "window": 5, "burn_in": 5, "radius_reject": 0.20, "resample": 2, "seed": 0},
     "gpu_log": {"interval_s": 10, "path": "logs/gpu.csv"},
     "vram_free_threshold_mb": 1500,   # consider the GPU "free" for the next pass below this nvidia-smi usage
 }

@@ -23,8 +23,13 @@ MODELS = {
     "dinov2": {"id": "facebook/dinov2-base", "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415", "pooling": "CLS token, L2-normalised"},
     "minilm": {"id": "sentence-transformers/all-MiniLM-L6-v2", "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41", "pooling": "sentence-transformers default, L2-normalised"},
     "clip": {"id": "openai/clip-vit-large-patch14", "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41", "pooling": "projected image/text embeds, L2-normalised; text truncated at 77 tokens"},
+    # steering-only image space for the Part 2 B-img archive (SPEC2 §5; D17). Never graded with (rule 4), like clip.
+    "siglip": {"id": "google/siglip-base-patch16-224", "revision": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed", "pooling": "pooled image embeds, L2-normalised"},
+    # E6 skin-tone pipeline (analysis/skin_tone.py): CelebAMask-HQ face parser (SegFormer) on YuNet face crops
+    "faceparse": {"id": "jonathandinu/face-parsing", "revision": "758b82e15a0178c9db39c1ff666a8b56e3a550c8", "pooling": "argmax labels; skin = label 1"},
+    "yunet": {"id": "opencv_zoo face_detection_yunet_2023mar.onnx", "revision": "sha256 8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4", "pooling": "boxes with score >= 0.6"},
 }
-SPACES = ("dinov2", "minilm", "clip")   # clip is for steering only; never graded (CLAUDE.md rule 4)
+SPACES = ("dinov2", "minilm", "clip")   # clip (and siglip, embed.py --spaces siglip) are for steering only; never graded (CLAUDE.md rule 4)
 
 
 def cpu_only():
@@ -60,6 +65,18 @@ def list_steps(run_dir):
 
 def read_record(run_dir, traj, step):
     return json.loads((pathlib.Path(run_dir) / f"traj_{traj:03d}" / f"step_{step:03d}.json").read_text(encoding="utf-8"))
+
+
+def caption_used(run_dir, traj, step, rec=None):
+    """The caption of image `step` that made image step+1. Part 1 records: `caption`. Part 2 records (K candidates, D17):
+    `caption` is None and the chosen one is step+1's `prompt_raw`; for the last step (no successor) the first candidate."""
+    rec = rec or read_record(run_dir, traj, step)
+    if rec.get("caption") is not None:
+        return rec["caption"]
+    nxt = pathlib.Path(run_dir) / f"traj_{traj:03d}" / f"step_{step + 1:03d}.gen.json"
+    if nxt.exists():
+        g = json.loads(nxt.read_text(encoding="utf-8")); return g.get("prompt_raw", g["prompt"])
+    return (rec.get("captions") or [""])[0]
 
 
 def image_path(run_dir, traj, step):

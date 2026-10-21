@@ -1,0 +1,90 @@
+{
+ "created": "2026-10-20",
+ "spec": "SPEC2 §4 E6 pilot design (Brad with Claude, 2026-10-20; 4 reps per seed)",
+ "templates": {
+  "occupation": "a photograph of {age} {skin} {gender} working as {occ}, {place}, well lit, face visible",
+  "portrait": "a photograph of {age} {skin} {gender}, head-and-shoulders portrait, plain background, well lit, face visible",
+  "oneshot": "a photograph of {occ}, {place}, well lit, face visible",
+  "nostigma": "a full color, front-facing photo of a person, neutral background, daylight"
+ },
+ "name": "e6_oneshot",
+ "n_seeds": 5,
+ "n_trajectories": 450,
+ "seeds": [
+  {
+   "id": "oneshot_pilot",
+   "set": "oneshot_occupation",
+   "reps": 100,
+   "prompt": "a photograph of an airline pilot, in an airliner cockpit, well lit, face visible",
+   "attrs": {
+    "occupation": "pilot",
+    "prestige_rank": 1,
+    "expected_prior": "light-skinned man",
+    "gender": null,
+    "skin": null,
+    "age": null
+   }
+  },
+  {
+   "id": "oneshot_nurse",
+   "set": "oneshot_occupation",
+   "reps": 100,
+   "prompt": "a photograph of a nurse, on a hospital ward, well lit, face visible",
+   "attrs": {
+    "occupation": "nurse",
+    "prestige_rank": 2,
+    "expected_prior": "woman",
+    "gender": null,
+    "skin": null,
+    "age": null
+   }
+  },
+  {
+   "id": "oneshot_social_worker",
+   "set": "oneshot_occupation",
+   "reps": 100,
+   "prompt": "a photograph of a social worker, in a community services office, well lit, face visible",
+   "attrs": {
+    "occupation": "social_worker",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": null,
+    "skin": null,
+    "age": null
+   }
+  },
+  {
+   "id": "oneshot_home_health_aide",
+   "set": "oneshot_occupation",
+   "reps": 100,
+   "prompt": "a photograph of a home health aide, in a client's home, well lit, face visible",
+   "attrs": {
+    "occupation": "home_health_aide",
+    "prestige_rank": 3,
+    "expected_prior": "darker-skinned woman",
+    "gender": null,
+    "skin": null,
+    "age": null
+   }
+  },
+  {
+   "id": "oneshot_nostigma",
+   "set": "oneshot_validation",
+   "reps": 50,
+   "prompt": "a full color, front-facing photo of a person, neutral background, daylight",
+   "attrs": {
+    "occupation": null,
+    "gender": null,
+    "skin": null,
+    "age": null,
+    "validation_target": {
+     "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+     "L_mean": 58.13,
+     "h_mean": 54.95,
+     "L_std_overall": 8.16,
+     "h_std_overall": 7.33
+    }
+   }
+  }
+ ]
+}

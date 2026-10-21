@@ -1,0 +1,10 @@
+# Laptop smoke for the Part 2 candidate/archive path (two_pass, 8 GB): 3 trajectories x 6 steps, K = 2, reject mode with a
+# tiny burn-in and wide radii so the archive fills and rejections / resamples / trapped steps all occur within 6 steps.
+run_name: bimg_smoke
+arm: B-img
+mode: two_pass
+steps: 6
+trajectories: {first: 0, count: 3}
+temperature: 0.9
+candidates: {k: 2}
+selection: {mode: reject, radius_archive: 0.6, window: 2, burn_in: 1, radius_reject: 0.6, resample: 1, seed: 0}

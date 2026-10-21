@@ -37,6 +37,17 @@ def package_versions():
     return {p: md.version(p) for p in ("torch", "torchvision", "diffusers", "transformers", "accelerate", "safetensors", "pillow", "numpy", "ollama")}
 
 
+def expand_seeds(table):
+    """A seeds JSON (scripts/make_e6_seeds.py): each entry contributes `reps` consecutive trajectories with the same prompt.
+    Returns (prompts list indexed by trajectory, {traj: seed info})."""
+    prompts, info = [], {}
+    for entry in table["seeds"]:
+        for rep in range(int(entry.get("reps", 1))):
+            info[len(prompts)] = {"seed_id": entry["id"], "seed_rep": rep, "seed_set": entry.get("set"), "seed_attrs": entry.get("attrs")}
+            prompts.append(entry["prompt"])
+    return prompts, info
+
+
 class Runner:
     def __init__(self, cfg):
         self.cfg = cfg
@@ -52,10 +63,17 @@ class Runner:
         signal.signal(signal.SIGTERM, self._on_signal); signal.signal(signal.SIGINT, self._on_signal)
 
         seeds_path = ROOT / cfg["seeds"]["file"]
-        self.seed_prompts = pickle.load(open(seeds_path, "rb"))
         self.seeds_sha = hashlib.sha256(seeds_path.read_bytes()).hexdigest()
+        self.traj_seeds = None                      # {traj: {"seed_id", "rep", "set", "attrs"}} for template seeds (E6, D18)
+        if seeds_path.suffix == ".json":
+            self.seed_prompts, self.traj_seeds = expand_seeds(json.loads(seeds_path.read_text(encoding="utf-8")))
+        else:
+            self.seed_prompts = pickle.load(open(seeds_path, "rb"))     # Hintze's reservoir (list of 100 prompts)
         tr = cfg["trajectories"]
-        self.traj_ids = list(range(tr["first"], tr["first"] + tr["count"]))
+        count = tr["count"] if tr.get("count") is not None else len(self.seed_prompts) - tr["first"]
+        self.traj_ids = list(range(tr["first"], tr["first"] + count))
+        if self.traj_ids and self.traj_ids[-1] >= len(self.seed_prompts):
+            raise ValueError(f"trajectories {tr} exceed the {len(self.seed_prompts)} seeds in {seeds_path.name}")
         self.stores = {t: TrajStore(self.run_dir, t, self.seed_prompts[t]) for t in self.traj_ids}
 
         from .generators.hunyuan import make_generator
@@ -74,6 +92,10 @@ class Runner:
                 self.clipper = PromptClipper(pc["max_tokens"], tokenizer_id=cfg["generator"]["model"], revision=cfg["generator"].get("revision"))
             else:
                 self.clipper = PromptClipper(pc["max_tokens"])
+        from .candidates import Selector                 # Part 2 (D17): K candidates per step; mode none = Hintze's loop
+        self.sel = Selector({**cfg.get("selection", {}), "k": cfg.get("candidates", {}).get("k", 1)}, self.log)
+        if self.sel.k > 1 and cfg["mode"] == "two_pass" and self.sel.mode == "reject":
+            self.log.warning("reject mode in two_pass: every resample round reloads the generator (smoke tests only)")
         self.gen_label = cfg["generator"].get("backend", "sdxl"); self.cap_label = cfg["captioner"]["model"].split(":")[0]
         self.gpu = GpuLogger(ROOT / cfg["gpu_log"]["path"], cfg["gpu_log"]["interval_s"], cfg["run_name"])
         self.step_times = []
@@ -105,8 +127,9 @@ class Runner:
                 "git_commit": git_commit(), "config_path": self.cfg["_config_path"], "config_sha256": self.cfg["_config_sha256"],
                 "config": {k: v for k, v in self.cfg.items() if not k.startswith("_")},
                 "seeds_file_sha256": self.seeds_sha, "trajectories": self.traj_ids,
+                "trajectory_seeds": {t: self.traj_seeds[t] for t in self.traj_ids} if self.traj_seeds else None,
                 "packages": package_versions(), "python": sys.version.split()[0],
-                "captioner": self.cap.info(), "nvidia_smi": subprocess.run(["nvidia-smi", "--query-gpu=name,driver_version,memory.total", "--format=csv,noheader"], capture_output=True, text=True).stdout.strip(),
+                "captioner": self.cap.info(), "selection": self.sel.info(), "nvidia_smi": subprocess.run(["nvidia-smi", "--query-gpu=name,driver_version,memory.total", "--format=csv,noheader"], capture_output=True, text=True).stdout.strip(),
             })
             self.log.info("manifest written: %s", path)
         else:
@@ -161,10 +184,108 @@ class Runner:
         self.log.warning("%s: VRAM still %.0f MB after 60 s (threshold %d)", label, used, thr)
         return used
 
+    # ---- Part 2: K candidates per step (D17) --------------------------------------------------------------------
+    def caption_k(self, png):
+        caps, metas = [], []
+        for _ in range(self.sel.k):
+            text, meta = self.cap.caption(png, keep_alive=self.cfg["captioner"]["keep_alive_during_pass"])
+            caps.append(text); metas.append(meta)
+        return caps, metas
+
+    def render(self, step, items):
+        """items: [(traj, round, k, raw caption)] -> [(image, record fields)] through the clipper and one or more batched calls."""
+        out = []
+        B = max(1, int(self.cfg["generator"].get("batch", 1)))
+        for i0 in range(0, len(items), B):
+            chunk = items[i0:i0 + B]
+            prompts, seeds, fields = [], [], []
+            for t, r, k, raw in chunk:
+                prompt, cinfo = self.clipper.clip(raw) if self.clipper else (raw, None)
+                seed = self.sel.candidate_seed(self.cfg["seeds"]["sdxl_base_seed"], t, step, r, k)
+                prompts.append(prompt); seeds.append(seed)
+                fields.append({"round": r, "k": k, "caption": raw, "prompt": prompt, "sdxl_seed": seed, **({k2: v for k2, v in cinfo.items()} if cinfo else {})})
+            for f, (image, ginfo) in zip(fields, self.gen.generate_batch(prompts, seeds)):
+                out.append((image, {**f, **ginfo}))
+        return out
+
+    def generate_candidates(self, step, trajs, gen_info, B, two_pass):
+        """Render the K candidate captions of every trajectory in `trajs`, select, resample where nothing survives, write the chosen
+        image as step_NNN.png with every candidate (caption, seed, file, distance, rejected) in the gen record."""
+        K, N = self.sel.k, int(self.sel.cfg["resample"]); n_done = 0
+        per_call = max(1, B // K)
+        for i0 in range(0, len(trajs), per_call):
+            group = trajs[i0:i0 + per_call]
+            items = []
+            for t in group:
+                self.stores[t].clear_candidates(step)
+                caps, source = self.stores[t].captions_for(step)
+                items += [(t, 0, k, caps[k % len(caps)]) for k in range(K)]
+            rendered = self.render(step, items)
+            state = {t: {"rounds": [], "images": {}, "source": source, "chosen": None, "extra": None, "trapped": False} for t in group}
+            for (t, r, k, _), (image, f) in zip(items, rendered):
+                state[t]["images"][(r, k)] = image; f.update(self.stores[t].write_candidate(step, r, k, image)); state[t].setdefault("fields", {})[(r, k)] = f
+            for t in group:
+                self._select_round(t, step, 0, state[t])
+            for r in range(1, N + 1):                      # resample rounds for trajectories with no survivor
+                pending = [t for t in group if state[t]["chosen"] is None]
+                if not pending: break
+                if two_pass: self.gen.release(); self.wait_for_vram("before resample captions")
+                new_items = []
+                for t in pending:
+                    caps, metas = self.caption_k(self.stores[t].png(step - 1))
+                    state[t].setdefault("resample_meta", []).append(metas)
+                    new_items += [(t, r, k, caps[k]) for k in range(K)]
+                if two_pass:
+                    if self.cfg["captioner"]["unload_after_pass"]: self.cap.unload()
+                    self.wait_for_vram("before resample render"); self.gen.load()
+                for (t, rr, k, _), (image, f) in zip(new_items, self.render(step, new_items)):
+                    state[t]["images"][(rr, k)] = image; f.update(self.stores[t].write_candidate(step, rr, k, image)); state[t]["fields"][(rr, k)] = f
+                for t in pending:
+                    self._select_round(t, step, r, state[t])
+            for t in group:
+                stt = state[t]
+                if stt["chosen"] is None:                   # trapped: advance the most distant candidate of any round
+                    stt["chosen"] = self.sel.most_distant(stt["rounds"]); stt["trapped"] = True
+                r, k = stt["chosen"]; image = stt["images"][(r, k)]; f = stt["fields"][(r, k)]
+                cands = [{**stt["fields"][(rr, kk)], **{c2: v for c2, v in info.items() if c2 != "k"}}
+                         for rr, infos in enumerate(stt["rounds"]) for info in infos for kk in [info["k"]]]
+                emb = self.sel.embed_one(image) if self.sel.mode == "reject" else None
+                rec = {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
+                       "prompt": f["prompt"], "prompt_source": f"{stt['source']}[{r}:{k}]", "prompt_words": len(f["prompt"].split()),
+                       "prompt_raw": f["caption"], "sdxl_seed": f["sdxl_seed"], "generator": gen_info, "generated_at": now(),
+                       **{c2: v for c2, v in f.items() if c2.startswith(("gen_", "prompt_tokens", "prompt_truncated", "clip"))},
+                       "candidates": cands, "chosen": {"round": r, "k": k}, "n_rounds": len(stt["rounds"]), "trapped": stt["trapped"], **(stt["extra"] or {})}
+                if "resample_meta" in stt: rec["resample_caption_meta"] = stt["resample_meta"]
+                if self.traj_seeds: rec.update(self.traj_seeds[t])
+                if emb is not None:
+                    rec.update({"siglip": [round(float(v), 6) for v in emb], "archived": self.sel.register(t, step, emb)})
+                self.stores[t].write_image(step, image, rec)
+                n_done += 1
+                self.log.info("step %3d traj %3d chose round %d k %d of %d candidates%s%s (archive %d)", step, t, r, k, len(cands),
+                              f", rejected {rec.get('n_rejected', 0)}" if self.sel.mode == "reject" else "", " TRAPPED" if stt["trapped"] else "", len(self.sel.archive))
+                if self.stop_requested: break
+            if self.stop_requested: break
+        return n_done
+
+    def _select_round(self, t, step, r, stt):
+        K = self.sel.k
+        images = [stt["images"][(r, k)] for k in range(K)]
+        chosen, infos, extra = self.sel.select(t, step, images, r)
+        stt["rounds"].append(infos); stt["extra"] = extra
+        if chosen is not None:
+            stt["chosen"] = (r, chosen)
+
     # ---- main loop ---------------------------------------------------------------------------------------------
     def run(self):
         self.write_manifest()
         self.gpu.start()
+        if self.sel.mode == "reject":                       # rebuild history + archive from the gen records, in step order
+            for step in range(self.cfg["steps"]):
+                for t in self.traj_ids:
+                    st = self.stores[t]
+                    if st.gen(step).exists() and st.png(step).exists():
+                        self.sel.restore(t, step, read_json(st.gen(step)))
+            self.log.info("archive restored: %d entries", len(self.sel.archive))
         self.log.info("run %s: %d trajectories x %d steps, mode=%s, T=%s", self.cfg["run_name"], len(self.traj_ids), self.cfg["steps"], self.cfg["mode"], self.cfg["temperature"])
         two_pass = self.cfg["mode"] == "two_pass"
         if two_pass:
@@ -189,6 +310,9 @@ class Runner:
                     if self.clipper and "prompt_clip" not in gen_info:
                         gen_info["prompt_clip"] = self.clipper.info()
                     B = max(1, int(self.cfg["generator"].get("batch", 1)))
+                    if self.sel.k > 1 and step > 0:
+                        n_gen += self.generate_candidates(step, todo_gen, gen_info, B, two_pass)
+                        todo_gen = []
                     for i0 in range(0, len(todo_gen), B):
                         chunk = todo_gen[i0:i0 + B]
                         prompts, raws, sources, seeds, clips = [], [], [], [], []
@@ -202,8 +326,12 @@ class Runner:
                             rec = {"run": self.cfg["run_name"], "arm": self.cfg["arm"], "traj": t, "step": step,
                                    "prompt": prompt, "prompt_source": source, "prompt_words": len(prompt.split()),
                                    "sdxl_seed": seed, "generator": gen_info, "generated_at": now(), **ginfo}
+                            if self.traj_seeds: rec.update(self.traj_seeds[t])
                             if cinfo is not None:
                                 rec.update({"prompt_raw": raw, **cinfo})       # prompt = what the generator got; prompt_raw = the caption before the CLIP-77 clip
+                            if self.sel.mode == "reject":                      # step-0 image of a B-img run: history for the persistence window
+                                emb = self.sel.embed_one(image)
+                                rec.update({"siglip": [round(float(v), 6) for v in emb], "archived": self.sel.register(t, step, emb)})
                             self.stores[t].write_image(step, image, rec)
                             n_gen += 1
                             self.log.info("step %3d traj %3d image %5.1fs (batch %d) peak %.2f GB tokens %d%s%s", step, t, ginfo["gen_time_s"], ginfo["gen_batch_size"],
@@ -226,13 +354,21 @@ class Runner:
 
                 def caption_one(t):
                     st = self.stores[t]
-                    text, cmeta = self.cap.caption(st.png(step), keep_alive=self.cfg["captioner"]["keep_alive_during_pass"])
                     rec = read_json(st.gen(step))
-                    rec.update({"caption": text, "captioner": cap_info, "captioned_at": now(), **cmeta,
-                                "pipeline_git": git_commit(), "config_sha256": self.cfg["_config_sha256"]})
+                    if self.sel.k == 1:
+                        text, cmeta = self.cap.caption(st.png(step), keep_alive=self.cfg["captioner"]["keep_alive_during_pass"])
+                        rec.update({"caption": text, **cmeta})
+                        words = str(cmeta["caption_words"]); fl = [k for k, v in cmeta["caption_flags"].items() if v]
+                    else:                                   # Part 2: K independent captions of the same image; `caption` is chosen at the next step
+                        caps, metas = self.caption_k(st.png(step))
+                        rec.update({"caption": None, "captions": caps, "caption_meta": metas, "caption_words": [m["caption_words"] for m in metas],
+                                    "caption_time_s": round(sum(m["caption_time_s"] for m in metas), 2),
+                                    "caption_flags": {k: any(m["caption_flags"].get(k) for m in metas) for k in metas[0]["caption_flags"]}})
+                        words = "/".join(str(m["caption_words"]) for m in metas); fl = [k for k, v in rec["caption_flags"].items() if v]
+                        cmeta = rec
+                    rec.update({"captioner": cap_info, "captioned_at": now(), "pipeline_git": git_commit(), "config_sha256": self.cfg["_config_sha256"]})
                     st.write_record(step, rec)
-                    fl = [k for k, v in cmeta["caption_flags"].items() if v]
-                    self.log.info("step %3d traj %3d caption %5.1fs %3d words%s", step, t, cmeta["caption_time_s"], cmeta["caption_words"], (" flags=" + ",".join(fl)) if fl else "")
+                    self.log.info("step %3d traj %3d caption %5.1fs %s words%s", step, t, cmeta["caption_time_s"], words, (" flags=" + ",".join(fl)) if fl else "")
                     return t
 
                 P = max(1, int(self.cfg["captioner"].get("parallel", 1)))

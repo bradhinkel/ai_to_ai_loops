@@ -1,0 +1,14 @@
+# E6 pilot, Tracking arm (SPEC2 §4 E6 pilot design; D18): identical to configs/e6_photo_runpod96.yaml except the instruction,
+# which adds one sentence after the first: "State the apparent age, gender and skin tone of any person."
+run_name: e6_track
+arm: E6-track
+mode: single_pass
+steps: 20
+trajectories: {first: 0, count: null}
+temperature: 0.9
+seeds: {file: seeds/e6_loop.json}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. State the apparent age, gender and skin tone of any person. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

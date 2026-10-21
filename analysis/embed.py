@@ -6,16 +6,17 @@ Spaces (pinned in common.MODELS):
   dinov2  facebook/dinov2-base CLS token of every step image, L2-normalised                      -> cache/<run>/dinov2.npz  X
   minilm  sentence-transformers/all-MiniLM-L6-v2 of every record's `caption`                     -> cache/<run>/minilm.npz  X
   clip    openai/clip-vit-large-patch14 image embeds and text embeds of `caption` (77-token cut) -> cache/<run>/clip.npz    X_image, X_text
+  siglip  google/siglip-base-patch16-224 pooled image embeds (B-img steering space, D17; never graded) -> cache/<run>/siglip.npz  X
 Arrays are [n_traj, n_step, dim] with NaN where not cached, plus trajs, steps, mask. Incremental: (traj, step) pairs already in
 the cache are skipped, so this can be re-run as a run grows. meta.json records model ids, HF revisions and package versions.
 CLIP embeddings are stored for steering (archive) only; nothing is graded with them.
 """
-import argparse, os, pathlib, time
+import argparse, os, pathlib, sys, time
 import numpy as np
 import torch
-from common import ROOT, Cache, MODELS, SPACES, list_steps, read_record, image_path, cpu_only
+from common import ROOT, Cache, MODELS, SPACES, list_steps, read_record, image_path, cpu_only, caption_used
 
-DIMS = {"dinov2": {"X": 768}, "minilm": {"X": 384}, "clip": {"X_image": 768, "X_text": 768}}
+DIMS = {"dinov2": {"X": 768}, "minilm": {"X": 384}, "clip": {"X_image": 768, "X_text": 768}, "siglip": {"X": 768}}
 
 
 def grow(d, trajs, steps, dims):
@@ -62,7 +63,7 @@ def embed_minilm(run_dir, arr, todo, bs, dev):
     m = MODELS["minilm"]
     model = SentenceTransformer(m["id"], revision=m["revision"], device=dev)
     for b in batches(todo, max(bs, 64)):
-        caps = [read_record(run_dir, int(arr["trajs"][i]), int(arr["steps"][j]))["caption"] for i, j in b]
+        caps = [caption_used(run_dir, int(arr["trajs"][i]), int(arr["steps"][j])) for i, j in b]
         E = model.encode(caps, normalize_embeddings=True, batch_size=64, show_progress_bar=False)
         for (i, j), v in zip(b, E): arr["X"][i, j] = v; arr["mask"][i, j] = True
         yield len(b)
@@ -77,7 +78,7 @@ def embed_clip(run_dir, arr, todo, bs, dev):
         ims, caps = [], []
         for i, j in b:
             t, s = int(arr["trajs"][i]), int(arr["steps"][j])
-            ims.append(thumb_open(image_path(run_dir, t, s))); caps.append(read_record(run_dir, t, s)["caption"])
+            ims.append(thumb_open(image_path(run_dir, t, s))); caps.append(caption_used(run_dir, t, s))
         with torch.no_grad():
             vi = model.get_image_features(**proc(images=ims, return_tensors="pt").to(dev))
             vt = model.get_text_features(**proc(text=caps, return_tensors="pt", padding=True, truncation=True, max_length=77).to(dev))
@@ -87,12 +88,23 @@ def embed_clip(run_dir, arr, todo, bs, dev):
         yield len(b)
 
 
+def embed_siglip(run_dir, arr, todo, bs, dev):
+    """Steering-only space (B-img archive, D17): cached here for the radius calibration and archive diagnostics, never graded."""
+    sys.path.insert(0, str(ROOT / "src"))
+    from embedders.siglip import SiglipEmbedder
+    emb = SiglipEmbedder(dev)
+    for b in batches(todo, bs):
+        ims = [thumb_open(image_path(run_dir, int(arr["trajs"][i]), int(arr["steps"][j]))) for i, j in b]
+        for (i, j), v in zip(b, emb.embed(ims)): arr["X"][i, j] = v; arr["mask"][i, j] = True
+        yield len(b)
+
+
 def thumb_open(p):
     from PIL import Image
     return Image.open(p).convert("RGB")
 
 
-EMBEDDERS = {"dinov2": embed_dinov2, "minilm": embed_minilm, "clip": embed_clip}
+EMBEDDERS = {"dinov2": embed_dinov2, "minilm": embed_minilm, "clip": embed_clip, "siglip": embed_siglip}
 
 
 def main():

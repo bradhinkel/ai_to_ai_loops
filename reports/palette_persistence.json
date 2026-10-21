@@ -418,5 +418,75 @@
    "neutral": 7
   },
   "steps_in_dwells": 0.7632
+ },
+ "a0_s": {
+  "freq": {
+   "grayscale": 0.0606,
+   "tinted-mono": 0.2205,
+   "rainbow": 0.005,
+   "vivid": 0.5225,
+   "high-contrast": 0.0004,
+   "neutral": 0.191
+  },
+  "chance": 0.36180502,
+  "p_kept_jump": 0.7169811320754716,
+  "p_kept_nojump": 0.7480505216913783,
+  "per_class": {
+   "grayscale": {
+    "freq": 0.0606,
+    "n_jumps": 72,
+    "kept_across_jump": 0.8888888888888888
+   },
+   "tinted-mono": {
+    "freq": 0.2205,
+    "n_jumps": 228,
+    "kept_across_jump": 0.631578947368421
+   },
+   "rainbow": {
+    "freq": 0.005,
+    "n_jumps": 1,
+    "kept_across_jump": 0.0
+   },
+   "vivid": {
+    "freq": 0.5225,
+    "n_jumps": 359,
+    "kept_across_jump": 0.8746518105849582
+   },
+   "high-contrast": {
+    "freq": 0.0004,
+    "n_jumps": 1,
+    "kept_across_jump": 0.0
+   },
+   "neutral": {
+    "freq": 0.191,
+    "n_jumps": 134,
+    "kept_across_jump": 0.3582089552238806
+   }
+  },
+  "dwells": {
+   "grayscale": 24,
+   "tinted-mono": 118,
+   "rainbow": 1,
+   "vivid": 241,
+   "high-contrast": 0,
+   "neutral": 54
+  },
+  "dwells_with_jump": {
+   "grayscale": 16,
+   "tinted-mono": 40,
+   "rainbow": 0,
+   "vivid": 101,
+   "high-contrast": 0,
+   "neutral": 8
+  },
+  "longest_dwell": {
+   "grayscale": 89,
+   "tinted-mono": 71,
+   "rainbow": 10,
+   "vivid": 98,
+   "high-contrast": 0,
+   "neutral": 16
+  },
+  "steps_in_dwells": 0.645
  }
 }

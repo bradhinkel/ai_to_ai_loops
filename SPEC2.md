@@ -11,6 +11,7 @@ Owner: Brad Hinkel · Version 2 · 2026-10-18 · Supersedes `SPEC.md` (v1, 2026-
 - Added the experiments: model-mixing factorial, Chinese loop, text-only loop, caption length, a judge that edits captions (OMNI-EPIC style), image-archive rejection, and a rejection-threshold mode.
 - 2026-10-20 (Brad, evening): E6 pilot trimmed to 4 trajectories per seed (~5.4 h); the E6 and B-img pilot builds go ahead while the pod runs A0-photo, A0-core-2 and A0-S; budget for the rest of this phase (A0-core-2, A0-S, E2-QZ, E6 pilot, B-img pilot + arm A) capped at about $250 all in, pod and API. Brad: the results may not survive professional review and a new version may need to be run, so this phase is a complete first pass, not the final design.
 - 2026-10-21 (Brad): run order after A0-S agreed: E6 one-shot set and the E6 step-0 renders (`configs/e6_step0_runpod96.yaml`, 192 starting images) first, so the judge check set can be hand-labelled while the pod runs B-img then arm A; E2-QZ as soon as the Chinese review is back; E6 Photo and Tracking last, after the check-set agreement is computed. The one-shot and step-0 renders are reference images, not a loop run.
+- 2026-10-21 (Brad, evening): the Chinese caption instruction passed an online native-reader check ("a strong affirmation"). Not a professional review: get one before publishing. E2-QZ is good to go and is queued on the pod behind the B-img / arm A chain.
 - 2026-10-20 (Brad): E6 pilot shortened to 20 steps with 8 trajectories per seed and a portrait control set; A0-core-2 replication run; A0-S confirmed; B-img pilot design (image-archive rejection on the A0 pair) added under Part 2; long-run (1,000–10,000-step) test deferred to a local machine. Paper plan: A0 (+A0-core-2, A0-photo), E1 2×2 (+A0-S), E2-QZ, E6, one Part 2 pilot.
 - Evaluation now uses multiple human cohorts and validates the AI evaluators against people.
 - Throughput updated from the A0 pilot: ~20 s/step on the RTX 5070 laptop.
@@ -144,7 +145,7 @@ Two English instructions go to the translators. Both are the exact strings the r
 
    > Describe this image in vivid, artistic terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain.
 
-   Simplified Chinese (Brad, 2026-10-20; translated by DeepSeek, reviewed by Claude Opus 5.5, revised by DeepSeek; **human review by a native reader requested, pending**):
+   Simplified Chinese (Brad, 2026-10-20; translated by DeepSeek, reviewed by Claude Opus 5.5, revised by DeepSeek; **native-reader check received 2026-10-21: a strong affirmation, obtained online, not a professional review. Good enough to run E2-QZ; a professional translator's sign-off is required before anything is published**):
 
    > 用生动、富有艺术感的语言描述这张图片。描述必须在80字以内。请勿超出此限制。仅返回描述内容。请勿解释。
 
@@ -170,7 +171,7 @@ Claude's review (2026-10-20): both keep the five-sentence structure, one rule pe
 - Register: the Hintze version produced the expected vivid register (仿佛 "as if" in most captions, 梦幻 "dreamlike", 静谧 "tranquil"); the Photo version opened 5/10 captions with a preamble 这张图片展示了 / 这张照片展示了 ("this image/photo shows"), the Chinese counterpart of LLaVA's "The image presents".
 - Hunyuan-DiT tokenizers: its bilingual CLIP counts 1.03 tokens per character (limit 77, so about 75 characters), mT5 0.88 (limit 256, never binding). 5/30 probe captions exceeded 77 CLIP tokens. The SDXL/OpenAI CLIP tokenizer, which `src/prompt_clip.py` uses as the reference clip in every E1 cell, counts 2.6 tokens per character on Chinese, so it would cut a Chinese caption to about 30 characters.
 
-Decisions needed before E2-QZ (recorded here; Brad to confirm):
+Decisions needed before E2-QZ (recorded here; both confirmed by Brad 2026-10-20, see D15):
 1. **Character budget:** 70字 recommended (≈ 72 Hunyuan CLIP tokens with punctuation, so a caption that obeys the instruction fits under the 77-token limit, as 50 English words do under SDXL's). 80字 keeps the current wording but lets about one caption in six be clipped.
 2. **The explicit clip in E2 must use Hunyuan's own CLIP tokenizer, not SDXL's** (otherwise the channel is a third of the English cells'). This is a deviation from the "same reference tokenizer in every cell" rule of §4 E1, to be recorded in DEVIATIONS.md.
 3. **Runner changes (build items):** `PromptClipper` cuts at whitespace-separated words and would reduce an over-length Chinese caption (no spaces) to an empty prompt; it needs a character-level rule for CJK text (cut at the last clause punctuation that fits), a configurable tokenizer, a character-count length flag in place of `over_50_words`, and a per-caption CJK-share flag. None of this touches the English cells.

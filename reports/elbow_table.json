@@ -475,6 +475,79 @@
     99
    ]
   },
+  "a0_s minilm captions": {
+   "n": 100,
+   "knee_rule": 9,
+   "knee_by_kmax": {
+    "15": 6,
+    "20": 9,
+    "25": 9,
+    "30": 9,
+    "40": 10
+   },
+   "silhouette_argmax": 30,
+   "silhouette_top3": [
+    30,
+    35,
+    21
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 8.0,
+    "p5": 7.0,
+    "p95": 11.0,
+    "hist": {
+     "6": 4,
+     "7": 43,
+     "8": 65,
+     "9": 61,
+     "10": 16,
+     "11": 11
+    }
+   },
+   "run": "a0_s",
+   "space": "minilm",
+   "step": [
+    99
+   ]
+  },
+  "a0_s dinov2 images": {
+   "n": 100,
+   "knee_rule": 9,
+   "knee_by_kmax": {
+    "15": 7,
+    "20": 9,
+    "25": 9,
+    "30": 9,
+    "40": 9
+   },
+   "silhouette_argmax": 30,
+   "silhouette_top3": [
+    30,
+    24,
+    29
+   ],
+   "subsample": {
+    "B": 200,
+    "m": 80,
+    "median": 9.0,
+    "p5": 7.0,
+    "p95": 11.0,
+    "hist": {
+     "7": 12,
+     "8": 47,
+     "9": 76,
+     "10": 53,
+     "11": 12
+    }
+   },
+   "run": "a0_s",
+   "space": "dinov2",
+   "step": [
+    99
+   ]
+  },
   "Hintze T=0.9 minilm captions": {
    "n": 99,
    "knee_rule": 8,

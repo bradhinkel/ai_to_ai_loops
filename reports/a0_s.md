@@ -89,7 +89,7 @@ Step 0 is the same 100 SDXL renders in every SDXL cell (1% purple). Under LLaVA 
 
 ## Hintze comparison, elbow table
 
-Knee 9 in MiniLM caption space against 8 in Hintze's T = 0.9 data under the same rule, 7–8 in the A0 runs and 7 in E1-cap; the bootstrap interval is in `reports/elbow_table.md`. ELBOW_LINE
+Knee 9 in MiniLM caption space against 8 in Hintze's T = 0.9 data under the same rule, 7–8 in the A0 runs and 7 in E1-cap; the bootstrap interval is in `reports/elbow_table.md`. Bootstrap over trajectories (200 resamples): knee median 8 [7, 11] in MiniLM and 9 [7, 11] in DINOv2 for A0-S, against 8 [6, 10] and 7 [5, 9] for A0-core; the intervals overlap, so the Sonnet loop is not measurably slower or faster to converge than Hintze's pair.
 
 ## Throughput, cost, deviations
 

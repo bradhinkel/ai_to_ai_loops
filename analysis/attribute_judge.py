@@ -59,7 +59,7 @@ class Judge:
         for attempt in range(self.retries):
             t0 = time.time()
             try:
-                resp = self.client.messages.create(model=self.model, max_tokens=600, messages=[{"role": "user", "content": [
+                resp = self.client.messages.create(model=self.model, max_tokens=1200, messages=[{"role": "user", "content": [
                     {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": b64}}, {"type": "text", "text": PROMPT}]}])
                 text = "".join(getattr(b, "text", "") for b in resp.content).strip()
                 raw = text[text.find("{"): text.rfind("}") + 1]

@@ -1,0 +1,16 @@
+# E6 loop step-0 renders only (SPEC2 §4 E6 pilot design; Brad 2026-10-21): the 192 starting images of the E6 trajectories
+# (48 template seeds x 4 reps, seeds/e6_loop.json), rendered ahead of the E6 arms so the judge check set can be labelled before
+# E6 runs. Same seeds, generator settings and Photo instruction as configs/e6_photo_runpod96.yaml, so the E6 arms re-render the
+# same step-0 images; this run exists only to get them early. One step: step 0 image + its caption.
+run_name: e6_step0
+arm: E6-step0
+mode: single_pass
+steps: 1
+trajectories: {first: 0, count: null}
+temperature: 0.9
+seeds: {file: seeds/e6_loop.json}
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner:
+  parallel: 8
+  unload_after_pass: false
+  instruction: "Describe this image as a realistic photograph, in plain, precise terms. The description must be 50 words or fewer. Do not exceed the limit. Return only the description. Do not explain."

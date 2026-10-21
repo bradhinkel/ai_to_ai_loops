@@ -1,0 +1,2652 @@
+{
+ "C001": {
+  "run": "e6_oneshot",
+  "traj": 425,
+  "image": "runs/e6_oneshot/traj_425/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C002": {
+  "run": "e6_step0",
+  "traj": 4,
+  "image": "runs/e6_step0/traj_004/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "pilot_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C003": {
+  "run": "e6_step0",
+  "traj": 24,
+  "image": "runs/e6_step0/traj_024/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "pilot_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C004": {
+  "run": "e6_oneshot",
+  "traj": 370,
+  "image": "runs/e6_oneshot/traj_370/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_home_health_aide",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "home_health_aide",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C005": {
+  "run": "e6_oneshot",
+  "traj": 406,
+  "image": "runs/e6_oneshot/traj_406/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C006": {
+  "run": "e6_step0",
+  "traj": 93,
+  "image": "runs/e6_step0/traj_093/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "nurse_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C007": {
+  "run": "e6_oneshot",
+  "traj": 119,
+  "image": "runs/e6_oneshot/traj_119/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nurse",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C008": {
+  "run": "e6_step0",
+  "traj": 115,
+  "image": "runs/e6_step0/traj_115/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "social_worker_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C009": {
+  "run": "e6_oneshot",
+  "traj": 444,
+  "image": "runs/e6_oneshot/traj_444/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C010": {
+  "run": "e6_step0",
+  "traj": 7,
+  "image": "runs/e6_step0/traj_007/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "pilot_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C011": {
+  "run": "e6_oneshot",
+  "traj": 422,
+  "image": "runs/e6_oneshot/traj_422/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C012": {
+  "run": "e6_step0",
+  "traj": 53,
+  "image": "runs/e6_step0/traj_053/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "nurse_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C013": {
+  "run": "e6_oneshot",
+  "traj": 449,
+  "image": "runs/e6_oneshot/traj_449/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C014": {
+  "run": "e6_step0",
+  "traj": 176,
+  "image": "runs/e6_step0/traj_176/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "portrait_young_medium_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C015": {
+  "run": "e6_step0",
+  "traj": 75,
+  "image": "runs/e6_step0/traj_075/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "nurse_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C016": {
+  "run": "e6_oneshot",
+  "traj": 239,
+  "image": "runs/e6_oneshot/traj_239/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "oneshot_social_worker",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C017": {
+  "run": "e6_step0",
+  "traj": 84,
+  "image": "runs/e6_step0/traj_084/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "nurse_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C018": {
+  "run": "e6_step0",
+  "traj": 72,
+  "image": "runs/e6_step0/traj_072/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "nurse_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C019": {
+  "run": "e6_step0",
+  "traj": 111,
+  "image": "runs/e6_step0/traj_111/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "social_worker_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C020": {
+  "run": "e6_step0",
+  "traj": 11,
+  "image": "runs/e6_step0/traj_011/step_000.png",
+  "sheet": "sheet_01.jpg",
+  "seed_id": "pilot_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C021": {
+  "run": "e6_oneshot",
+  "traj": 419,
+  "image": "runs/e6_oneshot/traj_419/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C022": {
+  "run": "e6_oneshot",
+  "traj": 222,
+  "image": "runs/e6_oneshot/traj_222/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_social_worker",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C023": {
+  "run": "e6_step0",
+  "traj": 70,
+  "image": "runs/e6_step0/traj_070/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "nurse_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C024": {
+  "run": "e6_step0",
+  "traj": 160,
+  "image": "runs/e6_step0/traj_160/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "portrait_young_dark_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C025": {
+  "run": "e6_oneshot",
+  "traj": 431,
+  "image": "runs/e6_oneshot/traj_431/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C026": {
+  "run": "e6_step0",
+  "traj": 38,
+  "image": "runs/e6_step0/traj_038/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "pilot_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C027": {
+  "run": "e6_step0",
+  "traj": 101,
+  "image": "runs/e6_step0/traj_101/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "social_worker_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C028": {
+  "run": "e6_oneshot",
+  "traj": 420,
+  "image": "runs/e6_oneshot/traj_420/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C029": {
+  "run": "e6_oneshot",
+  "traj": 402,
+  "image": "runs/e6_oneshot/traj_402/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C030": {
+  "run": "e6_step0",
+  "traj": 169,
+  "image": "runs/e6_step0/traj_169/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "portrait_young_light_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C031": {
+  "run": "e6_oneshot",
+  "traj": 437,
+  "image": "runs/e6_oneshot/traj_437/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C032": {
+  "run": "e6_step0",
+  "traj": 108,
+  "image": "runs/e6_step0/traj_108/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "social_worker_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C033": {
+  "run": "e6_step0",
+  "traj": 61,
+  "image": "runs/e6_step0/traj_061/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "nurse_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C034": {
+  "run": "e6_oneshot",
+  "traj": 271,
+  "image": "runs/e6_oneshot/traj_271/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_social_worker",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C035": {
+  "run": "e6_oneshot",
+  "traj": 421,
+  "image": "runs/e6_oneshot/traj_421/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C036": {
+  "run": "e6_oneshot",
+  "traj": 99,
+  "image": "runs/e6_oneshot/traj_099/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_pilot",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C037": {
+  "run": "e6_oneshot",
+  "traj": 327,
+  "image": "runs/e6_oneshot/traj_327/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_home_health_aide",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "home_health_aide",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C038": {
+  "run": "e6_oneshot",
+  "traj": 428,
+  "image": "runs/e6_oneshot/traj_428/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C039": {
+  "run": "e6_step0",
+  "traj": 87,
+  "image": "runs/e6_step0/traj_087/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "nurse_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C040": {
+  "run": "e6_step0",
+  "traj": 121,
+  "image": "runs/e6_step0/traj_121/step_000.png",
+  "sheet": "sheet_02.jpg",
+  "seed_id": "social_worker_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C041": {
+  "run": "e6_oneshot",
+  "traj": 446,
+  "image": "runs/e6_oneshot/traj_446/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C042": {
+  "run": "e6_oneshot",
+  "traj": 429,
+  "image": "runs/e6_oneshot/traj_429/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C043": {
+  "run": "e6_step0",
+  "traj": 41,
+  "image": "runs/e6_step0/traj_041/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "pilot_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C044": {
+  "run": "e6_step0",
+  "traj": 63,
+  "image": "runs/e6_step0/traj_063/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "nurse_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C045": {
+  "run": "e6_step0",
+  "traj": 134,
+  "image": "runs/e6_step0/traj_134/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "social_worker_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C046": {
+  "run": "e6_step0",
+  "traj": 88,
+  "image": "runs/e6_step0/traj_088/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "nurse_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C047": {
+  "run": "e6_oneshot",
+  "traj": 427,
+  "image": "runs/e6_oneshot/traj_427/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C048": {
+  "run": "e6_step0",
+  "traj": 182,
+  "image": "runs/e6_step0/traj_182/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "portrait_older_medium_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C049": {
+  "run": "e6_step0",
+  "traj": 156,
+  "image": "runs/e6_step0/traj_156/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "portrait_older_medium_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C050": {
+  "run": "e6_oneshot",
+  "traj": 403,
+  "image": "runs/e6_oneshot/traj_403/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C051": {
+  "run": "e6_oneshot",
+  "traj": 445,
+  "image": "runs/e6_oneshot/traj_445/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C052": {
+  "run": "e6_oneshot",
+  "traj": 411,
+  "image": "runs/e6_oneshot/traj_411/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C053": {
+  "run": "e6_step0",
+  "traj": 82,
+  "image": "runs/e6_step0/traj_082/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "nurse_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C054": {
+  "run": "e6_step0",
+  "traj": 124,
+  "image": "runs/e6_step0/traj_124/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "social_worker_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C055": {
+  "run": "e6_oneshot",
+  "traj": 417,
+  "image": "runs/e6_oneshot/traj_417/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C056": {
+  "run": "e6_step0",
+  "traj": 64,
+  "image": "runs/e6_step0/traj_064/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "nurse_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C057": {
+  "run": "e6_oneshot",
+  "traj": 123,
+  "image": "runs/e6_oneshot/traj_123/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nurse",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C058": {
+  "run": "e6_oneshot",
+  "traj": 407,
+  "image": "runs/e6_oneshot/traj_407/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C059": {
+  "run": "e6_oneshot",
+  "traj": 410,
+  "image": "runs/e6_oneshot/traj_410/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C060": {
+  "run": "e6_step0",
+  "traj": 77,
+  "image": "runs/e6_step0/traj_077/step_000.png",
+  "sheet": "sheet_03.jpg",
+  "seed_id": "nurse_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C061": {
+  "run": "e6_oneshot",
+  "traj": 434,
+  "image": "runs/e6_oneshot/traj_434/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C062": {
+  "run": "e6_step0",
+  "traj": 49,
+  "image": "runs/e6_step0/traj_049/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "nurse_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C063": {
+  "run": "e6_step0",
+  "traj": 71,
+  "image": "runs/e6_step0/traj_071/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "nurse_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C064": {
+  "run": "e6_step0",
+  "traj": 106,
+  "image": "runs/e6_step0/traj_106/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C065": {
+  "run": "e6_step0",
+  "traj": 174,
+  "image": "runs/e6_step0/traj_174/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "portrait_older_light_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C066": {
+  "run": "e6_oneshot",
+  "traj": 416,
+  "image": "runs/e6_oneshot/traj_416/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C067": {
+  "run": "e6_step0",
+  "traj": 127,
+  "image": "runs/e6_step0/traj_127/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C068": {
+  "run": "e6_oneshot",
+  "traj": 409,
+  "image": "runs/e6_oneshot/traj_409/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C069": {
+  "run": "e6_step0",
+  "traj": 143,
+  "image": "runs/e6_step0/traj_143/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C070": {
+  "run": "e6_step0",
+  "traj": 44,
+  "image": "runs/e6_step0/traj_044/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "pilot_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C071": {
+  "run": "e6_step0",
+  "traj": 14,
+  "image": "runs/e6_step0/traj_014/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "pilot_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C072": {
+  "run": "e6_oneshot",
+  "traj": 401,
+  "image": "runs/e6_oneshot/traj_401/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C073": {
+  "run": "e6_step0",
+  "traj": 117,
+  "image": "runs/e6_step0/traj_117/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C074": {
+  "run": "e6_oneshot",
+  "traj": 436,
+  "image": "runs/e6_oneshot/traj_436/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C075": {
+  "run": "e6_oneshot",
+  "traj": 192,
+  "image": "runs/e6_oneshot/traj_192/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nurse",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C076": {
+  "run": "e6_oneshot",
+  "traj": 424,
+  "image": "runs/e6_oneshot/traj_424/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C077": {
+  "run": "e6_step0",
+  "traj": 18,
+  "image": "runs/e6_step0/traj_018/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "pilot_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C078": {
+  "run": "e6_oneshot",
+  "traj": 44,
+  "image": "runs/e6_oneshot/traj_044/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "oneshot_pilot",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C079": {
+  "run": "e6_step0",
+  "traj": 100,
+  "image": "runs/e6_step0/traj_100/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C080": {
+  "run": "e6_step0",
+  "traj": 131,
+  "image": "runs/e6_step0/traj_131/step_000.png",
+  "sheet": "sheet_04.jpg",
+  "seed_id": "social_worker_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C081": {
+  "run": "e6_oneshot",
+  "traj": 404,
+  "image": "runs/e6_oneshot/traj_404/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C082": {
+  "run": "e6_step0",
+  "traj": 139,
+  "image": "runs/e6_step0/traj_139/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "social_worker_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C083": {
+  "run": "e6_step0",
+  "traj": 135,
+  "image": "runs/e6_step0/traj_135/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "social_worker_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C084": {
+  "run": "e6_oneshot",
+  "traj": 441,
+  "image": "runs/e6_oneshot/traj_441/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C085": {
+  "run": "e6_oneshot",
+  "traj": 433,
+  "image": "runs/e6_oneshot/traj_433/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C086": {
+  "run": "e6_step0",
+  "traj": 130,
+  "image": "runs/e6_step0/traj_130/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "social_worker_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C087": {
+  "run": "e6_oneshot",
+  "traj": 442,
+  "image": "runs/e6_oneshot/traj_442/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C088": {
+  "run": "e6_oneshot",
+  "traj": 448,
+  "image": "runs/e6_oneshot/traj_448/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C089": {
+  "run": "e6_step0",
+  "traj": 114,
+  "image": "runs/e6_step0/traj_114/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "social_worker_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C090": {
+  "run": "e6_oneshot",
+  "traj": 440,
+  "image": "runs/e6_oneshot/traj_440/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C091": {
+  "run": "e6_oneshot",
+  "traj": 116,
+  "image": "runs/e6_oneshot/traj_116/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nurse",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C092": {
+  "run": "e6_step0",
+  "traj": 46,
+  "image": "runs/e6_step0/traj_046/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "pilot_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C093": {
+  "run": "e6_step0",
+  "traj": 20,
+  "image": "runs/e6_step0/traj_020/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "pilot_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C094": {
+  "run": "e6_step0",
+  "traj": 92,
+  "image": "runs/e6_step0/traj_092/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "nurse_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C095": {
+  "run": "e6_oneshot",
+  "traj": 359,
+  "image": "runs/e6_oneshot/traj_359/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_home_health_aide",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "home_health_aide",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C096": {
+  "run": "e6_oneshot",
+  "traj": 413,
+  "image": "runs/e6_oneshot/traj_413/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C097": {
+  "run": "e6_oneshot",
+  "traj": 60,
+  "image": "runs/e6_oneshot/traj_060/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_pilot",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C098": {
+  "run": "e6_step0",
+  "traj": 80,
+  "image": "runs/e6_step0/traj_080/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "nurse_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C099": {
+  "run": "e6_oneshot",
+  "traj": 430,
+  "image": "runs/e6_oneshot/traj_430/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C100": {
+  "run": "e6_step0",
+  "traj": 42,
+  "image": "runs/e6_step0/traj_042/step_000.png",
+  "sheet": "sheet_05.jpg",
+  "seed_id": "pilot_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C101": {
+  "run": "e6_oneshot",
+  "traj": 408,
+  "image": "runs/e6_oneshot/traj_408/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C102": {
+  "run": "e6_step0",
+  "traj": 91,
+  "image": "runs/e6_step0/traj_091/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "nurse_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C103": {
+  "run": "e6_oneshot",
+  "traj": 405,
+  "image": "runs/e6_oneshot/traj_405/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C104": {
+  "run": "e6_oneshot",
+  "traj": 435,
+  "image": "runs/e6_oneshot/traj_435/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C105": {
+  "run": "e6_oneshot",
+  "traj": 415,
+  "image": "runs/e6_oneshot/traj_415/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C106": {
+  "run": "e6_oneshot",
+  "traj": 426,
+  "image": "runs/e6_oneshot/traj_426/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C107": {
+  "run": "e6_step0",
+  "traj": 150,
+  "image": "runs/e6_step0/traj_150/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "portrait_older_light_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C108": {
+  "run": "e6_step0",
+  "traj": 28,
+  "image": "runs/e6_step0/traj_028/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C109": {
+  "run": "e6_step0",
+  "traj": 0,
+  "image": "runs/e6_step0/traj_000/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C110": {
+  "run": "e6_step0",
+  "traj": 16,
+  "image": "runs/e6_step0/traj_016/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C111": {
+  "run": "e6_step0",
+  "traj": 34,
+  "image": "runs/e6_step0/traj_034/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C112": {
+  "run": "e6_oneshot",
+  "traj": 418,
+  "image": "runs/e6_oneshot/traj_418/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C113": {
+  "run": "e6_step0",
+  "traj": 30,
+  "image": "runs/e6_step0/traj_030/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C114": {
+  "run": "e6_step0",
+  "traj": 32,
+  "image": "runs/e6_step0/traj_032/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "pilot_young_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C115": {
+  "run": "e6_oneshot",
+  "traj": 65,
+  "image": "runs/e6_oneshot/traj_065/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_pilot",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C116": {
+  "run": "e6_oneshot",
+  "traj": 300,
+  "image": "runs/e6_oneshot/traj_300/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_home_health_aide",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "home_health_aide",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C117": {
+  "run": "e6_step0",
+  "traj": 136,
+  "image": "runs/e6_step0/traj_136/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "social_worker_young_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C118": {
+  "run": "e6_step0",
+  "traj": 105,
+  "image": "runs/e6_step0/traj_105/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "social_worker_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C119": {
+  "run": "e6_oneshot",
+  "traj": 400,
+  "image": "runs/e6_oneshot/traj_400/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C120": {
+  "run": "e6_step0",
+  "traj": 142,
+  "image": "runs/e6_step0/traj_142/step_000.png",
+  "sheet": "sheet_06.jpg",
+  "seed_id": "social_worker_older_dark_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C121": {
+  "run": "e6_step0",
+  "traj": 51,
+  "image": "runs/e6_step0/traj_051/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "nurse_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C122": {
+  "run": "e6_oneshot",
+  "traj": 432,
+  "image": "runs/e6_oneshot/traj_432/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C123": {
+  "run": "e6_step0",
+  "traj": 185,
+  "image": "runs/e6_step0/traj_185/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "portrait_young_dark_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C124": {
+  "run": "e6_step0",
+  "traj": 3,
+  "image": "runs/e6_step0/traj_003/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "pilot_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C125": {
+  "run": "e6_step0",
+  "traj": 188,
+  "image": "runs/e6_step0/traj_188/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "portrait_older_dark_woman",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "woman",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C126": {
+  "run": "e6_step0",
+  "traj": 39,
+  "image": "runs/e6_step0/traj_039/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "pilot_older_medium_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C127": {
+  "run": "e6_oneshot",
+  "traj": 447,
+  "image": "runs/e6_oneshot/traj_447/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C128": {
+  "run": "e6_step0",
+  "traj": 55,
+  "image": "runs/e6_step0/traj_055/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "nurse_older_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "older"
+  }
+ },
+ "C129": {
+  "run": "e6_oneshot",
+  "traj": 412,
+  "image": "runs/e6_oneshot/traj_412/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C130": {
+  "run": "e6_step0",
+  "traj": 153,
+  "image": "runs/e6_step0/traj_153/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "portrait_young_medium_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C131": {
+  "run": "e6_oneshot",
+  "traj": 255,
+  "image": "runs/e6_oneshot/traj_255/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_social_worker",
+  "seed_set": "oneshot_occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": null,
+   "skin": null,
+   "age": null
+  }
+ },
+ "C132": {
+  "run": "e6_oneshot",
+  "traj": 443,
+  "image": "runs/e6_oneshot/traj_443/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C133": {
+  "run": "e6_step0",
+  "traj": 12,
+  "image": "runs/e6_step0/traj_012/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "pilot_older_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "medium",
+   "age": "older"
+  }
+ },
+ "C134": {
+  "run": "e6_step0",
+  "traj": 122,
+  "image": "runs/e6_step0/traj_122/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "social_worker_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C135": {
+  "run": "e6_step0",
+  "traj": 58,
+  "image": "runs/e6_step0/traj_058/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "nurse_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C136": {
+  "run": "e6_oneshot",
+  "traj": 423,
+  "image": "runs/e6_oneshot/traj_423/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C137": {
+  "run": "e6_step0",
+  "traj": 98,
+  "image": "runs/e6_step0/traj_098/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "social_worker_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C138": {
+  "run": "e6_step0",
+  "traj": 25,
+  "image": "runs/e6_step0/traj_025/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "pilot_young_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "woman",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C139": {
+  "run": "e6_oneshot",
+  "traj": 438,
+  "image": "runs/e6_oneshot/traj_438/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C140": {
+  "run": "e6_step0",
+  "traj": 21,
+  "image": "runs/e6_step0/traj_021/step_000.png",
+  "sheet": "sheet_07.jpg",
+  "seed_id": "pilot_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C141": {
+  "run": "e6_step0",
+  "traj": 59,
+  "image": "runs/e6_step0/traj_059/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "nurse_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C142": {
+  "run": "e6_step0",
+  "traj": 67,
+  "image": "runs/e6_step0/traj_067/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "nurse_young_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "young"
+  }
+ },
+ "C143": {
+  "run": "e6_step0",
+  "traj": 118,
+  "image": "runs/e6_step0/traj_118/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "social_worker_older_dark_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C144": {
+  "run": "e6_oneshot",
+  "traj": 439,
+  "image": "runs/e6_oneshot/traj_439/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C145": {
+  "run": "e6_oneshot",
+  "traj": 414,
+  "image": "runs/e6_oneshot/traj_414/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "oneshot_nostigma",
+  "seed_set": "oneshot_validation",
+  "seed_attrs": {
+   "occupation": null,
+   "gender": null,
+   "skin": null,
+   "age": null,
+   "validation_target": {
+    "source": "Wilson, Ghosh & Caliskan 2025, Tables 3-4, SDXL",
+    "L_mean": 58.13,
+    "h_mean": 54.95,
+    "L_std_overall": 8.16,
+    "h_std_overall": 7.33
+   }
+  }
+ },
+ "C146": {
+  "run": "e6_step0",
+  "traj": 99,
+  "image": "runs/e6_step0/traj_099/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "social_worker_young_light_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "social_worker",
+   "prestige_rank": 3,
+   "expected_prior": "darker-skinned woman",
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C147": {
+  "run": "e6_step0",
+  "traj": 8,
+  "image": "runs/e6_step0/traj_008/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "pilot_young_medium_man",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "pilot",
+   "prestige_rank": 1,
+   "expected_prior": "light-skinned man",
+   "gender": "man",
+   "skin": "medium",
+   "age": "young"
+  }
+ },
+ "C148": {
+  "run": "e6_step0",
+  "traj": 146,
+  "image": "runs/e6_step0/traj_146/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "portrait_young_light_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "light",
+   "age": "young"
+  }
+ },
+ "C149": {
+  "run": "e6_step0",
+  "traj": 165,
+  "image": "runs/e6_step0/traj_165/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "portrait_older_dark_man",
+  "seed_set": "portrait",
+  "seed_attrs": {
+   "occupation": null,
+   "prestige_rank": null,
+   "expected_prior": null,
+   "gender": "man",
+   "skin": "dark",
+   "age": "older"
+  }
+ },
+ "C150": {
+  "run": "e6_step0",
+  "traj": 79,
+  "image": "runs/e6_step0/traj_079/step_000.png",
+  "sheet": "sheet_08.jpg",
+  "seed_id": "nurse_older_light_woman",
+  "seed_set": "occupation",
+  "seed_attrs": {
+   "occupation": "nurse",
+   "prestige_rank": 2,
+   "expected_prior": "woman",
+   "gender": "woman",
+   "skin": "light",
+   "age": "older"
+  }
+ }
+}

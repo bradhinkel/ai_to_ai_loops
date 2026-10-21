@@ -14,6 +14,18 @@ Counted from the step records only. Word lists are fixed in `analysis/caption_au
 | 51-75 | 2500 | 130 | 99.5% |  | 85% | 2.20 | 46% | 25% | 556 : 254 | 0.0% |
 | 76-99 | 2400 | 131 | 99.6% |  | 87% | 2.39 | 46% | 22% | 298 : 183 | 0.0% |
 
+## a0_photo  (10000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 9750)
+
+| steps | n | caption words (median) | clip fired | clip words before -> after | style share | style words / caption | photo share | people share | male : female words | mT5 truncated |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 100 | 101 | 0.0% |  | 28% | 0.44 | 78% | 73% | 117 : 63 | 0.0% |
+| 1-5 | 500 | 105 | 93.6% |  | 33% | 0.52 | 73% | 71% | 483 : 195 | 0.0% |
+| 6-10 | 500 | 102 | 93.2% |  | 43% | 0.77 | 72% | 64% | 342 : 108 | 0.0% |
+| 11-25 | 1500 | 103 | 92.8% |  | 44% | 0.82 | 71% | 49% | 857 : 259 | 0.0% |
+| 26-50 | 2500 | 105 | 92.6% |  | 53% | 1.14 | 69% | 35% | 665 : 423 | 0.0% |
+| 51-75 | 2500 | 106 | 94.1% |  | 52% | 1.18 | 69% | 36% | 561 : 264 | 0.0% |
+| 76-99 | 2400 | 106 | 95.1% |  | 53% | 1.18 | 71% | 36% | 429 : 310 | 0.0% |
+
 ## e1_cap  (10000 records; empty 0, refusals 0, length cutoffs 0, over 50 words 1072)
 
 | steps | n | caption words (median) | clip fired | clip words before -> after | style share | style words / caption | photo share | people share | male : female words | mT5 truncated |

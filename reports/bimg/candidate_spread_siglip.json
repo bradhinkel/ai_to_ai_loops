@@ -1,0 +1,70 @@
+{
+ "bimg": [
+  {
+   "window": "1-25",
+   "n": 500,
+   "mean_pairwise": 0.14631208777427673,
+   "median_max_pairwise": 0.19161048531532288,
+   "share_all_within_r": 0.022,
+   "share_any_pair_beyond_2r": 0.672
+  },
+  {
+   "window": "26-50",
+   "n": 500,
+   "mean_pairwise": 0.13495193421840668,
+   "median_max_pairwise": 0.17361265420913696,
+   "share_all_within_r": 0.018,
+   "share_any_pair_beyond_2r": 0.612
+  },
+  {
+   "window": "51-75",
+   "n": 500,
+   "mean_pairwise": 0.1318833827972412,
+   "median_max_pairwise": 0.17035719752311707,
+   "share_all_within_r": 0.026,
+   "share_any_pair_beyond_2r": 0.59
+  },
+  {
+   "window": "76-99",
+   "n": 480,
+   "mean_pairwise": 0.12617455422878265,
+   "median_max_pairwise": 0.166748046875,
+   "share_all_within_r": 0.020833333333333332,
+   "share_any_pair_beyond_2r": 0.58125
+  }
+ ],
+ "arm_a": [
+  {
+   "window": "1-25",
+   "n": 500,
+   "mean_pairwise": 0.137797012925148,
+   "median_max_pairwise": 0.17994731664657593,
+   "share_all_within_r": 0.04,
+   "share_any_pair_beyond_2r": 0.608
+  },
+  {
+   "window": "26-50",
+   "n": 500,
+   "mean_pairwise": 0.11632729321718216,
+   "median_max_pairwise": 0.15268850326538086,
+   "share_all_within_r": 0.058,
+   "share_any_pair_beyond_2r": 0.474
+  },
+  {
+   "window": "51-75",
+   "n": 500,
+   "mean_pairwise": 0.11015122383832932,
+   "median_max_pairwise": 0.14229801297187805,
+   "share_all_within_r": 0.054,
+   "share_any_pair_beyond_2r": 0.418
+  },
+  {
+   "window": "76-99",
+   "n": 480,
+   "mean_pairwise": 0.10847822576761246,
+   "median_max_pairwise": 0.1370334029197693,
+   "share_all_within_r": 0.0625,
+   "share_any_pair_beyond_2r": 0.3770833333333333
+  }
+ ]
+}

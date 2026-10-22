@@ -1,0 +1,327 @@
+{
+ "run": "arm_a",
+ "source": "archive/a0_core_centroids.npz (dinov2)",
+ "radius": 0.2,
+ "exit_factor": 1.25,
+ "attractors": [
+  {
+   "k": 0,
+   "name": "attractor 0",
+   "size_at_definition": 11,
+   "endpoints": 5,
+   "steps_inside": 342,
+   "entries": 12,
+   "exits": 7,
+   "hazard": 0.02046783625730994,
+   "mean_residence": 48.85714285714286,
+   "km_median_residence": 43,
+   "capture": 0.007326007326007326,
+   "reentries": 7,
+   "n_visits_completed": 7,
+   "n_visits_censored": 5,
+   "max_completed_dwell": 78,
+   "stationary_share": 0.25732451900863423,
+   "endpoint_share": 0.25
+  },
+  {
+   "k": 1,
+   "name": "attractor 1",
+   "size_at_definition": 34,
+   "endpoints": 2,
+   "steps_inside": 152,
+   "entries": 15,
+   "exits": 13,
+   "hazard": 0.08552631578947369,
+   "mean_residence": 11.692307692307692,
+   "km_median_residence": 10,
+   "capture": 0.008205689277899343,
+   "reentries": 11,
+   "n_visits_completed": 13,
+   "n_visits_censored": 2,
+   "max_completed_dwell": 52,
+   "stationary_share": 0.07957321514271909,
+   "endpoint_share": 0.1
+  },
+  {
+   "k": 2,
+   "name": "attractor 2",
+   "size_at_definition": 9,
+   "endpoints": 1,
+   "steps_inside": 37,
+   "entries": 8,
+   "exits": 7,
+   "hazard": 0.1891891891891892,
+   "mean_residence": 5.285714285714286,
+   "km_median_residence": 3,
+   "capture": 0.004117344312918168,
+   "reentries": 6,
+   "n_visits_completed": 7,
+   "n_visits_censored": 1,
+   "max_completed_dwell": 10,
+   "stationary_share": 0.01961620832059212,
+   "endpoint_share": 0.05
+  },
+  {
+   "k": 3,
+   "name": "attractor 3",
+   "size_at_definition": 8,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 0.00022094304589561324,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 4,
+   "name": "attractor 4",
+   "size_at_definition": 24,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 0.00022094304589561435,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 5,
+   "name": "attractor 5",
+   "size_at_definition": 4,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 0.00022094304589561473,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 6,
+   "name": "attractor 6",
+   "size_at_definition": 5,
+   "endpoints": 1,
+   "steps_inside": 7,
+   "entries": 6,
+   "exits": 5,
+   "hazard": 0.7142857142857143,
+   "mean_residence": 1.4,
+   "km_median_residence": 1,
+   "capture": 0.0030410542321338066,
+   "reentries": 4,
+   "n_visits_completed": 5,
+   "n_visits_censored": 1,
+   "max_completed_dwell": 2,
+   "stationary_share": 0.003917347372358098,
+   "endpoint_share": 0.05
+  },
+  {
+   "k": 7,
+   "name": "attractor 7",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 0.00022094304589561468,
+   "endpoint_share": 0.0
+  }
+ ],
+ "free_stationary": 0.638684937972114,
+ "free_endpoint": 0.55,
+ "hazard_by_depth": [
+  {
+   "lo": 0,
+   "hi": 0.4,
+   "n": 156,
+   "exit_rate": 0.019230769230769232
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 155,
+   "exit_rate": 0.03225806451612903
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 108,
+   "exit_rate": 0.08333333333333333
+  },
+  {
+   "lo": 0.8,
+   "hi": 1.0,
+   "n": 78,
+   "exit_rate": 0.11538461538461539
+  },
+  {
+   "lo": 1.0,
+   "hi": 1.25,
+   "n": 41,
+   "exit_rate": 0.14634146341463414
+  }
+ ],
+ "hazard_by_step": [
+  {
+   "lo": 0,
+   "hi": 20,
+   "n": 24,
+   "exit_rate": 0.08333333333333333
+  },
+  {
+   "lo": 20,
+   "hi": 40,
+   "n": 96,
+   "exit_rate": 0.052083333333333336
+  },
+  {
+   "lo": 40,
+   "hi": 60,
+   "n": 129,
+   "exit_rate": 0.023255813953488372
+  },
+  {
+   "lo": 60,
+   "hi": 80,
+   "n": 132,
+   "exit_rate": 0.07575757575757576
+  },
+  {
+   "lo": 80,
+   "hi": 99,
+   "n": 157,
+   "exit_rate": 0.07643312101910828
+  }
+ ],
+ "transition_counts": [
+  [
+   335.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   7.0
+  ],
+  [
+   0.0,
+   139.0,
+   2.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   11.0
+  ],
+  [
+   0.0,
+   2.0,
+   30.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   5.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   2.0,
+   0.0,
+   5.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   12.0,
+   13.0,
+   6.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   0.0,
+   1405.0
+  ]
+ ]
+}

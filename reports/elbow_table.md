@@ -1,4 +1,4 @@
-# Elbow tracking table (built 2026-10-21)
+# Elbow tracking table (built 2026-10-22)
 
 Rule: knee of normalised inertia (max chord distance), KMeans n_init=10 random_state=0, k=2..min(25,n-1). Spread: 200 random 80% subsamples without replacement, same rule. Rebuilt by `analysis/elbow_table.py` after every run; the SPEC §4.3 reading since 2026-10-18 is 'matches Hintze's T=0.9 data under this rule', and this table is where variation between runs is tracked.
 
@@ -10,12 +10,16 @@ Rule: knee of normalised inertia (max chord distance), KMeans n_init=10 random_s
 | a0_core2 dinov2 images | 100 | **10** | 5 / 5 / 10 / 11 | 29 (29, 15, 14) | 8 [6, 12] |
 | a0_photo minilm captions | 100 | **8** | 5 / 6 / 11 / 17 | 29 (29, 17, 28) | 9 [7, 12] |
 | a0_photo dinov2 images | 100 | **6** | 4 / 4 / 6 / 12 | 13 (13, 11, 10) | 7 [5, 10] |
+| a0_s minilm captions | 100 | **9** | 6 / 9 / 9 / 10 | 30 (30, 35, 21) | 8 [7, 11] |
+| a0_s dinov2 images | 100 | **9** | 7 / 9 / 9 / 9 | 30 (30, 24, 29) | 9 [7, 11] |
 | e1_cap minilm captions | 100 | **6** | 6 / 6 / 9 / 16 | 2 (2, 4, 3) | 8 [6, 11] |
 | e1_cap dinov2 images | 100 | **8** | 6 / 6 / 9 / 11 | 26 (26, 20, 31) | 8 [6, 9] |
 | e1_gen minilm captions | 100 | **11** | 8 / 11 / 11 / 11 | 36 (36, 28, 23) | 11 [8, 13] |
 | e1_gen dinov2 images | 100 | **8** | 8 / 8 / 8 / 18 | 40 (40, 37, 33) | 12 [9, 15] |
 | e1_both minilm captions | 100 | **7** | 7 / 7 / 11 / 11 | 3 (3, 5, 25) | 8 [6, 11] |
 | e1_both dinov2 images | 100 | **8** | 8 / 8 / 14 / 14 | 33 (33, 28, 36) | 10 [8, 13] |
-| a0_s minilm captions | 100 | **9** | 6 / 9 / 9 / 10 | 30 (30, 35, 21) | 8 [7, 11] |
-| a0_s dinov2 images | 100 | **9** | 7 / 9 / 9 / 9 | 30 (30, 24, 29) | 9 [7, 11] |
+| bimg minilm captions | 20 | **7** | 7 / – / – / – | 4 (4, 6, 7) | 7 [6, 8] |
+| bimg dinov2 images | 20 | **8** | 8 / – / – / – | 8 (8, 7, 6) | 8 [7, 9] |
+| arm_a minilm captions | 20 | **8** | 8 / – / – / – | 7 (7, 6, 8) | 7 [6, 8] |
+| arm_a dinov2 images | 20 | **9** | 9 / – / – / – | 9 (9, 10, 7) | 9 [8, 10] |
 | Hintze T=0.9 minilm captions | 99 | **8** | 7 / 7 / 8 / 9 | 8 (8, 10, 9) | 8 [6, 10] |

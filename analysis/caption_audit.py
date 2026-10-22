@@ -7,6 +7,7 @@ using style vocabulary (Hintze's "vivid, artistic" register) or photographic voc
 and gendered words. The word lists are fixed here so every run is counted the same way.
 """
 import argparse, json, re, sys
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent)); from common import caption_used
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent)); from common import ROOT  # noqa: E402
@@ -33,13 +34,13 @@ def words(text):
 
 
 def audit(run):
-    recs = []
+    recs = []; run_dir = ROOT / "runs" / run
     for f in sorted((ROOT / "runs" / run).glob("traj_*/step_*.json")):
         if f.name.endswith(".gen.json"): continue
         r = json.load(open(f)); recs.append(r)
     rows = []
     for r in recs:
-        cap = r.get("caption") or ""; w = words(cap); ws = set(w); lw = cap.lower()
+        cap = caption_used(run_dir, int(r["traj"]), int(r["step"]), r) or ""; w = words(cap); ws = set(w); lw = cap.lower()
         fl = r.get("caption_flags", {})
         rows.append(dict(step=r["step"], traj=r["traj"], n_words=len(w),
                          clipped=bool(r.get("clipped", r.get("prompt_truncated_by_clip", False))),

@@ -33,3 +33,30 @@ All 50 faces detected; mean facial L* 55.5 (sd 7.7), mean hue angle h* 57.1, aga
 ## Decision pending Brad's labels
 
 Judge choice (Sonnet vs Haiku) and the per-group error rates come from the human labels. Target: kappa ≥ 0.7 against Brad on gender and age, and error rates reported per seeded group (SPEC2 E6).
+
+## Human labels (Brad, 2026-10-22) vs the judges
+
+Brad labelled all 150 images (a person present in every one; the gender dropdown had no 'ambiguous' option). After a re-check sheet of 16 candidates (`recheck_sheet.jpg`) he corrected one typo (C110 gender) and a few age labels, and kept about half of the flagged dark skin labels.
+
+| field | judge | agreement | kappa | n | collapsed agreement | collapsed kappa |
+|---|---|---|---|---|---|---|
+| gender | Sonnet 5.5 | 0.91 | **0.83** | 149 | 1.00 | 1.00 |
+| gender | Haiku 5.5 | 0.93 | **0.87** | 148 | 0.99 | 0.99 |
+| age | Sonnet 5.5 | 0.84 | **0.76** | 148 | 0.85 | 0.70 |
+| age | Haiku 5.5 | 0.80 | **0.71** | 148 | 0.81 | 0.63 |
+| skin | Sonnet 5.5 | 0.80 | **0.71** | 148 | 0.91 | 0.82 |
+| skin | Haiku 5.5 | 0.80 | **0.70** | 147 | 0.94 | 0.87 |
+
+Collapsed: gender with the judge's 'ambiguous' calls dropped; age as young vs middle+older; skin as light+medium vs dark. Cohen's kappa, unweighted. n < 150 where a judge returned null or an unparsed response.
+
+Where Brad differs from both judges:
+
+- gender: 10 images; Brad man / judges ambiguous: 7, Brad woman / judges ambiguous: 3
+- age: 24 images; Brad middle / judges young: 22, Brad middle / judges None: 2
+- skin: 24 images; Brad medium / judges light: 14, Brad dark / judges medium: 9, Brad dark / judges None: 1
+
+The residual disagreements are directional: Brad places the young/middle boundary later than the judges (every age disagreement is Brad 'middle' vs judge 'young') and the skin boundaries darker (every skin disagreement is Brad one band darker). The judges' bands are monotone in measured facial L*, so E6 reports skin by measured L* and by judge band, with this human calibration offset noted.
+
+Brad's skin labels on the 84 seeded images: seed light → dark 10, light 9, medium 9; seed medium → dark 18, medium 9, light 1; seed dark → dark 28. Same picture as the judges: the seeded light/medium manipulation is weak in SDXL's renders; 'dark' is reliable.
+
+**Decision:** both judges pass kappa ≥ 0.7 on every field. Sonnet 5.5 is the E6 judge: higher kappa than Haiku on age and skin (the fields where the judges diverge), 0.04 lower on gender where both exceed 0.8, parsed all 150 images on the first pass, ~$30 for the full E6 (7,680 images at ~$0.004). Haiku stays as the second opinion for the per-group error-rate table.

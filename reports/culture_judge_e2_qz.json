@@ -1,0 +1,233 @@
+{
+ "e2_qz": {
+  "0": {
+   "n": 100,
+   "parsed": 100,
+   "person": 78,
+   "face": 52,
+   "ea_yes": 0,
+   "ea_no": 17,
+   "ea_amb": 17,
+   "motif_any": 0,
+   "motifs": {},
+   "region": {
+    "none_or_abstract": 46,
+    "western": 30,
+    "other": 23,
+    "middle_east": 1
+   },
+   "script": {
+    "none": 86,
+    "null": 6,
+    "latin": 6,
+    "other": 2
+   }
+  },
+  "5": {
+   "n": 100,
+   "parsed": 100,
+   "person": 66,
+   "face": 29,
+   "ea_yes": 0,
+   "ea_no": 6,
+   "ea_amb": 22,
+   "motif_any": 12,
+   "motifs": {
+    "other_east_asian": 6,
+    "curved_tiled_roof": 4,
+    "lantern": 3,
+    "east_asian_dress": 3,
+    "ink_wash_style": 3,
+    "pagoda": 2,
+    "cjk_text_or_calligraphy": 1,
+    "temple_or_shrine": 1,
+    "cherry_blossom": 1
+   },
+   "region": {
+    "none_or_abstract": 74,
+    "other": 12,
+    "east_asia": 9,
+    "western": 5
+   },
+   "script": {
+    "none": 95,
+    "null": 2,
+    "latin": 2,
+    "chinese": 1
+   }
+  },
+  "20": {
+   "n": 100,
+   "parsed": 100,
+   "person": 53,
+   "face": 7,
+   "ea_yes": 0,
+   "ea_no": 1,
+   "ea_amb": 5,
+   "motif_any": 15,
+   "motifs": {
+    "other_east_asian": 8,
+    "curved_tiled_roof": 6,
+    "ink_wash_style": 5,
+    "temple_or_shrine": 4,
+    "lantern": 3,
+    "bamboo": 3,
+    "east_asian_dress": 3,
+    "pagoda": 2,
+    "cherry_blossom": 1
+   },
+   "region": {
+    "none_or_abstract": 74,
+    "east_asia": 12,
+    "other": 9,
+    "western": 5
+   },
+   "script": {
+    "none": 100
+   }
+  },
+  "99": {
+   "n": 100,
+   "parsed": 100,
+   "person": 29,
+   "face": 3,
+   "ea_yes": 0,
+   "ea_no": 0,
+   "ea_amb": 3,
+   "motif_any": 26,
+   "motifs": {
+    "curved_tiled_roof": 10,
+    "ink_wash_style": 10,
+    "other_east_asian": 9,
+    "temple_or_shrine": 6,
+    "pagoda": 4,
+    "east_asian_dress": 4,
+    "lantern": 4,
+    "cherry_blossom": 3,
+    "bamboo": 1,
+    "dragon_or_koi": 1
+   },
+   "region": {
+    "none_or_abstract": 70,
+    "east_asia": 19,
+    "other": 9,
+    "western": 1,
+    "middle_east": 1
+   },
+   "script": {
+    "none": 96,
+    "null": 4
+   }
+  }
+ },
+ "e1_both": {
+  "0": {
+   "n": 100,
+   "parsed": 100,
+   "person": 78,
+   "face": 48,
+   "ea_yes": 0,
+   "ea_no": 18,
+   "ea_amb": 14,
+   "motif_any": 0,
+   "motifs": {},
+   "region": {
+    "none_or_abstract": 44,
+    "western": 30,
+    "other": 26
+   },
+   "script": {
+    "none": 92,
+    "latin": 7,
+    "null": 1
+   }
+  },
+  "5": {
+   "n": 100,
+   "parsed": 100,
+   "person": 74,
+   "face": 28,
+   "ea_yes": 0,
+   "ea_no": 7,
+   "ea_amb": 18,
+   "motif_any": 3,
+   "motifs": {
+    "other_east_asian": 3,
+    "east_asian_dress": 1,
+    "temple_or_shrine": 1,
+    "lantern": 1,
+    "curved_tiled_roof": 1
+   },
+   "region": {
+    "none_or_abstract": 67,
+    "western": 22,
+    "other": 9,
+    "east_asia": 2
+   },
+   "script": {
+    "none": 94,
+    "null": 5,
+    "latin": 1
+   }
+  },
+  "20": {
+   "n": 100,
+   "parsed": 100,
+   "person": 68,
+   "face": 7,
+   "ea_yes": 0,
+   "ea_no": 2,
+   "ea_amb": 5,
+   "motif_any": 5,
+   "motifs": {
+    "lantern": 3,
+    "dragon_or_koi": 1,
+    "cherry_blossom": 1,
+    "curved_tiled_roof": 1,
+    "temple_or_shrine": 1
+   },
+   "region": {
+    "none_or_abstract": 69,
+    "western": 15,
+    "other": 12,
+    "africa": 1,
+    "south_asia": 1,
+    "east_asia": 1,
+    "middle_east": 1
+   },
+   "script": {
+    "none": 99,
+    "null": 1
+   }
+  },
+  "99": {
+   "n": 100,
+   "parsed": 100,
+   "person": 53,
+   "face": 7,
+   "ea_yes": 0,
+   "ea_no": 0,
+   "ea_amb": 7,
+   "motif_any": 17,
+   "motifs": {
+    "cherry_blossom": 14,
+    "temple_or_shrine": 4,
+    "fuji_like_mountain": 3,
+    "curved_tiled_roof": 3,
+    "pagoda": 3,
+    "ink_wash_style": 1
+   },
+   "region": {
+    "none_or_abstract": 69,
+    "other": 16,
+    "western": 10,
+    "east_asia": 4,
+    "middle_east": 1
+   },
+   "script": {
+    "none": 95,
+    "null": 5
+   }
+  }
+ }
+}

@@ -1,0 +1,327 @@
+{
+ "run": "e2_qz",
+ "source": "archive/a0_core_centroids.npz (dinov2)",
+ "radius": 0.2,
+ "exit_factor": 1.25,
+ "attractors": [
+  {
+   "k": 0,
+   "name": "attractor 0",
+   "size_at_definition": 11,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.0474457865380936e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 1,
+   "name": "attractor 1",
+   "size_at_definition": 34,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.0474457865386615e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 2,
+   "name": "attractor 2",
+   "size_at_definition": 9,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.0474457865386344e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 3,
+   "name": "attractor 3",
+   "size_at_definition": 8,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.047445786538636e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 4,
+   "name": "attractor 4",
+   "size_at_definition": 24,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.047445786538636e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 5,
+   "name": "attractor 5",
+   "size_at_definition": 4,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.047445786538636e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 6,
+   "name": "attractor 6",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.047445786538636e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 7,
+   "name": "attractor 7",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 5.047445786538636e-05,
+   "endpoint_share": 0.0
+  }
+ ],
+ "free_stationary": 0.999596204337077,
+ "free_endpoint": 1.0,
+ "hazard_by_depth": [
+  {
+   "lo": 0,
+   "hi": 0.4,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 0.8,
+   "hi": 1.0,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 1.0,
+   "hi": 1.25,
+   "n": 0,
+   "exit_rate": null
+  }
+ ],
+ "hazard_by_step": [
+  {
+   "lo": 0,
+   "hi": 20,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 20,
+   "hi": 40,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 40,
+   "hi": 60,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 60,
+   "hi": 80,
+   "n": 0,
+   "exit_rate": null
+  },
+  {
+   "lo": 80,
+   "hi": 99,
+   "n": 0,
+   "exit_rate": null
+  }
+ ],
+ "transition_counts": [
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   9900.0
+  ]
+ ]
+}

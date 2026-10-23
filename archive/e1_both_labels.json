@@ -1,0 +1,621 @@
+{
+ "meta": {
+  "run": "e1_both",
+  "built_at": "2026-10-23T02:41:41",
+  "n_traj": 100,
+  "k": 8,
+  "k_source": "elbow",
+  "elbow_k_dinov2": 8,
+  "inertia_dinov2": {
+   "2": 74.25,
+   "3": 70.2605,
+   "4": 66.872,
+   "5": 64.7364,
+   "6": 63.1075,
+   "7": 60.9008,
+   "8": 58.6078,
+   "9": 57.6092,
+   "10": 56.0357,
+   "11": 54.2167,
+   "12": 52.9482,
+   "13": 51.8897,
+   "14": 49.3562,
+   "15": 48.2445,
+   "16": 48.7088,
+   "17": 46.6663,
+   "18": 45.6172,
+   "19": 44.2397,
+   "20": 43.3008,
+   "21": 42.2052,
+   "22": 41.1653,
+   "23": 39.6954,
+   "24": 39.1356,
+   "25": 37.9341
+  },
+  "final_step_requested": 99,
+  "final_steps_used": {
+   "0": 99,
+   "1": 99,
+   "2": 99,
+   "3": 99,
+   "4": 99,
+   "5": 99,
+   "6": 99,
+   "7": 99,
+   "8": 99,
+   "9": 99,
+   "10": 99,
+   "11": 99,
+   "12": 99,
+   "13": 99,
+   "14": 99,
+   "15": 99,
+   "16": 99,
+   "17": 99,
+   "18": 99,
+   "19": 99,
+   "20": 99,
+   "21": 99,
+   "22": 99,
+   "23": 99,
+   "24": 99,
+   "25": 99,
+   "26": 99,
+   "27": 99,
+   "28": 99,
+   "29": 99,
+   "30": 99,
+   "31": 99,
+   "32": 99,
+   "33": 99,
+   "34": 99,
+   "35": 99,
+   "36": 99,
+   "37": 99,
+   "38": 99,
+   "39": 99,
+   "40": 99,
+   "41": 99,
+   "42": 99,
+   "43": 99,
+   "44": 99,
+   "45": 99,
+   "46": 99,
+   "47": 99,
+   "48": 99,
+   "49": 99,
+   "50": 99,
+   "51": 99,
+   "52": 99,
+   "53": 99,
+   "54": 99,
+   "55": 99,
+   "56": 99,
+   "57": 99,
+   "58": 99,
+   "59": 99,
+   "60": 99,
+   "61": 99,
+   "62": 99,
+   "63": 99,
+   "64": 99,
+   "65": 99,
+   "66": 99,
+   "67": 99,
+   "68": 99,
+   "69": 99,
+   "70": 99,
+   "71": 99,
+   "72": 99,
+   "73": 99,
+   "74": 99,
+   "75": 99,
+   "76": 99,
+   "77": 99,
+   "78": 99,
+   "79": 99,
+   "80": 99,
+   "81": 99,
+   "82": 99,
+   "83": 99,
+   "84": 99,
+   "85": 99,
+   "86": 99,
+   "87": 99,
+   "88": 99,
+   "89": 99,
+   "90": 99,
+   "91": 99,
+   "92": 99,
+   "93": 99,
+   "94": 99,
+   "95": 99,
+   "96": 99,
+   "97": 99,
+   "98": 99,
+   "99": 99
+  },
+  "radius_pooled_p95_dinov2": 0.6725376723051503,
+  "kmeans": {
+   "n_init": 10,
+   "random_state": 0,
+   "space": "dinov2"
+  },
+  "models": {
+   "dinov2": {
+    "id": "facebook/dinov2-base",
+    "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+    "pooling": "CLS token, L2-normalised"
+   },
+   "minilm": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "pooling": "sentence-transformers default, L2-normalised"
+   },
+   "clip": {
+    "id": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "pooling": "projected image/text embeds, L2-normalised; text truncated at 77 tokens"
+   },
+   "siglip": {
+    "id": "google/siglip-base-patch16-224",
+    "revision": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed",
+    "pooling": "pooled image embeds, L2-normalised"
+   },
+   "faceparse": {
+    "id": "jonathandinu/face-parsing",
+    "revision": "758b82e15a0178c9db39c1ff666a8b56e3a550c8",
+    "pooling": "argmax labels; skin = label 1"
+   },
+   "yunet": {
+    "id": "opencv_zoo face_detection_yunet_2023mar.onnx",
+    "revision": "sha256 8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+    "pooling": "boxes with score >= 0.6"
+   }
+  },
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  },
+  "note": "CLIP centroids are for steering only (SPEC2 §2: never grade with what steers)."
+ },
+ "clusters": {
+  "0": {
+   "size": 6,
+   "radius_p95_dinov2": 0.5290969464658043,
+   "mean_dist_dinov2": 0.316829166146862,
+   "members": [
+    57,
+    46,
+    87,
+    58,
+    64,
+    52
+   ],
+   "member_dist": [
+    0.1847,
+    0.1913,
+    0.2632,
+    0.2656,
+    0.4362,
+    0.5601
+   ],
+   "nearest_captions": [
+    {
+     "traj": 57,
+     "step": 99,
+     "dist": 0.1847,
+     "caption": "A tranquil pool mirrors the vibrant hues of a tropical sunset, with palm trees silhouetted against a sky painted in bold shades of purple, pink, and orange."
+    },
+    {
+     "traj": 46,
+     "step": 99,
+     "dist": 0.1913,
+     "caption": "A tranquil scene unfolds with a infinity pool reflecting a vibrant sunset. Silhouettes of palm trees frame the horizon, their dark outlines stark against the fiery sky. The sun, low on the horizon, bathes the scene in warm hues, creating a mesmerizing mirror effect in the pool."
+    },
+    {
+     "traj": 87,
+     "step": 99,
+     "dist": 0.2632,
+     "caption": "Two coconut palms stand sentinel on rock islands, their silhouettes mirrored in the tranquil, rippling water as the sky transitions from deep purple to fiery orange at sunset."
+    }
+   ]
+  },
+  "1": {
+   "size": 11,
+   "radius_p95_dinov2": 0.5245804949450481,
+   "mean_dist_dinov2": 0.31643372235063033,
+   "members": [
+    43,
+    11,
+    15,
+    28,
+    94,
+    98,
+    23,
+    76,
+    4,
+    51,
+    2
+   ],
+   "member_dist": [
+    0.1256,
+    0.1374,
+    0.2231,
+    0.2354,
+    0.2817,
+    0.2829,
+    0.3422,
+    0.3619,
+    0.4414,
+    0.5195,
+    0.5297
+   ],
+   "nearest_captions": [
+    {
+     "traj": 43,
+     "step": 99,
+     "dist": 0.1256,
+     "caption": "A silhouette of a person stands in awe as a swirling vortex of warm oranges and fiery reds consume the canvas, emanating a bright, radiant light at its core, symbolizing transformation and divine energy."
+    },
+    {
+     "traj": 11,
+     "step": 99,
+     "dist": 0.1374,
+     "caption": "A silhouette of a figure stands at the center of a swirling vortex of oranges, blues, and deep blacks, illuminated by an ethereal light that radiates outward, mirrored perfectly in rippling water beneath, evoking a cosmic moment of connection and introspection."
+    },
+    {
+     "traj": 15,
+     "step": 99,
+     "dist": 0.2231,
+     "caption": "A hand stretches outwards, palm up, as a radiant burst of golden light and swirling purple hues emerges, emanating from the center, casting an ethereal glow against a deep, shadowed background."
+    }
+   ]
+  },
+  "2": {
+   "size": 21,
+   "radius_p95_dinov2": 0.672267865110912,
+   "mean_dist_dinov2": 0.3486892918750778,
+   "members": [
+    41,
+    89,
+    13,
+    24,
+    45,
+    25,
+    49,
+    65,
+    60,
+    70,
+    86,
+    91,
+    9,
+    19,
+    40,
+    42,
+    62,
+    53,
+    90,
+    7,
+    74
+   ],
+   "member_dist": [
+    0.1191,
+    0.1714,
+    0.1808,
+    0.1845,
+    0.193,
+    0.224,
+    0.2424,
+    0.2487,
+    0.2615,
+    0.2622,
+    0.2987,
+    0.3576,
+    0.3591,
+    0.383,
+    0.4234,
+    0.4534,
+    0.4731,
+    0.4939,
+    0.6425,
+    0.6723,
+    0.6777
+   ],
+   "nearest_captions": [
+    {
+     "traj": 41,
+     "step": 99,
+     "dist": 0.1191,
+     "caption": "A solitary cherry blossom tree stands majestically on a mossy island, its delicate pink petals mirrored perfectly in the glassy, still water below, creating a breathtaking symphony of light and shadow against a twilight sky."
+    },
+    {
+     "traj": 89,
+     "step": 99,
+     "dist": 0.1714,
+     "caption": "A cherry blossom tree, its branches draped in delicate pink petals, stands atop a moss-covered rock island, mirrored perfectly in the tranquil, glass-like surface of the water below. The serene sky, painted in hues of lavender and soft pink, frames this tranquil masterpiece."
+    },
+    {
+     "traj": 13,
+     "step": 99,
+     "dist": 0.1808,
+     "caption": "A solitary cherry blossoms tree stands defiantly on a rock, its delicate pink petals cascading in a cascade of softness against the serene, glassy blue water beneath. The tree's reflection dances on the surface, mirroring its ethereal beauty, while distant mountains whisper in the misty distance."
+    }
+   ]
+  },
+  "3": {
+   "size": 12,
+   "radius_p95_dinov2": 0.627896996474359,
+   "mean_dist_dinov2": 0.39725446107435286,
+   "members": [
+    8,
+    39,
+    17,
+    14,
+    78,
+    38,
+    92,
+    84,
+    10,
+    93,
+    56,
+    67
+   ],
+   "member_dist": [
+    0.134,
+    0.1426,
+    0.2018,
+    0.209,
+    0.3904,
+    0.4351,
+    0.4506,
+    0.4861,
+    0.4972,
+    0.5546,
+    0.5835,
+    0.6821
+   ],
+   "nearest_captions": [
+    {
+     "traj": 8,
+     "step": 99,
+     "dist": 0.134,
+     "caption": "Silhouettes of two meditating figures, hands in a mudra, mirror each other in the serene, still water beneath a glowing sun that whispers the horizon. Behind them, mountainous silhouettes fade into the hazy, golden sky, painting a tranquil scene of unity and peace."
+    },
+    {
+     "traj": 39,
+     "step": 99,
+     "dist": 0.1426,
+     "caption": "Three serene silhouettes meditate in lotus pose against a vibrant sunset, their reflections merging with the still waters below, while distant mountain peaks stand in silhouette, their shadows dancing on the horizon's edge."
+    },
+    {
+     "traj": 17,
+     "step": 99,
+     "dist": 0.2018,
+     "caption": "A silhouette of a meditating figure against a breathtaking sunset, where vibrant hues of pink, purple, and orange blend seamlessly with a tranquil lake reflecting the celestial colors.远处的山脉轮廓分明，与天空形成宁静的对话。"
+    }
+   ]
+  },
+  "4": {
+   "size": 16,
+   "radius_p95_dinov2": 0.3760775424634868,
+   "mean_dist_dinov2": 0.242201270761594,
+   "members": [
+    99,
+    55,
+    12,
+    37,
+    77,
+    50,
+    88,
+    20,
+    44,
+    47,
+    72,
+    81,
+    31,
+    82,
+    79,
+    85
+   ],
+   "member_dist": [
+    0.1235,
+    0.146,
+    0.1614,
+    0.1616,
+    0.1754,
+    0.1759,
+    0.1816,
+    0.2379,
+    0.2434,
+    0.2475,
+    0.2665,
+    0.2676,
+    0.3628,
+    0.3701,
+    0.3751,
+    0.3789
+   ],
+   "nearest_captions": [
+    {
+     "traj": 99,
+     "step": 99,
+     "dist": 0.1235,
+     "caption": "A ballet dancer in a vivid purple tutu silhouetted against a radiant sunset sky, reflected perfectly in the calm water below, creating a stunning, ethereal mirror effect."
+    },
+    {
+     "traj": 55,
+     "step": 99,
+     "dist": 0.146,
+     "caption": "Silhouettes of five ballet dancers in vibrant purple tutus mirror perfectly in calm water, hands gracefully raised in unison against a dreamy, pastel-sky sunset."
+    },
+    {
+     "traj": 12,
+     "step": 99,
+     "dist": 0.1614,
+     "caption": "Two ballerinas, silhouetted in glowing blue tutus, form a heart against a cosmic backdrop of twinkling stars and swirling nebulae, their reflection shimmering below."
+    }
+   ]
+  },
+  "5": {
+   "size": 11,
+   "radius_p95_dinov2": 0.5000908274746141,
+   "mean_dist_dinov2": 0.34372323612443784,
+   "members": [
+    3,
+    97,
+    83,
+    80,
+    27,
+    5,
+    63,
+    16,
+    22,
+    59,
+    54
+   ],
+   "member_dist": [
+    0.1634,
+    0.182,
+    0.2484,
+    0.2654,
+    0.2911,
+    0.4023,
+    0.405,
+    0.4061,
+    0.4169,
+    0.4725,
+    0.5277
+   ],
+   "nearest_captions": [
+    {
+     "traj": 3,
+     "step": 99,
+     "dist": 0.1634,
+     "caption": "A vibrant moon casts a purple glow over a serene landscape, with a reflection in calm waters that mirrors the night's ethereal beauty. Dark silhouettes of trees frame the tranquil waters, while distant mountains stand in the background, enveloped in the moon's ethereal light."
+    },
+    {
+     "traj": 97,
+     "step": 99,
+     "dist": 0.182,
+     "caption": "A breathtaking sunset paints the sky in vibrant hues of pink, orange, and purple, mirrored in a tranquil lake. Tall, dark silhouettes of evergreen trees frame the scene, creating a serene, ethereal landscape."
+    },
+    {
+     "traj": 83,
+     "step": 99,
+     "dist": 0.2484,
+     "caption": "A tranquil lake mirrors the fiery sky, a blend of vibrant pinks and purples reflecting on its surface, flanked by dark, towering pine trees that stand sentinel on the horizon. The sky's hues seem to dance, capturing the serene beauty of a sunset in a mirror-like lake, evoking a sense of peace and awe."
+    }
+   ]
+  },
+  "6": {
+   "size": 5,
+   "radius_p95_dinov2": 0.4982778691555936,
+   "mean_dist_dinov2": 0.326674005749542,
+   "members": [
+    6,
+    30,
+    34,
+    18,
+    21
+   ],
+   "member_dist": [
+    0.1946,
+    0.2446,
+    0.2601,
+    0.415,
+    0.5191
+   ],
+   "nearest_captions": [
+    {
+     "traj": 6,
+     "step": 99,
+     "dist": 0.1946,
+     "caption": "A golden archway corridor stretches into the distance, columns casting elongated shadows across the polished stone floor, illuminated by ethereal light from a distant arch."
+    },
+    {
+     "traj": 30,
+     "step": 99,
+     "dist": 0.2446,
+     "caption": "A solitary figure stands before an opulent hall of golden columns, bathed in the ethereal glow of celestial light filtering through an arching door, casting dramatic shadows and evoking a sense of sacred mystery."
+    },
+    {
+     "traj": 34,
+     "step": 99,
+     "dist": 0.2601,
+     "caption": "A solitary figure ascends grand stone steps, bathed in the radiant glow of celestial beams streaming through an arched gateway, their ethereal light painting the scene in golden hues, evoking a profound sense of spiritual ascent."
+    }
+   ]
+  },
+  "7": {
+   "size": 18,
+   "radius_p95_dinov2": 0.7142031178069598,
+   "mean_dist_dinov2": 0.5291077938194537,
+   "members": [
+    73,
+    33,
+    69,
+    1,
+    75,
+    95,
+    32,
+    0,
+    68,
+    35,
+    29,
+    96,
+    66,
+    36,
+    48,
+    71,
+    61,
+    26
+   ],
+   "member_dist": [
+    0.3018,
+    0.3321,
+    0.3429,
+    0.4469,
+    0.453,
+    0.4578,
+    0.4922,
+    0.4936,
+    0.5239,
+    0.5455,
+    0.552,
+    0.5635,
+    0.5756,
+    0.6236,
+    0.6682,
+    0.703,
+    0.7099,
+    0.7385
+   ],
+   "nearest_captions": [
+    {
+     "traj": 73,
+     "step": 99,
+     "dist": 0.3018,
+     "caption": "Two hooded figures stand at sunset’s edge, reflected in still water, as the sky transitions from purple to orange, capturing a serene, contemplative moment."
+    },
+    {
+     "traj": 33,
+     "step": 99,
+     "dist": 0.3321,
+     "caption": "A moonlit scene reflects on rippling water, where three cloaked figures stand amidst a forest of bare, twisted trees. The ethereal glow of the full moon casts silhouettes, creating a haunting, surreal atmosphere."
+    },
+    {
+     "traj": 69,
+     "step": 99,
+     "dist": 0.3429,
+     "caption": "A solitary figure draped in a vibrant red cloak emerges from a tranquil lake, its reflection doubling its mysterious presence against the serene backdrop of distant, silhouetted mountains and a pastel-hued sky."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,3531 @@
+[
+ {
+  "run": "e6_photo",
+  "per_step": {
+   "pilot|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|pilot": {
+    "0": 0.854,
+    "1": 0.833,
+    "2": 0.917,
+    "3": 0.75,
+    "5": 0.562,
+    "10": 0.354,
+    "15": 0.312,
+    "19": 0.208
+   },
+   "pilot|military / soldier": {
+    "0": 0.229,
+    "1": 0.375,
+    "2": 0.521,
+    "3": 0.5,
+    "5": 0.438,
+    "10": 0.292,
+    "15": 0.271,
+    "19": 0.188
+   },
+   "pilot|astronaut": {
+    "0": 0.0,
+    "1": 0.083,
+    "2": 0.021,
+    "3": 0.104,
+    "5": 0.25,
+    "10": 0.229,
+    "15": 0.229,
+    "19": 0.208
+   },
+   "pilot|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|doctor": {
+    "0": 0.062,
+    "1": 0.188,
+    "2": 0.25,
+    "3": 0.188,
+    "5": 0.229,
+    "10": 0.146,
+    "15": 0.25,
+    "19": 0.083
+   },
+   "nurse|nurse": {
+    "0": 0.479,
+    "1": 0.292,
+    "2": 0.271,
+    "3": 0.354,
+    "5": 0.25,
+    "10": 0.167,
+    "15": 0.208,
+    "19": 0.104
+   },
+   "nurse|medical staff (unspecified)": {
+    "0": 0.417,
+    "1": 0.438,
+    "2": 0.417,
+    "3": 0.542,
+    "5": 0.5,
+    "10": 0.438,
+    "15": 0.438,
+    "19": 0.25
+   },
+   "nurse|patient": {
+    "0": 0.25,
+    "1": 0.312,
+    "2": 0.396,
+    "3": 0.417,
+    "5": 0.375,
+    "10": 0.354,
+    "15": 0.167,
+    "19": 0.188
+   },
+   "nurse|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.021
+   },
+   "nurse|scientist / lab": {
+    "0": 0.146,
+    "1": 0.312,
+    "2": 0.271,
+    "3": 0.188,
+    "5": 0.208,
+    "10": 0.167,
+    "15": 0.125,
+    "19": 0.188
+   },
+   "nurse|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.021,
+    "5": 0.021,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.021
+   },
+   "social_worker|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.021,
+    "19": 0.0
+   },
+   "social_worker|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.021,
+    "5": 0.021,
+    "10": 0.042,
+    "15": 0.021,
+    "19": 0.021
+   },
+   "social_worker|business / office worker": {
+    "0": 0.021,
+    "1": 0.0,
+    "2": 0.042,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.042,
+    "15": 0.021,
+    "19": 0.021
+   },
+   "portrait|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.021,
+    "3": 0.021,
+    "5": 0.021,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   }
+  },
+  "transitions": {
+   "pilot|pilot": {
+    "n_traj": 48,
+    "n_ever": 47,
+    "share": 0.979,
+    "first_step_median": 1,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 24,
+      "share": 1.0,
+      "ci": [
+       0.862,
+       1.0
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 16,
+      "share": 1.0,
+      "ci": [
+       0.8064,
+       1.0
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 16,
+      "share": 1.0,
+      "ci": [
+       0.8064,
+       1.0
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 24,
+      "share": 1.0,
+      "ci": [
+       0.862,
+       1.0
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 20,
+      "none": 7,
+      "ambiguous": 3,
+      "woman": 17
+     },
+     "judge_skin": {
+      "light": 33,
+      "none": 11,
+      "dark": 3
+     },
+     "caption_gender_words": {
+      "man": 15,
+      "none": 19,
+      "woman": 12,
+      "man+woman": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 40,
+      "share": 0.825
+     },
+     "seed_skin_still_shown": {
+      "n": 36,
+      "share": 0.278
+     }
+    }
+   },
+   "pilot|military / soldier": {
+    "n_traj": 48,
+    "n_ever": 42,
+    "share": 0.875,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 17,
+      "ambiguous": 4,
+      "none": 10,
+      "woman": 11
+     },
+     "judge_skin": {
+      "light": 26,
+      "medium": 1,
+      "none": 14,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "man": 10,
+      "none": 22,
+      "woman": 9,
+      "man+woman": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 32,
+      "share": 0.781
+     },
+     "seed_skin_still_shown": {
+      "n": 28,
+      "share": 0.179
+     }
+    }
+   },
+   "pilot|astronaut": {
+    "n_traj": 48,
+    "n_ever": 18,
+    "share": 0.375,
+    "first_step_median": 5,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 7,
+      "share": 0.292,
+      "ci": [
+       0.1491,
+       0.4917
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 11,
+      "share": 0.458,
+      "ci": [
+       0.2789,
+       0.6493
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 6,
+      "share": 0.375,
+      "ci": [
+       0.1848,
+       0.6136
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 6,
+      "share": 0.375,
+      "ci": [
+       0.1848,
+       0.6136
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 6,
+      "share": 0.375,
+      "ci": [
+       0.1848,
+       0.6136
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 10,
+      "share": 0.417,
+      "ci": [
+       0.2447,
+       0.6117
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 8,
+      "share": 0.333,
+      "ci": [
+       0.1797,
+       0.5329
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "none": 7,
+      "man": 4,
+      "woman": 5,
+      "ambiguous": 2
+     },
+     "judge_skin": {
+      "none": 9,
+      "light": 9
+     },
+     "caption_gender_words": {
+      "none": 11,
+      "man": 3,
+      "woman": 4
+     },
+     "seed_gender_still_shown": {
+      "n": 11,
+      "share": 0.636
+     },
+     "seed_skin_still_shown": {
+      "n": 9,
+      "share": 0.222
+     }
+    }
+   },
+   "nurse|doctor": {
+    "n_traj": 48,
+    "n_ever": 39,
+    "share": 0.812,
+    "first_step_median": 3,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 11,
+      "share": 0.688,
+      "ci": [
+       0.444,
+       0.8584
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 21,
+      "ambiguous": 2,
+      "woman": 13,
+      "none": 3
+     },
+     "judge_skin": {
+      "light": 26,
+      "medium": 4,
+      "none": 5,
+      "dark": 4
+     },
+     "caption_gender_words": {
+      "none": 17,
+      "man+woman": 10,
+      "man": 8,
+      "woman": 4
+     },
+     "seed_gender_still_shown": {
+      "n": 36,
+      "share": 0.611
+     },
+     "seed_skin_still_shown": {
+      "n": 34,
+      "share": 0.235
+     }
+    }
+   },
+   "nurse|nurse": {
+    "n_traj": 48,
+    "n_ever": 35,
+    "share": 0.729,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 16,
+      "share": 0.667,
+      "ci": [
+       0.4671,
+       0.8203
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 12,
+      "share": 0.75,
+      "ci": [
+       0.505,
+       0.8982
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 11,
+      "share": 0.688,
+      "ci": [
+       0.444,
+       0.8584
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 12,
+      "share": 0.75,
+      "ci": [
+       0.505,
+       0.8982
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 17,
+      "share": 0.708,
+      "ci": [
+       0.5083,
+       0.8509
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 14,
+      "none": 3,
+      "woman": 17,
+      "ambiguous": 1
+     },
+     "judge_skin": {
+      "light": 20,
+      "dark": 6,
+      "none": 6,
+      "medium": 3
+     },
+     "caption_gender_words": {
+      "none": 14,
+      "woman": 11,
+      "man": 5,
+      "man+woman": 5
+     },
+     "seed_gender_still_shown": {
+      "n": 32,
+      "share": 0.781
+     },
+     "seed_skin_still_shown": {
+      "n": 29,
+      "share": 0.207
+     }
+    }
+   },
+   "nurse|medical staff (unspecified)": {
+    "n_traj": 48,
+    "n_ever": 46,
+    "share": 0.958,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 24,
+      "share": 1.0,
+      "ci": [
+       0.862,
+       1.0
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 16,
+      "share": 1.0,
+      "ci": [
+       0.8064,
+       1.0
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 21,
+      "woman": 24,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 31,
+      "none": 2,
+      "medium": 6,
+      "dark": 7
+     },
+     "caption_gender_words": {
+      "man": 12,
+      "none": 13,
+      "woman": 16,
+      "man+woman": 5
+     },
+     "seed_gender_still_shown": {
+      "n": 45,
+      "share": 0.889
+     },
+     "seed_skin_still_shown": {
+      "n": 44,
+      "share": 0.318
+     }
+    }
+   },
+   "nurse|patient": {
+    "n_traj": 48,
+    "n_ever": 39,
+    "share": 0.812,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 17,
+      "woman": 19,
+      "none": 3
+     },
+     "judge_skin": {
+      "light": 23,
+      "medium": 5,
+      "none": 5,
+      "dark": 6
+     },
+     "caption_gender_words": {
+      "man": 11,
+      "man+woman": 5,
+      "none": 15,
+      "woman": 8
+     },
+     "seed_gender_still_shown": {
+      "n": 36,
+      "share": 0.778
+     },
+     "seed_skin_still_shown": {
+      "n": 34,
+      "share": 0.235
+     }
+    }
+   },
+   "nurse|scientist / lab": {
+    "n_traj": 48,
+    "n_ever": 39,
+    "share": 0.812,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 10,
+      "share": 0.625,
+      "ci": [
+       0.3864,
+       0.8152
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 20,
+      "none": 1,
+      "woman": 18
+     },
+     "judge_skin": {
+      "medium": 4,
+      "light": 31,
+      "none": 3,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "man": 10,
+      "man+woman": 9,
+      "none": 13,
+      "woman": 7
+     },
+     "seed_gender_still_shown": {
+      "n": 38,
+      "share": 0.789
+     },
+     "seed_skin_still_shown": {
+      "n": 36,
+      "share": 0.222
+     }
+    }
+   },
+   "nurse|teacher / student": {
+    "n_traj": 48,
+    "n_ever": 7,
+    "share": 0.146,
+    "first_step_median": 13,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 3,
+      "share": 0.188,
+      "ci": [
+       0.0659,
+       0.4301
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 5,
+      "share": 0.208,
+      "ci": [
+       0.0924,
+       0.4047
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "woman": 6,
+      "man": 1
+     },
+     "judge_skin": {
+      "light": 6,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "woman": 2,
+      "none": 4,
+      "man+woman": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 7,
+      "share": 0.571
+     },
+     "seed_skin_still_shown": {
+      "n": 7,
+      "share": 0.429
+     }
+    }
+   },
+   "social_worker|business / office worker": {
+    "n_traj": 48,
+    "n_ever": 6,
+    "share": 0.125,
+    "first_step_median": 4,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 4,
+      "share": 0.25,
+      "ci": [
+       0.1018,
+       0.495
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 0,
+      "share": 0.0,
+      "ci": [
+       0.0,
+       0.1936
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 3,
+      "woman": 3
+     },
+     "judge_skin": {
+      "light": 5,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "man": 3,
+      "woman": 2,
+      "none": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 6,
+      "share": 1.0
+     },
+     "seed_skin_still_shown": {
+      "n": 6,
+      "share": 0.167
+     }
+    }
+   },
+   "social_worker|teacher / student": {
+    "n_traj": 48,
+    "n_ever": 4,
+    "share": 0.083,
+    "first_step_median": 8,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 1,
+      "share": 0.042,
+      "ci": [
+       0.0074,
+       0.2024
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 1,
+      "share": 0.062,
+      "ci": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 1,
+      "share": 0.062,
+      "ci": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 1,
+      "share": 0.042,
+      "ci": [
+       0.0074,
+       0.2024
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 2,
+      "woman": 2
+     },
+     "judge_skin": {
+      "light": 3,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "man": 2,
+      "none": 2
+     },
+     "seed_gender_still_shown": {
+      "n": 4,
+      "share": 0.25
+     },
+     "seed_skin_still_shown": {
+      "n": 4,
+      "share": 0.0
+     }
+    }
+   }
+  },
+  "per_image": {
+   "nurse": {
+    "all single-person images": {
+     "n": 139,
+     "judge_gender": {
+      "ambiguous": 6,
+      "none": 10,
+      "woman": 35,
+      "man": 88
+     },
+     "judge_skin": {
+      "light": 108,
+      "none": 17,
+      "medium": 13,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "none": 54,
+      "man": 56,
+      "man+woman": 3,
+      "woman": 26
+     },
+     "seed_gender": {
+      "man": 99,
+      "woman": 40
+     }
+    },
+    "doctor": {
+     "n": 15,
+     "judge_gender": {
+      "woman": 2,
+      "none": 1,
+      "man": 12
+     },
+     "judge_skin": {
+      "medium": 2,
+      "none": 1,
+      "light": 12
+     },
+     "caption_gender_words": {
+      "none": 3,
+      "man": 10,
+      "man+woman": 1,
+      "woman": 1
+     },
+     "seed_gender": {
+      "man": 12,
+      "woman": 3
+     }
+    },
+    "nurse": {
+     "n": 7,
+     "judge_gender": {
+      "none": 2,
+      "ambiguous": 1,
+      "man": 2,
+      "woman": 2
+     },
+     "judge_skin": {
+      "none": 3,
+      "light": 3,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "none": 3,
+      "man+woman": 1,
+      "man": 1,
+      "woman": 2
+     },
+     "seed_gender": {
+      "man": 5,
+      "woman": 2
+     }
+    },
+    "patient": {
+     "n": 16,
+     "judge_gender": {
+      "ambiguous": 3,
+      "none": 2,
+      "man": 8,
+      "woman": 3
+     },
+     "judge_skin": {
+      "light": 12,
+      "none": 3,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "none": 8,
+      "man": 6,
+      "woman": 2
+     },
+     "seed_gender": {
+      "man": 13,
+      "woman": 3
+     }
+    },
+    "scientist / lab": {
+     "n": 79,
+     "judge_gender": {
+      "man": 59,
+      "woman": 18,
+      "ambiguous": 1,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 70,
+      "medium": 6,
+      "none": 3
+     },
+     "caption_gender_words": {
+      "none": 24,
+      "man": 37,
+      "man+woman": 3,
+      "woman": 15
+     },
+     "seed_gender": {
+      "man": 58,
+      "woman": 21
+     }
+    }
+   },
+   "pilot": {
+    "all single-person images": {
+     "n": 184,
+     "judge_gender": {
+      "man": 81,
+      "none": 34,
+      "woman": 67,
+      "ambiguous": 2
+     },
+     "judge_skin": {
+      "light": 130,
+      "none": 38,
+      "medium": 15,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "man": 40,
+      "none": 85,
+      "woman": 59
+     },
+     "seed_gender": {
+      "man": 65,
+      "woman": 119
+     }
+    },
+    "pilot": {
+     "n": 89,
+     "judge_gender": {
+      "man": 36,
+      "none": 7,
+      "woman": 45,
+      "ambiguous": 1
+     },
+     "judge_skin": {
+      "light": 74,
+      "none": 8,
+      "medium": 6,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "man": 19,
+      "none": 33,
+      "woman": 37
+     },
+     "seed_gender": {
+      "man": 35,
+      "woman": 54
+     }
+    },
+    "military / soldier": {
+     "n": 67,
+     "judge_gender": {
+      "man": 28,
+      "none": 7,
+      "woman": 32
+     },
+     "judge_skin": {
+      "light": 55,
+      "none": 9,
+      "medium": 2,
+      "dark": 1
+     },
+     "caption_gender_words": {
+      "man": 16,
+      "none": 25,
+      "woman": 26
+     },
+     "seed_gender": {
+      "man": 27,
+      "woman": 40
+     }
+    },
+    "astronaut": {
+     "n": 57,
+     "judge_gender": {
+      "man": 35,
+      "none": 10,
+      "woman": 11,
+      "ambiguous": 1
+     },
+     "judge_skin": {
+      "light": 40,
+      "none": 11,
+      "medium": 6
+     },
+     "caption_gender_words": {
+      "man": 12,
+      "none": 36,
+      "woman": 9
+     },
+     "seed_gender": {
+      "man": 20,
+      "woman": 37
+     }
+    }
+   }
+  }
+ },
+ {
+  "run": "e6_track",
+  "per_step": {
+   "pilot|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|pilot": {
+    "0": 0.854,
+    "1": 0.833,
+    "2": 0.667,
+    "3": 0.646,
+    "5": 0.438,
+    "10": 0.229,
+    "15": 0.146,
+    "19": 0.125
+   },
+   "pilot|military / soldier": {
+    "0": 0.208,
+    "1": 0.521,
+    "2": 0.604,
+    "3": 0.708,
+    "5": 0.708,
+    "10": 0.646,
+    "15": 0.604,
+    "19": 0.542
+   },
+   "pilot|astronaut": {
+    "0": 0.0,
+    "1": 0.021,
+    "2": 0.021,
+    "3": 0.062,
+    "5": 0.062,
+    "10": 0.042,
+    "15": 0.083,
+    "19": 0.083
+   },
+   "pilot|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.021,
+    "10": 0.0,
+    "15": 0.062,
+    "19": 0.021
+   },
+   "pilot|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "pilot|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|doctor": {
+    "0": 0.062,
+    "1": 0.188,
+    "2": 0.25,
+    "3": 0.229,
+    "5": 0.188,
+    "10": 0.188,
+    "15": 0.104,
+    "19": 0.021
+   },
+   "nurse|nurse": {
+    "0": 0.417,
+    "1": 0.354,
+    "2": 0.354,
+    "3": 0.354,
+    "5": 0.292,
+    "10": 0.167,
+    "15": 0.104,
+    "19": 0.125
+   },
+   "nurse|medical staff (unspecified)": {
+    "0": 0.438,
+    "1": 0.479,
+    "2": 0.5,
+    "3": 0.458,
+    "5": 0.458,
+    "10": 0.438,
+    "15": 0.354,
+    "19": 0.312
+   },
+   "nurse|patient": {
+    "0": 0.167,
+    "1": 0.229,
+    "2": 0.271,
+    "3": 0.333,
+    "5": 0.208,
+    "10": 0.25,
+    "15": 0.104,
+    "19": 0.188
+   },
+   "nurse|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.021
+   },
+   "nurse|scientist / lab": {
+    "0": 0.146,
+    "1": 0.354,
+    "2": 0.312,
+    "3": 0.396,
+    "5": 0.271,
+    "10": 0.271,
+    "15": 0.146,
+    "19": 0.167
+   },
+   "nurse|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "nurse|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.021,
+    "3": 0.021,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.021,
+    "19": 0.0
+   },
+   "social_worker|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.021,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.021,
+    "15": 0.021,
+    "19": 0.0
+   },
+   "social_worker|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.021,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.021,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|business / office worker": {
+    "0": 0.0,
+    "1": 0.021,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.042
+   },
+   "social_worker|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "social_worker|teacher / student": {
+    "0": 0.0,
+    "1": 0.021,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.021,
+    "19": 0.0
+   },
+   "portrait|doctor": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|nurse": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|medical staff (unspecified)": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|patient": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|pilot": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|military / soldier": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.021,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|astronaut": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|police": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.021,
+    "19": 0.0
+   },
+   "portrait|scientist / lab": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|business / office worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|social worker": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.0,
+    "19": 0.0
+   },
+   "portrait|teacher / student": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "5": 0.0,
+    "10": 0.0,
+    "15": 0.021,
+    "19": 0.0
+   }
+  },
+  "transitions": {
+   "pilot|pilot": {
+    "n_traj": 48,
+    "n_ever": 44,
+    "share": 0.917,
+    "first_step_median": 1,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 19,
+      "woman": 20,
+      "none": 4,
+      "ambiguous": 1
+     },
+     "judge_skin": {
+      "dark": 13,
+      "light": 26,
+      "none": 4,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "man": 18,
+      "man+woman": 5,
+      "none": 5,
+      "woman": 16
+     },
+     "seed_gender_still_shown": {
+      "n": 40,
+      "share": 0.9
+     },
+     "seed_skin_still_shown": {
+      "n": 40,
+      "share": 0.325
+     }
+    }
+   },
+   "pilot|military / soldier": {
+    "n_traj": 48,
+    "n_ever": 44,
+    "share": 0.917,
+    "first_step_median": 1,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 24,
+      "share": 1.0,
+      "ci": [
+       0.862,
+       1.0
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 15,
+      "share": 0.938,
+      "ci": [
+       0.7167,
+       0.9889
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 24,
+      "share": 1.0,
+      "ci": [
+       0.862,
+       1.0
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 19,
+      "none": 3,
+      "woman": 22
+     },
+     "judge_skin": {
+      "light": 26,
+      "dark": 11,
+      "none": 4,
+      "medium": 3
+     },
+     "caption_gender_words": {
+      "man": 17,
+      "man+woman": 6,
+      "none": 4,
+      "woman": 17
+     },
+     "seed_gender_still_shown": {
+      "n": 41,
+      "share": 0.902
+     },
+     "seed_skin_still_shown": {
+      "n": 40,
+      "share": 0.4
+     }
+    }
+   },
+   "pilot|astronaut": {
+    "n_traj": 48,
+    "n_ever": 6,
+    "share": 0.125,
+    "first_step_median": 8,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 5,
+      "share": 0.208,
+      "ci": [
+       0.0924,
+       0.4047
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 1,
+      "share": 0.042,
+      "ci": [
+       0.0074,
+       0.2024
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 1,
+      "share": 0.062,
+      "ci": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 3,
+      "share": 0.188,
+      "ci": [
+       0.0659,
+       0.4301
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 5,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 5,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "man": 4,
+      "none": 2
+     },
+     "seed_gender_still_shown": {
+      "n": 5,
+      "share": 0.8
+     },
+     "seed_skin_still_shown": {
+      "n": 5,
+      "share": 0.4
+     }
+    }
+   },
+   "pilot|police": {
+    "n_traj": 48,
+    "n_ever": 7,
+    "share": 0.146,
+    "first_step_median": 15,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 4,
+      "share": 0.25,
+      "ci": [
+       0.1018,
+       0.495
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 1,
+      "share": 0.062,
+      "ci": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "woman": 3,
+      "man": 4
+     },
+     "judge_skin": {
+      "medium": 1,
+      "light": 6
+     },
+     "caption_gender_words": {
+      "none": 2,
+      "woman": 2,
+      "man": 3
+     },
+     "seed_gender_still_shown": {
+      "n": 7,
+      "share": 0.286
+     },
+     "seed_skin_still_shown": {
+      "n": 7,
+      "share": 0.286
+     }
+    }
+   },
+   "nurse|doctor": {
+    "n_traj": 48,
+    "n_ever": 37,
+    "share": 0.771,
+    "first_step_median": 3,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 20,
+      "share": 0.833,
+      "ci": [
+       0.6415,
+       0.9332
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 17,
+      "share": 0.708,
+      "ci": [
+       0.5083,
+       0.8509
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 10,
+      "share": 0.625,
+      "ci": [
+       0.3864,
+       0.8152
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 19,
+      "share": 0.792,
+      "ci": [
+       0.5953,
+       0.9076
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 21,
+      "none": 1,
+      "woman": 12,
+      "ambiguous": 3
+     },
+     "judge_skin": {
+      "light": 23,
+      "none": 2,
+      "dark": 6,
+      "medium": 6
+     },
+     "caption_gender_words": {
+      "none": 7,
+      "man": 12,
+      "man+woman": 12,
+      "woman": 6
+     },
+     "seed_gender_still_shown": {
+      "n": 36,
+      "share": 0.694
+     },
+     "seed_skin_still_shown": {
+      "n": 35,
+      "share": 0.371
+     }
+    }
+   },
+   "nurse|nurse": {
+    "n_traj": 48,
+    "n_ever": 37,
+    "share": 0.771,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 16,
+      "share": 0.667,
+      "ci": [
+       0.4671,
+       0.8203
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 12,
+      "share": 0.75,
+      "ci": [
+       0.505,
+       0.8982
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 11,
+      "share": 0.688,
+      "ci": [
+       0.444,
+       0.8584
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 16,
+      "share": 0.667,
+      "ci": [
+       0.4671,
+       0.8203
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 16,
+      "ambiguous": 2,
+      "woman": 18,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 19,
+      "medium": 8,
+      "dark": 8,
+      "none": 2
+     },
+     "caption_gender_words": {
+      "none": 10,
+      "man+woman": 10,
+      "man": 4,
+      "woman": 13
+     },
+     "seed_gender_still_shown": {
+      "n": 36,
+      "share": 0.806
+     },
+     "seed_skin_still_shown": {
+      "n": 35,
+      "share": 0.286
+     }
+    }
+   },
+   "nurse|medical staff (unspecified)": {
+    "n_traj": 48,
+    "n_ever": 44,
+    "share": 0.917,
+    "first_step_median": 1,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 16,
+      "share": 1.0,
+      "ci": [
+       0.8064,
+       1.0
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 23,
+      "share": 0.958,
+      "ci": [
+       0.7976,
+       0.9926
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 23,
+      "woman": 20,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 28,
+      "dark": 12,
+      "medium": 3,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "man": 14,
+      "man+woman": 10,
+      "none": 7,
+      "woman": 13
+     },
+     "seed_gender_still_shown": {
+      "n": 43,
+      "share": 0.907
+     },
+     "seed_skin_still_shown": {
+      "n": 43,
+      "share": 0.372
+     }
+    }
+   },
+   "nurse|patient": {
+    "n_traj": 48,
+    "n_ever": 33,
+    "share": 0.688,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 16,
+      "share": 0.667,
+      "ci": [
+       0.4671,
+       0.8203
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 17,
+      "share": 0.708,
+      "ci": [
+       0.5083,
+       0.8509
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 8,
+      "share": 0.5,
+      "ci": [
+       0.28,
+       0.72
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 11,
+      "share": 0.688,
+      "ci": [
+       0.444,
+       0.8584
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 14,
+      "share": 0.875,
+      "ci": [
+       0.6398,
+       0.965
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 15,
+      "share": 0.625,
+      "ci": [
+       0.4271,
+       0.7884
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 16,
+      "woman": 13,
+      "ambiguous": 3,
+      "none": 1
+     },
+     "judge_skin": {
+      "light": 16,
+      "dark": 13,
+      "none": 3,
+      "medium": 1
+     },
+     "caption_gender_words": {
+      "man": 5,
+      "man+woman": 13,
+      "none": 6,
+      "woman": 9
+     },
+     "seed_gender_still_shown": {
+      "n": 32,
+      "share": 0.688
+     },
+     "seed_skin_still_shown": {
+      "n": 30,
+      "share": 0.333
+     }
+    }
+   },
+   "nurse|scientist / lab": {
+    "n_traj": 48,
+    "n_ever": 39,
+    "share": 0.812,
+    "first_step_median": 2,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 21,
+      "share": 0.875,
+      "ci": [
+       0.69,
+       0.9566
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 18,
+      "share": 0.75,
+      "ci": [
+       0.551,
+       0.88
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 13,
+      "share": 0.812,
+      "ci": [
+       0.5699,
+       0.9341
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 22,
+      "share": 0.917,
+      "ci": [
+       0.7415,
+       0.9768
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 17,
+      "share": 0.708,
+      "ci": [
+       0.5083,
+       0.8509
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 19,
+      "ambiguous": 2,
+      "woman": 18
+     },
+     "judge_skin": {
+      "light": 26,
+      "medium": 3,
+      "dark": 10
+     },
+     "caption_gender_words": {
+      "none": 6,
+      "man+woman": 8,
+      "man": 16,
+      "woman": 9
+     },
+     "seed_gender_still_shown": {
+      "n": 39,
+      "share": 0.692
+     },
+     "seed_skin_still_shown": {
+      "n": 39,
+      "share": 0.41
+     }
+    }
+   },
+   "nurse|teacher / student": {
+    "n_traj": 48,
+    "n_ever": 6,
+    "share": 0.125,
+    "first_step_median": 11,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 1,
+      "share": 0.062,
+      "ci": [
+       0.0111,
+       0.2833
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 2,
+      "share": 0.125,
+      "ci": [
+       0.035,
+       0.3602
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 3,
+      "share": 0.188,
+      "ci": [
+       0.0659,
+       0.4301
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 4,
+      "share": 0.167,
+      "ci": [
+       0.0668,
+       0.3585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "woman": 5,
+      "man": 1
+     },
+     "judge_skin": {
+      "light": 4,
+      "dark": 1,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "none": 3,
+      "man+woman": 2,
+      "woman": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 6,
+      "share": 0.833
+     },
+     "seed_skin_still_shown": {
+      "n": 5,
+      "share": 0.2
+     }
+    }
+   },
+   "social_worker|business / office worker": {
+    "n_traj": 48,
+    "n_ever": 4,
+    "share": 0.083,
+    "first_step_median": 19,
+    "by_seed": {
+     "gender_seed=man": {
+      "n": 24,
+      "ever": 3,
+      "share": 0.125,
+      "ci": [
+       0.0434,
+       0.31
+      ]
+     },
+     "gender_seed=woman": {
+      "n": 24,
+      "ever": 1,
+      "share": 0.042,
+      "ci": [
+       0.0074,
+       0.2024
+      ]
+     },
+     "skin_seed=dark": {
+      "n": 16,
+      "ever": 4,
+      "share": 0.25,
+      "ci": [
+       0.1018,
+       0.495
+      ]
+     },
+     "skin_seed=light": {
+      "n": 16,
+      "ever": 0,
+      "share": 0.0,
+      "ci": [
+       0.0,
+       0.1936
+      ]
+     },
+     "skin_seed=medium": {
+      "n": 16,
+      "ever": 0,
+      "share": 0.0,
+      "ci": [
+       0.0,
+       0.1936
+      ]
+     },
+     "age_seed=older": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     },
+     "age_seed=young": {
+      "n": 24,
+      "ever": 2,
+      "share": 0.083,
+      "ci": [
+       0.0232,
+       0.2585
+      ]
+     }
+    },
+    "at_first": {
+     "judge_gender": {
+      "man": 3,
+      "ambiguous": 1
+     },
+     "judge_skin": {
+      "light": 4
+     },
+     "caption_gender_words": {
+      "man": 3,
+      "man+woman": 1
+     },
+     "seed_gender_still_shown": {
+      "n": 4,
+      "share": 0.5
+     },
+     "seed_skin_still_shown": {
+      "n": 4,
+      "share": 0.0
+     }
+    }
+   }
+  },
+  "per_image": {
+   "nurse": {
+    "all single-person images": {
+     "n": 179,
+     "judge_gender": {
+      "man": 87,
+      "woman": 87,
+      "ambiguous": 2,
+      "none": 3
+     },
+     "judge_skin": {
+      "light": 147,
+      "none": 5,
+      "medium": 14,
+      "dark": 13
+     },
+     "caption_gender_words": {
+      "man": 84,
+      "none": 12,
+      "man+woman": 3,
+      "woman": 80
+     },
+     "seed_gender": {
+      "man": 76,
+      "woman": 103
+     }
+    },
+    "doctor": {
+     "n": 22,
+     "judge_gender": {
+      "man": 18,
+      "woman": 4
+     },
+     "judge_skin": {
+      "light": 20,
+      "medium": 2
+     },
+     "caption_gender_words": {
+      "man": 17,
+      "none": 1,
+      "woman": 4
+     },
+     "seed_gender": {
+      "man": 18,
+      "woman": 4
+     }
+    },
+    "nurse": {
+     "n": 15,
+     "judge_gender": {
+      "ambiguous": 1,
+      "man": 1,
+      "woman": 13
+     },
+     "judge_skin": {
+      "light": 9,
+      "medium": 2,
+      "dark": 4
+     },
+     "caption_gender_words": {
+      "none": 3,
+      "woman": 12
+     },
+     "seed_gender": {
+      "man": 2,
+      "woman": 13
+     }
+    },
+    "patient": {
+     "n": 9,
+     "judge_gender": {
+      "man": 1,
+      "ambiguous": 2,
+      "woman": 6
+     },
+     "judge_skin": {
+      "dark": 1,
+      "light": 8
+     },
+     "caption_gender_words": {
+      "man": 1,
+      "none": 5,
+      "woman": 3
+     },
+     "seed_gender": {
+      "man": 2,
+      "woman": 7
+     }
+    },
+    "scientist / lab": {
+     "n": 83,
+     "judge_gender": {
+      "man": 37,
+      "woman": 46
+     },
+     "judge_skin": {
+      "light": 75,
+      "medium": 4,
+      "dark": 3,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "man": 36,
+      "woman": 43,
+      "man+woman": 2,
+      "none": 2
+     },
+     "seed_gender": {
+      "man": 36,
+      "woman": 47
+     }
+    }
+   },
+   "pilot": {
+    "all single-person images": {
+     "n": 236,
+     "judge_gender": {
+      "man": 117,
+      "ambiguous": 7,
+      "none": 5,
+      "woman": 107
+     },
+     "judge_skin": {
+      "dark": 15,
+      "light": 182,
+      "medium": 30,
+      "none": 9
+     },
+     "caption_gender_words": {
+      "man": 119,
+      "none": 15,
+      "woman": 98,
+      "man+woman": 4
+     },
+     "seed_gender": {
+      "man": 97,
+      "woman": 139
+     }
+    },
+    "pilot": {
+     "n": 132,
+     "judge_gender": {
+      "man": 54,
+      "ambiguous": 3,
+      "woman": 75
+     },
+     "judge_skin": {
+      "dark": 12,
+      "light": 104,
+      "medium": 15,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "man": 54,
+      "none": 4,
+      "woman": 73,
+      "man+woman": 1
+     },
+     "seed_gender": {
+      "man": 51,
+      "woman": 81
+     }
+    },
+    "military / soldier": {
+     "n": 165,
+     "judge_gender": {
+      "man": 73,
+      "ambiguous": 4,
+      "woman": 88
+     },
+     "judge_skin": {
+      "light": 127,
+      "medium": 26,
+      "dark": 11,
+      "none": 1
+     },
+     "caption_gender_words": {
+      "man": 73,
+      "none": 6,
+      "woman": 82,
+      "man+woman": 4
+     },
+     "seed_gender": {
+      "man": 57,
+      "woman": 108
+     }
+    },
+    "astronaut": {
+     "n": 22,
+     "judge_gender": {
+      "man": 22
+     },
+     "judge_skin": {
+      "light": 20,
+      "medium": 2
+     },
+     "caption_gender_words": {
+      "man": 21,
+      "none": 1
+     },
+     "seed_gender": {
+      "man": 11,
+      "woman": 11
+     }
+    }
+   }
+  }
+ }
+]

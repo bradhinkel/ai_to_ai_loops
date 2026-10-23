@@ -8,7 +8,7 @@ Run `runs/e2_qz`: Hunyuan-DiT v1.2 + Qwen2.5-VL 7B with the caption instruction 
 
 | prediction | criterion as written | result | verdict |
 |---|---|---|---|
-| 1 convergence unchanged | DINOv2 plateau by 25; knee k 6–10; Vendi within 25% of 39.2 | plateau 19; knee k 12 (`e1_report`), bootstrap in `elbow_table.md`; Vendi 35.6 (9% below) | **passes on plateau and Vendi, knee outside the band** |
+| 1 convergence unchanged | DINOv2 plateau by 25; knee k 6–10; Vendi within 25% of 39.2 | plateau 19; knee k 12 by the rule but 6 / 9 / 12 / 14 across kmax 15–40, subsample median 10 [8, 13], identical to E1-both's 10 [8, 13] (`elbow_table.md`); Vendi 35.6 (9% below) | **passes**: the rule's knee is above the band, the bootstrap knee is inside it and indistinguishable from the control |
 | 2 register survives | ≥ half of E2-QZ persistent visits in E1-both's top attractors; sunset / mirror-water / silhouette family dominates the step-99 sheet | 68 of 130 persistent visits (52%) in E1-both's top five (dancer in a swirling gown 34, lone tree in a mirror lake 13, sunset lake 12, ballerinas 9, raised-arms figure 0); step-99 sheet is still mostly mirror water at sunset or moonrise | **passes, narrowly on the visit share** |
 | 3 some new attractors | ≥ 1 persistent attractor with ≥ 5 trajectories that no E1 cell has; ≥ 1 E1-both attractor drops below 3 visits | pagoda lake: 17 visits / 7 trajectories in E2-QZ, but E1-cap has 4 visits / 3 trajectories (present at the ≥ 3 rule); moon bridge: 12 visits but only 4 trajectories. E1-both's raised-arms figure (8 → 0), rainbow tunnel (3 → 0), gold corridor (3 → 0), bathroom (4 → 0) all drop out | **half: the drop-outs hold; the new-attractor clause fails on the letter (one trajectory short, or three E1-cap visits)**. Brad's "some different attractors" holds in both directions |
 | 4 Chinese content a minority | persistent visits to East Asian motifs at most triple E1-both's; < 15 trajectories at step 99; > 30 supports Brad | persistent visits to pagoda + bridge: 29 vs 1 (plus 27 vs 3 for the misty-lake boat); step-99 trajectories: 19 by the judge's setting call, 26 with any East Asian motif, 28 by eye without the boats, 38 with them | **fails**. Under 30 on every instrument except Claude's eye count with the boat family; the direction is Brad's |
@@ -20,7 +20,7 @@ Decision rule as written: prediction 2 holds but prediction 4 does not stay unde
 
 | metric | E1-both (English) | E2-QZ (Chinese) |
 |---|---|---|
-| knee k, pooled step-99 | 8 | 12 |
+| knee k, pooled step-99 (rule; subsample median [5%, 95%]) | 8 (10 [8, 13]) | 12 (10 [8, 13]) |
 | Vendi, step 99 | 39.2 | 35.6 |
 | plateau step (`e1_report`) | 25 | 19 |
 | mean step-to-step drift, last 20 | 0.205 | 0.228 |

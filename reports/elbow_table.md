@@ -1,4 +1,4 @@
-# Elbow tracking table (built 2026-10-22)
+# Elbow tracking table (built 2026-10-23)
 
 Rule: knee of normalised inertia (max chord distance), KMeans n_init=10 random_state=0, k=2..min(25,n-1). Spread: 200 random 80% subsamples without replacement, same rule. Rebuilt by `analysis/elbow_table.py` after every run; the SPEC §4.3 reading since 2026-10-18 is 'matches Hintze's T=0.9 data under this rule', and this table is where variation between runs is tracked.
 
@@ -22,4 +22,6 @@ Rule: knee of normalised inertia (max chord distance), KMeans n_init=10 random_s
 | bimg dinov2 images | 20 | **8** | 8 / – / – / – | 8 (8, 7, 6) | 8 [7, 9] |
 | arm_a minilm captions | 20 | **8** | 8 / – / – / – | 7 (7, 6, 8) | 7 [6, 8] |
 | arm_a dinov2 images | 20 | **9** | 9 / – / – / – | 9 (9, 10, 7) | 9 [8, 10] |
+| e2_qz minilm captions | 100 | **9** | 8 / 9 / 9 / 14 | 2 (2, 36, 37) | 10 [7, 12] |
+| e2_qz dinov2 images | 100 | **12** | 6 / 9 / 12 / 14 | 37 (37, 34, 31) | 10 [8, 13] |
 | Hintze T=0.9 minilm captions | 99 | **8** | 7 / 7 / 8 / 9 | 8 (8, 10, 9) | 8 [6, 10] |

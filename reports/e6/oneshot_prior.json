@@ -18,8 +18,9 @@
   },
   "person": 0.99,
   "L": {
-   "n": 0,
-   "mean": null
+   "n": 62,
+   "mean": 39.3,
+   "sd": 12.9
   }
  },
  "oneshot_nurse": {
@@ -41,8 +42,9 @@
   },
   "person": 1.0,
   "L": {
-   "n": 0,
-   "mean": null
+   "n": 88,
+   "mean": 41.3,
+   "sd": 9.6
   }
  },
  "oneshot_social_worker": {
@@ -64,8 +66,9 @@
   },
   "person": 1.0,
   "L": {
-   "n": 0,
-   "mean": null
+   "n": 96,
+   "mean": 42.1,
+   "sd": 10.2
   }
  },
  "oneshot_home_health_aide": {
@@ -85,8 +88,9 @@
   },
   "person": 1.0,
   "L": {
-   "n": 0,
-   "mean": null
+   "n": 97,
+   "mean": 35.7,
+   "sd": 11.3
   }
  },
  "oneshot_nostigma": {
@@ -110,7 +114,8 @@
   "person": 1.0,
   "L": {
    "n": 50,
-   "mean": 55.5
+   "mean": 55.5,
+   "sd": 7.7
   }
  }
 }

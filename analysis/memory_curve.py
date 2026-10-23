@@ -48,8 +48,8 @@ def main():
           "| run | space | ident. step 1 | 2 | 3 | 5 | 10 | 20 | 50 | 99 | half-life (step) | lost (step) | excess self-sim step 5 / 20 / 99 |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for (run, space), r in res.items():
         ia = r["ident_at"]; ex = r["excess"]
-        md.append(f"| {run} | {space} | " + " | ".join(f"{ia.get(k, float('nan')):.2f}" for k in (1, 2, 3, 5, 10, 20, 50, 99)) +
-                  f" | {r['half_life']} | {r['lost_at']} | {ex[5]:.3f} / {ex[20]:.3f} / {ex[-1]:.3f} |")
+        md.append(f"| {run} | {space} | " + " | ".join((f"{ia[k]:.2f}" if k in ia else "–") for k in (1, 2, 3, 5, 10, 20, 50, 99)) +
+                  f" | {r['half_life']} | {r['lost_at']} | {ex[5]:.3f} / {(ex[20] if len(ex) > 20 else float('nan')):.3f} / {ex[-1]:.3f} |")
     md += ["", "Figure: `memory_curve.png`."]
     (ROOT / "reports" / "memory_curve.md").write_text("\n".join(md) + "\n"); (ROOT / "reports" / "memory_curve.json").write_text(json.dumps({f"{k[0]}:{k[1]}": v for k, v in res.items()}, indent=1))
     print("\n".join(md))

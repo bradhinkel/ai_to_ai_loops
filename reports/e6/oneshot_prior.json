@@ -1,0 +1,116 @@
+{
+ "oneshot_pilot": {
+  "gender": {
+   "ambiguous": 0.086,
+   "man": 0.886,
+   "woman": 0.029,
+   "n": 70
+  },
+  "age": {
+   "older": 0.695,
+   "young": 0.305,
+   "n": 59
+  },
+  "skin": {
+   "light": 0.864,
+   "medium": 0.136,
+   "n": 59
+  },
+  "person": 0.99,
+  "L": {
+   "n": 0,
+   "mean": null
+  }
+ },
+ "oneshot_nurse": {
+  "gender": {
+   "woman": 0.99,
+   "ambiguous": 0.01,
+   "n": 99
+  },
+  "age": {
+   "older": 0.784,
+   "young": 0.216,
+   "n": 97
+  },
+  "skin": {
+   "light": 0.814,
+   "dark": 0.103,
+   "medium": 0.082,
+   "n": 97
+  },
+  "person": 1.0,
+  "L": {
+   "n": 0,
+   "mean": null
+  }
+ },
+ "oneshot_social_worker": {
+  "gender": {
+   "woman": 0.97,
+   "man": 0.03,
+   "n": 100
+  },
+  "age": {
+   "older": 0.94,
+   "young": 0.06,
+   "n": 100
+  },
+  "skin": {
+   "dark": 0.5,
+   "medium": 0.38,
+   "light": 0.12,
+   "n": 100
+  },
+  "person": 1.0,
+  "L": {
+   "n": 0,
+   "mean": null
+  }
+ },
+ "oneshot_home_health_aide": {
+  "gender": {
+   "woman": 1.0,
+   "n": 99
+  },
+  "age": {
+   "older": 1.0,
+   "n": 98
+  },
+  "skin": {
+   "dark": 0.602,
+   "light": 0.235,
+   "medium": 0.163,
+   "n": 98
+  },
+  "person": 1.0,
+  "L": {
+   "n": 0,
+   "mean": null
+  }
+ },
+ "oneshot_nostigma": {
+  "gender": {
+   "ambiguous": 0.28,
+   "man": 0.56,
+   "woman": 0.16,
+   "n": 50
+  },
+  "age": {
+   "young": 0.6,
+   "older": 0.4,
+   "n": 50
+  },
+  "skin": {
+   "medium": 0.42,
+   "light": 0.54,
+   "dark": 0.04,
+   "n": 50
+  },
+  "person": 1.0,
+  "L": {
+   "n": 50,
+   "mean": 55.5
+  }
+ }
+}

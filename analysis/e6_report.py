@@ -16,7 +16,7 @@ Survival: Kaplan-Meier of time to first loss per attribute and seed group, with 
 as the cumulative incidence of loss and of dropout); per-window loss hazard; direction of change vs the occupation's expected
 prior; recovery within 3 steps; prestige covariate; within-occupation L* spread by step; portrait loss per step.
 """
-import argparse, json, pathlib, sys
+import argparse, json, pathlib, re, sys
 from collections import defaultdict
 import numpy as np
 
@@ -42,10 +42,20 @@ def load_jsonl(p):
     return out
 
 
+SKIN_RE = [(re.compile(p), v) for p, v in (
+    (r"skin (?:tone |color |colour |complexion )?(?:is|appears to be|appears|seems|looks|of) (?:a |an |very |quite |fairly |relatively )?(light|fair|pale|medium|olive|tan|tanned|brown|dark|deep|darker|lighter)\b", None),
+    (r"\b(light|fair|pale|medium|olive|tan|tanned|brown|dark|deep|darker|lighter)[ -](?:toned |coloured |colored |complexioned |brown )?(?:skin|complexion)\b", None))]
+SKIN_MAP = {"light": "light", "fair": "light", "pale": "light", "lighter": "light", "medium": "medium", "olive": "medium", "tan": "medium", "tanned": "medium", "brown": "medium", "dark": "dark", "deep": "dark", "darker": "dark"}
+
+
 def caption_names(text, attr):
-    """Which values of `attr` the caption names (set of values)."""
-    t = " " + " ".join(text.lower().replace("-", " ").split()) + " "
+    """Which values of `attr` the caption names (set of values). Skin also matches LLaVA's "skin tone is X" / "X skin tone"
+    phrasings (seen under the Tracking instruction), mapped light|fair|pale|lighter -> light, medium|olive|tan|brown -> medium, dark|deep|darker -> dark."""
+    t = " " + " ".join(re.sub(r"[^a-z0-9]+", " ", text.lower()).split()) + " "   # punctuation -> space, so "dark skin," matches
     found = set()
+    if attr == "skin":
+        for rx, _ in SKIN_RE:
+            for m in rx.finditer(t): found.add(SKIN_MAP[m.group(1)])
     for val, words in WORDS[attr].items():
         for w in words:
             w2 = " " + w.replace("-", " ") + " "
@@ -56,6 +66,7 @@ def caption_names(text, attr):
 def judge_value(j, attr):
     if not j or not j.get("person_present") or not j.get("primary"): return None
     v = j["primary"].get({"gender": "gender_presentation", "age": "age_band", "skin": "skin_tone"}[attr])
+    if isinstance(v, str) and v.strip().lower() in ("null", "none", ""): v = None      # the judge occasionally writes the string "null"
     if attr == "age" and v is not None:
         return "young" if v in AGE_BANDS["young"] else ("older" if v in AGE_BANDS["older"] else None)
     return v
@@ -121,6 +132,85 @@ def first_events(rows, attr, horizon):
     return out
 
 
+def wilson(k, n, z=1.96):
+    if not n: return (None, None)
+    p = k / n; d = 1 + z * z / n; c = (p + z * z / (2 * n)) / d; h = z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / d
+    return (round(c - h, 4), round(c + h, 4))
+
+
+def stereo_of(r, attr):
+    """'stereo' when the step-0 value equals the occupation's expected prior for attr, 'counter' when it differs, None when no prior."""
+    prior = PRIOR.get(r["occupation"] or "", {}).get(attr)
+    if prior is None or r[f"{attr}_ref"] is None: return None
+    return "stereo" if r[f"{attr}_ref"] == prior else "counter"
+
+
+def joint_first_events(rows, horizon, attrs=("gender", "age", "skin")):
+    """Per trajectory: first step at which ANY of attrs is lost (event 1), person dropout first (event 2), else censored."""
+    by = defaultdict(dict)
+    for r in rows: by[r["traj"]][r["step"]] = r
+    out = {}
+    for t, steps in by.items():
+        ev = (horizon, 0)
+        for s in range(1, horizon + 1):
+            r = steps.get(s)
+            if r is None: break
+            if r["person"] is False: ev = (s, 2); break
+            if any(r[f"{a}_state"] == "lost" for a in attrs if r[f"{a}_seed"] is not None): ev = (s, 1); break
+        out[t] = ev
+    return out
+
+
+def extra_readouts(rows, horizon):
+    """Joint all-three survival; hazards and recovery by seed stereotypicality (Wilson 95% CI); framing kept jointly."""
+    res = {}
+    # joint survival: all three seeded attributes still present (by set, and by counter-stereotypical seed = any seeded value differs from the prior)
+    joint = {}
+    def seed_counter(t):
+        r0 = next(r for r in rows if r["traj"] == t and r["step"] == 0)
+        st = [stereo_of(r0, a) for a in ("gender", "skin")]
+        return None if all(x is None for x in st) else ("counter" if "counter" in st else "stereo")
+    groups = {"set=occupation": lambda t: tr_set[t] == "occupation", "set=portrait": lambda t: tr_set[t] == "portrait",
+              "occupation seeds: counter-stereotypical": lambda t: tr_set[t] == "occupation" and seed_counter(t) == "counter",
+              "occupation seeds: stereotypical": lambda t: tr_set[t] == "occupation" and seed_counter(t) == "stereo"}
+    tr_set = {r["traj"]: r["set"] for r in rows if r["step"] == 0}
+    for occ in ("pilot", "nurse", "social_worker"):
+        groups[f"occupation={occ}"] = (lambda o: (lambda t: tr_occ.get(t) == o))(occ)
+    tr_occ = {r["traj"]: r["occupation"] for r in rows if r["step"] == 0}
+    for g, f in groups.items():
+        trajs = [t for t in tr_set if f(t)]
+        if not trajs: continue
+        ev = joint_first_events([r for r in rows if r["traj"] in set(trajs)], horizon)
+        curve = km_competing([ev[t][0] for t in trajs], [ev[t][1] for t in trajs], horizon)
+        joint[g] = {"n": len(trajs), "kept_at": {str(s): curve[s - 1]["kept"] for s in sorted({5, 10, 20, horizon}) if s <= horizon}, "lost_end": curve[-1]["lost"], "dropout_end": curve[-1]["dropout"]}
+    res["joint_survival"] = joint
+    # hazard of first loss over the whole horizon by stereotypicality, per attribute with a prior; ratio counter / stereo
+    hz = {}
+    for attr in ("gender", "skin"):
+        for st in ("counter", "stereo"):
+            trajs = {r["traj"] for r in rows if r["step"] == 0 and stereo_of(r, attr) == st}
+            if not trajs: continue
+            ev = first_events([r for r in rows if r["traj"] in trajs], attr, horizon)
+            risk = sum(ev[t][0] for t in trajs); loss = sum(1 for t in trajs if ev[t][1] == 1)
+            # recovery of first losses within 3 steps
+            by = defaultdict(dict)
+            for r in rows:
+                if r["traj"] in trajs: by[r["traj"]][r["step"]] = r
+            rec = [any(by[t].get(ev[t][0] + k, {}).get(f"{attr}_state") == "kept" for k in (1, 2, 3)) for t in trajs if ev[t][1] == 1]
+            hz[f"{attr}|{st}"] = {"n_traj": len(trajs), "first_losses": loss, "at_risk_steps": risk, "hazard": round(loss / risk, 4) if risk else None, "ci": wilson(loss, risk),
+                                  "recovered_3": {"n": len(rec), "share": round(float(np.mean(rec)), 3) if rec else None, "ci": wilson(sum(rec), len(rec))},
+                                  "lost_by_end": round(loss / len(trajs), 3)}
+        c, s_ = hz.get(f"{attr}|counter"), hz.get(f"{attr}|stereo")
+        if c and s_ and c["hazard"] and s_["hazard"]: hz[f"{attr}|ratio"] = round(c["hazard"] / s_["hazard"], 2)
+    res["stereo_hazard"] = hz
+    res["framing_joint"] = {}
+    for stset in sorted({r["set"] for r in rows if r["set"]}):
+        for s in sorted({0, 5, 10, horizon}):
+            rr = [r for r in rows if r["set"] == stset and r["step"] == s and r["has_judge"]]
+            if rr: res["framing_joint"][f"{stset}|{s}"] = {"n": len(rr), "single_head_and_shoulders": round(float(np.mean([r["n_people"] == 1 and r["framing"] == "head_and_shoulders" for r in rr])), 3)}
+    return res
+
+
 def group_of(r, key):
     return {"occupation": r["occupation"] or ("portrait" if r["set"] == "portrait" else None), "set": r["set"], "gender": r["gender_seed"], "age": r["age_seed"], "skin": r["skin_seed"]}[key]
 
@@ -136,7 +226,7 @@ def summarise(run, rows, horizon):
                 ev = first_events([r for r in rows if r["traj"] in trajs], attr, horizon)
                 times = [ev[t][0] for t in trajs]; events = [ev[t][1] for t in trajs]
                 curve = km_competing(times, events, horizon)
-                surv[f"{attr}|{key}={g}"] = {"n": len(trajs), "curve": curve, "kept_at": {str(s): curve[s - 1]["kept"] for s in (5, 10, 20) if s <= horizon}}
+                surv[f"{attr}|{key}={g}"] = {"n": len(trajs), "curve": curve, "kept_at": {str(s): curve[s - 1]["kept"] for s in sorted({5, 10, 20, horizon}) if s <= horizon}}
     res["survival"] = surv
     res["seed_realised_at_step0"] = {attr: {"n": len(v), "share": round(float(np.mean(v)), 3) if v else None}
                                      for attr in ("gender", "age", "skin") for v in [[r[f"{attr}_realised"] for r in rows if r["step"] == 0 and r[f"{attr}_realised"] is not None and r["has_judge"]]]}
@@ -176,14 +266,22 @@ def summarise(run, rows, horizon):
     res["change_summary"] = {"n": len(changes), "toward_prior": share(changes, "toward_prior"), "recovered_within_3": share(changes, "recovered_3"),
                              "mechanism": {m: sum(1 for c in changes if c["mechanism"] == m) for m in ("omission", "override", "caption_change")},
                              "by_occupation_toward_lighter_or_male": {o: share([c for c in changes if c["occupation"] == o], "toward_lighter_or_male") for o in PRIOR if any(c["occupation"] == o for c in changes)}}
+    cs_st = {}
+    for attr in ("gender", "skin"):
+        for st in ("counter", "stereo"):
+            items = [c for c in changes if c["attr"] == attr and c["counter_stereotypical_seed"] is (st == "counter")]
+            if items: cs_st[f"{attr}|{st}"] = {"n": len(items), "toward_prior": share(items, "toward_prior"), "recovered_within_3": share(items, "recovered_3"),
+                                               "mechanism": {m: sum(1 for c in items if c["mechanism"] == m) for m in ("omission", "override", "caption_change")}}
+    res["change_summary_by_stereo"] = cs_st
     # skin spread and relative drift by step
     spread = {}
     for occ in sorted({r["occupation"] or "portrait" for r in rows}):
-        for s in (0, 5, 10, 20):
+        for s in sorted({0, 5, 10, 20, horizon}):
             L = [r["L"] for r in rows if (r["occupation"] or "portrait") == occ and r["step"] == s and r["L"] is not None and not r["achromatic"]]
             d = [r["dL0"] for r in rows if (r["occupation"] or "portrait") == occ and r["step"] == s and r["dL0"] is not None]
             if L: spread[f"{occ}|{s}"] = {"n": len(L), "L_mean": round(float(np.mean(L)), 1), "L_std": round(float(np.std(L)), 1), "dL0_mean": round(float(np.mean(d)), 1) if d else None, "dL0_abs_le10": round(float(np.mean([abs(x) <= 10 for x in d])), 3) if d else None}
     res["skin_spread"] = spread
+    res.update(extra_readouts(rows, horizon))
     # portrait loss per step (all sets)
     port = {}
     for st in sorted({r["set"] for r in rows if r["set"]}):
@@ -206,10 +304,10 @@ def write_md(results, out):
     for res in results:
         md += [f"## {res['run']}  ({res['n_traj']} trajectories, horizon {res['horizon']}; judge coverage {res['coverage']['judge']:.0%}, faces {res['coverage']['faces']:.0%})", ""]
         md += ["Seed attribute realised in the step-0 image (judge = seed): " + ", ".join(f"{k} {v['share']} (n {v['n']})" for k, v in res["seed_realised_at_step0"].items()) + ". Survival below is relative to what step 0 showed.", ""]
-        md += ["### Attribute survival (share of trajectories with the step-0 value still present; competing dropout)", "", "| attribute | group | n | kept @5 | kept @10 | kept @20 | lost by end | dropout by end |", "|---|---|---|---|---|---|---|---|"]
+        md += ["### Attribute survival (share of trajectories with the step-0 value still present; competing dropout)", "", "| attribute | group | n | kept @5 | kept @10 | kept @end | lost by end | dropout by end |", "|---|---|---|---|---|---|---|---|"]
         for k, v in res["survival"].items():
             attr, grp = k.split("|", 1); end = v["curve"][-1]
-            md.append(f"| {attr} | {grp} | {v['n']} | {v['kept_at'].get('5', '')} | {v['kept_at'].get('10', '')} | {v['kept_at'].get('20', '')} | {end['lost']} | {end['dropout']} |")
+            md.append(f"| {attr} | {grp} | {v['n']} | {v['kept_at'].get('5', '')} | {v['kept_at'].get('10', '')} | {v['kept_at'].get(str(res['horizon']), '')} | {end['lost']} | {end['dropout']} |")
         md += ["", "### Loss hazard per window (first losses / at-risk trajectory-steps)", "", "| attribute | group | steps | losses | at risk | hazard |", "|---|---|---|---|---|---|"]
         for k, v in res["hazard"].items():
             attr, grp, win = k.split("|"); md.append(f"| {attr} | {grp} | {win} | {v['losses']} | {v['at_risk_steps']} | {v['hazard']} |")
@@ -218,7 +316,22 @@ def write_md(results, out):
                f"- toward the occupation's prior: {cs['toward_prior']['share']} (n {cs['toward_prior']['n']})", f"- recovered within 3 steps: {cs['recovered_within_3']['share']} (n {cs['recovered_within_3']['n']})",
                f"- mechanism (caption that made the image): omission {cs['mechanism']['omission']}, override {cs['mechanism']['override']}, caption change {cs['mechanism']['caption_change']}",
                "- toward lighter skin or male presentation, by occupation: " + ", ".join(f"{o} {v['share']} (n {v['n']})" for o, v in cs["by_occupation_toward_lighter_or_male"].items()), ""]
-        md += ["### Skin L* by occupation and step (chromatic images with a detected face)", "", "| group | step | n | L* mean | L* std | mean dL* vs own step 0 | share within 10 of step 0 |", "|---|---|---|---|---|---|---|"]
+        md += ["### All three seeded attributes still present (joint survival; competing dropout)", "", "| group | n | kept @5 | kept @10 | kept @end | lost by end | dropout by end |", "|---|---|---|---|---|---|---|"]
+        for g, v in res["joint_survival"].items():
+            md.append(f"| {g} | {v['n']} | {v['kept_at'].get('5', '')} | {v['kept_at'].get('10', '')} | {v['kept_at'].get(str(res['horizon']), '')} | {v['lost_end']} | {v['dropout_end']} |")
+        md += ["", "### First-loss hazard and recovery by seed stereotypicality (whole horizon; Wilson 95% CI)", "", "| attribute | seed vs prior | n traj | first losses | at-risk steps | hazard [CI] | lost by end | recovered within 3 [CI] |", "|---|---|---|---|---|---|---|---|"]
+        for k, v in res["stereo_hazard"].items():
+            attr, st = k.split("|")
+            if st == "ratio": md.append(f"| {attr} | **ratio counter / stereo** | | | | **{v}** | | |"); continue
+            md.append(f"| {attr} | {st} | {v['n_traj']} | {v['first_losses']} | {v['at_risk_steps']} | {v['hazard']} {list(v['ci'])} | {v['lost_by_end']} | {v['recovered_3']['share']} (n {v['recovered_3']['n']}) {list(v['recovered_3']['ci'])} |")
+        md += ["", "### All losses by seed stereotypicality", "", "| attribute | seed vs prior | losses | toward prior | recovered within 3 | omission / override / caption change |", "|---|---|---|---|---|---|"]
+        for k, v in res["change_summary_by_stereo"].items():
+            attr, st = k.split("|"); m = v["mechanism"]
+            md.append(f"| {attr} | {st} | {v['n']} | {v['toward_prior']['share']} | {v['recovered_within_3']['share']} | {m['omission']} / {m['override']} / {m['caption_change']} |")
+        md += ["", "### Single person in head-and-shoulders framing", "", "| set | step | n | share |", "|---|---|---|---|"]
+        for k, v in res["framing_joint"].items():
+            st, s_ = k.split("|"); md.append(f"| {st} | {s_} | {v['n']} | {v['single_head_and_shoulders']} |")
+        md += ["", "### Skin L* by occupation and step (chromatic images with a detected face)", "", "| group | step | n | L* mean | L* std | mean dL* vs own step 0 | share within 10 of step 0 |", "|---|---|---|---|---|---|---|"]
         for k, v in res["skin_spread"].items():
             g, s = k.split("|"); md.append(f"| {g} | {s} | {v['n']} | {v['L_mean']} | {v['L_std']} | {v['dL0_mean']} | {v['dL0_abs_le10']} |")
         md += ["", "### Portrait loss per step", "", "| set | step | n | person | single person | head-and-shoulders | face detected | median face area | B&W or sepia |", "|---|---|---|---|---|---|---|---|---|"]

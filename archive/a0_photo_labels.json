@@ -1,0 +1,563 @@
+{
+ "meta": {
+  "run": "a0_photo",
+  "built_at": "2026-10-23T09:40:21",
+  "n_traj": 100,
+  "k": 6,
+  "k_source": "elbow",
+  "elbow_k_dinov2": 6,
+  "inertia_dinov2": {
+   "2": 79.2131,
+   "3": 70.51,
+   "4": 66.1334,
+   "5": 64.0822,
+   "6": 62.0786,
+   "7": 60.7327,
+   "8": 59.0261,
+   "9": 57.0119,
+   "10": 55.1574,
+   "11": 53.6291,
+   "12": 51.695,
+   "13": 50.3529,
+   "14": 49.6084,
+   "15": 48.0194,
+   "16": 47.1019,
+   "17": 45.5784,
+   "18": 44.0451,
+   "19": 42.533,
+   "20": 41.4218,
+   "21": 39.6497,
+   "22": 39.36,
+   "23": 37.827,
+   "24": 36.8036,
+   "25": 35.6152
+  },
+  "final_step_requested": 99,
+  "final_steps_used": {
+   "0": 99,
+   "1": 99,
+   "2": 99,
+   "3": 99,
+   "4": 99,
+   "5": 99,
+   "6": 99,
+   "7": 99,
+   "8": 99,
+   "9": 99,
+   "10": 99,
+   "11": 99,
+   "12": 99,
+   "13": 99,
+   "14": 99,
+   "15": 99,
+   "16": 99,
+   "17": 99,
+   "18": 99,
+   "19": 99,
+   "20": 99,
+   "21": 99,
+   "22": 99,
+   "23": 99,
+   "24": 99,
+   "25": 99,
+   "26": 99,
+   "27": 99,
+   "28": 99,
+   "29": 99,
+   "30": 99,
+   "31": 99,
+   "32": 99,
+   "33": 99,
+   "34": 99,
+   "35": 99,
+   "36": 99,
+   "37": 99,
+   "38": 99,
+   "39": 99,
+   "40": 99,
+   "41": 99,
+   "42": 99,
+   "43": 99,
+   "44": 99,
+   "45": 99,
+   "46": 99,
+   "47": 99,
+   "48": 99,
+   "49": 99,
+   "50": 99,
+   "51": 99,
+   "52": 99,
+   "53": 99,
+   "54": 99,
+   "55": 99,
+   "56": 99,
+   "57": 99,
+   "58": 99,
+   "59": 99,
+   "60": 99,
+   "61": 99,
+   "62": 99,
+   "63": 99,
+   "64": 99,
+   "65": 99,
+   "66": 99,
+   "67": 99,
+   "68": 99,
+   "69": 99,
+   "70": 99,
+   "71": 99,
+   "72": 99,
+   "73": 99,
+   "74": 99,
+   "75": 99,
+   "76": 99,
+   "77": 99,
+   "78": 99,
+   "79": 99,
+   "80": 99,
+   "81": 99,
+   "82": 99,
+   "83": 99,
+   "84": 99,
+   "85": 99,
+   "86": 99,
+   "87": 99,
+   "88": 99,
+   "89": 99,
+   "90": 99,
+   "91": 99,
+   "92": 99,
+   "93": 99,
+   "94": 99,
+   "95": 99,
+   "96": 99,
+   "97": 99,
+   "98": 99,
+   "99": 99
+  },
+  "radius_pooled_p95_dinov2": 0.7831964888140833,
+  "kmeans": {
+   "n_init": 10,
+   "random_state": 0,
+   "space": "dinov2"
+  },
+  "models": {
+   "dinov2": {
+    "id": "facebook/dinov2-base",
+    "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+    "pooling": "CLS token, L2-normalised"
+   },
+   "minilm": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "pooling": "sentence-transformers default, L2-normalised"
+   },
+   "clip": {
+    "id": "openai/clip-vit-large-patch14",
+    "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "pooling": "projected image/text embeds, L2-normalised; text truncated at 77 tokens"
+   },
+   "siglip": {
+    "id": "google/siglip-base-patch16-224",
+    "revision": "7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed",
+    "pooling": "pooled image embeds, L2-normalised"
+   },
+   "faceparse": {
+    "id": "jonathandinu/face-parsing",
+    "revision": "758b82e15a0178c9db39c1ff666a8b56e3a550c8",
+    "pooling": "argmax labels; skin = label 1"
+   },
+   "yunet": {
+    "id": "opencv_zoo face_detection_yunet_2023mar.onnx",
+    "revision": "sha256 8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+    "pooling": "boxes with score >= 0.6"
+   }
+  },
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  },
+  "note": "CLIP centroids are for steering only (SPEC2 §2: never grade with what steers)."
+ },
+ "clusters": {
+  "0": {
+   "size": 12,
+   "radius_p95_dinov2": 0.1402639114517378,
+   "mean_dist_dinov2": 0.07493601979698399,
+   "members": [
+    92,
+    54,
+    98,
+    7,
+    2,
+    10,
+    73,
+    18,
+    57,
+    82,
+    94,
+    61
+   ],
+   "member_dist": [
+    0.0415,
+    0.0464,
+    0.0496,
+    0.0553,
+    0.0616,
+    0.062,
+    0.0631,
+    0.0658,
+    0.0736,
+    0.0965,
+    0.1259,
+    0.1578
+   ],
+   "nearest_captions": [
+    {
+     "traj": 92,
+     "step": 99,
+     "dist": 0.0415,
+     "caption": "The image showcases the grandeur of a Gothic church. The interior is spacious, featuring soaring Gothic arches that create a feeling of awe and reverence. The high ceiling is adorned with intricate vaults and ribbed arches, adding to the architectural magnificence. The walls and pillars are decorated with ornate carvings and statues, contributing to the overall religious theme. The church is bathed in natural light, with large windows allowing daylight to illuminate the space. The perspective of the photograph gives a sense of depth and scale, emphasizing the height of the ceiling and the vastness of the church. There are no visible texts or distinguishing brands in the image. The style of the image is a realistic photograph, capturing the architectural details and the ambiance of the church."
+    },
+    {
+     "traj": 54,
+     "step": 99,
+     "dist": 0.0464,
+     "caption": "The image is a photograph of an interior view of a large, well-lit cathedral with Gothic architectural features. The architecture includes pointed arches, ribbed vaults, and tall columns supporting the ceiling. The columns are white and ornately decorated. The nave is spacious, with long rows of pews on both sides, and the floor is made of dark, polished stone with white markings. The windows are tall, narrow, and adorned with stained glass, which lets in soft light that illuminates the interior. At the far end of the cathedral, there is a large, colorful stained glass window allowing natural light to enter the space. Above the altar, there is a statue, and the altar is framed by an ornate wooden railing. The overall ambiance is serene and reverent, typical of a sacred church."
+    },
+    {
+     "traj": 98,
+     "step": 99,
+     "dist": 0.0496,
+     "caption": "The image depicts the interior of a grand, cathedral-like church. The architecture is characterized by high arches, tall columns, and a large central altar. Stained glass windows are visible, allowing natural light to filter in and create a serene atmosphere. Aisles on either side of the church lead towards the altar. Wooden pews are arranged in rows on both sides, and a central aisle divides them, with a patterned carpet on the floor. The interior is vast, with multiple layers of architectural detail that contribute to a sense of reverence and history."
+    }
+   ]
+  },
+  "1": {
+   "size": 23,
+   "radius_p95_dinov2": 0.2806326648526538,
+   "mean_dist_dinov2": 0.17674982714731655,
+   "members": [
+    26,
+    38,
+    49,
+    76,
+    8,
+    80,
+    51,
+    85,
+    21,
+    28,
+    75,
+    60,
+    50,
+    52,
+    0,
+    53,
+    83,
+    15,
+    37,
+    22,
+    30,
+    19,
+    58
+   ],
+   "member_dist": [
+    0.1243,
+    0.1247,
+    0.1265,
+    0.1283,
+    0.1387,
+    0.1392,
+    0.1398,
+    0.1414,
+    0.1442,
+    0.1479,
+    0.1582,
+    0.1678,
+    0.1731,
+    0.175,
+    0.1754,
+    0.1873,
+    0.1938,
+    0.2179,
+    0.2183,
+    0.2245,
+    0.2439,
+    0.2847,
+    0.2902
+   ],
+   "nearest_captions": [
+    {
+     "traj": 26,
+     "step": 99,
+     "dist": 0.1243,
+     "caption": "This image depicts an opulent room featuring ornate ceiling frescoes and historical decorations. The ceiling is high and vaulted, with elaborate ceiling moldings and central decorative elements. There are two chandeliers hanging from the ceiling, with the nearest one appearing to be lit. The walls are adorned with portraits and decorative elements, and the flooring is covered with patterned carpets.\n\nThe room contains several pieces of vintage furniture, including a large chaise longue, multiple chairs with intricate designs, and a large sofa with plush cushions. The room is illuminated with natural light coming from a row of windows dressed with long curtains. The windows reveal a glimpse of a city street below.\n\nIn the foreground, a grand staircase with a wooden handrail leads to an upper level, and at the end of the staircase is a large open door, suggesting another room or space beyond. The overall style of the image is that of a formal, historic interior, evoking a sense of grandeur and luxury from a bygone era."
+    },
+    {
+     "traj": 38,
+     "step": 99,
+     "dist": 0.1247,
+     "caption": "The image showcases a grand, opulent room with a high ceiling. The ceiling is adorned with intricate, ornate plasterwork, painted in hues of gold and blue, featuring a detailed design that is a classic example of ceiling artistry. The walls of the room are also lavishly decorated, covered in rich, dark wallpaper, which is embellished with gold accents, further emphasizing the room's regal ambiance.\n\nCentral to the room is a large chandelier, suspended from the ceiling, adding a dramatic and elegant touch. The room is furnished with multiple seating arrangements, consisting of ornate couches and chairs, arranged to facilitate conversation. These are placed on a plush red carpet, providing a stark contrast to the room's predominantly dark decor.\n\nOn the left side of the room, there is a large window with a white curtain, allowing natural light to fill the space. The right side of the room is decorated with a variety of chandeliers and candelabras, each with its own unique design, adding to the room's overall luxurious atmosphere. The floor beneath the furniture is made of polished hardwood, reflecting the room's grandeur.\n\nThe room appears to be in a museum or an upscale historical building, given the architectural style and the level of preservation and maintenance. The overall impression is one of historical grandeur, meticulous detailing, and a sense of timeless elegance."
+    },
+    {
+     "traj": 49,
+     "step": 99,
+     "dist": 0.1265,
+     "caption": "The image showcases a grand and ornate interior. Dominating the room is a large ceiling, adorned with intricate patterns, complemented by chandeliers. The ceiling is supported by stately blue columns, adding a sense of elegance and grandeur. The walls, also blue, are embellished with gold decorations, providing a luxurious contrast. The room is furnished with an ornate chaise lounge, a couch, and several chairs, all arranged on a wooden floor. The floor is carpeted, lending a touch of warmth and comfort to the room. Large windows let in ample natural light, illuminating the room and highlighting its opulent features. The overall ambiance suggests a sophisticated and refined living space."
+    }
+   ]
+  },
+  "2": {
+   "size": 24,
+   "radius_p95_dinov2": 0.7955932018879389,
+   "mean_dist_dinov2": 0.6984746904912532,
+   "members": [
+    42,
+    70,
+    43,
+    78,
+    65,
+    35,
+    99,
+    93,
+    87,
+    63,
+    91,
+    48,
+    45,
+    77,
+    72,
+    79,
+    68,
+    56,
+    64,
+    39,
+    25,
+    12,
+    62,
+    55
+   ],
+   "member_dist": [
+    0.4861,
+    0.5126,
+    0.513,
+    0.5854,
+    0.5869,
+    0.6441,
+    0.6445,
+    0.686,
+    0.687,
+    0.7053,
+    0.7331,
+    0.7384,
+    0.741,
+    0.75,
+    0.7532,
+    0.7554,
+    0.7577,
+    0.758,
+    0.7616,
+    0.7741,
+    0.7828,
+    0.7898,
+    0.7966,
+    0.8205
+   ],
+   "nearest_captions": [
+    {
+     "traj": 42,
+     "step": 99,
+     "dist": 0.4861,
+     "caption": "The image is a black and white photograph featuring two Native American men dressed in traditional clothing, including head dresses. The man on the left is standing while the man on the right is slightly leaning forward. Both have intricate patterns on their clothing and appear to be posing for the photograph. The man on the left has a straight pose, while the one on the right is leaning forward with one hand on his hip. They are set against a neutral background, which puts the focus entirely on them. There are no visible texts or distinguishing marks within the image. The style of the image is reminiscent of historical portrait photography, suggesting it may be from the past or intended to represent a historical period."
+    },
+    {
+     "traj": 70,
+     "step": 99,
+     "dist": 0.5126,
+     "caption": "The image is a split-shot, displaying two groups of individuals dressed in traditional Native American attire. On the left side, a person with long braids and traditional feathered headdress stands beside a man with a drum, both wearing intricate, colorful regalia. On the right side, another man with a drum, adorned with a similar headdress, and another in full regalia are positioned in front of trees and greenery. The style of the image is a real-life photograph, and it captures a moment that could suggest a cultural celebration or gathering."
+    },
+    {
+     "traj": 43,
+     "step": 99,
+     "dist": 0.513,
+     "caption": "This image captures a Native American man in a traditional outfit, adorned with feathers. He is seen from two different angles, both frontal, allowing for a comprehensive view of his attire. His expression is serious, and his outfit is rich in detail, with the feathers adding a distinctive touch to his appearance."
+    }
+   ]
+  },
+  "3": {
+   "size": 24,
+   "radius_p95_dinov2": 0.7863468460307396,
+   "mean_dist_dinov2": 0.6770310059927583,
+   "members": [
+    96,
+    95,
+    69,
+    40,
+    32,
+    17,
+    36,
+    97,
+    89,
+    90,
+    9,
+    23,
+    34,
+    31,
+    33,
+    3,
+    24,
+    16,
+    81,
+    29,
+    4,
+    88,
+    67,
+    1
+   ],
+   "member_dist": [
+    0.5327,
+    0.5331,
+    0.5729,
+    0.5999,
+    0.6038,
+    0.6351,
+    0.64,
+    0.6464,
+    0.6696,
+    0.6723,
+    0.6727,
+    0.6777,
+    0.6829,
+    0.6881,
+    0.6919,
+    0.7091,
+    0.7152,
+    0.7239,
+    0.7395,
+    0.7465,
+    0.752,
+    0.753,
+    0.7922,
+    0.7982
+   ],
+   "nearest_captions": [
+    {
+     "traj": 96,
+     "step": 99,
+     "dist": 0.5327,
+     "caption": "This image depicts a serene, autumnal forest scene. A winding river, its water reflecting the surrounding trees, meanders through the landscape. The water is a light brown color, indicative of either fallen leaves or the color of the riverbed. The river is bordered by banks with large rocks scattered about. The trees are tall and have a mix of orange and yellow leaves, typical of fall foliage. The forest floor is carpeted with fallen leaves, further emphasizing the season. On the left side of the image, a pathway can be seen, inviting the viewer to imagine a hike through this picturesque setting. The sky is overcast, casting a soft, diffused light over the scene and enhancing the warm colors of the leaves."
+    },
+    {
+     "traj": 95,
+     "step": 99,
+     "dist": 0.5331,
+     "caption": "A painting captures a romantic scene at dusk. Two people stroll down a rain-soaked street, sharing a vibrant blue umbrella. The woman, in a long, flowing coat, walks ahead, while the man follows, both of them seemingly lost in thought. They navigate the wet cobblestones under the dim, soft glow of street lamps and shop lights. The street is lined with trees that have shed their autumn leaves, creating a beautiful canopy. The buildings, adorned with storefronts, tower in the background under a sky painted in shades of gray and overcast with clouds. The wet sidewalk glistens under the light, adding a touch of magic to the scene. The overall atmosphere is one of tranquility and introspection."
+    },
+    {
+     "traj": 69,
+     "step": 99,
+     "dist": 0.5729,
+     "caption": "The image presents a serene autumn scene. A vibrant red tree stands prominently in the foreground, its leaves providing a striking contrast to the cooler tones of the surrounding landscape. The tree is reflected in a tranquil body of water, which stretches across the image, creating a mirror-like effect. In the distance, an array of autumn foliage colors the landscape, with hues of orange, yellow, and green. The sky is a soft blue, lightly brushed with wispy clouds. The overall scene is bathed in the warm glow of natural light, enhancing the rich colors of the autumnal landscape. The image captures the essence of a peaceful autumn day in a picturesque setting."
+    }
+   ]
+  },
+  "4": {
+   "size": 7,
+   "radius_p95_dinov2": 0.18933747412324706,
+   "mean_dist_dinov2": 0.1587510481438022,
+   "members": [
+    46,
+    20,
+    71,
+    27,
+    44,
+    5,
+    13
+   ],
+   "member_dist": [
+    0.1052,
+    0.1448,
+    0.1581,
+    0.1602,
+    0.1656,
+    0.1871,
+    0.1903
+   ],
+   "nearest_captions": [
+    {
+     "traj": 46,
+     "step": 99,
+     "dist": 0.1052,
+     "caption": "This image showcases a modern kitchen and dining area. The kitchen has stainless steel appliances, including a refrigerator, oven, and dishwasher. The cabinets are a light wood color, and there is a center island with a countertop that provides additional workspace. The island also has a sink. Above the island, there is a pendant light fixture. The dining area features a table with stools. The flooring is a mix of tile and wood, and the overall aesthetic is sleek and contemporary. There are no people visible in this photo."
+    },
+    {
+     "traj": 20,
+     "step": 99,
+     "dist": 0.1448,
+     "caption": "This image showcases a modern kitchen with a sleek design. The kitchen features dark wood cabinets with brushed metal handles, providing a contemporary look. There are stainless steel appliances, including a refrigerator, dishwasher, and oven, which add a touch of sophistication to the space. The countertops are a lighter shade of wood, complementing the cabinets and creating a warm atmosphere. The backsplash is not fully visible, but it seems to be in a lighter color, likely to maintain the room's modern aesthetic. The floor is not shown, but given the style of the kitchen, it is likely a tile or hardwood floor. The kitchen is equipped with essential items like a sink, and there's a small dining area with a table and chairs. The overall impression is that of a well-organized, clean, and functional kitchen."
+    },
+    {
+     "traj": 71,
+     "step": 99,
+     "dist": 0.1581,
+     "caption": "The image is a panoramic photograph of a modern kitchen interior, which has been digitally divided and merged into two different perspectives. The kitchen features a large island in the center with a granite countertop and stools, a contemporary stove top oven, a wall-mounted range hood, stainless steel appliances, including a refrigerator, and sleek black cabinetry. The floor is a light wood or laminate. Recessed lighting is installed within the cabinets, and the overall color scheme is neutral with dark cabinetry. The walls are painted white, and there is a mix of white, wooden, and metal accents. The ceiling has an industrial feel with exposed ductwork and a modern pendant light. The space is clean and uncluttered. There are no visible texts or distinctive brands in the image. The style of the image is clear, providing a comprehensive view of the kitchen's design and layout."
+    }
+   ]
+  },
+  "5": {
+   "size": 10,
+   "radius_p95_dinov2": 0.70337095723596,
+   "mean_dist_dinov2": 0.5075488625059285,
+   "members": [
+    74,
+    66,
+    6,
+    11,
+    47,
+    41,
+    59,
+    14,
+    84,
+    86
+   ],
+   "member_dist": [
+    0.3366,
+    0.3482,
+    0.3534,
+    0.4666,
+    0.4783,
+    0.5388,
+    0.5404,
+    0.6115,
+    0.6758,
+    0.7259
+   ],
+   "nearest_captions": [
+    {
+     "traj": 74,
+     "step": 99,
+     "dist": 0.3366,
+     "caption": "The image is a photograph capturing the interior of a large supermarket. The photograph is taken from a perspective that shows an aisle filled with various fruits, such as oranges, bananas, and apples, neatly arranged on both sides of the aisle. Above the aisle, multiple rows of store shelves are visible, holding a variety of products. The lighting is artificial, and the layout suggests a well-organized and tidy shopping environment. The floor is a light color, reflecting the bright overhead lights. The image is colorful, with the fruits displaying vibrant hues against the predominantly white and grey store interior."
+    },
+    {
+     "traj": 66,
+     "step": 99,
+     "dist": 0.3482,
+     "caption": "The image depicts an interior view of a grocery store aisle. The aisle is well-stocked with an assortment of fresh fruits and vegetables. The shelves are packed with a variety of produce, including tomatoes, peppers, oranges, and other items. The ceiling lights provide bright illumination, enhancing the visibility of the produce. There is a reflective floor that extends down the length of the aisle. The aisle is lined with produce bins, and the store's ceiling features fluorescent lights."
+    },
+    {
+     "traj": 6,
+     "step": 99,
+     "dist": 0.3534,
+     "caption": "The image depicts a vibrant and colorful grocery store aisle, abundant with a variety of fresh fruits and vegetables. The produce is neatly organized in crates and on shelves, with labels indicating the type of produce. At the back of the aisle, there's a large display of oranges, and other fruits like apples, broccoli, and carrots are arranged in neat piles on the floor. The store has a modern, clean look with a bright lighting scheme that highlights the fresh produce. The photograph captures the essence of a well-stocked, inviting grocery store with a wide selection of fresh produce."
+    }
+   ]
+  }
+ }
+}

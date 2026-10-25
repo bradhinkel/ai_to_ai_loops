@@ -19,3 +19,9 @@ Resources/*.docx
 GIT_COMMIT
 # embedding caches (rebuilt by analysis/embed.py)
 analysis/cache/
+
+# Hintze et al. OSF code (no licence on the OSF project): fetched locally by scripts/fetch_hintze_osf.py, only our MANIFEST.tsv is tracked
+hintze_osf/*
+!hintze_osf/MANIFEST.tsv
+# reference material folder entirely (PDFs, docx, Windows Zone.Identifier files)
+Resources/

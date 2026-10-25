@@ -1,9 +1,9 @@
 # CLAUDE.md — AI-to-AI loop experiment
 
-Read `SPEC.md` before doing anything. It defines the arms, parameters, gates and measurements. Reference papers are the PDFs in this folder.
+Read `SPEC.md` before doing anything. It defines the arms, parameters, gates and measurements. Reference papers are the PDFs in `Resources/` (git-ignored).
 
 ## Current scope
-Phase 1 only: A0-pilot, then A0-core (SPEC §4). Then A0-S (SPEC §5) once A0-core passes. Do not build or run arms A–E until Brad says so.
+Phase 1 is complete (2026-10-23): A0 replications, A0-S, A0-photo, E1 factorial, E2-QZ, B-img pilot + arm A, E6 pilot, all reported in `reports/`. **Project paused 2026-10-25**; `STATUS.md` "Where things stand" is the restart point. The RunPod pod is terminated; the network volume (models + pod mirrors) is kept, so a new pod needs a fresh `RUNPOD_SSH` in `.env` and `scripts/runpod_sync.sh push` before any run. Candidates for the next run are E6-C / E6-O / E6-X (SPEC2 §11) and the Phase 2 arms (basin-scale repulsion, caption-stage rejection, OMNI-style judge; SPEC2 §5–6). None of them runs until Brad has chosen it and its prediction is in `predictions.md`.
 
 ## Hard rules
 1. **Fidelity first.** Reuse Hintze's OSF code and his 100 seed prompts (https://doi.org/10.17605/OSF.IO/WGDQ4). Do not reimplement what the OSF code already does. Use the caption instruction verbatim. Any departure from Hintze (versions, scheduler, quantization, image format) goes in `DEVIATIONS.md` with the reason.

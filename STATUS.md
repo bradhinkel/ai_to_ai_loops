@@ -1,4 +1,28 @@
-# Project status — 2026-10-18 (session 5: A0-pilot finished, gate PASS)
+# Project status
+
+## Where things stand (2026-10-25, project paused)
+**Phase 1 is complete and reported; nothing is running.** Twelve runs (A0-pilot, A0-core, A0-core-2, A0-photo, A0-S, E1-cap/gen/both, E2-QZ, B-img + arm A, E6-photo/track; ~94,000 trajectory-steps, ~110 pod hours within the $250 GPU cap plus ~$50 of API) with a gate report for each in `reports/`. Last code commit before the pause: 93ac332 (2026-10-23).
+
+**Where the pieces are**
+- Data: every run is on the laptop in `runs/` (42 GB, append-only, verified against the pod by file counts and byte totals). The RunPod pod is terminated; the 100 GB network volume ($7/month) keeps the models, venv and the pod mirrors of arm_a, bimg, e2_qz, e6_photo, e6_track, e6_oneshot, e6_step0. A new pod on that volume needs a fresh `RUNPOD_SSH` in `.env`, then `scripts/runpod_sync.sh push`.
+- Write-ups (Claude Docs, working drafts in Brad's voice): "Gravity in AI-to-AI loops" https://claude.ai/artifact/MmTMFQQxP3gVj66hmzCHEg; "Bias in AI-to-AI loops" https://claude.ai/artifact/YU4WN3GRHmeN1cBHrEm37f; "Project notes and the collaboration" (timeline, who did what, predictions scorecard, acknowledgement text, LinkedIn outline, Phase 2 plan, outreach cover notes) https://claude.ai/artifact/YZzC6UYiXZnsdTiVAKvfJW.
+- Repo: made ready for public release on 2026-10-25 (README rewritten, MIT `LICENSE`, Hintze's OSF copy untracked because the OSF project carries no licence; `scripts/fetch_hintze_osf.py` restores it). Still private until Brad flips it: `gh repo edit bradhinkel/ai_to_ai_loops --visibility public --accept-visibility-change-consequences`.
+
+**Brad's next steps (his list, 2026-10-25)**
+1. Read both drafts and Dogan et al. 2026 (arXiv 2601.22093); revise the Dogan comparison in the bias draft afterwards.
+2. Decide the two acknowledgement choices (name model versions; mention the prediction failure rate) and the licence choice (MIT is the placeholder).
+3. Outreach, in this order: Caliskan lab (UW iSchool; local, intro via a UW contact) → Harvey Mudd AXL (Brake, Fandell, Lape, Medero) → Hintze last, with the message honed as "replication first, then your future-work list measured; independent tinkerer asking for review". Cover-note drafts are in the project notes doc.
+4. Before anything is sent: export the drafts to PDF (doc name menu → Export), open the repo, and get the professional review of the Chinese instruction before any E2 material goes out.
+5. Pick the next run (E6-C / E6-O / E6-X, SPEC2 §11; or a Phase 2 arm, SPEC2 §5) and write its prediction in `predictions.md` first. Existing predictions are never edited.
+
+**Open housekeeping**
+- Archive `runs/` with a DOI (Zenodo) once the drafts are circulating; README promises it "on request" until then.
+- The E2-QZ Chinese instruction has had an online review only.
+- `GIT_COMMIT` (pod fallback) is stale and git-ignored; harmless.
+
+---
+
+## Log (chronological; started 2026-10-18, session 5: A0-pilot finished, gate PASS)
 
 ## Decisions made by Brad (2026-10-16)
 1. **OSF.** Back up 2026-10-17. The whole project (14 files, 1.5 MB) is in `hintze_osf/` with `MANIFEST.tsv` (sha256 per file), fetched by `scripts/fetch_hintze_osf.py`. Parameters verified against `OSFcontinue.py`; corrections are in SPEC §4.1 and `DEVIATIONS.md`. Headline differences from the first draft: 1024px then resized to 512, 25 steps, CFG 5.0, PNG, captioner is `llava:latest` (7B) not 13B, and no caption truncation.
@@ -90,3 +114,4 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - 2026-10-23 (session 11, E6 follow-up for Brad): occupation re-assignment (`analysis/e6_occupations.py`, `reports/e6/occupations.md`, section in `reports/e6.md`). 81%/77% of nurse trajectories get "doctor"; the label follows the rendered gender, not the seed (Tracking single-person images: "doctor" 18 men / 4 women, "nurse" 1 / 13, baseline 87 / 87, p < 0.001; doctors 20/22 light). Pilot → military (88–92%) carries gender and skin through unchanged; pilot → astronaut is male (22/0 Tracking, 35/11 Photo; 11 of 18 Photo astronaut trajectories from woman seeds). Social workers get no job word at all.
 - 2026-10-23 (session 11, white papers): Brad wants two working-draft white papers to open conversations with outside labs. Drafted as Claude Docs: **Gravity in AI-to-AI loops** (https://claude.ai/artifact/MmTMFQQxP3gVj66hmzCHEg; Hintze's assertions measured: residence, escape hazard, capture, depth profile, pair-ownership of attractors, instruction/language effects, seed half-life as the one constant, B-img as the first failed anti-attractor intervention, proposals) and **Bias in AI-to-AI loops** (https://claude.ai/artifact/YU4WN3GRHmeN1cBHrEm37f; E6 six findings, Dogan et al. 2026 comparison, next cells E6-C / E6-O / E6-X, explicit request for expert help). Next E6 cells recorded in SPEC2 §11. Targets: Hintze (Dalarna/BEACON), Caliskan (UW iSchool, Tech Policy Lab), Gunes group (Cambridge, Dogan et al. 2026), Harvey Mudd AI Experimentation Lab (AXL: Brake, Fandell, Lape, Medero; Brad has a Mudd connection and has pinged Brake on LinkedIn). Nothing runs until predictions are written.
 - 2026-10-23 (session 11, project notes): **Project notes and the collaboration** written as a Claude Doc (https://claude.ai/artifact/YZzC6UYiXZnsdTiVAKvfJW): timeline, division of labour, Brad's decisions vs Claude's contributions, predictions scorecard (Brad's directional calls held on every run; Claude's thresholds failed about half the time), working rules and mistakes, scale and cost, acknowledgement text, LinkedIn outline, Phase 2 plan (basin-scale repulsion, caption-stage rejection, OMNI-style interestingness judge with a human panel, long gravity runs). Acknowledgement sections added to both white-paper drafts; Wilson, Ghosh & Caliskan (2025, arXiv 2508.17465) cited in the bias draft. Next: Brad reviews Paper 1, then Paper 2 after reading Dogan et al.; sharing via Export (PDF/Word) to outside labs; repo to be opened before circulation.
+- 2026-10-25 (session 12, pause): Brad paused the project to read the drafts and plan outreach (Caliskan → Harvey Mudd AXL → Hintze). Repo prepared for public release: README rewritten for outside readers (findings, layout, reproduction, data availability, acknowledgement, licence), MIT `LICENSE` added, `hintze_osf/` untracked except `MANIFEST.tsv` (the OSF project has no licence; git history still contains the copy, which was public on OSF), `Resources/` ignored, CLAUDE.md scope brought up to date, "Where things stand" section added at the top of this file. No secrets found in the tree or history. Outreach cover-note drafts added to the project notes doc. Memory updated.

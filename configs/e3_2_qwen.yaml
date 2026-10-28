@@ -1,0 +1,10 @@
+# E3-2 pilot (SPEC2 §4 E3, amended 2026-10-28): rewrite loop ("Rewrite this story, same length."), Hintze seeds 0–19 x 100 steps,
+# qwen2.5vl:7b text-only via Ollama (E1/E2 weights), T = 0.9, Ollama parallel 4 (set OLLAMA_NUM_PARALLEL=4). Step 0 copied from runs/e3_1_qwen, so run E3-1 first.
+run_name: e3_2_qwen
+arm: E3-2
+loop: rewrite
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_qwen}
+model: {backend: ollama, model: "qwen2.5vl:7b", digest_prefix: 5ced39dfa4ba, parallel: 4}

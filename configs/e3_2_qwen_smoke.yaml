@@ -1,0 +1,10 @@
+# E3-2 smoke on the laptop: rewrite loop ("Rewrite this story, same length."), 2 trajectories x 5 steps, same model as the
+# E3-1 smoke; step 0 copied from runs/e3_1_qwen_smoke so both loops start from identical stories.
+run_name: e3_2_qwen_smoke
+arm: E3-2
+loop: rewrite
+steps: 5
+trajectories: {first: 0, count: 2}
+temperature: 0.9
+step0: {source: e3_1_qwen_smoke}
+model: {backend: ollama, model: "qwen2.5vl:7b", digest_prefix: 5ced39dfa4ba, parallel: 2}

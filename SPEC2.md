@@ -28,6 +28,9 @@ Owner: Brad Hinkel · Version 2 · 2026-10-18 · Supersedes `SPEC.md` (v1, 2026-
 - E1 Hunyuan cells run at 25 steps with torch.compile (D12 amendment, Brad 2026-10-19). E1-gen core reported 2026-10-19 (`reports/e1_gen.md`).
 - Every mention of `llava:13b` corrected to `llava:latest 7B` (LLaVA 1.6 7B, digest 8dd30f6b0cb1), which is what Hintze's OSF code pulls and what every run uses (D2).
 
+**Amendment 2026-10-28 (Brad with Claude, project paused, nothing running)**
+- E3 redesigned as two text-only loops from shared step-0 stories: E3-1 compress–expand (story → 50-word summary → story) and E3-2 rewrite ("Rewrite this story, same length"), same model for both steps, three model cells. Framing wording (Brad, confirmed 2026-10-28): the loop exposes the model's grain, the default themes trained into it, and the gravity each one exerts; the loop exposes the model's defaults under minimal constraint. Not "dreams" or "inner thoughts". Predictions drafted in `predictions.md` (E3 entry) for Brad to confirm before the smoke run.
+
 ## 1. Objective
 
 Two linked questions:
@@ -176,19 +179,46 @@ Decisions needed before E2-QZ (recorded here; both confirmed by Brad 2026-10-20,
 2. **The explicit clip in E2 must use Hunyuan's own CLIP tokenizer, not SDXL's** (otherwise the channel is a third of the English cells'). This is a deviation from the "same reference tokenizer in every cell" rule of §4 E1, to be recorded in DEVIATIONS.md.
 3. **Runner changes (build items):** `PromptClipper` cuts at whitespace-separated words and would reduce an over-length Chinese caption (no spaces) to an empty prompt; it needs a character-level rule for CJK text (cut at the last clause punctuation that fits), a configurable tokenizer, a character-count length flag in place of `over_50_words`, and a per-caption CJK-share flag. None of this touches the English cells.
 
-### E3 — Text-only loop
+### E3 — Text-only loops (amended 2026-10-28)
 
-- **Loop:** 50-word summary → 500-word essay → 50-word summary → …, 100 steps.
-- **Seeds:** Hintze's 100 seed prompts as the initial descriptions.
-- **Models:** one LLM for both steps (homogeneous), plus a mixed variant where model A writes essays and model B summarizes, to see whose defaults dominate.
-- **Brad's hypothesis:** convergence to specific topics and tone.
-- **What it adds:**
-  - It removes the image↔text translation step. If text-only converges as hard as images or harder, cross-modality is not the cause.
-  - Prior work (Perez et al., ICLR 2025; Acerbi & Stubbersfield, PNAS 2023) measured scalar properties; topic clustering is new.
-- **Measure on the summaries** (fixed length):
-  - MiniLM clustering (topic attractors);
-  - VADER sentiment, readability and length (comparable with Perez et al.).
-- **No GPU needed;** a few dollars of API usage. It is also the test bed for debugging the Part 2 judge prompts cheaply.
+*Original v2 design (2026-10-18): one loop, 50-word summary → 500-word essay → summary, measured on the summaries. Amended 2026-10-28 by Brad with Claude into the two-loop design below; the original loop is E3-1. Genre changed from essay to short story the same day (Brad): the seeds are scenes, a story renders a scene, a 50-word plot summary is a natural object, and characters keep people in the loop so the bias counts work. Brad's speculation: stories will uncover word themes the way the image loops uncovered image themes. Essay is a follow-up variant.*
+
+**Purpose.** Remove the image↔text translation and ask what the loop structure contributes. Two loops run from the same step-0 stories under the same model, so within a model they differ in exactly one thing: whether a 50-word bottleneck sits between successive stories. Framing (Brad, confirmed 2026-10-28; the words to keep are **grain**, **theme** and **gravity**): the loop exposes the model's grain, the default themes trained into it, and the gravity each one exerts. In plain terms, the loop exposes the model's defaults under minimal constraint. Not "dreams" or "inner thoughts", which are evocative and inaccurate.
+
+**Step 0 (shared by both loops).** Each seed prompt (Hintze's 100 seeds; the pilot uses trajectories 0–19, as B-img did) is expanded once with the expand instruction below. That story is step 0 of both E3-1 and E3-2 for that trajectory. Step 0 is excluded from analysis, as in every other cell.
+
+**E3-1, compress–expand** (the analog of caption → image → caption): story → 50-word summary → story, 100 steps. The state is the story; the summary is logged beside it and is the analog of the caption.
+- Compress instruction (Brad, 2026-10-28: the simpler wording; Hintze's caption instruction with "describe this image" made into "summarize this story", the length and format sentences verbatim): *"Summarize this story. The summary must be 50 words or fewer. Do not exceed the limit. Return only the summary. Do not explain."* The "vivid, artistic" clause is not used in the first run; instruction variants are follow-ups (below).
+- Expand instruction (also used for step 0): *"Write a short story of about 500 words based on the following description. Return only the story. Do not explain."* followed by the description. This is the analog of SDXL rendering the prompt: the model fills 500 words from 50.
+
+**E3-2, rewrite** (one step, no bottleneck; Brad 2026-10-28: the simplest analog of the image loop): story → story, 100 steps, instruction *"Rewrite this story, same length. Return only the story. Do not explain."* Nothing orders a change and nothing forces a loss, so any drift is the model's own. ("Rewrite with a different voice" was considered and rejected for the first run: it is itself a repulsion term.)
+
+**Models.** The same model for both steps of a loop (homogeneous). Cells:
+- `claude-sonnet-5-5` over the Messages API, default sampling (D16: no temperature control; the API rejects non-default sampling), effort `low`, thinking billed as output. Same backend pattern as A0-S (`src/captioners/claude_api.py`), concurrent calls, backoff, refusals and empties logged.
+- `qwen2.5vl:7b` (digest 5ced39dfa4ba, the E1/E2 weights) text-only via Ollama at T = 0.9.
+- `llava:latest` 7B (digest 8dd30f6b0cb1, the A0 weights) text-only via Ollama at T = 0.9. Confirmed by Brad 2026-10-28: it matches A0's model, which is worth more than its prose.
+- 2 loops × 3 models = 6 cells. The mixed variant (model A expands, model B compresses: whose defaults win) is deferred until the homogeneous cells are read.
+
+**Size and cost.** Pilot 20 trajectories × 100 steps per cell; a 2 × 5 smoke on the laptop first. Core (100 × 100) only if the pilot gate passes and a question needs it. Per-step tokens with low-effort thinking: E3-1 ≈ 1,100 in / 1,300 out, E3-2 ≈ 900 in / 1,000 out. Sonnet at $2 / $10 per MTok: ≈ $30 (E3-1) + $24 (E3-2); ≈ 30 min wall with 20 trajectories in flight. The 7B cells: ≈ 5–11 h per cell on the laptop at Ollama parallel 4 (no GPU conflict: text only), under 1 h each on a pod. The Batch API does not fit: each step depends on the previous one. A Sonnet core would be ≈ $150–300.
+
+**Recording.** Same append-only store and manifest rules: `runs/<run>/traj_TTT/step_NNN.json` with the story, the summary (E3-1), both instructions, model id and digest, sampling parameters, token usage, timings and flags (`over_50_words` on summaries, `length_ratio` of the story to its step-0 story, refused, empty, retries). No images. Build items: a text-loop runner mode (no generator pass; API or Ollama text backend; same atomic writes, idempotent resume, manifest, events log); `caption_audit.py` pointed at stories and summaries, plus a character-name census; `persistent_atlas.py --space minilm`, `memory_curve.py`, `gravity.py` already read text.
+
+**Measurement** (MiniLM throughout; DINOv2 does not apply):
+- The story is the state in both loops, so the two loops are measured on the same object: step-to-step and cumulative drift curves; memory curve (seed half-life); Vendi at step 99; persistent atlas (radius 0.15, dwell ≥ 5, ≥ 3 visits), hazards, share of steps inside, median dwell.
+- E3-1 summaries measured as well (the caption analog, comparable with Hintze's caption space).
+- Content audit: characters (named individuals, their given names, gendered words, ages, occupations), settings and places; VADER sentiment, readability and word count (comparable with Perez et al.); top content-word census and character-name census per step bin (the vocabulary analog of A0-S's hue census). None of this needs a judge.
+- Cross-modal comparison with the image cells uses only dimensionless quantities: plateau step, knee step, half-life, share of steps in attractors, hazard, dwell. Radii and distances are not comparable across spaces.
+
+**What it adds.**
+- It isolates the bottleneck. E3-1 vs E3-2 under one model is the first cell pair in the project that differs only in loop structure.
+- It removes the image↔text translation. If E3-1 converges on the image loops' timescale (plateau by 25, half-life 3–5), cross-modality is not the cause.
+- It is the bias experiment without a judge: character names, pronouns, occupations and settings in 500-word stories are counted by the existing audit code, and characters persist where captions dropped people.
+- It is the cheap sandbox: temperature and bottleneck-length sweeps (E4's question for pennies), instruction wording, mixed-model pairs, Part 2 judge prompts.
+- Prior work (Perez et al., ICLR 2025; Acerbi & Stubbersfield, PNAS 2023) measured scalar properties of text transmission chains; topic attractors, gravity and the bottleneck contrast are new.
+
+**Follow-ups once the six basic cells are read (Brad, 2026-10-28; not scheduled, each needs its own prediction):** instruction variants (the "vivid, artistic" clause, among others); the loop in Chinese (the E2 analog, with the same translation caveats); bottleneck length (E4's question for pennies); the mixed-model variant; the essay genre (the original E3 design).
+
+**Seeds (Brad, 2026-10-28):** trajectories 0–19, the same seeds B-img used, for continuity with the image cells.
 
 ### E4 — Caption length
 
@@ -389,7 +419,7 @@ Record each person's discipline and how commercial their practice is: graphic de
 | Trapped rate / judge veto rate | Logs | B1, B2, E |
 | Relapse rate | DINOv2 | R |
 | Collective vs. individual diversity | DINOv2 | Part 2 |
-| Topic clusters, sentiment, readability, length | MiniLM, VADER, readability index | E3 |
+| Topic attractors (persistent atlas, radius 0.15), drift, half-life, Vendi on essays and summaries; sentiment, readability, length; word census | MiniLM, VADER, readability index | E3 |
 
 Validate genericness on A0 first: attractor endpoints must score as more generic than the step-1 images.
 
@@ -413,7 +443,7 @@ Validate genericness on A0 first: attractor endpoints must score as more generic
 | 1 | A0 (Part 0) | Everything depends on its archive | RunPod ~$5–12 |
 | 2 | E1 incl. A0-S | Answers "captioner or generator" directly | ~$15–40 GPU + ~$50 API |
 | 3 | Part 2 core: A, B1, B2, D, E, R | The central question | ~$150–200 GPU + ~$50 API |
-| 4 | E3 text loop | Cheap; can run any time in parallel; judge-prompt test bed | ~$5–20 API |
+| 4 | E3 text loops (E3-1 compress–expand vs E3-2 rewrite; amended 2026-10-28) | Cheap; isolates the bottleneck; bias counts without a judge; judge-prompt test bed | ~$55 API (Sonnet, 2 cells) + laptop nights for the 7B cells |
 | 5 | E2 Chinese 2×2 | Strong cultural test; needs a translated instruction | ~$30–60 GPU + API |
 | 5b | E5 D&D bias injection | The only causal test of where the attractors come from; depends on the captioner fine-tune | ~$30–80 GPU incl. LoRA training |
 | 5c | A0-photo, then E6 demographic attribute survival | Measurable and directly relevant to the bias question; needs the validated scoring first | ~$20–50 GPU + human labels |

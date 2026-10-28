@@ -112,3 +112,42 @@ class TrajStore:
 
     def write_record(self, step, record: dict):
         atomic_write_json(self.rec(step), record)
+
+
+class TextTrajStore:
+    """E3 text loops (SPEC2 §4 E3): one record per step, runs/<run>/traj_<TTT>/step_<NNN>.json, holding the story (the state)
+    and, in the compress–expand loop, its summary. Written once, atomically, after every call of the step has returned, so a
+    crash mid-step leaves nothing and the step is redone. Append-only like TrajStore."""
+    def __init__(self, run_dir, traj: int, seed_prompt: str):
+        self.traj = traj
+        self.seed_prompt = seed_prompt
+        self.dir = pathlib.Path(run_dir) / f"traj_{traj:03d}"
+        self.dir.mkdir(parents=True, exist_ok=True)
+        for tmp in self.dir.glob("*.tmp"):
+            tmp.unlink()
+
+    def rec(self, step):  return self.dir / f"step_{step:03d}.json"
+    def is_complete(self, step):  return self.rec(step).exists()
+
+    def last_complete_step(self):
+        steps = sorted(int(p.stem.split("_")[1]) for p in self.dir.glob("step_???.json"))
+        last = -1
+        for s in steps:
+            if s != last + 1:
+                break
+            last = s
+        return last
+
+    def input_for(self, step, loop):
+        """Text that makes story `step`: the seed at step 0; else the summary (compress_expand) or the story (rewrite) of step-1."""
+        if step == 0:
+            return self.seed_prompt, "seed"
+        prev = read_json(self.rec(step - 1))
+        if loop == "compress_expand":
+            return prev["summary"], f"summary_of_step_{step-1:03d}"
+        return prev["story"], f"story_of_step_{step-1:03d}"
+
+    def write_record(self, step, record: dict):
+        if self.rec(step).exists():
+            raise FileExistsError(f"{self.rec(step)} exists; runs/ is append-only")
+        atomic_write_json(self.rec(step), record)

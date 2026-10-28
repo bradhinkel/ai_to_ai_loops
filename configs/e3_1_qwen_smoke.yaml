@@ -1,0 +1,9 @@
+# E3-1 smoke on the laptop (SPEC2 §4 E3, amended 2026-10-28): compress–expand text loop, 2 trajectories x 5 steps,
+# qwen2.5vl:7b text-only via Ollama at T = 0.9. Checks the plumbing, the record schema, resume after a kill, and timings.
+run_name: e3_1_qwen_smoke
+arm: E3-1
+loop: compress_expand
+steps: 5
+trajectories: {first: 0, count: 2}
+temperature: 0.9
+model: {backend: ollama, model: "qwen2.5vl:7b", digest_prefix: 5ced39dfa4ba, parallel: 2}

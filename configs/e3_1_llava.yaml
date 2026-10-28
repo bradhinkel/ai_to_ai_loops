@@ -1,9 +1,9 @@
 # E3-1 pilot (SPEC2 §4 E3, amended 2026-10-28): compress–expand text loop, story -> 50-word summary -> story,
-# Hintze seeds 0–19 x 100 steps, llava:latest 7B text-only via Ollama (A0 weights), T = 0.9, Ollama parallel 4 (set OLLAMA_NUM_PARALLEL=4).
+# Hintze seeds 0–19 x 100 steps, llava:latest 7B text-only via Ollama (A0 weights), T = 0.9, parallel 2 (the laptop serves one request at a time, 11% of the model on CPU; 2 keeps the queue full).
 run_name: e3_1_llava
 arm: E3-1
 loop: compress_expand
 steps: 100
 trajectories: {first: 0, count: 20}
 temperature: 0.9
-model: {backend: ollama, model: "llava:latest", digest_prefix: 8dd30f6b0cb1, parallel: 4}
+model: {backend: ollama, model: "llava:latest", digest_prefix: 8dd30f6b0cb1, parallel: 2}

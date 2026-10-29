@@ -86,3 +86,5 @@ zipp==4.1.1
 anthropic==1.16.0
 opencv-python-headless==5.0.0.93
 scikit-image==0.26.0
+vaderSentiment==3.3.2
+textstat==0.7.10

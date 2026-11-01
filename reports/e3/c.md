@@ -7,7 +7,7 @@ Cells: e3_1_haiku, e3_2b_haiku. Same measurements as the E3 gate; gate cells in 
 | cell | prediction | holds | numbers |
 |---|---|---|---|
 | e3_1_haiku | C1_length_450_550 | yes | {"words_median_99": 501.5, "band": [450, 550]} |
-| e3_1_haiku | C4_size_axis | no | {"half_life": 11, "sonnet_half": 45, "half_le_30": true, "top10_cover": 0.542, "sonnet_cover": 0.402, "cover_ge_05": true, "words_99": 501.5, "holds_500": true, "modal_tuple": ["unclear", "internal", "hopeful"], "sonnet_modal": ["young_adult", "interpersonal", "hopeful"], "fields_agree": 1, "agree_ge2": false, "tuple_b_haiku": ["woman", "internal", "hopeful"], "tuple_b_sonnet": null, "tuple_b_agree": null} |
+| e3_1_haiku | C4_size_axis | yes | {"half_life": 11, "sonnet_half": 45, "half_le_30": true, "top10_cover": 0.542, "sonnet_cover": 0.402, "cover_ge_05": true, "words_99": 501.5, "holds_500": true, "modal_tuple": ["young_adult", "internal", "hopeful"], "sonnet_modal": ["young_adult", "interpersonal", "hopeful"], "fields_agree": 2, "agree_ge2": true, "tuple_b_haiku": ["woman", "internal", "hopeful"], "tuple_b_sonnet": ["woman", "interpersonal", "hopeful"], "tuple_b_agree": 2} |
 | e3_2b_haiku | C1_length_450_550 | no | {"words_median_99": 555.5, "band": [450, 550]} |
 | e3_2b_haiku | C2_rewrite_reproduces | yes | {"half_life": null, "half_gt_99": true, "cum99": 0.093, "own_e3_1_cum99": 0.487, "cum99_below_e3_1": true, "shared": 0, "self_share": 1.0} |
 
@@ -24,8 +24,8 @@ Gate references: e3_1_sonnet: half-life 45, dist@99 0.448, words@99 558, copies 
 
 | cell | judged | eff. tuples 1–10 → 50–99 | modal late tuple (share) | tuple B modal late (share) | modal fields late |
 |---|---|---|---|---|---|
-| e3_1_haiku | 672 | 15.8 → 16.2 | unclear/internal/hopeful (0.23) | woman/internal/hopeful (0.45) | lead_age unclear 0.31, lead_gender woman 0.77, lead_role_class other_or_unclear 0.53, setting_place home_interior 0.44, setting_time present_day 0.60, conflict_type internal 0.71, ending_valence hopeful 0.71, secondary_character parent_or_grandparent 0.30, death_present True 0.59, reconciliation_present False 0.70, nature_central False 0.73 |
-| e3_2b_haiku | not judged | | | | |
+| e3_1_haiku | 2000 | 23.3 → 23.6 | young_adult/internal/hopeful (0.16) | woman/internal/hopeful (0.30) | lead_age unclear 0.32, lead_gender woman 0.70, lead_role_class other_or_unclear 0.37, setting_place home_interior 0.28, setting_time present_day 0.71, conflict_type internal 0.52, ending_valence hopeful 0.73, secondary_character parent_or_grandparent 0.29, death_present False 0.57, reconciliation_present False 0.74, nature_central False 0.77 |
+| e3_2b_haiku | 2000 | 22.2 → 21.3 | teen/internal/hopeful (0.09) | woman/internal/hopeful (0.25) | lead_age young_adult 0.32, lead_gender woman 0.75, lead_role_class other_or_unclear 0.30, setting_place institution 0.38, setting_time present_day 0.78, conflict_type internal 0.43, ending_valence hopeful 0.66, secondary_character other 0.24, death_present False 0.82, reconciliation_present False 0.90, nature_central False 0.80 |
 
 Compliance / flags: e3_1_haiku: {'summaries': 2000, 'summary_le50_share': 0.55, 'story_lt400_share': 0.02878787878787879, 'length_ratio_step99_median': 1.0335} flags {'story_refusal': 368, 'summary_over_50_words': 900, 'story_empty': 1}; e3_2b_haiku: {'summaries': 0, 'summary_le50_share': None, 'story_lt400_share': 0.0, 'length_ratio_step99_median': 1.1355} flags {'story_refusal': 100}
 

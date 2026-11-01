@@ -916,97 +916,97 @@
     "share_endpoints_inside": 0.2
    },
    "theme": {
-    "judged": 672,
+    "judged": 2000,
     "tuple": {
      "early": {
-      "n": 70,
-      "eff": 15.805257648453235,
+      "n": 200,
+      "eff": 23.310218620371085,
       "modal": [
        "young_adult",
        "internal",
        "hopeful"
       ],
-      "modal_share": 0.18571428571428572
+      "modal_share": 0.205
      },
      "late": {
-      "n": 322,
-      "eff": 16.208109730315464,
+      "n": 1000,
+      "eff": 23.59319857358326,
       "modal": [
-       "unclear",
+       "young_adult",
        "internal",
        "hopeful"
       ],
-      "modal_share": 0.22981366459627328
+      "modal_share": 0.164
      },
-     "eff_ratio": 1.0254884855927453
+     "eff_ratio": 1.012139738276194
     },
     "tuple_b": {
      "early": {
-      "n": 70,
-      "eff": 10.205961575320455,
+      "n": 200,
+      "eff": 14.612800058367416,
       "modal": [
        "woman",
        "internal",
        "hopeful"
       ],
-      "modal_share": 0.2571428571428571
+      "modal_share": 0.26
      },
      "late": {
-      "n": 322,
-      "eff": 6.913308399429687,
+      "n": 1000,
+      "eff": 10.75701564387598,
       "modal": [
        "woman",
        "internal",
        "hopeful"
       ],
-      "modal_share": 0.453416149068323
+      "modal_share": 0.302
      },
-     "eff_ratio": 0.67737942656448
+     "eff_ratio": 0.7361365105188323
     },
     "field_modal_late": {
      "lead_age": [
       "unclear",
-      100
+      319
      ],
      "lead_gender": [
       "woman",
-      248
+      696
      ],
      "lead_role_class": [
       "other_or_unclear",
-      172
+      366
      ],
      "setting_place": [
       "home_interior",
-      142
+      280
      ],
      "setting_time": [
       "present_day",
-      193
+      713
      ],
      "conflict_type": [
       "internal",
-      228
+      523
      ],
      "ending_valence": [
       "hopeful",
-      229
+      733
      ],
      "secondary_character": [
       "parent_or_grandparent",
-      97
+      292
      ],
      "death_present": [
-      "True",
-      191
+      "False",
+      574
      ],
      "reconciliation_present": [
       "False",
-      226
+      742
      ],
      "nature_central": [
       "False",
-      234
+      772
      ]
     }
    }
@@ -1924,7 +1924,101 @@
     "share_steps_inside": 0.0,
     "share_endpoints_inside": 0.0
    },
-   "theme": null
+   "theme": {
+    "judged": 2000,
+    "tuple": {
+     "early": {
+      "n": 200,
+      "eff": 22.24012604320245,
+      "modal": [
+       "middle_aged",
+       "internal",
+       "hopeful"
+      ],
+      "modal_share": 0.085
+     },
+     "late": {
+      "n": 1000,
+      "eff": 21.26911430190883,
+      "modal": [
+       "teen",
+       "internal",
+       "hopeful"
+      ],
+      "modal_share": 0.093
+     },
+     "eff_ratio": 0.9563396475628155
+    },
+    "tuple_b": {
+     "early": {
+      "n": 200,
+      "eff": 12.107979701354783,
+      "modal": [
+       "woman",
+       "internal",
+       "hopeful"
+      ],
+      "modal_share": 0.23
+     },
+     "late": {
+      "n": 1000,
+      "eff": 11.372886472780078,
+      "modal": [
+       "woman",
+       "internal",
+       "hopeful"
+      ],
+      "modal_share": 0.253
+     },
+     "eff_ratio": 0.9392885314721453
+    },
+    "field_modal_late": {
+     "lead_age": [
+      "young_adult",
+      315
+     ],
+     "lead_gender": [
+      "woman",
+      746
+     ],
+     "lead_role_class": [
+      "other_or_unclear",
+      303
+     ],
+     "setting_place": [
+      "institution",
+      376
+     ],
+     "setting_time": [
+      "present_day",
+      780
+     ],
+     "conflict_type": [
+      "internal",
+      435
+     ],
+     "ending_valence": [
+      "hopeful",
+      660
+     ],
+     "secondary_character": [
+      "other",
+      242
+     ],
+     "death_present": [
+      "False",
+      820
+     ],
+     "reconciliation_present": [
+      "False",
+      900
+     ],
+     "nature_central": [
+      "False",
+      795
+     ]
+    }
+   }
   }
  },
  "params": {
@@ -1964,7 +2058,7 @@
     "words_99": 501.5,
     "holds_500": true,
     "modal_tuple": [
-     "unclear",
+     "young_adult",
      "internal",
      "hopeful"
     ],
@@ -1973,15 +2067,19 @@
      "interpersonal",
      "hopeful"
     ],
-    "fields_agree": 1,
-    "agree_ge2": false,
+    "fields_agree": 2,
+    "agree_ge2": true,
     "tuple_b_haiku": [
      "woman",
      "internal",
      "hopeful"
     ],
-    "tuple_b_sonnet": null,
-    "tuple_b_agree": null
+    "tuple_b_sonnet": [
+     "woman",
+     "interpersonal",
+     "hopeful"
+    ],
+    "tuple_b_agree": 2
    }
   },
   "e3_2b_haiku": {

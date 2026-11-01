@@ -1,0 +1,8 @@
+# Smoke for Mistral 7B as a text-loop model (E3-C, 2026-11-01): 2 trajectories x 3 steps, compress–expand. Checks instruction compliance (no preamble, length), timing, record schema.
+run_name: e3_1_mistral_smoke
+arm: E3-1
+loop: compress_expand
+steps: 3
+trajectories: {first: 0, count: 2}
+temperature: 0.9
+model: {backend: ollama, model: "mistral:7b", digest_prefix: 6577803aa9a0, parallel: 2}

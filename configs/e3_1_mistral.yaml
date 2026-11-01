@@ -1,0 +1,9 @@
+# E3-C (2026-11-01): compress–expand text loop, story -> 50-word summary -> story, Hintze seeds 0–19 x 100 steps, mistral:7b (Mistral 7B Instruct, Ollama tag pulled
+# 2026-11-01, digest 6577803aa9a0) via Ollama at T = 0.9, parallel 2. Mistral replaces LLaVA for the text cells (Brad, 2026-11-01).
+run_name: e3_1_mistral
+arm: E3-1
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+model: {backend: ollama, model: "mistral:7b", digest_prefix: 6577803aa9a0, parallel: 2}

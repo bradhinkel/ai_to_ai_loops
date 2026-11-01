@@ -1,0 +1,11 @@
+# E3-C (2026-11-01): rewrite loop with an ABSOLUTE length target ("length about 500 words" instead of "same length"; the relative target compounded
+# into shrinkage under the 7B models in E3-2), Hintze seeds 0–19 x 100 steps, claude-haiku-5-5, default sampling (D16), effort low. Step 0 copied from runs/e3_1_haiku.
+run_name: e3_2b_haiku
+arm: E3-2b
+loop: rewrite
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_haiku}
+instructions: {rewrite: "Rewrite this story, length about 500 words. Return only the story. Do not explain."}
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 8, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

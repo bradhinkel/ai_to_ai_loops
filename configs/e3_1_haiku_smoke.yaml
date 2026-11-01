@@ -1,0 +1,8 @@
+# Smoke for the Haiku text backend (E3-C, 2026-11-01): 2 trajectories x 3 steps, compress–expand, claude-haiku-5-5. Checks the temperature probe (D16), effort, record schema, timing and cost.
+run_name: e3_1_haiku_smoke
+arm: E3-1
+loop: compress_expand
+steps: 3
+trajectories: {first: 0, count: 2}
+temperature: 0.9
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 2, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

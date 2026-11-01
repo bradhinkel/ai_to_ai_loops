@@ -1,0 +1,11 @@
+# E3-C (2026-11-01): rewrite loop with an ABSOLUTE length target ("length about 500 words"), Hintze seeds 0–19 x 100 steps, qwen2.5vl:7b text-only via Ollama
+# (E1/E2 weights), T = 0.9, parallel 2. Step 0 copied from runs/e3_1_qwen (same stories as e3_2_qwen, so the two rewrite instructions differ in nothing else).
+run_name: e3_2b_qwen
+arm: E3-2b
+loop: rewrite
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_qwen}
+instructions: {rewrite: "Rewrite this story, length about 500 words. Return only the story. Do not explain."}
+model: {backend: ollama, model: "qwen2.5vl:7b", digest_prefix: 5ced39dfa4ba, parallel: 2}

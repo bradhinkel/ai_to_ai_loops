@@ -1,0 +1,9 @@
+# E3-C (predictions.md "E3 follow-ups", 2026-11-01): compress–expand text loop, story -> 50-word summary -> story, Hintze seeds 0–19 x 100 steps,
+# claude-haiku-5-5 over the Messages API, default sampling (D16: T is probed and rejected), effort low, 8 concurrent trajectories. Haiku replaces Sonnet while the work is evaluation (Brad).
+run_name: e3_1_haiku
+arm: E3-1
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 8, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

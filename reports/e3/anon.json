@@ -1,0 +1,517 @@
+{
+ "params": {
+  "k": 40,
+  "radius": 0.15,
+  "exit_factor": 1.25,
+  "min_dwell": 5,
+  "min_visits": 3,
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_sonnet": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.38108370731356606,
+     "anon": 0.2933928059633702,
+     "rand": 0.3495492042706952
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.0,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 10.347793953944242,
+     "anon": 7.972346690894823,
+     "rand": 8.961841642673882
+    },
+    "consecutive_median": {
+     "original": 0.1958541158901837,
+     "anon": 0.20014785191886514,
+     "rand": 0.19634922238197378
+    },
+    "atlas": {
+     "original": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     },
+     "anon": {
+      "persistent": 1,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.027777777777777776
+     },
+     "rand": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     }
+    },
+    "median_shift_from_anonymising": 0.1498891936055643,
+    "median_shift_from_random": 0.03599870765577595
+   },
+   "summaries": {
+    "nn_other_median": {
+     "original": 0.5202316921915361,
+     "anon": 0.3832849749237033,
+     "rand": 0.4490921372076618
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.0,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 13.98091372472212,
+     "anon": 9.531569275317677,
+     "rand": 10.974770978909506
+    },
+    "consecutive_median": {
+     "original": 0.08599070744542653,
+     "anon": 0.09458727708402853,
+     "rand": 0.12268891451761504
+    },
+    "atlas": {
+     "original": {
+      "persistent": 5,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.19444444444444445
+     },
+     "anon": {
+      "persistent": 5,
+      "shared_by_2plus_traj": 1,
+      "share_steps_inside": 0.19343434343434343
+     },
+     "rand": {
+      "persistent": 4,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.1297979797979798
+     }
+    },
+    "median_shift_from_anonymising": 0.2384140297759636,
+    "median_shift_from_random": 0.0706924529211535
+   }
+  },
+  "e3_2_sonnet": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.46792077975133395,
+     "anon": 0.3898316353722343,
+     "rand": 0.4313033805518664
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.0,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 11.363263200760695,
+     "anon": 8.99735032325554,
+     "rand": 10.310674985941816
+    },
+    "consecutive_median": {
+     "original": 0.03509792323086286,
+     "anon": 0.03838479035840725,
+     "rand": 0.05822983342830729
+    },
+    "atlas": {
+     "original": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     },
+     "anon": {
+      "persistent": 1,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.03232323232323232
+     },
+     "rand": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.04242424242424243
+     }
+    },
+    "median_shift_from_anonymising": 0.12474542949149192,
+    "median_shift_from_random": 0.03185686889956241
+   }
+  },
+  "e3_1_qwen": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.36935476804152295,
+     "anon": 0.26432827008884946,
+     "rand": 0.3405383251157207
+    },
+    "nn_other_within_015": {
+     "original": 0.002,
+     "anon": 0.006,
+     "rand": 0.002
+    },
+    "vendi_step99": {
+     "original": 12.232213357929483,
+     "anon": 9.47379448444599,
+     "rand": 11.340184542641053
+    },
+    "consecutive_median": {
+     "original": 0.16602272714772076,
+     "anon": 0.1886403316573726,
+     "rand": 0.16867126336483873
+    },
+    "atlas": {
+     "original": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     },
+     "anon": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     },
+     "rand": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     }
+    },
+    "median_shift_from_anonymising": 0.1586448213961289,
+    "median_shift_from_random": 0.032186790424080625
+   },
+   "summaries": {
+    "nn_other_median": {
+     "original": 0.4504814769133067,
+     "anon": 0.3276001923161048,
+     "rand": 0.4026131292312429
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.012666666666666666,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 13.78518317377003,
+     "anon": 10.442894939764077,
+     "rand": 12.29892000602383
+    },
+    "consecutive_median": {
+     "original": 0.1005603603964294,
+     "anon": 0.12168936272774467,
+     "rand": 0.13264760357971783
+    },
+    "atlas": {
+     "original": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.05808080808080808
+     },
+     "anon": {
+      "persistent": 3,
+      "shared_by_2plus_traj": 2,
+      "share_steps_inside": 0.08484848484848485
+     },
+     "rand": {
+      "persistent": 4,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.1292929292929293
+     }
+    },
+    "median_shift_from_anonymising": 0.2439892458547454,
+    "median_shift_from_random": 0.05693580436592116
+   }
+  },
+  "e3_2_qwen": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.4694947886126221,
+     "anon": 0.4308225233319665,
+     "rand": 0.4566993172424455
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.0,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 13.13631224838229,
+     "anon": 11.05202121990426,
+     "rand": 12.058982221484742
+    },
+    "consecutive_median": {
+     "original": 0.03216308479336144,
+     "anon": 0.03611840795421217,
+     "rand": 0.04830783911224462
+    },
+    "atlas": {
+     "original": {
+      "persistent": 3,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.11464646464646465
+     },
+     "anon": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.046464646464646465
+     },
+     "rand": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.06717171717171717
+     }
+    },
+    "median_shift_from_anonymising": 0.08743475324700245,
+    "median_shift_from_random": 0.0238935783616836
+   }
+  },
+  "e3_1_llava": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.40867044194060487,
+     "anon": 0.30504923648023324,
+     "rand": 0.3739651513294595
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.021333333333333333,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 11.606543516101391,
+     "anon": 8.413678967554107,
+     "rand": 10.240960752818518
+    },
+    "consecutive_median": {
+     "original": 0.12077783662183528,
+     "anon": 0.13930530032627714,
+     "rand": 0.12411150618773537
+    },
+    "atlas": {
+     "original": {
+      "persistent": 0,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.0
+     },
+     "anon": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 1,
+      "share_steps_inside": 0.06565656565656566
+     },
+     "rand": {
+      "persistent": 1,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.015656565656565657
+     }
+    },
+    "median_shift_from_anonymising": 0.18108360387028632,
+    "median_shift_from_random": 0.038176716201094474
+   },
+   "summaries": {
+    "nn_other_median": {
+     "original": 0.439707167795801,
+     "anon": 0.31252126102805267,
+     "rand": 0.40838261255235464
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.04666666666666667,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 13.050061087158133,
+     "anon": 8.973404913782224,
+     "rand": 11.87693697193477
+    },
+    "consecutive_median": {
+     "original": 0.09564877162635421,
+     "anon": 0.12189586055861812,
+     "rand": 0.11381139545070307
+    },
+    "atlas": {
+     "original": {
+      "persistent": 4,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.10202020202020202
+     },
+     "anon": {
+      "persistent": 6,
+      "shared_by_2plus_traj": 1,
+      "share_steps_inside": 0.20555555555555555
+     },
+     "rand": {
+      "persistent": 5,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.12676767676767678
+     }
+    },
+    "median_shift_from_anonymising": 0.2831575531859395,
+    "median_shift_from_random": 0.04443696870890246
+   }
+  },
+  "e3_2_llava": {
+   "stories": {
+    "nn_other_median": {
+     "original": 0.5605690753062963,
+     "anon": 0.4847608008273657,
+     "rand": 0.5333258620009292
+    },
+    "nn_other_within_015": {
+     "original": 0.0,
+     "anon": 0.0,
+     "rand": 0.0
+    },
+    "vendi_step99": {
+     "original": 15.254698338376299,
+     "anon": 14.022198792572496,
+     "rand": 14.966601235940566
+    },
+    "consecutive_median": {
+     "original": 0.050874268917371845,
+     "anon": 0.05564146260250513,
+     "rand": 0.057989223514565535
+    },
+    "atlas": {
+     "original": {
+      "persistent": 2,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.06767676767676768
+     },
+     "anon": {
+      "persistent": 4,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.12676767676767678
+     },
+     "rand": {
+      "persistent": 3,
+      "shared_by_2plus_traj": 0,
+      "share_steps_inside": 0.1005050505050505
+     }
+    },
+    "median_shift_from_anonymising": 4.941602682606572e-13,
+    "median_shift_from_random": 4.851119506099622e-13
+   }
+  }
+ },
+ "names": {
+  "e3_1_sonnet": {
+   "n_names": 577,
+   "replaced": {
+    "story": 36419,
+    "summary": 6749
+   },
+   "words": {
+    "story": 1114929,
+    "summary": 95853
+   }
+  },
+  "e3_2_sonnet": {
+   "n_names": 296,
+   "replaced": {
+    "story": 27677,
+    "summary": 0
+   },
+   "words": {
+    "story": 1064947,
+    "summary": 0
+   }
+  },
+  "e3_1_qwen": {
+   "n_names": 268,
+   "replaced": {
+    "story": 25944,
+    "summary": 5168
+   },
+   "words": {
+    "story": 867455,
+    "summary": 69230
+   }
+  },
+  "e3_2_qwen": {
+   "n_names": 45,
+   "replaced": {
+    "story": 7199,
+    "summary": 0
+   },
+   "words": {
+    "story": 314966,
+    "summary": 0
+   }
+  },
+  "e3_1_llava": {
+   "n_names": 106,
+   "replaced": {
+    "story": 21444,
+    "summary": 4727
+   },
+   "words": {
+    "story": 722613,
+    "summary": 115997
+   }
+  },
+  "e3_2_llava": {
+   "n_names": 18,
+   "replaced": {
+    "story": 3488,
+    "summary": 0
+   },
+   "words": {
+    "story": 234268,
+    "summary": 0
+   }
+  }
+ },
+ "verdict": {
+  "A1_holds": false,
+  "max_drop": 0.1369467172678328,
+  "max_drop_where": [
+   "e3_1_sonnet",
+   "summaries"
+  ],
+  "max_drop_names_beyond_null": 0.09586135152430197,
+  "shared_attractors_e3_1_anon_vs_rand": [
+   [
+    "e3_1_sonnet",
+    "stories",
+    0,
+    0
+   ],
+   [
+    "e3_1_sonnet",
+    "summaries",
+    1,
+    0
+   ],
+   [
+    "e3_1_qwen",
+    "stories",
+    0,
+    0
+   ],
+   [
+    "e3_1_qwen",
+    "summaries",
+    2,
+    0
+   ],
+   [
+    "e3_1_llava",
+    "stories",
+    1,
+    0
+   ],
+   [
+    "e3_1_llava",
+    "summaries",
+    1,
+    0
+   ]
+  ],
+  "rule": "A1 as written: fall >= 0.10 or any shared attractor in an E3-1 cell -> names were the barrier. The rand column is the null added after the first pass (same token budget, random content words): the names-specific effect is anon minus rand."
+ }
+}

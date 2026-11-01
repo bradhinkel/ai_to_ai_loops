@@ -1,0 +1,8340 @@
+{
+ "params": {
+  "k": 40,
+  "radius": 0.15,
+  "exit_factor": 1.25,
+  "min_dwell": 5,
+  "min_visits": 3,
+  "tuple": [
+   "lead_age",
+   "conflict_type",
+   "ending_valence"
+  ],
+  "packages": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_sonnet": {
+   "model": "sonnet",
+   "loop": "E3-1",
+   "n_judged": 1996,
+   "n_malformed": 4,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 25.441746617286157,
+    "eff_late": 29.80367880300371,
+    "ratio": 1.1714478275148719,
+    "modal_early": [
+     [
+      "young_adult",
+      "internal",
+      "hopeful"
+     ],
+     0.1
+    ],
+    "modal_late": [
+     [
+      "young_adult",
+      "interpersonal",
+      "hopeful"
+     ],
+     0.0712136409227683
+    ],
+    "top5_late": [
+     [
+      [
+       "young_adult",
+       "interpersonal",
+       "hopeful"
+      ],
+      0.071
+     ],
+     [
+      [
+       "middle_aged",
+       "internal",
+       "hopeful"
+      ],
+      0.062
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      0.06
+     ],
+     [
+      [
+       "middle_aged",
+       "interpersonal",
+       "hopeful"
+      ],
+      0.059
+     ],
+     [
+      [
+       "older_adult",
+       "internal",
+       "bittersweet"
+      ],
+      0.058
+     ]
+    ],
+    "js_early_late": 0.1496611736114137,
+    "null_ratio_mean": 1.1091663777522531,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "middle_aged",
+       "interpersonal",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 9
+     },
+     {
+      "tuple": [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 3
+     },
+     {
+      "tuple": [
+       "young_adult",
+       "interpersonal",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 3
+     }
+    ],
+    "share_hold_step1_at_last": 0.1,
+    "memory_curve": [
+     1.0,
+     0.3157894736842105,
+     0.15789473684210525,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.10526315789473684,
+     0.05263157894736842,
+     0.10526315789473684,
+     0.10526315789473684,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.0,
+     0.10526315789473684,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.10526315789473684,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.05263157894736842,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "memory_half_step": 1,
+    "memory_at_last": 0.0
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 12.397024303852977,
+    "eff_late": 15.508980961503731,
+    "ratio": 1.2510244863102804,
+    "null_ratio_mean": 1.051208400334478,
+    "modal_late": [
+     [
+      "woman",
+      "interpersonal",
+      "hopeful"
+     ],
+     0.15446339017051153
+    ],
+    "top3_late": [
+     [
+      [
+       "woman",
+       "interpersonal",
+       "hopeful"
+      ],
+      0.154
+     ],
+     [
+      [
+       "woman",
+       "internal",
+       "hopeful"
+      ],
+      0.135
+     ],
+     [
+      [
+       "woman",
+       "internal",
+       "bittersweet"
+      ],
+      0.117
+     ]
+    ],
+    "js_early_late": 0.09319426042414937,
+    "share_hold_step1_at_last": 0.2,
+    "memory_half_step": 1,
+    "memory_at_last": 0.15789473684210525
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.5667874156834487,
+       "modal": "unclear",
+       "modal_share": 0.32,
+       "dist": {
+        "unclear": 64,
+        "middle_aged": 57,
+        "young_adult": 33,
+        "older_adult": 29,
+        "teen": 10,
+        "child": 7
+       }
+      },
+      "11-25": {
+       "entropy": 1.6048975144680218,
+       "modal": "unclear",
+       "modal_share": 0.33,
+       "dist": {
+        "unclear": 99,
+        "middle_aged": 72,
+        "older_adult": 49,
+        "young_adult": 48,
+        "child": 21,
+        "teen": 11
+       }
+      },
+      "26-50": {
+       "entropy": 1.6374991582939664,
+       "modal": "unclear",
+       "modal_share": 0.294,
+       "dist": {
+        "unclear": 147,
+        "middle_aged": 126,
+        "older_adult": 100,
+        "young_adult": 66,
+        "teen": 32,
+        "child": 29
+       }
+      },
+      "51-75": {
+       "entropy": 1.6845026364034255,
+       "modal": "middle_aged",
+       "modal_share": 0.28112449799196787,
+       "dist": {
+        "middle_aged": 140,
+        "unclear": 111,
+        "older_adult": 98,
+        "young_adult": 73,
+        "child": 42,
+        "teen": 34
+       }
+      },
+      "76-89": {
+       "entropy": 1.6714609104886464,
+       "modal": "middle_aged",
+       "modal_share": 0.29642857142857143,
+       "dist": {
+        "middle_aged": 83,
+        "unclear": 63,
+        "older_adult": 48,
+        "young_adult": 45,
+        "child": 25,
+        "teen": 16
+       }
+      },
+      "90-99": {
+       "entropy": 1.6221510730405653,
+       "modal": "unclear",
+       "modal_share": 0.271356783919598,
+       "dist": {
+        "unclear": 54,
+        "middle_aged": 44,
+        "young_adult": 42,
+        "older_adult": 35,
+        "child": 21,
+        "teen": 3
+       }
+      }
+     },
+     "entropy_early": 1.5667874156834487,
+     "entropy_late": 1.6775244406214938,
+     "entropy_change": 0.07067776000086165
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6650025367997473,
+       "modal": "woman",
+       "modal_share": 0.72,
+       "dist": {
+        "woman": 144,
+        "man": 52,
+        "other_or_unclear": 4
+       }
+      },
+      "11-25": {
+       "entropy": 0.6644162938593681,
+       "modal": "woman",
+       "modal_share": 0.76,
+       "dist": {
+        "woman": 228,
+        "man": 59,
+        "other_or_unclear": 13
+       }
+      },
+      "26-50": {
+       "entropy": 0.7023721270143257,
+       "modal": "woman",
+       "modal_share": 0.736,
+       "dist": {
+        "woman": 368,
+        "man": 108,
+        "other_or_unclear": 24
+       }
+      },
+      "51-75": {
+       "entropy": 0.8193979284511823,
+       "modal": "woman",
+       "modal_share": 0.608433734939759,
+       "dist": {
+        "woman": 303,
+        "man": 170,
+        "other_or_unclear": 25
+       }
+      },
+      "76-89": {
+       "entropy": 0.8276188461704896,
+       "modal": "woman",
+       "modal_share": 0.625,
+       "dist": {
+        "woman": 175,
+        "man": 88,
+        "other_or_unclear": 17
+       }
+      },
+      "90-99": {
+       "entropy": 0.7873150635688622,
+       "modal": "woman",
+       "modal_share": 0.628140703517588,
+       "dist": {
+        "woman": 125,
+        "man": 66,
+        "other_or_unclear": 8
+       }
+      }
+     },
+     "entropy_early": 0.6650025367997473,
+     "entropy_late": 0.8155393228429193,
+     "entropy_change": 0.2263702432890166
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.7426207853720428,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.315,
+       "dist": {
+        "worker_or_tradesperson": 63,
+        "professional": 44,
+        "other_or_unclear": 42,
+        "leader_or_official": 15,
+        "caregiver_or_parent": 12,
+        "student_or_child": 12,
+        "artist_or_craftsperson": 11,
+        "outsider_or_wanderer": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.871594105339973,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.24333333333333335,
+       "dist": {
+        "worker_or_tradesperson": 73,
+        "professional": 72,
+        "other_or_unclear": 58,
+        "student_or_child": 31,
+        "caregiver_or_parent": 23,
+        "artist_or_craftsperson": 22,
+        "leader_or_official": 12,
+        "retired": 8,
+        "outsider_or_wanderer": 1
+       }
+      },
+      "26-50": {
+       "entropy": 1.8033311107138585,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.242,
+       "dist": {
+        "worker_or_tradesperson": 121,
+        "other_or_unclear": 117,
+        "professional": 111,
+        "student_or_child": 59,
+        "artist_or_craftsperson": 47,
+        "retired": 19,
+        "caregiver_or_parent": 17,
+        "leader_or_official": 9
+       }
+      },
+      "51-75": {
+       "entropy": 1.9659049742736872,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.21084337349397592,
+       "dist": {
+        "worker_or_tradesperson": 105,
+        "professional": 103,
+        "other_or_unclear": 81,
+        "student_or_child": 77,
+        "caregiver_or_parent": 45,
+        "leader_or_official": 33,
+        "artist_or_craftsperson": 33,
+        "retired": 18,
+        "outsider_or_wanderer": 3
+       }
+      },
+      "76-89": {
+       "entropy": 1.9412168417205449,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.22142857142857142,
+       "dist": {
+        "worker_or_tradesperson": 62,
+        "other_or_unclear": 48,
+        "student_or_child": 48,
+        "professional": 40,
+        "caregiver_or_parent": 35,
+        "artist_or_craftsperson": 26,
+        "leader_or_official": 13,
+        "retired": 8
+       }
+      },
+      "90-99": {
+       "entropy": 1.942498064095325,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.21608040201005024,
+       "dist": {
+        "worker_or_tradesperson": 43,
+        "other_or_unclear": 37,
+        "student_or_child": 32,
+        "artist_or_craftsperson": 26,
+        "professional": 25,
+        "caregiver_or_parent": 22,
+        "leader_or_official": 8,
+        "retired": 6
+       }
+      }
+     },
+     "entropy_early": 1.7426207853720428,
+     "entropy_late": 1.9638017635875338,
+     "entropy_change": 0.12692433148515997
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.9104328122832428,
+       "modal": "institution",
+       "modal_share": 0.29,
+       "dist": {
+        "institution": 58,
+        "city": 42,
+        "other_or_unclear": 26,
+        "coast_or_sea": 20,
+        "home_interior": 18,
+        "wilderness_or_mountain": 18,
+        "small_town_or_village": 9,
+        "rural_or_farmland": 8,
+        "road_or_journey": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.8282295205855243,
+       "modal": "institution",
+       "modal_share": 0.30666666666666664,
+       "dist": {
+        "institution": 92,
+        "city": 75,
+        "wilderness_or_mountain": 34,
+        "other_or_unclear": 28,
+        "coast_or_sea": 26,
+        "home_interior": 24,
+        "small_town_or_village": 15,
+        "rural_or_farmland": 5,
+        "road_or_journey": 1
+       }
+      },
+      "26-50": {
+       "entropy": 1.9255732173972668,
+       "modal": "institution",
+       "modal_share": 0.3,
+       "dist": {
+        "institution": 150,
+        "city": 107,
+        "home_interior": 53,
+        "rural_or_farmland": 52,
+        "other_or_unclear": 47,
+        "coast_or_sea": 38,
+        "small_town_or_village": 23,
+        "wilderness_or_mountain": 23,
+        "road_or_journey": 7
+       }
+      },
+      "51-75": {
+       "entropy": 1.9728298782096314,
+       "modal": "institution",
+       "modal_share": 0.25100401606425704,
+       "dist": {
+        "institution": 125,
+        "home_interior": 86,
+        "city": 80,
+        "rural_or_farmland": 60,
+        "other_or_unclear": 54,
+        "coast_or_sea": 40,
+        "small_town_or_village": 32,
+        "road_or_journey": 17,
+        "wilderness_or_mountain": 4
+       }
+      },
+      "76-89": {
+       "entropy": 1.8917135149928472,
+       "modal": "home_interior",
+       "modal_share": 0.28214285714285714,
+       "dist": {
+        "home_interior": 79,
+        "institution": 68,
+        "other_or_unclear": 32,
+        "city": 29,
+        "coast_or_sea": 24,
+        "small_town_or_village": 22,
+        "rural_or_farmland": 18,
+        "road_or_journey": 4,
+        "wilderness_or_mountain": 4
+       }
+      },
+      "90-99": {
+       "entropy": 1.904701604705102,
+       "modal": "home_interior",
+       "modal_share": 0.24120603015075376,
+       "dist": {
+        "home_interior": 48,
+        "institution": 43,
+        "other_or_unclear": 33,
+        "small_town_or_village": 27,
+        "city": 19,
+        "coast_or_sea": 12,
+        "rural_or_farmland": 10,
+        "wilderness_or_mountain": 7
+       }
+      }
+     },
+     "entropy_early": 1.9104328122832428,
+     "entropy_late": 1.968616737260772,
+     "entropy_change": 0.030455886542270456
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6019379254016125,
+       "modal": "present_day",
+       "modal_share": 0.815,
+       "dist": {
+        "present_day": 163,
+        "unclear": 29,
+        "future_or_speculative": 5,
+        "historical": 3
+       }
+      },
+      "11-25": {
+       "entropy": 0.5117596728199517,
+       "modal": "present_day",
+       "modal_share": 0.84,
+       "dist": {
+        "present_day": 252,
+        "unclear": 40,
+        "historical": 8
+       }
+      },
+      "26-50": {
+       "entropy": 0.5487220983081971,
+       "modal": "present_day",
+       "modal_share": 0.824,
+       "dist": {
+        "present_day": 412,
+        "unclear": 72,
+        "historical": 16
+       }
+      },
+      "51-75": {
+       "entropy": 0.6668890559557548,
+       "modal": "present_day",
+       "modal_share": 0.7831325301204819,
+       "dist": {
+        "present_day": 390,
+        "unclear": 67,
+        "historical": 41
+       }
+      },
+      "76-89": {
+       "entropy": 0.6584963514046858,
+       "modal": "present_day",
+       "modal_share": 0.7892857142857143,
+       "dist": {
+        "present_day": 221,
+        "historical": 34,
+        "unclear": 25
+       }
+      },
+      "90-99": {
+       "entropy": 0.7098642781706131,
+       "modal": "present_day",
+       "modal_share": 0.7638190954773869,
+       "dist": {
+        "present_day": 152,
+        "unclear": 25,
+        "historical": 22
+       }
+      }
+     },
+     "entropy_early": 0.6019379254016125,
+     "entropy_late": 0.6791511783256322,
+     "entropy_change": 0.12827444436650687
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.365091013356905,
+       "modal": "internal",
+       "modal_share": 0.405,
+       "dist": {
+        "internal": 81,
+        "social_or_community": 47,
+        "interpersonal": 43,
+        "external_physical": 26,
+        "none_or_unclear": 3
+       }
+      },
+      "11-25": {
+       "entropy": 1.322995751341535,
+       "modal": "internal",
+       "modal_share": 0.37333333333333335,
+       "dist": {
+        "internal": 112,
+        "social_or_community": 85,
+        "interpersonal": 62,
+        "external_physical": 41
+       }
+      },
+      "26-50": {
+       "entropy": 1.296903872508949,
+       "modal": "internal",
+       "modal_share": 0.41,
+       "dist": {
+        "internal": 205,
+        "interpersonal": 126,
+        "social_or_community": 111,
+        "external_physical": 58
+       }
+      },
+      "51-75": {
+       "entropy": 1.2109963033415048,
+       "modal": "internal",
+       "modal_share": 0.44377510040160645,
+       "dist": {
+        "internal": 221,
+        "interpersonal": 166,
+        "social_or_community": 67,
+        "external_physical": 44
+       }
+      },
+      "76-89": {
+       "entropy": 1.2910764763776803,
+       "modal": "internal",
+       "modal_share": 0.3892857142857143,
+       "dist": {
+        "internal": 109,
+        "interpersonal": 89,
+        "social_or_community": 47,
+        "external_physical": 35
+       }
+      },
+      "90-99": {
+       "entropy": 1.2707450877439048,
+       "modal": "internal",
+       "modal_share": 0.4271356783919598,
+       "dist": {
+        "internal": 85,
+        "interpersonal": 59,
+        "external_physical": 28,
+        "social_or_community": 27
+       }
+      }
+     },
+     "entropy_early": 1.365091013356905,
+     "entropy_late": 1.249818375336252,
+     "entropy_change": -0.08444318869053666
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6230684368346338,
+       "modal": "hopeful",
+       "modal_share": 0.79,
+       "dist": {
+        "hopeful": 158,
+        "bittersweet": 33,
+        "neutral_or_ambiguous": 9
+       }
+      },
+      "11-25": {
+       "entropy": 0.6561367881000517,
+       "modal": "hopeful",
+       "modal_share": 0.72,
+       "dist": {
+        "hopeful": 216,
+        "bittersweet": 79,
+        "neutral_or_ambiguous": 5
+       }
+      },
+      "26-50": {
+       "entropy": 0.6502276672750047,
+       "modal": "hopeful",
+       "modal_share": 0.724,
+       "dist": {
+        "hopeful": 362,
+        "bittersweet": 130,
+        "neutral_or_ambiguous": 8
+       }
+      },
+      "51-75": {
+       "entropy": 0.7775718288738644,
+       "modal": "hopeful",
+       "modal_share": 0.606425702811245,
+       "dist": {
+        "hopeful": 302,
+        "bittersweet": 183,
+        "neutral_or_ambiguous": 11,
+        "tragic": 2
+       }
+      },
+      "76-89": {
+       "entropy": 0.7830927068370316,
+       "modal": "hopeful",
+       "modal_share": 0.6035714285714285,
+       "dist": {
+        "hopeful": 169,
+        "bittersweet": 102,
+        "neutral_or_ambiguous": 9
+       }
+      },
+      "90-99": {
+       "entropy": 0.6779553738442605,
+       "modal": "hopeful",
+       "modal_share": 0.6432160804020101,
+       "dist": {
+        "hopeful": 128,
+        "bittersweet": 70,
+        "neutral_or_ambiguous": 1
+       }
+      }
+     },
+     "entropy_early": 0.6230684368346338,
+     "entropy_late": 0.7634825800060144,
+     "entropy_change": 0.22535910161767264
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 2.0110896266827814,
+       "modal": "other",
+       "modal_share": 0.205,
+       "dist": {
+        "other": 41,
+        "friend": 40,
+        "partner_or_spouse": 25,
+        "child": 22,
+        "parent_or_grandparent": 22,
+        "authority_or_mentor": 20,
+        "sibling": 15,
+        "stranger": 15
+       }
+      },
+      "11-25": {
+       "entropy": 2.0432727299529096,
+       "modal": "partner_or_spouse",
+       "modal_share": 0.17666666666666667,
+       "dist": {
+        "partner_or_spouse": 53,
+        "friend": 43,
+        "other": 42,
+        "authority_or_mentor": 39,
+        "parent_or_grandparent": 38,
+        "stranger": 38,
+        "sibling": 29,
+        "child": 18
+       }
+      },
+      "26-50": {
+       "entropy": 2.046363422902393,
+       "modal": "other",
+       "modal_share": 0.178,
+       "dist": {
+        "other": 89,
+        "partner_or_spouse": 84,
+        "parent_or_grandparent": 64,
+        "child": 63,
+        "friend": 60,
+        "stranger": 56,
+        "authority_or_mentor": 45,
+        "sibling": 39
+       }
+      },
+      "51-75": {
+       "entropy": 2.0060448107218845,
+       "modal": "child",
+       "modal_share": 0.20281124497991967,
+       "dist": {
+        "child": 101,
+        "parent_or_grandparent": 88,
+        "other": 78,
+        "authority_or_mentor": 63,
+        "friend": 50,
+        "stranger": 50,
+        "partner_or_spouse": 42,
+        "sibling": 26
+       }
+      },
+      "76-89": {
+       "entropy": 1.9780861782339056,
+       "modal": "parent_or_grandparent",
+       "modal_share": 0.21071428571428572,
+       "dist": {
+        "parent_or_grandparent": 59,
+        "child": 51,
+        "authority_or_mentor": 47,
+        "other": 38,
+        "sibling": 25,
+        "friend": 25,
+        "stranger": 24,
+        "partner_or_spouse": 11
+       }
+      },
+      "90-99": {
+       "entropy": 1.9848536265356553,
+       "modal": "parent_or_grandparent",
+       "modal_share": 0.20100502512562815,
+       "dist": {
+        "parent_or_grandparent": 40,
+        "other": 37,
+        "friend": 35,
+        "child": 23,
+        "stranger": 22,
+        "authority_or_mentor": 19,
+        "sibling": 14,
+        "partner_or_spouse": 9
+       }
+      }
+     },
+     "entropy_early": 2.0110896266827814,
+     "entropy_late": 2.0124170240834296,
+     "entropy_change": 0.0006600389077824135
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.5976138445793562,
+       "modal": false,
+       "modal_share": 0.715,
+       "dist": {
+        "False": 143,
+        "True": 57
+       }
+      },
+      "11-25": {
+       "entropy": 0.6571577614973405,
+       "modal": false,
+       "modal_share": 0.6333333333333333,
+       "dist": {
+        "False": 190,
+        "True": 110
+       }
+      },
+      "26-50": {
+       "entropy": 0.6578826606351565,
+       "modal": false,
+       "modal_share": 0.632,
+       "dist": {
+        "False": 316,
+        "True": 184
+       }
+      },
+      "51-75": {
+       "entropy": 0.6902331054799852,
+       "modal": true,
+       "modal_share": 0.5381526104417671,
+       "dist": {
+        "True": 268,
+        "False": 230
+       }
+      },
+      "76-89": {
+       "entropy": 0.6915136378174997,
+       "modal": true,
+       "modal_share": 0.5285714285714286,
+       "dist": {
+        "True": 148,
+        "False": 132
+       }
+      },
+      "90-99": {
+       "entropy": 0.69303354276126,
+       "modal": true,
+       "modal_share": 0.507537688442211,
+       "dist": {
+        "True": 101,
+        "False": 98
+       }
+      }
+     },
+     "entropy_early": 0.5976138445793562,
+     "entropy_late": 0.6913951669546055,
+     "entropy_change": 0.1569262881472556
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6108643020548935,
+       "modal": false,
+       "modal_share": 0.7,
+       "dist": {
+        "False": 140,
+        "True": 60
+       }
+      },
+      "11-25": {
+       "entropy": 0.5929533174474745,
+       "modal": false,
+       "modal_share": 0.72,
+       "dist": {
+        "False": 216,
+        "True": 84
+       }
+      },
+      "26-50": {
+       "entropy": 0.6687480868518094,
+       "modal": false,
+       "modal_share": 0.61,
+       "dist": {
+        "False": 305,
+        "True": 195
+       }
+      },
+      "51-75": {
+       "entropy": 0.6720225379194755,
+       "modal": false,
+       "modal_share": 0.6024096385542169,
+       "dist": {
+        "False": 300,
+        "True": 198
+       }
+      },
+      "76-89": {
+       "entropy": 0.6405605590923158,
+       "modal": false,
+       "modal_share": 0.6607142857142857,
+       "dist": {
+        "False": 185,
+        "True": 95
+       }
+      },
+      "90-99": {
+       "entropy": 0.664991208781937,
+       "modal": false,
+       "modal_share": 0.6180904522613065,
+       "dist": {
+        "False": 123,
+        "True": 76
+       }
+      }
+     },
+     "entropy_early": 0.6108643020548935,
+     "entropy_late": 0.6646211172202252,
+     "entropy_change": 0.08800123854757683
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.5139566706172256,
+       "modal": false,
+       "modal_share": 0.79,
+       "dist": {
+        "False": 158,
+        "True": 42
+       }
+      },
+      "11-25": {
+       "entropy": 0.49574657411725004,
+       "modal": false,
+       "modal_share": 0.8033333333333333,
+       "dist": {
+        "False": 241,
+        "True": 59
+       }
+      },
+      "26-50": {
+       "entropy": 0.48330991375882404,
+       "modal": false,
+       "modal_share": 0.812,
+       "dist": {
+        "False": 406,
+        "True": 94
+       }
+      },
+      "51-75": {
+       "entropy": 0.5203242913987454,
+       "modal": false,
+       "modal_share": 0.785140562248996,
+       "dist": {
+        "False": 391,
+        "True": 107
+       }
+      },
+      "76-89": {
+       "entropy": 0.514901509505461,
+       "modal": false,
+       "modal_share": 0.7892857142857143,
+       "dist": {
+        "False": 221,
+        "True": 59
+       }
+      },
+      "90-99": {
+       "entropy": 0.5466376063877749,
+       "modal": false,
+       "modal_share": 0.7638190954773869,
+       "dist": {
+        "False": 152,
+        "True": 47
+       }
+      }
+     },
+     "entropy_early": 0.5139566706172256,
+     "entropy_late": 0.5239212984758634,
+     "entropy_change": 0.019388069906109046
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 1,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.0172311348781937,
+    "multidim_shared": 0,
+    "clusters": [
+     {
+      "cluster": 36,
+      "visits": 4,
+      "trajectories": 1,
+      "steps_inside": 29,
+      "exits": 8,
+      "hazard": 0.27586206896551724,
+      "fields_agree_070": 7,
+      "agreement": {
+       "lead_age": [
+        "child",
+        1.0
+       ],
+       "lead_gender": [
+        "other_or_unclear",
+        0.52
+       ],
+       "lead_role_class": [
+        "student_or_child",
+        1.0
+       ],
+       "setting_place": [
+        "rural_or_farmland",
+        0.76
+       ],
+       "setting_time": [
+        "unclear",
+        0.52
+       ],
+       "conflict_type": [
+        "internal",
+        0.62
+       ],
+       "ending_valence": [
+        "bittersweet",
+        0.62
+       ],
+       "secondary_character": [
+        "parent_or_grandparent",
+        0.86
+       ],
+       "death_present": [
+        "True",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        0.79
+       ],
+       "nature_central": [
+        "True",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        3,
+        49,
+        6,
+        false
+       ],
+       [
+        3,
+        56,
+        6,
+        false
+       ],
+       [
+        3,
+        65,
+        6,
+        false
+       ],
+       [
+        3,
+        36,
+        5,
+        false
+       ]
+      ]
+     }
+    ]
+   },
+   "theme_scale": {
+    "nn_other_median": 0.48868000507354736,
+    "nn_other_within_015": 0.0,
+    "consecutive_median": 0.2959820628166199,
+    "vendi_last": 12.23243236541748,
+    "vendi_first": 14.003456115722656
+   },
+   "theme_memory": {
+    "half_life": 40,
+    "ident_at": {
+     "1": 0.94,
+     "5": 1.0,
+     "10": 0.76,
+     "25": 0.59,
+     "50": 0.41,
+     "99": 0.41
+    },
+    "curve": [
+     1.0,
+     0.9411764705882353,
+     1.0,
+     1.0,
+     0.9411764705882353,
+     1.0,
+     0.8823529411764706,
+     0.8235294117647058,
+     0.7647058823529411,
+     0.7647058823529411,
+     0.7647058823529411,
+     0.7647058823529411,
+     0.8235294117647058,
+     0.7058823529411765,
+     0.7058823529411765,
+     0.7647058823529411,
+     0.6470588235294118,
+     0.6470588235294118,
+     0.7058823529411765,
+     0.5882352941176471,
+     0.7647058823529411,
+     0.7647058823529411,
+     0.8235294117647058,
+     0.5882352941176471,
+     0.6470588235294118,
+     0.5882352941176471,
+     0.7058823529411765,
+     0.6470588235294118,
+     0.7647058823529411,
+     0.6470588235294118,
+     0.7058823529411765,
+     0.6470588235294118,
+     0.6470588235294118,
+     0.6470588235294118,
+     0.5294117647058824,
+     0.5882352941176471,
+     0.5294117647058824,
+     0.5882352941176471,
+     0.5294117647058824,
+     0.6470588235294118,
+     0.47058823529411764,
+     0.47058823529411764,
+     0.5294117647058824,
+     0.5294117647058824,
+     0.5294117647058824,
+     0.7058823529411765,
+     0.5294117647058824,
+     0.5882352941176471,
+     0.7058823529411765,
+     0.47058823529411764,
+     0.4117647058823529,
+     0.47058823529411764,
+     0.6470588235294118,
+     0.5882352941176471,
+     0.5882352941176471,
+     0.47058823529411764,
+     0.5294117647058824,
+     0.5294117647058824,
+     0.5882352941176471,
+     0.5294117647058824,
+     0.5882352941176471,
+     0.5294117647058824,
+     0.6470588235294118,
+     0.5294117647058824,
+     0.29411764705882354,
+     0.35294117647058826,
+     0.47058823529411764,
+     0.4117647058823529,
+     0.35294117647058826,
+     0.4117647058823529,
+     0.5294117647058824,
+     0.47058823529411764,
+     0.47058823529411764,
+     0.23529411764705882,
+     0.4117647058823529,
+     0.35294117647058826,
+     0.35294117647058826,
+     0.47058823529411764,
+     0.4117647058823529,
+     0.4117647058823529,
+     0.4117647058823529,
+     0.47058823529411764,
+     0.23529411764705882,
+     0.4117647058823529,
+     0.29411764705882354,
+     0.23529411764705882,
+     0.35294117647058826,
+     0.35294117647058826,
+     0.17647058823529413,
+     0.29411764705882354,
+     0.35294117647058826,
+     0.23529411764705882,
+     0.23529411764705882,
+     0.35294117647058826,
+     0.17647058823529413,
+     0.35294117647058826,
+     0.35294117647058826,
+     0.11764705882352941,
+     0.4117647058823529
+    ]
+   }
+  },
+  "e3_2_sonnet": {
+   "model": "sonnet",
+   "loop": "E3-2",
+   "n_judged": 1971,
+   "n_malformed": 29,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 21.17806623076563,
+    "eff_late": 21.39794386676223,
+    "ratio": 1.0103823282825124,
+    "modal_early": [
+     [
+      "middle_aged",
+      "internal",
+      "hopeful"
+     ],
+     0.10552763819095477
+    ],
+    "modal_late": [
+     [
+      "young_adult",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.109072375127421
+    ],
+    "top5_late": [
+     [
+      [
+       "young_adult",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.109
+     ],
+     [
+      [
+       "young_adult",
+       "interpersonal",
+       "hopeful"
+      ],
+      0.098
+     ],
+     [
+      [
+       "middle_aged",
+       "internal",
+       "hopeful"
+      ],
+      0.065
+     ],
+     [
+      [
+       "older_adult",
+       "internal",
+       "bittersweet"
+      ],
+      0.062
+     ],
+     [
+      [
+       "older_adult",
+       "internal",
+       "hopeful"
+      ],
+      0.061
+     ]
+    ],
+    "js_early_late": 0.06145220635854377,
+    "null_ratio_mean": 1.0276201652569954,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "unclear",
+       "internal",
+       "bittersweet"
+      ],
+      "trajectories": 3,
+      "runs": 4
+     },
+     {
+      "tuple": [
+       "middle_aged",
+       "internal",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 10
+     }
+    ],
+    "share_hold_step1_at_last": 0.65,
+    "memory_curve": [
+     1.0,
+     0.6842105263157895,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.6842105263157895,
+     0.6842105263157895,
+     0.7368421052631579,
+     0.5789473684210527,
+     0.5,
+     0.5263157894736842,
+     0.5789473684210527,
+     0.5263157894736842,
+     0.47368421052631576,
+     0.5789473684210527,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.5789473684210527,
+     0.7368421052631579,
+     0.3684210526315789,
+     0.5,
+     0.6111111111111112,
+     0.5,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.631578947368421,
+     0.5789473684210527,
+     0.6842105263157895,
+     0.5263157894736842,
+     0.47368421052631576,
+     0.6111111111111112,
+     0.47368421052631576,
+     0.631578947368421,
+     0.5,
+     0.42105263157894735,
+     0.5555555555555556,
+     0.5263157894736842,
+     0.47368421052631576,
+     0.5,
+     0.4444444444444444,
+     0.3684210526315789,
+     0.42105263157894735,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.47368421052631576,
+     0.5789473684210527,
+     0.3684210526315789,
+     0.5263157894736842,
+     0.5263157894736842,
+     0.47368421052631576,
+     0.6842105263157895,
+     0.5263157894736842,
+     0.4444444444444444,
+     0.5263157894736842,
+     0.631578947368421,
+     0.5263157894736842,
+     0.5789473684210527,
+     0.5555555555555556,
+     0.5555555555555556,
+     0.5789473684210527,
+     0.42105263157894735,
+     0.5789473684210527,
+     0.42105263157894735,
+     0.6842105263157895,
+     0.5,
+     0.6666666666666666,
+     0.47368421052631576,
+     0.47368421052631576,
+     0.6842105263157895,
+     0.5789473684210527,
+     0.3333333333333333,
+     0.42105263157894735,
+     0.47368421052631576,
+     0.631578947368421,
+     0.42105263157894735,
+     0.6666666666666666,
+     0.5555555555555556,
+     0.4444444444444444,
+     0.47368421052631576,
+     0.42105263157894735,
+     0.5,
+     0.5789473684210527,
+     0.5789473684210527,
+     0.5789473684210527,
+     0.5,
+     0.6111111111111112,
+     0.5555555555555556,
+     0.5263157894736842,
+     0.4444444444444444,
+     0.5555555555555556,
+     0.3684210526315789,
+     0.5,
+     0.42105263157894735,
+     0.6111111111111112,
+     0.42105263157894735,
+     0.5263157894736842,
+     0.5,
+     0.5789473684210527,
+     0.5,
+     0.5789473684210527
+    ],
+    "memory_half_step": 8,
+    "memory_at_last": 0.5789473684210527
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 14.817307867507807,
+    "eff_late": 13.950107699223215,
+    "ratio": 0.9414738374852671,
+    "null_ratio_mean": 1.017502000305559,
+    "modal_late": [
+     [
+      "woman",
+      "internal",
+      "hopeful"
+     ],
+     0.16106014271151886
+    ],
+    "top3_late": [
+     [
+      [
+       "woman",
+       "internal",
+       "hopeful"
+      ],
+      0.161
+     ],
+     [
+      [
+       "woman",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.138
+     ],
+     [
+      [
+       "woman",
+       "interpersonal",
+       "hopeful"
+      ],
+      0.114
+     ]
+    ],
+    "js_early_late": 0.04065927569842181,
+    "share_hold_step1_at_last": 0.75,
+    "memory_half_step": 9,
+    "memory_at_last": 0.5789473684210527
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.3568385927425282,
+       "modal": "young_adult",
+       "modal_share": 0.31155778894472363,
+       "dist": {
+        "young_adult": 62,
+        "unclear": 56,
+        "middle_aged": 50,
+        "older_adult": 31
+       }
+      },
+      "11-25": {
+       "entropy": 1.3470025488366082,
+       "modal": "young_adult",
+       "modal_share": 0.3164983164983165,
+       "dist": {
+        "young_adult": 94,
+        "unclear": 94,
+        "middle_aged": 62,
+        "older_adult": 47
+       }
+      },
+      "26-50": {
+       "entropy": 1.3649460465600436,
+       "modal": "young_adult",
+       "modal_share": 0.3111111111111111,
+       "dist": {
+        "young_adult": 154,
+        "unclear": 144,
+        "older_adult": 100,
+        "middle_aged": 97
+       }
+      },
+      "51-75": {
+       "entropy": 1.3873501434997206,
+       "modal": "young_adult",
+       "modal_share": 0.3204868154158215,
+       "dist": {
+        "young_adult": 158,
+        "older_adult": 127,
+        "unclear": 116,
+        "middle_aged": 90,
+        "child": 2
+       }
+      },
+      "76-89": {
+       "entropy": 1.3613952515938632,
+       "modal": "young_adult",
+       "modal_share": 0.3088235294117647,
+       "dist": {
+        "young_adult": 84,
+        "unclear": 77,
+        "older_adult": 66,
+        "middle_aged": 45
+       }
+      },
+      "90-99": {
+       "entropy": 1.3580989465669782,
+       "modal": "young_adult",
+       "modal_share": 0.3163265306122449,
+       "dist": {
+        "young_adult": 62,
+        "unclear": 56,
+        "older_adult": 46,
+        "middle_aged": 32
+       }
+      }
+     },
+     "entropy_early": 1.3568385927425282,
+     "entropy_late": 1.3774719589068054,
+     "entropy_change": 0.015206942280858756
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.7674601788270087,
+       "modal": "woman",
+       "modal_share": 0.678391959798995,
+       "dist": {
+        "woman": 135,
+        "man": 54,
+        "other_or_unclear": 10
+       }
+      },
+      "11-25": {
+       "entropy": 0.7868595286341522,
+       "modal": "woman",
+       "modal_share": 0.6632996632996633,
+       "dist": {
+        "woman": 197,
+        "man": 84,
+        "other_or_unclear": 16
+       }
+      },
+      "26-50": {
+       "entropy": 0.7842884477241923,
+       "modal": "woman",
+       "modal_share": 0.6808080808080809,
+       "dist": {
+        "woman": 337,
+        "man": 127,
+        "other_or_unclear": 31
+       }
+      },
+      "51-75": {
+       "entropy": 0.756358579689499,
+       "modal": "woman",
+       "modal_share": 0.716024340770791,
+       "dist": {
+        "woman": 353,
+        "man": 105,
+        "other_or_unclear": 35
+       }
+      },
+      "76-89": {
+       "entropy": 0.755730228231552,
+       "modal": "woman",
+       "modal_share": 0.7242647058823529,
+       "dist": {
+        "woman": 197,
+        "man": 53,
+        "other_or_unclear": 22
+       }
+      },
+      "90-99": {
+       "entropy": 0.7643026851656582,
+       "modal": "woman",
+       "modal_share": 0.7142857142857143,
+       "dist": {
+        "woman": 140,
+        "man": 41,
+        "other_or_unclear": 15
+       }
+      }
+     },
+     "entropy_early": 0.7674601788270087,
+     "entropy_late": 0.7567541069333908,
+     "entropy_change": -0.013950003125870403
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8616959700337026,
+       "modal": "professional",
+       "modal_share": 0.23618090452261306,
+       "dist": {
+        "professional": 47,
+        "other_or_unclear": 46,
+        "worker_or_tradesperson": 41,
+        "leader_or_official": 25,
+        "artist_or_craftsperson": 14,
+        "caregiver_or_parent": 12,
+        "student_or_child": 10,
+        "outsider_or_wanderer": 3,
+        "retired": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.7800085877321545,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.24242424242424243,
+       "dist": {
+        "worker_or_tradesperson": 72,
+        "other_or_unclear": 66,
+        "professional": 63,
+        "leader_or_official": 45,
+        "artist_or_craftsperson": 24,
+        "caregiver_or_parent": 20,
+        "student_or_child": 5,
+        "outsider_or_wanderer": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.8082416227995592,
+       "modal": "other_or_unclear",
+       "modal_share": 0.23030303030303031,
+       "dist": {
+        "other_or_unclear": 114,
+        "worker_or_tradesperson": 113,
+        "professional": 105,
+        "leader_or_official": 72,
+        "artist_or_craftsperson": 40,
+        "caregiver_or_parent": 31,
+        "student_or_child": 17,
+        "outsider_or_wanderer": 3
+       }
+      },
+      "51-75": {
+       "entropy": 1.8567280026382564,
+       "modal": "worker_or_tradesperson",
+       "modal_share": 0.2413793103448276,
+       "dist": {
+        "worker_or_tradesperson": 119,
+        "other_or_unclear": 114,
+        "professional": 97,
+        "leader_or_official": 67,
+        "caregiver_or_parent": 33,
+        "outsider_or_wanderer": 23,
+        "artist_or_craftsperson": 21,
+        "student_or_child": 19
+       }
+      },
+      "76-89": {
+       "entropy": 1.8406120802177794,
+       "modal": "other_or_unclear",
+       "modal_share": 0.25,
+       "dist": {
+        "other_or_unclear": 68,
+        "worker_or_tradesperson": 66,
+        "professional": 58,
+        "leader_or_official": 31,
+        "caregiver_or_parent": 17,
+        "artist_or_craftsperson": 11,
+        "student_or_child": 10,
+        "outsider_or_wanderer": 9,
+        "retired": 2
+       }
+      },
+      "90-99": {
+       "entropy": 1.7825151203602485,
+       "modal": "other_or_unclear",
+       "modal_share": 0.2755102040816326,
+       "dist": {
+        "other_or_unclear": 54,
+        "worker_or_tradesperson": 45,
+        "professional": 42,
+        "leader_or_official": 23,
+        "caregiver_or_parent": 11,
+        "artist_or_craftsperson": 10,
+        "student_or_child": 8,
+        "outsider_or_wanderer": 3
+       }
+      }
+     },
+     "entropy_early": 1.8616959700337026,
+     "entropy_late": 1.8421984845926733,
+     "entropy_change": -0.010472969676502165
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8718008643441784,
+       "modal": "institution",
+       "modal_share": 0.3869346733668342,
+       "dist": {
+        "institution": 77,
+        "city": 31,
+        "coast_or_sea": 19,
+        "other_or_unclear": 19,
+        "wilderness_or_mountain": 15,
+        "small_town_or_village": 13,
+        "road_or_journey": 10,
+        "home_interior": 10,
+        "rural_or_farmland": 5
+       }
+      },
+      "11-25": {
+       "entropy": 1.8462096791133462,
+       "modal": "institution",
+       "modal_share": 0.37373737373737376,
+       "dist": {
+        "institution": 111,
+        "city": 50,
+        "coast_or_sea": 30,
+        "wilderness_or_mountain": 30,
+        "other_or_unclear": 27,
+        "small_town_or_village": 19,
+        "home_interior": 15,
+        "road_or_journey": 13,
+        "rural_or_farmland": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.8367714286484518,
+       "modal": "institution",
+       "modal_share": 0.37777777777777777,
+       "dist": {
+        "institution": 187,
+        "city": 73,
+        "other_or_unclear": 58,
+        "wilderness_or_mountain": 52,
+        "coast_or_sea": 47,
+        "small_town_or_village": 32,
+        "home_interior": 25,
+        "road_or_journey": 19,
+        "rural_or_farmland": 2
+       }
+      },
+      "51-75": {
+       "entropy": 1.8688794102595276,
+       "modal": "institution",
+       "modal_share": 0.37322515212981744,
+       "dist": {
+        "institution": 184,
+        "city": 66,
+        "other_or_unclear": 55,
+        "coast_or_sea": 49,
+        "wilderness_or_mountain": 48,
+        "small_town_or_village": 38,
+        "home_interior": 26,
+        "road_or_journey": 24,
+        "rural_or_farmland": 3
+       }
+      },
+      "76-89": {
+       "entropy": 1.8581317905598986,
+       "modal": "institution",
+       "modal_share": 0.3786764705882353,
+       "dist": {
+        "institution": 103,
+        "city": 40,
+        "other_or_unclear": 30,
+        "coast_or_sea": 27,
+        "wilderness_or_mountain": 27,
+        "small_town_or_village": 16,
+        "home_interior": 14,
+        "road_or_journey": 12,
+        "rural_or_farmland": 3
+       }
+      },
+      "90-99": {
+       "entropy": 1.826194952971229,
+       "modal": "institution",
+       "modal_share": 0.3877551020408163,
+       "dist": {
+        "institution": 76,
+        "city": 24,
+        "other_or_unclear": 23,
+        "coast_or_sea": 20,
+        "wilderness_or_mountain": 20,
+        "small_town_or_village": 12,
+        "home_interior": 11,
+        "road_or_journey": 10
+       }
+      }
+     },
+     "entropy_early": 1.8718008643441784,
+     "entropy_late": 1.8577068292672134,
+     "entropy_change": -0.00752966586640778
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.7376676312431727,
+       "modal": "present_day",
+       "modal_share": 0.7487437185929648,
+       "dist": {
+        "present_day": 149,
+        "unclear": 26,
+        "future_or_speculative": 24
+       }
+      },
+      "11-25": {
+       "entropy": 0.7581526955523309,
+       "modal": "present_day",
+       "modal_share": 0.7609427609427609,
+       "dist": {
+        "present_day": 226,
+        "future_or_speculative": 34,
+        "unclear": 33,
+        "historical": 4
+       }
+      },
+      "26-50": {
+       "entropy": 0.761617033099173,
+       "modal": "present_day",
+       "modal_share": 0.7575757575757576,
+       "dist": {
+        "present_day": 375,
+        "unclear": 57,
+        "future_or_speculative": 57,
+        "historical": 6
+       }
+      },
+      "51-75": {
+       "entropy": 0.752389553736974,
+       "modal": "present_day",
+       "modal_share": 0.7647058823529411,
+       "dist": {
+        "present_day": 377,
+        "unclear": 56,
+        "future_or_speculative": 53,
+        "historical": 7
+       }
+      },
+      "76-89": {
+       "entropy": 0.7737797866106646,
+       "modal": "present_day",
+       "modal_share": 0.7536764705882353,
+       "dist": {
+        "present_day": 205,
+        "unclear": 34,
+        "future_or_speculative": 29,
+        "historical": 4
+       }
+      },
+      "90-99": {
+       "entropy": 0.7597530962823169,
+       "modal": "present_day",
+       "modal_share": 0.7551020408163265,
+       "dist": {
+        "present_day": 148,
+        "unclear": 26,
+        "future_or_speculative": 20,
+        "historical": 2
+       }
+      }
+     },
+     "entropy_early": 0.7376676312431727,
+     "entropy_late": 0.7600832306859069,
+     "entropy_change": 0.03038712625218182
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.4553817801058726,
+       "modal": "internal",
+       "modal_share": 0.39195979899497485,
+       "dist": {
+        "internal": 78,
+        "social_or_community": 50,
+        "interpersonal": 32,
+        "external_physical": 25,
+        "none_or_unclear": 14
+       }
+      },
+      "11-25": {
+       "entropy": 1.4591833958295288,
+       "modal": "internal",
+       "modal_share": 0.37037037037037035,
+       "dist": {
+        "internal": 110,
+        "social_or_community": 78,
+        "interpersonal": 55,
+        "external_physical": 35,
+        "none_or_unclear": 19
+       }
+      },
+      "26-50": {
+       "entropy": 1.425382999092189,
+       "modal": "internal",
+       "modal_share": 0.3939393939393939,
+       "dist": {
+        "internal": 195,
+        "social_or_community": 132,
+        "interpersonal": 87,
+        "external_physical": 54,
+        "none_or_unclear": 27
+       }
+      },
+      "51-75": {
+       "entropy": 1.4336263695433589,
+       "modal": "internal",
+       "modal_share": 0.34685598377281945,
+       "dist": {
+        "internal": 171,
+        "social_or_community": 154,
+        "interpersonal": 90,
+        "external_physical": 52,
+        "none_or_unclear": 26
+       }
+      },
+      "76-89": {
+       "entropy": 1.431832019518985,
+       "modal": "internal",
+       "modal_share": 0.3602941176470588,
+       "dist": {
+        "internal": 98,
+        "social_or_community": 83,
+        "interpersonal": 47,
+        "external_physical": 29,
+        "none_or_unclear": 15
+       }
+      },
+      "90-99": {
+       "entropy": 1.448760102040253,
+       "modal": "internal",
+       "modal_share": 0.3622448979591837,
+       "dist": {
+        "internal": 71,
+        "social_or_community": 55,
+        "interpersonal": 36,
+        "external_physical": 23,
+        "none_or_unclear": 11
+       }
+      }
+     },
+     "entropy_early": 1.4553817801058726,
+     "entropy_late": 1.4376654526306196,
+     "entropy_change": -0.012172975996692906
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.8136507648830674,
+       "modal": "hopeful",
+       "modal_share": 0.6934673366834171,
+       "dist": {
+        "hopeful": 138,
+        "bittersweet": 40,
+        "neutral_or_ambiguous": 21
+       }
+      },
+      "11-25": {
+       "entropy": 0.8388425942154437,
+       "modal": "hopeful",
+       "modal_share": 0.6734006734006734,
+       "dist": {
+        "hopeful": 200,
+        "bittersweet": 65,
+        "neutral_or_ambiguous": 32
+       }
+      },
+      "26-50": {
+       "entropy": 0.8120003213789015,
+       "modal": "hopeful",
+       "modal_share": 0.6868686868686869,
+       "dist": {
+        "hopeful": 340,
+        "bittersweet": 109,
+        "neutral_or_ambiguous": 46
+       }
+      },
+      "51-75": {
+       "entropy": 0.7833935753753947,
+       "modal": "hopeful",
+       "modal_share": 0.7038539553752535,
+       "dist": {
+        "hopeful": 347,
+        "bittersweet": 105,
+        "neutral_or_ambiguous": 41
+       }
+      },
+      "76-89": {
+       "entropy": 0.7534314289378004,
+       "modal": "hopeful",
+       "modal_share": 0.7205882352941176,
+       "dist": {
+        "hopeful": 196,
+        "bittersweet": 56,
+        "neutral_or_ambiguous": 20
+       }
+      },
+      "90-99": {
+       "entropy": 0.7759598460291102,
+       "modal": "hopeful",
+       "modal_share": 0.6938775510204082,
+       "dist": {
+        "hopeful": 136,
+        "bittersweet": 47,
+        "neutral_or_ambiguous": 13
+       }
+      }
+     },
+     "entropy_early": 0.8136507648830674,
+     "entropy_late": 0.7747439034686957,
+     "entropy_change": -0.047817642523771436
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.9666306574311052,
+       "modal": "child",
+       "modal_share": 0.21608040201005024,
+       "dist": {
+        "child": 43,
+        "other": 34,
+        "friend": 34,
+        "stranger": 29,
+        "authority_or_mentor": 26,
+        "partner_or_spouse": 17,
+        "sibling": 10,
+        "none": 4,
+        "parent_or_grandparent": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.973463033226827,
+       "modal": "child",
+       "modal_share": 0.21548821548821548,
+       "dist": {
+        "child": 64,
+        "friend": 59,
+        "other": 50,
+        "stranger": 37,
+        "authority_or_mentor": 36,
+        "partner_or_spouse": 24,
+        "sibling": 15,
+        "none": 9,
+        "parent_or_grandparent": 3
+       }
+      },
+      "26-50": {
+       "entropy": 1.9424152653751443,
+       "modal": "child",
+       "modal_share": 0.20606060606060606,
+       "dist": {
+        "child": 102,
+        "friend": 96,
+        "other": 88,
+        "authority_or_mentor": 65,
+        "stranger": 65,
+        "partner_or_spouse": 39,
+        "sibling": 23,
+        "none": 17
+       }
+      },
+      "51-75": {
+       "entropy": 1.9781517188715927,
+       "modal": "friend",
+       "modal_share": 0.21095334685598377,
+       "dist": {
+        "friend": 104,
+        "child": 102,
+        "other": 76,
+        "authority_or_mentor": 66,
+        "stranger": 51,
+        "partner_or_spouse": 49,
+        "sibling": 24,
+        "none": 17,
+        "parent_or_grandparent": 4
+       }
+      },
+      "76-89": {
+       "entropy": 1.929267122786563,
+       "modal": "child",
+       "modal_share": 0.22426470588235295,
+       "dist": {
+        "child": 61,
+        "other": 49,
+        "friend": 48,
+        "stranger": 35,
+        "authority_or_mentor": 32,
+        "partner_or_spouse": 28,
+        "sibling": 13,
+        "none": 6
+       }
+      },
+      "90-99": {
+       "entropy": 1.9713980608002057,
+       "modal": "child",
+       "modal_share": 0.20408163265306123,
+       "dist": {
+        "child": 40,
+        "friend": 38,
+        "other": 33,
+        "authority_or_mentor": 23,
+        "stranger": 23,
+        "partner_or_spouse": 20,
+        "sibling": 10,
+        "none": 9
+       }
+      }
+     },
+     "entropy_early": 1.9666306574311052,
+     "entropy_late": 1.9699445437536585,
+     "entropy_change": 0.001685057796710027
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6775996556440591,
+       "modal": false,
+       "modal_share": 0.5879396984924623,
+       "dist": {
+        "False": 117,
+        "True": 82
+       }
+      },
+      "11-25": {
+       "entropy": 0.6835881771740451,
+       "modal": false,
+       "modal_share": 0.569023569023569,
+       "dist": {
+        "False": 169,
+        "True": 128
+       }
+      },
+      "26-50": {
+       "entropy": 0.6845006616902309,
+       "modal": false,
+       "modal_share": 0.5656565656565656,
+       "dist": {
+        "False": 280,
+        "True": 215
+       }
+      },
+      "51-75": {
+       "entropy": 0.6789074215020692,
+       "modal": false,
+       "modal_share": 0.5841784989858012,
+       "dist": {
+        "False": 288,
+        "True": 205
+       }
+      },
+      "76-89": {
+       "entropy": 0.674759983410659,
+       "modal": false,
+       "modal_share": 0.5955882352941176,
+       "dist": {
+        "False": 162,
+        "True": 110
+       }
+      },
+      "90-99": {
+       "entropy": 0.6898115250182572,
+       "modal": false,
+       "modal_share": 0.5408163265306123,
+       "dist": {
+        "False": 106,
+        "True": 90
+       }
+      }
+     },
+     "entropy_early": 0.6775996556440591,
+     "entropy_late": 0.6806123966433238,
+     "entropy_change": 0.004446196178185963
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.40623852097142443,
+       "modal": false,
+       "modal_share": 0.8592964824120602,
+       "dist": {
+        "False": 171,
+        "True": 28
+       }
+      },
+      "11-25": {
+       "entropy": 0.4194833693061807,
+       "modal": false,
+       "modal_share": 0.8518518518518519,
+       "dist": {
+        "False": 253,
+        "True": 44
+       }
+      },
+      "26-50": {
+       "entropy": 0.4389992805210535,
+       "modal": false,
+       "modal_share": 0.8404040404040404,
+       "dist": {
+        "False": 416,
+        "True": 79
+       }
+      },
+      "51-75": {
+       "entropy": 0.4500167005465011,
+       "modal": false,
+       "modal_share": 0.8336713995943205,
+       "dist": {
+        "False": 411,
+        "True": 82
+       }
+      },
+      "76-89": {
+       "entropy": 0.47161640584369147,
+       "modal": false,
+       "modal_share": 0.8198529411764706,
+       "dist": {
+        "False": 223,
+        "True": 49
+       }
+      },
+      "90-99": {
+       "entropy": 0.46922034844159877,
+       "modal": false,
+       "modal_share": 0.8214285714285714,
+       "dist": {
+        "False": 161,
+        "True": 35
+       }
+      }
+     },
+     "entropy_early": 0.40623852097142443,
+     "entropy_late": 0.45786874845209347,
+     "entropy_change": 0.12709338188118502
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.5283036336949108,
+       "modal": false,
+       "modal_share": 0.7788944723618091,
+       "dist": {
+        "False": 155,
+        "True": 44
+       }
+      },
+      "11-25": {
+       "entropy": 0.5297061990576545,
+       "modal": false,
+       "modal_share": 0.7777777777777778,
+       "dist": {
+        "False": 231,
+        "True": 66
+       }
+      },
+      "26-50": {
+       "entropy": 0.5736898834019111,
+       "modal": false,
+       "modal_share": 0.7393939393939394,
+       "dist": {
+        "False": 366,
+        "True": 129
+       }
+      },
+      "51-75": {
+       "entropy": 0.5549761929859178,
+       "modal": false,
+       "modal_share": 0.7565922920892495,
+       "dist": {
+        "False": 373,
+        "True": 120
+       }
+      },
+      "76-89": {
+       "entropy": 0.5455945739691843,
+       "modal": false,
+       "modal_share": 0.7647058823529411,
+       "dist": {
+        "False": 208,
+        "True": 64
+       }
+      },
+      "90-99": {
+       "entropy": 0.5566602457577223,
+       "modal": false,
+       "modal_share": 0.7551020408163265,
+       "dist": {
+        "False": 148,
+        "True": 48
+       }
+      }
+     },
+     "entropy_early": 0.5283036336949108,
+     "entropy_late": 0.5529060137296379,
+     "entropy_change": 0.046568636794451085
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 2,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.08305274971941638,
+    "multidim_shared": 0,
+    "clusters": [
+     {
+      "cluster": 15,
+      "visits": 5,
+      "trajectories": 1,
+      "steps_inside": 92,
+      "exits": 4,
+      "hazard": 0.043478260869565216,
+      "fields_agree_070": 8,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        0.96
+       ],
+       "lead_gender": [
+        "other_or_unclear",
+        1.0
+       ],
+       "lead_role_class": [
+        "other_or_unclear",
+        1.0
+       ],
+       "setting_place": [
+        "wilderness_or_mountain",
+        0.89
+       ],
+       "setting_time": [
+        "present_day",
+        0.93
+       ],
+       "conflict_type": [
+        "internal",
+        1.0
+       ],
+       "ending_valence": [
+        "bittersweet",
+        0.52
+       ],
+       "secondary_character": [
+        "none",
+        0.59
+       ],
+       "death_present": [
+        "True",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "True",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        4,
+        53,
+        34,
+        false
+       ],
+       [
+        4,
+        15,
+        29,
+        false
+       ],
+       [
+        4,
+        3,
+        11,
+        false
+       ],
+       [
+        4,
+        89,
+        11,
+        true
+       ],
+       [
+        4,
+        45,
+        7,
+        false
+       ]
+      ]
+     },
+     {
+      "cluster": 21,
+      "visits": 5,
+      "trajectories": 1,
+      "steps_inside": 56,
+      "exits": 17,
+      "hazard": 0.30357142857142855,
+      "fields_agree_070": 10,
+      "agreement": {
+       "lead_age": [
+        "middle_aged",
+        0.98
+       ],
+       "lead_gender": [
+        "woman",
+        1.0
+       ],
+       "lead_role_class": [
+        "caregiver_or_parent",
+        0.93
+       ],
+       "setting_place": [
+        "other_or_unclear",
+        0.82
+       ],
+       "setting_time": [
+        "present_day",
+        1.0
+       ],
+       "conflict_type": [
+        "internal",
+        0.96
+       ],
+       "ending_valence": [
+        "hopeful",
+        0.95
+       ],
+       "secondary_character": [
+        "child",
+        1.0
+       ],
+       "death_present": [
+        "False",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "False",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        12,
+        1,
+        10,
+        false
+       ],
+       [
+        12,
+        47,
+        8,
+        false
+       ],
+       [
+        12,
+        89,
+        7,
+        false
+       ],
+       [
+        12,
+        65,
+        6,
+        false
+       ],
+       [
+        12,
+        33,
+        5,
+        false
+       ]
+      ]
+     }
+    ]
+   },
+   "theme_scale": {
+    "nn_other_median": 0.5736721754074097,
+    "nn_other_within_015": 0.0,
+    "consecutive_median": 0.2772045433521271,
+    "vendi_last": 14.393927574157715,
+    "vendi_first": 14.348907470703125
+   },
+   "theme_memory": {
+    "half_life": null,
+    "ident_at": {
+     "1": 1.0,
+     "5": 1.0,
+     "10": 1.0,
+     "25": 1.0,
+     "50": 1.0,
+     "99": 1.0
+    },
+    "curve": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9444444444444444,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9444444444444444,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9444444444444444,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9444444444444444,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "e3_1_qwen": {
+   "model": "qwen",
+   "loop": "E3-1",
+   "n_judged": 2000,
+   "n_malformed": 0,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 12.0743147190547,
+    "eff_late": 10.087259968588123,
+    "ratio": 0.8354312607629177,
+    "modal_early": [
+     [
+      "unclear",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.235
+    ],
+    "modal_late": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.258
+    ],
+    "top5_late": [
+     [
+      [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.258
+     ],
+     [
+      [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.243
+     ],
+     [
+      [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      0.143
+     ],
+     [
+      [
+       "young_adult",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.057
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      0.053
+     ]
+    ],
+    "js_early_late": 0.09370863296022634,
+    "null_ratio_mean": 1.1053496371833158,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      "trajectories": 11,
+      "runs": 30
+     },
+     {
+      "tuple": [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      "trajectories": 8,
+      "runs": 15
+     },
+     {
+      "tuple": [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      "trajectories": 5,
+      "runs": 13
+     },
+     {
+      "tuple": [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 6
+     }
+    ],
+    "share_hold_step1_at_last": 0.1,
+    "memory_curve": [
+     1.0,
+     0.25,
+     0.25,
+     0.1,
+     0.3,
+     0.05,
+     0.05,
+     0.2,
+     0.2,
+     0.1,
+     0.2,
+     0.05,
+     0.25,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.0,
+     0.15,
+     0.15,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.05,
+     0.1,
+     0.1,
+     0.15,
+     0.1,
+     0.15,
+     0.1,
+     0.05,
+     0.15,
+     0.1,
+     0.1,
+     0.15,
+     0.15,
+     0.05,
+     0.2,
+     0.15,
+     0.15,
+     0.1,
+     0.1,
+     0.15,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.0,
+     0.15,
+     0.15,
+     0.1,
+     0.15,
+     0.1,
+     0.1,
+     0.15,
+     0.15,
+     0.15,
+     0.15,
+     0.1,
+     0.1,
+     0.1,
+     0.05,
+     0.05,
+     0.1,
+     0.05,
+     0.1,
+     0.15,
+     0.2,
+     0.2,
+     0.15,
+     0.15,
+     0.2,
+     0.15,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.1,
+     0.05,
+     0.15,
+     0.1,
+     0.2,
+     0.2,
+     0.2,
+     0.2,
+     0.2,
+     0.15,
+     0.05,
+     0.15,
+     0.2,
+     0.25,
+     0.1,
+     0.1,
+     0.15,
+     0.05,
+     0.2,
+     0.1
+    ],
+    "memory_half_step": 1,
+    "memory_at_last": 0.1
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 12.04143833138396,
+    "eff_late": 9.291636679005503,
+    "ratio": 0.7716384391379918,
+    "null_ratio_mean": 1.0618711164343537,
+    "modal_late": [
+     [
+      "woman",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.273
+    ],
+    "top3_late": [
+     [
+      [
+       "woman",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.273
+     ],
+     [
+      [
+       "woman",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.235
+     ],
+     [
+      [
+       "woman",
+       "external_physical",
+       "hopeful"
+      ],
+      0.118
+     ]
+    ],
+    "js_early_late": 0.1024215752391429,
+    "share_hold_step1_at_last": 0.0,
+    "memory_half_step": 1,
+    "memory_at_last": 0.0
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.0237185652725544,
+       "modal": "unclear",
+       "modal_share": 0.7,
+       "dist": {
+        "unclear": 140,
+        "young_adult": 28,
+        "older_adult": 12,
+        "middle_aged": 11,
+        "teen": 5,
+        "child": 4
+       }
+      },
+      "11-25": {
+       "entropy": 0.8932363244811317,
+       "modal": "unclear",
+       "modal_share": 0.72,
+       "dist": {
+        "unclear": 216,
+        "young_adult": 50,
+        "older_adult": 23,
+        "middle_aged": 4,
+        "child": 4,
+        "teen": 3
+       }
+      },
+      "26-50": {
+       "entropy": 1.0529886828791086,
+       "modal": "unclear",
+       "modal_share": 0.642,
+       "dist": {
+        "unclear": 321,
+        "young_adult": 86,
+        "older_adult": 70,
+        "middle_aged": 10,
+        "child": 8,
+        "teen": 5
+       }
+      },
+      "51-75": {
+       "entropy": 0.9225288671343457,
+       "modal": "unclear",
+       "modal_share": 0.718,
+       "dist": {
+        "unclear": 359,
+        "young_adult": 62,
+        "older_adult": 52,
+        "middle_aged": 19,
+        "child": 8
+       }
+      },
+      "76-89": {
+       "entropy": 0.8281741150075331,
+       "modal": "unclear",
+       "modal_share": 0.7571428571428571,
+       "dist": {
+        "unclear": 212,
+        "young_adult": 34,
+        "older_adult": 18,
+        "middle_aged": 14,
+        "child": 2
+       }
+      },
+      "90-99": {
+       "entropy": 0.9137680147321818,
+       "modal": "unclear",
+       "modal_share": 0.72,
+       "dist": {
+        "unclear": 144,
+        "young_adult": 35,
+        "middle_aged": 8,
+        "child": 6,
+        "older_adult": 5,
+        "teen": 2
+       }
+      }
+     },
+     "entropy_early": 1.0237185652725544,
+     "entropy_late": 0.9077358471240706,
+     "entropy_change": -0.11329551117167112
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.0044916893189413,
+       "modal": "woman",
+       "modal_share": 0.495,
+       "dist": {
+        "woman": 99,
+        "man": 70,
+        "other_or_unclear": 31
+       }
+      },
+      "11-25": {
+       "entropy": 0.963827889089445,
+       "modal": "woman",
+       "modal_share": 0.54,
+       "dist": {
+        "woman": 162,
+        "man": 99,
+        "other_or_unclear": 39
+       }
+      },
+      "26-50": {
+       "entropy": 0.8986687513789644,
+       "modal": "woman",
+       "modal_share": 0.638,
+       "dist": {
+        "woman": 319,
+        "man": 108,
+        "other_or_unclear": 73
+       }
+      },
+      "51-75": {
+       "entropy": 0.7766515003327686,
+       "modal": "woman",
+       "modal_share": 0.714,
+       "dist": {
+        "woman": 357,
+        "man": 98,
+        "other_or_unclear": 45
+       }
+      },
+      "76-89": {
+       "entropy": 0.8921437677492821,
+       "modal": "woman",
+       "modal_share": 0.6214285714285714,
+       "dist": {
+        "woman": 174,
+        "man": 75,
+        "other_or_unclear": 31
+       }
+      },
+      "90-99": {
+       "entropy": 0.835847935741286,
+       "modal": "woman",
+       "modal_share": 0.68,
+       "dist": {
+        "woman": 136,
+        "man": 41,
+        "other_or_unclear": 23
+       }
+      }
+     },
+     "entropy_early": 1.0044916893189413,
+     "entropy_late": 0.8244856210656963,
+     "entropy_change": -0.1792011523512867
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.7629365592867456,
+       "modal": "professional",
+       "modal_share": 0.315,
+       "dist": {
+        "professional": 63,
+        "other_or_unclear": 50,
+        "leader_or_official": 28,
+        "worker_or_tradesperson": 24,
+        "artist_or_craftsperson": 13,
+        "student_or_child": 11,
+        "outsider_or_wanderer": 9,
+        "caregiver_or_parent": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.7509196796514348,
+       "modal": "professional",
+       "modal_share": 0.36,
+       "dist": {
+        "professional": 108,
+        "other_or_unclear": 57,
+        "leader_or_official": 40,
+        "artist_or_craftsperson": 38,
+        "outsider_or_wanderer": 30,
+        "student_or_child": 13,
+        "worker_or_tradesperson": 10,
+        "retired": 4
+       }
+      },
+      "26-50": {
+       "entropy": 1.747428843770723,
+       "modal": "professional",
+       "modal_share": 0.342,
+       "dist": {
+        "professional": 171,
+        "other_or_unclear": 100,
+        "artist_or_craftsperson": 87,
+        "leader_or_official": 74,
+        "outsider_or_wanderer": 27,
+        "student_or_child": 15,
+        "retired": 12,
+        "caregiver_or_parent": 8,
+        "worker_or_tradesperson": 6
+       }
+      },
+      "51-75": {
+       "entropy": 1.710900098182211,
+       "modal": "professional",
+       "modal_share": 0.37,
+       "dist": {
+        "professional": 185,
+        "artist_or_craftsperson": 88,
+        "other_or_unclear": 85,
+        "leader_or_official": 81,
+        "outsider_or_wanderer": 23,
+        "worker_or_tradesperson": 13,
+        "caregiver_or_parent": 9,
+        "retired": 8,
+        "student_or_child": 8
+       }
+      },
+      "76-89": {
+       "entropy": 1.6881671026813736,
+       "modal": "professional",
+       "modal_share": 0.37857142857142856,
+       "dist": {
+        "professional": 106,
+        "other_or_unclear": 57,
+        "artist_or_craftsperson": 39,
+        "worker_or_tradesperson": 31,
+        "leader_or_official": 27,
+        "outsider_or_wanderer": 12,
+        "caregiver_or_parent": 6,
+        "student_or_child": 2
+       }
+      },
+      "90-99": {
+       "entropy": 1.5867522854683032,
+       "modal": "professional",
+       "modal_share": 0.41,
+       "dist": {
+        "professional": 82,
+        "other_or_unclear": 56,
+        "leader_or_official": 25,
+        "student_or_child": 12,
+        "artist_or_craftsperson": 9,
+        "worker_or_tradesperson": 8,
+        "caregiver_or_parent": 4,
+        "outsider_or_wanderer": 3,
+        "retired": 1
+       }
+      }
+     },
+     "entropy_early": 1.7629365592867456,
+     "entropy_late": 1.7238331288511355,
+     "entropy_change": -0.022180849463709993
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.865161454159043,
+       "modal": "institution",
+       "modal_share": 0.255,
+       "dist": {
+        "institution": 51,
+        "other_or_unclear": 50,
+        "city": 34,
+        "wilderness_or_mountain": 27,
+        "home_interior": 13,
+        "coast_or_sea": 8,
+        "rural_or_farmland": 8,
+        "small_town_or_village": 7,
+        "road_or_journey": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.8128772133171784,
+       "modal": "other_or_unclear",
+       "modal_share": 0.25,
+       "dist": {
+        "other_or_unclear": 75,
+        "small_town_or_village": 69,
+        "city": 46,
+        "wilderness_or_mountain": 40,
+        "institution": 35,
+        "home_interior": 29,
+        "rural_or_farmland": 4,
+        "road_or_journey": 1,
+        "coast_or_sea": 1
+       }
+      },
+      "26-50": {
+       "entropy": 1.7384712094924335,
+       "modal": "small_town_or_village",
+       "modal_share": 0.318,
+       "dist": {
+        "small_town_or_village": 159,
+        "wilderness_or_mountain": 94,
+        "institution": 83,
+        "other_or_unclear": 75,
+        "city": 55,
+        "home_interior": 25,
+        "rural_or_farmland": 5,
+        "road_or_journey": 4
+       }
+      },
+      "51-75": {
+       "entropy": 1.79989369089839,
+       "modal": "small_town_or_village",
+       "modal_share": 0.302,
+       "dist": {
+        "small_town_or_village": 151,
+        "wilderness_or_mountain": 104,
+        "institution": 81,
+        "city": 62,
+        "other_or_unclear": 55,
+        "home_interior": 30,
+        "rural_or_farmland": 10,
+        "coast_or_sea": 5,
+        "road_or_journey": 2
+       }
+      },
+      "76-89": {
+       "entropy": 1.8986414318606357,
+       "modal": "small_town_or_village",
+       "modal_share": 0.25357142857142856,
+       "dist": {
+        "small_town_or_village": 71,
+        "institution": 42,
+        "wilderness_or_mountain": 41,
+        "home_interior": 39,
+        "city": 39,
+        "other_or_unclear": 25,
+        "rural_or_farmland": 22,
+        "coast_or_sea": 1
+       }
+      },
+      "90-99": {
+       "entropy": 1.8536096498057686,
+       "modal": "small_town_or_village",
+       "modal_share": 0.23,
+       "dist": {
+        "small_town_or_village": 46,
+        "city": 42,
+        "institution": 34,
+        "wilderness_or_mountain": 29,
+        "home_interior": 22,
+        "other_or_unclear": 14,
+        "rural_or_farmland": 13
+       }
+      }
+     },
+     "entropy_early": 1.865161454159043,
+     "entropy_late": 1.8645873802716848,
+     "entropy_change": -0.0003077877714437019
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.9522774077750534,
+       "modal": "present_day",
+       "modal_share": 0.53,
+       "dist": {
+        "present_day": 106,
+        "unclear": 76,
+        "future_or_speculative": 16,
+        "historical": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.0206063875908584,
+       "modal": "present_day",
+       "modal_share": 0.4533333333333333,
+       "dist": {
+        "present_day": 136,
+        "unclear": 130,
+        "future_or_speculative": 28,
+        "historical": 6
+       }
+      },
+      "26-50": {
+       "entropy": 0.9817752324900074,
+       "modal": "present_day",
+       "modal_share": 0.464,
+       "dist": {
+        "present_day": 232,
+        "unclear": 222,
+        "future_or_speculative": 37,
+        "historical": 9
+       }
+      },
+      "51-75": {
+       "entropy": 0.9231232726066807,
+       "modal": "present_day",
+       "modal_share": 0.468,
+       "dist": {
+        "present_day": 234,
+        "unclear": 231,
+        "future_or_speculative": 31,
+        "historical": 4
+       }
+      },
+      "76-89": {
+       "entropy": 0.7855846669182662,
+       "modal": "present_day",
+       "modal_share": 0.5464285714285714,
+       "dist": {
+        "present_day": 153,
+        "unclear": 120,
+        "future_or_speculative": 7
+       }
+      },
+      "90-99": {
+       "entropy": 0.8363846436665422,
+       "modal": "present_day",
+       "modal_share": 0.545,
+       "dist": {
+        "present_day": 109,
+        "unclear": 84,
+        "future_or_speculative": 4,
+        "historical": 3
+       }
+      }
+     },
+     "entropy_early": 0.9522774077750534,
+     "entropy_late": 0.8860955982444826,
+     "entropy_change": -0.06949845600684909
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.4050952623592687,
+       "modal": "social_or_community",
+       "modal_share": 0.315,
+       "dist": {
+        "social_or_community": 63,
+        "none_or_unclear": 55,
+        "internal": 54,
+        "external_physical": 24,
+        "interpersonal": 4
+       }
+      },
+      "11-25": {
+       "entropy": 1.3051886081774686,
+       "modal": "none_or_unclear",
+       "modal_share": 0.36333333333333334,
+       "dist": {
+        "none_or_unclear": 109,
+        "social_or_community": 99,
+        "internal": 53,
+        "external_physical": 39
+       }
+      },
+      "26-50": {
+       "entropy": 1.273339117926578,
+       "modal": "social_or_community",
+       "modal_share": 0.374,
+       "dist": {
+        "social_or_community": 187,
+        "none_or_unclear": 182,
+        "external_physical": 78,
+        "internal": 52,
+        "interpersonal": 1
+       }
+      },
+      "51-75": {
+       "entropy": 1.2619761608448923,
+       "modal": "none_or_unclear",
+       "modal_share": 0.376,
+       "dist": {
+        "none_or_unclear": 188,
+        "social_or_community": 174,
+        "external_physical": 108,
+        "internal": 25,
+        "interpersonal": 5
+       }
+      },
+      "76-89": {
+       "entropy": 1.3428335422719853,
+       "modal": "social_or_community",
+       "modal_share": 0.3821428571428571,
+       "dist": {
+        "social_or_community": 107,
+        "none_or_unclear": 89,
+        "external_physical": 48,
+        "internal": 32,
+        "interpersonal": 4
+       }
+      },
+      "90-99": {
+       "entropy": 1.3950246507113495,
+       "modal": "social_or_community",
+       "modal_share": 0.39,
+       "dist": {
+        "social_or_community": 78,
+        "none_or_unclear": 59,
+        "external_physical": 29,
+        "internal": 27,
+        "interpersonal": 7
+       }
+      }
+     },
+     "entropy_early": 1.4050952623592687,
+     "entropy_late": 1.3261891096148908,
+     "entropy_change": -0.05615715521799435
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.2073579157409698,
+       "modal": "hopeful",
+       "modal_share": 0.955,
+       "dist": {
+        "hopeful": 191,
+        "neutral_or_ambiguous": 7,
+        "bittersweet": 2
+       }
+      },
+      "11-25": {
+       "entropy": 0.2204499845119182,
+       "modal": "hopeful",
+       "modal_share": 0.9533333333333334,
+       "dist": {
+        "hopeful": 286,
+        "bittersweet": 8,
+        "neutral_or_ambiguous": 6
+       }
+      },
+      "26-50": {
+       "entropy": 0.2678389030199635,
+       "modal": "hopeful",
+       "modal_share": 0.938,
+       "dist": {
+        "hopeful": 469,
+        "bittersweet": 23,
+        "neutral_or_ambiguous": 8
+       }
+      },
+      "51-75": {
+       "entropy": 0.07040862831618332,
+       "modal": "hopeful",
+       "modal_share": 0.988,
+       "dist": {
+        "hopeful": 494,
+        "bittersweet": 5,
+        "neutral_or_ambiguous": 1
+       }
+      },
+      "76-89": {
+       "entropy": 0.20102042874446424,
+       "modal": "hopeful",
+       "modal_share": 0.9571428571428572,
+       "dist": {
+        "hopeful": 268,
+        "bittersweet": 9,
+        "neutral_or_ambiguous": 3
+       }
+      },
+      "90-99": {
+       "entropy": 0.29000953566082743,
+       "modal": "hopeful",
+       "modal_share": 0.93,
+       "dist": {
+        "hopeful": 186,
+        "bittersweet": 11,
+        "neutral_or_ambiguous": 3
+       }
+      }
+     },
+     "entropy_early": 0.2073579157409698,
+     "entropy_late": 0.1584373518333183,
+     "entropy_change": -0.23592330069888792
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.708410837600557,
+       "modal": "other",
+       "modal_share": 0.41,
+       "dist": {
+        "other": 82,
+        "friend": 40,
+        "none": 21,
+        "stranger": 20,
+        "authority_or_mentor": 16,
+        "partner_or_spouse": 7,
+        "parent_or_grandparent": 7,
+        "child": 7
+       }
+      },
+      "11-25": {
+       "entropy": 1.7749270607777123,
+       "modal": "other",
+       "modal_share": 0.39666666666666667,
+       "dist": {
+        "other": 119,
+        "friend": 46,
+        "none": 43,
+        "authority_or_mentor": 32,
+        "partner_or_spouse": 24,
+        "parent_or_grandparent": 17,
+        "stranger": 12,
+        "child": 4,
+        "sibling": 2,
+        "animal": 1
+       }
+      },
+      "26-50": {
+       "entropy": 1.6498849685847807,
+       "modal": "other",
+       "modal_share": 0.486,
+       "dist": {
+        "other": 243,
+        "friend": 76,
+        "authority_or_mentor": 43,
+        "none": 42,
+        "parent_or_grandparent": 41,
+        "child": 22,
+        "partner_or_spouse": 14,
+        "stranger": 14,
+        "animal": 4,
+        "sibling": 1
+       }
+      },
+      "51-75": {
+       "entropy": 1.5710569462318995,
+       "modal": "other",
+       "modal_share": 0.498,
+       "dist": {
+        "other": 249,
+        "friend": 84,
+        "authority_or_mentor": 54,
+        "parent_or_grandparent": 36,
+        "none": 35,
+        "child": 21,
+        "stranger": 10,
+        "partner_or_spouse": 8,
+        "sibling": 3
+       }
+      },
+      "76-89": {
+       "entropy": 1.7955099989015946,
+       "modal": "other",
+       "modal_share": 0.4107142857142857,
+       "dist": {
+        "other": 115,
+        "friend": 39,
+        "parent_or_grandparent": 39,
+        "none": 34,
+        "child": 14,
+        "sibling": 13,
+        "authority_or_mentor": 12,
+        "stranger": 8,
+        "animal": 4,
+        "partner_or_spouse": 2
+       }
+      },
+      "90-99": {
+       "entropy": 1.6430565139846733,
+       "modal": "other",
+       "modal_share": 0.455,
+       "dist": {
+        "other": 91,
+        "friend": 37,
+        "parent_or_grandparent": 22,
+        "authority_or_mentor": 17,
+        "none": 14,
+        "child": 10,
+        "partner_or_spouse": 5,
+        "sibling": 2,
+        "stranger": 2
+       }
+      }
+     },
+     "entropy_early": 1.708410837600557,
+     "entropy_late": 1.6794929516629702,
+     "entropy_change": -0.016926775047974726
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.24050910155399824,
+       "modal": false,
+       "modal_share": 0.935,
+       "dist": {
+        "False": 187,
+        "True": 13
+       }
+      },
+      "11-25": {
+       "entropy": 0.20821546401080435,
+       "modal": false,
+       "modal_share": 0.9466666666666667,
+       "dist": {
+        "False": 284,
+        "True": 16
+       }
+      },
+      "26-50": {
+       "entropy": 0.283627096116858,
+       "modal": false,
+       "modal_share": 0.918,
+       "dist": {
+        "False": 459,
+        "True": 41
+       }
+      },
+      "51-75": {
+       "entropy": 0.14162706960881927,
+       "modal": false,
+       "modal_share": 0.968,
+       "dist": {
+        "False": 484,
+        "True": 16
+       }
+      },
+      "76-89": {
+       "entropy": 0.21903252178902116,
+       "modal": false,
+       "modal_share": 0.9428571428571428,
+       "dist": {
+        "False": 264,
+        "True": 16
+       }
+      },
+      "90-99": {
+       "entropy": 0.3250829733914482,
+       "modal": false,
+       "modal_share": 0.9,
+       "dist": {
+        "False": 180,
+        "True": 20
+       }
+      }
+     },
+     "entropy_early": 0.24050910155399824,
+     "entropy_late": 0.2043625374781422,
+     "entropy_change": -0.15029187603422375
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.2663844632679204,
+       "modal": false,
+       "modal_share": 0.925,
+       "dist": {
+        "False": 185,
+        "True": 15
+       }
+      },
+      "11-25": {
+       "entropy": 0.21769547838289463,
+       "modal": false,
+       "modal_share": 0.9433333333333334,
+       "dist": {
+        "False": 283,
+        "True": 17
+       }
+      },
+      "26-50": {
+       "entropy": 0.18045437021259397,
+       "modal": false,
+       "modal_share": 0.956,
+       "dist": {
+        "False": 478,
+        "True": 22
+       }
+      },
+      "51-75": {
+       "entropy": 0.1277197107616846,
+       "modal": false,
+       "modal_share": 0.972,
+       "dist": {
+        "False": 486,
+        "True": 14
+       }
+      },
+      "76-89": {
+       "entropy": 0.2925084684723972,
+       "modal": false,
+       "modal_share": 0.9142857142857143,
+       "dist": {
+        "False": 256,
+        "True": 24
+       }
+      },
+      "90-99": {
+       "entropy": 0.2129821973127643,
+       "modal": false,
+       "modal_share": 0.945,
+       "dist": {
+        "False": 189,
+        "True": 11
+       }
+      }
+     },
+     "entropy_early": 0.2663844632679204,
+     "entropy_late": 0.1955602108940502,
+     "entropy_change": -0.2658723091618057
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.583258840128597,
+       "modal": false,
+       "modal_share": 0.73,
+       "dist": {
+        "False": 146,
+        "True": 54
+       }
+      },
+      "11-25": {
+       "entropy": 0.6293565457884979,
+       "modal": false,
+       "modal_share": 0.6766666666666666,
+       "dist": {
+        "False": 203,
+        "True": 97
+       }
+      },
+      "26-50": {
+       "entropy": 0.6775782136857396,
+       "modal": false,
+       "modal_share": 0.588,
+       "dist": {
+        "False": 294,
+        "True": 206
+       }
+      },
+      "51-75": {
+       "entropy": 0.6930191750980527,
+       "modal": false,
+       "modal_share": 0.508,
+       "dist": {
+        "False": 254,
+        "True": 246
+       }
+      },
+      "76-89": {
+       "entropy": 0.6667923798073581,
+       "modal": false,
+       "modal_share": 0.6142857142857143,
+       "dist": {
+        "False": 172,
+        "True": 108
+       }
+      },
+      "90-99": {
+       "entropy": 0.6534181947937018,
+       "modal": false,
+       "modal_share": 0.64,
+       "dist": {
+        "False": 128,
+        "True": 72
+       }
+      }
+     },
+     "entropy_early": 0.583258840128597,
+     "entropy_late": 0.6854393565969992,
+     "entropy_change": 0.1751889717537302
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 0,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.0,
+    "multidim_shared": 0,
+    "clusters": []
+   },
+   "theme_scale": {
+    "nn_other_median": 0.4003295302391052,
+    "nn_other_within_015": 0.0026666666666666666,
+    "consecutive_median": 0.25128495693206787,
+    "vendi_last": 13.934295654296875,
+    "vendi_first": 15.41834545135498
+   },
+   "theme_memory": {
+    "half_life": 11,
+    "ident_at": {
+     "1": 0.85,
+     "5": 0.75,
+     "10": 0.65,
+     "25": 0.45,
+     "50": 0.35,
+     "99": 0.15
+    },
+    "curve": [
+     1.0,
+     0.85,
+     0.85,
+     0.9,
+     0.9,
+     0.75,
+     0.75,
+     0.75,
+     0.6,
+     0.6,
+     0.65,
+     0.5,
+     0.35,
+     0.45,
+     0.45,
+     0.25,
+     0.45,
+     0.45,
+     0.3,
+     0.35,
+     0.4,
+     0.3,
+     0.45,
+     0.3,
+     0.45,
+     0.45,
+     0.3,
+     0.3,
+     0.4,
+     0.4,
+     0.35,
+     0.4,
+     0.3,
+     0.35,
+     0.35,
+     0.35,
+     0.3,
+     0.3,
+     0.2,
+     0.3,
+     0.3,
+     0.3,
+     0.3,
+     0.4,
+     0.3,
+     0.3,
+     0.35,
+     0.35,
+     0.35,
+     0.4,
+     0.35,
+     0.4,
+     0.4,
+     0.3,
+     0.4,
+     0.3,
+     0.3,
+     0.3,
+     0.35,
+     0.25,
+     0.3,
+     0.25,
+     0.25,
+     0.15,
+     0.25,
+     0.2,
+     0.1,
+     0.25,
+     0.3,
+     0.2,
+     0.2,
+     0.2,
+     0.25,
+     0.2,
+     0.15,
+     0.2,
+     0.2,
+     0.2,
+     0.2,
+     0.25,
+     0.2,
+     0.2,
+     0.2,
+     0.15,
+     0.25,
+     0.2,
+     0.2,
+     0.2,
+     0.15,
+     0.2,
+     0.2,
+     0.2,
+     0.25,
+     0.2,
+     0.25,
+     0.25,
+     0.2,
+     0.15,
+     0.15
+    ]
+   }
+  },
+  "e3_2_qwen": {
+   "model": "qwen",
+   "loop": "E3-2",
+   "n_judged": 2000,
+   "n_malformed": 0,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 13.750997122756843,
+    "eff_late": 10.665990871647358,
+    "ratio": 0.7756521782697462,
+    "modal_early": [
+     [
+      "unclear",
+      "internal",
+      "neutral_or_ambiguous"
+     ],
+     0.18
+    ],
+    "modal_late": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.197
+    ],
+    "top5_late": [
+     [
+      [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.197
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "neutral_or_ambiguous"
+      ],
+      0.182
+     ],
+     [
+      [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.165
+     ],
+     [
+      [
+       "young_adult",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.101
+     ],
+     [
+      [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      0.092
+     ]
+    ],
+    "js_early_late": 0.07259386746787602,
+    "null_ratio_mean": 1.0553180463411025,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      "trajectories": 5,
+      "runs": 19
+     },
+     {
+      "tuple": [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      "trajectories": 5,
+      "runs": 11
+     },
+     {
+      "tuple": [
+       "unclear",
+       "internal",
+       "neutral_or_ambiguous"
+      ],
+      "trajectories": 4,
+      "runs": 16
+     }
+    ],
+    "share_hold_step1_at_last": 0.55,
+    "memory_curve": [
+     1.0,
+     0.65,
+     0.65,
+     0.7,
+     0.75,
+     0.55,
+     0.55,
+     0.5,
+     0.5,
+     0.55,
+     0.55,
+     0.65,
+     0.6,
+     0.6,
+     0.55,
+     0.65,
+     0.5,
+     0.6,
+     0.55,
+     0.6,
+     0.65,
+     0.55,
+     0.5,
+     0.55,
+     0.45,
+     0.55,
+     0.5,
+     0.6,
+     0.55,
+     0.5,
+     0.6,
+     0.55,
+     0.55,
+     0.55,
+     0.55,
+     0.5,
+     0.6,
+     0.5,
+     0.55,
+     0.5,
+     0.5,
+     0.65,
+     0.5,
+     0.6,
+     0.5,
+     0.65,
+     0.55,
+     0.5,
+     0.5,
+     0.5,
+     0.45,
+     0.55,
+     0.55,
+     0.5,
+     0.6,
+     0.6,
+     0.45,
+     0.55,
+     0.45,
+     0.45,
+     0.45,
+     0.5,
+     0.55,
+     0.5,
+     0.55,
+     0.55,
+     0.55,
+     0.55,
+     0.55,
+     0.5,
+     0.6,
+     0.5,
+     0.55,
+     0.5,
+     0.4,
+     0.45,
+     0.5,
+     0.5,
+     0.45,
+     0.45,
+     0.4,
+     0.35,
+     0.45,
+     0.45,
+     0.45,
+     0.4,
+     0.45,
+     0.6,
+     0.4,
+     0.5,
+     0.35,
+     0.35,
+     0.35,
+     0.35,
+     0.4,
+     0.4,
+     0.35,
+     0.4,
+     0.5,
+     0.45
+    ],
+    "memory_half_step": 7,
+    "memory_at_last": 0.45
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 14.471161630134185,
+    "eff_late": 14.159644334974828,
+    "ratio": 0.9784732350365941,
+    "null_ratio_mean": 1.0555635574204867,
+    "modal_late": [
+     [
+      "woman",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.241
+    ],
+    "top3_late": [
+     [
+      [
+       "woman",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.241
+     ],
+     [
+      [
+       "woman",
+       "internal",
+       "neutral_or_ambiguous"
+      ],
+      0.096
+     ],
+     [
+      [
+       "woman",
+       "internal",
+       "hopeful"
+      ],
+      0.089
+     ]
+    ],
+    "js_early_late": 0.04690381537256019,
+    "share_hold_step1_at_last": 0.55,
+    "memory_half_step": 5,
+    "memory_at_last": 0.45
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.8935804429613855,
+       "modal": "unclear",
+       "modal_share": 0.69,
+       "dist": {
+        "unclear": 138,
+        "young_adult": 31,
+        "middle_aged": 27,
+        "older_adult": 4
+       }
+      },
+      "11-25": {
+       "entropy": 0.6610654553001837,
+       "modal": "unclear",
+       "modal_share": 0.7866666666666666,
+       "dist": {
+        "unclear": 236,
+        "young_adult": 39,
+        "middle_aged": 25
+       }
+      },
+      "26-50": {
+       "entropy": 0.6295324656261279,
+       "modal": "unclear",
+       "modal_share": 0.8,
+       "dist": {
+        "unclear": 400,
+        "young_adult": 71,
+        "middle_aged": 28,
+        "child": 1
+       }
+      },
+      "51-75": {
+       "entropy": 0.5941006707556769,
+       "modal": "unclear",
+       "modal_share": 0.814,
+       "dist": {
+        "unclear": 407,
+        "young_adult": 74,
+        "middle_aged": 15,
+        "child": 4
+       }
+      },
+      "76-89": {
+       "entropy": 0.5873565555619025,
+       "modal": "unclear",
+       "modal_share": 0.8035714285714286,
+       "dist": {
+        "unclear": 225,
+        "young_adult": 48,
+        "middle_aged": 4,
+        "child": 3
+       }
+      },
+      "90-99": {
+       "entropy": 0.5646960865719758,
+       "modal": "unclear",
+       "modal_share": 0.825,
+       "dist": {
+        "unclear": 165,
+        "young_adult": 29,
+        "middle_aged": 3,
+        "child": 3
+       }
+      }
+     },
+     "entropy_early": 0.8935804429613855,
+     "entropy_late": 0.5883227571083617,
+     "entropy_change": -0.3416118697063013
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.0081716930325109,
+       "modal": "woman",
+       "modal_share": 0.505,
+       "dist": {
+        "woman": 101,
+        "man": 66,
+        "other_or_unclear": 33
+       }
+      },
+      "11-25": {
+       "entropy": 0.9589400742476811,
+       "modal": "woman",
+       "modal_share": 0.5066666666666667,
+       "dist": {
+        "woman": 152,
+        "man": 114,
+        "other_or_unclear": 34
+       }
+      },
+      "26-50": {
+       "entropy": 0.9154844418010086,
+       "modal": "woman",
+       "modal_share": 0.576,
+       "dist": {
+        "woman": 288,
+        "man": 161,
+        "other_or_unclear": 51
+       }
+      },
+      "51-75": {
+       "entropy": 0.9733250744953399,
+       "modal": "woman",
+       "modal_share": 0.572,
+       "dist": {
+        "woman": 286,
+        "man": 125,
+        "other_or_unclear": 89
+       }
+      },
+      "76-89": {
+       "entropy": 0.9580453879522776,
+       "modal": "woman",
+       "modal_share": 0.5857142857142857,
+       "dist": {
+        "woman": 164,
+        "man": 69,
+        "other_or_unclear": 47
+       }
+      },
+      "90-99": {
+       "entropy": 0.9809029170904693,
+       "modal": "woman",
+       "modal_share": 0.57,
+       "dist": {
+        "woman": 114,
+        "man": 45,
+        "other_or_unclear": 41
+       }
+      }
+     },
+     "entropy_early": 1.0081716930325109,
+     "entropy_late": 0.9705959862895246,
+     "entropy_change": -0.037271138440676845
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.6587922126773575,
+       "modal": "other_or_unclear",
+       "modal_share": 0.3,
+       "dist": {
+        "other_or_unclear": 60,
+        "professional": 48,
+        "leader_or_official": 37,
+        "worker_or_tradesperson": 33,
+        "student_or_child": 10,
+        "caregiver_or_parent": 10,
+        "outsider_or_wanderer": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.6608858230764598,
+       "modal": "other_or_unclear",
+       "modal_share": 0.2966666666666667,
+       "dist": {
+        "other_or_unclear": 89,
+        "professional": 63,
+        "leader_or_official": 59,
+        "worker_or_tradesperson": 56,
+        "student_or_child": 16,
+        "caregiver_or_parent": 15,
+        "outsider_or_wanderer": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.660022207408873,
+       "modal": "other_or_unclear",
+       "modal_share": 0.322,
+       "dist": {
+        "other_or_unclear": 161,
+        "professional": 115,
+        "leader_or_official": 97,
+        "worker_or_tradesperson": 69,
+        "student_or_child": 26,
+        "caregiver_or_parent": 24,
+        "outsider_or_wanderer": 8
+       }
+      },
+      "51-75": {
+       "entropy": 1.6244533697569223,
+       "modal": "other_or_unclear",
+       "modal_share": 0.366,
+       "dist": {
+        "other_or_unclear": 183,
+        "professional": 119,
+        "worker_or_tradesperson": 71,
+        "leader_or_official": 69,
+        "student_or_child": 29,
+        "caregiver_or_parent": 21,
+        "outsider_or_wanderer": 8
+       }
+      },
+      "76-89": {
+       "entropy": 1.5557856885947332,
+       "modal": "other_or_unclear",
+       "modal_share": 0.425,
+       "dist": {
+        "other_or_unclear": 119,
+        "professional": 66,
+        "leader_or_official": 32,
+        "worker_or_tradesperson": 30,
+        "student_or_child": 18,
+        "caregiver_or_parent": 11,
+        "outsider_or_wanderer": 4
+       }
+      },
+      "90-99": {
+       "entropy": 1.6183379420269255,
+       "modal": "other_or_unclear",
+       "modal_share": 0.385,
+       "dist": {
+        "other_or_unclear": 77,
+        "professional": 47,
+        "leader_or_official": 30,
+        "worker_or_tradesperson": 20,
+        "student_or_child": 14,
+        "caregiver_or_parent": 7,
+        "outsider_or_wanderer": 5
+       }
+      }
+     },
+     "entropy_early": 1.6587922126773575,
+     "entropy_late": 1.6124261094009644,
+     "entropy_change": -0.027951724707916466
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8516335444501943,
+       "modal": "institution",
+       "modal_share": 0.405,
+       "dist": {
+        "institution": 81,
+        "other_or_unclear": 23,
+        "wilderness_or_mountain": 22,
+        "small_town_or_village": 20,
+        "city": 20,
+        "home_interior": 10,
+        "coast_or_sea": 10,
+        "road_or_journey": 8,
+        "rural_or_farmland": 6
+       }
+      },
+      "11-25": {
+       "entropy": 1.8915274422319637,
+       "modal": "institution",
+       "modal_share": 0.38666666666666666,
+       "dist": {
+        "institution": 116,
+        "other_or_unclear": 35,
+        "city": 34,
+        "small_town_or_village": 30,
+        "wilderness_or_mountain": 29,
+        "road_or_journey": 15,
+        "home_interior": 15,
+        "coast_or_sea": 15,
+        "rural_or_farmland": 11
+       }
+      },
+      "26-50": {
+       "entropy": 1.9022494379100021,
+       "modal": "institution",
+       "modal_share": 0.38,
+       "dist": {
+        "institution": 190,
+        "city": 71,
+        "small_town_or_village": 50,
+        "wilderness_or_mountain": 47,
+        "other_or_unclear": 44,
+        "road_or_journey": 25,
+        "home_interior": 25,
+        "coast_or_sea": 25,
+        "rural_or_farmland": 23
+       }
+      },
+      "51-75": {
+       "entropy": 1.9660007880114818,
+       "modal": "institution",
+       "modal_share": 0.306,
+       "dist": {
+        "institution": 153,
+        "other_or_unclear": 91,
+        "city": 69,
+        "small_town_or_village": 51,
+        "home_interior": 35,
+        "wilderness_or_mountain": 31,
+        "coast_or_sea": 25,
+        "rural_or_farmland": 23,
+        "road_or_journey": 22
+       }
+      },
+      "76-89": {
+       "entropy": 1.978436161404124,
+       "modal": "institution",
+       "modal_share": 0.2642857142857143,
+       "dist": {
+        "institution": 74,
+        "other_or_unclear": 60,
+        "city": 42,
+        "small_town_or_village": 28,
+        "home_interior": 23,
+        "wilderness_or_mountain": 14,
+        "coast_or_sea": 14,
+        "rural_or_farmland": 14,
+        "road_or_journey": 11
+       }
+      },
+      "90-99": {
+       "entropy": 1.9938403130286355,
+       "modal": "institution",
+       "modal_share": 0.275,
+       "dist": {
+        "institution": 55,
+        "other_or_unclear": 37,
+        "city": 26,
+        "small_town_or_village": 23,
+        "home_interior": 20,
+        "wilderness_or_mountain": 13,
+        "coast_or_sea": 10,
+        "rural_or_farmland": 10,
+        "road_or_journey": 6
+       }
+      }
+     },
+     "entropy_early": 1.8516335444501943,
+     "entropy_late": 1.9785557686933821,
+     "entropy_change": 0.06854608171449757
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.9411526177178593,
+       "modal": "unclear",
+       "modal_share": 0.53,
+       "dist": {
+        "unclear": 106,
+        "present_day": 79,
+        "future_or_speculative": 11,
+        "historical": 4
+       }
+      },
+      "11-25": {
+       "entropy": 0.8224184181498959,
+       "modal": "unclear",
+       "modal_share": 0.5833333333333334,
+       "dist": {
+        "unclear": 175,
+        "present_day": 113,
+        "future_or_speculative": 11,
+        "historical": 1
+       }
+      },
+      "26-50": {
+       "entropy": 0.8590670387501596,
+       "modal": "unclear",
+       "modal_share": 0.618,
+       "dist": {
+        "unclear": 309,
+        "present_day": 155,
+        "future_or_speculative": 35,
+        "historical": 1
+       }
+      },
+      "51-75": {
+       "entropy": 0.7444523145821602,
+       "modal": "unclear",
+       "modal_share": 0.71,
+       "dist": {
+        "unclear": 355,
+        "present_day": 117,
+        "future_or_speculative": 28
+       }
+      },
+      "76-89": {
+       "entropy": 0.7067327951622833,
+       "modal": "unclear",
+       "modal_share": 0.7535714285714286,
+       "dist": {
+        "unclear": 211,
+        "present_day": 49,
+        "future_or_speculative": 20
+       }
+      },
+      "90-99": {
+       "entropy": 0.6597011991177401,
+       "modal": "unclear",
+       "modal_share": 0.77,
+       "dist": {
+        "unclear": 154,
+        "present_day": 36,
+        "future_or_speculative": 10
+       }
+      }
+     },
+     "entropy_early": 0.9411526177178593,
+     "entropy_late": 0.7200021525827137,
+     "entropy_change": -0.23497832442032535
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.4440611308046885,
+       "modal": "internal",
+       "modal_share": 0.355,
+       "dist": {
+        "internal": 71,
+        "social_or_community": 54,
+        "none_or_unclear": 44,
+        "external_physical": 20,
+        "interpersonal": 11
+       }
+      },
+      "11-25": {
+       "entropy": 1.4421303845310092,
+       "modal": "internal",
+       "modal_share": 0.3566666666666667,
+       "dist": {
+        "internal": 107,
+        "social_or_community": 80,
+        "none_or_unclear": 68,
+        "external_physical": 27,
+        "interpersonal": 18
+       }
+      },
+      "26-50": {
+       "entropy": 1.4744936255978336,
+       "modal": "social_or_community",
+       "modal_share": 0.3,
+       "dist": {
+        "social_or_community": 150,
+        "internal": 138,
+        "none_or_unclear": 128,
+        "external_physical": 54,
+        "interpersonal": 30
+       }
+      },
+      "51-75": {
+       "entropy": 1.426327532026776,
+       "modal": "internal",
+       "modal_share": 0.314,
+       "dist": {
+        "internal": 157,
+        "none_or_unclear": 146,
+        "social_or_community": 127,
+        "external_physical": 52,
+        "interpersonal": 18
+       }
+      },
+      "76-89": {
+       "entropy": 1.4301914672134761,
+       "modal": "none_or_unclear",
+       "modal_share": 0.325,
+       "dist": {
+        "none_or_unclear": 91,
+        "internal": 85,
+        "social_or_community": 61,
+        "external_physical": 33,
+        "interpersonal": 10
+       }
+      },
+      "90-99": {
+       "entropy": 1.4869441347852868,
+       "modal": "none_or_unclear",
+       "modal_share": 0.35,
+       "dist": {
+        "none_or_unclear": 70,
+        "internal": 47,
+        "social_or_community": 44,
+        "external_physical": 25,
+        "interpersonal": 14
+       }
+      }
+     },
+     "entropy_early": 1.4440611308046885,
+     "entropy_late": 1.4447020082513538,
+     "entropy_change": 0.0004438021583671998
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.7146025504844815,
+       "modal": "hopeful",
+       "modal_share": 0.68,
+       "dist": {
+        "hopeful": 136,
+        "neutral_or_ambiguous": 59,
+        "bittersweet": 5
+       }
+      },
+      "11-25": {
+       "entropy": 0.7115362808817336,
+       "modal": "hopeful",
+       "modal_share": 0.6966666666666667,
+       "dist": {
+        "hopeful": 209,
+        "neutral_or_ambiguous": 82,
+        "bittersweet": 9
+       }
+      },
+      "26-50": {
+       "entropy": 0.6915145339444775,
+       "modal": "hopeful",
+       "modal_share": 0.692,
+       "dist": {
+        "hopeful": 346,
+        "neutral_or_ambiguous": 144,
+        "bittersweet": 10
+       }
+      },
+      "51-75": {
+       "entropy": 0.5889573572511568,
+       "modal": "hopeful",
+       "modal_share": 0.736,
+       "dist": {
+        "hopeful": 368,
+        "neutral_or_ambiguous": 131,
+        "bittersweet": 1
+       }
+      },
+      "76-89": {
+       "entropy": 0.67205037618351,
+       "modal": "hopeful",
+       "modal_share": 0.7321428571428571,
+       "dist": {
+        "hopeful": 205,
+        "neutral_or_ambiguous": 67,
+        "bittersweet": 8
+       }
+      },
+      "90-99": {
+       "entropy": 0.7437374486734167,
+       "modal": "hopeful",
+       "modal_share": 0.7,
+       "dist": {
+        "hopeful": 140,
+        "neutral_or_ambiguous": 52,
+        "bittersweet": 7,
+        "tragic": 1
+       }
+      }
+     },
+     "entropy_early": 0.7146025504844815,
+     "entropy_late": 0.6526324923237145,
+     "entropy_change": -0.08671961514656365
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8499355810270042,
+       "modal": "other",
+       "modal_share": 0.31,
+       "dist": {
+        "other": 62,
+        "none": 48,
+        "friend": 19,
+        "child": 19,
+        "stranger": 18,
+        "partner_or_spouse": 15,
+        "parent_or_grandparent": 12,
+        "authority_or_mentor": 7
+       }
+      },
+      "11-25": {
+       "entropy": 1.8499976847718802,
+       "modal": "other",
+       "modal_share": 0.30333333333333334,
+       "dist": {
+        "other": 91,
+        "none": 74,
+        "friend": 34,
+        "stranger": 29,
+        "child": 23,
+        "parent_or_grandparent": 20,
+        "partner_or_spouse": 15,
+        "authority_or_mentor": 14
+       }
+      },
+      "26-50": {
+       "entropy": 1.8760284662296347,
+       "modal": "other",
+       "modal_share": 0.28,
+       "dist": {
+        "other": 140,
+        "none": 125,
+        "friend": 65,
+        "authority_or_mentor": 45,
+        "parent_or_grandparent": 36,
+        "stranger": 32,
+        "child": 32,
+        "partner_or_spouse": 25
+       }
+      },
+      "51-75": {
+       "entropy": 1.8304049432211027,
+       "modal": "none",
+       "modal_share": 0.27,
+       "dist": {
+        "none": 135,
+        "other": 130,
+        "friend": 91,
+        "authority_or_mentor": 37,
+        "parent_or_grandparent": 33,
+        "stranger": 27,
+        "partner_or_spouse": 26,
+        "child": 21
+       }
+      },
+      "76-89": {
+       "entropy": 1.8477488633213217,
+       "modal": "none",
+       "modal_share": 0.2857142857142857,
+       "dist": {
+        "none": 80,
+        "other": 67,
+        "friend": 47,
+        "parent_or_grandparent": 21,
+        "stranger": 21,
+        "authority_or_mentor": 19,
+        "partner_or_spouse": 14,
+        "child": 11
+       }
+      },
+      "90-99": {
+       "entropy": 1.8116885422030036,
+       "modal": "other",
+       "modal_share": 0.29,
+       "dist": {
+        "other": 58,
+        "none": 58,
+        "parent_or_grandparent": 21,
+        "authority_or_mentor": 17,
+        "stranger": 15,
+        "friend": 14,
+        "partner_or_spouse": 10,
+        "child": 7
+       }
+      }
+     },
+     "entropy_early": 1.8499355810270042,
+     "entropy_late": 1.841932259488296,
+     "entropy_change": -0.004326270396002107
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.03147906594716675,
+       "modal": false,
+       "modal_share": 0.995,
+       "dist": {
+        "False": 199,
+        "True": 1
+       }
+      },
+      "11-25": {
+       "entropy": 0.022340379843483554,
+       "modal": false,
+       "modal_share": 0.9966666666666667,
+       "dist": {
+        "False": 299,
+        "True": 1
+       }
+      },
+      "26-50": {
+       "entropy": 0.02607783298339765,
+       "modal": false,
+       "modal_share": 0.996,
+       "dist": {
+        "False": 498,
+        "True": 2
+       }
+      },
+      "51-75": {
+       "entropy": 0.046594424222104566,
+       "modal": false,
+       "modal_share": 0.992,
+       "dist": {
+        "False": 496,
+        "True": 4
+       }
+      },
+      "76-89": {
+       "entropy": 0.02368929199724598,
+       "modal": false,
+       "modal_share": 0.9964285714285714,
+       "dist": {
+        "False": 279,
+        "True": 1
+       }
+      },
+      "90-99": {
+       "entropy": 0.167944147734173,
+       "modal": false,
+       "modal_share": 0.96,
+       "dist": {
+        "False": 192,
+        "True": 8
+       }
+      }
+     },
+     "entropy_early": 0.03147906594716675,
+     "entropy_late": 0.06937160841429077,
+     "entropy_change": 1.2037378278860436
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 200
+       }
+      },
+      "11-25": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 300
+       }
+      },
+      "26-50": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 500
+       }
+      },
+      "51-75": {
+       "entropy": 0.014427214862176116,
+       "modal": false,
+       "modal_share": 0.998,
+       "dist": {
+        "False": 499,
+        "True": 1
+       }
+      },
+      "76-89": {
+       "entropy": 0.07487597323206041,
+       "modal": false,
+       "modal_share": 0.9857142857142858,
+       "dist": {
+        "False": 276,
+        "True": 4
+       }
+      },
+      "90-99": {
+       "entropy": 0.2129821973127643,
+       "modal": false,
+       "modal_share": 0.945,
+       "dist": {
+        "False": 189,
+        "True": 11
+       }
+      }
+     },
+     "entropy_early": -0.0,
+     "entropy_late": 0.0820339767268832,
+     "entropy_change": null
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.4713934868100942,
+       "modal": false,
+       "modal_share": 0.82,
+       "dist": {
+        "False": 164,
+        "True": 36
+       }
+      },
+      "11-25": {
+       "entropy": 0.4558862130273584,
+       "modal": false,
+       "modal_share": 0.83,
+       "dist": {
+        "False": 249,
+        "True": 51
+       }
+      },
+      "26-50": {
+       "entropy": 0.41570747271728126,
+       "modal": false,
+       "modal_share": 0.854,
+       "dist": {
+        "False": 427,
+        "True": 73
+       }
+      },
+      "51-75": {
+       "entropy": 0.39017101687555217,
+       "modal": false,
+       "modal_share": 0.868,
+       "dist": {
+        "False": 434,
+        "True": 66
+       }
+      },
+      "76-89": {
+       "entropy": 0.33286007891322994,
+       "modal": false,
+       "modal_share": 0.8964285714285715,
+       "dist": {
+        "False": 251,
+        "True": 29
+       }
+      },
+      "90-99": {
+       "entropy": 0.2663844632679204,
+       "modal": false,
+       "modal_share": 0.925,
+       "dist": {
+        "False": 185,
+        "True": 15
+       }
+      }
+     },
+     "entropy_early": 0.4713934868100942,
+     "entropy_late": 0.3527419561590455,
+     "entropy_change": -0.25170379729673414
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 3,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.0994949494949495,
+    "multidim_shared": 0,
+    "clusters": [
+     {
+      "cluster": 0,
+      "visits": 3,
+      "trajectories": 1,
+      "steps_inside": 60,
+      "exits": 13,
+      "hazard": 0.21666666666666667,
+      "fields_agree_070": 7,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        0.68
+       ],
+       "lead_gender": [
+        "woman",
+        0.95
+       ],
+       "lead_role_class": [
+        "professional",
+        0.95
+       ],
+       "setting_place": [
+        "city",
+        0.92
+       ],
+       "setting_time": [
+        "unclear",
+        0.52
+       ],
+       "conflict_type": [
+        "social_or_community",
+        0.98
+       ],
+       "ending_valence": [
+        "hopeful",
+        0.65
+       ],
+       "secondary_character": [
+        "stranger",
+        0.52
+       ],
+       "death_present": [
+        "False",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "False",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        7,
+        47,
+        31,
+        false
+       ],
+       [
+        7,
+        26,
+        6,
+        false
+       ],
+       [
+        7,
+        41,
+        5,
+        false
+       ]
+      ]
+     },
+     {
+      "cluster": 21,
+      "visits": 5,
+      "trajectories": 1,
+      "steps_inside": 82,
+      "exits": 9,
+      "hazard": 0.10975609756097561,
+      "fields_agree_070": 9,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        0.77
+       ],
+       "lead_gender": [
+        "woman",
+        0.99
+       ],
+       "lead_role_class": [
+        "caregiver_or_parent",
+        0.93
+       ],
+       "setting_place": [
+        "other_or_unclear",
+        0.88
+       ],
+       "setting_time": [
+        "unclear",
+        0.99
+       ],
+       "conflict_type": [
+        "none_or_unclear",
+        0.62
+       ],
+       "ending_valence": [
+        "hopeful",
+        1.0
+       ],
+       "secondary_character": [
+        "child",
+        0.93
+       ],
+       "death_present": [
+        "False",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "False",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        12,
+        10,
+        30,
+        false
+       ],
+       [
+        12,
+        42,
+        22,
+        false
+       ],
+       [
+        12,
+        76,
+        9,
+        false
+       ],
+       [
+        12,
+        69,
+        6,
+        false
+       ],
+       [
+        12,
+        95,
+        5,
+        true
+       ]
+      ]
+     },
+     {
+      "cluster": 31,
+      "visits": 4,
+      "trajectories": 1,
+      "steps_inside": 55,
+      "exits": 8,
+      "hazard": 0.14545454545454545,
+      "fields_agree_070": 8,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        1.0
+       ],
+       "lead_gender": [
+        "man",
+        1.0
+       ],
+       "lead_role_class": [
+        "leader_or_official",
+        1.0
+       ],
+       "setting_place": [
+        "institution",
+        1.0
+       ],
+       "setting_time": [
+        "unclear",
+        1.0
+       ],
+       "conflict_type": [
+        "social_or_community",
+        0.95
+       ],
+       "ending_valence": [
+        "hopeful",
+        0.64
+       ],
+       "secondary_character": [
+        "other",
+        0.53
+       ],
+       "death_present": [
+        "False",
+        1.0
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "False",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        2,
+        21,
+        21,
+        false
+       ],
+       [
+        2,
+        52,
+        11,
+        false
+       ],
+       [
+        2,
+        6,
+        9,
+        false
+       ],
+       [
+        2,
+        75,
+        6,
+        false
+       ]
+      ]
+     }
+    ]
+   },
+   "theme_scale": {
+    "nn_other_median": 0.5340937376022339,
+    "nn_other_within_015": 0.0,
+    "consecutive_median": 0.21902722120285034,
+    "vendi_last": 15.516608238220215,
+    "vendi_first": 16.133115768432617
+   },
+   "theme_memory": {
+    "half_life": null,
+    "ident_at": {
+     "1": 1.0,
+     "5": 1.0,
+     "10": 1.0,
+     "25": 1.0,
+     "50": 1.0,
+     "99": 0.9
+    },
+    "curve": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.95,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.95,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.95,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.95,
+     1.0,
+     0.95,
+     1.0,
+     1.0,
+     0.95,
+     0.95,
+     0.95,
+     1.0,
+     1.0,
+     0.95,
+     0.95,
+     1.0,
+     0.95,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.95,
+     0.95,
+     0.9,
+     0.85,
+     0.85,
+     1.0,
+     0.95,
+     0.9,
+     0.9,
+     1.0,
+     0.95,
+     0.9
+    ]
+   }
+  },
+  "e3_1_llava": {
+   "model": "llava",
+   "loop": "E3-1",
+   "n_judged": 2000,
+   "n_malformed": 0,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 13.351803758944442,
+    "eff_late": 12.13407372240673,
+    "ratio": 0.9087965896950854,
+    "modal_early": [
+     [
+      "unclear",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.22
+    ],
+    "modal_late": [
+     [
+      "unclear",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.245
+    ],
+    "top5_late": [
+     [
+      [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.245
+     ],
+     [
+      [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.221
+     ],
+     [
+      [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      0.115
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      0.095
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "bittersweet"
+      ],
+      0.041
+     ]
+    ],
+    "js_early_late": 0.08049304680864472,
+    "null_ratio_mean": 1.0524613107512002,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      "trajectories": 13,
+      "runs": 31
+     },
+     {
+      "tuple": [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      "trajectories": 8,
+      "runs": 28
+     },
+     {
+      "tuple": [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      "trajectories": 7,
+      "runs": 7
+     },
+     {
+      "tuple": [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      "trajectories": 5,
+      "runs": 9
+     }
+    ],
+    "share_hold_step1_at_last": 0.0,
+    "memory_curve": [
+     1.0,
+     0.6,
+     0.5,
+     0.35,
+     0.35,
+     0.4,
+     0.5,
+     0.35,
+     0.3,
+     0.3,
+     0.2,
+     0.3,
+     0.3,
+     0.35,
+     0.2,
+     0.2,
+     0.25,
+     0.25,
+     0.25,
+     0.2,
+     0.2,
+     0.2,
+     0.3,
+     0.2,
+     0.2,
+     0.05,
+     0.1,
+     0.1,
+     0.15,
+     0.15,
+     0.15,
+     0.2,
+     0.15,
+     0.05,
+     0.2,
+     0.2,
+     0.15,
+     0.0,
+     0.1,
+     0.15,
+     0.1,
+     0.2,
+     0.2,
+     0.15,
+     0.05,
+     0.1,
+     0.2,
+     0.05,
+     0.1,
+     0.05,
+     0.1,
+     0.0,
+     0.1,
+     0.05,
+     0.0,
+     0.05,
+     0.05,
+     0.05,
+     0.15,
+     0.05,
+     0.05,
+     0.1,
+     0.0,
+     0.1,
+     0.05,
+     0.2,
+     0.1,
+     0.15,
+     0.1,
+     0.15,
+     0.15,
+     0.2,
+     0.05,
+     0.15,
+     0.1,
+     0.1,
+     0.1,
+     0.2,
+     0.25,
+     0.1,
+     0.1,
+     0.15,
+     0.15,
+     0.1,
+     0.25,
+     0.15,
+     0.2,
+     0.05,
+     0.2,
+     0.15,
+     0.15,
+     0.05,
+     0.0,
+     0.15,
+     0.15,
+     0.1,
+     0.05,
+     0.05,
+     0.15,
+     0.1
+    ],
+    "memory_half_step": 2,
+    "memory_at_last": 0.1
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 15.328034424747694,
+    "eff_late": 16.48574696384506,
+    "ratio": 1.0755290930993862,
+    "null_ratio_mean": 1.079059804860799,
+    "modal_late": [
+     [
+      "other_or_unclear",
+      "external_physical",
+      "hopeful"
+     ],
+     0.108
+    ],
+    "top3_late": [
+     [
+      [
+       "other_or_unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      0.108
+     ],
+     [
+      [
+       "man",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.106
+     ],
+     [
+      [
+       "woman",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.099
+     ]
+    ],
+    "js_early_late": 0.09425452276109444,
+    "share_hold_step1_at_last": 0.05,
+    "memory_half_step": 1,
+    "memory_at_last": 0.1
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.9476892951057907,
+       "modal": "unclear",
+       "modal_share": 0.73,
+       "dist": {
+        "unclear": 146,
+        "young_adult": 26,
+        "teen": 10,
+        "child": 9,
+        "older_adult": 7,
+        "middle_aged": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.0189032335789163,
+       "modal": "unclear",
+       "modal_share": 0.72,
+       "dist": {
+        "unclear": 216,
+        "young_adult": 30,
+        "teen": 17,
+        "older_adult": 15,
+        "child": 14,
+        "middle_aged": 8
+       }
+      },
+      "26-50": {
+       "entropy": 0.9153629043918153,
+       "modal": "unclear",
+       "modal_share": 0.752,
+       "dist": {
+        "unclear": 376,
+        "young_adult": 53,
+        "older_adult": 26,
+        "child": 23,
+        "middle_aged": 12,
+        "teen": 10
+       }
+      },
+      "51-75": {
+       "entropy": 0.6871423010410153,
+       "modal": "unclear",
+       "modal_share": 0.822,
+       "dist": {
+        "unclear": 411,
+        "young_adult": 51,
+        "older_adult": 16,
+        "child": 10,
+        "middle_aged": 8,
+        "teen": 4
+       }
+      },
+      "76-89": {
+       "entropy": 0.49029191256413085,
+       "modal": "unclear",
+       "modal_share": 0.8857142857142857,
+       "dist": {
+        "unclear": 248,
+        "young_adult": 17,
+        "older_adult": 7,
+        "child": 5,
+        "middle_aged": 3
+       }
+      },
+      "90-99": {
+       "entropy": 0.883832187743721,
+       "modal": "unclear",
+       "modal_share": 0.755,
+       "dist": {
+        "unclear": 151,
+        "young_adult": 23,
+        "middle_aged": 9,
+        "child": 9,
+        "older_adult": 7,
+        "teen": 1
+       }
+      }
+     },
+     "entropy_early": 0.9476892951057907,
+     "entropy_late": 0.6842301578295605,
+     "entropy_change": -0.27800159676470776
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.0321406213357673,
+       "modal": "woman",
+       "modal_share": 0.495,
+       "dist": {
+        "woman": 99,
+        "man": 61,
+        "other_or_unclear": 40
+       }
+      },
+      "11-25": {
+       "entropy": 1.0361473971767303,
+       "modal": "woman",
+       "modal_share": 0.49666666666666665,
+       "dist": {
+        "woman": 149,
+        "man": 87,
+        "other_or_unclear": 64
+       }
+      },
+      "26-50": {
+       "entropy": 1.0810434962908344,
+       "modal": "woman",
+       "modal_share": 0.408,
+       "dist": {
+        "woman": 204,
+        "man": 168,
+        "other_or_unclear": 128
+       }
+      },
+      "51-75": {
+       "entropy": 1.0975833684586855,
+       "modal": "woman",
+       "modal_share": 0.354,
+       "dist": {
+        "woman": 177,
+        "other_or_unclear": 164,
+        "man": 159
+       }
+      },
+      "76-89": {
+       "entropy": 1.087578629880808,
+       "modal": "woman",
+       "modal_share": 0.4035714285714286,
+       "dist": {
+        "woman": 113,
+        "other_or_unclear": 86,
+        "man": 81
+       }
+      },
+      "90-99": {
+       "entropy": 1.0638727808684654,
+       "modal": "woman",
+       "modal_share": 0.46,
+       "dist": {
+        "woman": 92,
+        "other_or_unclear": 56,
+        "man": 52
+       }
+      }
+     },
+     "entropy_early": 1.0321406213357673,
+     "entropy_late": 1.0917125762299593,
+     "entropy_change": 0.05771689793305067
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.820113692530258,
+       "modal": "other_or_unclear",
+       "modal_share": 0.315,
+       "dist": {
+        "other_or_unclear": 63,
+        "worker_or_tradesperson": 32,
+        "student_or_child": 28,
+        "leader_or_official": 26,
+        "professional": 26,
+        "outsider_or_wanderer": 16,
+        "artist_or_craftsperson": 8,
+        "caregiver_or_parent": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.9322072733967963,
+       "modal": "other_or_unclear",
+       "modal_share": 0.27666666666666667,
+       "dist": {
+        "other_or_unclear": 83,
+        "professional": 50,
+        "worker_or_tradesperson": 45,
+        "leader_or_official": 36,
+        "student_or_child": 32,
+        "outsider_or_wanderer": 24,
+        "artist_or_craftsperson": 22,
+        "caregiver_or_parent": 7,
+        "retired": 1
+       }
+      },
+      "26-50": {
+       "entropy": 1.8000236310730977,
+       "modal": "other_or_unclear",
+       "modal_share": 0.312,
+       "dist": {
+        "other_or_unclear": 156,
+        "professional": 112,
+        "leader_or_official": 79,
+        "artist_or_craftsperson": 55,
+        "student_or_child": 36,
+        "worker_or_tradesperson": 34,
+        "outsider_or_wanderer": 20,
+        "caregiver_or_parent": 8
+       }
+      },
+      "51-75": {
+       "entropy": 1.7670841836963709,
+       "modal": "other_or_unclear",
+       "modal_share": 0.278,
+       "dist": {
+        "other_or_unclear": 139,
+        "professional": 116,
+        "artist_or_craftsperson": 85,
+        "leader_or_official": 71,
+        "worker_or_tradesperson": 36,
+        "outsider_or_wanderer": 36,
+        "student_or_child": 17
+       }
+      },
+      "76-89": {
+       "entropy": 1.6658361980859737,
+       "modal": "professional",
+       "modal_share": 0.29285714285714287,
+       "dist": {
+        "professional": 82,
+        "other_or_unclear": 64,
+        "artist_or_craftsperson": 62,
+        "leader_or_official": 42,
+        "worker_or_tradesperson": 19,
+        "outsider_or_wanderer": 5,
+        "student_or_child": 4,
+        "caregiver_or_parent": 2
+       }
+      },
+      "90-99": {
+       "entropy": 1.755113217710327,
+       "modal": "professional",
+       "modal_share": 0.28,
+       "dist": {
+        "professional": 56,
+        "artist_or_craftsperson": 49,
+        "other_or_unclear": 43,
+        "leader_or_official": 22,
+        "outsider_or_wanderer": 11,
+        "student_or_child": 9,
+        "worker_or_tradesperson": 8,
+        "retired": 1,
+        "caregiver_or_parent": 1
+       }
+      }
+     },
+     "entropy_early": 1.820113692530258,
+     "entropy_late": 1.7537155427156181,
+     "entropy_change": -0.03648022103626691
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8375282524517438,
+       "modal": "other_or_unclear",
+       "modal_share": 0.32,
+       "dist": {
+        "other_or_unclear": 64,
+        "institution": 46,
+        "city": 26,
+        "wilderness_or_mountain": 19,
+        "small_town_or_village": 17,
+        "home_interior": 13,
+        "coast_or_sea": 10,
+        "road_or_journey": 3,
+        "rural_or_farmland": 2
+       }
+      },
+      "11-25": {
+       "entropy": 1.7814481979328984,
+       "modal": "other_or_unclear",
+       "modal_share": 0.3566666666666667,
+       "dist": {
+        "other_or_unclear": 107,
+        "institution": 60,
+        "city": 44,
+        "small_town_or_village": 29,
+        "wilderness_or_mountain": 28,
+        "coast_or_sea": 15,
+        "home_interior": 11,
+        "road_or_journey": 3,
+        "rural_or_farmland": 3
+       }
+      },
+      "26-50": {
+       "entropy": 1.8278559546789368,
+       "modal": "other_or_unclear",
+       "modal_share": 0.298,
+       "dist": {
+        "other_or_unclear": 149,
+        "small_town_or_village": 101,
+        "institution": 94,
+        "city": 72,
+        "wilderness_or_mountain": 26,
+        "coast_or_sea": 25,
+        "home_interior": 16,
+        "road_or_journey": 11,
+        "rural_or_farmland": 6
+       }
+      },
+      "51-75": {
+       "entropy": 1.779737294409871,
+       "modal": "other_or_unclear",
+       "modal_share": 0.41,
+       "dist": {
+        "other_or_unclear": 205,
+        "small_town_or_village": 71,
+        "institution": 65,
+        "city": 55,
+        "wilderness_or_mountain": 27,
+        "road_or_journey": 26,
+        "coast_or_sea": 25,
+        "home_interior": 24,
+        "rural_or_farmland": 2
+       }
+      },
+      "76-89": {
+       "entropy": 1.8398563058886621,
+       "modal": "other_or_unclear",
+       "modal_share": 0.3142857142857143,
+       "dist": {
+        "other_or_unclear": 88,
+        "institution": 57,
+        "city": 39,
+        "small_town_or_village": 38,
+        "wilderness_or_mountain": 19,
+        "coast_or_sea": 18,
+        "home_interior": 16,
+        "rural_or_farmland": 3,
+        "road_or_journey": 2
+       }
+      },
+      "90-99": {
+       "entropy": 1.775547670433113,
+       "modal": "other_or_unclear",
+       "modal_share": 0.34,
+       "dist": {
+        "other_or_unclear": 68,
+        "institution": 39,
+        "small_town_or_village": 32,
+        "city": 26,
+        "home_interior": 15,
+        "wilderness_or_mountain": 11,
+        "road_or_journey": 6,
+        "coast_or_sea": 2,
+        "rural_or_farmland": 1
+       }
+      }
+     },
+     "entropy_early": 1.8375282524517438,
+     "entropy_late": 1.816079520987507,
+     "entropy_change": -0.011672599556289078
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.8194881844412967,
+       "modal": "unclear",
+       "modal_share": 0.645,
+       "dist": {
+        "unclear": 129,
+        "present_day": 58,
+        "future_or_speculative": 13
+       }
+      },
+      "11-25": {
+       "entropy": 0.801572544656184,
+       "modal": "unclear",
+       "modal_share": 0.6633333333333333,
+       "dist": {
+        "unclear": 199,
+        "present_day": 82,
+        "future_or_speculative": 19
+       }
+      },
+      "26-50": {
+       "entropy": 0.783010369932868,
+       "modal": "unclear",
+       "modal_share": 0.66,
+       "dist": {
+        "unclear": 330,
+        "present_day": 145,
+        "future_or_speculative": 25
+       }
+      },
+      "51-75": {
+       "entropy": 0.7969626207622151,
+       "modal": "unclear",
+       "modal_share": 0.678,
+       "dist": {
+        "unclear": 339,
+        "present_day": 126,
+        "future_or_speculative": 35
+       }
+      },
+      "76-89": {
+       "entropy": 0.6615314139579878,
+       "modal": "unclear",
+       "modal_share": 0.7178571428571429,
+       "dist": {
+        "unclear": 201,
+        "present_day": 74,
+        "future_or_speculative": 5
+       }
+      },
+      "90-99": {
+       "entropy": 0.6227849825063613,
+       "modal": "unclear",
+       "modal_share": 0.715,
+       "dist": {
+        "unclear": 143,
+        "present_day": 56,
+        "future_or_speculative": 1
+       }
+      }
+     },
+     "entropy_early": 0.8194881844412967,
+     "entropy_late": 0.7353238974029275,
+     "entropy_change": -0.10270347838602453
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.3850664471741339,
+       "modal": "none_or_unclear",
+       "modal_share": 0.31,
+       "dist": {
+        "none_or_unclear": 62,
+        "social_or_community": 60,
+        "external_physical": 39,
+        "internal": 38,
+        "interpersonal": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.3493280193365687,
+       "modal": "none_or_unclear",
+       "modal_share": 0.41333333333333333,
+       "dist": {
+        "none_or_unclear": 124,
+        "social_or_community": 75,
+        "external_physical": 60,
+        "internal": 37,
+        "interpersonal": 4
+       }
+      },
+      "26-50": {
+       "entropy": 1.4080963038818208,
+       "modal": "none_or_unclear",
+       "modal_share": 0.428,
+       "dist": {
+        "none_or_unclear": 214,
+        "external_physical": 100,
+        "social_or_community": 92,
+        "internal": 74,
+        "interpersonal": 20
+       }
+      },
+      "51-75": {
+       "entropy": 1.4327410268766196,
+       "modal": "social_or_community",
+       "modal_share": 0.342,
+       "dist": {
+        "social_or_community": 171,
+        "none_or_unclear": 136,
+        "external_physical": 95,
+        "internal": 85,
+        "interpersonal": 13
+       }
+      },
+      "76-89": {
+       "entropy": 1.3506533274629589,
+       "modal": "social_or_community",
+       "modal_share": 0.32142857142857145,
+       "dist": {
+        "social_or_community": 90,
+        "none_or_unclear": 84,
+        "external_physical": 62,
+        "internal": 44
+       }
+      },
+      "90-99": {
+       "entropy": 1.3659504973533252,
+       "modal": "social_or_community",
+       "modal_share": 0.305,
+       "dist": {
+        "social_or_community": 61,
+        "none_or_unclear": 59,
+        "external_physical": 41,
+        "internal": 39
+       }
+      }
+     },
+     "entropy_early": 1.3850664471741339,
+     "entropy_late": 1.4072417976528193,
+     "entropy_change": 0.016010315262439914
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.5634846946571352,
+       "modal": "hopeful",
+       "modal_share": 0.825,
+       "dist": {
+        "hopeful": 165,
+        "bittersweet": 26,
+        "neutral_or_ambiguous": 9
+       }
+      },
+      "11-25": {
+       "entropy": 0.27565340101139013,
+       "modal": "hopeful",
+       "modal_share": 0.93,
+       "dist": {
+        "hopeful": 279,
+        "bittersweet": 19,
+        "neutral_or_ambiguous": 2
+       }
+      },
+      "26-50": {
+       "entropy": 0.3619877102422484,
+       "modal": "hopeful",
+       "modal_share": 0.896,
+       "dist": {
+        "hopeful": 448,
+        "bittersweet": 48,
+        "neutral_or_ambiguous": 4
+       }
+      },
+      "51-75": {
+       "entropy": 0.4722014639517392,
+       "modal": "hopeful",
+       "modal_share": 0.854,
+       "dist": {
+        "hopeful": 427,
+        "bittersweet": 65,
+        "neutral_or_ambiguous": 7,
+        "tragic": 1
+       }
+      },
+      "76-89": {
+       "entropy": 0.5004024235381879,
+       "modal": "hopeful",
+       "modal_share": 0.8,
+       "dist": {
+        "hopeful": 224,
+        "bittersweet": 56
+       }
+      },
+      "90-99": {
+       "entropy": 0.5018775439684257,
+       "modal": "hopeful",
+       "modal_share": 0.815,
+       "dist": {
+        "hopeful": 163,
+        "bittersweet": 36,
+        "tragic": 1
+       }
+      }
+     },
+     "entropy_early": 0.5634846946571352,
+     "entropy_late": 0.4925632546613677,
+     "entropy_change": -0.12586222956582924
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8645666410456867,
+       "modal": "other",
+       "modal_share": 0.325,
+       "dist": {
+        "other": 65,
+        "friend": 29,
+        "none": 28,
+        "stranger": 25,
+        "authority_or_mentor": 22,
+        "partner_or_spouse": 17,
+        "parent_or_grandparent": 9,
+        "animal": 5
+       }
+      },
+      "11-25": {
+       "entropy": 1.7511665223825272,
+       "modal": "other",
+       "modal_share": 0.38,
+       "dist": {
+        "other": 114,
+        "friend": 54,
+        "none": 47,
+        "authority_or_mentor": 26,
+        "stranger": 23,
+        "partner_or_spouse": 23,
+        "animal": 7,
+        "child": 4,
+        "parent_or_grandparent": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.82776851782171,
+       "modal": "other",
+       "modal_share": 0.328,
+       "dist": {
+        "other": 164,
+        "friend": 109,
+        "none": 83,
+        "authority_or_mentor": 47,
+        "stranger": 31,
+        "animal": 24,
+        "partner_or_spouse": 20,
+        "parent_or_grandparent": 18,
+        "sibling": 3,
+        "child": 1
+       }
+      },
+      "51-75": {
+       "entropy": 1.7864725556483396,
+       "modal": "other",
+       "modal_share": 0.354,
+       "dist": {
+        "other": 177,
+        "friend": 121,
+        "none": 66,
+        "stranger": 36,
+        "animal": 35,
+        "authority_or_mentor": 26,
+        "partner_or_spouse": 20,
+        "parent_or_grandparent": 11,
+        "child": 8
+       }
+      },
+      "76-89": {
+       "entropy": 1.70682577822932,
+       "modal": "other",
+       "modal_share": 0.4142857142857143,
+       "dist": {
+        "other": 116,
+        "none": 45,
+        "friend": 38,
+        "animal": 34,
+        "stranger": 18,
+        "partner_or_spouse": 17,
+        "authority_or_mentor": 6,
+        "parent_or_grandparent": 5,
+        "child": 1
+       }
+      },
+      "90-99": {
+       "entropy": 1.8254084949047455,
+       "modal": "other",
+       "modal_share": 0.41,
+       "dist": {
+        "other": 82,
+        "none": 28,
+        "animal": 19,
+        "friend": 17,
+        "partner_or_spouse": 17,
+        "stranger": 16,
+        "parent_or_grandparent": 11,
+        "child": 7,
+        "authority_or_mentor": 3
+       }
+      }
+     },
+     "entropy_early": 1.8645666410456867,
+     "entropy_late": 1.8065137587016595,
+     "entropy_change": -0.031134785459569273
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.3669249912727096,
+       "modal": false,
+       "modal_share": 0.88,
+       "dist": {
+        "False": 176,
+        "True": 24
+       }
+      },
+      "11-25": {
+       "entropy": 0.20821546401080435,
+       "modal": false,
+       "modal_share": 0.9466666666666667,
+       "dist": {
+        "False": 284,
+        "True": 16
+       }
+      },
+      "26-50": {
+       "entropy": 0.37871151038331285,
+       "modal": false,
+       "modal_share": 0.874,
+       "dist": {
+        "False": 437,
+        "True": 63
+       }
+      },
+      "51-75": {
+       "entropy": 0.4085775194420864,
+       "modal": false,
+       "modal_share": 0.858,
+       "dist": {
+        "False": 429,
+        "True": 71
+       }
+      },
+      "76-89": {
+       "entropy": 0.5881687773541907,
+       "modal": false,
+       "modal_share": 0.725,
+       "dist": {
+        "False": 203,
+        "True": 77
+       }
+      },
+      "90-99": {
+       "entropy": 0.5623351446188083,
+       "modal": false,
+       "modal_share": 0.75,
+       "dist": {
+        "False": 150,
+        "True": 50
+       }
+      }
+     },
+     "entropy_early": 0.3669249912727096,
+     "entropy_late": 0.5004024235381879,
+     "entropy_change": 0.36377307471617226
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 200
+       }
+      },
+      "11-25": {
+       "entropy": 0.11074265637157467,
+       "modal": false,
+       "modal_share": 0.9766666666666667,
+       "dist": {
+        "False": 293,
+        "True": 7
+       }
+      },
+      "26-50": {
+       "entropy": 0.17424898371815123,
+       "modal": false,
+       "modal_share": 0.958,
+       "dist": {
+        "False": 479,
+        "True": 21
+       }
+      },
+      "51-75": {
+       "entropy": 0.167944147734173,
+       "modal": false,
+       "modal_share": 0.96,
+       "dist": {
+        "False": 480,
+        "True": 20
+       }
+      },
+      "76-89": {
+       "entropy": 0.02368929199724598,
+       "modal": false,
+       "modal_share": 0.9964285714285714,
+       "dist": {
+        "False": 279,
+        "True": 1
+       }
+      },
+      "90-99": {
+       "entropy": 0.056001534354847345,
+       "modal": false,
+       "modal_share": 0.99,
+       "dist": {
+        "False": 198,
+        "True": 2
+       }
+      }
+     },
+     "entropy_early": -0.0,
+     "entropy_late": 0.11322250271460811,
+     "entropy_change": null
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.4862229646617922,
+       "modal": false,
+       "modal_share": 0.81,
+       "dist": {
+        "False": 162,
+        "True": 38
+       }
+      },
+      "11-25": {
+       "entropy": 0.4910203935174997,
+       "modal": false,
+       "modal_share": 0.8066666666666666,
+       "dist": {
+        "False": 242,
+        "True": 58
+       }
+      },
+      "26-50": {
+       "entropy": 0.5948323344009641,
+       "modal": false,
+       "modal_share": 0.718,
+       "dist": {
+        "False": 359,
+        "True": 141
+       }
+      },
+      "51-75": {
+       "entropy": 0.6474466390346325,
+       "modal": false,
+       "modal_share": 0.65,
+       "dist": {
+        "False": 325,
+        "True": 175
+       }
+      },
+      "76-89": {
+       "entropy": 0.607807799567459,
+       "modal": false,
+       "modal_share": 0.7035714285714286,
+       "dist": {
+        "False": 197,
+        "True": 83
+       }
+      },
+      "90-99": {
+       "entropy": 0.6341786357122057,
+       "modal": false,
+       "modal_share": 0.67,
+       "dist": {
+        "False": 134,
+        "True": 66
+       }
+      }
+     },
+     "entropy_early": 0.4862229646617922,
+     "entropy_late": 0.6341786357122057,
+     "entropy_change": 0.3042959337663714
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 1,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.026767676767676767,
+    "multidim_shared": 0,
+    "clusters": [
+     {
+      "cluster": 2,
+      "visits": 4,
+      "trajectories": 1,
+      "steps_inside": 53,
+      "exits": 8,
+      "hazard": 0.1509433962264151,
+      "fields_agree_070": 9,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        0.98
+       ],
+       "lead_gender": [
+        "other_or_unclear",
+        0.94
+       ],
+       "lead_role_class": [
+        "other_or_unclear",
+        0.92
+       ],
+       "setting_place": [
+        "small_town_or_village",
+        0.96
+       ],
+       "setting_time": [
+        "unclear",
+        0.96
+       ],
+       "conflict_type": [
+        "external_physical",
+        0.98
+       ],
+       "ending_valence": [
+        "hopeful",
+        1.0
+       ],
+       "secondary_character": [
+        "none",
+        0.57
+       ],
+       "death_present": [
+        "False",
+        0.96
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "True",
+        0.94
+       ]
+      },
+      "examples": [
+       [
+        11,
+        69,
+        22,
+        false
+       ],
+       [
+        11,
+        37,
+        8,
+        false
+       ],
+       [
+        11,
+        22,
+        7,
+        false
+       ],
+       [
+        11,
+        56,
+        7,
+        false
+       ]
+      ]
+     }
+    ]
+   },
+   "theme_scale": {
+    "nn_other_median": 0.42428383231163025,
+    "nn_other_within_015": 0.0,
+    "consecutive_median": 0.24603122472763062,
+    "vendi_last": 13.9140625,
+    "vendi_first": 16.098472595214844
+   },
+   "theme_memory": {
+    "half_life": 18,
+    "ident_at": {
+     "1": 1.0,
+     "5": 0.95,
+     "10": 0.75,
+     "25": 0.5,
+     "50": 0.4,
+     "99": 0.35
+    },
+    "curve": [
+     1.0,
+     1.0,
+     0.9,
+     0.9,
+     0.9,
+     0.95,
+     0.85,
+     0.85,
+     0.75,
+     0.85,
+     0.75,
+     0.8,
+     0.6,
+     0.7,
+     0.65,
+     0.8,
+     0.55,
+     0.55,
+     0.45,
+     0.6,
+     0.45,
+     0.55,
+     0.5,
+     0.55,
+     0.65,
+     0.5,
+     0.55,
+     0.65,
+     0.6,
+     0.45,
+     0.45,
+     0.5,
+     0.45,
+     0.35,
+     0.45,
+     0.45,
+     0.35,
+     0.4,
+     0.55,
+     0.35,
+     0.35,
+     0.3,
+     0.3,
+     0.35,
+     0.35,
+     0.45,
+     0.3,
+     0.3,
+     0.35,
+     0.45,
+     0.4,
+     0.45,
+     0.55,
+     0.4,
+     0.3,
+     0.3,
+     0.3,
+     0.3,
+     0.4,
+     0.25,
+     0.4,
+     0.2,
+     0.2,
+     0.4,
+     0.2,
+     0.3,
+     0.2,
+     0.25,
+     0.3,
+     0.25,
+     0.3,
+     0.35,
+     0.3,
+     0.25,
+     0.25,
+     0.35,
+     0.3,
+     0.25,
+     0.3,
+     0.3,
+     0.3,
+     0.25,
+     0.2,
+     0.2,
+     0.3,
+     0.45,
+     0.4,
+     0.2,
+     0.15,
+     0.3,
+     0.25,
+     0.15,
+     0.2,
+     0.1,
+     0.2,
+     0.3,
+     0.25,
+     0.25,
+     0.35
+    ]
+   }
+  },
+  "e3_2_llava": {
+   "model": "llava",
+   "loop": "E3-2",
+   "n_judged": 1999,
+   "n_malformed": 1,
+   "n_steps": 100,
+   "tuple": {
+    "eff_early": 10.245459135297857,
+    "eff_late": 11.424108651090597,
+    "ratio": 1.1150411611844737,
+    "modal_early": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.215
+    ],
+    "modal_late": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.229
+    ],
+    "top5_late": [
+     [
+      [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.229
+     ],
+     [
+      [
+       "unclear",
+       "none_or_unclear",
+       "neutral_or_ambiguous"
+      ],
+      0.166
+     ],
+     [
+      [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      0.12
+     ],
+     [
+      [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      0.103
+     ],
+     [
+      [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      0.099
+     ]
+    ],
+    "js_early_late": 0.14717835800105006,
+    "null_ratio_mean": 1.0567915969428912,
+    "attractors_ii": [
+     {
+      "tuple": [
+       "unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      "trajectories": 10,
+      "runs": 23
+     },
+     {
+      "tuple": [
+       "unclear",
+       "social_or_community",
+       "hopeful"
+      ],
+      "trajectories": 5,
+      "runs": 13
+     },
+     {
+      "tuple": [
+       "unclear",
+       "none_or_unclear",
+       "neutral_or_ambiguous"
+      ],
+      "trajectories": 5,
+      "runs": 13
+     },
+     {
+      "tuple": [
+       "unclear",
+       "social_or_community",
+       "neutral_or_ambiguous"
+      ],
+      "trajectories": 4,
+      "runs": 4
+     },
+     {
+      "tuple": [
+       "unclear",
+       "internal",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 10
+     },
+     {
+      "tuple": [
+       "unclear",
+       "external_physical",
+       "hopeful"
+      ],
+      "trajectories": 3,
+      "runs": 5
+     }
+    ],
+    "share_hold_step1_at_last": 0.15,
+    "memory_curve": [
+     1.0,
+     0.7,
+     0.55,
+     0.65,
+     0.55,
+     0.55,
+     0.65,
+     0.4,
+     0.5,
+     0.4,
+     0.5,
+     0.4,
+     0.45,
+     0.45,
+     0.35,
+     0.35,
+     0.4,
+     0.4,
+     0.4,
+     0.4,
+     0.3,
+     0.35,
+     0.35,
+     0.45,
+     0.6,
+     0.55,
+     0.4,
+     0.45,
+     0.35,
+     0.45,
+     0.3,
+     0.35,
+     0.25,
+     0.2,
+     0.2,
+     0.4,
+     0.25,
+     0.3,
+     0.45,
+     0.35,
+     0.3,
+     0.35,
+     0.45,
+     0.3684210526315789,
+     0.4,
+     0.3,
+     0.3,
+     0.3,
+     0.3,
+     0.35,
+     0.25,
+     0.2,
+     0.2,
+     0.2,
+     0.25,
+     0.25,
+     0.15,
+     0.35,
+     0.25,
+     0.25,
+     0.2,
+     0.25,
+     0.25,
+     0.3,
+     0.25,
+     0.25,
+     0.2,
+     0.2,
+     0.15,
+     0.25,
+     0.25,
+     0.25,
+     0.2,
+     0.2,
+     0.15,
+     0.2,
+     0.2,
+     0.15,
+     0.1,
+     0.2,
+     0.15,
+     0.15,
+     0.2,
+     0.35,
+     0.25,
+     0.25,
+     0.2,
+     0.2,
+     0.15,
+     0.1,
+     0.2,
+     0.2,
+     0.15,
+     0.25,
+     0.15,
+     0.25,
+     0.15,
+     0.2,
+     0.2,
+     0.25
+    ],
+    "memory_half_step": 7,
+    "memory_at_last": 0.25
+   },
+   "tuple_b": {
+    "fields": [
+     "lead_gender",
+     "conflict_type",
+     "ending_valence"
+    ],
+    "eff_early": 14.009022342737184,
+    "eff_late": 18.93586549560483,
+    "ratio": 1.3516907199039419,
+    "null_ratio_mean": 1.0318951628940525,
+    "modal_late": [
+     [
+      "other_or_unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.123
+    ],
+    "top3_late": [
+     [
+      [
+       "other_or_unclear",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.123
+     ],
+     [
+      [
+       "other_or_unclear",
+       "none_or_unclear",
+       "neutral_or_ambiguous"
+      ],
+      0.115
+     ],
+     [
+      [
+       "woman",
+       "none_or_unclear",
+       "hopeful"
+      ],
+      0.094
+     ]
+    ],
+    "js_early_late": 0.17441343117941402,
+    "share_hold_step1_at_last": 0.15,
+    "memory_half_step": 20,
+    "memory_at_last": 0.15
+   },
+   "fields": {
+    "lead_age": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6539568208125444,
+       "modal": "unclear",
+       "modal_share": 0.83,
+       "dist": {
+        "unclear": 166,
+        "young_adult": 15,
+        "teen": 10,
+        "middle_aged": 8,
+        "child": 1
+       }
+      },
+      "11-25": {
+       "entropy": 0.6454583873012227,
+       "modal": "unclear",
+       "modal_share": 0.8266666666666667,
+       "dist": {
+        "unclear": 248,
+        "young_adult": 24,
+        "middle_aged": 14,
+        "teen": 14
+       }
+      },
+      "26-50": {
+       "entropy": 0.5977430039197572,
+       "modal": "unclear",
+       "modal_share": 0.8416833667334669,
+       "dist": {
+        "unclear": 420,
+        "young_adult": 48,
+        "teen": 16,
+        "middle_aged": 13,
+        "child": 2
+       }
+      },
+      "51-75": {
+       "entropy": 0.42873008514525957,
+       "modal": "unclear",
+       "modal_share": 0.888,
+       "dist": {
+        "unclear": 444,
+        "young_adult": 38,
+        "middle_aged": 17,
+        "teen": 1
+       }
+      },
+      "76-89": {
+       "entropy": 0.4149035073618632,
+       "modal": "unclear",
+       "modal_share": 0.9,
+       "dist": {
+        "unclear": 252,
+        "middle_aged": 14,
+        "young_adult": 12,
+        "older_adult": 2
+       }
+      },
+      "90-99": {
+       "entropy": 0.337654753710413,
+       "modal": "unclear",
+       "modal_share": 0.925,
+       "dist": {
+        "unclear": 185,
+        "young_adult": 9,
+        "teen": 3,
+        "middle_aged": 3
+       }
+      }
+     },
+     "entropy_early": 0.6539568208125444,
+     "entropy_late": 0.4190705979744609,
+     "entropy_change": -0.3591769599501023
+    },
+    "lead_gender": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.0867877447552354,
+       "modal": "woman",
+       "modal_share": 0.395,
+       "dist": {
+        "woman": 79,
+        "other_or_unclear": 67,
+        "man": 54
+       }
+      },
+      "11-25": {
+       "entropy": 1.072829048183913,
+       "modal": "other_or_unclear",
+       "modal_share": 0.41,
+       "dist": {
+        "other_or_unclear": 123,
+        "woman": 107,
+        "man": 70
+       }
+      },
+      "26-50": {
+       "entropy": 1.0619027001262682,
+       "modal": "other_or_unclear",
+       "modal_share": 0.4589178356713427,
+       "dist": {
+        "other_or_unclear": 229,
+        "woman": 149,
+        "man": 121
+       }
+      },
+      "51-75": {
+       "entropy": 1.0442267931957867,
+       "modal": "other_or_unclear",
+       "modal_share": 0.488,
+       "dist": {
+        "other_or_unclear": 244,
+        "woman": 143,
+        "man": 113
+       }
+      },
+      "76-89": {
+       "entropy": 1.0766079044718664,
+       "modal": "other_or_unclear",
+       "modal_share": 0.43214285714285716,
+       "dist": {
+        "other_or_unclear": 121,
+        "woman": 84,
+        "man": 75
+       }
+      },
+      "90-99": {
+       "entropy": 1.0969542621728419,
+       "modal": "other_or_unclear",
+       "modal_share": 0.36,
+       "dist": {
+        "other_or_unclear": 72,
+        "man": 65,
+        "woman": 63
+       }
+      }
+     },
+     "entropy_early": 1.0867877447552354,
+     "entropy_late": 1.0690376269219053,
+     "entropy_change": -0.016332644455176286
+    },
+    "lead_role_class": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.7314072904927726,
+       "modal": "other_or_unclear",
+       "modal_share": 0.35,
+       "dist": {
+        "other_or_unclear": 70,
+        "worker_or_tradesperson": 39,
+        "professional": 30,
+        "outsider_or_wanderer": 25,
+        "leader_or_official": 15,
+        "student_or_child": 13,
+        "artist_or_craftsperson": 8
+       }
+      },
+      "11-25": {
+       "entropy": 1.7359448532303603,
+       "modal": "other_or_unclear",
+       "modal_share": 0.36666666666666664,
+       "dist": {
+        "other_or_unclear": 110,
+        "professional": 46,
+        "worker_or_tradesperson": 46,
+        "outsider_or_wanderer": 35,
+        "leader_or_official": 33,
+        "artist_or_craftsperson": 15,
+        "student_or_child": 15
+       }
+      },
+      "26-50": {
+       "entropy": 1.7359214141020034,
+       "modal": "other_or_unclear",
+       "modal_share": 0.3627254509018036,
+       "dist": {
+        "other_or_unclear": 181,
+        "leader_or_official": 86,
+        "outsider_or_wanderer": 75,
+        "worker_or_tradesperson": 54,
+        "professional": 52,
+        "student_or_child": 26,
+        "artist_or_craftsperson": 25
+       }
+      },
+      "51-75": {
+       "entropy": 1.663908889897722,
+       "modal": "other_or_unclear",
+       "modal_share": 0.404,
+       "dist": {
+        "other_or_unclear": 202,
+        "leader_or_official": 90,
+        "outsider_or_wanderer": 75,
+        "professional": 53,
+        "worker_or_tradesperson": 33,
+        "artist_or_craftsperson": 25,
+        "student_or_child": 22
+       }
+      },
+      "76-89": {
+       "entropy": 1.5950288461863493,
+       "modal": "other_or_unclear",
+       "modal_share": 0.4035714285714286,
+       "dist": {
+        "other_or_unclear": 113,
+        "leader_or_official": 60,
+        "outsider_or_wanderer": 37,
+        "professional": 36,
+        "worker_or_tradesperson": 18,
+        "artist_or_craftsperson": 13,
+        "student_or_child": 3
+       }
+      },
+      "90-99": {
+       "entropy": 1.591768563358894,
+       "modal": "other_or_unclear",
+       "modal_share": 0.43,
+       "dist": {
+        "other_or_unclear": 86,
+        "leader_or_official": 37,
+        "outsider_or_wanderer": 27,
+        "professional": 23,
+        "worker_or_tradesperson": 16,
+        "artist_or_craftsperson": 7,
+        "student_or_child": 4
+       }
+      }
+     },
+     "entropy_early": 1.7314072904927726,
+     "entropy_late": 1.6362275404670352,
+     "entropy_change": -0.05497247848520292
+    },
+    "setting_place": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.6379113135756609,
+       "modal": "institution",
+       "modal_share": 0.35,
+       "dist": {
+        "institution": 70,
+        "other_or_unclear": 64,
+        "city": 18,
+        "wilderness_or_mountain": 15,
+        "small_town_or_village": 12,
+        "home_interior": 10,
+        "coast_or_sea": 10,
+        "rural_or_farmland": 1
+       }
+      },
+      "11-25": {
+       "entropy": 1.6217791579614576,
+       "modal": "other_or_unclear",
+       "modal_share": 0.3566666666666667,
+       "dist": {
+        "other_or_unclear": 107,
+        "institution": 100,
+        "city": 30,
+        "wilderness_or_mountain": 21,
+        "coast_or_sea": 15,
+        "home_interior": 14,
+        "small_town_or_village": 7,
+        "road_or_journey": 4,
+        "rural_or_farmland": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.5605850588534746,
+       "modal": "other_or_unclear",
+       "modal_share": 0.45490981963927857,
+       "dist": {
+        "other_or_unclear": 227,
+        "institution": 119,
+        "city": 58,
+        "home_interior": 30,
+        "coast_or_sea": 25,
+        "wilderness_or_mountain": 22,
+        "small_town_or_village": 10,
+        "road_or_journey": 6,
+        "rural_or_farmland": 2
+       }
+      },
+      "51-75": {
+       "entropy": 1.4200899239692608,
+       "modal": "other_or_unclear",
+       "modal_share": 0.574,
+       "dist": {
+        "other_or_unclear": 287,
+        "institution": 69,
+        "home_interior": 42,
+        "city": 40,
+        "coast_or_sea": 25,
+        "road_or_journey": 22,
+        "wilderness_or_mountain": 9,
+        "rural_or_farmland": 5,
+        "small_town_or_village": 1
+       }
+      },
+      "76-89": {
+       "entropy": 1.3314704910327442,
+       "modal": "other_or_unclear",
+       "modal_share": 0.6178571428571429,
+       "dist": {
+        "other_or_unclear": 173,
+        "institution": 31,
+        "home_interior": 22,
+        "city": 18,
+        "coast_or_sea": 14,
+        "wilderness_or_mountain": 13,
+        "rural_or_farmland": 8,
+        "small_town_or_village": 1
+       }
+      },
+      "90-99": {
+       "entropy": 1.517466357019865,
+       "modal": "other_or_unclear",
+       "modal_share": 0.535,
+       "dist": {
+        "other_or_unclear": 107,
+        "institution": 34,
+        "home_interior": 14,
+        "wilderness_or_mountain": 10,
+        "city": 10,
+        "coast_or_sea": 10,
+        "rural_or_farmland": 8,
+        "small_town_or_village": 7
+       }
+      }
+     },
+     "entropy_early": 1.6379113135756609,
+     "entropy_late": 1.4461522237743172,
+     "entropy_change": -0.11707538021867732
+    },
+    "setting_time": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.7612256797216393,
+       "modal": "unclear",
+       "modal_share": 0.65,
+       "dist": {
+        "unclear": 130,
+        "present_day": 63,
+        "future_or_speculative": 7
+       }
+      },
+      "11-25": {
+       "entropy": 0.7184967426269115,
+       "modal": "unclear",
+       "modal_share": 0.71,
+       "dist": {
+        "unclear": 213,
+        "present_day": 75,
+        "future_or_speculative": 12
+       }
+      },
+      "26-50": {
+       "entropy": 0.7209084064566571,
+       "modal": "unclear",
+       "modal_share": 0.7294589178356713,
+       "dist": {
+        "unclear": 364,
+        "present_day": 112,
+        "future_or_speculative": 21,
+        "historical": 2
+       }
+      },
+      "51-75": {
+       "entropy": 0.7013742190917847,
+       "modal": "unclear",
+       "modal_share": 0.75,
+       "dist": {
+        "unclear": 375,
+        "present_day": 100,
+        "future_or_speculative": 23,
+        "historical": 2
+       }
+      },
+      "76-89": {
+       "entropy": 0.6733055873126563,
+       "modal": "unclear",
+       "modal_share": 0.7821428571428571,
+       "dist": {
+        "unclear": 219,
+        "present_day": 42,
+        "future_or_speculative": 18,
+        "historical": 1
+       }
+      },
+      "90-99": {
+       "entropy": 0.701456668510796,
+       "modal": "unclear",
+       "modal_share": 0.765,
+       "dist": {
+        "unclear": 153,
+        "present_day": 34,
+        "future_or_speculative": 12,
+        "historical": 1
+       }
+      }
+     },
+     "entropy_early": 0.7612256797216393,
+     "entropy_late": 0.6954814544297242,
+     "entropy_change": -0.0863662735549806
+    },
+    "conflict_type": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.324223735968446,
+       "modal": "social_or_community",
+       "modal_share": 0.35,
+       "dist": {
+        "social_or_community": 70,
+        "none_or_unclear": 64,
+        "internal": 37,
+        "external_physical": 29
+       }
+      },
+      "11-25": {
+       "entropy": 1.271363222698996,
+       "modal": "none_or_unclear",
+       "modal_share": 0.4033333333333333,
+       "dist": {
+        "none_or_unclear": 121,
+        "social_or_community": 98,
+        "internal": 44,
+        "external_physical": 37
+       }
+      },
+      "26-50": {
+       "entropy": 1.1957567882288387,
+       "modal": "none_or_unclear",
+       "modal_share": 0.533066132264529,
+       "dist": {
+        "none_or_unclear": 266,
+        "social_or_community": 109,
+        "external_physical": 65,
+        "internal": 58,
+        "interpersonal": 1
+       }
+      },
+      "51-75": {
+       "entropy": 1.4000398130926826,
+       "modal": "none_or_unclear",
+       "modal_share": 0.446,
+       "dist": {
+        "none_or_unclear": 223,
+        "social_or_community": 93,
+        "internal": 83,
+        "external_physical": 79,
+        "interpersonal": 22
+       }
+      },
+      "76-89": {
+       "entropy": 1.4401888671585752,
+       "modal": "none_or_unclear",
+       "modal_share": 0.4035714285714286,
+       "dist": {
+        "none_or_unclear": 113,
+        "external_physical": 61,
+        "internal": 50,
+        "social_or_community": 42,
+        "interpersonal": 14
+       }
+      },
+      "90-99": {
+       "entropy": 1.4125430661912781,
+       "modal": "none_or_unclear",
+       "modal_share": 0.43,
+       "dist": {
+        "none_or_unclear": 86,
+        "external_physical": 45,
+        "social_or_community": 31,
+        "internal": 28,
+        "interpersonal": 10
+       }
+      }
+     },
+     "entropy_early": 1.324223735968446,
+     "entropy_late": 1.4174203815382314,
+     "entropy_change": 0.07037832281538728
+    },
+    "ending_valence": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.6940621349766534,
+       "modal": "hopeful",
+       "modal_share": 0.75,
+       "dist": {
+        "hopeful": 150,
+        "neutral_or_ambiguous": 39,
+        "bittersweet": 11
+       }
+      },
+      "11-25": {
+       "entropy": 0.7598899407590731,
+       "modal": "hopeful",
+       "modal_share": 0.6466666666666666,
+       "dist": {
+        "hopeful": 194,
+        "neutral_or_ambiguous": 96,
+        "bittersweet": 10
+       }
+      },
+      "26-50": {
+       "entropy": 0.8334805036959927,
+       "modal": "hopeful",
+       "modal_share": 0.6212424849699398,
+       "dist": {
+        "hopeful": 310,
+        "neutral_or_ambiguous": 166,
+        "bittersweet": 15,
+        "tragic": 8
+       }
+      },
+      "51-75": {
+       "entropy": 0.8263684087312446,
+       "modal": "hopeful",
+       "modal_share": 0.636,
+       "dist": {
+        "hopeful": 318,
+        "neutral_or_ambiguous": 154,
+        "bittersweet": 26,
+        "tragic": 2
+       }
+      },
+      "76-89": {
+       "entropy": 0.7607977529676753,
+       "modal": "hopeful",
+       "modal_share": 0.6571428571428571,
+       "dist": {
+        "hopeful": 184,
+        "neutral_or_ambiguous": 87,
+        "bittersweet": 8,
+        "tragic": 1
+       }
+      },
+      "90-99": {
+       "entropy": 0.8671910388929772,
+       "modal": "hopeful",
+       "modal_share": 0.625,
+       "dist": {
+        "hopeful": 125,
+        "neutral_or_ambiguous": 63,
+        "bittersweet": 7,
+        "tragic": 5
+       }
+      }
+     },
+     "entropy_early": 0.6940621349766534,
+     "entropy_late": 0.8226137534422608,
+     "entropy_change": 0.18521629690968755
+    },
+    "secondary_character": {
+     "windows": {
+      "1-10": {
+       "entropy": 1.8201258505930453,
+       "modal": "none",
+       "modal_share": 0.335,
+       "dist": {
+        "none": 67,
+        "other": 35,
+        "friend": 27,
+        "authority_or_mentor": 27,
+        "stranger": 20,
+        "partner_or_spouse": 10,
+        "parent_or_grandparent": 10,
+        "animal": 4
+       }
+      },
+      "11-25": {
+       "entropy": 1.68149777426522,
+       "modal": "none",
+       "modal_share": 0.41,
+       "dist": {
+        "none": 123,
+        "other": 59,
+        "stranger": 37,
+        "authority_or_mentor": 30,
+        "friend": 19,
+        "partner_or_spouse": 15,
+        "parent_or_grandparent": 15,
+        "animal": 2
+       }
+      },
+      "26-50": {
+       "entropy": 1.6713950121428196,
+       "modal": "none",
+       "modal_share": 0.2845691382765531,
+       "dist": {
+        "none": 142,
+        "other": 142,
+        "stranger": 96,
+        "authority_or_mentor": 63,
+        "partner_or_spouse": 25,
+        "parent_or_grandparent": 21,
+        "friend": 7,
+        "animal": 2,
+        "child": 1
+       }
+      },
+      "51-75": {
+       "entropy": 1.5548882628288534,
+       "modal": "other",
+       "modal_share": 0.312,
+       "dist": {
+        "other": 156,
+        "stranger": 138,
+        "none": 122,
+        "authority_or_mentor": 38,
+        "partner_or_spouse": 25,
+        "friend": 19,
+        "animal": 2
+       }
+      },
+      "76-89": {
+       "entropy": 1.437573192146256,
+       "modal": "other",
+       "modal_share": 0.3464285714285714,
+       "dist": {
+        "other": 97,
+        "none": 82,
+        "stranger": 71,
+        "partner_or_spouse": 14,
+        "authority_or_mentor": 9,
+        "friend": 6,
+        "animal": 1
+       }
+      },
+      "90-99": {
+       "entropy": 1.3626129622731609,
+       "modal": "none",
+       "modal_share": 0.405,
+       "dist": {
+        "none": 81,
+        "other": 62,
+        "stranger": 40,
+        "partner_or_spouse": 9,
+        "animal": 3,
+        "authority_or_mentor": 3,
+        "friend": 2
+       }
+      }
+     },
+     "entropy_early": 1.8201258505930453,
+     "entropy_late": 1.505268682407434,
+     "entropy_change": -0.17298648227155422
+    },
+    "death_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.24050910155399824,
+       "modal": false,
+       "modal_share": 0.935,
+       "dist": {
+        "False": 187,
+        "True": 13
+       }
+      },
+      "11-25": {
+       "entropy": 0.1985152433458726,
+       "modal": false,
+       "modal_share": 0.95,
+       "dist": {
+        "False": 285,
+        "True": 15
+       }
+      },
+      "26-50": {
+       "entropy": 0.19881017169305923,
+       "modal": false,
+       "modal_share": 0.9498997995991983,
+       "dist": {
+        "False": 474,
+        "True": 25
+       }
+      },
+      "51-75": {
+       "entropy": 0.21581648345961607,
+       "modal": false,
+       "modal_share": 0.944,
+       "dist": {
+        "False": 472,
+        "True": 28
+       }
+      },
+      "76-89": {
+       "entropy": 0.07487597323206041,
+       "modal": false,
+       "modal_share": 0.9857142857142858,
+       "dist": {
+        "False": 276,
+        "True": 4
+       }
+      },
+      "90-99": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 200
+       }
+      }
+     },
+     "entropy_early": 0.24050910155399824,
+     "entropy_late": 0.1450205843504076,
+     "entropy_change": -0.3970266263796753
+    },
+    "reconciliation_present": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.03147906594716675,
+       "modal": false,
+       "modal_share": 0.995,
+       "dist": {
+        "False": 199,
+        "True": 1
+       }
+      },
+      "11-25": {
+       "entropy": -0.0,
+       "modal": false,
+       "modal_share": 1.0,
+       "dist": {
+        "False": 300
+       }
+      },
+      "26-50": {
+       "entropy": 0.17451210512404808,
+       "modal": false,
+       "modal_share": 0.9579158316633266,
+       "dist": {
+        "False": 478,
+        "True": 21
+       }
+      },
+      "51-75": {
+       "entropy": 0.1985152433458726,
+       "modal": false,
+       "modal_share": 0.95,
+       "dist": {
+        "False": 475,
+        "True": 25
+       }
+      },
+      "76-89": {
+       "entropy": 0.1985152433458726,
+       "modal": false,
+       "modal_share": 0.95,
+       "dist": {
+        "False": 266,
+        "True": 14
+       }
+      },
+      "90-99": {
+       "entropy": 0.25363894692169137,
+       "modal": false,
+       "modal_share": 0.93,
+       "dist": {
+        "False": 186,
+        "True": 14
+       }
+      }
+     },
+     "entropy_early": 0.03147906594716675,
+     "entropy_late": 0.21012867014458944,
+     "entropy_change": 5.675187583305722
+    },
+    "nature_central": {
+     "windows": {
+      "1-10": {
+       "entropy": 0.42270908780599087,
+       "modal": false,
+       "modal_share": 0.85,
+       "dist": {
+        "False": 170,
+        "True": 30
+       }
+      },
+      "11-25": {
+       "entropy": 0.37351423055423977,
+       "modal": false,
+       "modal_share": 0.8766666666666667,
+       "dist": {
+        "False": 263,
+        "True": 37
+       }
+      },
+      "26-50": {
+       "entropy": 0.3674038591316264,
+       "modal": false,
+       "modal_share": 0.8797595190380761,
+       "dist": {
+        "False": 439,
+        "True": 60
+       }
+      },
+      "51-75": {
+       "entropy": 0.307140834123651,
+       "modal": false,
+       "modal_share": 0.908,
+       "dist": {
+        "False": 454,
+        "True": 46
+       }
+      },
+      "76-89": {
+       "entropy": 0.355382896246011,
+       "modal": false,
+       "modal_share": 0.8857142857142857,
+       "dist": {
+        "False": 248,
+        "True": 32
+       }
+      },
+      "90-99": {
+       "entropy": 0.3568430183883457,
+       "modal": false,
+       "modal_share": 0.885,
+       "dist": {
+        "False": 177,
+        "True": 23
+       }
+      }
+     },
+     "entropy_early": 0.42270908780599087,
+     "entropy_late": 0.33162508492774445,
+     "entropy_change": -0.2154768030917066
+    }
+   },
+   "theme_atlas": {
+    "n_persistent": 1,
+    "n_shared_by_2plus": 0,
+    "share_steps_inside": 0.03827751196172249,
+    "multidim_shared": 0,
+    "clusters": [
+     {
+      "cluster": 4,
+      "visits": 3,
+      "trajectories": 1,
+      "steps_inside": 72,
+      "exits": 4,
+      "hazard": 0.05555555555555555,
+      "fields_agree_070": 10,
+      "agreement": {
+       "lead_age": [
+        "unclear",
+        0.83
+       ],
+       "lead_gender": [
+        "man",
+        1.0
+       ],
+       "lead_role_class": [
+        "other_or_unclear",
+        0.94
+       ],
+       "setting_place": [
+        "institution",
+        1.0
+       ],
+       "setting_time": [
+        "unclear",
+        0.99
+       ],
+       "conflict_type": [
+        "internal",
+        1.0
+       ],
+       "ending_valence": [
+        "hopeful",
+        0.76
+       ],
+       "secondary_character": [
+        "none",
+        0.82
+       ],
+       "death_present": [
+        "True",
+        0.9
+       ],
+       "reconciliation_present": [
+        "False",
+        1.0
+       ],
+       "nature_central": [
+        "False",
+        1.0
+       ]
+      },
+      "examples": [
+       [
+        0,
+        5,
+        45,
+        false
+       ],
+       [
+        0,
+        60,
+        21,
+        false
+       ],
+       [
+        0,
+        83,
+        5,
+        false
+       ]
+      ]
+     }
+    ]
+   },
+   "theme_scale": {
+    "nn_other_median": 0.5453404188156128,
+    "nn_other_within_015": 0.0,
+    "consecutive_median": 0.19335144758224487,
+    "vendi_last": 15.642967224121094,
+    "vendi_first": 15.472291946411133
+   },
+   "theme_memory": {
+    "half_life": null,
+    "ident_at": {
+     "1": 1.0,
+     "5": 1.0,
+     "10": 1.0,
+     "25": 1.0,
+     "50": 0.95,
+     "99": 0.79
+    },
+    "curve": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9473684210526315,
+     1.0,
+     0.9473684210526315,
+     0.9473684210526315,
+     1.0,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.9473684210526315,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9473684210526315,
+     0.9473684210526315,
+     1.0,
+     0.9473684210526315,
+     1.0,
+     0.9473684210526315,
+     0.9473684210526315,
+     1.0,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.9473684210526315,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.8947368421052632,
+     0.8947368421052632,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.8421052631578947,
+     0.8947368421052632,
+     0.8947368421052632,
+     0.9473684210526315,
+     1.0,
+     0.8947368421052632,
+     0.8947368421052632,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.9473684210526315,
+     0.9473684210526315,
+     0.8947368421052632,
+     0.7894736842105263,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.8947368421052632,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.7368421052631579,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.7894736842105263,
+     0.8947368421052632,
+     0.7894736842105263,
+     0.8947368421052632,
+     0.8421052631578947,
+     0.7894736842105263,
+     0.8421052631578947,
+     0.8421052631578947,
+     0.7894736842105263,
+     0.7894736842105263,
+     0.7894736842105263
+    ]
+   }
+  }
+ },
+ "js_late": {
+  "e3_1_sonnet|e3_2_sonnet": 0.24424824404971496,
+  "e3_1_sonnet|e3_1_qwen": 0.4389990484054403,
+  "e3_1_sonnet|e3_2_qwen": 0.47398323637334044,
+  "e3_1_sonnet|e3_1_llava": 0.39862125595146236,
+  "e3_1_sonnet|e3_2_llava": 0.46339518087409687,
+  "e3_2_sonnet|e3_1_qwen": 0.3194555933624179,
+  "e3_2_sonnet|e3_2_qwen": 0.37151640587626467,
+  "e3_2_sonnet|e3_1_llava": 0.3188561989829591,
+  "e3_2_sonnet|e3_2_llava": 0.37831834943088155,
+  "e3_1_qwen|e3_2_qwen": 0.1453207659412726,
+  "e3_1_qwen|e3_1_llava": 0.07796964518350294,
+  "e3_1_qwen|e3_2_llava": 0.19208646066426982,
+  "e3_2_qwen|e3_1_llava": 0.16740738722927503,
+  "e3_2_qwen|e3_2_llava": 0.15144989034868483,
+  "e3_1_llava|e3_2_llava": 0.1925202871231487
+ },
+ "b3": {
+  "llava": {
+   "within_model_loops": 0.1925202871231487,
+   "across_models_e3_1": {
+    "qwen": 0.07796964518350294,
+    "sonnet": 0.39862125595146236
+   },
+   "holds": false
+  },
+  "qwen": {
+   "within_model_loops": 0.1453207659412726,
+   "across_models_e3_1": {
+    "llava": 0.07796964518350294,
+    "sonnet": 0.4389990484054403
+   },
+   "holds": false
+  },
+  "sonnet": {
+   "within_model_loops": 0.24424824404971496,
+   "across_models_e3_1": {
+    "llava": 0.39862125595146236,
+    "qwen": 0.4389990484054403
+   },
+   "holds": true
+  }
+ },
+ "reliability": {
+  "second_judge": "sonnet",
+  "n_pairs": 286,
+  "kappa": {
+   "lead_age": 0.616181949815472,
+   "lead_gender": 0.9048806851251351,
+   "lead_role_class": 0.7598476556057039,
+   "setting_place": 0.7654250297899998,
+   "setting_time": 0.4187554437239912,
+   "conflict_type": 0.7867989045002998,
+   "ending_valence": 0.6286954263882192,
+   "secondary_character": 0.590577824049974,
+   "death_present": 0.8537152422579746,
+   "reconciliation_present": 0.7551719218148095,
+   "nature_central": 0.5837837837837838
+  },
+  "n_fields_ge_060": 8,
+  "lead_gender_vs_pronoun_heuristic": {
+   "agree": 0.8942101501072195,
+   "n": 9793
+  },
+  "test_retest_haiku": {
+   "n_pairs": 287,
+   "kappa": {
+    "lead_age": 0.858513238707557,
+    "lead_gender": 0.9359257981368351,
+    "lead_role_class": 0.9025826446280991,
+    "setting_place": 0.9035441490986862,
+    "setting_time": 0.7777069047998724,
+    "conflict_type": 0.8755180722891567,
+    "ending_valence": 0.8843566934259058,
+    "secondary_character": 0.7650885279800111,
+    "death_present": 0.920965669175693,
+    "reconciliation_present": 0.8972921388524394,
+    "nature_central": 0.9315906562847609
+   },
+   "agreement": {
+    "lead_age": 0.9163763066202091,
+    "lead_gender": 0.9616724738675958,
+    "lead_role_class": 0.9198606271777003,
+    "setting_place": 0.9233449477351916,
+    "setting_time": 0.8815331010452961,
+    "conflict_type": 0.9059233449477352,
+    "ending_valence": 0.9547038327526133,
+    "secondary_character": 0.8013937282229965,
+    "death_present": 0.9790940766550522,
+    "reconciliation_present": 0.9790940766550522,
+    "nature_central": 0.9790940766550522
+   }
+  },
+  "sonnet_agreement": {
+   "lead_age": 0.7342657342657343,
+   "lead_gender": 0.9440559440559441,
+   "lead_role_class": 0.8041958041958042,
+   "setting_place": 0.8146853146853147,
+   "setting_time": 0.7062937062937062,
+   "conflict_type": 0.8391608391608392,
+   "ending_valence": 0.8776223776223776,
+   "secondary_character": 0.6538461538461539,
+   "death_present": 0.9615384615384616,
+   "reconciliation_present": 0.958041958041958,
+   "nature_central": 0.9020979020979021
+  },
+  "unclear_lead_age_share": {
+   "haiku": 0.6048951048951049,
+   "sonnet": 0.38461538461538464
+  }
+ },
+ "verdicts": {
+  "B1": {
+   "e3_1_sonnet": {
+    "ratio": 1.1714478275148719,
+    "modal_late": 0.0712136409227683,
+    "modal_early": 0.1,
+    "null": 1.1091663777522531,
+    "holds": false
+   },
+   "e3_1_qwen": {
+    "ratio": 0.8354312607629177,
+    "modal_late": 0.258,
+    "modal_early": 0.235,
+    "null": 1.1053496371833158,
+    "holds": false
+   },
+   "e3_1_llava": {
+    "ratio": 0.9087965896950854,
+    "modal_late": 0.245,
+    "modal_early": 0.22,
+    "null": 1.0524613107512002,
+    "holds": false
+   }
+  },
+  "B2": {
+   "e3_1_sonnet": {
+    "shared": 0,
+    "multidim": 0
+   },
+   "e3_1_qwen": {
+    "shared": 0,
+    "multidim": 0
+   },
+   "e3_1_llava": {
+    "shared": 0,
+    "multidim": 0
+   },
+   "holds": false
+  },
+  "B3": {
+   "modal_late": {
+    "e3_1_sonnet": [
+     [
+      "young_adult",
+      "interpersonal",
+      "hopeful"
+     ],
+     0.0712136409227683
+    ],
+    "e3_2_sonnet": [
+     [
+      "young_adult",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.109072375127421
+    ],
+    "e3_1_qwen": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.258
+    ],
+    "e3_2_qwen": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.197
+    ],
+    "e3_1_llava": [
+     [
+      "unclear",
+      "social_or_community",
+      "hopeful"
+     ],
+     0.245
+    ],
+    "e3_2_llava": [
+     [
+      "unclear",
+      "none_or_unclear",
+      "hopeful"
+     ],
+     0.229
+    ]
+   },
+   "js": {
+    "llava": {
+     "within_model_loops": 0.1925202871231487,
+     "across_models_e3_1": {
+      "qwen": 0.07796964518350294,
+      "sonnet": 0.39862125595146236
+     },
+     "holds": false
+    },
+    "qwen": {
+     "within_model_loops": 0.1453207659412726,
+     "across_models_e3_1": {
+      "llava": 0.07796964518350294,
+      "sonnet": 0.4389990484054403
+     },
+     "holds": false
+    },
+    "sonnet": {
+     "within_model_loops": 0.24424824404971496,
+     "across_models_e3_1": {
+      "llava": 0.39862125595146236,
+      "qwen": 0.4389990484054403
+     },
+     "holds": true
+    }
+   },
+   "holds": false
+  },
+  "B4": {
+   "sonnet_place_change": 0.030455886542270456,
+   "present_share_early": {
+    "e3_1_sonnet": 0.815,
+    "e3_2_sonnet": 0.7487437185929648,
+    "e3_1_qwen": 0.53,
+    "e3_2_qwen": 0.53,
+    "e3_1_llava": 0.645,
+    "e3_2_llava": 0.65
+   },
+   "holds": false
+  },
+  "B5": {
+   "e3_2_sonnet": {
+    "js": 0.06145220635854377,
+    "hold": 0.65
+   },
+   "e3_2_qwen": {
+    "js": 0.07259386746787602,
+    "hold": 0.55
+   },
+   "e3_2_llava": {
+    "js": 0.14717835800105006,
+    "hold": 0.15
+   },
+   "holds": false
+  },
+  "B6": {
+   "e3_1_sonnet": {
+    "half": 1,
+    "at_last": 0.0
+   },
+   "e3_1_qwen": {
+    "half": 1,
+    "at_last": 0.1
+   },
+   "e3_1_llava": {
+    "half": 2,
+    "at_last": 0.1
+   },
+   "holds": false
+  },
+  "B7": {
+   "n_fields_ge_060": 8,
+   "gender": 0.9048806851251351,
+   "death": 0.8537152422579746,
+   "heuristic": 0.8942101501072195,
+   "holds": true
+  }
+ }
+}

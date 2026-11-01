@@ -95,6 +95,22 @@ def main():
             e, l = window_counts(Jp, T, *WIN_EARLY), window_counts(Jp, T, *WIN_LATE)
             if e and l: ratios.append(eff_number(l) / eff_number(e))
         c["tuple"]["null_ratio_mean"] = float(np.mean(ratios)) if ratios else None
+        # POST-HOC (added after the B verdicts were read, 2026-11-01): the same statistics for tuple B = lead_gender x conflict_type x
+        # ending_valence, because lead_age turned out to be the judge's weakest field (Haiku codes 'unclear' far more often than Sonnet).
+        # Not a prediction; reported beside the predicted tuple, never instead of it.
+        tupB = lambda j: (j["lead_gender"], j["conflict_type"], j["ending_valence"])  # noqa: E731
+        eB, lB = window_counts(Jr, T, *WIN_EARLY, key=tupB), window_counts(Jr, T, *WIN_LATE, key=tupB); ratiosB = []
+        for _ in range(a.shuffles):
+            perm = {t: rng.permutation([s for s in S if (t, s) in Jr and s >= 1]) for t in T}
+            Jp = {(t, s_new): Jr[(t, s_old)] for t in T for s_new, s_old in zip(sorted(s for s in S if (t, s) in Jr and s >= 1), perm[t])}
+            e_, l_ = window_counts(Jp, T, *WIN_EARLY, key=tupB), window_counts(Jp, T, *WIN_LATE, key=tupB)
+            if e_ and l_: ratiosB.append(eff_number(l_) / eff_number(e_))
+        holdB = [tupB(Jr[(t, 1)]) == tupB(Jr[(t, S[-1])]) for t in T if (t, 1) in Jr and (t, S[-1]) in Jr]
+        memB = [float(np.mean([tupB(Jr[(t, s)]) == tupB(Jr[(t, 0)]) for t in T if (t, 0) in Jr and (t, s) in Jr])) for s in S]
+        c["tuple_b"] = dict(fields=["lead_gender", "conflict_type", "ending_valence"], eff_early=eff_number(eB), eff_late=eff_number(lB), ratio=eff_number(lB) / eff_number(eB) if eB else None,
+                            null_ratio_mean=float(np.mean(ratiosB)) if ratiosB else None, modal_late=(lB.most_common(1)[0][0], lB.most_common(1)[0][1] / sum(lB.values())) if lB else None,
+                            top3_late=[(k, round(v / sum(lB.values()), 3)) for k, v in lB.most_common(3)] if lB else [], js_early_late=js(eB, lB) if eB and lB else None,
+                            share_hold_step1_at_last=float(np.mean(holdB)) if holdB else None, memory_half_step=next((s for s in S if s >= 1 and memB[s] <= 0.5), None), memory_at_last=memB[-1])
         # per window, per field
         c["fields"] = {}
         for f in CATS:
@@ -185,6 +201,9 @@ def main():
             others = np.delete(Y, t, 0).reshape(-1, Y.shape[-1]); nn.append((1 - Y[t] @ others.T).min(1))
         nn = np.concatenate(nn); R["cells"][run]["theme_scale"] = dict(nn_other_median=float(np.median(nn)), nn_other_within_015=float((nn <= 0.15).mean()),
                                                                      consecutive_median=float(np.median(1 - np.einsum("tsd,tsd->ts", X[:, 1:], X[:, :-1]))), vendi_last=vendi(X[:, -1]), vendi_first=vendi(X[:, 0]))
+        # POST-HOC: seed identification in theme-sentence space (own step-0 theme is the nearest of the 20 step-0 themes), the memory curve of the gate
+        from memory_curve import curve as _mcurve
+        ident, _ = _mcurve(X); R["cells"][run]["theme_memory"] = dict(half_life=next((k for k in range(len(ident)) if ident[k] <= 0.5), None), ident_at={**{k: round(float(ident[k]), 2) for k in (1, 5, 10, 25, 50) if k < len(ident)}, 99: round(float(ident[-1]), 2)}, curve=[float(v) for v in ident])
         for p in pers:
             if p["trajectories"] < 2: continue
             md = [f"# Theme attractor {p['cluster']} in {run}: {p['visits']} persistent visits from {p['trajectories']} trajectories, {p['steps_inside']} steps inside, hazard {p['hazard']:.3f}", "",
@@ -214,6 +233,18 @@ def main():
             g = audit_story(recs[(t, s)]["story"], names_ok)["lead_gender"]
             if g in ("female", "male"): n += 1; agree += (g == "female") == (j["lead_gender"] == "woman") if j["lead_gender"] != "other_or_unclear" else 0
     R["reliability"]["lead_gender_vs_pronoun_heuristic"] = dict(agree=agree / n if n else None, n=n)
+    # POST-HOC: Haiku test-retest on the same stratified subsample (theme_judge.py --suffix haiku2), to separate loop change from judge noise.
+    pairs2 = collections.defaultdict(lambda: ([], []))
+    for run in runs:
+        J3, _ = load_judge(run, "haiku2")
+        for key, j3 in J3.items():
+            if key in J[run]:
+                for f in CATS: pairs2[f][0].append(str(J[run][key][f])); pairs2[f][1].append(str(j3[f]))
+    if pairs2:
+        R["reliability"]["test_retest_haiku"] = dict(n_pairs=len(pairs2[CATS[0]][0]), kappa={f: (float(cohen_kappa_score(x, y)) if len(set(x) | set(y)) > 1 else 1.0) for f, (x, y) in pairs2.items()},
+                                                     agreement={f: float(np.mean([u == v for u, v in zip(x, y)])) for f, (x, y) in pairs2.items()})
+        R["reliability"]["sonnet_agreement"] = {f: float(np.mean([u == v for u, v in zip(x, y)])) for f, (x, y) in pairs.items()}
+        R["reliability"]["unclear_lead_age_share"] = {"haiku": float(np.mean([u == "unclear" for u in pairs["lead_age"][0]])), a.second: float(np.mean([v == "unclear" for v in pairs["lead_age"][1]]))}
 
     # ---- 5. codebook draft: k-means over a stratified sample of theme sentences (Claude labels the clusters by reading them; Brad reviews)
     samp = []
@@ -305,6 +336,18 @@ def main():
         ta, ts = cl[r].get("theme_atlas"), cl[r].get("theme_scale")
         if ta: md.append(f"| {r} | {ta['n_persistent']} | {ta['n_shared_by_2plus']} | {ta['multidim_shared']} | {ta['share_steps_inside']:.2f} | {ts['nn_other_median']:.3f} | {ts['nn_other_within_015']:.2f} | {ts['consecutive_median']:.3f} | {ts['vendi_first']:.1f} → {ts['vendi_last']:.1f} |")
     md += ["", "Shared theme attractors: `theme_cluster_NN.md` (theme sentences, field agreement, story openings). Codebook draft: `codebook.md`. Hand-coding sample for Brad: `handcode_sample.md`. Figure: `theme_curves.png`.", ""]
+    # POST-HOC section
+    md += ["## Post-hoc checks (added after the verdicts above were read; not predictions)", "",
+           "**Tuple B = lead_gender × conflict_type × ending_valence.** lead_age is the judge's weakest field: on the reliability subsample Haiku codes it 'unclear' far more often than Sonnet does (shares below), so the predicted tuple is dominated by 'unclear' in the 7B cells. Tuple B uses three fields with κ ≥ 0.63.", "",
+           "| cell | eff. tuples 1–10 → 50–99 (null ratio) | modal late (share) | top-3 late | JS early–late | hold step-1 at 99 | memory half / at 99 |", "|---|---|---|---|---|---|---|"]
+    for r in runs:
+        t = cl[r].get("tuple_b")
+        if t: md.append(f"| {r} | {t['eff_early']:.1f} → {t['eff_late']:.1f} ({t['null_ratio_mean']:.2f}) | {'/'.join(t['modal_late'][0])} ({t['modal_late'][1]:.2f}) | " + "; ".join(f"{'/'.join(k)} {v}" for k, v in t["top3_late"]) + f" | {t['js_early_late']:.3f} | {t['share_hold_step1_at_last']:.2f} | {t['memory_half_step']} / {t['memory_at_last']:.2f} |")
+    md += ["", "**Seed memory in theme-sentence space** (own step-0 theme nearest among the 20 step-0 themes; the gate's memory curve on the judge's sentences): " + "; ".join(f"{r} half-life {cl[r]['theme_memory']['half_life']}, at 10 / 50 / 99 {cl[r]['theme_memory']['ident_at'].get(10)} / {cl[r]['theme_memory']['ident_at'].get(50)} / {cl[r]['theme_memory']['ident_at'].get(99)}" for r in runs if cl[r].get("theme_memory")) + "."]
+    tr = rel.get("test_retest_haiku")
+    if tr:
+        md += ["", f"**Judge noise.** Haiku test-retest on the same {tr['n_pairs']} stories (κ / raw agreement): " + ", ".join(f"{f} {tr['kappa'][f]:.2f}/{tr['agreement'][f]:.2f}" for f in CATS) + ".",
+               "Haiku–Sonnet raw agreement: " + ", ".join(f"{f} {rel['sonnet_agreement'][f]:.2f}" for f in CATS) + f". Share of lead_age coded 'unclear' on the subsample: Haiku {rel['unclear_lead_age_share']['haiku']:.2f}, {a.second} {rel['unclear_lead_age_share'][a.second]:.2f}.", ""]
     (out_dir / "theme.md").write_text("\n".join(md), encoding="utf-8"); print("\n".join(md[:14]))
 
 

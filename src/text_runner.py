@@ -35,6 +35,7 @@ TEXT_DEFAULTS = {
         "compress": "Summarize this story. The summary must be 50 words or fewer. Do not exceed the limit. Return only the summary. Do not explain.",
         "rewrite": "Rewrite this story, same length. Return only the story. Do not explain.",
     },
+    "summary_word_limit": 50,           # the limit named in the compress instruction; summaries over it are flagged (E3-W changes both)
     "model": {
         "backend": "ollama",            # ollama | anthropic
         "model": "qwen2.5vl:7b",
@@ -178,7 +179,7 @@ class TextRunner:
             w0 = read_json(st.rec(0))["story_words"]; rec["length_ratio"] = round(rec["story_words"] / w0, 3) if w0 else None
         if cfg["loop"] == "compress_expand":
             summary, cmeta = self._call(ins["compress"], story, m["max_tokens_summary"])
-            cmeta["flags"]["over_50_words"] = words(summary) > 50
+            lim = int(cfg.get("summary_word_limit", 50)); cmeta["flags"][f"over_{lim}_words"] = words(summary) > lim
             rec.update({"compress_instruction": ins["compress"], "summary": summary, "summary_words": words(summary), "summary_meta": cmeta})
         rec.update({"model": self.model_info, "generated_at": now(), "pipeline_git": git_commit(), "config_sha256": cfg["_config_sha256"]})
         st.write_record(step, rec)

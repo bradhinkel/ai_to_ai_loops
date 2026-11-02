@@ -1,0 +1,14 @@
+# E3-W (predictions.md "E3 scale and bottleneck width", 2026-11-02): compress–expand text loop with a 20-word summary instead of 50,
+# Hintze seeds 0–19 x 100 steps, claude-haiku-5-5 (default sampling, D16; effort low). Expand instruction unchanged; step 0 copied
+# from e3_1_haiku (same model, same expand instruction), so the width of the bottleneck is the only difference from that cell.
+run_name: e3_1w20_haiku
+arm: E3-1
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_haiku}
+summary_word_limit: 20
+instructions:
+  compress: "Summarize this story. The summary must be 20 words or fewer. Do not exceed the limit. Return only the summary. Do not explain."
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 8, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

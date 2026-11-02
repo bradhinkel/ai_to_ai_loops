@@ -1,0 +1,11 @@
+# E3-S (predictions.md "E3 scale and bottleneck width", 2026-11-02): compress–expand text loop, story -> 50-word summary -> story,
+# all 100 Hintze seeds x 100 steps, claude-haiku-5-5 over the Messages API, default sampling (D16), effort low. Same instructions as
+# e3_1_haiku; step 0 generated fresh, so trajectories 0–19 are a second sample of the seeds e3_1_haiku ran. 12 concurrent trajectories.
+run_name: e3_1_haiku_100
+arm: E3-1
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+summary_word_limit: 50
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 12, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

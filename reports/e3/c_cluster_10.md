@@ -1,27 +1,45 @@
 # E3-C cluster 10
 
-cells: e3_1_haiku (6 visits, 1 trajectories, median dwell 6.5)
+cells: e3_2b_mistral (3 visits, 1 trajectories, median dwell 16.0), e3_2b_qwen (4 visits, 1 trajectories, median dwell 11.5)
 
-## e3_1_haiku traj 6 step 23 (dwell 12)
+## e3_2b_mistral traj 12 step 71 (dwell 58, censored)
 
-Theo Marsh arrives in Harlow Creek to sell his late uncle's general store, but finds a ledger of debts marked "Forgiven." After helping rancher Ray Dunning repair a baler, he refuses payment, tears up the sale papers, and keeps the store open on a trust-based philosophy.
 
-The bell above the door of Marsh & Sons General Store rang thin and tired when Theo Marsh pushed it open, as if it had been waiting years for someone to come through it.  He had come to Harlow Creek with one purpose: sell the building, sign the papers, and be back on the highway by sundown. His uncle Walt had left him the store, a sagging porch, and a town of three hundred people who, the lawyer had said, would probably be glad to see it go to someone who could afford to modernize it.  The shelves were half-empty but neatly kept. Behind the counter, under a stack of seed catalogs, Theo found a ledger bound in cracked brown leather. He flipped it open expecting a record of what the town owed  …
 
-## e3_1_haiku traj 6 step 44 (dwell 8)
+In the city's pulsating heart, bathed in a rainbow of neon lights, a resolute mother and her agile daughter stood, hearts swelling with anticipation. The mother, an embodiment of tranquility and strength, held her daughter's hand tight, her heartbeat echoing a mix of apprehension and exhilaration. The daughter, a golden-haired girl with a violin case, cradled it gently, her heart pounding with excitement.  As the symphony approached its crescendo, the audience erupted into a storm of applause, their voices echoing off the walls, heightening the tension in the air. On the brink of the final movement, the symphony's original melodies resonated, unleashing a waterfall of harmonies that envelope …
 
-Theo Lindqvist inherits his uncle's general store in rural Minnesota, planning to sell it and return to Chicago. Inside, he finds a ledger of debts marked "Forgiven," revealing his uncle's quiet generosity. Moved, Theo stays, keeps the store running, and starts his own ledger of forgiveness.
+## e3_2b_mistral traj 12 step 33 (dwell 16)
 
-The letter from the probate attorney arrived on a gray Tuesday in March, and Theo Lindqvist read it twice before he believed it. Uncle Gunnar had left him the general store in Harlow Falls, Minnesota, a town he had visited exactly once, at age nine, when he remembered mostly the smell of coffee and the sound of a screen door slapping shut.  He drove up the next week with a plan. Sell the building, sell the inventory, deposit the check, and be back in Chicago before the lease on his cramped apartment ran out. He had a job waiting in logistics. He had no interest in shelves of canned peaches or a town where everyone knew his business.  The store was smaller than he remembered and dustier than  …
 
-## e3_1_haiku traj 6 step 77 (dwell 7)
 
-Theo inherits his late uncle Harold's failing Millbrook hardware store. Rejecting a lucrative developer's offer, he discovers Harold's green ledger, which records years of quiet, unpaid kindness to townspeople. Theo reopens the store, extending credit and second chances in Harold's spirit.
+In the pulsating heart of the city, under a dazzling array of neon lights, a regal mother and her daughter stood, their faces aglow with excitement. The mother, epitomizing grace and strength, held her daughter's hand, offering a reassuring squeeze amidst the anticipation and anxiety. The daughter, a slender, fair-haired girl, tightly gripped her violin case, her heart pounding with excitement.  As the symphony prepared to commence, the audience erupted into a roar, their voices echoing the tension in the air. In the final second, the symphony's first notes filled the air, a harmonious wave cascading over the audience. The daughter, taking a deep breath, opened her violin case, her fingers f …
 
-The letter from the lawyer arrived on a Tuesday, three weeks after the funeral. Theo read it twice at the kitchen table, then folded it into his jacket pocket and drove to Millbrook.  Harold's hardware store sat at the corner of Maple and Third, its windows dusty, its sign faded to a ghost of red. Inside, the familiar smell of oil, rope, and sawdust still hung in the air. Theo had spent summers here as a boy, sorting nails into coffee cans while Harold hummed off-key over the cash register.  The developer's offer was waiting in his inbox when he got back to the motel. Quick cash, a clean closing, no questions about the inventory that had sat untouched for years. Theo looked at the number for …
+## e3_2b_mistral traj 12 step 9 (dwell 14)
 
-## e3_1_haiku traj 6 step 63 (dwell 6)
 
-Theo inherits his uncle Walt's general store in Millbrook, along with a ledger of debts marked "Forgiven" in red. Refusing a developer's two-million-dollar offer, he reopens the store with a "Pay What You Can" sign, keeping his uncle's generous spirit alive in the community.
 
-The letter was written in his uncle's cramped, slanting hand, and it arrived with the keys to the general store in Millbrook, a town Theo had not visited since he was nine.  *Theo,* it read. *The store is yours now. Behind the flour barrels, you'll find a ledger. Read it before you decide anything. Don't let Harlan Voss talk you out of the things that matter. Love, Uncle Walt.*  Theo found the ledger wedged between two sacks of cornmeal, its spine cracked and its pages soft with handling. Every line was a name, a date, and a sum. Beside each entry, in red ink, his uncle had written a single word: *Forgiven.*  There were hundreds of them. Mrs. Abernathy's credit for winter coal, from 1979. Th …
+In the pulsating heart of the city, under a spectacle of neon lights that danced with life, the night hummed with an electric energy. A mother and her daughter, two radiant stars, stood among the crowd, their faces aglow with anticipation. The mother's eyes sparkled with pride, mirroring the excitement in her daughter's.  The daughter, a small girl with golden tresses, gripped her violin case tightly, her heart beating in sync with a mix of anxiety and excitement. Her mother, a woman of grace and resilience, held her hand, offering a comforting squeeze. They stood out as a beacon amidst the sea of strangers.  As the countdown began, numbers ascended on a towering screen, counting down the se …
+
+## e3_2b_qwen traj 12 step 84 (dwell 32, censored)
+
+
+
+The room was a spectacle of vibrant colors and twinkling lights, transforming the ballroom into a stage of pure celebration. Anna's radiant smile was a beacon of joy, mirroring Lily’s gleeful grin as they showcased their perfect synchronization. With four minutes left on the clock, the audience held their breath, eagerly awaiting the grand performance about to unfold.  A young girl in a pristine white gown gracefully danced across the stage, her movements a breathtaking display of elegance and precision, as if she had transported the audience into a world of love and beauty. Anna placed a gentle hand on Lily’s shoulder, and together they stood, their hearts pounding with a mix of anticipatio …
+
+## e3_2b_qwen traj 12 step 26 (dwell 14)
+
+
+
+In the ornate ballroom illuminated by golden hues, the air crackled with anticipation. As the crowd surged forward, their whispers and murmurs filled the space with palpable excitement and hope. At the center of this jubilant gathering stood Anna, her radiant smile a beacon of light, embodying the joy and hope that suffused the room. Beside her, Lily’s eyes sparkled with determination and confidence, reflecting the pride she had felt from countless hours spent perfecting her dance routine.  As the clock ticked down to four minutes, the room fell into a hushed silence, the only sound being the faint murmur of anticipation. The audience held their breath, their eyes fixed on the young girl in  …
+
+## e3_2b_qwen traj 12 step 52 (dwell 9)
+
+
+
+In the opulent ballroom, the air buzzed with excitement, adorned with twinkling lights and luxurious decorations that created a grand and celebratory atmosphere. Each guest was visibly eager, their eyes fixed on the stage, awaiting the peak of the evening.  At the heart of the festivities, Anna’s radiant smile was a beacon of hope and joy, lighting up the collective excitement of the crowd. Beside her, Lily’s smile radiated determination, a testament to the countless hours of rigorous practice Anna had dedicated to their dance performance. The timer began its countdown at four minutes, and the audience held their breath, their gaze fixed on the stage.  A young girl in a pristine white gown s …
+
+## e3_2b_qwen traj 12 step 42 (dwell 7)
+
+
+
+In the grand opulent ballroom, a warm golden glow enveloped the eager crowd, setting the stage for a night of anticipation and grandeur. The air buzzed with excitement as spectators flooded into the spacious room, their whispered conversations carrying the promise of an evening filled with spectacle and elegance.  At the heart of the celebration stood Anna, her radiant smile a beacon of hope and joy, embodying the collective passion of the gathering. Beside her, Lily beamed with determination and confidence, a testament to the countless hours of dance practice Anna had put in.  As the timer counted down to four minutes, the room fell into a tense silence, broken only by the faint murmurs of  …

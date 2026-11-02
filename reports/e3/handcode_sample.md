@@ -47,18 +47,18 @@ He felt the first sentence, the hardest one, already behind him.
 "I'd like that," he said. "I'd like that very much."
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: man
+lead_role_class: professional
+setting_place: institution
+setting_time: present_day
+conflict_type: internal
+ending_valence: hopeful
+secondary_character: partner_or_spouse
+death_present: false
+reconciliation_present: true
+nature_central: false
+theme: An illness leads to a sincere apology that reopens a relationship that pride and neglect had closed
 ```
 
 ## story 2
@@ -98,18 +98,18 @@ He looked up at the pale, unfolding sky.
 "I'd like that," he said. "I'd like that very much."
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: man
+lead_role_class: professional
+setting_place: home_interior
+setting_time: present_day
+conflict_type: internal
+ending_valence: hopeful
+secondary_character: sibling
+death_present: false
+reconciliation_present: true
+nature_central: false
+theme: apologies allow an isolated person to rebuild family and community ties.
 ```
 
 ## story 3
@@ -161,18 +161,18 @@ Marguerite knelt in the gravel and pulled him in. He sobbed against her shoulder
 Pip closed his fingers around the brass, and the sun came up.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: caregiver_or_parent
+setting_place: wilderness_or_mountain
+setting_time: present_day
+conflict_type: external_physical
+ending_valence: bittersweet
+secondary_character: child
+death_present: true
+reconciliation_present: false
+nature_central: true
+theme: A grieving child finds his voice by using his dead father’s lesson from years ago to lead others to safety
 ```
 
 ## story 4
@@ -210,18 +210,19 @@ Silence, then a breath that shook. "Where are you?"
 Mara closed the sketchbook and held it on her lap. Below her, the valley brightened under the climbing sun. She heard nothing yet but wind and her own heartbeat, and she waited, and for the first time in years the waiting felt like hope.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: other_or_unclear
+setting_place: wilderness_or_mountain
+setting_time: present_day
+conflict_type: interpersonal
+ending_valence: hopeful
+secondary_character: sibling
+death_present: true
+reconciliation_present: true
+nature_central: true
+theme: A dead mother’s secret book of sketches prompts an estranged sister to choose apology and hope.
+
 ```
 
 ## story 5
@@ -261,18 +262,18 @@ Back in Onitsha, Okafor opened the ledger to a clean page. He uncapped the blue 
 He looked at the name a long while. Then he turned back to the torn page, and beside the crossed-out line he wrote, smaller: *Settled.*
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: man
+lead_role_class: worker_or_tradesperson
+setting_place: city
+setting_time: present_day
+conflict_type: interpersonal
+ending_valence: hopeful
+secondary_character: sibling
+death_present: true
+reconciliation_present: true
+nature_central: false
+theme: Careful trust and shared work can repair a brotherhood damaged by past financial difficulties.
 ```
 
 ## story 6
@@ -318,18 +319,18 @@ The old man's shoulders shook once. He wiped his face with the back of his hand,
 Okafor hesitated, then pulled up the second stool. Side by side, without speaking, they began to read the bands and sort them into the empty bins.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: young_adult
+lead_gender: man
+lead_role_class: professional
+setting_place: city
+setting_time: present_day
+conflict_type: interpersonal
+ending_valence: bittersweet
+secondary_character: stranger
+death_present: true
+reconciliation_present: true
+nature_central: false
+theme: Accountability and cooperation begin a reconciliation before forgiveness is complete.
 ```
 
 ## story 7
@@ -371,18 +372,18 @@ Something in her chest, held tight for thirty-six years, let go all at once. She
 When she slid the ballot into the machine, it counted the same. But this time, it felt like more.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: older_adult
+lead_gender: woman
+lead_role_class: retired
+setting_place: institution
+setting_time: present_day
+conflict_type: social_or_community
+ending_valence: bittersweet
+secondary_character: child
+death_present: true
+reconciliation_present: false
+nature_central: false
+theme: A simple ramp restores accessibility and dignity while honoring someone who was once excluded.
 ```
 
 ## story 8
@@ -432,18 +433,18 @@ On Saturday, the ramp stood straight for the first time. Marta rolled down it sl
 Then she rolled on toward the van, where someone was waiting for a ride.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: older_adult
+lead_gender: woman
+lead_role_class: retired
+setting_place: home_interior
+setting_time: present_day
+conflict_type: internal
+ending_valence: hopeful
+secondary_character: child
+death_present: true
+reconciliation_present: false
+nature_central: false
+theme: Confession and restitution can turn private guilt into lasting service for others.
 ```
 
 ## story 9
@@ -495,18 +496,18 @@ When the call ended, she stood and stretched, her back cracking. Outside the win
 She sat back down and opened the next folder.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: professional
+setting_place: city
+setting_time: present_day
+conflict_type: external_physical
+ending_valence: neutral_or_ambiguous
+secondary_character: other
+death_present: false
+reconciliation_present: false
+nature_central: false
+theme: detailed scrutiny reveals that wrongdoing may hide behind perfect order.
 ```
 
 ## story 10
@@ -558,18 +559,18 @@ After the call, she stood and stretched, her back popping. Beyond the glass, the
 She sat down again and opened the next binder.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: professional
+setting_place: city
+setting_time: present_day
+conflict_type: external_physical
+ending_valence: neutral_or_ambiguous
+secondary_character: other
+death_present: false
+reconciliation_present: false
+nature_central: false
+theme: Persistent scrutiny reveals that fraud may appear disciplined rather than chaotic.
 ```
 
 ## story 11
@@ -611,18 +612,18 @@ She thought Anselmo would have liked that part.
 She walked to her car, and behind her, faintly, another ballot fell.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: older_adult
+lead_gender: woman
+lead_role_class: retired
+setting_place: institution
+setting_time: present_day
+conflict_type: internal
+ending_valence: neutral_or_ambiguous
+secondary_character: other
+death_present: true
+reconciliation_present: false
+nature_central: false
+theme: Democratic progress requires balancing accessibility with trust and verifiability.
 ```
 
 ## story 12
@@ -678,18 +679,18 @@ Pellam smiled and drew his coat tighter. "I'd expect nothing less."
 Beneath them the anchor held, and above it, so did she.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: older_adult
+lead_gender: woman
+lead_role_class: outsider_or_wanderer
+setting_place: coast_or_sea
+setting_time: historical
+conflict_type: social_or_community
+ending_valence: hopeful
+secondary_character: authority_or_mentor
+death_present: true
+reconciliation_present: true
+nature_central: true
+theme: Grief-driven stubbornness can become preservation when compromise honors both memory and change.
 ```
 
 ## story 13
@@ -745,18 +746,18 @@ Ferris smiled and pulled his coat tighter. "I wouldn't dream of contesting it."
 Beneath them the anchor held, and above it, so did she.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: older_adult
+lead_gender: woman
+lead_role_class: outsider_or_wanderer
+setting_place: coast_or_sea
+setting_time: historical
+conflict_type: social_or_community
+ending_valence: hopeful
+secondary_character: authority_or_mentor
+death_present: true
+reconciliation_present: true
+nature_central: true
+theme: A compromise transforms personal grief and resistance into a lasting memorial.
 ```
 
 ## story 14
@@ -800,18 +801,18 @@ Ms. Okafor gazed across the field, then at the faces tilted up to her, sunburned
 "I'll save you a row," she said.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: professional
+setting_place: institution
+setting_time: present_day
+conflict_type: none_or_unclear
+ending_valence: hopeful
+secondary_character: child
+death_present: false
+reconciliation_present: false
+nature_central: true
+theme: Shared experiments unite education, agriculture, and community stewardship.
 ```
 
 ## story 15
@@ -853,18 +854,18 @@ Below, smoke curled from the chimneys of Kollin. Someone was baking bread.
 She smiled, and rose to resume her watch.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: young_adult
+lead_gender: woman
+lead_role_class: leader_or_official
+setting_place: wilderness_or_mountain
+setting_time: future_or_speculative
+conflict_type: external_physical
+ending_valence: hopeful
+secondary_character: none
+death_present: true
+reconciliation_present: false
+nature_central: true
+theme: Devotion to one’s community can summon the strength to withstand overwhelming danger.
 ```
 
 ## story 16
@@ -916,18 +917,18 @@ The guard studied the laminate, then Mara, then the ticket in her hand. His face
 Mara walked past him, grinning, into the thunder of the music.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: young_adult
+lead_gender: woman
+lead_role_class: worker_or_tradesperson
+setting_place: institution
+setting_time: present_day
+conflict_type: interpersonal
+ending_valence: hopeful
+secondary_character: friend
+death_present: false
+reconciliation_present: false
+nature_central: false
+theme: Loyalty and lived contribution matter more than gatekeepers’ judgments about status.
 ```
 
 ## story 17
@@ -947,18 +948,18 @@ As the day drew to a close and the stars began to twinkle, the saplings stood ta
 In the coming weeks, the saplings would grow, their leaves spreading out, reaching for the light, and the people of the city would witness the true potential of what they had planted. At the Festival of Harmony, they had symbolized harmony between nature and technology, and the saplings stood as proof, imbued with ancient spells and modern techniques, standing as proof of the potential for unity.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: middle_aged
+lead_gender: woman
+lead_role_class: professional
+setting_place: city
+setting_time: future_or_speculative
+conflict_type: none_or_unclear
+ending_valence: hopeful
+secondary_character: authority_or_mentor
+death_present: false
+reconciliation_present: false
+nature_central: true
+theme: Ancient knowledge and advanced technology can combine to create ecological harmony.
 ```
 
 ## story 18
@@ -976,18 +977,18 @@ The mural became a focal point, not just in the physical sense but in the emotio
 Emma’s story spread throughout the town, and the lot that had once been forgotten became a symbol of what was possible when a community worked together. Willow Creek had seen a revival not just in its physical landscape but in its people, who had come to recognize the power of unity and collaboration. The mural was a celebration of the town’s resilience and creativity, and it was a testament to the incredible potential that lies within every community when given the chance to express themselves.
 
 ```
-lead_age: 
-lead_gender: 
-lead_role_class: 
-setting_place: 
-setting_time: 
-conflict_type: 
-ending_valence: 
-secondary_character: 
-death_present: 
-reconciliation_present: 
-nature_central: 
-theme: 
+lead_age: young_adult
+lead_gender: woman
+lead_role_class: other_or_unclear
+setting_place: small_town_or_village
+setting_time: present_day
+conflict_type: social_or_community
+ending_valence: hopeful
+secondary_character: other
+death_present: false
+reconciliation_present: false
+nature_central: false
+theme: Collaborative art can revive neglected space and strengthen a community’s shared identity.
 ```
 
 ## story 19

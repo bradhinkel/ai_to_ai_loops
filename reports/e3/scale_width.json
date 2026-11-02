@@ -417,16 +417,16 @@
     }
    },
    "theme": {
-    "n": 150,
-    "bad": 0,
+    "n": 4993,
+    "bad": 17,
     "modal": [
      "young_adult",
      "internal",
      "hopeful"
     ],
-    "modal_share": 0.13333333333333333,
-    "woman_share": 0.3933333333333333,
-    "hopeful_share": 0.4866666666666667
+    "modal_share": 0.08852393350690968,
+    "woman_share": 0.6721409973963549,
+    "hopeful_share": 0.7001802523532946
    }
   },
   "e3_1w20_haiku": {
@@ -1823,16 +1823,16 @@
     ]
    },
    "theme": {
-    "n": 218,
-    "bad": 0,
+    "n": 1000,
+    "bad": 17,
     "modal": [
      "young_adult",
-     "internal",
+     "interpersonal",
      "hopeful"
     ],
-    "modal_share": 0.12385321100917432,
-    "woman_share": 0.5825688073394495,
-    "hopeful_share": 0.47706422018348627
+    "modal_share": 0.102,
+    "woman_share": 0.778,
+    "hopeful_share": 0.696
    }
   },
   "same_seed": {
@@ -1908,7 +1908,7 @@
    "words_in_band": true,
    "modal": [
     "young_adult",
-    "internal",
+    "interpersonal",
     "hopeful"
    ],
    "base_modal": [
@@ -1916,7 +1916,7 @@
     "internal",
     "hopeful"
    ],
-   "modal_same": true,
+   "modal_same": false,
    "all100": {
     "half_life_sub_median": 25.5,
     "cover": 0.38548387096774195,

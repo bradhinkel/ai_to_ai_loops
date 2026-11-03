@@ -1,0 +1,25 @@
+# E3-P gate: the 20-seed cells projected into the Haiku-100 atlas, and the core wells against the D menu (2026-11-03)
+
+Prediction: `predictions.md` "E3 second sample and projections" (2026-11-03), P1–P4. Metrics: `reports/e3/projection.md` / `.json` (`analysis/e3_projection.py`; P4a appended by `analysis/moral_judge.py --report`). Reference atlas: anonymised MiniLM atlas of `e3_1_haiku_100` (k 198, 46 persistent clusters, 13 shared wells); projected cells are anonymised with their own name filter and labelled against the reference centroids (radius 0.15, hysteresis 1.25, persistent = dwell ≥ 5); nothing is refit. No new runs; the moral judge cost about $1.
+
+## Verdicts
+
+| | prediction | result | verdict |
+|---|---|---|---|
+| P1 | Haiku 20-seed cell: ≥ 3 trajectories persistently in a shared Haiku-100 well; inside share ≥ 0.5 × the reference's own | 3 of 20 trajectories, in 4 wells; inside share 0.064 vs the reference's 0.268 (0.24×) | **half** (wells yes, share no) |
+| P2 | Sonnet: ≥ 2 trajectories in a shared Haiku well, inside share 0.2–0.8 × the Haiku-20 cell's, wells from the grief / letters / estranged-relative family (Brad's prediction) | 2 of 20 trajectories, inside ratio 0.36; the wells are 16 (two estranged sisters reconcile after their father's death) and 39 (a late relative's ledger of quiet kindnesses, passed on), the same two the Haiku-20 cell uses | **holds** |
+| P3 | Mistral, Qwen, LLaVA: ≤ 1 trajectory each, inside share < 0.2× | 0, 0, 0 trajectories; inside share 0.000; nearest shared well 0.49–0.51 away at every late step | **holds** |
+| P4a | ≥ 9 of 13 wells have a dominant D moral (≥ 0.6 of member stories) and ≥ 0.4 of all late stories fit none | 5 of 13 wells (16, 39, 166, 88, 46); none-share 0.47 | **fails** on the well clause |
+| P4b | Haiku D late steps ≥ 0.05 nearer the Haiku wells than Mistral D's; ≥ 5 Haiku D trajectories touch a Haiku well | 0.219 vs 0.492; 17 of 20 touch a well (0 dwell, as expected of D) | **holds** |
+
+The inside-share clause of P1 was badly set: a reference atlas fitted on its own data covers its own steps better than any projected cell can (fit versus projection), so 0.24× is not evidence against the same-model claim. The trajectory counts are the comparable measure, and they say what Brad predicted: the Haiku-20 cell and the Sonnet cell fall into the same Haiku-100 wells, and the three 7B cells never come near them.
+
+## What the projections say
+
+- **Haiku's wells are Haiku's, and Sonnet shares some of them.** The 7B models' stories stay half a unit away from every Haiku well; Sonnet's land in two of them, with the Haiku-20 cell, at about a third of Haiku's rate. The shared wells are the estrangement-and-grief family (sisters after a father's death; the ledger of kindnesses). This is the first cross-model overlap of attractors in the text thread and it is between the two Claude models, as Brad predicted.
+- **The D menu is the dense half of the core arm's theme layer, not all of it (P4a).** The judge, offered the five Haiku D morals, places 53% of all late stories of the 100-seed sample on one of them (estranged relatives reconcile 0.17; grief softened by family ritual 0.23; kindness ripples 0.06; grief eased by community 0.05; shared crisis 0.02) and 47% on none. Across the 13 wells the split is clean: six wells are D-menu wells (estranged sisters 1.00 on moral 2; the ledger of kindnesses 0.95 on moral 3; the unfinished songbook 1.00 on moral 5; the bandmates' confession and unfinished song 0.64 on 5; the kind shopkeeper 0.60 on 1; the shoebox of letters opened at the kitchen table split 0.54 / 0.46 between morals 2 and 5), and five are **outside the menu**: the laid-off man who hides it from his family (0.90 none), the hidden ledger that clears a wrongly accused man's name (0.68 none), the Night Host that feeds on grief and is driven off by singing (1.00 none), the handwritten map that says you were never lost (0.89 none), and the second shoebox well, where the letters are answered after the writer's death (0.70 none). Their morals are honesty under shame, justice and restitution, self-forgiveness, and the supernatural, which the D loop's stationary distribution visits rarely or never. (Well 43, the laptop-dies thriller, has no member stories after step 50; its visits were early.)
+- So the assumption Brad asked about holds in one direction only: **every D moral has core wells that instance it, but the core arm has wells whose morals D does not reach.** D is the cheap probe of a model's most probable morals; the 100-seed core arm is the only instrument that shows the rarer ones. For the paper this is the right division of labour, and it argues for keeping both.
+
+## Runs
+
+No new loop runs. Moral judge: 5,000 stories (steps 50–99 of e3_1_haiku_100), Haiku, effort low, 0 malformed after the output budget was raised from 200 to 1,500 tokens (the first 124 answers, 51 of them cut off at "{", were discarded and rejudged), about $1, 33 min at 4 concurrent calls. Judge records in `analysis/cache/e3_1_haiku_100/moral_judge.jsonl` (archived under `reports/e3/judge/`).

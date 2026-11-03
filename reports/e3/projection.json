@@ -2166,6 +2166,224 @@
    "nn_mistral_d": 0.49153486740122165,
    "haiku_d_touching": 17,
    "holds": true
+  },
+  "P4a_judge": {
+   "wells": 13,
+   "wells_with_modal_moral_ge_060": 5,
+   "none_share_all_late": 0.4692,
+   "overall": {
+    "0": 0.4692,
+    "1": 0.0536,
+    "2": 0.1718,
+    "3": 0.0564,
+    "4": 0.024,
+    "5": 0.225
+   },
+   "holds": false,
+   "rows": [
+    {
+     "well": 9,
+     "trajs": [
+      24,
+      30,
+      57,
+      80
+     ],
+     "member_stories_judged": 39,
+     "modal_moral": 2,
+     "modal_share": 0.5384615384615384,
+     "counts": {
+      "2": 21,
+      "5": 18
+     },
+     "ok": false
+    },
+    {
+     "well": 16,
+     "trajs": [
+      4,
+      61
+     ],
+     "member_stories_judged": 26,
+     "modal_moral": 2,
+     "modal_share": 1.0,
+     "counts": {
+      "2": 26
+     },
+     "ok": true
+    },
+    {
+     "well": 39,
+     "trajs": [
+      16,
+      22,
+      71
+     ],
+     "member_stories_judged": 22,
+     "modal_moral": 3,
+     "modal_share": 0.9545454545454546,
+     "counts": {
+      "3": 21,
+      "1": 1
+     },
+     "ok": true
+    },
+    {
+     "well": 43,
+     "trajs": [
+      5,
+      37
+     ],
+     "member_stories_judged": 0,
+     "modal_moral": null,
+     "modal_share": null,
+     "counts": {},
+     "ok": false
+    },
+    {
+     "well": 46,
+     "trajs": [
+      71,
+      84,
+      93
+     ],
+     "member_stories_judged": 5,
+     "modal_moral": 1,
+     "modal_share": 0.6,
+     "counts": {
+      "0": 2,
+      "1": 3
+     },
+     "ok": true
+    },
+    {
+     "well": 68,
+     "trajs": [
+      27,
+      91
+     ],
+     "member_stories_judged": 19,
+     "modal_moral": 5,
+     "modal_share": 0.47368421052631576,
+     "counts": {
+      "5": 9,
+      "1": 7,
+      "2": 3
+     },
+     "ok": false
+    },
+    {
+     "well": 88,
+     "trajs": [
+      28,
+      29,
+      66
+     ],
+     "member_stories_judged": 14,
+     "modal_moral": 5,
+     "modal_share": 0.6428571428571429,
+     "counts": {
+      "2": 5,
+      "5": 9
+     },
+     "ok": true
+    },
+    {
+     "well": 115,
+     "trajs": [
+      8,
+      20,
+      72
+     ],
+     "member_stories_judged": 34,
+     "modal_moral": 0,
+     "modal_share": 0.6764705882352942,
+     "counts": {
+      "3": 7,
+      "0": 23,
+      "1": 1,
+      "2": 3
+     },
+     "ok": false
+    },
+    {
+     "well": 143,
+     "trajs": [
+      24,
+      52,
+      57,
+      95
+     ],
+     "member_stories_judged": 20,
+     "modal_moral": 0,
+     "modal_share": 0.7,
+     "counts": {
+      "0": 14,
+      "5": 6
+     },
+     "ok": false
+    },
+    {
+     "well": 154,
+     "trajs": [
+      63,
+      94
+     ],
+     "member_stories_judged": 71,
+     "modal_moral": 0,
+     "modal_share": 0.9014084507042254,
+     "counts": {
+      "0": 64,
+      "2": 7
+     },
+     "ok": false
+    },
+    {
+     "well": 155,
+     "trajs": [
+      18,
+      97
+     ],
+     "member_stories_judged": 10,
+     "modal_moral": 0,
+     "modal_share": 1.0,
+     "counts": {
+      "0": 10
+     },
+     "ok": false
+    },
+    {
+     "well": 164,
+     "trajs": [
+      4,
+      78
+     ],
+     "member_stories_judged": 19,
+     "modal_moral": 0,
+     "modal_share": 0.8947368421052632,
+     "counts": {
+      "0": 17,
+      "5": 1,
+      "2": 1
+     },
+     "ok": false
+    },
+    {
+     "well": 166,
+     "trajs": [
+      12,
+      79
+     ],
+     "member_stories_judged": 25,
+     "modal_moral": 5,
+     "modal_share": 1.0,
+     "counts": {
+      "5": 25
+     },
+     "ok": true
+    }
+   ],
+   "n_judged": 5000
   }
  }
 }

@@ -84,11 +84,16 @@ def report(run):
     for c, ts, nv in shared:
         members = []
         for ti in ts:
-            for length, start in visits(L[ti] == c):
-                if length >= ATLAS["min_dwell"]:
-                    for j in range(start, start + length):
-                        s = steps[j]; m = J.get((ti, s))
-                        if m is not None: members.append(m)
+            row = L[ti] == c; j = 0
+            while j < len(row):                       # runs of consecutive inside-steps with their start index (visits() returns no start)
+                if row[j]:
+                    k0 = j
+                    while j < len(row) and row[j]: j += 1
+                    if j - k0 >= ATLAS["min_dwell"]:
+                        for jj in range(k0, j):
+                            m = J.get((ti, steps[jj]))
+                            if m is not None: members.append(m)
+                else: j += 1
         cnt = collections.Counter(members); modal, k = (cnt.most_common(1)[0] if cnt else (None, 0)); share = k / len(members) if members else None
         ok = modal not in (None, 0) and share >= 0.6; wells_ok += ok
         rows.append(dict(well=int(c), trajs=ts, member_stories_judged=len(members), modal_moral=modal, modal_share=share, counts=dict(cnt), ok=bool(ok)))

@@ -25,3 +25,26 @@ Reference: anonymised MiniLM atlas of e3_1_haiku_100, k 198, 46 persistent clust
 
 - e3_1_haiku: traj 5 -> wells {39: 1}; traj 6 -> wells {46: 1, 115: 1}; traj 9 -> wells {16: 1}
 - e3_1_sonnet: traj 4 -> wells {16: 1}; traj 9 -> wells {39: 1}
+
+
+## P4a: core wells vs the D menu (Haiku judge, steps 50-99 of the reference sample)
+
+5000 late stories judged; share picking none of the five morals 0.47; overall shares 0: 0.47, 1: 0.05, 2: 0.17, 3: 0.06, 4: 0.02, 5: 0.23.
+
+| well | trajectories | member stories judged | modal moral | share | counts |
+|---|---|---|---|---|---|
+| 9 | [24, 30, 57, 80] | 39 | 2 | 0.54 | {2: 21, 5: 18} |
+| 16 | [4, 61] | 26 | 2 | 1.0 | {2: 26} |
+| 39 | [16, 22, 71] | 22 | 3 | 0.95 | {3: 21, 1: 1} |
+| 43 | [5, 37] | 0 | None | None | {} |
+| 46 | [71, 84, 93] | 5 | 1 | 0.6 | {0: 2, 1: 3} |
+| 68 | [27, 91] | 19 | 5 | 0.47 | {5: 9, 1: 7, 2: 3} |
+| 88 | [28, 29, 66] | 14 | 5 | 0.64 | {2: 5, 5: 9} |
+| 115 | [8, 20, 72] | 34 | 0 | 0.68 | {3: 7, 0: 23, 1: 1, 2: 3} |
+| 143 | [24, 52, 57, 95] | 20 | 0 | 0.7 | {0: 14, 5: 6} |
+| 154 | [63, 94] | 71 | 0 | 0.9 | {0: 64, 2: 7} |
+| 155 | [18, 97] | 10 | 0 | 1.0 | {0: 10} |
+| 164 | [4, 78] | 19 | 0 | 0.89 | {0: 17, 5: 1, 2: 1} |
+| 166 | [12, 79] | 25 | 5 | 1.0 | {5: 25} |
+
+**P4a**: 5 of 13 wells have a modal moral (not none) with >= 0.6 agreement (needs >= 9); none-share over all late stories 0.47 (needs >= 0.4): **fails**.

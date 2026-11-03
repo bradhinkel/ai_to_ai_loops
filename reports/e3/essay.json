@@ -1,0 +1,3672 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "k": 40,
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cell": {
+  "n_traj": 20,
+  "n_steps": 100,
+  "half_life": null,
+  "ident_at": {
+   "1": 1.0,
+   "5": 0.95,
+   "10": 0.95,
+   "25": 0.9,
+   "50": 0.8,
+   "99": 0.8
+  },
+  "memory_curve": [
+   1.0,
+   1.0,
+   0.95,
+   1.0,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.95,
+   0.9,
+   0.95,
+   0.95,
+   0.9,
+   0.9,
+   0.9,
+   0.85,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.85,
+   0.9,
+   0.9,
+   0.85,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.9,
+   0.85,
+   0.85,
+   0.75,
+   0.8,
+   0.85,
+   0.85,
+   0.8,
+   0.85,
+   0.8,
+   0.85,
+   0.85,
+   0.85,
+   0.8,
+   0.85,
+   0.8,
+   0.85,
+   0.85,
+   0.85,
+   0.75,
+   0.8,
+   0.75,
+   0.8,
+   0.8,
+   0.8,
+   0.8,
+   0.8,
+   0.75,
+   0.75,
+   0.8,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.8,
+   0.8,
+   0.75,
+   0.75,
+   0.75,
+   0.8,
+   0.8,
+   0.8,
+   0.8,
+   0.8,
+   0.8,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.75,
+   0.8,
+   0.8,
+   0.75,
+   0.8
+  ],
+  "nn_other_median": 0.5619382273649021,
+  "nn_other_anon_median": 0.5088816892722685,
+  "within_015": 0.0,
+  "within_015_anon": 0.0,
+  "vendi_story_99": 16.159748659053477,
+  "vendi_summary_99": 17.190215261619556,
+  "words_median_99": 517.0,
+  "summary_words_median": 46.0,
+  "summary_le_limit_share": {
+   "20": 0.0,
+   "25": 0.0,
+   "30": 0.0025,
+   "50": 0.786
+  },
+  "summary_flags": {
+   "over_50_words": 428
+  },
+  "audit": {
+   "exact_copies": 0,
+   "n_cjk": 0,
+   "names_50_99": {
+    "n_leads": 603,
+    "distinct": 76,
+    "top10": [
+     [
+      "Amazon",
+      50
+     ],
+     [
+      "Mercury",
+      45
+     ],
+     [
+      "Chinese",
+      32
+     ],
+     [
+      "Indigenous",
+      31
+     ],
+     [
+      "Archimedes",
+      27
+     ],
+     [
+      "God",
+      27
+     ],
+     [
+      "Nile",
+      26
+     ],
+     [
+      "Egypt",
+      25
+     ],
+     [
+      "Athens",
+      20
+     ],
+     [
+      "Syracuse",
+      19
+     ]
+    ],
+    "top10_cover": 0.5008291873963516,
+    "llm_set_hits": []
+   },
+   "flags": {
+    "summary_over_50_words": 428
+   }
+  },
+  "theme": null
+ },
+ "atlas": {
+  "raw": {
+   "shared": 0,
+   "persistent": 2,
+   "pairs": 0,
+   "rate": 0.0,
+   "max_mult": 0,
+   "W_hat": null,
+   "inside": 0.05909090909090909
+  },
+  "anon": {
+   "shared": 0,
+   "persistent": 2,
+   "pairs": 0,
+   "rate": 0.0,
+   "max_mult": 0,
+   "W_hat": null,
+   "inside": 0.05303030303030303
+  }
+ },
+ "judge": {
+  "n": 1997,
+  "bad": 3,
+  "domain_step0": {
+   "history": 0.2,
+   "science_and_nature": 0.2,
+   "mathematics": 0.15,
+   "health_and_body": 0.1,
+   "philosophy_and_religion": 0.1,
+   "places": 0.1,
+   "technology": 0.05,
+   "economics": 0.05,
+   "arts_and_culture": 0.05
+  },
+  "domain_late": {
+   "history": 0.23623623623623624,
+   "philosophy_and_religion": 0.17417417417417416,
+   "science_and_nature": 0.16316316316316315,
+   "mathematics": 0.12212212212212212,
+   "economics": 0.1001001001001001,
+   "health_and_body": 0.055055055055055056,
+   "technology": 0.05305305305305305,
+   "arts_and_culture": 0.044044044044044044,
+   "society_and_politics": 0.028028028028028028,
+   "other": 0.024024024024024024
+  },
+  "kind_step0": {
+   "concrete": 0.85,
+   "abstract": 0.15
+  },
+  "kind_late": {
+   "abstract": 0.5925925925925926,
+   "concrete": 0.4074074074074074
+  },
+  "stance_late": {
+   "argues_a_position": 0.7777777777777778,
+   "descriptive": 0.2222222222222222
+  },
+  "tone_late": {
+   "hopeful": 0.4794794794794795,
+   "cautionary": 0.18518518518518517,
+   "neutral": 0.15015015015015015,
+   "celebratory": 0.11311311311311312,
+   "critical": 0.07207207207207207
+  },
+  "ai_late": {
+   "no": 0.9259259259259259,
+   "yes": 0.07407407407407407
+  },
+  "env_late": {
+   "no": 0.7567567567567568,
+   "yes": 0.24324324324324326
+  },
+  "per_step": {
+   "domain": [
+    {
+     "history": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "places": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "science_and_nature": 0.25,
+     "history": 0.2,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "places": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "science_and_nature": 0.3,
+     "history": 0.2,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "places": 0.1,
+     "technology": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "science_and_nature": 0.25,
+     "history": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "places": 0.1,
+     "technology": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "places": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "science_and_nature": 0.25,
+     "history": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "places": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "places": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "philosophy_and_religion": 0.05,
+     "economics": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.25,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "economics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "society_and_politics": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "science_and_nature": 0.3,
+     "history": 0.25,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "science_and_nature": 0.3,
+     "history": 0.25,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "science_and_nature": 0.25,
+     "history": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.35,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.25,
+     "mathematics": 0.15,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.2631578947368421,
+     "science_and_nature": 0.2631578947368421,
+     "health_and_body": 0.10526315789473684,
+     "mathematics": 0.10526315789473684,
+     "philosophy_and_religion": 0.10526315789473684,
+     "economics": 0.05263157894736842,
+     "arts_and_culture": 0.05263157894736842,
+     "society_and_politics": 0.05263157894736842
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.35,
+     "science_and_nature": 0.25,
+     "mathematics": 0.1,
+     "philosophy_and_religion": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.3157894736842105,
+     "science_and_nature": 0.2631578947368421,
+     "mathematics": 0.15789473684210525,
+     "arts_and_culture": 0.10526315789473684,
+     "technology": 0.05263157894736842,
+     "health_and_body": 0.05263157894736842,
+     "philosophy_and_religion": 0.05263157894736842
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "health_and_body": 0.1,
+     "mathematics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "other": 0.05,
+     "philosophy_and_religion": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "economics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.25,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "other": 0.05,
+     "economics": 0.05,
+     "mathematics": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "economics": 0.05
+    },
+    {
+     "history": 0.3,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "economics": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "philosophy_and_religion": 0.05,
+     "economics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.3,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "arts_and_culture": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "economics": 0.05
+    },
+    {
+     "history": 0.3,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "economics": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.25,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "philosophy_and_religion": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "philosophy_and_religion": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.2,
+     "philosophy_and_religion": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "philosophy_and_religion": 0.1,
+     "economics": 0.1,
+     "society_and_politics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "technology": 0.1,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.21052631578947367,
+     "science_and_nature": 0.15789473684210525,
+     "philosophy_and_religion": 0.15789473684210525,
+     "technology": 0.10526315789473684,
+     "mathematics": 0.10526315789473684,
+     "health_and_body": 0.10526315789473684,
+     "economics": 0.10526315789473684,
+     "other": 0.05263157894736842
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "technology": 0.1,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.3,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "philosophy_and_religion": 0.1,
+     "technology": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05,
+     "other": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "mathematics": 0.15,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.15,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "arts_and_culture": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "economics": 0.1,
+     "technology": 0.05,
+     "other": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "mathematics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "science_and_nature": 0.15,
+     "philosophy_and_religion": 0.15,
+     "mathematics": 0.1,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.3,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.15,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "arts_and_culture": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "economics": 0.1,
+     "technology": 0.05,
+     "mathematics": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "science_and_nature": 0.2,
+     "mathematics": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "society_and_politics": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.25,
+     "philosophy_and_religion": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "economics": 0.1,
+     "technology": 0.05,
+     "health_and_body": 0.05,
+     "other": 0.05
+    },
+    {
+     "history": 0.2,
+     "mathematics": 0.15,
+     "science_and_nature": 0.15,
+     "philosophy_and_religion": 0.15,
+     "health_and_body": 0.1,
+     "economics": 0.1,
+     "technology": 0.05,
+     "other": 0.05,
+     "society_and_politics": 0.05
+    }
+   ],
+   "subject_kind": [
+    {
+     "concrete": 0.85,
+     "abstract": 0.15
+    },
+    {
+     "concrete": 0.8,
+     "abstract": 0.2
+    },
+    {
+     "concrete": 0.75,
+     "abstract": 0.25
+    },
+    {
+     "concrete": 0.85,
+     "abstract": 0.15
+    },
+    {
+     "concrete": 0.8,
+     "abstract": 0.2
+    },
+    {
+     "concrete": 0.85,
+     "abstract": 0.15
+    },
+    {
+     "concrete": 0.7,
+     "abstract": 0.3
+    },
+    {
+     "concrete": 0.7,
+     "abstract": 0.3
+    },
+    {
+     "concrete": 0.7,
+     "abstract": 0.3
+    },
+    {
+     "concrete": 0.7,
+     "abstract": 0.3
+    },
+    {
+     "concrete": 0.7,
+     "abstract": 0.3
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "concrete": 0.65,
+     "abstract": 0.35
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.65,
+     "abstract": 0.35
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.65,
+     "abstract": 0.35
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "concrete": 0.5263157894736842,
+     "abstract": 0.47368421052631576
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.5789473684210527,
+     "abstract": 0.42105263157894735
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.65,
+     "abstract": 0.35
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "concrete": 0.6,
+     "abstract": 0.4
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "concrete": 0.55,
+     "abstract": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.5263157894736842,
+     "concrete": 0.47368421052631576
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.7,
+     "concrete": 0.3
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "concrete": 0.5,
+     "abstract": 0.5
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.65,
+     "concrete": 0.35
+    },
+    {
+     "abstract": 0.7,
+     "concrete": 0.3
+    },
+    {
+     "abstract": 0.55,
+     "concrete": 0.45
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    },
+    {
+     "abstract": 0.7,
+     "concrete": 0.3
+    },
+    {
+     "abstract": 0.7,
+     "concrete": 0.3
+    },
+    {
+     "abstract": 0.6,
+     "concrete": 0.4
+    }
+   ],
+   "stance": [
+    {
+     "descriptive": 1.0
+    },
+    {
+     "descriptive": 0.85,
+     "argues_a_position": 0.15
+    },
+    {
+     "descriptive": 0.65,
+     "argues_a_position": 0.35
+    },
+    {
+     "descriptive": 0.75,
+     "argues_a_position": 0.25
+    },
+    {
+     "descriptive": 0.75,
+     "argues_a_position": 0.25
+    },
+    {
+     "descriptive": 0.6,
+     "argues_a_position": 0.35,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "descriptive": 0.7,
+     "argues_a_position": 0.3
+    },
+    {
+     "descriptive": 0.6,
+     "argues_a_position": 0.4
+    },
+    {
+     "descriptive": 0.5,
+     "argues_a_position": 0.45,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "descriptive": 0.6,
+     "argues_a_position": 0.4
+    },
+    {
+     "argues_a_position": 0.5,
+     "descriptive": 0.5
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.55,
+     "descriptive": 0.45
+    },
+    {
+     "argues_a_position": 0.6,
+     "descriptive": 0.35,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.3,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.55,
+     "descriptive": 0.45
+    },
+    {
+     "argues_a_position": 0.55,
+     "descriptive": 0.4,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.5,
+     "descriptive": 0.45,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.5789473684210527,
+     "descriptive": 0.3684210526315789,
+     "reflective_or_personal": 0.05263157894736842
+    },
+    {
+     "argues_a_position": 0.6,
+     "descriptive": 0.35,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.55,
+     "descriptive": 0.45
+    },
+    {
+     "argues_a_position": 0.6842105263157895,
+     "descriptive": 0.3157894736842105
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.3,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.6,
+     "descriptive": 0.4
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.3,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.6,
+     "descriptive": 0.35,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.3,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.25,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.25,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.3,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.25,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.25,
+     "reflective_or_personal": 0.05
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.65,
+     "descriptive": 0.35
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8421052631578947,
+     "descriptive": 0.15789473684210525
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.85,
+     "descriptive": 0.15
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.85,
+     "descriptive": 0.15
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.85,
+     "descriptive": 0.15
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.7,
+     "descriptive": 0.3
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.85,
+     "descriptive": 0.15
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.75,
+     "descriptive": 0.25
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.8,
+     "descriptive": 0.2
+    },
+    {
+     "argues_a_position": 0.9,
+     "descriptive": 0.1
+    },
+    {
+     "argues_a_position": 0.85,
+     "descriptive": 0.15
+    }
+   ],
+   "tone": [
+    {
+     "celebratory": 0.4,
+     "neutral": 0.35,
+     "hopeful": 0.2,
+     "cautionary": 0.05
+    },
+    {
+     "celebratory": 0.45,
+     "neutral": 0.25,
+     "hopeful": 0.2,
+     "cautionary": 0.1
+    },
+    {
+     "celebratory": 0.4,
+     "hopeful": 0.3,
+     "cautionary": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.35,
+     "neutral": 0.3,
+     "celebratory": 0.3,
+     "cautionary": 0.05
+    },
+    {
+     "celebratory": 0.45,
+     "hopeful": 0.3,
+     "neutral": 0.2,
+     "cautionary": 0.05
+    },
+    {
+     "celebratory": 0.4,
+     "neutral": 0.25,
+     "hopeful": 0.2,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.25,
+     "neutral": 0.2,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.35,
+     "celebratory": 0.3,
+     "neutral": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.25,
+     "neutral": 0.2,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.35,
+     "neutral": 0.15,
+     "critical": 0.05,
+     "cautionary": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "celebratory": 0.2,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.15,
+     "neutral": 0.15,
+     "celebratory": 0.15
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.2,
+     "celebratory": 0.2,
+     "cautionary": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "neutral": 0.15,
+     "celebratory": 0.15,
+     "critical": 0.1,
+     "cautionary": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "celebratory": 0.25,
+     "neutral": 0.1,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.2,
+     "neutral": 0.2,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.15,
+     "celebratory": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.45,
+     "neutral": 0.2,
+     "celebratory": 0.2,
+     "cautionary": 0.15
+    },
+    {
+     "hopeful": 0.42105263157894735,
+     "neutral": 0.21052631578947367,
+     "celebratory": 0.21052631578947367,
+     "cautionary": 0.15789473684210525
+    },
+    {
+     "hopeful": 0.5,
+     "neutral": 0.2,
+     "celebratory": 0.2,
+     "cautionary": 0.1
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.3,
+     "cautionary": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.42105263157894735,
+     "celebratory": 0.3157894736842105,
+     "cautionary": 0.15789473684210525,
+     "neutral": 0.10526315789473684
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.15,
+     "celebratory": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.35,
+     "cautionary": 0.25,
+     "celebratory": 0.2,
+     "neutral": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "celebratory": 0.2,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "celebratory": 0.2,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.25,
+     "celebratory": 0.15,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "neutral": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.1,
+     "cautionary": 0.1
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.25,
+     "neutral": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "neutral": 0.2,
+     "celebratory": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "celebratory": 0.15,
+     "cautionary": 0.15,
+     "neutral": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "celebratory": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "neutral": 0.2,
+     "celebratory": 0.15
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.2,
+     "celebratory": 0.2,
+     "cautionary": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "neutral": 0.2,
+     "celebratory": 0.15
+    },
+    {
+     "hopeful": 0.35,
+     "neutral": 0.25,
+     "cautionary": 0.25,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "cautionary": 0.35,
+     "hopeful": 0.35,
+     "celebratory": 0.15,
+     "neutral": 0.15
+    },
+    {
+     "hopeful": 0.35,
+     "neutral": 0.25,
+     "cautionary": 0.25,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.3,
+     "celebratory": 0.2,
+     "neutral": 0.05
+    },
+    {
+     "cautionary": 0.35,
+     "hopeful": 0.25,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.1
+    },
+    {
+     "hopeful": 0.35,
+     "cautionary": 0.25,
+     "neutral": 0.2,
+     "celebratory": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "celebratory": 0.2,
+     "cautionary": 0.2,
+     "neutral": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.3,
+     "cautionary": 0.3,
+     "neutral": 0.2,
+     "celebratory": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.35,
+     "cautionary": 0.3,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.35,
+     "neutral": 0.25,
+     "cautionary": 0.25,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.15,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "neutral": 0.2,
+     "cautionary": 0.15,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "celebratory": 0.2,
+     "critical": 0.05,
+     "neutral": 0.05
+    },
+    {
+     "neutral": 0.35,
+     "hopeful": 0.3,
+     "cautionary": 0.2,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "cautionary": 0.3,
+     "celebratory": 0.15,
+     "neutral": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "neutral": 0.15,
+     "celebratory": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "celebratory": 0.15,
+     "critical": 0.05
+    },
+    {
+     "cautionary": 0.3,
+     "hopeful": 0.3,
+     "neutral": 0.2,
+     "celebratory": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.25,
+     "cautionary": 0.2,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.45,
+     "neutral": 0.2,
+     "cautionary": 0.2,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "cautionary": 0.3,
+     "hopeful": 0.3,
+     "neutral": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.25,
+     "cautionary": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.05
+    },
+    {
+     "cautionary": 0.35,
+     "hopeful": 0.3,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "cautionary": 0.2,
+     "neutral": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "critical": 0.1,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.35,
+     "cautionary": 0.25,
+     "neutral": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.47368421052631576,
+     "cautionary": 0.2631578947368421,
+     "neutral": 0.15789473684210525,
+     "critical": 0.05263157894736842,
+     "celebratory": 0.05263157894736842
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.2,
+     "neutral": 0.2,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.6,
+     "cautionary": 0.15,
+     "celebratory": 0.15,
+     "neutral": 0.05,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.2,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.25,
+     "celebratory": 0.15,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.45,
+     "critical": 0.2,
+     "celebratory": 0.15,
+     "cautionary": 0.1,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "neutral": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "cautionary": 0.25,
+     "celebratory": 0.15,
+     "neutral": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.25,
+     "celebratory": 0.1,
+     "critical": 0.05,
+     "neutral": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "critical": 0.1
+    },
+    {
+     "hopeful": 0.55,
+     "critical": 0.15,
+     "celebratory": 0.15,
+     "cautionary": 0.1,
+     "neutral": 0.05
+    },
+    {
+     "hopeful": 0.65,
+     "neutral": 0.1,
+     "celebratory": 0.1,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.6,
+     "critical": 0.1,
+     "celebratory": 0.1,
+     "cautionary": 0.1,
+     "neutral": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "neutral": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.6,
+     "critical": 0.15,
+     "neutral": 0.1,
+     "celebratory": 0.1,
+     "cautionary": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "cautionary": 0.2,
+     "celebratory": 0.15,
+     "critical": 0.05,
+     "neutral": 0.05
+    },
+    {
+     "hopeful": 0.65,
+     "celebratory": 0.1,
+     "cautionary": 0.1,
+     "neutral": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "celebratory": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.1,
+     "neutral": 0.05
+    },
+    {
+     "hopeful": 0.65,
+     "celebratory": 0.15,
+     "cautionary": 0.1,
+     "critical": 0.05,
+     "neutral": 0.05
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.2,
+     "celebratory": 0.15,
+     "cautionary": 0.15,
+     "critical": 0.1
+    },
+    {
+     "hopeful": 0.55,
+     "neutral": 0.25,
+     "cautionary": 0.1,
+     "critical": 0.05,
+     "celebratory": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "celebratory": 0.15,
+     "neutral": 0.15,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.45,
+     "celebratory": 0.15,
+     "cautionary": 0.15,
+     "neutral": 0.15,
+     "critical": 0.1
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.2,
+     "critical": 0.1,
+     "neutral": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.25,
+     "cautionary": 0.15,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.4,
+     "neutral": 0.2,
+     "cautionary": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.1
+    },
+    {
+     "hopeful": 0.55,
+     "neutral": 0.2,
+     "critical": 0.1,
+     "celebratory": 0.1,
+     "cautionary": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "neutral": 0.2,
+     "cautionary": 0.2,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.6,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.6,
+     "neutral": 0.15,
+     "celebratory": 0.1,
+     "cautionary": 0.1,
+     "critical": 0.05
+    },
+    {
+     "hopeful": 0.5,
+     "cautionary": 0.25,
+     "neutral": 0.15,
+     "critical": 0.05,
+     "celebratory": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "neutral": 0.25,
+     "cautionary": 0.1,
+     "critical": 0.05,
+     "celebratory": 0.05
+    },
+    {
+     "hopeful": 0.55,
+     "neutral": 0.2,
+     "cautionary": 0.15,
+     "critical": 0.05,
+     "celebratory": 0.05
+    }
+   ],
+   "mentions_ai_or_computing": [
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8947368421052632,
+     "yes": 0.10526315789473684
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.8947368421052632,
+     "yes": 0.10526315789473684
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.8947368421052632,
+     "yes": 0.10526315789473684
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.95,
+     "yes": 0.05
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    },
+    {
+     "no": 0.9,
+     "yes": 0.1
+    }
+   ],
+   "mentions_environment_or_climate": [
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.65,
+     "yes": 0.35
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7368421052631579,
+     "yes": 0.2631578947368421
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.65,
+     "yes": 0.35
+    },
+    {
+     "no": 0.7368421052631579,
+     "yes": 0.2631578947368421
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.6842105263157895,
+     "yes": 0.3157894736842105
+    },
+    {
+     "no": 0.65,
+     "yes": 0.35
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.85,
+     "yes": 0.15
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.75,
+     "yes": 0.25
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    },
+    {
+     "no": 0.7,
+     "yes": 0.3
+    },
+    {
+     "no": 0.8,
+     "yes": 0.2
+    }
+   ]
+  }
+ },
+ "verdicts": {
+  "E1_rate_similar": {
+   "raw_shared": 0,
+   "anon_shared": 0,
+   "anon_rate": 0.0,
+   "nn_other": 0.5619382273649021,
+   "within_015": 0.0,
+   "holds": false,
+   "fails_upward": false
+  },
+  "E2_longer_memory": {
+   "half_life": null,
+   "own_seed_50": 0.8,
+   "holds": false,
+   "under_8": false
+  },
+  "E3_abstract_drift": {
+   "step0_top_domain": 0.2,
+   "late_modal_domain": "history",
+   "late_modal_share": 0.23623623623623624,
+   "abstract_step0": 0.15,
+   "abstract_late": 0.5925925925925926,
+   "holds": false,
+   "named_direction_holds": false,
+   "no_menu": true
+  },
+  "E4_format": {
+   "words_99": 517.0,
+   "summary_le_50": 0.786,
+   "refusal_flags": 0,
+   "holds": true
+  }
+ },
+ "refusal_flagged_examples": []
+}

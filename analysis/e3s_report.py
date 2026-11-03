@@ -99,7 +99,7 @@ def cell_stats(run, X, Xa, recs, T, S):
     return dict(n_traj=len(T), n_steps=len(S), half_life=h, ident_at={k: round(float(ident[k]), 2) for k in (1, 5, 10, 25, 50, 99) if k < len(ident)}, memory_curve=[float(x) for x in ident],
                 nn_other_median=float(np.median(nn)), nn_other_anon_median=float(np.median(nna)), within_015=float((nn <= 0.15).mean()), within_015_anon=float((nna <= 0.15).mean()),
                 vendi_story_99=vendi(Xu[:, -1]), vendi_summary_99=vs99, words_median_99=float(np.median(words99)),
-                summary_words_median=float(np.median(summ)) if summ else None, summary_le_limit_share={lim: float(np.mean([w <= lim for w in summ])) for lim in (20, 30, 50)} if summ else None,
+                summary_words_median=float(np.median(summ)) if summ else None, summary_le_limit_share={lim: float(np.mean([w <= lim for w in summ])) for lim in (20, 25, 30, 50)} if summ else None,
                 summary_flags=dict(sum_flags), audit=dict(exact_copies=audit["exact_copies"], n_cjk=audit["n_cjk_stories"], names_50_99=audit["names_50_99"], flags=audit["flags"]),
                 theme=theme_stats(run, T))
 
@@ -123,6 +123,8 @@ def main():
     cpu_only(); ap = argparse.ArgumentParser()
     ap.add_argument("--scale", default="e3_1_haiku_100"); ap.add_argument("--width", default="e3_1w20_haiku"); ap.add_argument("--base", default="e3_1_haiku")
     ap.add_argument("--no-embed", action="store_true"); ap.add_argument("--n-sub", type=int, default=50); ap.add_argument("--skip", nargs="*", default=[])
+    ap.add_argument("--out", default="scale_width", help="output stem under reports/e3/")
+    ap.add_argument("--d1", action="store_true", help="the --width cell is an E3-D theme-bottleneck cell: grade D1 (predictions.md E3 follow-ups) instead of W1-W4")
     a = ap.parse_args()
     import torch; dev = "cuda" if cpu_only() else "cpu"; torch.set_num_threads(8)
     runs = [r for r in (a.base, a.scale, a.width) if r and r not in a.skip and (ROOT / "runs" / r).exists()]
@@ -220,7 +222,17 @@ def main():
             ss = sc["same_seed"]; V["S4_seed_trace"] = dict(gap_raw=ss["raw"]["gap"], gap_anon=ss["anon"]["gap"], gap_in_band=0.02 <= ss["raw"]["gap"] <= 0.10, same_seed_pairs_sharing=ss["same_seed_pairs_sharing_cluster"], le_1=ss["same_seed_pairs_sharing_cluster"] <= 1,
                                                           holds=(0.02 <= ss["raw"]["gap"] <= 0.10 and ss["same_seed_pairs_sharing_cluster"] <= 1))
         V["speculation_1"] = "holds" if V["S1_wells_numerous"]["holds"] else ("fails" if V["S1_wells_numerous"]["fails"] else "in between: sharing pairs present but no well reused by >= 4 (W > 500 at this n)")
-    if R["width"] and a.width in c and a.base in c:
+    if R["width"] and a.width in c and a.base in c and a.d1:
+        w, b = c[a.width], c[a.base]; wa = R["width"]["atlas"]; need = 3 if "haiku" in a.width else 2
+        V["D1_abstraction_converges"] = dict(shared_raw=wa["raw"]["width"]["shared"], shared_anon=wa["anon"]["width"]["shared"], need_shared=need, shared_ok=wa["raw"]["width"]["shared"] >= need,
+                                             base_shared_raw=wa["raw"]["base"]["shared"], half_life=w["half_life"], base_half=b["half_life"], half_le_10=(w["half_life"] is not None and w["half_life"] <= 10),
+                                             nn_other=w["nn_other_median"], base_nn=b["nn_other_median"], nn_le_030=w["nn_other_median"] <= 0.30, within_015=w["within_015"],
+                                             vendi_theme_99=w["vendi_summary_99"], base_vendi_summary_99=b["vendi_summary_99"], vendi_half=(w["vendi_summary_99"] is not None and b["vendi_summary_99"] is not None and w["vendi_summary_99"] <= 0.5 * b["vendi_summary_99"]),
+                                             cover=w["audit"]["names_50_99"]["top10_cover"], base_cover=b["audit"]["names_50_99"]["top10_cover"], words=w["words_median_99"], theme_words_median=w["summary_words_median"], theme_le25=(w["summary_le_limit_share"] or {}).get(25))
+        v = V["D1_abstraction_converges"]; v["n_clauses_hold"] = sum([v["shared_ok"], v["half_le_10"], v["nn_le_030"], v["vendi_half"]]); v["holds"] = v["n_clauses_hold"] == 4
+        if w["theme"] and b["theme"]:
+            V["D_theme_layer_posthoc"] = dict(modal=w["theme"]["modal"], base_modal=b["theme"]["modal"], modal_share=w["theme"]["modal_share"], base_modal_share=b["theme"]["modal_share"], woman=w["theme"]["woman_share"], base_woman=b["theme"]["woman_share"], hopeful=w["theme"]["hopeful_share"], base_hopeful=b["theme"]["hopeful_share"])
+    elif R["width"] and a.width in c and a.base in c:
         w, b = c[a.width], c[a.base]; wa = R["width"]["atlas"]
         V["W1_width_is_a_lever"] = dict(half_life=w["half_life"], base_half=b["half_life"], half_le_7=(w["half_life"] is not None and w["half_life"] <= 7), nn_other=w["nn_other_median"], base_nn=b["nn_other_median"], nn_le_030=w["nn_other_median"] <= 0.30,
                                         within_015=w["within_015"], within_ge_002=w["within_015"] >= 0.02, shared_raw=wa["raw"]["width"]["shared"], shared_anon=wa["anon"]["width"]["shared"], base_shared_raw=wa["raw"]["base"]["shared"],
@@ -253,11 +265,12 @@ def main():
     for run in runs:
         recs, T, S, X, Xa = data[run]; ax[2].hist(nn_other(unit(X)), bins=40, histtype="step", density=True, label=run)
     ax[2].axvline(0.15, ls=":", c="k"); ax[2].set_title("nearest other-trajectory distance (steps ≥ 25)"); ax[2].legend(fontsize=7)
-    fig.tight_layout(); fig.savefig(OUT / "scale_width.png", dpi=120)
+    fig.tight_layout(); fig.savefig(OUT / f"{a.out}.png", dpi=120)
 
     # ---- markdown
     md = ["# E3-S (100 seeds) and E3-W (20-word summary): Haiku compress–expand", "", "Predictions: predictions.md \"E3 scale and bottleneck width\" (2026-11-02). Pair-sharing rule and k scaling as stated there; anonymised = names → X (E3-A filter).", ""]
     if V.get("speculation_1"): md += [f"**Speculation 1 (numerous wells): {V['speculation_1']}.** " + "; ".join(f"{k} {('holds' if v.get('holds') else 'fails') if isinstance(v, dict) and 'holds' in v else ''}" for k, v in V.items() if k.startswith("S")), ""]
+    if "D1_abstraction_converges" in V: md += [f"**D1 (abstraction converges): {'holds' if V['D1_abstraction_converges']['holds'] else 'fails'}, {V['D1_abstraction_converges']['n_clauses_hold']} of 4 clauses** (shared raw {V['D1_abstraction_converges']['shared_raw']} vs ≥ {V['D1_abstraction_converges']['need_shared']}; half-life {V['D1_abstraction_converges']['half_life']} vs ≤ 10; nn-other {V['D1_abstraction_converges']['nn_other']:.3f} vs ≤ 0.30; theme Vendi {V['D1_abstraction_converges']['vendi_theme_99']:.1f} vs ≤ half of {V['D1_abstraction_converges']['base_vendi_summary_99']:.1f}).", ""]
     if "W1_width_is_a_lever" in V: md += [f"**Speculation 2 (width): W1 {V['W1_width_is_a_lever']['n_clauses_hold']} of 8 clauses; " + "; ".join(f"{k} {'holds' if v.get('holds') else 'fails'}" for k, v in V.items() if k.startswith("W") and "holds" in v) + (" ; direction-if-wrong condition met" if V["W1_width_is_a_lever"]["direction_if_wrong"] else "") + ".**", ""]
     md += ["## Cells", "", "| cell | n | half-life | own seed 10 / 50 / 99 | nn-other raw / anon | within 0.15 raw / anon | Vendi story / summary at 99 | words at 99 | summary words (≤20 / ≤50) | top-10 cover | top names 50–99 | modal tuple (share) | woman / hopeful |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for run in runs:
@@ -282,9 +295,9 @@ def main():
         md += ["", f"Shared-cluster sheets: `sw_cluster_{a.width}_raw.md`, `sw_cluster_{a.width}_anon.md`."]
     md += ["", "## Verdicts", ""]
     for k, v in V.items(): md.append(f"- **{k}**: " + (json.dumps(v, default=float) if isinstance(v, dict) else str(v)))
-    md += ["", "![curves](scale_width.png)", ""]
+    md += ["", f"![curves]({a.out}.png)", ""]
     for name, text in sheets: (OUT / name).write_text(text, encoding="utf-8")
-    (OUT / "scale_width.json").write_text(json.dumps(R, indent=1, default=float)); (OUT / "scale_width.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    (OUT / f"{a.out}.json").write_text(json.dumps(R, indent=1, default=float)); (OUT / f"{a.out}.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print("\n".join(md[:12]))
 
 

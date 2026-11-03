@@ -1,0 +1,13 @@
+# E3-D (predictions.md "E3 follow-ups" D1, 2026-11-01; run 2026-11-02 at Brad's go-ahead): theme-bottleneck text loop under mistral:7b
+# (digest 6577803aa9a0) via Ollama at T 0.9, parallel 2, laptop. Same compress instruction as e3_d_haiku; step 0 copied from e3_1_mistral.
+run_name: e3_d_mistral
+arm: E3-D
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_mistral}
+summary_word_limit: 25
+instructions:
+  compress: "State the theme of this story in one sentence of 25 words or fewer. Do not mention any character's name or any place name. Return only the sentence. Do not explain."
+model: {backend: ollama, model: "mistral:7b", digest_prefix: 6577803aa9a0, parallel: 2}

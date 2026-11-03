@@ -1,0 +1,14 @@
+# E3-D (predictions.md "E3 follow-ups" D1, 2026-11-01; run 2026-11-02 at Brad's go-ahead): theme-bottleneck text loop. The compress
+# instruction asks for a one-sentence theme (<= 25 words, no character or place names); expand unchanged; Hintze seeds 0–19 x 100 steps,
+# claude-haiku-5-5 (default sampling, D16; effort low). Step 0 copied from e3_1_haiku (same model, same expand instruction).
+run_name: e3_d_haiku
+arm: E3-D
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+step0: {source: e3_1_haiku}
+summary_word_limit: 25
+instructions:
+  compress: "State the theme of this story in one sentence of 25 words or fewer. Do not mention any character's name or any place name. Return only the sentence. Do not explain."
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 8, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

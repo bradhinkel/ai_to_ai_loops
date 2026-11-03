@@ -1,0 +1,1138 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_haiku_100": {
+   "n_traj": 100,
+   "n_steps": 100,
+   "half_life": 12,
+   "ident_at": {
+    "1": 0.95,
+    "5": 0.67,
+    "10": 0.57,
+    "25": 0.37,
+    "50": 0.29,
+    "99": 0.13
+   },
+   "memory_curve": [
+    1.0,
+    0.95,
+    0.87,
+    0.79,
+    0.74,
+    0.67,
+    0.71,
+    0.63,
+    0.56,
+    0.59,
+    0.57,
+    0.54,
+    0.5,
+    0.52,
+    0.49,
+    0.46,
+    0.47,
+    0.44,
+    0.46,
+    0.42,
+    0.38,
+    0.46,
+    0.4,
+    0.39,
+    0.36,
+    0.37,
+    0.37,
+    0.35,
+    0.34,
+    0.35,
+    0.34,
+    0.36,
+    0.33,
+    0.33,
+    0.29,
+    0.3,
+    0.3,
+    0.26,
+    0.32,
+    0.26,
+    0.25,
+    0.29,
+    0.3,
+    0.28,
+    0.28,
+    0.28,
+    0.28,
+    0.28,
+    0.26,
+    0.26,
+    0.29,
+    0.23,
+    0.27,
+    0.24,
+    0.27,
+    0.23,
+    0.23,
+    0.23,
+    0.2,
+    0.27,
+    0.22,
+    0.2,
+    0.27,
+    0.23,
+    0.21,
+    0.26,
+    0.19,
+    0.19,
+    0.2,
+    0.16,
+    0.2,
+    0.17,
+    0.24,
+    0.22,
+    0.17,
+    0.17,
+    0.22,
+    0.16,
+    0.16,
+    0.23,
+    0.17,
+    0.12,
+    0.16,
+    0.18,
+    0.2,
+    0.13,
+    0.15,
+    0.16,
+    0.13,
+    0.11,
+    0.15,
+    0.16,
+    0.16,
+    0.13,
+    0.11,
+    0.14,
+    0.16,
+    0.12,
+    0.15,
+    0.13
+   ],
+   "nn_other_median": 0.3143040863573261,
+   "nn_other_anon_median": 0.2431635582615349,
+   "within_015": 0.0018666666666666666,
+   "within_015_anon": 0.013333333333333334,
+   "vendi_story_99": 21.631758394983535,
+   "vendi_summary_99": 37.93799526331882,
+   "words_median_99": 511.5,
+   "summary_words_median": 48.0,
+   "summary_le_limit_share": {
+    "20": 0.0002,
+    "25": 0.0002,
+    "30": 0.0006,
+    "50": 0.6363
+   },
+   "summary_flags": {
+    "over_50_words": 3637,
+    "refusal": 5,
+    "length_cutoff": 2,
+    "empty": 1
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 4960,
+     "distinct": 348,
+     "top10": [
+      [
+       "Maya",
+       412
+      ],
+      [
+       "Ruth",
+       362
+      ],
+      [
+       "Mara",
+       190
+      ],
+      [
+       "Tomas",
+       178
+      ],
+      [
+       "Marcus",
+       151
+      ],
+      [
+       "Daniel",
+       140
+      ],
+      [
+       "Eli",
+       136
+      ],
+      [
+       "Nora",
+       120
+      ],
+      [
+       "Harold",
+       118
+      ],
+      [
+       "Tom",
+       105
+      ]
+     ],
+     "top10_cover": 0.38548387096774195,
+     "llm_set_hits": [
+      "Eli",
+      "Maya"
+     ]
+    },
+    "flags": {
+     "story_refusal": 1704,
+     "summary_over_50_words": 3637,
+     "summary_refusal": 5,
+     "summary_length_cutoff": 2,
+     "summary_empty": 1
+    }
+   },
+   "theme": {
+    "n": 4993,
+    "bad": 17,
+    "modal": [
+     "young_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.08852393350690968,
+    "woman_share": 0.6721409973963549,
+    "hopeful_share": 0.7001802523532946
+   }
+  },
+  "e3_1_haiku_100b": {
+   "n_traj": 100,
+   "n_steps": 100,
+   "half_life": 10,
+   "ident_at": {
+    "1": 0.98,
+    "5": 0.68,
+    "10": 0.49,
+    "25": 0.32,
+    "50": 0.23,
+    "99": 0.12
+   },
+   "memory_curve": [
+    1.0,
+    0.98,
+    0.86,
+    0.79,
+    0.7,
+    0.68,
+    0.7,
+    0.65,
+    0.54,
+    0.55,
+    0.49,
+    0.49,
+    0.48,
+    0.44,
+    0.4,
+    0.42,
+    0.39,
+    0.44,
+    0.38,
+    0.43,
+    0.38,
+    0.39,
+    0.35,
+    0.33,
+    0.32,
+    0.32,
+    0.33,
+    0.35,
+    0.27,
+    0.29,
+    0.26,
+    0.31,
+    0.26,
+    0.26,
+    0.3,
+    0.27,
+    0.32,
+    0.35,
+    0.34,
+    0.27,
+    0.29,
+    0.25,
+    0.21,
+    0.23,
+    0.23,
+    0.2,
+    0.23,
+    0.23,
+    0.2,
+    0.22,
+    0.23,
+    0.25,
+    0.24,
+    0.2,
+    0.22,
+    0.21,
+    0.22,
+    0.23,
+    0.19,
+    0.2,
+    0.29,
+    0.18,
+    0.19,
+    0.21,
+    0.22,
+    0.17,
+    0.17,
+    0.22,
+    0.17,
+    0.14,
+    0.2,
+    0.14,
+    0.16,
+    0.19,
+    0.19,
+    0.17,
+    0.11,
+    0.12,
+    0.18,
+    0.16,
+    0.16,
+    0.17,
+    0.17,
+    0.22,
+    0.18,
+    0.19,
+    0.16,
+    0.17,
+    0.15,
+    0.16,
+    0.17,
+    0.15,
+    0.14,
+    0.16,
+    0.16,
+    0.17,
+    0.14,
+    0.13,
+    0.12,
+    0.12
+   ],
+   "nn_other_median": 0.313737611816965,
+   "nn_other_anon_median": 0.2404695315125065,
+   "within_015": 0.0005333333333333334,
+   "within_015_anon": 0.013066666666666667,
+   "vendi_story_99": 22.441418088853997,
+   "vendi_summary_99": 37.60453099579515,
+   "words_median_99": 514.5,
+   "summary_words_median": 49.0,
+   "summary_le_limit_share": {
+    "20": 0.0001,
+    "25": 0.0001,
+    "30": 0.0007,
+    "50": 0.6204
+   },
+   "summary_flags": {
+    "over_50_words": 3796,
+    "empty": 1,
+    "length_cutoff": 1
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 4987,
+     "distinct": 411,
+     "top10": [
+      [
+       "Maya",
+       274
+      ],
+      [
+       "Ruth",
+       226
+      ],
+      [
+       "Mara",
+       196
+      ],
+      [
+       "Walter",
+       178
+      ],
+      [
+       "Tomas",
+       142
+      ],
+      [
+       "Margaret",
+       128
+      ],
+      [
+       "Eli",
+       119
+      ],
+      [
+       "Tuesday",
+       112
+      ],
+      [
+       "Mira",
+       105
+      ],
+      [
+       "Daniel",
+       102
+      ]
+     ],
+     "top10_cover": 0.31722478443954283,
+     "llm_set_hits": [
+      "Eli",
+      "Maya",
+      "Mira"
+     ]
+    },
+    "flags": {
+     "story_refusal": 1628,
+     "summary_over_50_words": 3796,
+     "summary_empty": 1,
+     "summary_length_cutoff": 1
+    }
+   },
+   "theme": {
+    "n": 4988,
+    "bad": 29,
+    "modal": [
+     "young_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.09643143544506816,
+    "woman_share": 0.6788291900561347,
+    "hopeful_share": 0.7097032878909383
+   }
+  }
+ },
+ "verdicts": {
+  "R1_law_replicates": {
+   "rate": 0.004646464646464647,
+   "rate_in_band": true,
+   "shared_ge_8": true,
+   "mult_ge_3": true,
+   "raw_shared_ge_3": true,
+   "W_in_band": true,
+   "holds": true
+  },
+  "R2_wells_are_the_models": {
+   "visited": 6,
+   "of": 13,
+   "holds": false,
+   "shoebox": "grade by hand from the rows"
+  },
+  "R3_new_wells": {
+   "new": 4,
+   "new_touched": 3,
+   "pooled_shared": 51,
+   "pooled_rate": 0.005376884422110552,
+   "single_rate": 0.004646464646464647,
+   "holds": true
+  },
+  "R4_seeds_dont_pick_wells": {
+   "same_share": 9,
+   "gap": -0.041341278867690456,
+   "cross_over_within": 1.0870588235294116,
+   "holds": false
+  }
+ },
+ "R1": {
+  "raw": {
+   "shared": 4,
+   "pairs": 4,
+   "rate": 0.0008080808080808081,
+   "max_mult": 2,
+   "W_hat": 1237.5,
+   "persistent": 44,
+   "first_sample": {
+    "shared": 5,
+    "pairs": 5,
+    "rate": 0.00101010101010101,
+    "max_mult": 2,
+    "W_hat": 990.0
+   }
+  },
+  "anon": {
+   "shared": 17,
+   "pairs": 23,
+   "rate": 0.004646464646464647,
+   "max_mult": 4,
+   "W_hat": 215.2173913043478,
+   "persistent": 54,
+   "first_sample": {
+    "shared": 13,
+    "pairs": 30,
+    "rate": 0.006060606060606061,
+    "max_mult": 4,
+    "W_hat": 165.0
+   }
+  }
+ },
+ "R2": {
+  "a_wells": 13,
+  "visited_by_B": 6,
+  "rows": [
+   {
+    "a_well": 9,
+    "a_trajs": [
+     24,
+     30,
+     57,
+     80
+    ],
+    "joint_cluster": 256,
+    "centroid_dist": 0.004,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     24,
+     30,
+     57,
+     80
+    ],
+    "example": "Dorothy finds a shoebox of thirty-one unopened letters from their estranged Aunt Ruth, hidden by her sister Marlene, who was too ashamed to read them. Together,"
+   },
+   {
+    "a_well": 16,
+    "a_trajs": [
+     4,
+     61
+    ],
+    "joint_cluster": 98,
+    "centroid_dist": 0.009,
+    "b_trajs": [
+     1
+    ],
+    "a_trajs_in_joint": [
+     4,
+     19,
+     61
+    ],
+    "example": "Lena returns to the lake cabin after eleven months away, where her sister Mara is still angry about Lena missing their father's final months and funeral. Lena a"
+   },
+   {
+    "a_well": 39,
+    "a_trajs": [
+     16,
+     22,
+     71
+    ],
+    "joint_cluster": 9,
+    "centroid_dist": 0.009,
+    "b_trajs": [],
+    "a_trajs_in_joint": [],
+    "example": "Nora finds her late father's notebooks, filled with secret good deeds for neighbors. Inspired, she continues his quiet kindnesses, fixing hedges, railings, and "
+   },
+   {
+    "a_well": 43,
+    "a_trajs": [
+     5,
+     37
+    ],
+    "joint_cluster": 76,
+    "centroid_dist": 0.018,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     5,
+     37
+    ],
+    "example": "Maya receives a voicemail from her late father's still-active number, asking her to meet him at Calder Lake. There, she finds him fading, tethered to her by a s"
+   },
+   {
+    "a_well": 46,
+    "a_trajs": [
+     71,
+     84,
+     93
+    ],
+    "joint_cluster": 244,
+    "centroid_dist": 0.016,
+    "b_trajs": [
+     6,
+     71,
+     84
+    ],
+    "a_trajs_in_joint": [
+     71,
+     93
+    ],
+    "example": "Ruth Haldane, who had kept a ledger of every favor and debt for thirty-one years, lost her barn in a storm. Neighbors rallied without being asked, and an old en"
+   },
+   {
+    "a_well": 68,
+    "a_trajs": [
+     27,
+     91
+    ],
+    "joint_cluster": 21,
+    "centroid_dist": 0.001,
+    "b_trajs": [
+     91
+    ],
+    "a_trajs_in_joint": [
+     27,
+     91
+    ],
+    "example": "After her father's death, Maya, recently laid off and withdrawn, finds a letter in his atlas urging her to vote locally. Visiting the Grange Hall, she reconnect"
+   },
+   {
+    "a_well": 88,
+    "a_trajs": [
+     28,
+     29,
+     66
+    ],
+    "joint_cluster": 86,
+    "centroid_dist": 0.019,
+    "b_trajs": [
+     58
+    ],
+    "a_trajs_in_joint": [
+     29,
+     66
+    ],
+    "example": "Marcus received apology letters from Dev, his former bandmate, after Dev stole $11,240 from their band account. Dev stopped paying and disappeared. Eleven years"
+   },
+   {
+    "a_well": 115,
+    "a_trajs": [
+     8,
+     20,
+     72
+    ],
+    "joint_cluster": 296,
+    "centroid_dist": 0.034,
+    "b_trajs": [
+     6,
+     56
+    ],
+    "a_trajs_in_joint": [
+     20
+    ],
+    "example": "Maren discovers a letter confessing that June Harlan, not clockmaker Eli Battle, stole the church silver in 1961. After the town publicly apologizes, Eli return"
+   },
+   {
+    "a_well": 143,
+    "a_trajs": [
+     24,
+     52,
+     57,
+     95
+    ],
+    "joint_cluster": 232,
+    "centroid_dist": 0.028,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     24,
+     57
+    ],
+    "example": "Dorothy finds a shoebox of thirty-one unopened letters from their estranged Aunt Ruth, hidden by her sister Marlene, who was too ashamed to read them. Together,"
+   },
+   {
+    "a_well": 154,
+    "a_trajs": [
+     63,
+     94
+    ],
+    "joint_cluster": 255,
+    "centroid_dist": 0.007,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     63,
+     94
+    ],
+    "example": "Tom, laid off since March, has pretended to go to work every day, sitting in a mall parking lot. His daughter Mara, who falsely listed him as employed on a coun"
+   },
+   {
+    "a_well": 155,
+    "a_trajs": [
+     18,
+     97
+    ],
+    "joint_cluster": 220,
+    "centroid_dist": 0.024,
+    "b_trajs": [
+     78
+    ],
+    "a_trajs_in_joint": [
+     18
+    ],
+    "example": "Maren keeps setting out honey in her late mother's blue cup each morning, unable to let go. Aunt Judith and Priya urge her to move on. After burning her mother'"
+   },
+   {
+    "a_well": 164,
+    "a_trajs": [
+     4,
+     78
+    ],
+    "joint_cluster": 24,
+    "centroid_dist": 0.012,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     78
+    ],
+    "example": "Lena returns to the lake cabin after eleven months away, where her sister Mara is still angry about Lena missing their father's final months and funeral. Lena a"
+   },
+   {
+    "a_well": 166,
+    "a_trajs": [
+     12,
+     79
+    ],
+    "joint_cluster": 198,
+    "centroid_dist": 0.019,
+    "b_trajs": [],
+    "a_trajs_in_joint": [
+     12,
+     79
+    ],
+    "example": "Pianist Maya Ellison freezes mid-performance at Symphony Hall, then finds her way back by weaving her late mother's unfinished lullaby into Chopin's Nocturne. L"
+   }
+  ]
+ },
+ "R3": {
+  "b_wells": 17,
+  "new": 4,
+  "new_touched_by_A": 3,
+  "rows": [
+   {
+    "b_well": 5,
+    "b_trajs": [
+     6,
+     71,
+     84
+    ],
+    "nearest_a_well": 46,
+    "nearest_a_well_dist": 0.033,
+    "new": false,
+    "a_trajs_touching": [
+     6,
+     31,
+     71,
+     84,
+     93
+    ],
+    "example": "Eli Hollis inherits his late father's struggling general store, along with a ledger of forgiven debts marked \"paid forward.\" He declines a $400,000 resort offer"
+   },
+   {
+    "b_well": 9,
+    "b_trajs": [
+     6,
+     93
+    ],
+    "nearest_a_well": 39,
+    "nearest_a_well_dist": 0.034,
+    "new": false,
+    "a_trajs_touching": [
+     16,
+     20,
+     22,
+     31,
+     71,
+     72
+    ],
+    "example": "Eli Hollis inherits his late father's struggling general store, along with a ledger of forgiven debts marked \"paid forward.\" He declines a $400,000 resort offer"
+   },
+   {
+    "b_well": 12,
+    "b_trajs": [
+     76,
+     86
+    ],
+    "nearest_a_well": 166,
+    "nearest_a_well_dist": 0.169,
+    "new": true,
+    "a_trajs_touching": [
+     86
+    ],
+    "example": "Eleven months after her grandmother Lena's funeral, Maya opens the violin case and finds a note urging her to play the Chaconne, \"badly if you must.\" Maya, who "
+   },
+   {
+    "b_well": 19,
+    "b_trajs": [
+     16,
+     58
+    ],
+    "nearest_a_well": 88,
+    "nearest_a_well_dist": 0.038,
+    "new": false,
+    "a_trajs_touching": [
+     0,
+     29,
+     66,
+     81,
+     87
+    ],
+    "example": "Lena receives a 5 a.m. call that her estranged father, Miguel, is dying in an ICU. Her friend Priya drives her to the hospital, where Lena reconciles with him a"
+   },
+   {
+    "b_well": 40,
+    "b_trajs": [
+     76,
+     86
+    ],
+    "nearest_a_well": 166,
+    "nearest_a_well_dist": 0.211,
+    "new": true,
+    "a_trajs_touching": [
+     6,
+     12,
+     77,
+     86
+    ],
+    "example": "Eleven months after her grandmother Lena's funeral, Maya opens the violin case and finds a note urging her to play the Chaconne, \"badly if you must.\" Maya, who "
+   },
+   {
+    "b_well": 42,
+    "b_trajs": [
+     6,
+     84
+    ],
+    "nearest_a_well": 115,
+    "nearest_a_well_dist": 0.055,
+    "new": false,
+    "a_trajs_touching": [
+     8,
+     16,
+     20,
+     22,
+     31,
+     71,
+     76,
+     90,
+     93
+    ],
+    "example": "Eli Hollis inherits his late father's struggling general store, along with a ledger of forgiven debts marked \"paid forward.\" He declines a $400,000 resort offer"
+   },
+   {
+    "b_well": 48,
+    "b_trajs": [
+     0,
+     16,
+     72
+    ],
+    "nearest_a_well": 16,
+    "nearest_a_well_dist": 0.102,
+    "new": false,
+    "a_trajs_touching": [
+     87
+    ],
+    "example": "Victor and Eleanor wait in a hospital while their mother recovers from hip surgery. Their guilt over their younger brother Danny's drowning twenty-two years ago"
+   },
+   {
+    "b_well": 62,
+    "b_trajs": [
+     22,
+     95
+    ],
+    "nearest_a_well": 46,
+    "nearest_a_well_dist": 0.132,
+    "new": false,
+    "a_trajs_touching": [
+     27,
+     74
+    ],
+    "example": "Mateo receives a $310,000 offer to buy his late father's house, contingent on cutting down the peach tree his father planted. Instead of selling, he declines. N"
+   },
+   {
+    "b_well": 63,
+    "b_trajs": [
+     1,
+     64
+    ],
+    "nearest_a_well": 143,
+    "nearest_a_well_dist": 0.048,
+    "new": false,
+    "a_trajs_touching": [
+     0,
+     5,
+     16,
+     24,
+     27,
+     29,
+     30,
+     44,
+     52,
+     64,
+     65,
+     95
+    ],
+    "example": "Mara receives a letter from Ruth Callahan, the woman who raised her before she was sent away at eleven. Returning to Harlow Falls, she learns her mother fled an"
+   },
+   {
+    "b_well": 91,
+    "b_trajs": [
+     27,
+     55
+    ],
+    "nearest_a_well": 154,
+    "nearest_a_well_dist": 0.129,
+    "new": false,
+    "a_trajs_touching": [
+     27,
+     94
+    ],
+    "example": "Ada, a silent child, finds comfort at Eastfield library, where librarian Mrs. Okafor offers cocoa, birdwatching, and index cards so she can communicate without "
+   },
+   {
+    "b_well": 116,
+    "b_trajs": [
+     15,
+     22
+    ],
+    "nearest_a_well": 143,
+    "nearest_a_well_dist": 0.132,
+    "new": false,
+    "a_trajs_touching": [
+     27,
+     97
+    ],
+    "example": "Elena, grieving her mother, takes a job at Walter Pruitt's nursery, where he teaches her patience. After Walter dies, he leaves her his neglected orchard and th"
+   },
+   {
+    "b_well": 117,
+    "b_trajs": [
+     85,
+     88
+    ],
+    "nearest_a_well": 115,
+    "nearest_a_well_dist": 0.21,
+    "new": true,
+    "a_trajs_touching": [
+     10,
+     90
+    ],
+    "example": "Hydrologist Maya Okafor receives an anonymous poem warning of ground collapse. Though sensors show nothing wrong, she notices drained ponds and tilted floors, t"
+   },
+   {
+    "b_well": 121,
+    "b_trajs": [
+     1,
+     28,
+     89,
+     94
+    ],
+    "nearest_a_well": 16,
+    "nearest_a_well_dist": 0.028,
+    "new": false,
+    "a_trajs_touching": [
+     4,
+     7,
+     19,
+     24,
+     34,
+     52,
+     60,
+     61,
+     63,
+     64
+    ],
+    "example": "Mara receives a letter from Ruth Callahan, the woman who raised her before she was sent away at eleven. Returning to Harlow Falls, she learns her mother fled an"
+   },
+   {
+    "b_well": 139,
+    "b_trajs": [
+     43,
+     77
+    ],
+    "nearest_a_well": 88,
+    "nearest_a_well_dist": 0.185,
+    "new": true,
+    "a_trajs_touching": [],
+    "example": "Three weeks before her Vienna Staatsoper debut, Lena lost her voice. Her manager urged cancellation, but Lena recalled her grandmother's lullaby and her teacher"
+   },
+   {
+    "b_well": 144,
+    "b_trajs": [
+     26,
+     31
+    ],
+    "nearest_a_well": 88,
+    "nearest_a_well_dist": 0.109,
+    "new": false,
+    "a_trajs_touching": [
+     29,
+     81
+    ],
+    "example": "Caught in a sudden October rainstorm, widower Tobias Greaves takes shelter in a tailor's shop, where Adaeze Okafor mends his torn coat with green thread. Sharin"
+   },
+   {
+    "b_well": 164,
+    "b_trajs": [
+     24,
+     93
+    ],
+    "nearest_a_well": 16,
+    "nearest_a_well_dist": 0.087,
+    "new": false,
+    "a_trajs_touching": [
+     34,
+     60,
+     61,
+     71,
+     91
+    ],
+    "example": "Maudeen receives a note from her estranged sister Ruth, who needs help repairing their mother's storm-damaged barn. Driving north, Maudeen confronts years of si"
+   },
+   {
+    "b_well": 189,
+    "b_trajs": [
+     0,
+     16
+    ],
+    "nearest_a_well": 16,
+    "nearest_a_well_dist": 0.05,
+    "new": false,
+    "a_trajs_touching": [
+     0,
+     9,
+     19,
+     24,
+     29,
+     61,
+     63,
+     87
+    ],
+    "example": "Victor and Eleanor wait in a hospital while their mother recovers from hip surgery. Their guilt over their younger brother Danny's drowning twenty-two years ago"
+   }
+  ],
+  "a_wells_with_a_b_well_within_radius": [
+   16,
+   39,
+   46,
+   88,
+   115,
+   143,
+   154
+  ],
+  "pooled": {
+   "k": 396,
+   "shared": 51,
+   "pairs": 107,
+   "rate": 0.005376884422110552
+  }
+ },
+ "R4": {
+  "same_seed_median": 0.33007881719812393,
+  "diff_seed_median": 0.3714200960658144,
+  "gap": -0.041341278867690456,
+  "same_seed_pairs_sharing": 9,
+  "expected_if_independent": 0.5376884422110553,
+  "same_seed_detail": [
+   {
+    "seed": 1,
+    "joint_clusters": [
+     165
+    ],
+    "seed_text": "As they stood hand in hand on the weathered bench, their six-year romance blossomed into a serious and steadfast love th",
+    "a_summary_50": "Eli, a poor secret-keeper, blurts out his marriage proposal plan to Mara in their new lake cottage. Despite his slip, he proposes at sunset,",
+    "b_summary_50": "Mara receives a letter from Ruth Callahan, the woman who raised her before she was sent away at eleven. Returning to Harlow Falls, she learn"
+   },
+   {
+    "seed": 3,
+    "joint_clusters": [
+     209
+    ],
+    "seed_text": "As the morning sun rises over the nation, eight weary travelers prepare to embark on a plan that will seem impossible to",
+    "a_summary_50": "Mara and her friends receive a mysterious invitation to a blue-doored cottage at dawn. Inside, a breakfast waits, but Tomas vanishes, the do",
+    "b_summary_50": "Fleeing soldiers and burning Cairn, Ilse led her children and a few survivors over the Veyl Pass to a green valley. There she planted apple "
+   },
+   {
+    "seed": 14,
+    "joint_clusters": [
+     10
+    ],
+    "seed_text": "A consumer of fog, she clung to the old wooden dock's worn planks, her international reputation for stubbornness matched",
+    "a_summary_50": "Marisol receives a note urging her to meet at Caldera Reef, calling her by a name lost since her father's boat vanished nine years ago. Clut",
+    "b_summary_50": "Marguerite receives a note in Tom's handwriting, asking her to meet him at a causeway at low tide. Eight months after his boat sank and was "
+   },
+   {
+    "seed": 27,
+    "joint_clusters": [
+     31
+    ],
+    "seed_text": "As you cast your vote, consider how it will affect public services and future opportunities, weighing short-term stabili",
+    "a_summary_50": "After her father's death, Maya, recently laid off and withdrawn, finds a letter in his atlas urging her to vote locally. Visiting the Grange",
+    "b_summary_50": "Ada, a silent child, finds comfort at Eastfield library, where librarian Mrs. Okafor offers cocoa, birdwatching, and index cards so she can "
+   },
+   {
+    "seed": 70,
+    "joint_clusters": [
+     67
+    ],
+    "seed_text": "As the national team converged, very real cracks appeared in their unity, with modern divisions threatening to shatter r",
+    "a_summary_50": "Tomas Veer missed two free throws that cost his team a game, and he withdrew, ignoring his family and coach. His teammates Marcus and Dev pu",
+    "b_summary_50": "Three weeks after his teammate Marco's funeral, Dante Ortiz struggles at soccer practice, where the team plays listlessly. Coach Ruiz urges "
+   },
+   {
+    "seed": 71,
+    "joint_clusters": [
+     244
+    ],
+    "seed_text": "As the store's dwindling stock served as evidence of its once-thriving past, a small policy put only essentials in stock",
+    "a_summary_50": "Ruth Haldane, who had kept a ledger of every favor and debt for thirty-one years, lost her barn in a storm. Neighbors rallied without being ",
+    "b_summary_50": "After a flood ruins Haldane Hardware, Ruth Haldane turns down a two-million-dollar offer from a developer. Her neighbors arrive with shovels"
+   },
+   {
+    "seed": 75,
+    "joint_clusters": [
+     22,
+     200
+    ],
+    "seed_text": "The doctor examined the small, physical object outside that had been found near a child who was struggling to understand",
+    "a_summary_50": "Three children search a dry creek bed for their missing mother and find a warm stone humming their mother's lullaby. Carrying it home, they ",
+    "b_summary_50": "Mira finds a warm stone and a note from her late Grandma Ruth at a dried creek bed. The note says to sing a lullaby to wake the creek. Mira "
+   },
+   {
+    "seed": 77,
+    "joint_clusters": [
+     39
+    ],
+    "seed_text": "As she laces up her dancing shoes, a nagging edge creeps in - will tripping on stage shatter her perfect plan, ruining t",
+    "a_summary_50": "Mara, a dancer, struggles after knee surgery, feeling insulted by slow progress. Her father, a cellist, teaches her that rests in music are ",
+    "b_summary_50": "Violinist Maya Ostrowski freezes before a concerto, lost in counting every bar. A stagehand, Dev, urges her to trust the music instead. Reme"
+   },
+   {
+    "seed": 91,
+    "joint_clusters": [
+     21
+    ],
+    "seed_text": "The quaint town of Willow Creek was known throughout for its democratic governance, where residents worked together to m",
+    "a_summary_50": "Eli Carver, grieving his late wife Ruth, has avoided his sealed workshop for six months. Neighbor Dale Hollis enlists him to repair a rottin",
+    "b_summary_50": "Harold Quill builds a tall fence to shut out the garden his late wife, Marian, tended. Neighbor Mrs. Okafor finds Marian's stubborn tomato p"
+   }
+  ],
+  "cross_rate": 0.0056,
+  "within_rate": 0.005151515151515152
+ }
+}

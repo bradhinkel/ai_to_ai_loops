@@ -1,0 +1,190 @@
+{
+ "method": "label the other sample's anonymised steps against one sample's own k-198 atlas, no refit (E3-P method)",
+ "k": 198,
+ "a_shared": 13,
+ "a_wells_visited_persistently_by_b": 7,
+ "wells": {
+  "9": {
+   "a_trajs": [
+    24,
+    30,
+    57,
+    80
+   ],
+   "b_persistent": [],
+   "b_touching": 2
+  },
+  "16": {
+   "a_trajs": [
+    4,
+    61
+   ],
+   "b_persistent": [
+    0,
+    1,
+    24,
+    89
+   ],
+   "b_touching": 13
+  },
+  "39": {
+   "a_trajs": [
+    16,
+    22,
+    71
+   ],
+   "b_persistent": [
+    93
+   ],
+   "b_touching": 4
+  },
+  "43": {
+   "a_trajs": [
+    5,
+    37
+   ],
+   "b_persistent": [],
+   "b_touching": 0
+  },
+  "46": {
+   "a_trajs": [
+    71,
+    84,
+    93
+   ],
+   "b_persistent": [
+    6,
+    71,
+    84
+   ],
+   "b_touching": 4
+  },
+  "68": {
+   "a_trajs": [
+    27,
+    91
+   ],
+   "b_persistent": [],
+   "b_touching": 1
+  },
+  "88": {
+   "a_trajs": [
+    28,
+    29,
+    66
+   ],
+   "b_persistent": [
+    16,
+    20,
+    58,
+    66
+   ],
+   "b_touching": 9
+  },
+  "115": {
+   "a_trajs": [
+    8,
+    20,
+    72
+   ],
+   "b_persistent": [
+    6,
+    84
+   ],
+   "b_touching": 5
+  },
+  "143": {
+   "a_trajs": [
+    24,
+    52,
+    57,
+    95
+   ],
+   "b_persistent": [
+    24,
+    64
+   ],
+   "b_touching": 5
+  },
+  "154": {
+   "a_trajs": [
+    63,
+    94
+   ],
+   "b_persistent": [],
+   "b_touching": 0
+  },
+  "155": {
+   "a_trajs": [
+    18,
+    97
+   ],
+   "b_persistent": [
+    78
+   ],
+   "b_touching": 4
+  },
+  "164": {
+   "a_trajs": [
+    4,
+    78
+   ],
+   "b_persistent": [],
+   "b_touching": 1
+  },
+  "166": {
+   "a_trajs": [
+    12,
+    79
+   ],
+   "b_persistent": [],
+   "b_touching": 1
+  }
+ },
+ "reverse": {
+  "b_shared": 17,
+  "b_wells_visited_persistently_by_a": 8,
+  "wells": {
+   "5": [
+    71,
+    93
+   ],
+   "9": [
+    16,
+    22,
+    71,
+    72
+   ],
+   "12": [],
+   "19": [
+    66,
+    87
+   ],
+   "40": [],
+   "42": [
+    31
+   ],
+   "48": [],
+   "62": [],
+   "63": [
+    52
+   ],
+   "91": [],
+   "116": [
+    97
+   ],
+   "117": [],
+   "121": [
+    4,
+    19,
+    61
+   ],
+   "139": [],
+   "144": [],
+   "164": [
+    71
+   ],
+   "189": []
+  }
+ }
+}

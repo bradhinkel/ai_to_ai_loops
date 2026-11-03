@@ -65,15 +65,16 @@ def main():
     # R3: B's own shared wells: new if no A shared well within 0.15; touched by A?
     CB, LB, persB, sharedB = fit_reference(B["anon"], k1); rows3 = []; new = 0; new_touched = 0; CAsh = CA[[c for c, _, _ in sharedA]]
     for c, ts, nv in sharedB:
-        d = 1.0 - CAsh @ CB[c]; dmin = float(d.min()); isnew = dmin > ATLAS["radius"]
+        d = 1.0 - CAsh @ CB[c]; dmin = float(d.min()); isnew = dmin > ATLAS["radius"]; a_near = int(sharedA[int(np.argmin(d))][0])
         touch = sorted(int(t) for t in np.where(((1.0 - np.einsum("d,tsd->ts", CB[c], A["anon"])) <= ATLAS["radius"]).any(axis=1))[0])
         ex = B["recs"][(B["T"][ts[0]], 50)].get("summary") or ""
-        rows3.append(dict(b_well=int(c), b_trajs=ts, nearest_a_well_dist=round(dmin, 3), new=isnew, a_trajs_touching=touch, example=ex[:160])); new += isnew; new_touched += isnew and bool(touch)
+        rows3.append(dict(b_well=int(c), b_trajs=ts, nearest_a_well=a_near, nearest_a_well_dist=round(dmin, 3), new=isnew, a_trajs_touching=touch, example=ex[:160])); new += isnew; new_touched += isnew and bool(touch)
+    covered = sorted({r["nearest_a_well"] for r in rows3 if not r["new"]})  # auxiliary (not pre-registered): A wells with a B well within 0.15
     pooled_pairs = set()
     for c in sharedJ_ids:
         ts = sorted(pj[c]); pooled_pairs |= set(itertools.combinations(ts, 2))
     nP = (2 * nA) * (2 * nA - 1) // 2; pooled_rate = len(pooled_pairs) / nP
-    R["R3"] = dict(b_wells=len(sharedB), new=new, new_touched_by_A=new_touched, rows=rows3, pooled=dict(k=kJ, shared=len(sharedJ), pairs=len(pooled_pairs), rate=pooled_rate))
+    R["R3"] = dict(b_wells=len(sharedB), new=new, new_touched_by_A=new_touched, rows=rows3, a_wells_with_a_b_well_within_radius=covered, pooled=dict(k=kJ, shared=len(sharedJ), pairs=len(pooled_pairs), rate=pooled_rate))
     R["verdicts"]["R3_new_wells"] = dict(new=new, new_touched=new_touched, pooled_shared=len(sharedJ), pooled_rate=pooled_rate, single_rate=r1["rate"],
                                         holds=new >= 2 and new_touched >= 1 and len(sharedJ) >= 18 and (r1["rate"] > 0 and 1 / 1.5 <= pooled_rate / r1["rate"] <= 1.5))
     # R4: same-seed pairs
@@ -81,10 +82,11 @@ def main():
     def med_nn(X1, X2): return float(np.median((1.0 - X1[late] @ X2[late].T).min(axis=1)))
     same = [med_nn(A["anon"][t], B["anon"][t]) for t in range(nA)]
     rng = np.random.default_rng(0); diff = [med_nn(A["anon"][t], B["anon"][u]) for t, u in zip(rng.integers(0, nA, 300), rng.integers(0, nA, 300)) if t != u]
-    same_share = sum(1 for t in range(nA) if any(t in pj[c] and (t + nA) in pj[c] for c in sharedJ_ids))
+    same_rows = [(t, [c for c in sharedJ_ids if t in pj[c] and (t + nA) in pj[c]]) for t in range(nA)]; same_rows = [(t, cs) for t, cs in same_rows if cs]; same_share = len(same_rows)
     cross = sum(1 for (i, j) in pooled_pairs if (i < nA) != (j < nA)); within = len(pooled_pairs) - cross
     rate_cross = cross / (nA * nA); rate_within = within / (2 * (nA * (nA - 1) // 2))
-    R["R4"] = dict(same_seed_median=float(np.median(same)), diff_seed_median=float(np.median(diff)), gap=float(np.median(same) - np.median(diff)), same_seed_pairs_sharing=same_share, cross_rate=rate_cross, within_rate=rate_within)
+    same_detail = [dict(seed=t, joint_clusters=cs, seed_text=(A["recs"][(A["T"][t], 0)].get("seed_prompt") or "")[:120], a_summary_50=(A["recs"][(A["T"][t], 50)].get("summary") or "")[:140], b_summary_50=(B["recs"][(B["T"][t], 50)].get("summary") or "")[:140]) for t, cs in same_rows]
+    R["R4"] = dict(same_seed_median=float(np.median(same)), diff_seed_median=float(np.median(diff)), gap=float(np.median(same) - np.median(diff)), same_seed_pairs_sharing=same_share, expected_if_independent=nA * pooled_rate, same_seed_detail=same_detail, cross_rate=rate_cross, within_rate=rate_within)
     R["verdicts"]["R4_seeds_dont_pick_wells"] = dict(same_share=same_share, gap=R["R4"]["gap"], cross_over_within=(rate_cross / rate_within) if rate_within else None,
                                                    holds=same_share <= 3 and R["R4"]["gap"] < 0.02 and rate_within > 0 and 0.5 <= rate_cross / rate_within <= 2.0)
     for name, text in sheets: (OUT / name).write_text(text, encoding="utf-8")
@@ -97,8 +99,11 @@ def main():
           f"**R4 (seeds do not pick wells): {'holds' if V['R4_seeds_dont_pick_wells']['holds'] else 'fails'}** — same-seed pairs sharing a well {same_share} of 100; same-seed vs different-seed late distance {R['R4']['same_seed_median']:.3f} vs {R['R4']['diff_seed_median']:.3f} (gap {R['R4']['gap']:+.3f}); cross-sample rate {rate_cross:.4f} vs within-sample {rate_within:.4f}.", "",
           "## First-sample wells in the joint atlas (R2)", "", "| A well | A trajs | joint cluster (dist) | B trajs visiting | example summary (A, step 50) |", "|---|---|---|---|---|"]
     for r in rows2: L_.append(f"| {r['a_well']} | {r['a_trajs']} | {r['joint_cluster']} ({r['centroid_dist']}) | {r['b_trajs']} | {r['example']} |")
-    L_ += ["", "## Second-sample wells (R3)", "", "| B well | B trajs | nearest A well dist | new | A trajs touching | example summary (B, step 50) |", "|---|---|---|---|---|---|"]
-    for r in rows3: L_.append(f"| {r['b_well']} | {r['b_trajs']} | {r['nearest_a_well_dist']} | {'yes' if r['new'] else ''} | {r['a_trajs_touching']} | {r['example']} |")
+    L_ += ["", "## Second-sample wells (R3)", "", f"Auxiliary (not pre-registered): first-sample wells with a second-sample well within 0.15: {len(covered)} of {len(sharedA)} {covered}.", "",
+           "| B well | B trajs | nearest A well (dist) | new | A trajs touching | example summary (B, step 50) |", "|---|---|---|---|---|---|"]
+    for r in rows3: L_.append(f"| {r['b_well']} | {r['b_trajs']} | {r['nearest_a_well']} ({r['nearest_a_well_dist']}) | {'yes' if r['new'] else ''} | {r['a_trajs_touching']} | {r['example']} |")
+    L_ += ["", "## Same-seed pairs sharing a joint well (R4)", "", f"Expected under independence at the pooled rate: {nA * pooled_rate:.2f} of {nA}.", "", "| seed | joint clusters | seed prompt | A summary (50) | B summary (50) |", "|---|---|---|---|---|"]
+    for r in same_detail: L_.append(f"| {r['seed']} | {r['joint_clusters']} | {r['seed_text']} | {r['a_summary_50']} | {r['b_summary_50']} |")
     L_ += ["", "## Cells", "", "| cell | half-life | own seed 10 / 50 | nn-other raw / anon | within 0.15 raw / anon | Vendi story / summary 99 | words 99 | top-10 cover (top name) | modal tuple (share) | woman / hopeful |", "|---|---|---|---|---|---|---|---|---|---|"]
     for run in (a.a, a.b):
         s = R["cells"][run]; th = s["theme"]; nm = s["audit"]["names_50_99"]

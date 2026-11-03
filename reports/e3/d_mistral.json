@@ -1,0 +1,505 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "n_sub": 50,
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_mistral": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 22,
+   "ident_at": {
+    "1": 1.0,
+    "5": 0.95,
+    "10": 0.85,
+    "25": 0.5,
+    "50": 0.3,
+    "99": 0.3
+   },
+   "memory_curve": [
+    1.0,
+    1.0,
+    1.0,
+    0.95,
+    0.95,
+    0.95,
+    1.0,
+    0.8,
+    0.85,
+    0.75,
+    0.85,
+    0.8,
+    0.85,
+    0.7,
+    0.7,
+    0.75,
+    0.7,
+    0.75,
+    0.65,
+    0.6,
+    0.6,
+    0.6,
+    0.45,
+    0.45,
+    0.55,
+    0.5,
+    0.5,
+    0.5,
+    0.35,
+    0.4,
+    0.4,
+    0.4,
+    0.45,
+    0.45,
+    0.35,
+    0.55,
+    0.5,
+    0.4,
+    0.35,
+    0.5,
+    0.35,
+    0.55,
+    0.4,
+    0.4,
+    0.4,
+    0.45,
+    0.3,
+    0.6,
+    0.25,
+    0.25,
+    0.3,
+    0.45,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.2,
+    0.3,
+    0.3,
+    0.25,
+    0.25,
+    0.4,
+    0.2,
+    0.35,
+    0.3,
+    0.35,
+    0.4,
+    0.35,
+    0.25,
+    0.3,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.2,
+    0.2,
+    0.2,
+    0.3,
+    0.25,
+    0.15,
+    0.25,
+    0.3,
+    0.25,
+    0.25,
+    0.35,
+    0.3,
+    0.15,
+    0.25,
+    0.2,
+    0.2,
+    0.3,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.25,
+    0.15,
+    0.2,
+    0.3
+   ],
+   "nn_other_median": 0.3303112351896903,
+   "nn_other_anon_median": 0.21996832724647536,
+   "within_015": 0.0,
+   "within_015_anon": 0.019333333333333334,
+   "vendi_story_99": 9.083456207036543,
+   "vendi_summary_99": 12.151890711588978,
+   "words_median_99": 387.5,
+   "summary_words_median": 58.0,
+   "summary_le_limit_share": {
+    "20": 0.0,
+    "25": 0.0005,
+    "30": 0.0055,
+    "50": 0.238
+   },
+   "summary_flags": {
+    "over_50_words": 1524
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 988,
+     "distinct": 55,
+     "top10": [
+      [
+       "Meadowgrove",
+       68
+      ],
+      [
+       "Amelia",
+       67
+      ],
+      [
+       "Mia",
+       56
+      ],
+      [
+       "Aurora",
+       50
+      ],
+      [
+       "Eldoria",
+       46
+      ],
+      [
+       "Elara",
+       45
+      ],
+      [
+       "Eldarus",
+       45
+      ],
+      [
+       "Neo",
+       43
+      ],
+      [
+       "Amar",
+       41
+      ],
+      [
+       "Serenity",
+       36
+      ]
+     ],
+     "top10_cover": 0.5030364372469636,
+     "llm_set_hits": [
+      "Elara"
+     ]
+    },
+    "flags": {
+     "summary_over_50_words": 1524,
+     "story_refusal": 8
+    }
+   },
+   "theme": {
+    "n": 1000,
+    "bad": 3,
+    "modal": [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    "modal_share": 0.333,
+    "woman_share": 0.339,
+    "hopeful_share": 0.875
+   }
+  },
+  "e3_d_mistral": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 2,
+   "ident_at": {
+    "1": 0.75,
+    "5": 0.25,
+    "10": 0.3,
+    "25": 0.2,
+    "50": 0.05,
+    "99": 0.05
+   },
+   "memory_curve": [
+    1.0,
+    0.75,
+    0.5,
+    0.6,
+    0.3,
+    0.25,
+    0.45,
+    0.2,
+    0.2,
+    0.15,
+    0.3,
+    0.15,
+    0.3,
+    0.2,
+    0.15,
+    0.15,
+    0.05,
+    0.1,
+    0.1,
+    0.1,
+    0.15,
+    0.1,
+    0.1,
+    0.15,
+    0.05,
+    0.2,
+    0.05,
+    0.05,
+    0.15,
+    0.1,
+    0.1,
+    0.05,
+    0.15,
+    0.1,
+    0.1,
+    0.05,
+    0.15,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.1,
+    0.15,
+    0.1,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.1,
+    0.1,
+    0.1,
+    0.05,
+    0.0,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.1,
+    0.0,
+    0.2,
+    0.1,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.0,
+    0.1,
+    0.05,
+    0.05
+   ],
+   "nn_other_median": 0.22300262075962518,
+   "nn_other_anon_median": 0.17072550195787695,
+   "within_015": 0.11133333333333334,
+   "within_015_anon": 0.3606666666666667,
+   "vendi_story_99": 7.279291794780776,
+   "vendi_summary_99": 5.481581853943107,
+   "words_median_99": 419.0,
+   "summary_words_median": 24.0,
+   "summary_le_limit_share": {
+    "20": 0.4035,
+    "25": 0.5605,
+    "30": 0.7205,
+    "50": 0.9935
+   },
+   "summary_flags": {
+    "over_25_words": 879,
+    "refusal": 1
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 955,
+     "distinct": 350,
+     "top10": [
+      [
+       "Meadowgrove",
+       76
+      ],
+      [
+       "Elara",
+       49
+      ],
+      [
+       "Elderglen",
+       46
+      ],
+      [
+       "Harmonyville",
+       44
+      ],
+      [
+       "Harmonia",
+       31
+      ],
+      [
+       "Eldridge",
+       31
+      ],
+      [
+       "Veridia",
+       21
+      ],
+      [
+       "Elias",
+       20
+      ],
+      [
+       "Eldoria",
+       17
+      ],
+      [
+       "Amelia",
+       16
+      ]
+     ],
+     "top10_cover": 0.3675392670157068,
+     "llm_set_hits": [
+      "Elara",
+      "Elias"
+     ]
+    },
+    "flags": {
+     "summary_over_25_words": 879,
+     "story_refusal": 3,
+     "summary_refusal": 1
+    }
+   },
+   "theme": {
+    "n": 998,
+    "bad": 2,
+    "modal": [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    "modal_share": 0.4218436873747495,
+    "woman_share": 0.47394789579158314,
+    "hopeful_share": 0.9799599198396793
+   }
+  }
+ },
+ "scale": {},
+ "width": {
+  "atlas": {
+   "raw": {
+    "width": {
+     "persistent": 0,
+     "shared": 0,
+     "pairs": 0
+    },
+    "base": {
+     "persistent": 9,
+     "shared": 0,
+     "pairs": 0
+    },
+    "cross_cell_shared": 0
+   },
+   "anon": {
+    "width": {
+     "persistent": 8,
+     "shared": 7,
+     "pairs": 60
+    },
+    "base": {
+     "persistent": 11,
+     "shared": 6,
+     "pairs": 8
+    },
+    "cross_cell_shared": 4
+   }
+  }
+ },
+ "verdicts": {
+  "D1_abstraction_converges": {
+   "shared_raw": 0,
+   "shared_anon": 7,
+   "need_shared": 2,
+   "shared_ok": false,
+   "base_shared_raw": 0,
+   "half_life": 2,
+   "base_half": 22,
+   "half_le_10": true,
+   "nn_other": 0.22300262075962518,
+   "base_nn": 0.3303112351896903,
+   "nn_le_030": true,
+   "within_015": 0.11133333333333334,
+   "vendi_theme_99": 5.481581853943107,
+   "base_vendi_summary_99": 12.151890711588978,
+   "vendi_half": true,
+   "cover": 0.3675392670157068,
+   "base_cover": 0.5030364372469636,
+   "words": 419.0,
+   "theme_words_median": 24.0,
+   "theme_le25": 0.5605,
+   "n_clauses_hold": 3,
+   "holds": false
+  },
+  "D_theme_layer_posthoc": {
+   "modal": [
+    "unclear",
+    "social_or_community",
+    "hopeful"
+   ],
+   "base_modal": [
+    "unclear",
+    "social_or_community",
+    "hopeful"
+   ],
+   "modal_share": 0.4218436873747495,
+   "base_modal_share": 0.333,
+   "woman": 0.47394789579158314,
+   "base_woman": 0.339,
+   "hopeful": 0.9799599198396793,
+   "base_hopeful": 0.875
+  }
+ }
+}

@@ -1,0 +1,1529 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "n_sub": 50,
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_mistral": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 22,
+   "ident_at": {
+    "1": 1.0,
+    "5": 0.95,
+    "10": 0.85,
+    "25": 0.5,
+    "50": 0.3,
+    "99": 0.3
+   },
+   "memory_curve": [
+    1.0,
+    1.0,
+    1.0,
+    0.95,
+    0.95,
+    0.95,
+    1.0,
+    0.8,
+    0.85,
+    0.75,
+    0.85,
+    0.8,
+    0.85,
+    0.7,
+    0.7,
+    0.75,
+    0.7,
+    0.75,
+    0.65,
+    0.6,
+    0.6,
+    0.6,
+    0.45,
+    0.45,
+    0.55,
+    0.5,
+    0.5,
+    0.5,
+    0.35,
+    0.4,
+    0.4,
+    0.4,
+    0.45,
+    0.45,
+    0.35,
+    0.55,
+    0.5,
+    0.4,
+    0.35,
+    0.5,
+    0.35,
+    0.55,
+    0.4,
+    0.4,
+    0.4,
+    0.45,
+    0.3,
+    0.6,
+    0.25,
+    0.25,
+    0.3,
+    0.45,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.2,
+    0.3,
+    0.3,
+    0.25,
+    0.25,
+    0.4,
+    0.2,
+    0.35,
+    0.3,
+    0.35,
+    0.4,
+    0.35,
+    0.25,
+    0.3,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.2,
+    0.2,
+    0.2,
+    0.3,
+    0.25,
+    0.15,
+    0.25,
+    0.3,
+    0.25,
+    0.25,
+    0.35,
+    0.3,
+    0.15,
+    0.25,
+    0.2,
+    0.2,
+    0.3,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.25,
+    0.15,
+    0.2,
+    0.3
+   ],
+   "nn_other_median": 0.3303112351896903,
+   "nn_other_anon_median": 0.21996832724647536,
+   "within_015": 0.0,
+   "within_015_anon": 0.019333333333333334,
+   "vendi_story_99": 9.083456207036543,
+   "vendi_summary_99": 12.151890711588978,
+   "words_median_99": 387.5,
+   "summary_words_median": 58.0,
+   "summary_le_limit_share": {
+    "20": 0.0,
+    "25": 0.0005,
+    "30": 0.0055,
+    "50": 0.238
+   },
+   "summary_flags": {
+    "over_50_words": 1524
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 988,
+     "distinct": 55,
+     "top10": [
+      [
+       "Meadowgrove",
+       68
+      ],
+      [
+       "Amelia",
+       67
+      ],
+      [
+       "Mia",
+       56
+      ],
+      [
+       "Aurora",
+       50
+      ],
+      [
+       "Eldoria",
+       46
+      ],
+      [
+       "Elara",
+       45
+      ],
+      [
+       "Eldarus",
+       45
+      ],
+      [
+       "Neo",
+       43
+      ],
+      [
+       "Amar",
+       41
+      ],
+      [
+       "Serenity",
+       36
+      ]
+     ],
+     "top10_cover": 0.5030364372469636,
+     "llm_set_hits": [
+      "Elara"
+     ]
+    },
+    "flags": {
+     "summary_over_50_words": 1524,
+     "story_refusal": 8
+    }
+   },
+   "theme": {
+    "n": 1000,
+    "bad": 3,
+    "modal": [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    "modal_share": 0.333,
+    "woman_share": 0.339,
+    "hopeful_share": 0.875
+   }
+  },
+  "e3_d_mistral": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 2,
+   "ident_at": {
+    "1": 0.75,
+    "5": 0.25,
+    "10": 0.3,
+    "25": 0.2,
+    "50": 0.05,
+    "99": 0.05
+   },
+   "memory_curve": [
+    1.0,
+    0.75,
+    0.5,
+    0.6,
+    0.3,
+    0.25,
+    0.45,
+    0.2,
+    0.2,
+    0.15,
+    0.3,
+    0.15,
+    0.3,
+    0.2,
+    0.15,
+    0.15,
+    0.05,
+    0.1,
+    0.1,
+    0.1,
+    0.15,
+    0.1,
+    0.1,
+    0.15,
+    0.05,
+    0.2,
+    0.05,
+    0.05,
+    0.15,
+    0.1,
+    0.1,
+    0.05,
+    0.15,
+    0.1,
+    0.1,
+    0.05,
+    0.15,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.1,
+    0.15,
+    0.1,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.1,
+    0.1,
+    0.1,
+    0.05,
+    0.0,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.1,
+    0.05,
+    0.1,
+    0.1,
+    0.0,
+    0.2,
+    0.1,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.0,
+    0.1,
+    0.05,
+    0.05
+   ],
+   "nn_other_median": 0.22300262075962518,
+   "nn_other_anon_median": 0.17072550195787695,
+   "within_015": 0.11133333333333334,
+   "within_015_anon": 0.3606666666666667,
+   "vendi_story_99": 7.279291794780776,
+   "vendi_summary_99": 5.481581853943107,
+   "words_median_99": 419.0,
+   "summary_words_median": 24.0,
+   "summary_le_limit_share": {
+    "20": 0.4035,
+    "25": 0.5605,
+    "30": 0.7205,
+    "50": 0.9935
+   },
+   "summary_flags": {
+    "over_25_words": 879,
+    "refusal": 1
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 955,
+     "distinct": 350,
+     "top10": [
+      [
+       "Meadowgrove",
+       76
+      ],
+      [
+       "Elara",
+       49
+      ],
+      [
+       "Elderglen",
+       46
+      ],
+      [
+       "Harmonyville",
+       44
+      ],
+      [
+       "Harmonia",
+       31
+      ],
+      [
+       "Eldridge",
+       31
+      ],
+      [
+       "Veridia",
+       21
+      ],
+      [
+       "Elias",
+       20
+      ],
+      [
+       "Eldoria",
+       17
+      ],
+      [
+       "Amelia",
+       16
+      ]
+     ],
+     "top10_cover": 0.3675392670157068,
+     "llm_set_hits": [
+      "Elara",
+      "Elias"
+     ]
+    },
+    "flags": {
+     "summary_over_25_words": 879,
+     "story_refusal": 3,
+     "summary_refusal": 1
+    }
+   },
+   "theme": {
+    "n": 998,
+    "bad": 2,
+    "modal": [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    "modal_share": 0.4218436873747495,
+    "woman_share": 0.47394789579158314,
+    "hopeful_share": 0.9799599198396793
+   }
+  }
+ },
+ "scale": {
+  "k_full": 40,
+  "full": {
+   "raw": {
+    "persistent": 0,
+    "shared": 0,
+    "pairs": [],
+    "n_sharing_pairs": 0,
+    "n_pairs": 190,
+    "rate": 0.0,
+    "W_hat": null,
+    "max_mult": 0,
+    "inside_share": 0.0,
+    "clusters": []
+   },
+   "anon": {
+    "persistent": 8,
+    "shared": 8,
+    "pairs": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      9
+     ],
+     [
+      0,
+      12
+     ],
+     [
+      0,
+      14
+     ],
+     [
+      0,
+      16
+     ],
+     [
+      0,
+      18
+     ],
+     [
+      0,
+      19
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      1,
+      9
+     ],
+     [
+      1,
+      12
+     ],
+     [
+      1,
+      14
+     ],
+     [
+      1,
+      16
+     ],
+     [
+      1,
+      17
+     ],
+     [
+      1,
+      18
+     ],
+     [
+      1,
+      19
+     ],
+     [
+      5,
+      16
+     ],
+     [
+      7,
+      9
+     ],
+     [
+      7,
+      12
+     ],
+     [
+      7,
+      14
+     ],
+     [
+      7,
+      17
+     ],
+     [
+      9,
+      12
+     ],
+     [
+      9,
+      14
+     ],
+     [
+      9,
+      16
+     ],
+     [
+      9,
+      17
+     ],
+     [
+      9,
+      18
+     ],
+     [
+      9,
+      19
+     ],
+     [
+      11,
+      12
+     ],
+     [
+      11,
+      17
+     ],
+     [
+      11,
+      19
+     ],
+     [
+      12,
+      14
+     ],
+     [
+      12,
+      17
+     ],
+     [
+      12,
+      19
+     ],
+     [
+      14,
+      17
+     ],
+     [
+      14,
+      19
+     ],
+     [
+      16,
+      18
+     ],
+     [
+      16,
+      19
+     ],
+     [
+      17,
+      19
+     ],
+     [
+      18,
+      19
+     ]
+    ],
+    "n_sharing_pairs": 39,
+    "n_pairs": 190,
+    "rate": 0.20526315789473684,
+    "W_hat": 4.871794871794871,
+    "max_mult": 6,
+    "inside_share": 0.2909090909090909,
+    "clusters": [
+     [
+      1,
+      [
+       0,
+       5,
+       16
+      ],
+      6
+     ],
+     [
+      2,
+      [
+       0,
+       1,
+       9,
+       16,
+       18,
+       19
+      ],
+      9
+     ],
+     [
+      4,
+      [
+       0,
+       5
+      ],
+      6
+     ],
+     [
+      10,
+      [
+       11,
+       12,
+       17,
+       19
+      ],
+      6
+     ],
+     [
+      12,
+      [
+       0,
+       9,
+       12,
+       14,
+       19
+      ],
+      5
+     ],
+     [
+      15,
+      [
+       1,
+       9,
+       12,
+       14,
+       17
+      ],
+      6
+     ],
+     [
+      21,
+      [
+       1,
+       7,
+       9,
+       12,
+       14,
+       17
+      ],
+      8
+     ],
+     [
+      39,
+      [
+       1,
+       9,
+       14,
+       17
+      ],
+      5
+     ]
+    ]
+   }
+  },
+  "subsamples": {
+   "raw": {
+    "shared_median": 0.0,
+    "shared_iqr": [
+     0.0,
+     0.0
+    ],
+    "pairs_median": 0.0,
+    "pairs_mean": 0.0,
+    "max_mult_max": 0,
+    "raw": [
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 0,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     }
+    ]
+   },
+   "anon": {
+    "shared_median": 8.0,
+    "shared_iqr": [
+     8.0,
+     8.0
+    ],
+    "pairs_median": 39.0,
+    "pairs_mean": 39.0,
+    "max_mult_max": 6,
+    "raw": [
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     },
+     {
+      "persistent": 8,
+      "shared": 8,
+      "pairs": 39,
+      "max_mult": 6
+     }
+    ]
+   }
+  },
+  "pairs_vs_n": {
+   "raw": {
+    "10": {
+     "mean_pairs": 0.3,
+     "n_pairs": 45,
+     "vals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0
+     ]
+    },
+    "20": {
+     "mean_pairs": 0.0,
+     "n_pairs": 190,
+     "vals": [
+      0
+     ]
+    }
+   },
+   "anon": {
+    "10": {
+     "mean_pairs": 11.9,
+     "n_pairs": 45,
+     "vals": [
+      11,
+      9,
+      15,
+      17,
+      8,
+      15,
+      16,
+      8,
+      10,
+      10
+     ]
+    },
+    "20": {
+     "mean_pairs": 39.0,
+     "n_pairs": 190,
+     "vals": [
+      39
+     ]
+    }
+   }
+  },
+  "half_life_first20": 2,
+  "half_life_sub_median": 2.0,
+  "half_life_sub_iqr": [
+   2.0,
+   2.0
+  ],
+  "first20": {
+   "nn_other_median": 0.22300262075962518,
+   "words_median_99": 419.0,
+   "names_50_99": {
+    "n_leads": 955,
+    "distinct": 350,
+    "top10": [
+     [
+      "Meadowgrove",
+      76
+     ],
+     [
+      "Elara",
+      49
+     ],
+     [
+      "Elderglen",
+      46
+     ],
+     [
+      "Harmonyville",
+      44
+     ],
+     [
+      "Harmonia",
+      31
+     ],
+     [
+      "Eldridge",
+      31
+     ],
+     [
+      "Veridia",
+      21
+     ],
+     [
+      "Elias",
+      20
+     ],
+     [
+      "Eldoria",
+      17
+     ],
+     [
+      "Amelia",
+      16
+     ]
+    ],
+    "top10_cover": 0.3675392670157068,
+    "llm_set_hits": [
+     "Elara",
+     "Elias"
+    ]
+   },
+   "theme": {
+    "n": 998,
+    "bad": 2,
+    "modal": [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    "modal_share": 0.4218436873747495,
+    "woman_share": 0.47394789579158314,
+    "hopeful_share": 0.9799599198396793
+   }
+  },
+  "same_seed": {
+   "raw": {
+    "same_median": 0.42826526228838796,
+    "diff_median": 0.40179243045757307,
+    "gap": -0.02647283183081489,
+    "same_lt_diff_share": 0.4
+   },
+   "anon": {
+    "same_median": 0.3259454257050197,
+    "diff_median": 0.3009406090170826,
+    "gap": -0.025004816687937137
+   },
+   "joint_k": 79,
+   "same_seed_pairs_sharing_cluster": 0,
+   "joint_shared_clusters": 0,
+   "joint_sharing_pairs": 0
+  }
+ },
+ "width": {},
+ "verdicts": {
+  "S1_wells_numerous": {
+   "anon_sharing_pairs": 39,
+   "anon_rate": 0.20526315789473684,
+   "anon_shared_clusters": 8,
+   "anon_max_mult": 6,
+   "raw_shared_clusters": 0,
+   "raw_sharing_pairs": 0,
+   "W_hat_anon": 4.871794871794871,
+   "sub_raw_shared_median": 0.0,
+   "sub_anon_shared_median": 8.0,
+   "holds": false,
+   "fails": false
+  },
+  "S2_replication_first20": {
+   "half_life": 2,
+   "half_in_8_15": false,
+   "cover": 0.3675392670157068,
+   "cover_in_band": false,
+   "top_name": "Meadowgrove",
+   "maya_top": false,
+   "words": 419.0,
+   "words_in_band": false,
+   "modal": [
+    "unclear",
+    "social_or_community",
+    "hopeful"
+   ],
+   "base_modal": [
+    "unclear",
+    "social_or_community",
+    "hopeful"
+   ],
+   "modal_same": true,
+   "all100": {
+    "half_life_sub_median": 2.0,
+    "cover": 0.3675392670157068,
+    "words": 419.0
+   },
+   "holds": false
+  },
+  "S3_density": {
+   "nn_other": 0.22300262075962518,
+   "base_nn": 0.3303112351896903,
+   "nn_in_band": false,
+   "within_015": 0.11133333333333334,
+   "within_in_band": false,
+   "holds": false,
+   "continuum": false
+  },
+  "S4_seed_trace": {
+   "gap_raw": -0.02647283183081489,
+   "gap_anon": -0.025004816687937137,
+   "gap_in_band": false,
+   "same_seed_pairs_sharing": 0,
+   "le_1": true,
+   "holds": false
+  },
+  "speculation_1": "in between: sharing pairs present but no well reused by >= 4 (W > 500 at this n)"
+ }
+}

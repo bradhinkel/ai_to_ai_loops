@@ -1,0 +1,710 @@
+{
+ "source": "Wikipedia:Vital articles/Level 3",
+ "list_revid": 1382205991,
+ "n_titles_on_list": 999,
+ "sampling": "random.Random(20261103).sample(titles,100), sorted",
+ "fetched": "2026-11-03",
+ "seed_text": "first two sentences of the article lead (MediaWiki extracts, exintro, exsentences=2, explaintext), at the pinned revid",
+ "seeds": [
+  {
+   "title": "Age of Discovery",
+   "pageid": 690842,
+   "revid": 1383209419,
+   "rev_ts": "2026-11-01T15:27:53Z",
+   "seed": "The Age of Discovery (c.\u20091418 \u2013 c.\u20091620), also known as the Age of Exploration, was part of the early modern period and overlapped with the Age of Sail. It was a period from approximately the 15th to the 17th century, during which seafarers from European countries explored, colonized, and conquered regions across the globe."
+  },
+  {
+   "title": "Aircraft",
+   "pageid": 849,
+   "revid": 1381144449,
+   "rev_ts": "2026-10-20T07:28:24Z",
+   "seed": "An aircraft or aerial vehicle is a vehicle that can fly by gaining support from the air. It counters the force of gravity by using either static lift or the dynamic lift of an airfoil, or, in a few cases, direct downward thrust from its engines."
+  },
+  {
+   "title": "Algebra",
+   "pageid": 18716923,
+   "revid": 1382106610,
+   "rev_ts": "2026-10-26T17:11:45Z",
+   "seed": "Algebra is a branch of mathematics that deals with abstract systems, known as algebraic structures, and the manipulation of expressions within those systems. It is a generalization of arithmetic that introduces variables and algebraic operations other than the standard arithmetic operations, such as addition and multiplication."
+  },
+  {
+   "title": "Allergy",
+   "pageid": 55313,
+   "revid": 1381427660,
+   "rev_ts": "2026-10-22T12:07:54Z",
+   "seed": "An allergy is an exaggerated immune response where the body mistakenly identifies an ordinarily harmless allergen as a threat. Allergic reactions give rise to allergic diseases such as hay fever, allergic conjunctivitis, allergic asthma, atopic dermatitis, food allergies, and anaphylaxis."
+  },
+  {
+   "title": "Ancient Egypt",
+   "pageid": 874,
+   "revid": 1382766628,
+   "rev_ts": "2026-10-30T04:53:12Z",
+   "seed": "Ancient Egypt was a cradle of civilization concentrated along the lower reaches of the Nile River in the eastern part of North Africa. It emerged from prehistoric Egypt around 3150 BC (according to conventional Egyptian chronology), when Upper and Lower Egypt were united by Menes, who is believed by the majority of Egyptologists to have been the same person as Narmer."
+  },
+  {
+   "title": "Ancient Greece",
+   "pageid": 66540,
+   "revid": 1382956290,
+   "rev_ts": "2026-10-31T05:14:20Z",
+   "seed": "Ancient Greece (Ancient Greek: \u1f19\u03bb\u03bb\u03ac\u03c2, romanized: Hell\u00e1s) was an ancient civilization existing from the Greek Dark Ages of the 12th\u20139th centuries BC to the end of classical antiquity (c.\u2009600 AD), comprising a loose collection of culturally and linguistically related city-states and regions, primarily centered in the northeastern area of the Mediterranean Sea. Prior to the Roman period, most of this area was officially unified only once, from 338 to 323 BC under the Kingdom of Macedon."
+  },
+  {
+   "title": "Anger",
+   "pageid": 68672,
+   "revid": 1383577342,
+   "rev_ts": "2026-11-03T13:04:09Z",
+   "seed": "Anger, rage, or its extreme counterpart, wrath (UK:  ROTH; US:  RATH) is an intense emotional state involving a strong, uncomfortable and non-cooperative response to a perceived provocation, hurt, or threat.\nA person experiencing anger will often experience physical effects, such as increased heart rate, elevated blood pressure, and increased levels of the stress hormones adrenaline and noradrenaline."
+  },
+  {
+   "title": "Animal husbandry",
+   "pageid": 219640,
+   "revid": 1373636183,
+   "rev_ts": "2026-09-07T01:31:43Z",
+   "seed": "Animal husbandry is the branch of agriculture concerned with the human practices of raising captive or domesticated animals for harvesting valuable animal products or to train animals to provide labour or services. It involves the day-to-day management, feeding, nutrition and health, selective breeding, assisted birth, grooming, marketing and harvest of products such as meat, milk, eggs, fibre and hide of primarily domesticated terrestrial mammals (cattle, sheep/goats, horses, pigs, etc.) and birds (i.e."
+  },
+  {
+   "title": "Arabic numerals",
+   "pageid": 1786,
+   "revid": 1380652377,
+   "rev_ts": "2026-10-17T02:04:57Z",
+   "seed": "The Arabic numerals are ten digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) used for writing numbers. The term often also implies a positional notation number with a decimal base, in particular when contrasted with Roman numerals."
+  },
+  {
+   "title": "Archimedes",
+   "pageid": 1844,
+   "revid": 1383347529,
+   "rev_ts": "2026-11-02T06:23:19Z",
+   "seed": "Archimedes of Syracuse ( AR-kih-MEE-deez; c.\u2009287 \u2013 c.\u2009212 BC) was an Ancient Greek mathematician, physicist, engineer, astronomer, and inventor from the city of Syracuse in Sicily. Although few details of his life are known, based on his surviving work, he is considered one of the leading scientists in classical antiquity, and one of the greatest mathematicians of all time."
+  },
+  {
+   "title": "Atom",
+   "pageid": 902,
+   "revid": 1377869405,
+   "rev_ts": "2026-10-01T17:07:49Z",
+   "seed": "Atoms are the basic particles of the chemical elements and the fundamental building blocks of matter. An atom consists of a nucleus of protons and generally neutrons, surrounded by an electromagnetically bound swarm of electrons."
+  },
+  {
+   "title": "Beauty",
+   "pageid": 4431,
+   "revid": 1383230213,
+   "rev_ts": "2026-11-01T17:33:31Z",
+   "seed": "Beauty is commonly described as a feature of objects that makes them pleasurable to perceive. Such objects include landscapes, sunsets, humans and works of art."
+  },
+  {
+   "title": "Bible",
+   "pageid": 3390,
+   "revid": 1383230583,
+   "rev_ts": "2026-11-01T17:35:13Z",
+   "seed": "The Bible is an anthology of religious texts that are central to Judaism and Christianity, and important in other Abrahamic religions such as Islam. The texts include instructions, stories, poetry, letters, prophecies, and other genres."
+  },
+  {
+   "title": "Brazil",
+   "pageid": 3383,
+   "revid": 1383527009,
+   "rev_ts": "2026-11-03T04:24:09Z",
+   "seed": "Brazil, officially the Federative Republic of Brazil, is the largest country in South America. It is also the world's fifth-largest country by area and the seventh-largest by population, with over 214 million people."
+  },
+  {
+   "title": "Bronze",
+   "pageid": 4169,
+   "revid": 1381633458,
+   "rev_ts": "2026-10-23T20:04:03Z",
+   "seed": "Bronze is an alloy consisting primarily of copper, commonly with about 12\u201312.5% tin and often with the addition of other metals (including aluminium, manganese, nickel, or zinc) and sometimes non-metals (such as phosphorus) or metalloids (such as arsenic or silicon). These additions produce a range of alloys some of which are harder than copper alone or have other useful properties, such as strength, ductility, or machinability."
+  },
+  {
+   "title": "Bronze Age",
+   "pageid": 4620,
+   "revid": 1383448707,
+   "rev_ts": "2026-11-02T19:14:26Z",
+   "seed": "The Bronze Age is an archaeological and anthropological term defining a phase in the development of material culture among ancient societies in Asia, the Near East and Europe. An ancient civilisation or culture is deemed part of the Bronze Age if it either produced bronze by smelting its own copper and alloying it with tin, arsenic, or other metals, or traded other items for bronze from producing areas elsewhere."
+  },
+  {
+   "title": "Calligraphy",
+   "pageid": 53682,
+   "revid": 1382219862,
+   "rev_ts": "2026-10-27T10:57:17Z",
+   "seed": "Calligraphy (from Ancient Greek  \u03ba\u03b1\u03bb\u03bb\u03b9\u03b3\u03c1\u03b1\u03c6\u03af\u03b1 (kalligraph\u00eda) 'beautiful writing') is fine handwriting as a visual art. It involves the design and execution of lettering or characters using a pen, ink brush, or other writing instruments."
+  },
+  {
+   "title": "Canada",
+   "pageid": 5042916,
+   "revid": 1383225878,
+   "rev_ts": "2026-11-01T17:12:44Z",
+   "seed": "Canada is a country in North America. Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, making it the second-largest country by total area, with the longest coastline of any country."
+  },
+  {
+   "title": "Carbohydrate",
+   "pageid": 5932,
+   "revid": 1382924572,
+   "rev_ts": "2026-10-31T00:58:51Z",
+   "seed": "A carbohydrate () is a sugar (saccharide), a polysaccharide such as starch, or a derivative of these compounds. For many carbohydrates such as simple sugars, the carbon-to-hydrogen-to-oxygen atomic ratio is 1:2:1 so their empirical formula is CH2O and their molecular formulas have the form Cn(H2O)n."
+  },
+  {
+   "title": "Cat",
+   "pageid": 6678,
+   "revid": 1382971518,
+   "rev_ts": "2026-10-31T08:10:56Z",
+   "seed": "The cat (Felis catus), also called domestic cat and house cat, is a small domesticated carnivorous mammal. It is a member of Felidae, the family of mammals in the order Carnivora also colloquially referred to as cats."
+  },
+  {
+   "title": "Cattle",
+   "pageid": 26051975,
+   "revid": 1379666444,
+   "rev_ts": "2026-10-11T05:39:29Z",
+   "seed": "Cattle (Bos taurus) are large, domesticated, bovid ungulates widely kept as livestock. They are prominent modern members of the subfamily Bovinae and the most widespread species of the genus Bos."
+  },
+  {
+   "title": "Charlemagne",
+   "pageid": 5314,
+   "revid": 1383170743,
+   "rev_ts": "2026-11-01T09:44:38Z",
+   "seed": "Charlemagne ( SHAR-l\u0259-mayn; 2 April 748 \u2013 28 January 814) was King of the Franks from 768, King of the Lombards from 774, and Emperor of what is now known as the Carolingian Empire from 800. He united most of Western and Central Europe and was the first recognised emperor to rule from the west after the fall of the Western Roman Empire approximately three centuries earlier."
+  },
+  {
+   "title": "Charles Darwin",
+   "pageid": 8145410,
+   "revid": 1382397901,
+   "rev_ts": "2026-10-28T14:13:14Z",
+   "seed": "Charles Robert Darwin ( DAR-win; 12 February 1809 \u2013 19 April 1882) was an English naturalist, geologist, and biologist, widely known for his contributions to evolutionary biology. His proposition that all species  have descended from a common ancestor is now  accepted and considered a fundamental scientific concept."
+  },
+  {
+   "title": "China",
+   "pageid": 5405,
+   "revid": 1383078988,
+   "rev_ts": "2026-10-31T21:47:57Z",
+   "seed": "China, officially the People's Republic of China (PRC), is a country in East Asia. It is divided into 33 province-level divisions, including two special administrative regions."
+  },
+  {
+   "title": "Cold War",
+   "pageid": 325329,
+   "revid": 1381546396,
+   "rev_ts": "2026-10-23T06:27:29Z",
+   "seed": "The Cold War was a period of international geopolitical rivalry between the United States (US) and the Soviet Union (USSR) and their respective allies, the capitalist Western Bloc and communist Eastern Bloc. It began in the aftermath of the Second World War and ended with the dissolution of the Soviet Union in 1991."
+  },
+  {
+   "title": "Color",
+   "pageid": 5921,
+   "revid": 1382686687,
+   "rev_ts": "2026-10-29T20:11:50Z",
+   "seed": "Color (or colour in Commonwealth English) is the visual perception produced by the activation of the different types of cone cells in the eye caused by light. Though color is not an inherent property of matter, color perception is related to an object's light absorption, emission, reflection and transmission."
+  },
+  {
+   "title": "Constitution",
+   "pageid": 5253,
+   "revid": 1383141919,
+   "rev_ts": "2026-11-01T05:20:51Z",
+   "seed": "A constitution, or supreme law, is the aggregate of fundamental principles or established precedents that constitute the legal basis of a polity, organization or other type of entity, and commonly determines how that entity is to be governed.\nWhen these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution."
+  },
+  {
+   "title": "Continent",
+   "pageid": 19630739,
+   "revid": 1380526741,
+   "rev_ts": "2026-10-16T07:15:27Z",
+   "seed": "A continent is any of several large terrestrial geographical regions. Continents are generally identified by convention rather than any strict criteria."
+  },
+  {
+   "title": "Cooking",
+   "pageid": 5355,
+   "revid": 1379906549,
+   "rev_ts": "2026-10-12T16:03:56Z",
+   "seed": "Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe. Cooking techniques and ingredients vary widely, from grilling food over an open fire, to using electric stoves, to baking in various types of ovens, to boiling and blanching in water, reflecting local conditions, techniques and traditions."
+  },
+  {
+   "title": "Cotton",
+   "pageid": 36806,
+   "revid": 1382277606,
+   "rev_ts": "2026-10-27T19:06:34Z",
+   "seed": "Cotton is a soft, fluffy staple fiber that grows in a boll, or protective case, around the seeds of the cotton plants of the genus Gossypium in the mallow family Malvaceae. The fiber is almost pure cellulose and may contain minor percentages of waxes, fats, pectins, and water."
+  },
+  {
+   "title": "Dance",
+   "pageid": 7885,
+   "revid": 1383461051,
+   "rev_ts": "2026-11-02T20:26:16Z",
+   "seed": "Dance is an art form, consisting of sequences of body movements with aesthetic and often symbolic value, either improvised or purposefully selected. Dance can be categorized and described by its choreography, its repertoire of movements, its historical period, or its place of origin."
+  },
+  {
+   "title": "Deity",
+   "pageid": 45087159,
+   "revid": 1383233549,
+   "rev_ts": "2026-11-01T17:51:13Z",
+   "seed": "A deity is a supernatural being considered to have authority over some aspect of the universe and/or life, with many deities also regarded as sacred and as worthy of worship. A deity is \"a spirit or being believed to have created, or to control some part of the universe or life, for which such a deity is often worshipped\"."
+  },
+  {
+   "title": "Dementia",
+   "pageid": 38390,
+   "revid": 1382877152,
+   "rev_ts": "2026-10-30T19:55:58Z",
+   "seed": "Dementia is a syndrome, often associated with neurodegenerative diseases such as Alzheimer's, and characterized by a general decline in cognitive processes that affects the ability to perform everyday activities. This typically involves problems with memory, thinking, behavior, and motor control."
+  },
+  {
+   "title": "Diplomacy",
+   "pageid": 28165911,
+   "revid": 1383418675,
+   "rev_ts": "2026-11-02T15:58:15Z",
+   "seed": "Diplomacy is the communication by representatives of state, intergovernmental, or non-governmental institutions intended to influence events in the international system.\nDiplomacy is the main instrument of foreign policy which represents the broader goals and strategies that guide a state's interactions with the rest of the world."
+  },
+  {
+   "title": "Drawing",
+   "pageid": 8544,
+   "revid": 1383339780,
+   "rev_ts": "2026-11-02T05:14:09Z",
+   "seed": "Drawing is a visual art that uses an instrument to mark paper or another two-dimensional surface, or a digital representation of such. Traditionally, the instruments used to create a drawing include pencils, crayons, Cont\u00e9 crayons, and ink pens, sometimes in combination."
+  },
+  {
+   "title": "Earth science",
+   "pageid": 20653168,
+   "revid": 1379258499,
+   "rev_ts": "2026-10-08T22:43:20Z",
+   "seed": "Earth science or geoscience includes all fields of natural science related to planet Earth. This is a branch of science dealing with the physical, chemical, and biological complex constitutions and synergistic linkages of Earth's four spheres: the biosphere, hydrosphere/cryosphere, atmosphere, and geosphere (or lithosphere)."
+  },
+  {
+   "title": "Egg",
+   "pageid": 484939,
+   "revid": 1378765972,
+   "rev_ts": "2026-10-06T02:07:14Z",
+   "seed": "An egg is an organic vessel grown by an animal to carry a possibly fertilized egg cell \u2013 a zygote. Within the vessel, an embryo is incubated until it has developed enough to survive on its own, at which point the animal hatches."
+  },
+  {
+   "title": "Electric motor",
+   "pageid": 76086,
+   "revid": 1379184351,
+   "rev_ts": "2026-10-08T11:55:56Z",
+   "seed": "An electric motor is a machine that converts electrical energy into mechanical energy. Most electric motors operate through the interaction between the motor's magnetic field and electric current in a wire winding to generate Lorentz force in the form of torque applied on the motor's shaft."
+  },
+  {
+   "title": "Electromagnetism",
+   "pageid": 9532,
+   "revid": 1382852918,
+   "rev_ts": "2026-10-30T17:27:22Z",
+   "seed": "In physics, electromagnetism is an interaction that occurs between particles with electric charge via electromagnetic fields. The electromagnetic force is one of the four fundamental forces of nature."
+  },
+  {
+   "title": "Eukaryote",
+   "pageid": 24536543,
+   "revid": 1377320053,
+   "rev_ts": "2026-09-28T22:13:11Z",
+   "seed": "The eukaryotes () are cellular organisms of the domain Eukaryota or Eukarya, which have a distinct cell nucleus (formed by a nuclear membrane), membrane-bound organelles and organization supported by a cytoskeleton. Extant eukaryotes are traditionally grouped into four kingdoms:  animals, plants, fungi and protists."
+  },
+  {
+   "title": "Explosive",
+   "pageid": 10192,
+   "revid": 1380763936,
+   "rev_ts": "2026-10-17T18:52:49Z",
+   "seed": "An explosive is a reactive substance that contains a great amount of potential energy that can produce an explosion if released suddenly, usually accompanied by the production of light, heat, sound, and pressure. An explosive charge is a measured quantity of explosive material."
+  },
+  {
+   "title": "Fear",
+   "pageid": 10828,
+   "revid": 1379422777,
+   "rev_ts": "2026-10-09T22:33:55Z",
+   "seed": "Fear is an emotional state which is aroused by threatening situations. It is usually considered to be a negative, unpleasant emotion."
+  },
+  {
+   "title": "Fishing",
+   "pageid": 36581,
+   "revid": 1382488305,
+   "rev_ts": "2026-10-28T23:21:17Z",
+   "seed": "Fishing is the activity of trying to catch fish. Fish are often caught as wildlife from the natural environment (freshwater or marine), but may also be caught from stocked bodies of water such as ponds, canals, park wetlands and reservoirs."
+  },
+  {
+   "title": "Gas",
+   "pageid": 18993869,
+   "revid": 1377279428,
+   "rev_ts": "2026-09-28T17:47:28Z",
+   "seed": "Gas is a state of matter with neither fixed volume nor fixed shape. It is a compressible form of fluid, in contrast to a liquid."
+  },
+  {
+   "title": "Han dynasty",
+   "pageid": 43460,
+   "revid": 1383318862,
+   "rev_ts": "2026-11-02T02:26:35Z",
+   "seed": "The Han dynasty (202 BC \u2013 9 AD, 25\u2013220 AD) was an imperial dynasty of China established by Liu Bang, and preceded by the short-lived Qin dynasty (221\u2013206 BC) and the interregnum known as the Chu\u2013Han Contention (206\u2013202 BC). It was succeeded by the Three Kingdoms period (220\u2013280 AD) and also briefly interrupted by the Xin dynasty (9\u201323 AD) established by the usurping regent Wang Mang."
+  },
+  {
+   "title": "Health",
+   "pageid": 80381,
+   "revid": 1376907986,
+   "rev_ts": "2026-09-26T22:48:26Z",
+   "seed": "Health has a variety of definitions which have been used for different purposes over time and is a multidimensional concept. It commonly refers to physical and emotional well-being."
+  },
+  {
+   "title": "Hindustani language",
+   "pageid": 66715,
+   "revid": 1381810099,
+   "rev_ts": "2026-10-24T23:07:32Z",
+   "seed": "Hindustani (Hindi\u2013Urdu) is an Indo-Aryan language native to the Hindi-Urdu Belt, and spoken across North, Central, West, and East India, as well as in Pakistan, as a lingua franca of the region. It is also spoken by a minority Deccani-speaking community which extends into South India."
+  },
+  {
+   "title": "History of Asia",
+   "pageid": 14097,
+   "revid": 1379614328,
+   "rev_ts": "2026-10-11T00:13:45Z",
+   "seed": "The history of Asia can be seen as the collective history of East Asia, South Asia, Southeast Asia, Central Asia, North Asia and West Asia. The continent is home to two of the world's oldest, continuous civilizations, Chinese civilization and Indian civilization."
+  },
+  {
+   "title": "History of agriculture",
+   "pageid": 2899597,
+   "revid": 1380684288,
+   "rev_ts": "2026-10-17T06:51:32Z",
+   "seed": "Agriculture began independently in different parts of the globe, and included a diverse range of taxa. At least eleven separate regions of the Old and New World were involved as independent centers of origin."
+  },
+  {
+   "title": "History of science",
+   "pageid": 14400,
+   "revid": 1382323642,
+   "rev_ts": "2026-10-28T01:12:25Z",
+   "seed": "The history of science covers the development of science from ancient times to the present. It encompasses all three major branches of science: natural, social, and formal."
+  },
+  {
+   "title": "Human",
+   "pageid": 682482,
+   "revid": 1383059058,
+   "rev_ts": "2026-10-31T19:39:18Z",
+   "seed": "Humans (Homo sapiens, meaning 'thinking man' or 'wise man') are the most abundant and widespread species of primates, characterized by bipedalism, minimal body hair, and large, complex brains enabling the development of advanced technology, culture, and language. Humans are highly social beings and tend to live in complex social structures composed of many cooperating and competing groups, from families and kinship networks to political states."
+  },
+  {
+   "title": "Imagination",
+   "pageid": 9325864,
+   "revid": 1382671649,
+   "rev_ts": "2026-10-29T18:52:30Z",
+   "seed": "Imagination is the representation of sensations or physical objects in the mind without any immediate input of the senses. Often described as forming pictures in the mind, it is commonly equated with mental imagery, though imaginary experiences do not have to be purely visual, and can include other sensory experiences, thoughts, and emotions."
+  },
+  {
+   "title": "Jainism",
+   "pageid": 16016,
+   "revid": 1383299870,
+   "rev_ts": "2026-11-02T00:32:16Z",
+   "seed": "Jainism ( JAY-niz-\u0259m, JYE-niz-\u0259m), also known as Jain Dharma, is an Indian religion that teaches a path toward spiritual purity and enlightenment through disciplined nonviolence (ahimsa) to all living creatures. The tradition is spiritually guided by 24 tirthankaras (ford-makers), supreme teachers who have conquered the cycle of rebirth and attained omniscience (kevala jnana)."
+  },
+  {
+   "title": "Jerusalem",
+   "pageid": 16043,
+   "revid": 1382513533,
+   "rev_ts": "2026-10-29T01:49:29Z",
+   "seed": "Jerusalem is a city in the Southern Levant, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea. It is one of the oldest cities in the world and is considered a holy city to the three major Abrahamic religions: Judaism, Christianity and Islam."
+  },
+  {
+   "title": "Light",
+   "pageid": 17939,
+   "revid": 1381433453,
+   "rev_ts": "2026-10-22T13:16:34Z",
+   "seed": "Light, visible light, or visible radiation is electromagnetic radiation that can be perceived by the human eye. Visible light spans the visible spectrum and is usually defined as having wavelengths in the range of 400\u2013700 nanometers (nm), corresponding to frequencies of 750\u2013420 terahertz."
+  },
+  {
+   "title": "Mahatma Gandhi",
+   "pageid": 19379,
+   "revid": 1381836151,
+   "rev_ts": "2026-10-25T02:40:07Z",
+   "seed": "Mohandas Karamchand Gandhi (2 October 1869 \u2013 30 January 1948) was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and whose legacy would later inspire movements for civil rights and freedom across the world. The honorific Mah\u0101tm\u0101 (Sanskrit: \"great-souled\", \"venerable\"), first applied to him in 1914 in South Africa, is now used throughout the world."
+  },
+  {
+   "title": "Mahayana",
+   "pageid": 27937488,
+   "revid": 1383358463,
+   "rev_ts": "2026-11-02T07:55:49Z",
+   "seed": "Mah\u0101y\u0101na (Sanskrit: \u092e\u0939\u093e\u092f\u093e\u0928, \"Great Vehicle\") is the largest branch of Buddhism, followed by the older branch Theravada. It is a broad group of Buddhist traditions, texts, philosophies, and practices that developed in various regions and Buddhist communities of ancient India (c.\u20091st century BCE onwards)."
+  },
+  {
+   "title": "Maize",
+   "pageid": 20656228,
+   "revid": 1383485160,
+   "rev_ts": "2026-11-02T23:06:51Z",
+   "seed": "Maize (US: ; Zea mays), also known as corn, is a tall stout grass that produces cereal grain. The leafy stalk of the plant gives rise to male inflorescences or tassels which produce pollen, and female inflorescences called ears."
+  },
+  {
+   "title": "Medication",
+   "pageid": 180121,
+   "revid": 1379091423,
+   "rev_ts": "2026-10-07T22:15:10Z",
+   "seed": "Medication (also called medicament, medicine, pharmaceutical drug, medicinal product, medicinal drug, or simply drug) is a drug used to diagnose, cure, treat, or prevent disease. Drug therapy (pharmacotherapy) is an important part of the medical field and relies on the science of pharmacology for continual advancement and on pharmacy for appropriate management."
+  },
+  {
+   "title": "Memory",
+   "pageid": 31217535,
+   "revid": 1380372913,
+   "rev_ts": "2026-10-15T10:17:04Z",
+   "seed": "Memory is the faculty of the mind by which data or information is encoded, stored, and retrieved when needed. It is the retention of information over time for the purpose of influencing future action."
+  },
+  {
+   "title": "Mental health",
+   "pageid": 990505,
+   "revid": 1383416865,
+   "rev_ts": "2026-11-02T15:48:02Z",
+   "seed": "Mental health encompasses emotional, psychological, and social well-being, influencing cognition, perception, and behavior. Mental health plays a crucial role in an individual's daily life when managing stress, engaging with others, and contributing to life overall."
+  },
+  {
+   "title": "Michael Jackson",
+   "pageid": 14995351,
+   "revid": 1383341480,
+   "rev_ts": "2026-11-02T05:30:55Z",
+   "seed": "Michael Joseph Jackson (August 29, 1958 \u2013 June 25, 2009) was an American singer, songwriter, dancer, and philanthropist. Dubbed the \"King of Pop\", he is widely regarded as one of the most culturally significant figures of the 20th century."
+  },
+  {
+   "title": "Military history",
+   "pageid": 25595604,
+   "revid": 1379908461,
+   "rev_ts": "2026-10-12T16:19:35Z",
+   "seed": "Military history is the study of armed conflict in the history of humanity, and its impact on the societies, cultures, and economies thereof, as well as the resulting changes to local and international relationships.\nThe essential subjects of military history study are the causes of war, the social and cultural foundations, military doctrine on each side, the logistics, leadership, technology, strategy, and tactics used, and how these changed over time."
+  },
+  {
+   "title": "Mining",
+   "pageid": 20381,
+   "revid": 1383409265,
+   "rev_ts": "2026-11-02T15:03:19Z",
+   "seed": "Mining is the extraction of geological materials and minerals from Earth's surface. Mining is required to obtain most materials that cannot be grown through agricultural processes, or feasibly made artificially in a laboratory or factory."
+  },
+  {
+   "title": "Mobile phone",
+   "pageid": 19644137,
+   "revid": 1375148315,
+   "rev_ts": "2026-09-16T02:37:07Z",
+   "seed": "A mobile phone or cell phone is a portable wireless  telephone that allows users to make and receive calls over a radio frequency link while moving within a designated telephone service area, unlike fixed-location phones (landline phones). This radio frequency link connects to the switching systems of a mobile phone operator, providing access to the public switched telephone network (PSTN)."
+  },
+  {
+   "title": "Modernism",
+   "pageid": 19547,
+   "revid": 1379921929,
+   "rev_ts": "2026-10-12T18:08:40Z",
+   "seed": "Modernism was an early 20th-century movement in literature, visual arts, performing arts, and music that emphasized experimentation, abstraction, and subjective experience. Philosophy, politics, architecture, and social issues were all aspects of this movement."
+  },
+  {
+   "title": "Mumbai",
+   "pageid": 19189,
+   "revid": 1383132370,
+   "rev_ts": "2026-11-01T03:57:09Z",
+   "seed": "Mumbai ( muum-BY; Marathi: Mumba\u012b, pronounced [\u02c8mumb\u0259i] ), also known as Bombay ( bom-BAY; its official name until 1995), is the capital city of the Indian state of Maharashtra and the financial capital of India. Located on the Konkan coast along the west coast of India, it has a deep natural harbour."
+  },
+  {
+   "title": "Murasaki Shikibu",
+   "pageid": 42758,
+   "revid": 1382608098,
+   "rev_ts": "2026-10-29T13:03:40Z",
+   "seed": "Murasaki Shikibu (\u7d2b\u5f0f\u90e8; [m\u026f.\u027ea.sa.k\u02b2i \u0255i\u0325.ki\ua71c.b\u026f, -\u0255i\u0325\ua71c.k\u02b2i-]; c.\u2009973 \u2013 c.\u20091014 or 1025), or Shijo (\u7d2b\u5973; [\u0255i\ua71c.(d)\u0291o]; lit.\u2009'Lady Murasaki'), was a Japanese novelist, poet and lady-in-waiting at the Imperial court in the Heian period. She was best known as the author of The Tale of Genji, widely considered to be one of the world's first novels, written in Japanese between about 1000 and 1012."
+  },
+  {
+   "title": "Myanmar",
+   "pageid": 19457,
+   "revid": 1383313508,
+   "rev_ts": "2026-11-02T01:54:40Z",
+   "seed": "Myanmar, officially the Republic of the Union of Myanmar and also referred to as Burma (the official English name until 1989), is a country in northwest Southeast Asia. It is the largest country by area in Mainland Southeast Asia and had a population of about 51 million at the 2024 census."
+  },
+  {
+   "title": "Myocardial infarction",
+   "pageid": 20556798,
+   "revid": 1378744991,
+   "rev_ts": "2026-10-06T00:27:24Z",
+   "seed": "A myocardial infarction (MI), commonly known as a heart attack, occurs when blood flow decreases or stops in one of the arteries of the heart, causing infarction (tissue death) to the heart muscle. The most common symptom is retrosternal chest pain or discomfort that classically radiates to the left shoulder, arm, or jaw."
+  },
+  {
+   "title": "Peace",
+   "pageid": 24702,
+   "revid": 1383499663,
+   "rev_ts": "2026-11-03T00:57:45Z",
+   "seed": "Peace is a state of harmony in the absence of hostility and violence. In a societal sense, peace is commonly used to mean a lack of conflict and freedom from fear of violence between individuals or groups."
+  },
+  {
+   "title": "Photon",
+   "pageid": 23535,
+   "revid": 1382830772,
+   "rev_ts": "2026-10-30T14:55:41Z",
+   "seed": "A photon (from Ancient Greek  \u03c6\u1ff6\u03c2, \u03c6\u03c9\u03c4\u03cc\u03c2 (ph\u00f4s, ph\u014dt\u00f3s) 'light') is an elementary particle that is a quantum of the electromagnetic field, including electromagnetic radiation such as light and radio waves, and the force carrier for the electromagnetic force. Photons are massless particles that can only move at one speed, the speed of light measured in a vacuum."
+  },
+  {
+   "title": "Physics",
+   "pageid": 22939,
+   "revid": 1381045695,
+   "rev_ts": "2026-10-19T17:36:36Z",
+   "seed": "Physics is the scientific study of matter, its fundamental constituents, its motion and behavior through space and time, and the related entities of energy and force. It is one of the most fundamental scientific disciplines."
+  },
+  {
+   "title": "Political party",
+   "pageid": 23996,
+   "revid": 1382254659,
+   "rev_ts": "2026-10-27T16:08:59Z",
+   "seed": "A political party is an organization that coordinates candidates to compete in elections and participate in governance. It is common for the members of a party to hold similar ideas about politics, and parties may promote specific ideological or policy goals."
+  },
+  {
+   "title": "Power (political science)",
+   "pageid": 147885,
+   "revid": 1376247329,
+   "rev_ts": "2026-09-23T01:03:42Z",
+   "seed": "In political science, power is the ability to direct the actions and conduct of others. Political power is usually exercised through government offices with authority, over political societies which are often termed states."
+  },
+  {
+   "title": "Prehistory",
+   "pageid": 18994022,
+   "revid": 1382178870,
+   "rev_ts": "2026-10-27T02:51:01Z",
+   "seed": "Prehistory, sometimes referred to as pre-literary history, is the period of human history between the first known use of stone tools by hominins c.\u20093.3 million years ago and the beginning of recorded history with the invention of writing systems. The use of symbols, marks, and images appears very early among humans, but the earliest known writing systems appeared c.\u20095,200 years ago."
+  },
+  {
+   "title": "Ren\u00e9 Descartes",
+   "pageid": 25525,
+   "revid": 1381471270,
+   "rev_ts": "2026-10-22T19:03:46Z",
+   "seed": "Ren\u00e9 Descartes ( day-KART, also  DAY-kart; French: [\u0281\u0259ne deka\u0281t] ; 31 March 1596 \u2013 11 February 1650) was a French philosopher, mathematician, and scientist whose work was foundational to mathematics and modern philosophy, and influenced the development of early modern science. He connected the previously separate fields of geometry and algebra into analytic geometry, introduced a systematic method of inquiry that became influential in early modern philosophy, and made major contributions to epistemology and philosophy of mind as well as metaphysics."
+  },
+  {
+   "title": "Research",
+   "pageid": 25524,
+   "revid": 1375627747,
+   "rev_ts": "2026-09-19T00:30:37Z",
+   "seed": "Research is creative and systematic work undertaken to increase the stock of knowledge. It involves the collection, organization, and analysis of evidence to increase understanding of a topic, characterized by a particular attentiveness to controlling sources of bias and error."
+  },
+  {
+   "title": "Respiratory system",
+   "pageid": 66723,
+   "revid": 1382186282,
+   "rev_ts": "2026-10-27T04:12:07Z",
+   "seed": "The respiratory system (also respiratory apparatus, ventilatory system) is a biological system consisting of specific organs and structures used for gas exchange in animals and plants.\nIn land animals, the respiratory surface is internalized as linings of the lungs."
+  },
+  {
+   "title": "Rock music",
+   "pageid": 25423,
+   "revid": 1382703873,
+   "rev_ts": "2026-10-29T21:45:37Z",
+   "seed": "Rock music is a genre of popular music that originated in the United States as \"rock and roll\" in the late 1940s and early 1950s, developing into a range of styles from the late 1950s to mid-1960s, primarily in the United States and United Kingdom. It has its roots beginning as classic rock and roll, a style that drew from the African-American musical genres of blues and rhythm and blues, as well as from country music."
+  },
+  {
+   "title": "Set (mathematics)",
+   "pageid": 26691,
+   "revid": 1375014203,
+   "rev_ts": "2026-09-15T11:15:43Z",
+   "seed": "In mathematics, a set is a collection of different things; the things are called elements or members of the set and are typically mathematical objects: numbers, symbols, points in space, lines, other geometric shapes, variables, functions, or even other sets.\nSets cannot be mathematically defined, since they form a primitive notion."
+  },
+  {
+   "title": "Sexism",
+   "pageid": 27165,
+   "revid": 1382722853,
+   "rev_ts": "2026-10-29T23:31:12Z",
+   "seed": "Sexism is prejudice or discrimination based on one's sex or gender. Sexism can affect anyone, but primarily affects women and girls."
+  },
+  {
+   "title": "Shinto",
+   "pageid": 28272,
+   "revid": 1382120972,
+   "rev_ts": "2026-10-26T18:59:03Z",
+   "seed": "Shinto (Japanese: \u795e\u9053, Hepburn: Shint\u014d; Japanese pronunciation: [\u0255i\ua71cn.to\u02d0]), also called Shintoism, is a religion from Japan. Classified as an East Asian religion by the academic field of religious studies, Shinto is often regarded by its practitioners as Japan's indigenous religion and as a nature religion."
+  },
+  {
+   "title": "Smallpox",
+   "pageid": 16829895,
+   "revid": 1382034096,
+   "rev_ts": "2026-10-26T04:05:08Z",
+   "seed": "Smallpox was an infectious disease caused by the variola virus, which belongs to the genus Orthopoxvirus. The last naturally occurring case was diagnosed in October 1977, and the World Health Organization certified the global eradication of the disease in 1980, making smallpox the only human disease to have been eradicated."
+  },
+  {
+   "title": "Snow",
+   "pageid": 28191,
+   "revid": 1372800586,
+   "rev_ts": "2026-09-02T09:33:53Z",
+   "seed": "Snow is a form of solid atmospheric precipitation consisting of individual ice crystals that grow while suspended in the air\u2014usually within clouds\u2014and then fall, accumulating on the ground, where they undergo further changes. It consists of frozen crystalline water throughout its life cycle, starting when, under suitable conditions, the ice crystals form in the atmosphere, increase to millimeter size, precipitate and accumulate on surfaces, then metamorphose in place, and ultimately melt, slide, or sublimate away."
+  },
+  {
+   "title": "Standard Model",
+   "pageid": 47641,
+   "revid": 1382514686,
+   "rev_ts": "2026-10-29T01:56:09Z",
+   "seed": "The Standard Model of particle physics is the theory describing three of the four known fundamental forces (electromagnetic, weak and strong interactions \u2013 excluding gravity) in the universe and classifying all known elementary particles. It was developed in stages throughout the latter half of the 20th century, through the work of many scientists worldwide, with the current formulation being finalized in the mid-1970s upon experimental confirmation of the existence of quarks."
+  },
+  {
+   "title": "Stroke",
+   "pageid": 625404,
+   "revid": 1380378067,
+   "rev_ts": "2026-10-15T11:22:59Z",
+   "seed": "A stroke, also referred to as a cerebrovascular accident, is a medical condition in which blood flow to a part of the brain is reduced or blocked causing cell death. There are two main types of stroke: ischemic, due to lack of blood flow, and hemorrhagic, due to bleeding."
+  },
+  {
+   "title": "Sub-Saharan Africa",
+   "pageid": 27067,
+   "revid": 1382845242,
+   "rev_ts": "2026-10-30T16:38:11Z",
+   "seed": "Sub-Saharan Africa is the areas and regions of the continent of Africa that lie south of the Sahara. These include a great majority of Mainland Africa, including the Sahel, and Madagascar."
+  },
+  {
+   "title": "Surgery",
+   "pageid": 45599,
+   "revid": 1382614869,
+   "rev_ts": "2026-10-29T13:47:31Z",
+   "seed": "Surgery is a medical specialty that uses manual and instrumental techniques to diagnose or treat pathological conditions (e.g., trauma, disease, injury, malignancy), to alter bodily functions (e.g., malabsorption created by bariatric surgery such as gastric bypass), to reconstruct or alter aesthetics and appearance (cosmetic surgery), or to remove unwanted tissues, neoplasms and foreign bodies.\nThe act of performing surgery may be called a surgical procedure or surgical operation, or simply \"surgery\" or \"operation\"."
+  },
+  {
+   "title": "Tanzania",
+   "pageid": 30118,
+   "revid": 1382853101,
+   "rev_ts": "2026-10-30T17:28:23Z",
+   "seed": "Tanzania, officially the United Republic of Tanzania, is a country in East Africa within the African Great Lakes region. It is bordered by Uganda to the northwest, Kenya to the northeast, the Indian Ocean to the east, Mozambique and Malawi to the south, Zambia to the southwest, and Rwanda, Burundi, and the Democratic Republic of the Congo to the west."
+  },
+  {
+   "title": "Tea",
+   "pageid": 29969,
+   "revid": 1382092954,
+   "rev_ts": "2026-10-26T15:29:12Z",
+   "seed": "Tea is an aromatic beverage prepared by infusion of hot or boiling fresh water with fresh or cured leaves of Camellia sinensis, an evergreen shrub native to East Asia that originated in the borderlands of southwestern China, northeast India and northern Myanmar. Tea has a stimulant effect in humans primarily due to its caffeine content."
+  },
+  {
+   "title": "Tree",
+   "pageid": 18955875,
+   "revid": 1381011724,
+   "rev_ts": "2026-10-19T12:32:33Z",
+   "seed": "In botany, a tree is a perennial plant with an elongated stem, or trunk, usually supporting branches and leaves. In some usages, the definition of a tree may be narrower, e.g., including only woody plants with secondary growth, only plants that are usable for timber, or only plants above a specified height."
+  },
+  {
+   "title": "Trigonometry",
+   "pageid": 18717261,
+   "revid": 1375353235,
+   "rev_ts": "2026-09-17T08:17:56Z",
+   "seed": "Trigonometry (from Ancient Greek  \u03c4\u03c1\u03af\u03b3\u03c9\u03bd\u03bf\u03bd (tr\u00edg\u014dnon) 'triangle' and  \u03bc\u03ad\u03c4\u03c1\u03bf\u03bd (m\u00e9tron) 'measure') is a branch of mathematics concerned with relationships between angles and side lengths of triangles. In particular, the trigonometric functions relate the angles of a right triangle with ratios of its side lengths."
+  },
+  {
+   "title": "Venus",
+   "pageid": 32745,
+   "revid": 1383220358,
+   "rev_ts": "2026-11-01T16:41:56Z",
+   "seed": "Venus is the second planet from the Sun. Similar in size and mass to Earth, Venus has no liquid water, and its atmosphere is far thicker and denser than that of any other rocky body in the Solar System."
+  },
+  {
+   "title": "Village",
+   "pageid": 53509,
+   "revid": 1376854292,
+   "rev_ts": "2026-09-26T16:47:10Z",
+   "seed": "A village is a human settlement or a residential community, larger than a hamlet but smaller than a town; some geographers describe villages as having between 500 and 2,500 inhabitants. Although villages are often located in rural areas, the term urban village is also applied to certain urban neighborhoods."
+  },
+  {
+   "title": "War",
+   "pageid": 33158,
+   "revid": 1377766688,
+   "rev_ts": "2026-10-01T01:27:59Z",
+   "seed": "War is an armed conflict between the armed forces of states, or between governmental forces and armed groups that are organized under a certain command structure and have the capacity to sustain military operations, or between such organized groups. \nIt is generally characterized by widespread violence, destruction, and mortality, using regular or irregular military forces."
+  },
+  {
+   "title": "Weather",
+   "pageid": 33978,
+   "revid": 1377146205,
+   "rev_ts": "2026-09-28T02:26:10Z",
+   "seed": "Weather is the state of the Earth's atmosphere at a specific place and time, typically described in terms of temperature, humidity, cloud cover, and stability. On Earth, most weather phenomena occur in the lowest layer of the planet's atmosphere, the troposphere, just below the stratosphere."
+  },
+  {
+   "title": "Wheel",
+   "pageid": 33555,
+   "revid": 1377593758,
+   "rev_ts": "2026-09-30T03:00:15Z",
+   "seed": "A wheel is a rotating component (typically circular in shape) intended to turn on an axle bearing. The wheel is one of the key components of the wheel and axle, which is one of the six simple machines."
+  },
+  {
+   "title": "William Shakespeare",
+   "pageid": 32897,
+   "revid": 1383380297,
+   "rev_ts": "2026-11-02T11:15:37Z",
+   "seed": "William Shakespeare (c. 23 April 1564 \u2013 23 April 1616) was an English playwright, poet and actor."
+  },
+  {
+   "title": "Word",
+   "pageid": 1449866,
+   "revid": 1378709075,
+   "rev_ts": "2026-10-05T20:19:44Z",
+   "seed": "A word is a basic element of language that carries meaning, can be used on its own, and is uninterruptible. Despite the fact that language speakers often have an intuitive grasp of what a word is, there is no consensus among linguists on its definition and numerous attempts to find specific criteria of the concept remain controversial."
+  }
+ ]
+}

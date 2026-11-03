@@ -1,0 +1,11 @@
+# E3-S2 (predictions.md "E3 second sample and projections", 2026-11-03): second sample of the E3-S cell. Identical to
+# configs/e3_1_haiku_100.yaml (claude-haiku-5-5, story -> 50-word summary -> story, Hintze seeds 0–99 x 100 steps, default
+# sampling D16, effort low, 12 concurrent trajectories); step 0 generated fresh, so every trajectory is a new draw from its seed.
+run_name: e3_1_haiku_100b
+arm: E3-1
+loop: compress_expand
+steps: 100
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+summary_word_limit: 50
+model: {backend: anthropic, model: claude-haiku-5-5, parallel: 12, effort: low, max_tokens_story: 4000, max_tokens_summary: 1000, timeout_s: 180, retries: 8}

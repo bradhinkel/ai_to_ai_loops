@@ -1,0 +1,2171 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "late_from": 25,
+  "ref": "e3_1_haiku_100",
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "reference": {
+  "anon": {
+   "k": 198,
+   "persistent": 46,
+   "shared": 13,
+   "shared_wells": {
+    "9": {
+     "trajs": [
+      24,
+      30,
+      57,
+      80
+     ],
+     "visits": 7
+    },
+    "16": {
+     "trajs": [
+      4,
+      61
+     ],
+     "visits": 3
+    },
+    "39": {
+     "trajs": [
+      16,
+      22,
+      71
+     ],
+     "visits": 3
+    },
+    "43": {
+     "trajs": [
+      5,
+      37
+     ],
+     "visits": 5
+    },
+    "46": {
+     "trajs": [
+      71,
+      84,
+      93
+     ],
+     "visits": 5
+    },
+    "68": {
+     "trajs": [
+      27,
+      91
+     ],
+     "visits": 5
+    },
+    "88": {
+     "trajs": [
+      28,
+      29,
+      66
+     ],
+     "visits": 3
+    },
+    "115": {
+     "trajs": [
+      8,
+      20,
+      72
+     ],
+     "visits": 6
+    },
+    "143": {
+     "trajs": [
+      24,
+      52,
+      57,
+      95
+     ],
+     "visits": 5
+    },
+    "154": {
+     "trajs": [
+      63,
+      94
+     ],
+     "visits": 5
+    },
+    "155": {
+     "trajs": [
+      18,
+      97
+     ],
+     "visits": 3
+    },
+    "164": {
+     "trajs": [
+      4,
+      78
+     ],
+     "visits": 4
+    },
+    "166": {
+     "trajs": [
+      12,
+      79
+     ],
+     "visits": 6
+    }
+   },
+   "inside_late": 0.268,
+   "traj_with_persistent_shared": 30,
+   "traj_touching_shared": 49
+  },
+  "raw": {
+   "k": 198,
+   "persistent": 54,
+   "shared": 5,
+   "shared_wells": {
+    "65": {
+     "trajs": [
+      30,
+      43
+     ],
+     "visits": 3
+    },
+    "125": {
+     "trajs": [
+      57,
+      80
+     ],
+     "visits": 3
+    },
+    "159": {
+     "trajs": [
+      87,
+      95
+     ],
+     "visits": 3
+    },
+    "166": {
+     "trajs": [
+      67,
+      87
+     ],
+     "visits": 3
+    },
+    "185": {
+     "trajs": [
+      5,
+      37
+     ],
+     "visits": 3
+    }
+   },
+   "inside_late": 0.2813333333333333,
+   "traj_with_persistent_shared": 9,
+   "traj_touching_shared": 12
+  }
+ },
+ "cells": {
+  "e3_1_haiku": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.064,
+    "traj_with_persistent_shared": 3,
+    "traj_touching_shared": 6,
+    "distinct_shared_wells": [
+     16,
+     39,
+     46,
+     115
+    ],
+    "nn_shared_late_median": 0.25180963113337396,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.013333333333333334
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.29333333333333333
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [
+       164
+      ],
+      "inside_late": 0.05333333333333334
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {
+       "39": 1
+      },
+      "touched_wells": [
+       39,
+       43,
+       115
+      ],
+      "inside_late": 0.26666666666666666
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {
+       "46": 1,
+       "115": 1
+      },
+      "touched_wells": [
+       39,
+       46,
+       115
+      ],
+      "inside_late": 0.37333333333333335
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {
+       "16": 1
+      },
+      "touched_wells": [
+       16,
+       143
+      ],
+      "inside_late": 0.21333333333333335
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       143,
+       155
+      ],
+      "inside_late": 0.04
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.02666666666666667
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [
+       154
+      ],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.006666666666666667,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.39814330380550705,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.06666666666666667
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.06666666666666667
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_1_sonnet": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.02266666666666667,
+    "traj_with_persistent_shared": 2,
+    "traj_touching_shared": 5,
+    "distinct_shared_wells": [
+     16,
+     39
+    ],
+    "nn_shared_late_median": 0.280576112981969,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {
+       "16": 1
+      },
+      "touched_wells": [
+       16,
+       88,
+       164
+      ],
+      "inside_late": 0.18666666666666668
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [
+       39
+      ],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [
+       39,
+       115
+      ],
+      "inside_late": 0.13333333333333333
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {
+       "39": 1
+      },
+      "touched_wells": [
+       39,
+       46,
+       115
+      ],
+      "inside_late": 0.13333333333333333
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [
+       115
+      ],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0006666666666666666,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.44453055166235533,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.013333333333333334
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_1_mistral": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.5127852702808261,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.6064733728128116,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_1_qwen": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.4947572890065811,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.6315080662321881,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_1_llava": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.4917556485496453,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.6261695522224173,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_d_haiku": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.04933333333333333,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 17,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.2193859666384591,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88
+      ],
+      "inside_late": 0.02666666666666667
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       143
+      ],
+      "inside_late": 0.09333333333333334
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88,
+       143,
+       166
+      ],
+      "inside_late": 0.10666666666666667
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       143
+      ],
+      "inside_late": 0.04
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88,
+       155
+      ],
+      "inside_late": 0.12
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [
+       16
+      ],
+      "inside_late": 0.02666666666666667
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [
+       88,
+       143
+      ],
+      "inside_late": 0.05333333333333334
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88,
+       143,
+       155
+      ],
+      "inside_late": 0.06666666666666667
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [
+       46,
+       68,
+       115
+      ],
+      "inside_late": 0.05333333333333334
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       143
+      ],
+      "inside_late": 0.04
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88,
+       143,
+       155
+      ],
+      "inside_late": 0.04
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [
+       16
+      ],
+      "inside_late": 0.013333333333333334
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88
+      ],
+      "inside_late": 0.04
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88,
+       143
+      ],
+      "inside_late": 0.13333333333333333
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [
+       88
+      ],
+      "inside_late": 0.02666666666666667
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       88
+      ],
+      "inside_late": 0.02666666666666667
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [
+       16,
+       143,
+       155
+      ],
+      "inside_late": 0.08
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0013333333333333333,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 4,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.36857877723092214,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [
+       166
+      ],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [
+       166
+      ],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [
+       166
+      ],
+      "inside_late": 0.013333333333333334
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [
+       166
+      ],
+      "inside_late": 0.013333333333333334
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  },
+  "e3_d_mistral": {
+   "anon": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.49153486740122165,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   },
+   "raw": {
+    "n_traj": 20,
+    "inside_late": 0.0,
+    "traj_with_persistent_shared": 0,
+    "traj_touching_shared": 0,
+    "distinct_shared_wells": [],
+    "nn_shared_late_median": 0.5946201271897424,
+    "per_traj": [
+     {
+      "traj": 0,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 1,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 2,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 3,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 4,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 5,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 6,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 7,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 8,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 9,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 10,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 11,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 12,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 13,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 14,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 15,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 16,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 17,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 18,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     },
+     {
+      "traj": 19,
+      "persistent_wells": {},
+      "touched_wells": [],
+      "inside_late": 0.0
+     }
+    ]
+   }
+  }
+ },
+ "verdicts": {
+  "P1_same_model": {
+   "traj_persistent": 3,
+   "inside": 0.064,
+   "ref_inside": 0.268,
+   "holds": false
+  },
+  "P2_sonnet_overlaps": {
+   "traj_persistent": 2,
+   "inside_ratio": 0.3541666666666667,
+   "wells": [
+    16,
+    39
+   ],
+   "holds": true
+  },
+  "P3_e3_1_mistral": {
+   "traj_persistent": 0,
+   "inside_ratio": 0.0,
+   "holds": true
+  },
+  "P3_e3_1_qwen": {
+   "traj_persistent": 0,
+   "inside_ratio": 0.0,
+   "holds": true
+  },
+  "P3_e3_1_llava": {
+   "traj_persistent": 0,
+   "inside_ratio": 0.0,
+   "holds": true
+  },
+  "P4b_embedding": {
+   "nn_haiku_d": 0.2193859666384591,
+   "nn_mistral_d": 0.49153486740122165,
+   "haiku_d_touching": 17,
+   "holds": true
+  }
+ }
+}

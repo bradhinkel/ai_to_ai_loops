@@ -1,0 +1,957 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "n_sub": 5,
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_haiku": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 11,
+   "ident_at": {
+    "1": 1.0,
+    "5": 0.75,
+    "10": 0.6,
+    "25": 0.45,
+    "50": 0.45,
+    "99": 0.2
+   },
+   "memory_curve": [
+    1.0,
+    1.0,
+    0.95,
+    0.9,
+    0.8,
+    0.75,
+    0.65,
+    0.65,
+    0.6,
+    0.55,
+    0.6,
+    0.4,
+    0.45,
+    0.4,
+    0.55,
+    0.45,
+    0.45,
+    0.45,
+    0.4,
+    0.6,
+    0.55,
+    0.4,
+    0.35,
+    0.35,
+    0.3,
+    0.45,
+    0.4,
+    0.35,
+    0.4,
+    0.4,
+    0.45,
+    0.3,
+    0.5,
+    0.45,
+    0.3,
+    0.45,
+    0.35,
+    0.4,
+    0.4,
+    0.35,
+    0.5,
+    0.45,
+    0.35,
+    0.45,
+    0.4,
+    0.45,
+    0.3,
+    0.45,
+    0.45,
+    0.4,
+    0.45,
+    0.4,
+    0.35,
+    0.4,
+    0.4,
+    0.45,
+    0.4,
+    0.45,
+    0.4,
+    0.45,
+    0.5,
+    0.45,
+    0.45,
+    0.45,
+    0.4,
+    0.5,
+    0.35,
+    0.45,
+    0.45,
+    0.4,
+    0.35,
+    0.35,
+    0.3,
+    0.25,
+    0.3,
+    0.35,
+    0.35,
+    0.45,
+    0.3,
+    0.3,
+    0.35,
+    0.2,
+    0.3,
+    0.35,
+    0.3,
+    0.2,
+    0.25,
+    0.25,
+    0.35,
+    0.3,
+    0.25,
+    0.2,
+    0.15,
+    0.3,
+    0.25,
+    0.25,
+    0.3,
+    0.25,
+    0.2,
+    0.2
+   ],
+   "nn_other_median": 0.34229522727353434,
+   "nn_other_anon_median": 0.2617091241616931,
+   "within_015": 0.0,
+   "within_015_anon": 0.004,
+   "vendi_story_99": 9.50426993931659,
+   "vendi_summary_99": 13.120986175822729,
+   "words_median_99": 501.5,
+   "summary_words_median": 50.0,
+   "summary_le_limit_share": {
+    "20": 0.0,
+    "25": 0.0,
+    "30": 0.0005,
+    "50": 0.55
+   },
+   "summary_flags": {
+    "over_50_words": 900
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 997,
+     "distinct": 112,
+     "top10": [
+      [
+       "Maya",
+       200
+      ],
+      [
+       "Nora",
+       55
+      ],
+      [
+       "Daniel",
+       52
+      ],
+      [
+       "Priya",
+       43
+      ],
+      [
+       "Mara",
+       39
+      ],
+      [
+       "Walt",
+       37
+      ],
+      [
+       "Eleanor",
+       32
+      ],
+      [
+       "Hanna",
+       30
+      ],
+      [
+       "Dorn",
+       27
+      ],
+      [
+       "Tom",
+       25
+      ]
+     ],
+     "top10_cover": 0.5416248746238717,
+     "llm_set_hits": [
+      "Maya"
+     ]
+    },
+    "flags": {
+     "story_refusal": 368,
+     "summary_over_50_words": 900,
+     "story_empty": 1
+    }
+   },
+   "theme": {
+    "n": 1000,
+    "bad": 5,
+    "modal": [
+     "young_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.164,
+    "woman_share": 0.696,
+    "hopeful_share": 0.733
+   }
+  },
+  "e3_d_haiku": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 1,
+   "ident_at": {
+    "1": 0.5,
+    "5": 0.1,
+    "10": 0.15,
+    "25": 0.0,
+    "50": 0.1,
+    "99": 0.0
+   },
+   "memory_curve": [
+    1.0,
+    0.5,
+    0.1,
+    0.35,
+    0.2,
+    0.1,
+    0.15,
+    0.15,
+    0.15,
+    0.1,
+    0.15,
+    0.1,
+    0.05,
+    0.05,
+    0.15,
+    0.1,
+    0.15,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.15,
+    0.05,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.1,
+    0.0,
+    0.1,
+    0.15,
+    0.0,
+    0.1,
+    0.0,
+    0.1,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.1,
+    0.1,
+    0.0,
+    0.0,
+    0.05,
+    0.1,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0
+   ],
+   "nn_other_median": 0.2075464809348434,
+   "nn_other_anon_median": 0.17020185373148672,
+   "within_015": 0.17666666666666667,
+   "within_015_anon": 0.316,
+   "vendi_story_99": 6.884355316262118,
+   "vendi_summary_99": 6.77131603587252,
+   "words_median_99": 456.0,
+   "summary_words_median": 19.0,
+   "summary_le_limit_share": {
+    "20": 0.767,
+    "25": 0.993,
+    "30": 0.9985,
+    "50": 0.9995
+   },
+   "summary_flags": {
+    "over_25_words": 14
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 1000,
+     "distinct": 135,
+     "top10": [
+      [
+       "Daniel",
+       131
+      ],
+      [
+       "Maya",
+       87
+      ],
+      [
+       "Ruth",
+       64
+      ],
+      [
+       "Thomas",
+       56
+      ],
+      [
+       "Marcus",
+       46
+      ],
+      [
+       "Margaret",
+       41
+      ],
+      [
+       "Walter",
+       37
+      ],
+      [
+       "Eli",
+       26
+      ],
+      [
+       "Mara",
+       24
+      ],
+      [
+       "Marta",
+       22
+      ]
+     ],
+     "top10_cover": 0.534,
+     "llm_set_hits": [
+      "Eli",
+      "Maya"
+     ]
+    },
+    "flags": {
+     "story_refusal": 529,
+     "summary_over_25_words": 14
+    }
+   },
+   "theme": {
+    "n": 92,
+    "bad": 0,
+    "modal": [
+     "older_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.18478260869565216,
+    "woman_share": 0.7717391304347826,
+    "hopeful_share": 0.7608695652173914
+   }
+  }
+ },
+ "scale": {
+  "k_full": 40,
+  "full": {
+   "raw": {
+    "persistent": 1,
+    "shared": 0,
+    "pairs": [],
+    "n_sharing_pairs": 0,
+    "n_pairs": 190,
+    "rate": 0.0,
+    "W_hat": null,
+    "max_mult": 0,
+    "inside_share": 0.014646464646464647,
+    "clusters": []
+   },
+   "anon": {
+    "persistent": 8,
+    "shared": 7,
+    "pairs": [
+     [
+      0,
+      15
+     ],
+     [
+      0,
+      18
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      1,
+      14
+     ],
+     [
+      1,
+      16
+     ],
+     [
+      3,
+      7
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      3,
+      15
+     ],
+     [
+      3,
+      18
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      4,
+      19
+     ],
+     [
+      5,
+      6
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      6,
+      13
+     ],
+     [
+      6,
+      15
+     ],
+     [
+      6,
+      19
+     ],
+     [
+      8,
+      9
+     ],
+     [
+      8,
+      11
+     ],
+     [
+      8,
+      12
+     ],
+     [
+      8,
+      14
+     ],
+     [
+      8,
+      15
+     ],
+     [
+      8,
+      16
+     ],
+     [
+      8,
+      18
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      9,
+      12
+     ],
+     [
+      9,
+      15
+     ],
+     [
+      9,
+      18
+     ],
+     [
+      11,
+      12
+     ],
+     [
+      13,
+      15
+     ],
+     [
+      14,
+      16
+     ],
+     [
+      15,
+      18
+     ]
+    ],
+    "n_sharing_pairs": 35,
+    "n_pairs": 190,
+    "rate": 0.18421052631578946,
+    "W_hat": 5.428571428571429,
+    "max_mult": 5,
+    "inside_share": 0.2545454545454545,
+    "clusters": [
+     [
+      2,
+      [
+       0,
+       15,
+       18
+      ],
+      3
+     ],
+     [
+      3,
+      [
+       3,
+       8,
+       9,
+       15,
+       18
+      ],
+      8
+     ],
+     [
+      9,
+      [
+       1,
+       8,
+       14,
+       16
+      ],
+      6
+     ],
+     [
+      11,
+      [
+       6,
+       13,
+       15
+      ],
+      3
+     ],
+     [
+      20,
+      [
+       4,
+       5,
+       6,
+       19
+      ],
+      6
+     ],
+     [
+      27,
+      [
+       8,
+       9,
+       11,
+       12
+      ],
+      5
+     ],
+     [
+      30,
+      [
+       1,
+       3,
+       7
+      ],
+      4
+     ]
+    ]
+   }
+  },
+  "subsamples": {
+   "raw": {
+    "shared_median": 0.0,
+    "shared_iqr": [
+     0.0,
+     0.0
+    ],
+    "pairs_median": 0.0,
+    "pairs_mean": 0.0,
+    "max_mult_max": 0,
+    "raw": [
+     {
+      "persistent": 1,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 1,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 1,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 1,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     },
+     {
+      "persistent": 1,
+      "shared": 0,
+      "pairs": 0,
+      "max_mult": 0
+     }
+    ]
+   },
+   "anon": {
+    "shared_median": 7.0,
+    "shared_iqr": [
+     7.0,
+     7.0
+    ],
+    "pairs_median": 35.0,
+    "pairs_mean": 35.0,
+    "max_mult_max": 5,
+    "raw": [
+     {
+      "persistent": 8,
+      "shared": 7,
+      "pairs": 35,
+      "max_mult": 5
+     },
+     {
+      "persistent": 8,
+      "shared": 7,
+      "pairs": 35,
+      "max_mult": 5
+     },
+     {
+      "persistent": 8,
+      "shared": 7,
+      "pairs": 35,
+      "max_mult": 5
+     },
+     {
+      "persistent": 8,
+      "shared": 7,
+      "pairs": 35,
+      "max_mult": 5
+     },
+     {
+      "persistent": 8,
+      "shared": 7,
+      "pairs": 35,
+      "max_mult": 5
+     }
+    ]
+   }
+  },
+  "pairs_vs_n": {
+   "raw": {
+    "10": {
+     "mean_pairs": 0.1,
+     "n_pairs": 45,
+     "vals": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "20": {
+     "mean_pairs": 0.0,
+     "n_pairs": 190,
+     "vals": [
+      0
+     ]
+    }
+   },
+   "anon": {
+    "10": {
+     "mean_pairs": 12.5,
+     "n_pairs": 45,
+     "vals": [
+      8,
+      5,
+      11,
+      10,
+      10,
+      23,
+      13,
+      11,
+      19,
+      15
+     ]
+    },
+    "20": {
+     "mean_pairs": 35.0,
+     "n_pairs": 190,
+     "vals": [
+      35
+     ]
+    }
+   }
+  },
+  "half_life_first20": 1,
+  "half_life_sub_median": 1.0,
+  "half_life_sub_iqr": [
+   1.0,
+   1.0
+  ],
+  "first20": {
+   "nn_other_median": 0.2075464809348434,
+   "words_median_99": 456.0,
+   "names_50_99": {
+    "n_leads": 1000,
+    "distinct": 135,
+    "top10": [
+     [
+      "Daniel",
+      131
+     ],
+     [
+      "Maya",
+      87
+     ],
+     [
+      "Ruth",
+      64
+     ],
+     [
+      "Thomas",
+      56
+     ],
+     [
+      "Marcus",
+      46
+     ],
+     [
+      "Margaret",
+      41
+     ],
+     [
+      "Walter",
+      37
+     ],
+     [
+      "Eli",
+      26
+     ],
+     [
+      "Mara",
+      24
+     ],
+     [
+      "Marta",
+      22
+     ]
+    ],
+    "top10_cover": 0.534,
+    "llm_set_hits": [
+     "Eli",
+     "Maya"
+    ]
+   },
+   "theme": {
+    "n": 100,
+    "bad": 0,
+    "modal": [
+     "older_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.17,
+    "woman_share": 0.79,
+    "hopeful_share": 0.71
+   }
+  },
+  "same_seed": {
+   "raw": {
+    "same_median": 0.42473445948635213,
+    "diff_median": 0.4280313758590721,
+    "gap": 0.003296916372719949,
+    "same_lt_diff_share": 0.5
+   },
+   "anon": {
+    "same_median": 0.3469434186843805,
+    "diff_median": 0.3393284699611766,
+    "gap": -0.007614948723203896
+   },
+   "joint_k": 79,
+   "same_seed_pairs_sharing_cluster": 0,
+   "joint_shared_clusters": 0,
+   "joint_sharing_pairs": 0
+  }
+ },
+ "width": {},
+ "verdicts": {
+  "S1_wells_numerous": {
+   "anon_sharing_pairs": 35,
+   "anon_rate": 0.18421052631578946,
+   "anon_shared_clusters": 7,
+   "anon_max_mult": 5,
+   "raw_shared_clusters": 0,
+   "raw_sharing_pairs": 0,
+   "W_hat_anon": 5.428571428571429,
+   "sub_raw_shared_median": 0.0,
+   "sub_anon_shared_median": 7.0,
+   "holds": false,
+   "fails": false
+  },
+  "S2_replication_first20": {
+   "half_life": 1,
+   "half_in_8_15": false,
+   "cover": 0.534,
+   "cover_in_band": true,
+   "top_name": "Daniel",
+   "maya_top": false,
+   "words": 456.0,
+   "words_in_band": false,
+   "modal": [
+    "older_adult",
+    "internal",
+    "hopeful"
+   ],
+   "base_modal": [
+    "young_adult",
+    "internal",
+    "hopeful"
+   ],
+   "modal_same": false,
+   "all100": {
+    "half_life_sub_median": 1.0,
+    "cover": 0.534,
+    "words": 456.0
+   },
+   "holds": false
+  },
+  "S3_density": {
+   "nn_other": 0.2075464809348434,
+   "base_nn": 0.34229522727353434,
+   "nn_in_band": false,
+   "within_015": 0.17666666666666667,
+   "within_in_band": false,
+   "holds": false,
+   "continuum": false
+  },
+  "S4_seed_trace": {
+   "gap_raw": 0.003296916372719949,
+   "gap_anon": -0.007614948723203896,
+   "gap_in_band": false,
+   "same_seed_pairs_sharing": 0,
+   "le_1": true,
+   "holds": false
+  },
+  "speculation_1": "in between: sharing pairs present but no well reused by >= 4 (W > 500 at this n)"
+ }
+}

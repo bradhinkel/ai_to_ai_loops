@@ -1,0 +1,110 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "haiku_reference": {
+   "runs": [
+    "e3_1_haiku_100",
+    "e3_1_haiku_100b"
+   ],
+   "k": 396,
+   "shared": 51
+  },
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_mistral_100": {
+   "n_traj": 100,
+   "excluded": {},
+   "n_kept": 100,
+   "atlas": {
+    "raw": {
+     "shared": 4,
+     "persistent": 23,
+     "pairs": 6,
+     "n_pairs": 4950,
+     "rate": 0.0012121212121212121,
+     "max_mult": 3,
+     "W_hat": 825.0
+    },
+    "anon": {
+     "shared": 35,
+     "persistent": 50,
+     "pairs": 88,
+     "n_pairs": 4950,
+     "rate": 0.017777777777777778,
+     "max_mult": 4,
+     "W_hat": 56.25
+    }
+   },
+   "stats": null,
+   "projection": {
+    "trajs_in_haiku_wells": [],
+    "wells_hit": [],
+    "nn_shared_median": 0.45710231831930237,
+    "inside_late": 0.0
+   },
+   "judge_shares": null,
+   "haiku_shares": null,
+   "same_seed_vs_haiku_A": {
+    "k": 396,
+    "joint_shared": 47,
+    "same_seed_pairs_sharing": 0,
+    "same_seeds": [],
+    "same_median": 0.5531290506409241,
+    "diff_median": 0.5759711155403109,
+    "gap": -0.022842064899386783,
+    "cross_pairs": 0
+   }
+  }
+ },
+ "verdicts": {
+  "e3_1_mistral_100": {
+   "M1": {
+    "rate": 0.017777777777777778,
+    "rate_in_band": false,
+    "shared_ge_8": true,
+    "mult_ge_3": true,
+    "raw_shared_ge_3": true,
+    "W_in_band": false,
+    "no_wells": false,
+    "d_like": false,
+    "holds": false
+   },
+   "M2": {
+    "trajs_in_haiku_wells": 0,
+    "haiku_wells_hit": [],
+    "nn_shared_median": 0.45710231831930237,
+    "inside_late": 0.0,
+    "judge_max_diff": null,
+    "fields_ge_015": null,
+    "shared_across_families": false,
+    "holds": true
+   },
+   "M3": {
+    "rate_top_or_above": true,
+    "W_le_100": true,
+    "n_excluded": 0,
+    "half_life": null
+   },
+   "M4": {
+    "same_seed_pairs": 0,
+    "gap": -0.022842064899386783,
+    "holds": true
+   }
+  }
+ }
+}

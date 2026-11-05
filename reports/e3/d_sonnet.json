@@ -1,0 +1,500 @@
+{
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "n_sub": 50,
+  "versions": {
+   "torch": "2.11.0+cu128",
+   "transformers": "5.20.1",
+   "sentence_transformers": "6.1.0",
+   "scikit_learn": "1.9.1",
+   "numpy": "2.4.6",
+   "pillow": "12.3.0",
+   "huggingface_hub": "1.33.0"
+  }
+ },
+ "cells": {
+  "e3_1_sonnet": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 45,
+   "ident_at": {
+    "1": 0.95,
+    "5": 0.8,
+    "10": 0.8,
+    "25": 0.7,
+    "50": 0.65,
+    "99": 0.45
+   },
+   "memory_curve": [
+    1.0,
+    0.95,
+    0.95,
+    0.95,
+    0.9,
+    0.8,
+    0.8,
+    0.85,
+    0.85,
+    0.75,
+    0.8,
+    0.7,
+    0.7,
+    0.8,
+    0.8,
+    0.9,
+    0.8,
+    0.7,
+    0.65,
+    0.8,
+    0.7,
+    0.65,
+    0.65,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.7,
+    0.6,
+    0.6,
+    0.55,
+    0.75,
+    0.6,
+    0.6,
+    0.6,
+    0.65,
+    0.8,
+    0.65,
+    0.65,
+    0.6,
+    0.65,
+    0.6,
+    0.55,
+    0.7,
+    0.65,
+    0.5,
+    0.7,
+    0.6,
+    0.55,
+    0.55,
+    0.65,
+    0.6,
+    0.6,
+    0.6,
+    0.6,
+    0.5,
+    0.55,
+    0.55,
+    0.65,
+    0.6,
+    0.5,
+    0.5,
+    0.55,
+    0.55,
+    0.45,
+    0.5,
+    0.6,
+    0.65,
+    0.5,
+    0.55,
+    0.5,
+    0.55,
+    0.5,
+    0.6,
+    0.55,
+    0.55,
+    0.6,
+    0.55,
+    0.6,
+    0.5,
+    0.45,
+    0.5,
+    0.45,
+    0.45,
+    0.5,
+    0.45,
+    0.45,
+    0.55,
+    0.5,
+    0.45,
+    0.45,
+    0.55,
+    0.55,
+    0.45,
+    0.6,
+    0.6,
+    0.5,
+    0.5,
+    0.6,
+    0.45
+   ],
+   "nn_other_median": 0.38108370731356606,
+   "nn_other_anon_median": 0.2933928059633702,
+   "within_015": 0.0,
+   "within_015_anon": 0.0,
+   "vendi_story_99": 10.347793953944242,
+   "vendi_summary_99": 13.98091372472212,
+   "words_median_99": 557.5,
+   "summary_words_median": 48.0,
+   "summary_le_limit_share": {
+    "20": 0.0,
+    "25": 0.0,
+    "30": 0.0,
+    "50": 0.863
+   },
+   "summary_flags": {
+    "over_50_words": 274
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 994,
+     "distinct": 162,
+     "top10": [
+      [
+       "Mara",
+       87
+      ],
+      [
+       "Pip",
+       43
+      ],
+      [
+       "Dev",
+       40
+      ],
+      [
+       "Priya",
+       39
+      ],
+      [
+       "Marisol",
+       37
+      ],
+      [
+       "Maxim",
+       33
+      ],
+      [
+       "Amara",
+       31
+      ],
+      [
+       "Julian",
+       30
+      ],
+      [
+       "Marin",
+       30
+      ],
+      [
+       "Marguerite",
+       30
+      ]
+     ],
+     "top10_cover": 0.4024144869215292,
+     "llm_set_hits": [
+      "Amara"
+     ]
+    },
+    "flags": {
+     "story_refusal": 557,
+     "summary_over_50_words": 274
+    }
+   },
+   "theme": {
+    "n": 997,
+    "bad": 4,
+    "modal": [
+     "young_adult",
+     "interpersonal",
+     "hopeful"
+    ],
+    "modal_share": 0.0712136409227683,
+    "woman_share": 0.6178535606820461,
+    "hopeful_share": 0.6148445336008024
+   }
+  },
+  "e3_d_sonnet": {
+   "n_traj": 20,
+   "n_steps": 100,
+   "half_life": 1,
+   "ident_at": {
+    "1": 0.35,
+    "5": 0.0,
+    "10": 0.0,
+    "25": 0.05,
+    "50": 0.05,
+    "99": 0.0
+   },
+   "memory_curve": [
+    1.0,
+    0.35,
+    0.15,
+    0.15,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.1,
+    0.1,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.0,
+    0.05,
+    0.15,
+    0.0,
+    0.0,
+    0.1,
+    0.05,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.05,
+    0.05,
+    0.05,
+    0.0,
+    0.2,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.05,
+    0.15,
+    0.1,
+    0.05,
+    0.1,
+    0.1,
+    0.15,
+    0.15,
+    0.05,
+    0.05,
+    0.05,
+    0.1,
+    0.1,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.0,
+    0.05,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.15,
+    0.1,
+    0.05,
+    0.05,
+    0.05,
+    0.05,
+    0.0
+   ],
+   "nn_other_median": 0.22712790198591565,
+   "nn_other_anon_median": 0.1915963224961229,
+   "within_015": 0.10533333333333333,
+   "within_015_anon": 0.21933333333333332,
+   "vendi_story_99": 7.039837111899193,
+   "vendi_summary_99": 7.529674889296712,
+   "words_median_99": 542.5,
+   "summary_words_median": 22.0,
+   "summary_le_limit_share": {
+    "20": 0.303,
+    "25": 0.941,
+    "30": 0.9995,
+    "50": 1.0
+   },
+   "summary_flags": {
+    "over_25_words": 118
+   },
+   "audit": {
+    "exact_copies": 0,
+    "n_cjk": 0,
+    "names_50_99": {
+     "n_leads": 997,
+     "distinct": 176,
+     "top10": [
+      [
+       "Marta",
+       148
+      ],
+      [
+       "Marguerite",
+       98
+      ],
+      [
+       "Daniel",
+       78
+      ],
+      [
+       "Walter",
+       76
+      ],
+      [
+       "Dev",
+       36
+      ],
+      [
+       "Priya",
+       32
+      ],
+      [
+       "Alder",
+       29
+      ],
+      [
+       "Tuesday",
+       27
+      ],
+      [
+       "Margaret",
+       24
+      ],
+      [
+       "Tomas",
+       22
+      ]
+     ],
+     "top10_cover": 0.571715145436309,
+     "llm_set_hits": []
+    },
+    "flags": {
+     "story_refusal": 425,
+     "summary_over_25_words": 118
+    }
+   },
+   "theme": {
+    "n": 1000,
+    "bad": 1,
+    "modal": [
+     "older_adult",
+     "internal",
+     "hopeful"
+    ],
+    "modal_share": 0.154,
+    "woman_share": 0.82,
+    "hopeful_share": 0.722
+   }
+  }
+ },
+ "scale": {},
+ "width": {
+  "atlas": {
+   "raw": {
+    "width": {
+     "persistent": 0,
+     "shared": 0,
+     "pairs": 0
+    },
+    "base": {
+     "persistent": 14,
+     "shared": 0,
+     "pairs": 0
+    },
+    "cross_cell_shared": 0
+   },
+   "anon": {
+    "width": {
+     "persistent": 4,
+     "shared": 4,
+     "pairs": 42
+    },
+    "base": {
+     "persistent": 14,
+     "shared": 0,
+     "pairs": 0
+    },
+    "cross_cell_shared": 1
+   }
+  }
+ },
+ "verdicts": {
+  "D1_abstraction_converges": {
+   "shared_raw": 0,
+   "shared_anon": 4,
+   "need_shared": 2,
+   "shared_ok": false,
+   "base_shared_raw": 0,
+   "half_life": 1,
+   "base_half": 45,
+   "half_le_10": true,
+   "nn_other": 0.22712790198591565,
+   "base_nn": 0.38108370731356606,
+   "nn_le_030": true,
+   "within_015": 0.10533333333333333,
+   "vendi_theme_99": 7.529674889296712,
+   "base_vendi_summary_99": 13.98091372472212,
+   "vendi_half": false,
+   "cover": 0.571715145436309,
+   "base_cover": 0.4024144869215292,
+   "words": 542.5,
+   "theme_words_median": 22.0,
+   "theme_le25": 0.941,
+   "n_clauses_hold": 2,
+   "holds": false
+  },
+  "D_theme_layer_posthoc": {
+   "modal": [
+    "older_adult",
+    "internal",
+    "hopeful"
+   ],
+   "base_modal": [
+    "young_adult",
+    "interpersonal",
+    "hopeful"
+   ],
+   "modal_share": 0.154,
+   "base_modal_share": 0.0712136409227683,
+   "woman": 0.82,
+   "base_woman": 0.6178535606820461,
+   "hopeful": 0.722,
+   "base_hopeful": 0.6148445336008024
+  }
+ }
+}

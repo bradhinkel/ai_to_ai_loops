@@ -27,3 +27,13 @@ between neighbours" (no crisis plots in the late sentences); Mistral D's civic m
   the "none" stories will be mostly S3 and S5.
 - Within-family shape: every Sonnet moral is domestic and relational (grief, kindness, help, estrangement); none is civic. This is Haiku's
   menu with two additions (S3, S5) and a stronger emphasis on the giver's return and on presence over words.
+
+## Addendum after the anonymised own atlas (sheets `sw_cluster_e3_d_sonnet_alone_anon.md`; written after the moral-judge shares were read)
+
+Five shared wells at k 40, 13 of 190 pairs: three are S2 (grief eased by quiet, wordless presence; grief shared openly and with
+laughter; honest vulnerability about grief), one is S1 (anonymous kindness ripples through a community and returns), one pairs
+"avoiding grief through busyness" with "estranged family love survives wordlessly". No well for S3, S4 or S5: those morals are
+held by single trajectories (3, 11, 12 for accepting help; 2, 15, 16 for apology and confession; 8 for unseen care) and so cannot
+form a shared well in a 20-trajectory cell. The hand-read shares above were over-estimates for S3 and S5 (judge: the "none" stories are
+17%, of which trajectory 8's unseen care is 50 of 175 and trajectory 7's science-with-local-knowledge 37) and an under-estimate for S1
+(judge: 0.40 on H3). The 3-of-5 overlap call stands: the judge puts 0.82 of late stories on H1, H2, H3 or H5.

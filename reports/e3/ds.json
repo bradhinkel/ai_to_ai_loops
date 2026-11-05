@@ -1,0 +1,598 @@
+{
+ "run": "e3_d_sonnet",
+ "params": {
+  "atlas": {
+   "radius": 0.15,
+   "exit_factor": 1.25,
+   "min_dwell": 5,
+   "min_visits": 3,
+   "k_per_2000": 40
+  },
+  "confess_regex": "\\b(confess|confession|honest|honesty|truth|forgiv|secret|lie|lies|lied|lying|deceit|deception|wrong)\\w*",
+  "family": [
+   "child",
+   "parent_or_grandparent",
+   "partner_or_spouse",
+   "sibling"
+  ]
+ },
+ "cells": {
+  "e3_d_sonnet": {
+   "half_life": 1,
+   "k": 40,
+   "raw": {
+    "persistent": 1,
+    "shared": 0,
+    "n_sharing_pairs": 0,
+    "n_pairs": 190,
+    "rate": 0.0,
+    "W_hat": null,
+    "max_mult": 0,
+    "inside_share": 0.012121212121212121,
+    "clusters": [],
+    "dwell": {
+     "clusters_per_traj_median": 6.0,
+     "dwell_median": 1.0,
+     "free_share": 0.7484848484848485,
+     "dwell_ge5_share": 0.0375
+    }
+   },
+   "anon": {
+    "persistent": 5,
+    "shared": 5,
+    "n_sharing_pairs": 13,
+    "n_pairs": 190,
+    "rate": 0.06842105263157895,
+    "W_hat": 14.615384615384615,
+    "max_mult": 4,
+    "inside_share": 0.16666666666666666,
+    "clusters": [
+     [
+      14,
+      [
+       5,
+       9,
+       14
+      ],
+      6
+     ],
+     [
+      18,
+      [
+       5,
+       6,
+       9,
+       16
+      ],
+      4
+     ],
+     [
+      19,
+      [
+       6,
+       14
+      ],
+      4
+     ],
+     [
+      21,
+      [
+       4,
+       9,
+       19
+      ],
+      3
+     ],
+     [
+      38,
+      [
+       1,
+       10
+      ],
+      4
+     ]
+    ],
+    "dwell": {
+     "clusters_per_traj_median": 11.0,
+     "dwell_median": 1.0,
+     "free_share": 0.4702020202020202,
+     "dwell_ge5_share": 0.09935205183585313
+    }
+   }
+  },
+  "e3_d_haiku": {
+   "half_life": 1,
+   "k": 40,
+   "raw": {
+    "persistent": 1,
+    "shared": 0,
+    "n_sharing_pairs": 0,
+    "n_pairs": 190,
+    "rate": 0.0,
+    "W_hat": null,
+    "max_mult": 0,
+    "inside_share": 0.014646464646464647,
+    "clusters": [],
+    "dwell": {
+     "clusters_per_traj_median": 11.5,
+     "dwell_median": 1.0,
+     "free_share": 0.6601010101010101,
+     "dwell_ge5_share": 0.0211864406779661
+    }
+   },
+   "anon": {
+    "persistent": 8,
+    "shared": 7,
+    "n_sharing_pairs": 35,
+    "n_pairs": 190,
+    "rate": 0.18421052631578946,
+    "W_hat": 5.428571428571429,
+    "max_mult": 5,
+    "inside_share": 0.2545454545454545,
+    "clusters": [
+     [
+      2,
+      [
+       0,
+       15,
+       18
+      ],
+      3
+     ],
+     [
+      3,
+      [
+       3,
+       8,
+       9,
+       15,
+       18
+      ],
+      8
+     ],
+     [
+      9,
+      [
+       1,
+       8,
+       14,
+       16
+      ],
+      6
+     ],
+     [
+      11,
+      [
+       6,
+       13,
+       15
+      ],
+      3
+     ],
+     [
+      20,
+      [
+       4,
+       5,
+       6,
+       19
+      ],
+      6
+     ],
+     [
+      27,
+      [
+       8,
+       9,
+       11,
+       12
+      ],
+      5
+     ],
+     [
+      30,
+      [
+       1,
+       3,
+       7
+      ],
+      4
+     ]
+    ],
+    "dwell": {
+     "clusters_per_traj_median": 11.5,
+     "dwell_median": 2.0,
+     "free_share": 0.35,
+     "dwell_ge5_share": 0.13582677165354332
+    }
+   }
+  },
+  "e3_d_mistral": {
+   "half_life": 2,
+   "k": 40,
+   "raw": {
+    "persistent": 0,
+    "shared": 0,
+    "n_sharing_pairs": 0,
+    "n_pairs": 190,
+    "rate": 0.0,
+    "W_hat": null,
+    "max_mult": 0,
+    "inside_share": 0.0,
+    "clusters": [],
+    "dwell": {
+     "clusters_per_traj_median": 7.0,
+     "dwell_median": 1.0,
+     "free_share": 0.7378787878787879,
+     "dwell_ge5_share": 0.03785488958990536
+    }
+   },
+   "anon": {
+    "persistent": 8,
+    "shared": 8,
+    "n_sharing_pairs": 39,
+    "n_pairs": 190,
+    "rate": 0.20526315789473684,
+    "W_hat": 4.871794871794871,
+    "max_mult": 6,
+    "inside_share": 0.2909090909090909,
+    "clusters": [
+     [
+      1,
+      [
+       0,
+       5,
+       16
+      ],
+      6
+     ],
+     [
+      2,
+      [
+       0,
+       1,
+       9,
+       16,
+       18,
+       19
+      ],
+      9
+     ],
+     [
+      4,
+      [
+       0,
+       5
+      ],
+      6
+     ],
+     [
+      10,
+      [
+       11,
+       12,
+       17,
+       19
+      ],
+      6
+     ],
+     [
+      12,
+      [
+       0,
+       9,
+       12,
+       14,
+       19
+      ],
+      5
+     ],
+     [
+      15,
+      [
+       1,
+       9,
+       12,
+       14,
+       17
+      ],
+      6
+     ],
+     [
+      21,
+      [
+       1,
+       7,
+       9,
+       12,
+       14,
+       17
+      ],
+      8
+     ],
+     [
+      39,
+      [
+       1,
+       9,
+       14,
+       17
+      ],
+      5
+     ]
+    ],
+    "dwell": {
+     "clusters_per_traj_median": 10.0,
+     "dwell_median": 2.0,
+     "free_share": 0.41515151515151516,
+     "dwell_ge5_share": 0.185
+    }
+   }
+  }
+ },
+ "judge_shares": {
+  "e3_d_sonnet": {
+   "n": 1000,
+   "interpersonal_plus_internal": 0.709,
+   "home_plus_small_town": 0.539,
+   "hopeful": 0.722,
+   "family_secondary": 0.345,
+   "social": 0.148,
+   "artist_lead": 0.018,
+   "woman": 0.82,
+   "death": 0.599,
+   "reconciliation": 0.262,
+   "conflict": {
+    "internal": 533,
+    "interpersonal": 176,
+    "social_or_community": 148,
+    "external_physical": 85,
+    "none_or_unclear": 58
+   },
+   "setting": {
+    "home_interior": 421,
+    "city": 277,
+    "small_town_or_village": 118,
+    "rural_or_farmland": 63,
+    "institution": 55,
+    "other_or_unclear": 49,
+    "coast_or_sea": 10,
+    "road_or_journey": 5,
+    "wilderness_or_mountain": 2
+   },
+   "secondary": {
+    "stranger": 314,
+    "friend": 224,
+    "sibling": 135,
+    "child": 121,
+    "other": 70,
+    "parent_or_grandparent": 49,
+    "authority_or_mentor": 41,
+    "partner_or_spouse": 40,
+    "animal": 4,
+    "none": 2
+   },
+   "lead_role": {
+    "other_or_unclear": 448,
+    "worker_or_tradesperson": 209,
+    "caregiver_or_parent": 161,
+    "retired": 101,
+    "professional": 43,
+    "artist_or_craftsperson": 18
+   },
+   "modal_tuple": [
+    [
+     "older_adult",
+     "internal",
+     "hopeful"
+    ],
+    154
+   ]
+  },
+  "e3_d_haiku": {
+   "n": 1000,
+   "interpersonal_plus_internal": 0.854,
+   "home_plus_small_town": 0.671,
+   "hopeful": 0.803,
+   "family_secondary": 0.707,
+   "social": 0.106,
+   "artist_lead": 0.009,
+   "woman": 0.754,
+   "death": 0.682,
+   "reconciliation": 0.606,
+   "conflict": {
+    "interpersonal": 579,
+    "internal": 275,
+    "social_or_community": 106,
+    "external_physical": 34,
+    "none_or_unclear": 6
+   },
+   "setting": {
+    "home_interior": 583,
+    "rural_or_farmland": 119,
+    "small_town_or_village": 88,
+    "institution": 83,
+    "city": 78,
+    "other_or_unclear": 43,
+    "coast_or_sea": 3,
+    "wilderness_or_mountain": 2,
+    "road_or_journey": 1
+   },
+   "secondary": {
+    "sibling": 534,
+    "friend": 142,
+    "parent_or_grandparent": 87,
+    "other": 82,
+    "child": 71,
+    "stranger": 56,
+    "partner_or_spouse": 15,
+    "authority_or_mentor": 13
+   },
+   "lead_role": {
+    "other_or_unclear": 648,
+    "caregiver_or_parent": 145,
+    "worker_or_tradesperson": 95,
+    "retired": 38,
+    "student_or_child": 30,
+    "professional": 25
+   },
+   "modal_tuple": [
+    [
+     "middle_aged",
+     "interpersonal",
+     "hopeful"
+    ],
+    281
+   ]
+  },
+  "e3_d_mistral": {
+   "n": 1000,
+   "interpersonal_plus_internal": 0.015,
+   "home_plus_small_town": 0.624,
+   "hopeful": 0.98,
+   "family_secondary": 0.075,
+   "social": 0.587,
+   "artist_lead": 0.502,
+   "woman": 0.473,
+   "death": 0.072,
+   "reconciliation": 0.124,
+   "conflict": {
+    "social_or_community": 587,
+    "external_physical": 318,
+    "none_or_unclear": 80,
+    "internal": 13,
+    "interpersonal": 2
+   },
+   "setting": {
+    "small_town_or_village": 619,
+    "city": 242,
+    "wilderness_or_mountain": 52,
+    "other_or_unclear": 38,
+    "institution": 18,
+    "rural_or_farmland": 13,
+    "coast_or_sea": 9,
+    "home_interior": 5,
+    "road_or_journey": 4
+   },
+   "secondary": {
+    "other": 607,
+    "authority_or_mentor": 78,
+    "stranger": 78,
+    "none": 72,
+    "friend": 70,
+    "child": 63,
+    "animal": 20,
+    "parent_or_grandparent": 8,
+    "sibling": 2,
+    "partner_or_spouse": 2
+   },
+   "lead_role": {
+    "artist_or_craftsperson": 502,
+    "leader_or_official": 160,
+    "other_or_unclear": 143,
+    "worker_or_tradesperson": 77,
+    "professional": 42,
+    "student_or_child": 40
+   },
+   "modal_tuple": [
+    [
+     "unclear",
+     "social_or_community",
+     "hopeful"
+    ],
+    423
+   ]
+  }
+ },
+ "verdicts": {
+  "DS1": {
+   "n_judged": 1000,
+   "fit_share": 0.825,
+   "shares": {
+    "Grief is eased by small kindnesses from ": 0.169,
+    "Estranged siblings or relatives reconcil": 0.107,
+    "Kindness ripples outward through strange": 0.399,
+    "A shared crisis dissolves old grudges be": 0.004,
+    "Grief is softened through family rituals": 0.146
+   },
+   "none_share": 0.175,
+   "morals_above_010": [
+    1,
+    2,
+    3,
+    5
+   ],
+   "handread_shared": 3,
+   "holds": true,
+   "judge_clause_holds": true
+  },
+  "DS2": {
+   "half_life": 1,
+   "dwell_median_raw": 1.0,
+   "clusters_per_traj_raw": 6.0,
+   "free_share_raw": 0.7484848484848485,
+   "anon_shared": 5,
+   "anon_rate": 0.06842105263157895,
+   "holds": false
+  },
+  "DS3": {
+   "interpersonal_plus_internal": 0.709,
+   "home_plus_small_town": 0.539,
+   "hopeful": 0.722,
+   "family_secondary": 0.345,
+   "holds": false
+  },
+  "DS4": {
+   "confession_share_late": 0.127,
+   "confession_share_among_none": 0.26857142857142857,
+   "n_none": 175,
+   "reference_confession_share": {
+    "e3_d_haiku": 0.24,
+    "e3_d_mistral": 0.0
+   },
+   "none_sentences_sample": [
+    "Small, unthinking acts of kindness can ripple through time, returning unexpectedly to help the giver when she needs it most.",
+    "Even after decades together, assuming you know someone can hide their true wishes, and honest conversation can renew intimacy by revealing who they really are.",
+    "Love grows deeper when partners stop sacrificing silently to please each other and honestly share their true wants, even after decades of well-meant pretending.",
+    "Even in long marriages, unspoken efforts to please each other can hide true desires, and honest disclosure can renew intimacy.",
+    "Honest communication, rather than silently sacrificing for each other's presumed preferences, restores intimacy and lets partners truly discover one another.",
+    "Trying to please a partner by hiding your true preferences creates distance, while honest disclosure lets you discover each other and yourselves anew.",
+    "Real intimacy requires honestly revealing your true preferences rather than pretending to share someone's tastes to keep them happy.",
+    "Real intimacy requires honestly sharing who you are, because pretending to match someone's preferences creates distance rather than closeness.",
+    "Real intimacy requires honest self-disclosure, because hiding your true preferences to please someone prevents them from ever truly knowing or connecting with you.",
+    "Real intimacy begins when we stop performing an agreeable version of ourselves and risk being honestly known, flaws and preferences included.",
+    "Real intimacy requires abandoning the effort to be agreeable and risking honesty, because only an authentic self can be truly known and loved.",
+    "Genuine intimacy requires dropping the habitual agreeableness that protects us, because being honestly seen, flaws and all, is the only way to truly be loved.",
+    "Real intimacy requires honest self-expression, because constant agreeableness hides who we are and leaves love directed at a false version of us.",
+    "Real intimacy requires showing your true, imperfect self rather than molding yourself to please a partner, because only then can you be truly loved.",
+    "Real intimacy comes from showing your true, imperfect self rather than suppressing it to be easily loved.",
+    "True intimacy comes only when we drop our curated, agreeable performances and let others see our messy, honest selves.",
+    "Real connection comes when we drop our polished facades and admit our flaws, since vulnerability invites others to be honest and makes a place feel like home.",
+    "Admitting our struggles and imperfections, rather than hiding behind a flawless facade, dissolves isolation and invites the genuine connection and support we crave.",
+    "Real comfort in grief comes from quiet, patient presence that lets pain be felt, not from advice, platitudes, or pressure to appear strong.",
+    "Reconciliation grows through small, quiet acts of care that rebuild trust more effectively than words can.",
+    "A sincere apology takes full responsibility without excuses or demands for forgiveness, and it accepts that the hurt person decides when and whether to heal.",
+    "A sincere apology takes full responsibility without demanding forgiveness, leaving the injured person free to decide how, or whether, to respond.",
+    "True accountability means admitting harm without demanding forgiveness, which restores the wronged person's truth and leaves her free to decide how to respond.",
+    "A sincere, unconditional admission of wrongdoing can restore someone's self-trust and return to them the freedom to decide about forgiveness on their own terms.",
+    "Being honestly validated after being gaslit can restore a person's trust in her own judgment and give her the freedom to choose her own response.",
+    "Honoring tradition means adapting it so that everyone can take part, because inclusion keeps a living tradition alive and brings families together.",
+    "True traditions endure by adapting to include everyone, making space for each person's abilities and belonging rather than excluding anyone to preserve old rules.",
+    "True tradition honors its purpose rather than its rigid form, and adapting it to include everyone makes it richer.",
+    "True devotion to a tradition means honoring its purpose of welcoming and including others, even if that requires changing the rule's original form.",
+    "True welcome means honoring the purpose behind tradition and letting newcomers contribute, so belonging is shared rather than merely bestowed.",
+    "True welcome goes beyond polite hospitality to include newcomers as contributors, valuing what they can give and offering them a real place.",
+    "True belonging comes not from being treated kindly but from being invited to contribute your skills and be needed by others.",
+    "True belonging comes not from receiving charity but from contributing your skills and being needed by others as an equal.",
+    "True belonging comes not from receiving charity but from being able to contribute your own skills and be valued for them.",
+    "True belonging comes not from receiving charity but from being able to contribute your skills and be needed by others.",
+    "Belonging comes not from receiving kindness but from contributing your own skills, which turns charity into mutual exchange and lets you be truly known.",
+    "True belonging comes not from receiving charity gratefully but from contributing your own skills, which turns dependence into mutual exchange and lets others truly know you.",
+    "Belonging comes through mutual exchange, when we offer our own gifts rather than only receiving kindness with endless gratitude.",
+    "True belonging comes not from passively receiving kindness but from contributing and sharing mutual obligations, which turn gratitude into genuine connection.",
+    "True belonging comes not from receiving kindness but from contributing to the shared give-and-take that makes people depend on one another."
+   ],
+   "holds": false
+  }
+ }
+}

@@ -37,3 +37,38 @@ ending hopeful ≈ 1.0.
 
 **Level (M1):** rate 0.0178 is above the Haiku band (0.003–0.012) and below the 0.03 D-like threshold, with W-hat 56 (< 80): more sharing
 than Haiku, in fewer, bigger wells (35 wells of 2–4 trajectories; Haiku 13–17), as Claude's M3 alternative predicted (0.01–0.03, W ≤ 100).
+
+## Qwen 100-seed cell: hand read before projection (2026-11-06 ≈ 19:40 PST, from `sw_cluster_e3_1_qwen_100_anon.md`; the pooled Haiku atlas had not been applied and the theme judge was still running)
+
+Own anonymised atlas at k 198: 33 shared wells, 126 of 4,950 pairs (rate 0.0255), max multiplicity 7, W-hat 39; raw 10 shared wells. No
+trajectory excluded (max 3 CJK-flagged late stories in one trajectory; lowest late median 368 words).
+
+One macro-plot covers about 26 of the 33 wells: **a neglected place is revived into a community hub, and the town's spirit with it.** The
+instrument varies by well and the wells are mostly instrument-level:
+
+| instrument of revival | wells | trajectories (persistent) |
+|---|---|---|
+| a neglected garden or lot becomes a community garden | 36, 180, 3, 15, 17, 88, 11 | 7, 11, 13, 17, 25, 27, 44, 48, 67, 69, 91, 93, 41, 59, 34, 99 |
+| an abandoned park | 41 | 6, 17, 33, 67, 91 |
+| a dilapidated mansion or manor becomes a heritage centre or museum | 60, 43 | 13, 38, 49, 57, 58, 99 |
+| the old general store becomes an art gallery | 67 | 9, 35, 73 |
+| an old schoolhouse becomes a hub | 99, 25 | 17, 53, 66, 98 |
+| a mural (or quilt) painted by the whole town | 89, 86, 166, 25 | 22, 79, 81, 29, 31 |
+| a revived festival | 24 | 0, 84 |
+| a sustainability movement (solar, composting, reforestation, a green initiative that goes national) | 34, 119, 145, 20 | 11, 32, 33, 94, 13, 66, 91, 48, 57, 77, 40, 62, 86 |
+| a found diary (sometimes Civil War) leads to a heritage festival | 76, 44 | 52, 71, 87, 78 |
+| a desert village gets water | 83 | 2, 36, 37 |
+
+Outside the macro-plot: archaeologists uncover an ancient city (22); a magic forest healed by music or ritual (107, 42); returning to a
+grandmother's farm or a childhood forest (97, 28); overcoming a fear by climbing or dancing with a friend (9, 96); an artist finds a bolder
+style after a storm (134, 110). Every well ends hopeful; the leads are gardeners, urban planners, young artists and activists; names recur
+(Sarah, Elara, Eliza, Willowbrook, Willow Creek, Maplewood).
+
+Calls before projection: (1) no Haiku family here. Haiku's wells are domestic object-plots (a shoebox of unopened letters, a dead
+relative's ledger, an unfinished melody) with grief and reconciliation; Qwen has no grief well and no family-secret well, so I expect
+0–2 trajectories in Haiku wells and nn ≥ 0.40. (2) Mistral's macro-plot ("a stranger revives a decaying town", usually through an
+artist or a festival) and Qwen's are the same civic plot with different instruments: Mistral's agent is a stranger or an artist, Qwen's
+a gardener or a planner with a sustainability programme. A projection of Qwen onto Mistral's own atlas (not pre-registered, auxiliary)
+should show more contact than either has with Haiku. (3) M1 will fail upward as Mistral's did, by more: rate 0.0255 against the band's
+0.012 ceiling, under the 0.03 D-like line. Qwen's wells are instrument-level, like Mistral's, not object-level like Haiku's, and the
+instruments are few (garden, park, manor, mural), which is the W-hat of 39 against Haiku's ≈ 190.

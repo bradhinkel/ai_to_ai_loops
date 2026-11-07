@@ -325,6 +325,314 @@
     "gap": -0.022842064899386783,
     "cross_pairs": 0
    }
+  },
+  "e3_1_qwen_100": {
+   "n_traj": 100,
+   "excluded": {},
+   "n_kept": 100,
+   "atlas": {
+    "raw": {
+     "shared": 10,
+     "persistent": 41,
+     "pairs": 20,
+     "n_pairs": 4950,
+     "rate": 0.00404040404040404,
+     "max_mult": 4,
+     "W_hat": 247.5
+    },
+    "anon": {
+     "shared": 33,
+     "persistent": 48,
+     "pairs": 126,
+     "n_pairs": 4950,
+     "rate": 0.025454545454545455,
+     "max_mult": 7,
+     "W_hat": 39.285714285714285
+    }
+   },
+   "stats": {
+    "n_traj": 100,
+    "n_steps": 100,
+    "half_life": 8,
+    "ident_at": {
+     "1": 0.96,
+     "5": 0.7,
+     "10": 0.46,
+     "25": 0.26,
+     "50": 0.14,
+     "99": 0.06
+    },
+    "memory_curve": [
+     1.0,
+     0.96,
+     0.85,
+     0.76,
+     0.73,
+     0.7,
+     0.61,
+     0.55,
+     0.5,
+     0.52,
+     0.46,
+     0.44,
+     0.39,
+     0.41,
+     0.36,
+     0.33,
+     0.32,
+     0.35,
+     0.31,
+     0.32,
+     0.31,
+     0.33,
+     0.26,
+     0.3,
+     0.31,
+     0.26,
+     0.28,
+     0.27,
+     0.24,
+     0.23,
+     0.24,
+     0.24,
+     0.22,
+     0.2,
+     0.19,
+     0.23,
+     0.19,
+     0.18,
+     0.18,
+     0.19,
+     0.15,
+     0.2,
+     0.19,
+     0.18,
+     0.15,
+     0.18,
+     0.2,
+     0.18,
+     0.16,
+     0.18,
+     0.14,
+     0.17,
+     0.17,
+     0.11,
+     0.14,
+     0.16,
+     0.14,
+     0.15,
+     0.13,
+     0.13,
+     0.13,
+     0.1,
+     0.08,
+     0.13,
+     0.12,
+     0.06,
+     0.11,
+     0.1,
+     0.13,
+     0.1,
+     0.08,
+     0.08,
+     0.08,
+     0.12,
+     0.09,
+     0.07,
+     0.07,
+     0.09,
+     0.06,
+     0.09,
+     0.05,
+     0.08,
+     0.1,
+     0.06,
+     0.06,
+     0.06,
+     0.06,
+     0.06,
+     0.11,
+     0.08,
+     0.08,
+     0.08,
+     0.06,
+     0.06,
+     0.06,
+     0.08,
+     0.05,
+     0.04,
+     0.07,
+     0.06
+    ],
+    "nn_other_median": 0.30086175951381244,
+    "nn_other_anon_median": 0.20617525959122102,
+    "within_015": 0.025866666666666666,
+    "within_015_anon": 0.18373333333333333,
+    "vendi_story_99": 24.312746298447692,
+    "vendi_summary_99": 33.86001477218132,
+    "words_median_99": 444.5,
+    "summary_words_median": 34.0,
+    "summary_le_limit_share": {
+     "20": 0.05,
+     "25": 0.183,
+     "30": 0.3797,
+     "50": 0.9387
+    },
+    "summary_flags": {
+     "over_50_words": 613,
+     "cjk": 88,
+     "length_cutoff": 6,
+     "refusal": 1
+    },
+    "audit": {
+     "exact_copies": 0,
+     "n_cjk": 68,
+     "names_50_99": {
+      "n_leads": 4940,
+      "distinct": 273,
+      "top10": [
+       [
+        "Sarah",
+        461
+       ],
+       [
+        "Willowbrook",
+        322
+       ],
+       [
+        "Elara",
+        294
+       ],
+       [
+        "Willow",
+        199
+       ],
+       [
+        "Lila",
+        139
+       ],
+       [
+        "Eliza",
+        125
+       ],
+       [
+        "Theo",
+        112
+       ],
+       [
+        "Eldridge",
+        108
+       ],
+       [
+        "Alex",
+        101
+       ],
+       [
+        "Emily",
+        100
+       ]
+      ],
+      "top10_cover": 0.39696356275303646,
+      "llm_set_hits": [
+       "Elara",
+       "Theo"
+      ]
+     },
+     "flags": {
+      "summary_over_50_words": 613,
+      "story_length_cutoff": 8,
+      "story_cjk": 70,
+      "summary_cjk": 88,
+      "story_refusal": 41,
+      "summary_length_cutoff": 6,
+      "summary_refusal": 1
+     }
+    },
+    "theme": {
+     "n": 4999,
+     "bad": 5,
+     "modal": [
+      "unclear",
+      "social_or_community",
+      "hopeful"
+     ],
+     "modal_share": 0.30966193238647727,
+     "woman_share": 0.6969393878775755,
+     "hopeful_share": 0.9801960392078416
+    }
+   },
+   "projection": {
+    "trajs_in_haiku_wells": [],
+    "wells_hit": [],
+    "nn_shared_median": 0.4596305179614607,
+    "inside_late": 0.0
+   },
+   "judge_shares": {
+    "lead_age": {
+     "unclear": 0.7291458291658331,
+     "young_adult": 0.17423484696939387,
+     "older_adult": 0.04860972194438888,
+     "middle_aged": 0.022804560912182435,
+     "child": 0.017803560712142428,
+     "teen": 0.007401480296059212
+    },
+    "conflict_type": {
+     "social_or_community": 0.43148629725945187,
+     "none_or_unclear": 0.34606921384276856,
+     "external_physical": 0.11522304460892178,
+     "internal": 0.09981996399279856,
+     "interpersonal": 0.007401480296059212
+    },
+    "setting_place": {
+     "small_town_or_village": 0.3746749349869974,
+     "city": 0.19723944788957792,
+     "other_or_unclear": 0.1328265653130626,
+     "institution": 0.11542308461692338,
+     "wilderness_or_mountain": 0.09601920384076815,
+     "home_interior": 0.03640728145629126,
+     "rural_or_farmland": 0.027005401080216044,
+     "coast_or_sea": 0.01800360072014403,
+     "road_or_journey": 0.002400480096019204
+    }
+   },
+   "haiku_shares": {
+    "lead_age": {
+     "unclear": 0.37751728283739105,
+     "young_adult": 0.24556657649534114,
+     "middle_aged": 0.18625388237651538,
+     "older_adult": 0.11040977857930068,
+     "child": 0.043983568780683296,
+     "teen": 0.03626891093076846
+    },
+    "conflict_type": {
+     "internal": 0.43963530708345855,
+     "interpersonal": 0.22342450656246868,
+     "social_or_community": 0.20969842701132152,
+     "external_physical": 0.12223224125839094,
+     "none_or_unclear": 0.0050095180843602845
+    },
+    "setting_place": {
+     "home_interior": 0.25278028253681994,
+     "institution": 0.1675182847410079,
+     "small_town_or_village": 0.14026650636208796,
+     "rural_or_farmland": 0.13535717863941488,
+     "city": 0.12433623885382226,
+     "other_or_unclear": 0.10009017132551848,
+     "coast_or_sea": 0.03306281935677788,
+     "wilderness_or_mountain": 0.032461677186654644,
+     "road_or_journey": 0.014126840997896002
+    }
+   },
+   "same_seed_vs_haiku_A": {
+    "k": 396,
+    "joint_shared": 46,
+    "same_seed_pairs_sharing": 0,
+    "same_seeds": [],
+    "same_median": 0.5066871218899768,
+    "diff_median": 0.50674757870216,
+    "gap": -6.045681218325161e-05,
+    "cross_pairs": 0
+   }
   }
  },
  "verdicts": {
@@ -365,6 +673,54 @@
     "gap": -0.022842064899386783,
     "holds": true
    }
+  },
+  "e3_1_qwen_100": {
+   "M1": {
+    "rate": 0.025454545454545455,
+    "rate_in_band": false,
+    "shared_ge_8": true,
+    "mult_ge_3": true,
+    "raw_shared_ge_3": true,
+    "W_in_band": false,
+    "no_wells": false,
+    "d_like": false,
+    "holds": false
+   },
+   "M2": {
+    "trajs_in_haiku_wells": 0,
+    "haiku_wells_hit": [],
+    "nn_shared_median": 0.4596305179614607,
+    "inside_late": 0.0,
+    "judge_max_diff": {
+     "lead_age": 0.3516285463284421,
+     "conflict_type": 0.3410596957584083,
+     "setting_place": 0.23440842862490943
+    },
+    "fields_ge_015": 3,
+    "shared_across_families": false,
+    "holds": true
+   },
+   "M3": {
+    "rate_top_or_above": true,
+    "W_le_100": true,
+    "n_excluded": 0,
+    "half_life": 8
+   },
+   "M4": {
+    "same_seed_pairs": 0,
+    "gap": -6.045681218325161e-05,
+    "holds": true
+   }
   }
+ },
+ "same_seed_mistral_vs_qwen": {
+  "k": 396,
+  "joint_shared": 68,
+  "same_seed_pairs_sharing": 0,
+  "same_seeds": [],
+  "same_median": 0.3627997171329572,
+  "diff_median": 0.38695860437526797,
+  "gap": -0.024158887242310745,
+  "cross_pairs": 13
  }
 }

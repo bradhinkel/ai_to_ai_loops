@@ -240,7 +240,7 @@ Both cells are judged with the E3-B schema afterwards (Haiku judge). Runs are co
 - **Brad's hypotheses:** longer captions slow convergence but do not stop it, and the attractors do not change.
 - **Measurement:** DINOv2 only. This sidesteps Hintze's problem that embeddings of different lengths can't be compared.
 
-### E5 — Bias injection: D&D captioner × D&D generator (PROVISIONAL, added 2026-10-18)
+### E5 — Bias injection: D&D captioner × D&D generator (PROVISIONAL, added 2026-10-18; revised 2026-11-06, see `docs/e5_runbook.md`: base Qwen2.5-VL-7B-Instruct, training pairs from the dndcollect sets rather than COCO rewrites, E1-cap as the untuned control, generator LoRA trained from the same pairs)
 
 The only *interventional* Part 1 experiment: shift a model's prior on purpose and check whether the attractors move to match.
 

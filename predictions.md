@@ -205,3 +205,25 @@ Design (`configs/e3_d_sonnet.yaml`): the E3-D loop on claude-sonnet-5-5 (default
 - DS3. **Domestic shape (judge field shares, steps 50–99).** Interpersonal + internal conflict ≥ 0.6, home interior + small town ≥ 0.5, hopeful ending ≥ 0.8, secondary character a family member (parent, sibling, partner, child) ≥ 0.4 — Haiku D's shape, not Mistral D's (social conflict 0.59, artist lead 0.50).
 - DS4. **Claude's addition.** Sonnet's menu is Haiku's plus one moral Haiku's five lack, from Sonnet's E3 defaults (grief, confession, reconciliation): a confession-and-forgiveness moral ("honesty about an old wrong frees both parties") carries ≥ 0.15 of late stories and is the top Sonnet moral the Haiku judge scores as "none".
 - Decision rule: DS1 and DS3 holding → the credit-request exhibit states that Claude models share a domestic moral menu across scale while the 7B models' menus differ, and asks for the 100-seed cells to measure W-hat against scale. DS1 failing → the exhibit states that the method discriminates models within a family, and the W-hat question is asked without the shared-menu premise.
+
+## E5: D&D bias injection (2026-11-06) — DRAFT written by Claude from Brad's expectation of the same day ("we expect the ai-to-ai loop to have D&D-like attractors"); Brad confirms or amends before any E5 cell runs. *Disclosure: E1 (all four cells, including E1-cap, the untuned control) and the dndcollect caption sets have been read.*
+
+Design: `docs/e5_runbook.md`. Baselines from E1-cap (SDXL + untuned Qwen2.5-VL, 100 seeds): 10 persistent attractors, 38 % of steps
+inside them, 0.53 of endpoints inside A0's p95 radii, fantasy-lexicon share of late captions 0.051 (A0-core 0.019).
+
+- P1. **The attractors move (Brad).** In E5-both, at least half of the persistent attractors (≥ 3 visits, E1 rules) are D&D-themed by
+  a Haiku judge of the endpoint images (armoured figures, monsters, dungeons, taverns, spellcasting, fantasy landscapes), and fewer
+  than 0.25 of E5-both endpoints fall inside E1-cap's p95 attractor radii (E1-cap vs A0 was 0.53).
+- P2. **The captioner carries more of it than the generator** (SPEC2 §E5 hypothesis). Fantasy-lexicon share of late captions:
+  E5-cap ≥ 0.5, E5-gen 0.1–0.3, E5-both ≥ 0.6. Endpoints in E5-both's attractors: E5-cap's share higher than E5-gen's.
+  Counter-case (E1's finding that the generator owns the images): E5-gen's endpoints look more like E5-both's than E5-cap's do.
+- P3. **Lens, not hallucination.** On the 1,000 held-out D&D images the tuned captioner's SigLIP fidelity is within 0.02 of Sonnet's
+  and above E1-cap's untuned Qwen; on 200 non-D&D images (Hintze step-0 images from A0-core) the Haiku judge finds elements not
+  in the image in < 0.15 of tuned captions (untuned Qwen as the reference rate).
+- P4. **Genericness returns inside the domain.** The D&D cells converge as fast as E1-cap (DINOv2 knee ≤ 10, plateau ≤ 35) to a
+  menu of fantasy clichés: ≤ 12 persistent attractors in E5-both with ≥ 30 % of steps inside them.
+- P5. **Dose-response.** E5-gen's share of endpoints inside E1-cap's radii falls monotonically with LoRA scale 0 → 1, with the
+  largest drop between 0.25 and 0.5.
+- Decision rule: P1 holding → the bias paper's interventional section is the E5 2×2; P1 failing with P3 holding → the loop's
+  attractors are set by something the fine-tune did not touch (the generator's prior or the instruction), and the next cell is
+  E5-both at a stronger captioner dose or a larger generator LoRA.

@@ -99,7 +99,7 @@ than an object), is the same fact from the other side: fewer, wider wells.
 | setting_place | coast_or_sea | 0.02 | 0.03 |
 | setting_place | road_or_journey | 0.00 | 0.01 |
 
-Mistral's table is in `reports/e3/s7b.md`. Both 7B cells put the lead's age out of view (unclear 0.86 and 0.73 against Haiku's 0.38), the conflict in the community (0.46 and 0.55 against 0.21) and the setting in a city or a small town rather than a home; Qwen's leads are women 0.70 of the time (Mistral 0.32, Haiku 0.67) and its endings hopeful 0.98.
+Mistral's table is in `reports/e3/s7b.md`. Both 7B cells put the lead's age out of view (unclear 0.86 and 0.73 against Haiku's 0.38), the conflict in the community (0.46 and 0.43 against 0.21) and the setting in a city or a small town rather than a home; Qwen's leads are women 0.70 of the time (Mistral 0.32, Haiku 0.67) and its endings hopeful 0.98.
 
 ## Deviations and notes
 

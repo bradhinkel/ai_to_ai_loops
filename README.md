@@ -4,7 +4,7 @@ An independent replication and extension of Hintze, Proschinger Åström & Schos
 
 A caption → image → caption loop (SDXL + LLaVA 7B in the reference setting) is run from Hintze's 100 seed prompts, then the same loop is varied one factor at a time: captioner, generator, caption instruction, prompt language, a selection rule, and seeded demographic attributes. The same loop is then run on text alone (story → 50-word summary → story) on Claude and on two 7B models, to see whether language models have attractors of their own. This is a hobby project by one person with Claude as the engineering and analysis collaborator; it is offered as a working draft for review, not as finished research.
 
-**Status (2026-11-10).** Phase 1 (image loops, twelve runs, about 111,000 images) and the text-loop arm (E3, twenty cells, about 72,000 stories) are complete and reported in `reports/`. Nothing is running. Two working-draft write-ups on the image loops ("Gravity in AI-to-AI loops", "Bias in AI-to-AI loops") and one on the text loops ("Text loops: wells, the birthday law and model menus") are being circulated for comment; ask Brad for a copy. Next is E5, a test of whether a captioner and generator fine-tuned on one theme (Dungeons & Dragons art) pull the image loop toward that theme (`docs/e5_runbook.md`; the prediction is drafted in `predictions.md`). `STATUS.md` is the dated log of every session.
+**Status (2026-11-10).** Phase 1 (image loops, twelve runs, about 111,000 images) and the text-loop arm (E3, twenty cells, about 72,000 stories) are complete and reported in `reports/`. Nothing is running. Two working-draft write-ups on the image loops ("Gravity in AI-to-AI loops", "Bias in AI-to-AI loops") and one on the text loops ("Text loops: wells, the birthday law and model menus") are being circulated for comment; PDFs go in `papers/` as they are finalised. Next is E5, a test of whether a captioner and generator fine-tuned on one theme (Dungeons & Dragons art) pull the image loop toward that theme (`docs/e5_runbook.md`; the prediction is drafted in `predictions.md`). `STATUS.md` is the dated log of every session.
 
 ## What was found (short version; every number is in `reports/`)
 - **Replication.** The SDXL + LLaVA loop converges to Hintze's motifs (palatial salons, cathedral naves, canopy bedrooms, Victorian houses) with the same knee and plateau as his T = 0.9 data; a second replication with a different base seed gives the run-to-run noise floor (`reports/a0_core.md`, `reports/a0_core2.md`).
@@ -32,6 +32,7 @@ STATUS.md            dated log of every session; "Where things stand" at the top
 PANEL.md             provisional plan for a human rating panel (Phase 2)
 RESEARCH_PROGRAM.md  the programme as a whole: questions, papers, order of work
 docs/                runbooks for arms in preparation (E5)
+papers/              public write-ups (PDF) and the endpoint contact sheets made for them
 src/                 image runner (two-pass lockstep, atomic writes, idempotent resume), text runner, generators, captioners, embedders, candidate selection
 configs/             one YAML per run (laptop and RunPod variants)
 seeds/ data/         E6 seed tables (occupation × gender × age × skin tone); essay seeds (Wikipedia Vital Articles, pinned revisions)

@@ -5,7 +5,7 @@ The images are placed at native resolution (512 px) and the PDF page is scaled
 to US letter width, so nothing is resampled.
 
     python analysis/endpoint_sheets.py --run a0_core --grid 10 \
-        --title "..." --subtitle "..." --out outreach/figures/a0_core_endpoints_10x10
+        --title "..." --subtitle "..." --out papers/figures/a0_core_endpoints_10x10
 """
 import argparse, datetime, json, os
 from PIL import Image, ImageDraw, ImageFont

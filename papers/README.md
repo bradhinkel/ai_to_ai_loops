@@ -1,11 +1,11 @@
 # papers/
 
-Public write-ups and the figures made for them. Everything here is a working draft by Brad Hinkel with Claude as collaborator; the numbers are rebuilt from `runs/` by the scripts in `analysis/`.
+Public write-ups and the figures made for them. Everything here is a working draft. Authorship convention for every document: Brad Hinkel, with Claude (Anthropic). The line under each title says which Claude model wrote the first draft and when, and whether Brad's review and revision is in progress or complete; a closing section, "How this document was written" or "Acknowledgement", gives the division of labour. Brad takes responsibility for the claims. The numbers are rebuilt from `runs/` by the scripts in `analysis/`.
 
 ## Write-ups
-- [Gravity in AI-to-AI loops (working draft)](<Gravity in AI-to-AI loops (working draft).pdf>) — the image loops: replication of Hintze et al., residence and escape hazards, who owns the attractors, instruction and language, the failed rejection intervention. Exported 2026-10-30.
-- [Bias in AI-to-AI loops (working draft)](<Bias in AI-to-AI loops (working draft).pdf>) — what the loop does to seeded gender, age and skin tone (E6). Exported 2026-10-30.
-- [Text loops: wells, the birthday law and model menus (working draft)](<Text loops - wells, the birthday law and model menus (working draft).pdf>) — the story loop on Claude, Mistral and Qwen (E3). Exported 2026-11-10 (10 pages).
+- [Gravity in AI-to-AI loops (working draft)](<Gravity in AI-to-AI loops (working draft).pdf>) — the image loops: replication of Hintze et al., residence and escape hazards, who owns the attractors, instruction and language, the failed rejection intervention. Exported 2026-11-10.
+- [Bias in AI-to-AI loops (working draft)](<Bias in AI-to-AI loops (working draft).pdf>) — what the loop does to seeded gender, age and skin tone (E6). Exported 2026-11-10.
+- [Text loops: wells, the birthday law and model menus (working draft)](<Text loops - wells, the birthday law and model menus (working draft).pdf>) — the story loop on Claude, Mistral and Qwen (E3). Exported 2026-11-10.
 
 ## figures/
 Endpoint contact sheets made by `analysis/endpoint_sheets.py`: every image is step 99 of 100 for one trajectory, at native 512 px, numbered by seed.

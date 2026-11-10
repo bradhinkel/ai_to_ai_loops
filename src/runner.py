@@ -138,7 +138,8 @@ class Runner:
                 self.log.warning("config hash differs from the manifest's (%s vs %s); the run continues with the manifest's parameters in force for fidelity checks",
                                  self.cfg["_config_sha256"][:8], m["config_sha256"][:8])
         append_jsonl(self.events_path, {"ts": now(), "event": "start", "pid": os.getpid(), "git_commit": git_commit(),
-                                        "config_sha256": self.cfg["_config_sha256"], "last_complete_step": resumed_from})
+                                        "config_sha256": self.cfg["_config_sha256"], "trajectories": self.traj_ids, "steps": self.cfg["steps"],
+                                        "last_complete_step": resumed_from})
         if not self.control_path.exists():
             atomic_write_json(self.control_path, {"state": "running"})
 

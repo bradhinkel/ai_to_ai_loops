@@ -1,0 +1,11 @@
+# A0-1000 on the laptop (two-pass, 8 GB): only for the continuation smoke, e.g.
+#   .venv/bin/python scripts/seed_continuation.py --target a0_1000_lsmoke --count 2
+#   .venv/bin/python -m src.runner configs/a0_1000.yaml --run-name a0_1000_lsmoke --count 2 --steps 102
+# which checks that a run seeded from a0_core resumes at step 100. The real run is configs/a0_1000_runpod.yaml on a pod.
+run_name: a0_1000
+arm: A0
+mode: two_pass
+steps: 1000
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+continue_from: {run: a0_core, through_step: 99}

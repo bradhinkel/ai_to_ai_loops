@@ -66,8 +66,13 @@ def main():
     ap.add_argument("--labels", default=None, help="optional json list of attractor names, index = probe")
     ap.add_argument("--tag", default="", help="optional suffix for the report file name (e.g. 'own' for own-cluster probes)")
     ap.add_argument("--space", default="dinov2", choices=["dinov2", "minilm"], help="embedding space for states and membership (archive must hold centroid_<space>)")
+    ap.add_argument("--window", default=None, help="LO:HI restricts the analysis to steps LO..HI-1 (A0-1000 windows); the endpoint is the window's last step")
     a = ap.parse_args()
-    B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]; i99 = steps.index(99)
+    B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]
+    if a.window:
+        lo, hi = (int(v) for v in a.window.split(":")); ilo, ihi = steps.index(lo), steps.index(hi - 1) + 1
+        X, mask, steps = X[:, ilo:ihi], mask[:, ilo:ihi], steps[ilo:ihi]
+    i99 = steps.index(99) if 99 in steps and not a.window else len(steps) - 1   # endpoint column: step 99 (reference runs) or the window's last step
     if a.archive:
         z = np.load(a.archive, allow_pickle=True); C = z[f"centroid_{a.space}"].astype(np.float64); source = f"{a.archive} ({a.space})"
         sizes = [len(m) for m in z["members"]]
@@ -110,11 +115,13 @@ def main():
         m = (depth[:, :-1] >= lo) & (depth[:, :-1] < hi); n = int(m.sum())
         by_depth.append(dict(lo=lo, hi=hi, n=n, exit_rate=float((L[:, :-1][m] != L[:, 1:][m]).mean()) if n else None))
     by_step = []
-    for a0, a1 in [(0, 20), (20, 40), (40, 60), (60, 80), (80, S - 1)]:
+    w = 20 if S <= 100 else 100       # 20-step bins for the 100-step runs (as before), 100-step bins for A0-1000
+    for a0, a1 in [(i, min(i + w, S - 1)) for i in range(0, S - 1, w)]:
         ins = L[:, a0:a1] >= 0; n = int(ins.sum())
         by_step.append(dict(lo=a0, hi=a1, n=n, exit_rate=float((L[:, a0:a1][ins] != L[:, a0 + 1:a1 + 1][ins]).mean()) if n else None))
     f = lambda x, p=3: "-" if x is None else (f"{x:.{p}f}" if isinstance(x, float) else str(x))
-    lines = [f"# Attractor gravity: {a.run} ({a.space})", "",
+    wtxt = f" steps {steps[0]}-{steps[-1]}" if a.window else ""
+    lines = [f"# Attractor gravity: {a.run} ({a.space}){wtxt}", "",
              f"States: {source}. Fixed radius {a.radius} ({a.space} cosine), exit at {a.exit_factor}x radius (hysteresis). {T} trajectories x {S} steps; "
              f"free share of all steps {np.mean(L == -1):.2f}. hazard = exits / steps inside (per step); capture = entries / steps outside (per step); "
              f"KM median = Kaplan-Meier median residence (final step censored); stationary = long-run share of the coarse chain over attractors + free (0.5 pseudo-count on every attractor<->free transition, so a state with no observed exit is not treated as absorbing).", "",
@@ -128,9 +135,9 @@ def main():
     lines += [f"| [{b['lo']:.2f}, {b['hi']:.2f}) | {b['n']} | {f(b['exit_rate'])} |" for b in by_depth]
     lines += ["", "Exit rate by step window (pooled; a stationary loop is flat):", "", "| steps | n inside | exit rate |", "|---|---|---|"]
     lines += [f"| {b['lo']}-{b['hi']} | {b['n']} | {f(b['exit_rate'])} |" for b in by_step]
-    md = "\n".join(lines) + "\n"; sfx = ("" if a.space == "dinov2" else f"_{a.space}") + (f"_{a.tag}" if a.tag else "")
+    md = "\n".join(lines) + "\n"; sfx = ("" if a.space == "dinov2" else f"_{a.space}") + (f"_w{steps[0]}_{steps[-1]}" if a.window else "") + (f"_{a.tag}" if a.tag else "")
     (ROOT / "reports" / f"gravity_{a.run}{sfx}.md").write_text(md)
-    (ROOT / "reports" / f"gravity_{a.run}{sfx}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor,
+    (ROOT / "reports" / f"gravity_{a.run}{sfx}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor, window=a.window, n_traj=T, n_steps=S,
                                                                             attractors=rows, free_stationary=float(pi[K]), free_endpoint=float(end_share[K]),
                                                                             hazard_by_depth=by_depth, hazard_by_step=by_step, transition_counts=M.tolist()), indent=1))
     print(md)

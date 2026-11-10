@@ -3,6 +3,7 @@
 #   CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh smoke   -> <run_name>_smoke: 16 traj x 3 steps with the config's batch/parallel settings
 #   CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh pilot   -> <run_name>_pilot: 20 traj x 100 steps
 #   CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh core    -> <run_name>: the config as written (100 traj x 100 steps)
+#   COUNT=20 CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh part -> <run_name> itself, first COUNT trajectories only (the A0-1000 pilot runs in the real directory)
 # CFG defaults to configs/a0_core_runpod.yaml (48 GB). The 96 GB configs (a0_core_runpod96, e1_*_runpod96) expect OLLAMA_PAR=8.
 set -euo pipefail
 source /workspace/env.sh; cd /workspace/ai_to_ai_loops
@@ -16,7 +17,8 @@ case "${1:-}" in
   smoke) RUN=${NAME}_smoke; ARGS="--run-name $RUN --steps 3 --count 16" ;;
   pilot) RUN=${NAME}_pilot; ARGS="--run-name $RUN --count 20" ;;
   core)  RUN=$NAME; ARGS="" ;;
-  *) echo "usage: CFG=configs/<cfg>.yaml $0 smoke|pilot|core"; exit 1 ;;
+  part)  RUN=$NAME; ARGS="--count ${COUNT:?set COUNT}" ;;
+  *) echo "usage: CFG=configs/<cfg>.yaml $0 smoke|pilot|core|part"; exit 1 ;;
 esac
 if pgrep -f "src.runner" > /dev/null; then echo "a runner is already running:"; pgrep -af src.runner; exit 1; fi
 nohup .venv/bin/python -m src.runner $CFG $ARGS > logs/$RUN.out 2>&1 &

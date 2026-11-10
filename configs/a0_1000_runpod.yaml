@@ -1,0 +1,16 @@
+# A0-1000 (predictions.md 2026-11-10; DEVIATIONS D20): A0-core continued from its step-99 images to step 999 on a RunPod 48 GB card
+# (RTX A6000). Same loop parameters as configs/a0_core_runpod96.yaml: both models resident, 16 prompts per SDXL call, 8 concurrent
+# captions (start Ollama with OLLAMA_NUM_PARALLEL=8, i.e. OLLAMA_PAR=8 for the scripts). Steps 0-99 of every trajectory are copies of
+# runs/a0_core made by scripts/seed_continuation.py, so the runner resumes at step 100. The key `continue_from` is provenance only
+# (it lands in manifest.json); the runner does not read it.
+# Pilot: trajectories 0-19 -> COUNT=20 CFG=configs/a0_1000_runpod.yaml OLLAMA_PAR=8 bash scripts/runpod_launch.sh part
+# Full run (same directory, after Brad's go-ahead at the pilot gate): CFG=configs/a0_1000_runpod.yaml OLLAMA_PAR=8 bash scripts/runpod_launch.sh core
+run_name: a0_1000
+arm: A0
+mode: single_pass
+steps: 1000
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}
+continue_from: {run: a0_core, through_step: 99}

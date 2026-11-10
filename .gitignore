@@ -25,3 +25,6 @@ hintze_osf/*
 !hintze_osf/MANIFEST.tsv
 # reference material folder entirely (PDFs, docx, Windows Zone.Identifier files)
 Resources/
+
+# endpoint sheets: keep PDF/JPEG, not the 15 MB lossless PNGs
+outreach/figures/*.png

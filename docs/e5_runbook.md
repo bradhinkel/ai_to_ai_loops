@@ -7,7 +7,7 @@ API work except the two training jobs and the four loop cells, which need a 48 G
 ## 0. Decisions (Brad, 2026-11-06)
 
 - Base captioner: **Qwen2.5-VL-7B-Instruct** (same model family as E1-cap's untuned captioner and as the E3 text Qwen).
-- Training data: the dndcollect sets in `/home/bradhinkel/Image-search/sets/` — `captions_train_{a,b,c,d}.jsonl` (12,002 D&D images
+- Training data: the dndcollect sets in `~/Image-search/sets/` — `captions_train_{a,b,c,d}.jsonl` (12,002 D&D images
   with Sonnet 5.5 captions, 140 words median, grounded: the captioner saw no metadata) and `captions_test.jsonl` (1,000 held out).
   No further captioning (train_e–g stay uncaptioned).
 - Untuned control: **E1-cap already is it** (SDXL + qwen2.5vl:7b Q4_K_M through Ollama, 100 seeds × 100 steps, `reports/e1.md`):

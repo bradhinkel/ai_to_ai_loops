@@ -26,5 +26,5 @@ hintze_osf/*
 # reference material folder entirely (PDFs, docx, Windows Zone.Identifier files)
 Resources/
 
-# endpoint sheets: keep PDF/JPEG, not the 15 MB lossless PNGs
-outreach/figures/*.png
+# outreach drafts and the figures made for them stay private (Brad, 2026-11-09)
+outreach/

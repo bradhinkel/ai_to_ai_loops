@@ -1,8 +1,8 @@
 # A0-1000 runbook: A0-core continued to 1,000 steps (prediction in predictions.md, 2026-11-10; D20)
 
 Pilot = trajectories 0–19 to step 999 on a RunPod 48 GB card (RTX A6000). The other 80 trajectories run in the same directory only after
-the pilot gate and Brad's go-ahead. Costs are Brad's estimate at $0.59/h (A6000); a pod that mounts the existing network volume has to be
-in the volume's data centre, where the price may differ.
+the pilot gate and Brad's go-ahead. Costs are Brad's estimate at $0.59/h (A6000). The old network volume is gone (Brad deleted it the
+week before 2026-11-10); the pod runs on its own disks, with the models, venv and run on the pod's **volume disk** at /workspace.
 
 | | trajectory-steps | wall at 6–10 s per trajectory-step | pod cost | disk on the laptop |
 |---|---|---|---|---|
@@ -21,13 +21,14 @@ batch less well than 100). The smoke measures it before anything is committed.
 3. Commit and push.
 
 ## 2. Pod
-1. RunPod: a pod with an RTX A6000 (or L40 / 6000 Ada), CUDA 12.8 template (driver ≥ 570), **the existing network volume mounted at /workspace**
-   (it holds the venv, SDXL and llava:latest). Put the SSH line in `.env` as `RUNPOD_SSH="root@HOST -p PORT"`.
-2. `scripts/runpod_sync.sh push` (code and configs), then on the pod `bash scripts/runpod_setup.sh` (idempotent: checks the driver, the venv and
-   the llava digest 8dd30f6b0cb1; refuses if the tag moved).
-3. **Volume space.** On the pod: `du -sh /workspace/ai_to_ai_loops/runs/* ; df -h /workspace`. The mirrors of runs already pulled and verified on
-   the laptop (arm_a, bimg, e2_qz, e6_photo, e6_track, e1_*) can go: check each against the laptop copy's byte count first
-   (`du -sb runs/<run>` both sides), then `rm -rf` the pod mirror. Need ≥ 15 GB free before the pilot starts; the offload loop keeps it there.
+1. RunPod: a pod with an RTX A6000 (or L40 / 6000 Ada), CUDA 12.8 template (driver ≥ 570), no network volume. Disks: **volume disk 50 GB**
+   (mounted at /workspace; survives container restarts and pod stops, not termination) and the default container disk (about 10–20 GB; wiped on
+   restart). Everything the setup script installs goes under /workspace, so after a container restart only Ollama's binary and the apt packages
+   need `runpod_setup.sh` again. Put the SSH line in `.env` as `RUNPOD_SSH="root@HOST -p PORT"`.
+2. `scripts/runpod_sync.sh push` (code and configs), then on the pod `bash scripts/runpod_setup.sh` (about 15 min: venv, SDXL 7 GB, llava 5 GB;
+   checks the driver and the llava digest 8dd30f6b0cb1; refuses if the tag moved).
+3. **Disk.** `df -h /workspace` should show ≥ 25 GB free after setup (models 12 GB, venv 7 GB, uv cache up to 6 GB, which `uv cache clean` frees).
+   The offload loop keeps the run's own footprint under 2 GB.
 4. `scripts/runpod_sync.sh push-run a0_1000 99` → the pod gets steps 0–99 records and the step-99 image for all 100 trajectories (about 100 MB).
 5. Smoke on the pod: `COUNT=2 CFG=configs/a0_1000_runpod.yaml OLLAMA_PAR=8 bash scripts/runpod_launch.sh part` with `--steps` **not** overridden is
    the real run on 2 trajectories, so instead run the standard GPU smoke `CFG=configs/a0_1000_runpod.yaml OLLAMA_PAR=8 bash scripts/runpod_launch.sh smoke`
@@ -38,7 +39,10 @@ batch less well than 100). The smoke measures it before anything is committed.
    It pulls every 20 min, verifies each new image's sha256 against its gen record, deletes the verified images from the pod (keeping the newest 3
    per trajectory and every record), and stops itself when progress.json says the run ended. `logs/offload_a0_1000.json` is its ledger.
 8. Check in with `scripts/runpod_sync.sh status`; expect a pod restart or two over a multi-day run (the runner resumes; relaunch step 6 and the
-   loop keeps going).
+   loop keeps going). If the pod is terminated, make a new one (steps 1–3), then `scripts/runpod_sync.sh push-run a0_1000 <last pulled step>`
+   sends every record and only the newest images from the laptop copy; the run resumes from the last step the loop had pulled (≤ 20 min lost).
+9. Between the pilot and the full run: terminate the pod rather than stop it (a stopped pod keeps the disk but may lose the GPU to another user);
+   setup is 15 minutes.
 
 ## 3. Pilot gate (reports/a0_1000_pilot.md)
 - `analysis/embed.py a0_1000 --spaces dinov2,minilm` (incremental; run it on the laptop copy).

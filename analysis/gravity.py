@@ -67,11 +67,17 @@ def main():
     ap.add_argument("--tag", default="", help="optional suffix for the report file name (e.g. 'own' for own-cluster probes)")
     ap.add_argument("--space", default="dinov2", choices=["dinov2", "minilm"], help="embedding space for states and membership (archive must hold centroid_<space>)")
     ap.add_argument("--window", default=None, help="LO:HI restricts the analysis to steps LO..HI-1 (A0-1000 windows); the endpoint is the window's last step")
+    ap.add_argument("--trajs", default=None, help="LO:HI restricts the analysis to trajectory indices LO..HI-1 (e.g. 0:20 for the A0-1000 pilot)")
     a = ap.parse_args()
-    B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]
+    B = Cache(a.run).arrays(a.space); X = B["X"].astype(np.float64); steps = list(B["steps"]); mask = B["mask"]; trajs = list(B["trajs"])
+    if a.trajs:
+        tlo, thi = (int(v) for v in a.trajs.split(":")); keep = [i for i, t in enumerate(trajs) if tlo <= t < thi]
+        X, mask, trajs = X[keep], mask[keep], [trajs[i] for i in keep]
     if a.window:
         lo, hi = (int(v) for v in a.window.split(":")); ilo, ihi = steps.index(lo), steps.index(hi - 1) + 1
         X, mask, steps = X[:, ilo:ihi], mask[:, ilo:ihi], steps[ilo:ihi]
+    keep = mask.any(axis=1)                       # trajectories with no step in the window (A0-1000: the 80 not yet run) are dropped, not counted as free
+    X, mask, trajs = X[keep], mask[keep], [t for t, k in zip(trajs, keep) if k]
     i99 = steps.index(99) if 99 in steps and not a.window else len(steps) - 1   # endpoint column: step 99 (reference runs) or the window's last step
     if a.archive:
         z = np.load(a.archive, allow_pickle=True); C = z[f"centroid_{a.space}"].astype(np.float64); source = f"{a.archive} ({a.space})"
@@ -135,7 +141,7 @@ def main():
     lines += [f"| [{b['lo']:.2f}, {b['hi']:.2f}) | {b['n']} | {f(b['exit_rate'])} |" for b in by_depth]
     lines += ["", "Exit rate by step window (pooled; a stationary loop is flat):", "", "| steps | n inside | exit rate |", "|---|---|---|"]
     lines += [f"| {b['lo']}-{b['hi']} | {b['n']} | {f(b['exit_rate'])} |" for b in by_step]
-    md = "\n".join(lines) + "\n"; sfx = ("" if a.space == "dinov2" else f"_{a.space}") + (f"_w{steps[0]}_{steps[-1]}" if a.window else "") + (f"_{a.tag}" if a.tag else "")
+    md = "\n".join(lines) + "\n"; sfx = ("" if a.space == "dinov2" else f"_{a.space}") + (f"_w{steps[0]}_{steps[-1]}" if a.window else "") + (f"_t{a.trajs.replace(':', '_')}" if a.trajs else "") + (f"_{a.tag}" if a.tag else "")
     (ROOT / "reports" / f"gravity_{a.run}{sfx}.md").write_text(md)
     (ROOT / "reports" / f"gravity_{a.run}{sfx}.json").write_text(json.dumps(dict(run=a.run, source=source, radius=a.radius, exit_factor=a.exit_factor, window=a.window, n_traj=T, n_steps=S,
                                                                             attractors=rows, free_stationary=float(pi[K]), free_endpoint=float(end_share[K]),

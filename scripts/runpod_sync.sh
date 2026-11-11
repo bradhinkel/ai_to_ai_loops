@@ -14,11 +14,12 @@ HOST=${RUNPOD_SSH%% *}; PORT=${RUNPOD_SSH##*-p }
 SSH="ssh -i $HOME/.ssh/claude_runpod -o StrictHostKeyChecking=accept-new -p $PORT"
 case "${1:-}" in
   push) git rev-parse HEAD > GIT_COMMIT; git status --porcelain | grep -q . && echo "(working tree has uncommitted changes; GIT_COMMIT records HEAD)"
-        rsync -az --no-o --no-g -e "$SSH" --exclude .venv --exclude runs --exclude logs --exclude data --exclude Resources --exclude .git --exclude __pycache__ --exclude .env \
+        rsync -az --no-o --no-g -e "$SSH" --exclude .venv --exclude runs --exclude logs --exclude data --exclude Resources --exclude .git --exclude __pycache__ --exclude .env --exclude analysis/cache --exclude outreach \
           ./ "$HOST:/workspace/ai_to_ai_loops/" && echo pushed ;;
   pull) mkdir -p runs logs
         rsync -az --no-o --no-g --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/runs/" runs/ && rsync -az --no-o --no-g --update -e "$SSH" "$HOST:/workspace/ai_to_ai_loops/logs/" logs/runpod/ && echo pulled && du -sh runs/a0_core 2>/dev/null ;;
   push-run) RUN=${2:?run name}; EX=(); for s in $(seq 0 $(( ${3:-0} - 1 ))); do EX+=(--exclude "step_$(printf %03d $s).png"); done
+        $SSH "$HOST" "mkdir -p /workspace/ai_to_ai_loops/runs/$RUN"
         rsync -az --no-o --no-g --ignore-existing -e "$SSH" "${EX[@]}" "runs/$RUN/" "$HOST:/workspace/ai_to_ai_loops/runs/$RUN/" && echo "pushed runs/$RUN (images from step ${3:-0}; existing pod files untouched)" ;;
   ssh)  $SSH -L 8788:127.0.0.1:8787 "$HOST" ;;
   status) $SSH "$HOST" 'cd /workspace/ai_to_ai_loops && python3 -c "import json,glob,os;f=max(glob.glob(\"runs/*/progress.json\"),key=os.path.getmtime);p=json.load(open(f));print(f,p[\"state\"],\"step\",p[\"step\"],p[\"completed_steps\"],\"/\",p[\"total_steps\"],\"s/traj-step\",p.get(\"s_per_traj_step\"),\"eta h\",p.get(\"eta_hours\"),p[\"updated\"])" 2>/dev/null || ls -t logs/*.log | head -1 | xargs tail -2' ;;

@@ -23,7 +23,7 @@ echo "== ollama"
 command -v ollama > /dev/null || (curl -fsSL https://ollama.com/install.sh | sh > /dev/null 2>&1)
 mkdir -p $OLLAMA_MODELS $W/logs
 if ! curl -s localhost:11434/api/version > /dev/null; then
-  OLLAMA_NUM_PARALLEL=${OLLAMA_PAR:-4} OLLAMA_KEEP_ALIVE=30m OLLAMA_MODELS=$OLLAMA_MODELS nohup ollama serve > $W/logs/ollama.out 2>&1 &
+  OLLAMA_NUM_PARALLEL=${OLLAMA_PAR:-4} OLLAMA_CONTEXT_LENGTH=${OLLAMA_CTX:-8192} OLLAMA_KEEP_ALIVE=30m OLLAMA_MODELS=$OLLAMA_MODELS nohup ollama serve > $W/logs/ollama.out 2>&1 &
   for i in $(seq 1 30); do curl -s localhost:11434/api/version > /dev/null && break; sleep 1; done
 fi
 curl -s localhost:11434/api/version; echo

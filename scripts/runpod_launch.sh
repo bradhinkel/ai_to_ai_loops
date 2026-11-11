@@ -5,12 +5,14 @@
 #   CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh core    -> <run_name>: the config as written (100 traj x 100 steps)
 #   COUNT=20 CFG=configs/<cfg>.yaml bash scripts/runpod_launch.sh part -> <run_name> itself, first COUNT trajectories only (the A0-1000 pilot runs in the real directory)
 # CFG defaults to configs/a0_core_runpod.yaml (48 GB). The 96 GB configs (a0_core_runpod96, e1_*_runpod96) expect OLLAMA_PAR=8.
+# OLLAMA_CTX (default 8192) caps the context per slot: at Ollama 0.40.16 the llava default is 32,768 tokens, and 8 slots of that (about 32 GB of
+# KV cache) do not fit beside SDXL on a 48 GB card, so the model spills to the CPU (A0-1000 smoke, 2026-11-10; D20).
 set -euo pipefail
 source /workspace/env.sh; cd /workspace/ai_to_ai_loops
 CFG=${CFG:-configs/a0_core_runpod.yaml}
 NAME=$(.venv/bin/python -c "from src.config import load_config; print(load_config('$CFG')['run_name'])")
 if ! curl -s localhost:11434/api/version > /dev/null; then
-  OLLAMA_NUM_PARALLEL=${OLLAMA_PAR:-4} OLLAMA_KEEP_ALIVE=30m nohup ollama serve > /workspace/logs/ollama.out 2>&1 &
+  OLLAMA_NUM_PARALLEL=${OLLAMA_PAR:-4} OLLAMA_CONTEXT_LENGTH=${OLLAMA_CTX:-8192} OLLAMA_KEEP_ALIVE=30m nohup ollama serve > /workspace/logs/ollama.out 2>&1 &
   for i in $(seq 1 30); do curl -s localhost:11434/api/version > /dev/null && break; sleep 1; done
 fi
 case "${1:-}" in

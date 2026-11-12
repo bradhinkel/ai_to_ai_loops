@@ -37,6 +37,19 @@ One baseline note for P1: these 20 trajectories had a free share of 0.65 over st
 - **Capture is rare and one-way.** The 11 trajectories never captured did not come within 0.69 of the cathedral centroid after step 100. Among the 16 trajectories outside at step 99, 5 were captured in 11,465 at-risk steps: a first-entry rate of about **0.00044 per step** (Poisson 95 % CI 0.00014–0.0010), i.e. a mean time to capture of about 2,300 steps. The step-999 picture is therefore still a transient. If the rate holds, roughly 4 of the 11 would be captured by step 2,000.
 - **The other region is the palatial interior.** The other 10 trajectories (0, 5, 6, 7, 8, 11, 13, 14, 16, 19) wander among the salon, the canopy bedroom and palatial rooms just outside the 0.20 radius; 5 of the 6 "free" endpoints are palatial bedrooms and salons. Trajectory 1 alone still wanders (village street, Victorian house, fantasy castle). At step 999, **19 of 20 trajectories are in one of the two regions.**
 
+**No cathedral departure exists in any LLaVA run we have** (checked 2026-11-12, same states and radius; "left" = visits another A0 attractor after entry, or ends ≥ 10 steps outside, confirmed by reading the step-99 caption):
+
+| run | captioner / generator | entered | left |
+|---|---|---|---|
+| A0-pilot, A0-core, A0-core-2, A0-photo, arm A | LLaVA / SDXL | 5, 11, 10, 12, 5 | **0** |
+| A0-1000 pilot (5 new entrants after step 100) | LLaVA / SDXL | 9 | **0** |
+| E1-gen | LLaVA / Hunyuan | 15 | 0 real (6 sit outside SDXL's radius, but their captions are still cathedrals and stained glass) |
+| A0-S | Sonnet / SDXL | 18 | **7** (forest path, rococo room, ballroom, villa, ...) |
+| E1-cap | Qwen2.5-VL / SDXL | 8 | **6** (ballrooms, a mandala, a moonlit lake, ...) |
+| B-img | LLaVA, best of 4 candidate captions | 4 | **2** (living room, village) |
+
+The trap belongs to the captioner. Once LLaVA describes a gothic nave, its caption regenerates one, whichever generator draws it. A different captioner, or a choice among LLaVA's candidate captions, lets trajectories out.
+
 ![occupancy](figures/a0_1000_pilot_occupancy.png)
 
 Cathedral occupancy rises from 0.15 (steps 0–99) to a plateau of about 0.38 by step 400; the free share falls from 0.65 to about 0.2. Endpoint diversity (Vendi of the 20 endpoints, DINOv2) falls from 13.5 at step 99 to 7.0 at step 499 and stays at 6.5–8.0 thereafter.

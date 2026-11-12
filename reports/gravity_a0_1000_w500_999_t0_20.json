@@ -1,0 +1,330 @@
+{
+ "run": "a0_1000",
+ "source": "archive/a0_core_centroids.npz (dinov2)",
+ "radius": 0.2,
+ "exit_factor": 1.25,
+ "window": "500:1000",
+ "n_traj": 20,
+ "n_steps": 500,
+ "attractors": [
+  {
+   "k": 0,
+   "name": "gothic cathedral nave",
+   "size_at_definition": 11,
+   "endpoints": 9,
+   "steps_inside": 3853,
+   "entries": 102,
+   "exits": 101,
+   "hazard": 0.02621334025434726,
+   "mean_residence": 38.14851485148515,
+   "km_median_residence": 28,
+   "capture": 0.01664762526521952,
+   "reentries": 101,
+   "n_visits_completed": 101,
+   "n_visits_censored": 9,
+   "max_completed_dwell": 133,
+   "stationary_share": 0.389560824571175,
+   "endpoint_share": 0.45
+  },
+  {
+   "k": 1,
+   "name": "gold-and-blue palatial salon",
+   "size_at_definition": 34,
+   "endpoints": 4,
+   "steps_inside": 2985,
+   "entries": 320,
+   "exits": 322,
+   "hazard": 0.10787269681742044,
+   "mean_residence": 9.270186335403727,
+   "km_median_residence": 6,
+   "capture": 0.045746962115797,
+   "reentries": 316,
+   "n_visits_completed": 322,
+   "n_visits_censored": 4,
+   "max_completed_dwell": 119,
+   "stationary_share": 0.2962407617302227,
+   "endpoint_share": 0.2
+  },
+  {
+   "k": 2,
+   "name": "luxury canopy bedroom",
+   "size_at_definition": 9,
+   "endpoints": 1,
+   "steps_inside": 581,
+   "entries": 98,
+   "exits": 97,
+   "hazard": 0.16695352839931152,
+   "mean_residence": 5.9896907216494855,
+   "km_median_residence": 4,
+   "capture": 0.010426641132035322,
+   "reentries": 90,
+   "n_visits_completed": 97,
+   "n_visits_censored": 1,
+   "max_completed_dwell": 41,
+   "stationary_share": 0.05860021186414537,
+   "endpoint_share": 0.05
+  },
+  {
+   "k": 3,
+   "name": "old-town street / village (loose)",
+   "size_at_definition": 8,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 4.986867160879292e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 4,
+   "name": "catch-all landscapes (loose)",
+   "size_at_definition": 24,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 4.986867160879292e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 5,
+   "name": "castle on water",
+   "size_at_definition": 4,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 4.986867160879292e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 6,
+   "name": "Victorian house with garden",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 121,
+   "entries": 25,
+   "exits": 26,
+   "hazard": 0.21487603305785125,
+   "mean_residence": 4.653846153846153,
+   "km_median_residence": 3,
+   "capture": 0.0025357541332792373,
+   "reentries": 23,
+   "n_visits_completed": 26,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 28,
+   "stationary_share": 0.011664972106211374,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 7,
+   "name": "people and art (loose)",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 4.986867160879292e-05,
+   "endpoint_share": 0.0
+  }
+ ],
+ "free_stationary": 0.24373375504181038,
+ "free_endpoint": 0.3,
+ "hazard_by_depth": [
+  {
+   "lo": 0,
+   "hi": 0.4,
+   "n": 1924,
+   "exit_rate": 0.01975051975051975
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 2052,
+   "exit_rate": 0.04922027290448343
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 1772,
+   "exit_rate": 0.09198645598194131
+  },
+  {
+   "lo": 0.8,
+   "hi": 1.0,
+   "n": 1213,
+   "exit_rate": 0.12530915086562242
+  },
+  {
+   "lo": 1.0,
+   "hi": 1.25,
+   "n": 579,
+   "exit_rate": 0.15889464594127806
+  }
+ ],
+ "hazard_by_step": [
+  {
+   "lo": 0,
+   "hi": 100,
+   "n": 1431,
+   "exit_rate": 0.06289308176100629
+  },
+  {
+   "lo": 100,
+   "hi": 200,
+   "n": 1403,
+   "exit_rate": 0.07412687099073414
+  },
+  {
+   "lo": 200,
+   "hi": 300,
+   "n": 1541,
+   "exit_rate": 0.057754704737183644
+  },
+  {
+   "lo": 300,
+   "hi": 400,
+   "n": 1634,
+   "exit_rate": 0.07466340269277846
+  },
+  {
+   "lo": 400,
+   "hi": 499,
+   "n": 1531,
+   "exit_rate": 0.09209666884389288
+  }
+ ],
+ "transition_counts": [
+  [
+   3752.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   101.0
+  ],
+  [
+   0.0,
+   2663.0,
+   7.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   315.0
+  ],
+  [
+   0.0,
+   8.0,
+   484.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   89.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   95.0,
+   0.0,
+   26.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   102.0,
+   312.0,
+   91.0,
+   0.0,
+   0.0,
+   0.0,
+   25.0,
+   0.0,
+   1910.0
+  ]
+ ]
+}

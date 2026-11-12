@@ -1,0 +1,354 @@
+{
+ "run": "a0_1000",
+ "source": "archive/a0_core_centroids.npz (dinov2)",
+ "radius": 0.2,
+ "exit_factor": 1.25,
+ "window": "100:1000",
+ "n_traj": 20,
+ "n_steps": 900,
+ "attractors": [
+  {
+   "k": 0,
+   "name": "gothic cathedral nave",
+   "size_at_definition": 11,
+   "endpoints": 9,
+   "steps_inside": 6262,
+   "entries": 179,
+   "exits": 173,
+   "hazard": 0.0276269562440115,
+   "mean_residence": 36.19653179190751,
+   "km_median_residence": 25,
+   "capture": 0.015275644307902372,
+   "reentries": 173,
+   "n_visits_completed": 173,
+   "n_visits_censored": 9,
+   "max_completed_dwell": 176,
+   "stationary_share": 0.3561089332045872,
+   "endpoint_share": 0.45
+  },
+  {
+   "k": 1,
+   "name": "gold-and-blue palatial salon",
+   "size_at_definition": 34,
+   "endpoints": 4,
+   "steps_inside": 4697,
+   "entries": 492,
+   "exits": 491,
+   "hazard": 0.10453480945284224,
+   "mean_residence": 9.566191446028514,
+   "km_median_residence": 6,
+   "capture": 0.037039825340661,
+   "reentries": 484,
+   "n_visits_completed": 491,
+   "n_visits_censored": 4,
+   "max_completed_dwell": 119,
+   "stationary_share": 0.2583409127097672,
+   "endpoint_share": 0.2
+  },
+  {
+   "k": 2,
+   "name": "luxury canopy bedroom",
+   "size_at_definition": 9,
+   "endpoints": 1,
+   "steps_inside": 860,
+   "entries": 157,
+   "exits": 157,
+   "hazard": 0.18255813953488373,
+   "mean_residence": 5.477707006369426,
+   "km_median_residence": 3,
+   "capture": 0.009170560747663552,
+   "reentries": 148,
+   "n_visits_completed": 157,
+   "n_visits_censored": 1,
+   "max_completed_dwell": 41,
+   "stationary_share": 0.04722539875308199,
+   "endpoint_share": 0.05
+  },
+  {
+   "k": 3,
+   "name": "old-town street / village (loose)",
+   "size_at_definition": 8,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 2.7428571957294903e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 4,
+   "name": "catch-all landscapes (loose)",
+   "size_at_definition": 24,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 2.742857195729415e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 5,
+   "name": "castle on water",
+   "size_at_definition": 4,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 2.742857195729415e-05,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 6,
+   "name": "Victorian house with garden",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 563,
+   "entries": 80,
+   "exits": 80,
+   "hazard": 0.14209591474245115,
+   "mean_residence": 7.0375000000000005,
+   "km_median_residence": 4,
+   "capture": 0.004593213527013837,
+   "reentries": 75,
+   "n_visits_completed": 80,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 48,
+   "stationary_share": 0.030922178968758093,
+   "endpoint_share": 0.0
+  },
+  {
+   "k": 7,
+   "name": "people and art (loose)",
+   "size_at_definition": 5,
+   "endpoints": 0,
+   "steps_inside": 0,
+   "entries": 0,
+   "exits": 0,
+   "hazard": null,
+   "mean_residence": null,
+   "km_median_residence": null,
+   "capture": 0.0,
+   "reentries": 0,
+   "n_visits_completed": 0,
+   "n_visits_censored": 0,
+   "max_completed_dwell": 0,
+   "stationary_share": 2.742857195729415e-05,
+   "endpoint_share": 0.0
+  }
+ ],
+ "free_stationary": 0.3072928620759762,
+ "free_endpoint": 0.3,
+ "hazard_by_depth": [
+  {
+   "lo": 0,
+   "hi": 0.4,
+   "n": 3092,
+   "exit_rate": 0.021345407503234153
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.6,
+   "n": 3431,
+   "exit_rate": 0.05042261731273681
+  },
+  {
+   "lo": 0.6,
+   "hi": 0.8,
+   "n": 2901,
+   "exit_rate": 0.08824543260944502
+  },
+  {
+   "lo": 0.8,
+   "hi": 1.0,
+   "n": 1987,
+   "exit_rate": 0.12833417211877202
+  },
+  {
+   "lo": 1.0,
+   "hi": 1.25,
+   "n": 971,
+   "exit_rate": 0.15550978372811536
+  }
+ ],
+ "hazard_by_step": [
+  {
+   "lo": 0,
+   "hi": 100,
+   "n": 973,
+   "exit_rate": 0.08324768756423433
+  },
+  {
+   "lo": 100,
+   "hi": 200,
+   "n": 1144,
+   "exit_rate": 0.06381118881118882
+  },
+  {
+   "lo": 200,
+   "hi": 300,
+   "n": 1268,
+   "exit_rate": 0.07334384858044164
+  },
+  {
+   "lo": 300,
+   "hi": 400,
+   "n": 1456,
+   "exit_rate": 0.07417582417582418
+  },
+  {
+   "lo": 400,
+   "hi": 500,
+   "n": 1432,
+   "exit_rate": 0.06284916201117319
+  },
+  {
+   "lo": 500,
+   "hi": 600,
+   "n": 1403,
+   "exit_rate": 0.07412687099073414
+  },
+  {
+   "lo": 600,
+   "hi": 700,
+   "n": 1541,
+   "exit_rate": 0.057754704737183644
+  },
+  {
+   "lo": 700,
+   "hi": 800,
+   "n": 1634,
+   "exit_rate": 0.07466340269277846
+  },
+  {
+   "lo": 800,
+   "hi": 899,
+   "n": 1531,
+   "exit_rate": 0.09209666884389288
+  }
+ ],
+ "transition_counts": [
+  [
+   6089.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   173.0
+  ],
+  [
+   0.0,
+   4206.0,
+   12.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   479.0
+  ],
+  [
+   0.0,
+   15.0,
+   703.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   142.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   483.0,
+   0.0,
+   80.0
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   179.0,
+   477.0,
+   145.0,
+   0.0,
+   0.0,
+   0.0,
+   80.0,
+   0.0,
+   4717.0
+  ]
+ ]
+}

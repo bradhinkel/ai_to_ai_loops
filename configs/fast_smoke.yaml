@@ -1,0 +1,22 @@
+# Fast-pair smoke (2026-11-12): plumbing + throughput only, not an arm. SDXL-Turbo at its own settings (1 step, 512 px
+# native, guidance 0, EulerAncestral trailing from the repo) with Hintze's verbatim instruction and T=0.9.
+# Captioner: llava:latest stands in, because Ollama's moondream tag returns junk at T=0.9 (17/30 empty or garbage in a
+# 2026-11-12 check) and HF moondream2 needs trust_remote_code (awaiting Brad). Laptop two-pass.
+run_name: fast_smoke
+arm: FAST-smoke
+mode: two_pass
+steps: 5
+trajectories: {first: 0, count: 4}
+temperature: 0.9
+generator:
+  backend: sdxl
+  model: stabilityai/sdxl-turbo
+  revision: 71153311d3dbb46851df1931d3ca6e939de83304   # HF snapshot 2026-11-12 (recorded; SDXLGenerator logs refs/main)
+  variant: fp16
+  dtype: float16
+  num_inference_steps: 1
+  guidance_scale: 0.0
+  height: 512
+  width: 512
+  resize_to: null
+  batch: 4

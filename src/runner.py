@@ -81,6 +81,9 @@ class Runner:
         if cfg["captioner"].get("backend", "ollama") == "anthropic":      # A0-S: Claude via the Messages API
             from .captioners.claude_api import ClaudeCaptioner
             self.cap = ClaudeCaptioner(cfg["captioner"], cfg["temperature"], self.log)
+        elif cfg["captioner"].get("backend") == "hf_moondream":            # FAST pair: Moondream 2 from Hugging Face
+            from .captioners.hf_moondream import MoondreamCaptioner
+            self.cap = MoondreamCaptioner(cfg["captioner"], cfg["temperature"], self.log)
         else:
             from .captioners.ollama_llava import OllamaCaptioner
             self.cap = OllamaCaptioner(cfg["captioner"], cfg["temperature"], self.log)

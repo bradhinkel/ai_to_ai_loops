@@ -1,0 +1,20 @@
+# FAST-X crossed cell (predictions.md "FAST-100" F2, 2026-11-12): SDXL-Turbo + llava:latest (A0's captioner and Ollama settings),
+# Hintze seeds 0-19, 20 x 100, T 0.9. Laptop two-pass. Departures: DEVIATIONS.md D21.
+run_name: fast_x_llava
+arm: FAST-X
+mode: two_pass
+steps: 100
+trajectories: {first: 0, count: 20}
+temperature: 0.9
+generator:
+  backend: sdxl
+  model: stabilityai/sdxl-turbo
+  revision: 71153311d3dbb46851df1931d3ca6e939de83304   # HF snapshot 2026-11-12
+  variant: fp16
+  dtype: float16
+  num_inference_steps: 1
+  guidance_scale: 0.0
+  height: 512
+  width: 512
+  resize_to: null
+  batch: 10

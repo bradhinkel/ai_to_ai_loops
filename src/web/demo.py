@@ -139,8 +139,15 @@ def demo_live():
 @router.get("/api/demo/state/{run}")
 def demo_state(run: str, n: int = 9):
     if not (RUNS / run).exists(): raise HTTPException(404)
-    cells = [_cell(run, t, _latest(run, t)) for t in range(n)]
-    SCORER.want([(run, c["traj"], c["step"]) for c in cells if c["step"] >= 0 and c["nsfw"] is None], front=True)
+    cells, want = [], []
+    for t in range(n):
+        s = _latest(run, t); c = _cell(run, t, s)
+        if s >= 0 and c["nsfw"] is None:                 # newest step not scored yet: queue it, show the newest scored one meanwhile
+            want.append((run, t, s))
+            for s0 in range(s - 1, max(-1, s - 4), -1):
+                if SCORER.get(run, t, s0) is not None: c = _cell(run, t, s0); break
+        cells.append(c)
+    SCORER.want(want, front=True)
     return cells
 
 

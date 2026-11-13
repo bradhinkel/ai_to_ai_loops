@@ -1,0 +1,28 @@
+# Live demo of the fast pair (AI Tinkerers, 2026-11-13). NOT an experiment arm: no prediction, never graded. Same models, revisions and
+# sampling as configs/fast_100.yaml (D21), laptop two-pass. Each demo run is a fresh directory runs/demo_<N>x<N>_<stamp>, seeded by
+# scripts/demo_start.sh from runs/demo_base through step 49 (fast_100 trajectories 0-19 + trajectories 20-24 run fresh to step 49),
+# so chains start mid-drift. --count picks the grid (9, 16, 25). Viewer: http://127.0.0.1:8787/demo
+run_name: demo_fast
+arm: DEMO
+mode: two_pass
+steps: 2000
+trajectories: {first: 0, count: 25}
+temperature: 0.9
+generator:
+  backend: sdxl
+  model: stabilityai/sdxl-turbo
+  revision: 71153311d3dbb46851df1931d3ca6e939de83304   # HF snapshot 2026-11-12
+  variant: fp16
+  dtype: float16
+  num_inference_steps: 1
+  guidance_scale: 0.0
+  height: 512
+  width: 512
+  resize_to: null
+  batch: 10
+captioner:
+  backend: hf_moondream
+  model: vikhyatk/moondream2
+  revision: "2025-06-21"
+  dtype: bfloat16   # the model's native dtype (config.json)
+  digest_prefix: null

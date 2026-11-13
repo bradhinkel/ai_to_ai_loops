@@ -13,6 +13,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 RUNS, LOGS, CONFIGS = ROOT / "runs", ROOT / "logs", ROOT / "configs"
 PY = ROOT / ".venv/bin/python"
 app = FastAPI(title="ai_to_ai_loops")
+from .demo import router as demo_router  # noqa: E402  (fast-pair demo grid, /demo)
+app.include_router(demo_router)
 
 
 def _json(p, default=None):
@@ -145,3 +147,8 @@ load(); setInterval(load,15000);
 @app.get("/", response_class=HTMLResponse)
 def index():
     return PAGE
+
+
+@app.get("/demo", response_class=HTMLResponse)
+def demo_page():
+    return (pathlib.Path(__file__).parent / "demo_page.html").read_text()

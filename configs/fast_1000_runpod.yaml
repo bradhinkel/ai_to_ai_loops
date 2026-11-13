@@ -1,0 +1,35 @@
+# A0-ESC T3 (predictions.md "A0-ESC" P2, P2b, P3's T3 clause; approved by Brad 2026-11-12 after the FAST-100 gate): the fast pair,
+# SDXL-Turbo + Moondream 2, all 100 Hintze seeds x 1,000 steps from step 0, T 0.9, Hintze's verbatim instruction. Same models,
+# revisions and sampling as configs/fast_100.yaml (D21); on a secure RTX 4090 pod (24 GB) both models stay resident (single pass,
+# no CPU offload). Moondream captions one image at a time (its remote code keeps its KV cache on the model, so no threads).
+#   pod setup: MODELS=fast bash scripts/runpod_setup.sh
+#   smoke:     CFG=configs/fast_1000_runpod.yaml bash scripts/runpod_launch.sh smoke   (16 traj x 3 steps -> runs/fast_1000_smoke)
+#   full run:  CFG=configs/fast_1000_runpod.yaml bash scripts/runpod_launch.sh core
+run_name: fast_1000
+arm: FAST
+mode: single_pass
+steps: 1000
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator:
+  backend: sdxl
+  model: stabilityai/sdxl-turbo
+  revision: 71153311d3dbb46851df1931d3ca6e939de83304   # HF snapshot 2026-11-12
+  variant: fp16
+  dtype: float16
+  num_inference_steps: 1
+  guidance_scale: 0.0
+  height: 512
+  width: 512
+  resize_to: null
+  batch: 20
+  cpu_offload: false
+  release_mode: delete
+captioner:
+  backend: hf_moondream
+  model: vikhyatk/moondream2
+  revision: "2025-06-21"
+  dtype: bfloat16
+  digest_prefix: null
+  parallel: 1
+  unload_after_pass: false

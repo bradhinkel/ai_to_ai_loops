@@ -1,0 +1,16 @@
+# ESC-C (predictions.md "ESC", approved by Brad 2026-11-15; amends A0-ESC T1): escape from the SDXL + llava:latest cathedral.
+# 100 chains, each starting from a cathedral state of one of the 43 distinct SDXL + LLaVA entrants written as step 0
+# (analysis/esc_c_states.py -> data/esc_c_states.json; scripts/seed_states.py --states-file; mapping in runs/esc_c/seed_states.json);
+# steps 1-300 are new with sdxl_base_seed 20261115. Everything else is A0 (SDXL base 25 steps 1024 -> 512, llava:latest digest
+# 8dd30f6b0cb1, Hintze's verbatim instruction, T 0.9), with configs/a0_1000_runpod.yaml's pod settings (48 GB card).
+#   pod:    OLLAMA_PAR=8 CFG=configs/esc_c_runpod.yaml bash scripts/runpod_launch.sh core
+run_name: esc_c
+arm: ESC-C
+mode: single_pass
+steps: 301
+trajectories: {first: 0, count: 100}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}
+seeds:
+  sdxl_base_seed: 20261115

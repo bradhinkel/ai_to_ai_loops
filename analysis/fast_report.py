@@ -47,7 +47,7 @@ def own_attractors(X):
         held = []
         for t in entrants:
             first = int(np.argmax(L[t] == c)); after = L[t, first:]
-            other = bool(((after >= 0) & (after != c)).any()); tail_out = int((after[::-1] != c).argmax()) if after[-1] != c else 0
+            other = bool(((after >= 0) & (after != c)).any()); tail_out = int((after[::-1] == c).argmax()) if after[-1] != c else 0  # steps outside at the end (fixed 2026-11-14: was != c, always 0)
             held.append(not other and tail_out < 10)
         rows.append(dict(k=c, size=int((km.labels_ == c).sum()), visits_ge5=sum(n >= 5 for n in v), persistent=sum(n >= 5 for n in v) >= 3,
                          entrants=len(entrants), held_all=bool(entrants) and all(held), n_held=int(sum(held)), endpoints=int((L[:, HI - 1] == c).sum()),

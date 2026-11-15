@@ -1,5 +1,7 @@
 # FAST-100 pilot and FAST-X crossed cell (20 trajectories × 100 steps each, laptop, 2026-11-12)
 
+**Correction, 2026-11-14 (found while grading T3, reports/fast_1000.md):** the *held* rule's "ends ≥ 10 steps outside" part never triggered in `analysis/fast_report.py` (a sign error made the tail count always 0). With the rule as written, trajectory 12 ended 13 steps outside the eye/lips attractor, so it held **2 of 3**, not 3 of 3, and **F3 is PASS** (both clauses). F1 and F2 are unchanged. The code is fixed and `reports/fast_100_metrics.json` rebuilt; the tables below are left as first written.
+
 **Runs: PASS** (both finished clean, 0 empty captions, no crash or restart).
 **Prediction: F1 FAIL (1 of 3 parts), F2 PASS, F3 FAIL (holding clause).**
 

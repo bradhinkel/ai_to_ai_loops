@@ -9,6 +9,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 set -a; source .env; set +a
+RUNPOD_SSH=${RUNPOD_SSH_OVERRIDE:-$RUNPOD_SSH}   # a second pod: RUNPOD_SSH_OVERRIDE="root@HOST -p PORT" scripts/runpod_sync.sh ...
 : "${RUNPOD_SSH:?set RUNPOD_SSH in .env, e.g. RUNPOD_SSH=\"root@1.2.3.4 -p 12345\"}"
 HOST=${RUNPOD_SSH%% *}; PORT=${RUNPOD_SSH##*-p }
 SSH="ssh -i $HOME/.ssh/claude_runpod -o StrictHostKeyChecking=accept-new -p $PORT"

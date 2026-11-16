@@ -177,3 +177,9 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - ESC-C: the pod's MFS volume (EU-SE-1) started returning `OSError: [Errno 5] Input/output error` at 03:01 UTC. The log file stopped first; the runner finished step 18 and died at 03:39 appending to events.jsonl ("crashed" event written). There were earlier signs of a slow volume: Ollama "timed out waiting for llama-server to start" at 02:15, with retries. queue_t1 saw "crashed" and correctly did not start T1. The pod sat idle until 14:48 (≈ 11 h, ≈ $8 lost).
 - Checked before resuming: steps 0–18 complete for all 100 chains (3,800 step records parse, no missing or empty files, no partial step-19 files); events.jsonl ends cleanly; the volume accepts writes again. Crash logs were saved to logs/esc_c.crash_20261116_eio.out and logs/queue_t1.crash_20261116.out. Resumed 14:5x UTC in the same run directory (idempotent resume from step 19, as in the T3 quota crash); queue_t1 re-armed (pid 8433). The new finish estimate is ≈ 2026-11-18 21:00 UTC.
 - Process note: the launcher's `pgrep -f src.runner` matches an ssh command line containing that string, so on the pod, launch via /workspace/resume_esc_c.sh.
+
+**2026-11-16 — ESC-E graded (reports/esc_e.md, analysis/esc_e_report.py).**
+- ESC-1 eye PASS (21 escapes); ESC-2 eye PASS (6.6e-4 per step, 95 % 4.1–10.1e-4; inside Claude's band and within ×3 of T3's 3.2e-4); ESC-3 PASS (19/21 focus shifts, 0 dropped-word starts).
+- Caveats: 3 of the 21 "escapes" returned after 66–88 steps out, so the 40-step rule was too short (never-returned only: 18, 5.7e-4, still passes). "iris" is a pun: 2 chains go to iris flowers (without "iris" ESC-3 is 18/21).
+- Two routes: makeup drift (15/21: eye → glitter → face → lips or headdress; lips is a neighbouring plateau ~0.45–0.5, not a T3 attractor) and sudden generator reinterpretation (6/21: owl, iris flower, lily, texture).
+- ESC-4 waits for ESC-C.

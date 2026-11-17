@@ -183,3 +183,9 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - Caveats: 3 of the 21 "escapes" returned after 66–88 steps out, so the 40-step rule was too short (never-returned only: 18, 5.7e-4, still passes). "iris" is a pun: 2 chains go to iris flowers (without "iris" ESC-3 is 18/21).
 - Two routes: makeup drift (15/21: eye → glitter → face → lips or headdress; lips is a neighbouring plateau ~0.45–0.5, not a T3 attractor) and sudden generator reinterpretation (6/21: owl, iris flower, lily, texture).
 - ESC-4 waits for ESC-C.
+
+**2026-11-17 — ESC-C: pod container restart at step 172, resumed.**
+- The pod stopped responding at 19:18 UTC, during step 172's LLaVA pass, and its container restarted at 19:39. No traceback (the processes were killed). The runner, Ollama and queue_t1 died; the MFS volume and the container disk survived (ollama binary, llava 8dd30f6b0cb1, venv).
+- Step 171 complete; step 172 had 296 of 300 files, all valid. Resumed 20:16 via /workspace/resume_esc_c.sh: the runner made step 172's 4 missing captions (events: step_done 172 n_traj 4), then went on to 173. Downtime ≈ 1 h. Log copy: logs/esc_c.restart_20261117_container.out. queue_t1 re-armed (pid 2069).
+- The laptop pull loop had stopped on 2026-11-16 when it saw the "crashed" state and was not restarted after that resume. The laptop copy stood at step 18 until now; the loop was restarted (pid 52540, every 30 min).
+- Rate 6.6 s per chain-step (≈ 660 s per step). ESC-C finish ≈ 2026-11-18 20:00 UTC; T1's 30,000 captions after it, ≈ 15 h → ≈ 2026-11-19 11:00 UTC.

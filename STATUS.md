@@ -189,3 +189,14 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - Step 171 complete; step 172 had 296 of 300 files, all valid. Resumed 20:16 via /workspace/resume_esc_c.sh: the runner made step 172's 4 missing captions (events: step_done 172 n_traj 4), then went on to 173. Downtime ≈ 1 h. Log copy: logs/esc_c.restart_20261117_container.out. queue_t1 re-armed (pid 2069).
 - The laptop pull loop had stopped on 2026-11-16 when it saw the "crashed" state and was not restarted after that resume. The laptop copy stood at step 18 until now; the loop was restarted (pid 52540, every 30 min).
 - Rate 6.6 s per chain-step (≈ 660 s per step). ESC-C finish ≈ 2026-11-18 20:00 UTC; T1's 30,000 captions after it, ≈ 15 h → ≈ 2026-11-19 11:00 UTC.
+
+**2026-11-17 — Pod watchdog for ESC-C and T1 (Brad: "set a check in the pod").**
+- `scripts/pod_watchdog.sh` runs on the ESC-C pod (log /workspace/logs/watchdog.log, single instance via flock). Every 5 min:
+  - If runs/esc_c is not finished and no runner process exists, it resumes the runner (runpod_launch.sh core) after copying logs/esc_c.out aside.
+  - If the runner is alive but progress.json is over 45 min old, it only logs a warning.
+  - Once ESC-C has finished, it starts queue_t1.sh whenever T1 is unfinished and not running.
+  - It exits when both are finished.
+  - At most 6 automatic restarts in total.
+- Survives container restarts: /pre_start.sh, which the image's /start.sh runs on every container start, launches it after 60 s. It lives on the container disk, which survived the 2026-11-17 restart; a pod reset or migration would lose it.
+- Tested on the laptop with stub launchers: resume, restart cap, T1 start, and exit when finished. The lock was tested on the pod. The real runner was not killed to test it.
+- `scripts/runpod_pull_loop.sh` now takes PULL_STOP_STATES. The ESC-C laptop loop runs with `finished`, so a crash no longer stops it.

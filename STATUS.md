@@ -210,3 +210,11 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - Pod-level logs are in logs/runpod/esc_c_pod/ (watchdog.log, t1_pool_hashcheck.out, ollama.out.gz).
 - Pod lhyj9s7ex775et terminated (get-pod 404). It sat idle ≈ 21 h after T1 finished (≈ $15): nothing stops a pod when its work ends.
 - Next: grade ESC-C (ESC-1 and ESC-2 cathedral halves, ESC-4) and A0-ESC P1 (T1 caption arm; the 168 churchless captions are candidates for T1's 30-step continuation stage, not built).
+
+**2026-11-19 — ESC-C graded (reports/esc_c.md, analysis/esc_c_report.py).**
+- ESC-1 cathedral PASS: 8 escapes, 4 permanent.
+- ESC-2 cathedral PASS: 3.3e-4 per step (95 % 1.4–6.6e-4).
+- ESC-4 not resolved: the cathedral's rate is lower but the intervals overlap. A post-hoc rate comparison favours the eye being leakier at every out-window, p 0.01–0.02 at 60–120 steps and 0.07 at the graded 40.
+- The cathedral is not a one-way door: about 2e-4 permanent escapes per step, roughly a third of the eye's rate. Its main route is a named landmark (St Peter's → Sistine Chapel) → frescoed dome or ceiling → palace room or bedroom; one escape was a sudden reinterpretation (glass → flower).
+- New figure reports/figures/esc_window.png: escape rate against the out-window for both attractors.
+- T1 continuation stage built and seeded (runs/t1_cont, 168 chains × 30 steps, configs/t1_cont_runpod.yaml); waiting for Brad's go on a pod (≈ 9–10 h, ≈ $7).

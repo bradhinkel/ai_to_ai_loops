@@ -1,0 +1,301 @@
+{
+ "run": "esc_c",
+ "centroid": "archive/a0_core_centroids.npz centroid_dinov2[0]",
+ "radius": 0.2,
+ "exit_factor": 1.25,
+ "out_min": 40,
+ "step0_above_r": 7,
+ "step0_above_exit": 0,
+ "steps_at_risk": 23921,
+ "exits_at_risk": 627,
+ "all_exits": 721,
+ "returning_exits": 711,
+ "longest_return": 68,
+ "chains_ever_outside": 100,
+ "chains_inside_at_300": 90,
+ "inside_share_all": 0.9161129568106312,
+ "max_distance": 1.0479746594128205,
+ "steps_beyond_035": 1444,
+ "steps_beyond_06": 986,
+ "churchless_captions": 765,
+ "ESC1_cathedral": {
+  "escapes": 8,
+  "pass_": true,
+  "upper95_if_none": null
+ },
+ "ESC2_cathedral": {
+  "rate": 0.0003344341791731115,
+  "ci95": [
+   0.00014438494112907076,
+   0.0006589686560007238
+  ],
+  "pass_": true
+ },
+ "ESC4": {
+  "cathedral_rate": 0.0003344341791731115,
+  "cathedral_ci95": [
+   0.00014438494112907076,
+   0.0006589686560007238
+  ],
+  "eye_rate": 0.0006592992590732136,
+  "eye_ci95": [
+   0.000408116632678519,
+   0.0010078089518693772
+  ],
+  "point_lower": true,
+  "intervals_overlap": true,
+  "verdict": "not resolved"
+ },
+ "window_curve": {
+  "esc_c": [
+   {
+    "window": 40,
+    "escapes": 8,
+    "at_risk": 23921,
+    "rate": 0.0003344341791731115,
+    "ci95": [
+     0.00014438494112907076,
+     0.0006589686560007238
+    ]
+   },
+   {
+    "window": 60,
+    "escapes": 5,
+    "at_risk": 22119,
+    "rate": 0.00022605000226050002,
+    "ci95": [
+     7.3397820431232e-05,
+     0.0005275252985814309
+    ]
+   },
+   {
+    "window": 80,
+    "escapes": 4,
+    "at_risk": 20310,
+    "rate": 0.00019694731659281143,
+    "ci95": [
+     5.3661515195781626e-05,
+     0.0005042633518170208
+    ]
+   },
+   {
+    "window": 100,
+    "escapes": 4,
+    "at_risk": 18544,
+    "rate": 0.00021570319240724764,
+    "ci95": [
+     5.8771860096328994e-05,
+     0.0005522858431516229
+    ]
+   },
+   {
+    "window": 120,
+    "escapes": 3,
+    "at_risk": 16772,
+    "rate": 0.0001788695444788934,
+    "ci95": [
+     3.688720026804205e-05,
+     0.0005227327134356263
+    ]
+   },
+   {
+    "window": 160,
+    "escapes": 3,
+    "at_risk": 13197,
+    "rate": 0.00022732439190725165,
+    "ci95": [
+     4.687975470907035e-05,
+     0.0006643383397546657
+    ]
+   },
+   {
+    "window": 200,
+    "escapes": 1,
+    "at_risk": 9549,
+    "rate": 0.00010472300764477956,
+    "ci95": [
+     2.6513569990878497e-06,
+     0.0005834792534232797
+    ]
+   }
+  ],
+  "esc_e": [
+   {
+    "window": 40,
+    "escapes": 21,
+    "at_risk": 31852,
+    "rate": 0.0006592992590732136,
+    "ci95": [
+     0.000408116632678519,
+     0.0010078089518693772
+    ]
+   },
+   {
+    "window": 60,
+    "escapes": 21,
+    "at_risk": 30231,
+    "rate": 0.0006946511858688102,
+    "ci95": [
+     0.00043000003255189,
+     0.0010618481272516094
+    ]
+   },
+   {
+    "window": 80,
+    "escapes": 20,
+    "at_risk": 28607,
+    "rate": 0.0006991295836683329,
+    "ci95": [
+     0.0004270465125809747,
+     0.0010797489391643513
+    ]
+   },
+   {
+    "window": 100,
+    "escapes": 18,
+    "at_risk": 27002,
+    "rate": 0.0006666172876083253,
+    "ci95": [
+     0.0003950796526331208,
+     0.0010535427104484106
+    ]
+   },
+   {
+    "window": 120,
+    "escapes": 17,
+    "at_risk": 25383,
+    "rate": 0.000669739589489028,
+    "ci95": [
+     0.00039014799155368923,
+     0.0010723179614665964
+    ]
+   },
+   {
+    "window": 160,
+    "escapes": 15,
+    "at_risk": 22090,
+    "rate": 0.000679040289723857,
+    "ci95": [
+     0.00038005369546325555,
+     0.0011199736926883587
+    ]
+   },
+   {
+    "window": 200,
+    "escapes": 10,
+    "at_risk": 18739,
+    "rate": 0.0005336464058914563,
+    "ci95": [
+     0.000255904194254359,
+     0.0009813947404887016
+    ]
+   }
+  ]
+ },
+ "escapes": [
+  {
+   "chain": 2,
+   "source": "a0_pilot/3/91",
+   "exit_step": 86,
+   "out_steps": 68,
+   "returned": true,
+   "church_captions_outside": 68,
+   "dropped_word_start": false,
+   "d_end": 0.0793,
+   "prev_caption": "The image showcases the grandeur of the Cathedral de la Sagrada Familia, a renowned landmark in Barcelona, Spain. The perspective is from within the cathedral, looking out towards the alter. The interior is a stunning display of Gothic architecture, with high vaulted ceilings supported by robust columns and ribbed arches. The cathedral is adorned with a myriad of vibrant stained glass windows, their colorful hues adding a lively contrast to the cathedral's stone structure. The lighting within the cathedral enhances the dramatic interplay of light and shadow, creating an atmosphere of solemn beauty. The overall scene conveys the awe-inspiring majesty of the cathedral, a testament to the craftsmanship and religious devotion of its creators.",
+   "first_out_caption": "The image captures the grandeur and architectural magnificence of the Sagrada Familia in Barcelona. The focal point is the church's ornate interior, dominated by a soaring central aisle flanked by smaller aisles. The ceiling, a dome of glass, is bathed in a kaleidoscope of colors from the vibrant stained glass windows, casting a spectrum of hues throughout the space. The intricate Gothic architecture of the church is evident in the detailed stone carvings and the sturdy stone columns and arches. The church's large windows, filled with colorful stained glass, allow light to filter into the space, creating a serene and ethereal atmosphere. The image is taken from a low angle, emphasizing the grand scale and architectural beauty of the Sagrada Familia.",
+   "last_caption": "The image captures the grandeur of Sagrada Familia, an iconic Roman Catholic church in Barcelona, Spain. The interior is a breathtaking view of Gothic architecture, with towering columns and intricate stained glass windows. The windows, filled with a spectrum of colors, cast a warm glow on the high ceiling, which is supported by ribbed vaults. The space is spacious and bright, yet filled with a sense of solemnity and reverence, making it a spiritual haven. The perspective is from the floor looking up, emphasizing the height of the ceiling and the vastness of the interior. The image is a testament to the architectural prowess and the spiritual significance of this remarkable monument."
+  },
+  {
+   "chain": 14,
+   "source": "a0_pilot/19/93",
+   "exit_step": 162,
+   "out_steps": 55,
+   "returned": true,
+   "church_captions_outside": 40,
+   "dropped_word_start": false,
+   "d_end": 0.0936,
+   "prev_caption": "The image captures the grandeur and vibrant energy of the Sagrada Familia, one of the most renowned landmarks in Barcelona. The perspective is from the front of the cathedral, gazing towards the altar. The cathedral's unique architectural style, with its colorful and stained glass windows, is beautifully contrasted by the large, colorful stain glass windows. The altar itself, bathed in light, is a beacon of hope and faith. The entire scene is a testament to the cathedral's rich history and its status as a place of spiritual pilgrimage. The image is a stunning blend of color, light, and architectural magnificence.",
+   "first_out_caption": "The image captures the breathtaking grandeur of the Sagrada Familia, Antoni Gaudí's unfinished masterpiece in Barcelona. The interior is a vibrant display of Gothic architecture, its towering columns reaching towards a radiant stained glass window that imbues the space with a spectrum of colors. The perspective is from a distance, allowing a full view of the cathedral's interior, its details meticulously rendered. The light streaming in creates an ethereal atmosphere, casting long shadows and highlighting the intricate craftsmanship of the interior. The image is a testament to Gaudí's vision, encapsulating the spirituality and aesthetic brilliance of this renowned landmark.",
+   "last_caption": "The image captures the grandeur of the Antoni Gaudí-designed Sagrada Familia in Barcelona, Spain. The interior is a vibrant symphony of color and architectural beauty. The cathedral's ceiling is a stunning display of stained glass, casting a kaleidoscope of hues onto the stone pillars and the pews below. Stained glass windows and mosaic tiles add to the visual feast. The walls and columns, crafted from dark stone, provide a stark contrast to the brightly colored ceiling. The perspective of the image, taken from the floor looking up, gives a sense of the cathedral's impressive scale and the awe it inspires."
+  },
+  {
+   "chain": 18,
+   "source": "a0_core/57/92",
+   "exit_step": 61,
+   "out_steps": 240,
+   "returned": false,
+   "church_captions_outside": 9,
+   "dropped_word_start": false,
+   "d_end": 0.9546,
+   "prev_caption": "This image captures the grandeur and serene beauty of the Sagrada Familia, a renowned Roman Catholic church in Barcelona, Spain. The viewpoint is from the nave, inviting the viewer to appreciate the architectural magnificence. The stained glass windows, each a vibrant mosaic of colors, fill the interior with a kaleidoscope of hues. The ceiling, a magnificent display of geometric patterns, adds an element of intrigue. The perspective is from the back of the church, offering a view of the altar, adorned with a striking stained glass window. The overall composition of the image showcases the intricate architecture and the ethereal atmosphere of this world-famous landmark.",
+   "first_out_caption": "The image captures the grandeur of the Sagrada Familia, a renowned Roman Catholic church in Barcelona, Spain, designed by the renowned Catalan architect Antoni Gaudí. The church's facade, the main focus of the image, is a riot of color and light, with stained glass windows that seem to dance with the sunlight. The perspective of the photo gives a sense of awe-inspiring scale, making the viewer feel small yet significant in the presence of this architectural masterpiece. The windows, in hues of vibrant blues, greens, yellows, and reds, are scattered across the facade, adding an element of intrigue and wonder. The sunlight streaming through these windows casts a spectrum of colors on the facade, creating a dynamic and ever-changing light show that adds a sense of dynamism and energy to the scene. The image, in its entirety, is a testament to Gaudí's architectural genius and the awe-inspiring power of nature and light.",
+   "last_caption": "The image portrays a grand, ornate room, possibly a royal or governmental palace, exuding a sense of opulence. The ceiling, a marvel in itself, is adorned with intricate patterns and detailed work, painted in hues of gold. It's a spectacle of architectural prowess and artistry.\n\nThe room is richly decorated in a classical style, with walls and ceilings featuring ornate molding and panels, enhancing the elegance of the space. The color scheme is predominantly blue and gold, with accents of white and black adding to the luxurious ambiance.\n\nTwo chandeliers hang from the ceiling, casting a warm glow across the room. They are symmetrically placed on either side of a large chandelier, creating a striking contrast against the blue ceiling.\n\nThe floor is covered in a plush carpet, adding a touch of comfort to the opulent setting. The room is furnished with an array of seating options, including chairs and couches, all upholstered in rich fabrics.\n\nOn the far end of the room, a large chandelier commands attention, its light reflecting off the polished surfaces. The room's opulence is further accentuated by the presence of elegant chandeliers and mirrors, contributing to the room's grandeur."
+  },
+  {
+   "chain": 19,
+   "source": "a0_core/57/94",
+   "exit_step": 195,
+   "out_steps": 40,
+   "returned": true,
+   "church_captions_outside": 17,
+   "dropped_word_start": false,
+   "d_end": 0.0692,
+   "prev_caption": "The image captures the grandeur of a Gothic cathedral, bathed in the soft glow of natural light filtering through stained glass windows. The interior, high-vaulted, showcases intricate Gothic architecture, with pointed arches and ribbed vaults creating a sense of soaring majesty. The stone walls, robust and time-worn, tell stories of their own. Colorful stained glass windows, each depicting a scene of religious significance, cast vibrant hues across the space. The light streaming through these windows creates a spectrum of colors that adds to the cathedral's ethereal beauty. The altar, with its ornate wooden structure and colorful tapestry, stands as a focal point in the image, inviting worship and reflection.",
+   "first_out_caption": "The image presents a digital art rendition of a majestic Gothic cathedral. The cathedral, bathed in light, stands tall with its pointed arches and spires reaching towards the sky. The facade is adorned with intricate stained glass windows, their colors muted but still vivid. The towers on either side of the entrance are grand, their height accentuated by the perspective of the image. The foreground showcases a pathway leading up to the cathedral, flanked by trees and lush greenery, adding a touch of nature's serenity. The scene is set during either dawn or dusk, as suggested by the soft, diffused lighting that illuminates the cathedral and its surroundings. The artwork captures the grandeur and serene beauty of the cathedral, offering a picturesque scene that invites contemplation.",
+   "last_caption": "This image captures the breathtaking interior of a cathedral, bathed in a symphony of natural and stained glass light. The high ceiling, painted white and adorned with intricate stucco patterns, is a marvel of architectural grandeur. The arched windows, each a vibrant mosaic of colorful glass, filter the sunlight into the cathedral, creating a play of shadows and highlights that dances across the vaulted interior. The floor, laid with large, square tiles, mirrors the ceiling in its design and material. The walls, made of thick, dark stone, provide a stark contrast to the lighter elements of the cathedral. The altar, illuminated by the filtered light, sits at the far end, an invitation to worship and reverence. This is a space where art, architecture, and devotion coalesce into a sacred sanctuary."
+  },
+  {
+   "chain": 60,
+   "source": "a0_photo/7/86",
+   "exit_step": 114,
+   "out_steps": 187,
+   "returned": false,
+   "church_captions_outside": 9,
+   "dropped_word_start": false,
+   "d_end": 1.0052,
+   "prev_caption": "This image captures the grandeur and awe-inspiring scale of St. Peter's Basilica, the largest church in the world. The photo is taken from the back of the church, looking forward towards the altar, which is nestled under a magnificent domed ceiling. The church is bathed in soft light that filters through stained glass windows, casting a warm glow over the stone structure and illuminating the intricate details of its Gothic architecture. The high, vaulted ceilings create a dramatic perspective that draws the eye towards the altar, which is adorned with an elaborate altarpiece. The church is adorned with numerous statues and intricate carvings, contributing to the sense of grandeur and divine inspiration. The light streaming in from the windows creates a beautiful interplay of shadows and highlights, adding depth and dimension to the scene. The image is a testament to the architectural prowess and spiritual significance of this iconic landmark.",
+   "first_out_caption": "The image captures the grandeur and ornate detail of the Sistine Chapel, a renowned architectural marvel nestled within the Vatican City. The perspective is from the back, inviting viewers to appreciate the scale and magnificence of the space. The ceiling, a testament to the chapel's rich history, is adorned with intricate frescoes that are beautifully complemented by the high vaulted ceiling. The floor is a sea of ornate marble tiles, punctuated by white columns standing tall and proud. The walls, bathed in natural light from a large window, are further embellished with gold accents and statues, adding a touch of opulence to the scene. The image is a celebration of religious artistry, capturing the essence of this sacred sanctuary.",
+   "last_caption": "The image showcases an opulent bedroom, bathed in a luxurious blend of gold and blue. Dominating the space is a grand four-poster bed, draped in a rich blue canopy and adorned with gold accents, including plush pillows and a regal gold headboard. A large, ornate chandelier hangs above, casting a warm glow across the room.\n\nBeneath the bed, a large area rug with intricate designs in gold and blue adds an extra layer of opulence. The floor is covered in plush, dark blue carpets that add a touch of elegance to the space.\n\nFlanking the room are two ornate chaise lounges, upholstered in luxurious blue velvet with gold trim, providing a perfect spot to relax. The walls are painted in a deep blue, providing a stark contrast to the ornate gold trim that frames the windows and doors, giving the room a majestic and grand atmosphere.\n\nAdding to the room's rich tapestry, the windows are dressed with luxurious gold curtains, and the bed is topped with a pristine white comforter. The overall effect is one of opulence, comfort, and a sense of luxury."
+  },
+  {
+   "chain": 62,
+   "source": "a0_photo/10/44",
+   "exit_step": 194,
+   "out_steps": 42,
+   "returned": true,
+   "church_captions_outside": 9,
+   "dropped_word_start": false,
+   "d_end": 0.0658,
+   "prev_caption": "The image captures the grandeur of the interior of the cathedral of St. Paul's in Rome. The perspective is from the front of the church, looking back towards the altar. The architecture is Gothic, with pointed arches and ribbed vaults, creating an effect of depth and height. The cathedral's interior is adorned with rows of wooden pews, each one leading the eye towards the altar at the end of the church. The natural light streaming through the stained glass windows casts shadows on the floor, highlighting the cathedral's architectural details. The walls of the cathedral are covered in marble, and a large, intricately designed organ is visible on the right side. The cathedral's large windows and ornate details create a sense of awe and reverence.",
+   "first_out_caption": "This image captures the grandeur of the Saint Peter's Basilica in Vatican City. The perspective is from the nave, offering a view towards the altar. The architecture is a testament to the religious and artistic heritage of the location. The interior is bathed in light, highlighting the intricate details of the columns and vaulted ceilings. The color palette is predominantly a soothing blend of whites and light grays, punctuated by the rich, earthy tones of the marble and stone. This image is a beautiful representation of one of the world's most significant religious landmarks.",
+   "last_caption": "This image presents a stunning view of an interior cathedral, rich in architectural and artistic detail. The ceiling, a marvel of Romanesque architecture, is adorned with intricate paintings of religious figures. These figures, bathed in the soft glow of natural light filtering through the windows, are scattered across the vaulted ceiling, creating a sense of depth and grandeur. The walls and columns, painted in a harmonious blend of blue and white, add to the overall aesthetic. Each window is framed by elegant arches, and the floor beneath is a study in geometric patterns. The image is a composite of four photos, arranged in a collage format, capturing different perspectives of this architectural masterpiece."
+  },
+  {
+   "chain": 82,
+   "source": "a0_1000/2/384",
+   "exit_step": 129,
+   "out_steps": 172,
+   "returned": false,
+   "church_captions_outside": 2,
+   "dropped_word_start": false,
+   "d_end": 0.9778,
+   "prev_caption": "The image captures the grandeur of the interior of St. Peter's Basilica in Vatican City. Dominating the frame is the magnificent high altar, its lofty arches reaching towards the heavens. The walls, a stunning display of ornate Gothic architecture, are adorned with intricate details and stained glass windows that add a burst of color to the otherwise monochrome structure. The perspective of the photo is from the ground, leading the viewer's eye upwards along the central aisle, further emphasizing the cathedral's impressive height and scale. The photo beautifully encapsulates the awe-inspiring and spiritual atmosphere of this iconic landmark.",
+   "first_out_caption": "The image captures the grandeur of the Sistine Chapel, a renowned landmark. The viewer's perspective is from the back of the chapel, offering a panoramic perspective of the magnificent interior. The architecture is a harmonious blend of Gothic and Renaissance styles, as evidenced by the tall, arched windows that allow natural light to filter in, illuminating the interior. The walls, adorned with the most renowned ceiling fresco, are a testament to the rich history and artistry associated with this space. The perspective and composition of the image emphasize the chapel's unique architectural features and the sacred nature of this place.",
+   "last_caption": "The image presents a grand, opulent room that exudes elegance and luxury. Dominating the scene is an ornate ceiling, richly decorated with intricate patterns and large chandeliers that cast a warm, inviting glow over the room. The walls, adorned with gold accents, add a touch of opulence to the space. \n\nLarge windows flank the room, allowing natural light to fill the space and highlight the room's features. A fireplace, with its marble mantel and grand, ornate mirror above it, serves as a focal point, while an ornate chandelier hanging from the ceiling adds a dramatic effect to the room.\n\nThe room is furnished with plush, overstuffed sofas and armchairs, upholstered in luxurious fabrics. The large windows offer a view of lush greenery outside, providing a stark contrast to the room's opulence. Despite the room's grandeur, there's a sense of tranquility and comfort, inviting one to sit and enjoy the view. The overall atmosphere is one of opulence and grandeur, a testament to the room's luxuriousness and the care taken in its design and decoration."
+  },
+  {
+   "chain": 93,
+   "source": "a0_1000/12/692",
+   "exit_step": 193,
+   "out_steps": 108,
+   "returned": false,
+   "church_captions_outside": 10,
+   "dropped_word_start": false,
+   "d_end": 0.9747,
+   "prev_caption": "The image captures the grandeur of the Catedral de Santa Maria in Rome, Italy. The perspective is from the ground, offering a view up the long central aisle of the church. The ceiling, a marvel of stained glass artistry, arches high above, casting a vibrant array of colors onto the tiled floor below. The large windows, adorned with colorful stained glass, allow natural light to filter in, creating a warm and inviting atmosphere. The interior of the church is beautifully illuminated, highlighting the architectural features and the intricate details of the altar at the end of the aisle. The image encapsulates the serene and spiritual ambiance of the cathedral, making it a visual representation of devotion and faith.",
+   "first_out_caption": "The image captures the grandeur of St. Peter's Basilica in Vatican City. The perspective is from the front of the church, looking towards the altar, which is adorned with a large crucifix. The floor, a vibrant mosaic of colors, leads the eye towards the altar, creating a pathway of faith. The walls and ceiling, architectural marvels, are adorned with intricate frescoes and ornate stucco work, reflecting the rich history and artistic prowess of the Basilica. The play of light and shadow, accentuated by the large stained glass windows, adds a sense of depth and dimension to the scene. The image is a testament to the architectural and artistic beauty of this world-renowned landmark.",
+   "last_caption": "The image presents a luxurious bedroom that exudes opulence and grandeur. Dominating the scene is a large canopy bed, dressed in white, which is positioned under a grand chandelier. The bed is surrounded by an extravagant white curtain that adds a touch of regality to the space. The room itself is tastefully decorated in gold tones, creating a warm and inviting atmosphere. The floor is adorned with a chic rug, and the walls are embellished with elegant wallpaper, adding depth and texture to the room. A plush seating area is nestled in the corner, offering a cozy spot for relaxation. The room's design elements are harmoniously arranged, creating a balance between luxury and comfort."
+  }
+ ]
+}

@@ -200,3 +200,13 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - Survives container restarts: /pre_start.sh, which the image's /start.sh runs on every container start, launches it after 60 s. It lives on the container disk, which survived the 2026-11-17 restart; a pod reset or migration would lose it.
 - Tested on the laptop with stub launchers: resume, restart cap, T1 start, and exit when finished. The lock was tested on the pod. The real runner was not killed to test it.
 - `scripts/runpod_pull_loop.sh` now takes PULL_STOP_STATES. The ESC-C laptop loop runs with `finished`, so a crash no longer stops it.
+
+**2026-11-19 — ESC-C and T1 caption arm finished; pod terminated.**
+- ESC-C finished 2026-11-18 19:57 UTC (300 steps; no further crashes after the 2026-11-17 resume; the watchdog never had to restart anything).
+- The watchdog started T1 as planned; 30,000 captions finished 2026-11-19 07:11 UTC (1.35 s per caption), 168 churchless.
+- Final pull 2026-11-20 04:28 UTC, identical name+size manifests:
+  - runs/esc_c: 90,305 files, 0 empty captions;
+  - runs/t1_caption: 7,328 files, captions.jsonl 30,000 lines, one per draw, 0 empty.
+- Pod-level logs are in logs/runpod/esc_c_pod/ (watchdog.log, t1_pool_hashcheck.out, ollama.out.gz).
+- Pod lhyj9s7ex775et terminated (get-pod 404). It sat idle ≈ 21 h after T1 finished (≈ $15): nothing stops a pod when its work ends.
+- Next: grade ESC-C (ESC-1 and ESC-2 cathedral halves, ESC-4) and A0-ESC P1 (T1 caption arm; the 168 churchless captions are candidates for T1's 30-step continuation stage, not built).

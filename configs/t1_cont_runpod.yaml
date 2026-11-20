@@ -1,0 +1,20 @@
+# A0-ESC T1 continuation stage (predictions.md "A0-ESC" T1/P1, approved 2026-11-16): one 30-step SDXL + llava:latest continuation per
+# churchless T1 caption. runs/t1_cont is seeded by scripts/t1_seed.py: chain n's step 0 = the pool image + its source gen record +
+# a caption record whose `caption` is the candidate's churchless T1 caption, so step 1 is made from that caption.
+# Seeds: the runner's JSON seed table (runs/t1_cont/seed_table.json, one entry per chain; step 0 already exists, so its prompt is
+# documentation only). A0 seed formula on a new base: sdxl_seed = 20261119 + chain*10000 + step. Everything else is A0 / ESC-C
+# (SDXL base 25 steps 1024 -> 512, llava:latest digest 8dd30f6b0cb1, Hintze's verbatim instruction, T 0.9; 48 GB card settings).
+#   pod:    OLLAMA_PAR=8 CFG=configs/t1_cont_runpod.yaml bash scripts/runpod_launch.sh core
+# Escape (fixed in predictions.md): captions of steps 21-30 all churchless and the step-30 image > 0.35 DINOv2 from the A0-core
+# cathedral centroid.
+run_name: t1_cont
+arm: T1-cont
+mode: single_pass
+steps: 31
+trajectories: {first: 0, count: 168}
+temperature: 0.9
+generator: {batch: 16, cpu_offload: false, release_mode: delete}
+captioner: {parallel: 8, unload_after_pass: false}
+seeds:
+  file: runs/t1_cont/seed_table.json
+  sdxl_base_seed: 20261119

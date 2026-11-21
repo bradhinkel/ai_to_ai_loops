@@ -218,3 +218,10 @@ The runner works in lockstep steps, so controls act at step boundaries:
 - The cathedral is not a one-way door: about 2e-4 permanent escapes per step, roughly a third of the eye's rate. Its main route is a named landmark (St Peter's → Sistine Chapel) → frescoed dome or ceiling → palace room or bedroom; one escape was a sudden reinterpretation (glass → flower).
 - New figure reports/figures/esc_window.png: escape rate against the out-window for both attractors.
 - T1 continuation stage built and seeded (runs/t1_cont, 168 chains × 30 steps, configs/t1_cont_runpod.yaml); waiting for Brad's go on a pod (≈ 9–10 h, ≈ $7).
+
+**2026-11-21 — T1-cont finished and verified; pod stopped by the watchdog.**
+- Pod weuadua3q2zmd2, secure A100 80 GB PCIe, US-MO-1, $2.09/h (no 48 GB card in stock; DEVIATIONS D20 note 2026-11-20). Created 16:30 UTC 2026-11-20; setup done 17:03, but the launch waited until 19:11 (my setup check never fired: about 2 h idle).
+- Runner 19:11 → 01:53:50 UTC 2026-11-21: 168 chains × steps 1–30, 4.6 s per chain-step (SDXL 2.8 s per image). No errors, no watchdog restarts.
+- Laptop copy identical to the pod (15,630 files, names and sizes), 5,208 caption records, 0 empty.
+- Watchdog auto-stop (THEN=none AUTOSTOP_MIN=60, REST v2 pod action) worked: the pod stopped at 02:56:51 UTC, status EXITED. About 10.4 h billed, ≈ $22. The stopped pod keeps its 60 GB disk until Brad terminates it.
+- Next: grade A0-ESC P1 from runs/t1_cont.
